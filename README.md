@@ -2,14 +2,6 @@
 
 ![cover](images/cover_big.jpg)
 
-```js
-var colors = ["red", "green", "blue"];
-
-for (var i = 0, len = colors.length; i < len; i++) {
-    console.log(colors[i]);
-}
-```
-
 ## สารบัญ
 
 * [Quick start](#quick-start)
@@ -20,3 +12,13 @@ for (var i = 0, len = colors.length; i < len; i++) {
 * [Versioning](#versioning)
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
+
+```js
+var colors = ["red", "green", "blue"];
+
+for (var i = 0, len = colors.length; i < len; i++) {
+    console.log(colors[i]);
+}
+```
+
+## Node.js
