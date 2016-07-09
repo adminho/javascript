@@ -8,4 +8,13 @@ for (var i = 0, len = colors.length; i < len; i++) {
 }
 ```
 
-![Figure 8-2: Throwing an error inside a generator]
+## สารบัญ
+
+* [Quick start](#quick-start)
+* [Bugs and feature requests](#bugs-and-feature-requests)
+* [Documentation](#documentation)
+* [Contributing](#contributing)
+* [Community](#community)
+* [Versioning](#versioning)
+* [Creators](#creators)
+* [Copyright and license](#copyright-and-license)
