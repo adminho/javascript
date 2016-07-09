@@ -1,6 +1,6 @@
 # สรุปจากหนังสือ  "พัฒนาเว็บแอปพลิเคชั่นด้วย JavaScript"
 
-![cover](images/cover.jpg)
+![cover](images/cover_big.jpg)
 
 ```js
 var colors = ["red", "green", "blue"];
