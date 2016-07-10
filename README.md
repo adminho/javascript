@@ -65,12 +65,38 @@
 
 ![ES5_ES6_ES7_ES8](images/chap01/Table_ES_version.PNG)
 
+### ตัวอย่างการเขียน ES6 กับ ES7
 ```js
-var colors = ["red", "green", "blue"];
+<!-- ไฟล์ index.html-->
+<!DOCTYPE html>
+<html>
+<head>
 
-for (var i = 0, len = colors.length; i < len; i++) {
-    console.log(colors[i]);
-}
+<!--  Traceur (เป็นตัว transpiler)-->
+<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+<script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+</head>
+<body>
+<h1 id="element1"></h1>
+<script type="module">		
+	class Chat{					        // class ไวยากรณ์ใหม่ของ ES6
+		constructor(message) {			// constructor ไวยากรณ์ใหม่ของ ES6
+			this.message = message;
+		}
+		say(){
+			let element = document.querySelector('#element1');
+			element.innerHTML = this.message;				
+		}
+	}		
+	let chat = new Chat("Hello, world!");	// let ไวยากรณ์ใหม่ของ ES6
+	chat.say();
+
+  let array = ["A", "B", "C"];		        // let ไวยากรณ์ใหม่ของ ES6
+	console.log(array.includes("A"));   	// true    -- เมธอดของอาร์เรย์ที่เพิ่มเข้ามาใน ES7
+</script>
+</body>
+</html>
 ```
 
 ## Node.js
