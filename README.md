@@ -91,10 +91,10 @@
 	<script>		
 		// ซอร์สโค้ดตามตราฐานเก่า ES5	
 		function say(message){
-	    	var element = document.querySelector('#element1');
-	    	element.innerHTML = message;			
+	    		var element = document.querySelector('#element1');
+	    		element.innerHTML = message;			
 		}
-	    say("Hello, world!");
+		say("Hello, world!");
 </script>
 </body>
 </html>
@@ -113,6 +113,17 @@ C:\ES6>
 
 ### ตัวอย่างจาวาสคริปต์นอกเว็บเบราเซอร์
 
+```js
+var http = require('http');
+
+http.createServer(function (request, response) {
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.end("Hello, world!");
+}).listen(8001, '127.0.0.1');
+
+console.log('Server running at http://127.0.0.1:8001/');
+```
+
 ### ตัวอย่างการเขียน ES6 กับ ES7 บนเว็บเบราเซอร์
 
 ตัวอย่างต่อไปนี้จะแสดงการเขียนจาวาสคริปต์บนเว็บเบราเซอร์ โดยใช้ Traceur ทำตัวเป็น transpiler เพื่อแปลงซอร์สโค้ดให้อยู่ในรูปเวอร์ชั่น ES5 จากนั้นเว็บเบราเซอร์ถึงจะทำงานได้ (อย่าเพิ่งสนใจรายละเอียดซอร์สโค้ดที่ยกมาให้ดูนะครับ)
@@ -127,6 +138,7 @@ C:\ES6>
 <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
 <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
 <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
 </head>
 <body>
 <h1 id="element1"></h1>
