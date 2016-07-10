@@ -14,6 +14,7 @@
 * [ร้านนายอินทร์](https://www.naiin.com/product/detail/191081/)
 * [ร้าน Book Smile](http://www.booksmile.co.th/คอมพิวเตอร์อินเทอร์เน็ต/พัฒนาเว็บแอบพลิเคชั่นด้วย-JavaScript.html)
 * [ร้าน kinokuniya thailand](https://thailand.kinokuniya.com/bw/9786160825394)
+* [ผ่านฟ้าบุ๊คเซ็นเตอร์] (http://www.phanpha.com/item/พัฒนาเว็บแอปพลิเคชั่นด้วย-javascript)
 * [ซีเอ็ดบางสาขา]( https://www.se-ed.com/product/พัฒนาเว็บแอปพลิเคชั่นด้วย-JavaScript.aspx?no=9786160825394)
 * และร้านหนังสืออื่น ๆ ที่ไม่ได้กล่าว
 
