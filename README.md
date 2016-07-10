@@ -1,6 +1,7 @@
 # สรุปเนื้อหาจากหนังสือ  "พัฒนาเว็บแอปพลิเคชั่นด้วย JavaScript"
 
 ->![cover](images/cover_big.jpg)<-
+image::image/images/cover_big.jpg[align="center"]
 
 ## เนื้อหาเกี่ยวกับอะไร
 
