@@ -1,6 +1,6 @@
 # สรุปเนื้อหาจากหนังสือ  "พัฒนาเว็บแอปพลิเคชั่นด้วย JavaScript"
 
-![cover](images/cover_big.jpg)
+->![cover](images/cover_big.jpg)<-
 
 ## เนื้อหาเกี่ยวกับอะไร
 
