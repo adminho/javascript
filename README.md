@@ -2,7 +2,7 @@
 
 ![cover](images/cover_big.jpg)
 
-### สั่งซื้อได้ที่
+## สั่งซื้อได้ที่
 
 * [ศูนย์หนังสือจุฬา]( http://www.chulabook.com/description.asp?barcode=9786160825394)
 * [ร้านนายอินทร์](https://www.naiin.com/product/detail/191081/)
