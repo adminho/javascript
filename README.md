@@ -2,6 +2,11 @@
 
 ![cover](images/cover_big.jpg)
 
+จะสรุปเนื้อหาเกี่ยวกับ JavaScript ยุคใหม่ (ES6) พร้อมทั้งซอร์สโค้ดตัวอย่าง และเนื้อหาที่เพิ่มเข้ามา (ไม่อยู่ในหนังสือ) เช่น ES7 และอื่นๆ อีกมากมาย
+
+ซึ่งตอนนี้ผมยังเขียนสรุปยังไม่เสร็จดี (เสร็จไปแค่ 1 %) วางๆ ก็จะมาอัพเดตใหม่เรื่อยๆ  
+ครับ
+
 ## สั่งซื้อได้ที่
 
 * [ศูนย์หนังสือจุฬา]( http://www.chulabook.com/description.asp?barcode=9786160825394)
@@ -22,6 +27,10 @@
 * [Versioning](#versioning)
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
+
+### แนะนำ
+
+
 
 ```js
 var colors = ["red", "green", "blue"];
