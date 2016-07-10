@@ -15,6 +15,8 @@
 * [ซีเอ็ดบางสาขา]( https://www.se-ed.com/product/พัฒนาเว็บแอปพลิเคชั่นด้วย-JavaScript.aspx?no=9786160825394)
 * และร้านหนังสืออื่น ๆ ที่ไม่ได้กล่าว
 
+![read](images/read_book.PNG)
+
 ## สารบัญ
 
 * [Quick start](#quick-start)
