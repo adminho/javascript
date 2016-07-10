@@ -20,6 +20,7 @@
 ## สารบัญ
 
 * [บทที่ 1 แนะนำภาษาจาวาสคริปต์](##บทที่ 1 แนะนำภาษาจาวาสคริปต์)
+* [Quick start](#quick-start)
 * [Bugs and feature requests](#bugs-and-feature-requests)
 * [Documentation](#documentation)
 * [Contributing](#contributing)
@@ -28,6 +29,7 @@
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
 
+## Quick star
 ## บทที่ 1 แนะนำภาษาจาวาสคริปต์
 
 ### เกริ่นนำ
