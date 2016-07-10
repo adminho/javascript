@@ -73,7 +73,7 @@
 <html>
 <head>
 
-<!--  Traceur (เป็นตัว transpiler)-->
+<!--  Traceur (ใช้เป็นตัว transpiler)-->
 <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
 <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
 <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
@@ -81,8 +81,8 @@
 <body>
 <h1 id="element1"></h1>
 <script type="module">		
-	class Chat{					// class ไวยากรณ์ใหม่ของ ES6
-		constructor(message) {			// constructor ไวยากรณ์ใหม่ของ ES6
+	class Chat{								// class ไวยากรณ์ใหม่ของ ES6
+		constructor(message) {				// constructor ไวยากรณ์ใหม่ของ ES6
 			this.message = message;
 		}
 		say(){
@@ -90,11 +90,11 @@
 			element.innerHTML = this.message;				
 		}
 	}		
-	let chat = new Chat("Hello, world!");		// let ไวยากรณ์ใหม่ของ ES6
+	let chat = new Chat("Hello, world!");	// let ไวยากรณ์ใหม่ของ ES6
 	chat.say();
 
-  	let array = ["A", "B", "C"];			// let ไวยากรณ์ใหม่ของ ES6
-	console.log(array.includes("A"));   		// true    -- เมธอดของอาร์เรย์ที่เพิ่มเข้ามาใน ES7
+	let array = ["A", "B", "C"];			// let ไวยากรณ์ใหม่ของ ES6
+	console.log(array.includes("A"));   	// true    -- เมธอดของอาร์เรย์ที่เพิ่มเข้ามาใน ES7
 </script>
 </body>
 </html>
