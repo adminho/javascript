@@ -82,7 +82,26 @@
 
 *** ต้องสมัครเป็นสมาชิกของ http://www.ebooks.in.th ก่อนถึงจะโหลด PDF ได้
 
-### ตัวอย่างการเขียน ES5 บนเว็บเบราเซอร์
+###  ตัวอย่างจาวาสคริปต์บนเว็บเบราเซอร์ 
+
+```js
+<!-- ไฟล์ชื่อ index.html-->
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<h1 id="element1"></h1>
+	<script>		
+		// ซอร์สโค้ดตามตราฐานเก่า ES5	
+		function say(message){
+	    	var element = document.querySelector('#element1');
+	    	element.innerHTML = message;			
+		}
+	    say("Hello, world!");
+</script>
+</body>
+</html>
+``` 
 
 ### ตัวอย่างการเขียน ES5 บน Node.js
 
