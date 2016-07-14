@@ -211,7 +211,33 @@ C:\ES6>
 
 ### ตัวอย่างการเขียน ES6 กับ ES7 บน Node.js
 
+ต่อไปจะแสดงการเขียนจาวาสคริปต์ด้วย ES6 กับ ES7 แล้วสั่งรันผ่านทาง Node.js
 
+```js
+class Chat{					// class ไวยากรณ์ใหม่ของ ES6
+	constructor(message) {		// constructor ไวยากรณ์ใหม่ของ ES6
+		this.message = message;
+	}
+	say(){
+		console.log(this.message);
+	}
+}		
+let chat = new Chat("Hello, world!");	// let ไวยากรณ์ใหม่ของ ES6
+chat.say();					// "Hello, world!"
+let array = ["A", "B", "C"];
+console.log(array.includes("A"));   // true    -- เมธอดของอาร์เรย์ที่เพิ่มมาใน ES7
+```
+
+จะสมมติว่าบันทึกเป็นไฟล์ test.js โดยมีโครงสร้างโปรเจคดังนี้
+
+```js
+C:\ES6>
+    |-- test.js
+```
+
+รันไฟล์ test.js ผ่านทาง Node.js ด้วยความสั่งต่อไปนี้ ตามรูป
+
+![node.js es6 es7](images/chap01/node.js_es6_es7.png)
 
 
 ![read books](images/read_book.png)
