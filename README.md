@@ -261,4 +261,9 @@ C:\ES6>
 
 ## อ้างอิง
 
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/
+* https://github.com/nzakas/understandinges6/blob/master/manuscript/B-ECMAScript-7.md
+* https://tc39.github.io/ecma262/2016/
+
+
 ![read books](images/read_book.png)
