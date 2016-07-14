@@ -150,7 +150,11 @@ C:\ES6>
 
 *** อ่านวิธีติดตั้ง และใช้งาน Node.js เพิ่มเติม ได้จากหนังสือที่ผมแจกฟรีข้างต้นนะครับ
 
-![Hello world](images/chap01/run_node.PNG)
+![run node.js server.js](images/chap01/run_node.PNG)
+
+เมื่อเปิดเว็บเบราเซอร์แล้วกรอก URL เป็น http://127.0.0.1:8001/ ก็จะเห็นข้อความ Hello, world! แสดงออกมาทางหน้าเว็บเพจ
+
+![result node.js server.js](images/chap01/Architecture_Node.js.PNG)
 
 ### ตัวอย่างการเขียน ES6 กับ ES7 บนเว็บเบราเซอร์
 
