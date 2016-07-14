@@ -102,7 +102,7 @@
 <body>
 	<h1 id="element1"></h1>
 	<script>		
-		// ซอร์สโค้ดตามตราฐานเก่า ES5	
+		// ซอร์สโค้ดตามมาตราฐานเก่า ES5   
 		function say(message){
 	    		var element = document.querySelector('#element1');
 	    		element.innerHTML = message;			
