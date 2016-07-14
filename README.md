@@ -176,7 +176,7 @@ C:\ES6>
 </head>
 <body>
 <h1 id="element1"></h1>
-<script type="module">		
+<script type="module">						// ต้องเขียนกำกับ type = "module"
 	class Chat{								// class ไวยากรณ์ใหม่ของ ES6
 		constructor(message) {				// constructor ไวยากรณ์ใหม่ของ ES6
 			this.message = message;
