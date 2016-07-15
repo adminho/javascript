@@ -25,12 +25,17 @@
 ## สารบัญ
 
 * [บทที่ 1 แนะนำภาษาจาวาสคริปต์](#บทที่-1-แนะนำภาษาจาวาสคริปต์)
-* [บทที่ 18 แนะนำ ES8](#บทที่-18-แนะนำ-ES8)
+* [Quick start](#quick-start)
+* [Bugs and feature requests](#bugs-and-feature-requests)
+* [Documentation](#documentation)
+* [Contributing](#contributing)
+* [Community](#community)
+* [Versioning](#versioning)
+* [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
 
 
 ## Quick start
-
 
 ## บทที่ 1 แนะนำภาษาจาวาสคริปต์
 
