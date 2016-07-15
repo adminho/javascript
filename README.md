@@ -295,15 +295,15 @@ console.log("Hello world")
 console.log("Hello world");
 ```
 
-แต่ถ้ามีสองประโยคคำสั่งติดกันภายในบรรทัดเดียวกันต้องมี ; แบ่งคันเอาไว้
+แต่ถ้ามีสองประโยคคำสั่งติดกันภายในบรรทัดเดียวกัน จะต้องมี ; แบ่งคันเอาไว้เสมอ
 
 ```js
 // แบบนี้จะเกิด Syntax Error เพราะไม่มี ; แบ่งคั่นประโยค
-// console.log("Hello world")  console.log("Hello world");
+// console.log("Hello, world!")  console.log("Hello, world!");
 
-console.log("Hello world") ; console.log("Hello world")
-// Hello world
-// Hello world
+console.log("Hello, world!") ; console.log("Hello, world!")
+// Hello, world!
+// Hello, world!
 ```
 
 
