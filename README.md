@@ -282,6 +282,11 @@ C:\ES6>
 ![node.js es6 es7](images/chap01/node.js_es6_es7.png)
 
 ## บทที่ 2 (รอก่อน)
+
+![semicolon](images/chap02/semicolon_forgotript.png)
+
+จาวาสคริปต์ถือว่าเป็นภาษาหนึ่งที่ไม่ต้องใช้ semicolon ต่อท้ายแต่ละประโยคคำสั่ง
+
 ## บทที่ 3 (รอก่อน)
 ## บทที่ 4 (รอก่อน)
 ## บทที่ 4 ภาคพิเศษ (รอก่อน)
