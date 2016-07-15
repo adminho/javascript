@@ -294,7 +294,7 @@ C:\ES6>
 
 ![node.js es6 es7](images/chap01/node.js_es6_es7.png)
 
-## บทที่ 2 (รอก่อน)
+## บทที่ 2 (รอก่อน ยังไม่เสร็จครับ)
 
 ![semicolon](images/chap02/semicolonForgot.png)
 
