@@ -25,17 +25,9 @@
 ## สารบัญ
 
 * [บทที่ 1 แนะนำภาษาจาวาสคริปต์](#บทที่-1-แนะนำภาษาจาวาสคริปต์)
+* [บทที่ 17 แนะนำ ES7](#บทที่  17 แนะนำ ES7)
+* [บทที่ 18 แนะนำ ES8](#บทที่  18-แนะนำ-ES8)
 
-* [บทที่ 18 แนะนำ ES8](#บทที่-18-แนะนำ-ES8)
-* [Documentation](#documentation)
-* [Contributing](#contributing)
-* [Community](#community)
-* [Versioning](#versioning)
-* [Creators](#creators)
-* [Copyright and license](#copyright-and-license)
-* [17 ES7](#17-ES7)
-
-## 17 ES7
 
 ## บทที่ 1 แนะนำภาษาจาวาสคริปต์
 
