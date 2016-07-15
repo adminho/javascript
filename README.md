@@ -369,6 +369,7 @@ console.log(array.includes("Z"));         	// false
 
 ```js
 let array = ["A", "B", "C"];        		// ประกาศอาร์เรย์
+
 // เริ่มค้นหา "B" จากอินเด็กซ์คือ 2 ซึ่งจะพบว่าหาไม่เจอ
 console.log(array.includes("B", 2));        // false
 
@@ -403,6 +404,7 @@ console.log(array.includes(+0));      // true
 
 ```js
 let uint8 = new Uint8Array([1, 2, 3, 4, 5]);
+
 console.log(uint8.includes(1));     	// true
 console.log(uint8.includes(5));     	// true
 console.log(uint8.includes(10));     	// false
@@ -415,6 +417,18 @@ console.log(uint8.includes(10));     	// false
 ตอนนี้เอาคอนเซปท์ให้เห็นไปก่อนแล้วกันเนอะ!
 ```
 
+### สิ่งที่เปลี่ยนแปลงไปของ ES7 เมื่อเทียบกับ ES6 (นิดเดียวเอง)
+
+หัวข้อก่อนหน้านี้ได้กล่าวถึงฟีเจอร์ที่เพิ่มมาใหม่ใน  ES7 แต่หัวข้อนี้จะกล่าวถึงฟีเจอร์ที่เปลี่ยนไปจาก ES6 ดังนี้
+
+* trap ที่เป็น enumerate() ของพร็อกซี่ (บทที่ 14 ของหนังสือ [1]) ถูกเอาออกไปใน ES7 เรียบร้อยแล้ว
+* เจอเนอเรเตอร์ (บทที่ 13 ของหนังสือ [1]) ไม่มี [[Construct]]  ถ้าเรียก new จะเกิด error ขึ้นมาดังตัวอย่าง
+
+```js
+function * generator() {}
+let iterator = new generator(); // throws "TypeError: f is not a constructor"
+```
+
 ## บทที่ 18 แนะนำ ES8
 
 สิ่งที่คาดว่าจะเพิ่มเข้ามาใน ES8 (ECMAScript 2017) (มีนิดเดียว)
@@ -424,9 +438,10 @@ console.log(uint8.includes(10));     	// false
 
 ## อ้างอิง
 
-* https://developer.mozilla.org/en-US/docs/Web/JavaScript/
-* https://github.com/nzakas/understandinges6/blob/master/manuscript/B-ECMAScript-7.md
-* https://tc39.github.io/ecma262/2016/
+* [1] หนังสือ “พัฒนาเว็บแอปพลิเคชั่นด้วย JavaScript” จะอธิบายถึงมาตรฐานตัวใหม่ ECMAScript 2015 หรือเรียกสั้น ๆ ว่า “ES6” หรือ “ES6 Harmony” โดยเล่มนี้ตีพิมพ์และจัดจำหน่ายโดยซีเอ็ด
+* [2] https://developer.mozilla.org/en-US/docs/Web/JavaScript/
+* [3] https://github.com/nzakas/understandinges6/blob/master/manuscript/B-ECMAScript-7.md
+* [4] https://tc39.github.io/ecma262/2016/
 
 
 ![read books](images/read_book.png)
