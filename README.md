@@ -152,7 +152,7 @@ C:\ES6>
 
 เมื่อดับเบิลคลิกที่ไฟล์ index.html จะปรากฏตามรูป
 
-![Hello world](images/chap01/Hello_world.png)
+![Hello world](images/chap01/Hello_world_Edit.png)
 
 ### ตัวอย่างจาวาสคริปต์นอกเว็บเบราเซอร์
 
