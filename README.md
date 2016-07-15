@@ -25,8 +25,8 @@
 ## สารบัญ
 
 * [บทที่ 1 แนะนำภาษาจาวาสคริปต์](#บทที่-1-แนะนำภาษาจาวาสคริปต์)
-* [Quick start](#quick-start)
-* [Bugs and feature requests](#bugs-and-feature-requests)
+* [บทที่ 17 แนะนำ ES7](#บทที่-17-แนะนำ-ES7)
+* [บทที่ 18 แนะนำ ES8](#บทที่-18-แนะนำ-ES8)
 * [Documentation](#documentation)
 * [Contributing](#contributing)
 * [Community](#community)
@@ -34,8 +34,6 @@
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
 
-
-## Quick start
 
 ## บทที่ 1 แนะนำภาษาจาวาสคริปต์
 
@@ -271,12 +269,8 @@ C:\ES6>
 ![node.js es6 es7](images/chap01/node.js_es6_es7.png)
 
 
-## บทที่ 2
 
-## บทที่ 3
-
-
-## บทที่ 1 แนะนำ ES7
+## บทที่ 17 แนะนำ ES7
 
 หัวข้อต่อไปนี้จะแสดงฟีเจอร์ใหม่ที่เพิ่มเข้ามาใน ES7 (ECMAScript 2016) รวมทั้งที่เปลี่ยนแปลงไปจาก ES6 ซึ่งมันเปลี่ยนเล็กนิดเดียวเอง
 
@@ -371,7 +365,7 @@ console.log(value2);            // 9
 ตอนนี้เอาคอนเซปท์ให้เห็นไปก่อนแล้วกันเนอะ!
 ```
 
-## บทที่ 18 ES8
+## บทที่ 18 แนะนำ ES8
 
 สิ่งที่คาดว่าจะเพิ่มเข้ามาใน ES8 (ECMAScript 2017) (มีนิดเดียว)
 
