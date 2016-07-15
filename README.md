@@ -34,6 +34,7 @@
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
 
+### Copyright and license
 
 ## บทที่ 1 แนะนำภาษาจาวาสคริปต์
 
