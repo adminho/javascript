@@ -94,6 +94,8 @@
 
 *** ต้องสมัครเป็นสมาชิกของ http://www.ebooks.in.th ถึงจะโหลด PDF ได้
 
+![my ebook](images/chap01/my_book.PNG)
+
 ถ้าใครขี้เกียจสมัครก็ให้ใช้ลิงค์ดังต่อไปนี้แทน
 
 * http://www.ebooks.in.th/ebook/37385/วิธีติดตั้ง_Node.js_และ_npm_เบื้องต้น/
