@@ -86,7 +86,7 @@
 
 ![TypeScript](images/chap01/TypeScript.PNG)
 
-### เครื่องมือในการพัฒนา
+### เครื่องมือในการพัฒนาจาวาสคริปต์
 
 * มีให้ใช้ฟรีหลายตัวมาก เช่น Sublime Text, Atom, Free JavaScript Editor, Aptana Studio, NetBeans, Eclipse ฯลฯ 
 * หรือแม้แต่ใช้อิดิเตอร์ธรรมดา เช่น Notepad, Notepad++ และ EditPlus เป็นต้น 
@@ -184,7 +184,7 @@ C:\ES6>
 
 เมื่อเปิดเว็บเบราเซอร์แล้วกรอก URL เป็น http://127.0.0.1:8001/ ก็จะเห็นข้อความ Hello, world! แสดงออกมาทางหน้าเว็บเพจ ตามรูป
 
-![result node.js server.js](images/chap01/Architecture_Node.Edit.js.PNG)
+![result node.js server.js](images/chap01/Architecture_Node_Edit.js.PNG)
 
 ### ตัวอย่างการเขียน ES6 กับ ES7 บนเว็บเบราเซอร์
 
