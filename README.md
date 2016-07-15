@@ -33,9 +33,9 @@
 * [Versioning](#versioning)
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
-* [17 แนะนำ ES7](#17-แนะนำ-ES7)
+* [17 ES7](#17-ES7)
 
-## 17 แนะนำ ES7
+## 17 ES7
 
 ## บทที่ 1 แนะนำภาษาจาวาสคริปต์
 
