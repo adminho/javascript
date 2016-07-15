@@ -426,7 +426,7 @@ console.log(uint8.includes(10));     	// false
 
 ```js
 function * generator() {}
-let iterator = new generator(); // throws "TypeError: f is not a constructor"
+let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 ```
 
 ## บทที่ 18 แนะนำ ES8
