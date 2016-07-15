@@ -244,6 +244,7 @@ class Chat{                 			// class ไวยากรณ์ใหม่ข�
         console.log(this.message);
     }
 }       
+
 let chat = new Chat("Hello, world!");   // let ไวยากรณ์ใหม่ของ ES6
 chat.say();                 			// "Hello, world!"
 
