@@ -283,7 +283,7 @@ C:\ES6>
 
 ## บทที่ 2 (รอก่อน)
 
-![semicolon](images/chap02/semicolon_forgot.png)
+![semicolon](images/chap02/semicolonForgot.png)
 
 จาวาสคริปต์ถือว่าเป็นภาษาหนึ่งที่ไม่ต้องใช้ semicolon ต่อท้ายแต่ละประโยคคำสั่ง
 
