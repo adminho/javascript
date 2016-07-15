@@ -184,7 +184,7 @@ C:\ES6>
 
 เมื่อเปิดเว็บเบราเซอร์แล้วกรอก URL เป็น http://127.0.0.1:8001/ ก็จะเห็นข้อความ Hello, world! แสดงออกมาทางหน้าเว็บเพจ ตามรูป
 
-![result node.js server.js](images/chap01/Architecture_Node.js.PNG)
+![result node.js server.js](images/chap01/Architecture_Node.Edit.js.PNG)
 
 ### ตัวอย่างการเขียน ES6 กับ ES7 บนเว็บเบราเซอร์
 
