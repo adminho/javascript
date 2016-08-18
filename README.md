@@ -347,7 +347,7 @@ let car3 = new Car();
 class Car { 
     constructor(param){ 		// ประกาศคอนสตรัคเตอร์
 		console.log(param);
-    	}
+    }
 	
 	drive(){					// ประกาศเมธอด
 		console.log(`The car is running`);
@@ -429,7 +429,7 @@ class Car {
 	}
    	set speed(speedValue) {			// เมธอด setter
         	this.speedValue = speedValue;
-    	}
+    }
 }
 
 let carObj = new Car(100);
