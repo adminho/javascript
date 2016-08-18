@@ -358,8 +358,7 @@ carObj.drive();					// "The car is running"
 แต่เสียใจด้วยใน ES6 ไม่สามารถประกาศตัวแปร เป็นสมาชิกในคลาสได้ ...เว้นแต่ใช้ภาษา TypeScript เราก็สามารถประกาศได้
 
 ถึงกระนั้นก็ดีสามารถประกาศพร็อพเพอร์ตี้ที่เป็นตัวแปรขึ้นมาได้ ด้วยการใช้ this.xxx ภายในคอนสตรัคเตอร์ ดังตัวอย่าง
- 
- (ในเมธอดก็ประกาศได้ แต่อาจผิดหลักการ OOP ซึ่งคอนสตรัคเตอร์ ควรทำหน้าที่กำหนดค่าต่างๆ ให้กับพร็อพเพอร์ตี้ของอ็อบเจ็กต์) 
+(ในเมธอดก็ประกาศได้ แต่อาจผิดหลักการ OOP ซึ่งคอนสตรัคเตอร์ ควรทำหน้าที่กำหนดค่าต่างๆ ให้กับพร็อพเพอร์ตี้ของอ็อบเจ็กต์) 
 
 ```js
 class Car { 
@@ -372,6 +371,43 @@ class Car {
 }
 let carObj = new Car("red");	// "red"
 carObj.drive();					// "The red car is running"
+```
+
+#### เบื้องหลังของคลาส
+
+ให้ลองพิจารณาตัวอย่างต่อไปนี้ประกอบ 
+
+```js
+class Car {
+	constructor (speed){   
+		this.speed = speed;
+	}
+	drive(){  
+ 	console.log("Driving speed:", this.speed);
+}
+}
+let carObj = new Car(100);
+carObj.drive();			    						// "Driving speed: 100"
+```
+
+จากคลาส Car และ carObj ในตัวอย่าง เมื่อใช้ instanceof ตรวจสอบอ็อบเจ็กต์ carObj จะพบว่านอกจากมันเป็นอินสแตนซ์ของ Car แล้ว ยังเป็นอินสแตนซ์ของ Object อีกด้วย 
+
+```js
+console.log(typeof carObj);   	    				// "object"
+console.log(carObj instanceof Car);     			// true
+console.log(carObj instanceof Object);  			// true
+console.log(carObj.drive === Car.prototype.drive);	// true
+console.log(typeof Car.prototype.drive);			// "function"
+```
+
+นอกจากนี้แล้วยังพบว่าเมธอด drive() ของคลาส จะถูกประกาศไว้ที่ Car.prototype  ส่วนคลาส Car จะพบว่าแท้จริงแล้ว มันก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่มีชื่อว่า "Car" นั่นเอง
+
+```
+// คลาส Car ก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่ชื่อ Car
+console.log(typeof Car);                			// "function"
+console.log(Car.name);                  			// "Car"
+console.log(Car === Car.prototype.constructor);   	// true
+console.log(Car.prototype.constructor.name);      	// "Car"
 ```
 
 ## บทที่ 4 แนะนำ ES7
