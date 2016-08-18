@@ -412,6 +412,55 @@ console.log(Car === Car.prototype.constructor);   	// true
 console.log(Car.prototype.constructor.name);      	// "Car"
 ```
 
+#### Property accessors 
+
+เราสามารถมีพร็อพเพอร์ตี้แอคเซสเซอร์ (Property accessors) หรือเมธอด getter กับ setter ในคลาส ดังตัวอย่าง
+
+```js
+class Car {
+constructor (){
+		this.speedValue = 100; 	
+	}
+	get speed(){					// เมธอด getter
+		return this.speedValue;
+}
+   	set speed(speedValue) {			// เมธอด setter
+        	this.speedValue = speedValue;
+    	}
+}
+let carObj = new Car(100);
+console.log(carObj.speed);			// 100
+carObj.speed = 60;
+console.log(carObj.speed);			// 60
+console.log(carObj.speedValue);		// 60 (เข้าถึงได้ แต่ไม่ควรเข้าถึงด้วยวิธีนี้ โดยตรง)
+```
+
+#### Static methods
+
+เมธอดสแตติก (Static methods) คือเมธอดของคลาส ที่เวลาเรียกใช้งานจะต้องผ่านชื่อคลาสโดยตรง (ไม่ต้องเรียกผ่านอ็อบเจ็กต์ เพราะมันไม่ใช่เมธอดของอ็อบเจ็กต์) 
+
+โดยสามารถใช้คีย์เวิร์ด static นำหน้าชื่อเมธอด หรือพร็อพเพอร์ตี้แอคเซสเซอร์ก็ได้ แต่มีข้อแม้ว่าห้ามใช้คำว่า static นำหน้าคอนสตรัคเตอร์ 
+
+```js
+class Car {
+constructor (speed){	// ห้ามมีคำว่า static นำหน้าคอนสตัคเตอร์
+		this.speed = speed;
+	}
+	drive(){			
+		console.log("Driving speed:", this.speed);
+
+}
+   	static stop() { 		// เมธอดสแตติก
+        	console.log("Stop this car");
+    	}
+}
+// เมธอดสแตติก 
+Car.stop();				// "Stop this car"
+let carObj = new Car(100);
+carObj.drive();			// "Driving speed: 100"
+console.log(typeof carObj.stop);	// undefined
+```
+
 ## บทที่ 4 แนะนำ ES7
 
 หัวข้อต่อไปนี้จะแสดงฟีเจอร์ใหม่ที่เพิ่มเข้ามาใน ES7 (ECMAScript 2016) รวมทั้งที่เปลี่ยนแปลงไปจาก ES6 ซึ่งมันเปลี่ยนเล็กนิดเดียวเอง
