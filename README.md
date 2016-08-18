@@ -343,10 +343,10 @@ let car3 = new Car();
 
 ```js
 class Car { 
-    constructor(param){ 		//  มันทำหน้าที่เป็นคอนสตรัคเตอร์แบบที่มีในภาษา OOP อื่นๆ 
+    constructor(param){ 		// ประกาศคอนสตรัคเตอร์
 		console.log(param);
     }
-	drive(){
+	drive(){					// ประกาศเมธอด
 		console.log(`The car is running`);
 	}
 }
