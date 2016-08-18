@@ -459,8 +459,8 @@ class Car {
 
     }
     static stop() {         		// เมธอดสแตติก
-            console.log("Stop this car");
-   }
+           console.log("Stop this car");
+    }
 }
 
 // เรียกใช้งานเมธอดสแตติกผ่านชื่อคลาส
@@ -468,7 +468,7 @@ Car.stop();             			// "Stop this car"
 
 let carObj = new Car(100);
 carObj.drive();         			// "Driving speed: 100"
-console.log(typeof carObj.drive);    // "function"
+console.log(typeof carObj.drive);   // "function"
 console.log(typeof carObj.stop);    // undefined
 ```
 
