@@ -313,6 +313,8 @@ console.log("Hello, world!") ; console.log("Hello, world!")
 
 ## บทที่ 3 แนะนำ ES6
 
+(บทนี้ ยังไม่เสร็จดีครับ)
+
 ### คลาส
 
 คลาสใน ES6 จะเหมือนกับภาษาโปรแกรมเชิงวัตถุอื่น ๆ (OOP: Object Oriented Programming) ที่เปรียบได้เป็นพิมพ์เขียวเอาไว้สร้างอ็อบเจ็กต์ โดยตัวอย่างต่อไปนี้จะแสดงการประกาศคลาส Car ขึ้้นมา (ยังไม่มีสมาชิกอะไรอยู่ข้างใน)
@@ -395,13 +397,14 @@ carObj.drive();			    						// "Driving speed: 100"
 console.log(typeof carObj);   	    				// "object"
 console.log(carObj instanceof Car);     			// true
 console.log(carObj instanceof Object);  			// true
+```
+
+จริงๆ แล้วเมธอด drive() ของคลาส Car จะถูกประกาศไว้ที่ Car.prototype ส่วนคลาส Car จริงๆ ก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่มีชื่อว่า "Car" นั่นเอง โดยจะให้ลองพิจารณาตัวอย่างต่อไนี้ประกอบ
+
+```js
 console.log(carObj.drive === Car.prototype.drive);	// true
 console.log(typeof Car.prototype.drive);			// "function"
-```
 
-จริงๆ แล้วเมธอด drive() ของคลาส จะถูกประกาศไว้ที่ Car.prototype ส่วนคลาส Car จริงๆ ก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่มีชื่อว่า "Car" นั่นเอง โดยจะให้ลองพิจารณาตัวอย่างต่อไนี้ประกอบ
-
-```
 // คลาส Car ก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่ชื่อ Car
 console.log(typeof Car);                			// "function"
 console.log(Car.name);                  			// "Car"
