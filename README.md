@@ -459,7 +459,7 @@ class Car {
 
     }
     static stop() {         		// เมธอดสแตติก
-           console.log("Stop this car");
+        console.log("Stop this car");
     }
 }
 
