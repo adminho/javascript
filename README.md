@@ -345,9 +345,10 @@ let car3 = new Car();
 
 ```js
 class Car { 
-    constructor(param){ 		// ประกาศคอนสตรัคเตอร์
+    	constructor(param){ 		// ประกาศคอนสตรัคเตอร์
 		console.log(param);
-    }
+    	}
+	
 	drive(){					// ประกาศเมธอด
 		console.log(`The car is running`);
 	}
@@ -364,9 +365,10 @@ carObj.drive();					// "The car is running"
 
 ```js
 class Car { 
-    constructor(param){
+    	constructor(param){
 		this.param = param; 	// ประกาศพร็อพเพอร์ตี้ param ขึ้นมา (แต่เป็นของอ็อบเจ็กต์) แล้วกำหนดค่าให้มัน
-    }
+	}
+	
 	drive(){
 		console.log(`The ${this.param} car is running`);
 	}
@@ -384,9 +386,10 @@ class Car {
 	constructor (speed){   
 		this.speed = speed;
 	}
+	
 	drive(){  
- 	console.log("Driving speed:", this.speed);
-}
+ 		console.log("Driving speed:", this.speed);
+	}
 }
 let carObj = new Car(100);
 carObj.drive();			    						// "Driving speed: 100"
@@ -418,18 +421,20 @@ console.log(Car.prototype.constructor.name);      	// "Car"
 
 ```js
 class Car {
-constructor (){
+	constructor (){
 		this.speedValue = 100; 	
 	}
 	get speed(){					// เมธอด getter
 		return this.speedValue;
-}
+	}
    	set speed(speedValue) {			// เมธอด setter
         	this.speedValue = speedValue;
     	}
 }
+
 let carObj = new Car(100);
 console.log(carObj.speed);			// 100
+
 carObj.speed = 60;
 console.log(carObj.speed);			// 60
 console.log(carObj.speedValue);		// 60 (เข้าถึงได้ แต่ไม่ควรเข้าถึงด้วยวิธีนี้ โดยตรง)
@@ -443,19 +448,21 @@ console.log(carObj.speedValue);		// 60 (เข้าถึงได้ แต่
 
 ```js
 class Car {
-constructor (speed){	// ห้ามมีคำว่า static นำหน้าคอนสตัคเตอร์
+	constructor (speed){	// ห้ามมีคำว่า static นำหน้าคอนสตัคเตอร์
 		this.speed = speed;
 	}
 	drive(){			
 		console.log("Driving speed:", this.speed);
 
-}
+	}
    	static stop() { 		// เมธอดสแตติก
         	console.log("Stop this car");
     	}
 }
+
 // เมธอดสแตติก 
 Car.stop();				// "Stop this car"
+
 let carObj = new Car(100);
 carObj.drive();			// "Driving speed: 100"
 console.log(typeof carObj.stop);	// undefined
