@@ -353,6 +353,7 @@ class Car {
 		console.log(`The car is running`);
 	}
 }
+
 let carObj = new Car("red");	// "red"
 carObj.drive();					// "The car is running"
 ```
@@ -373,6 +374,7 @@ class Car {
 		console.log(`The ${this.param} car is running`);
 	}
 }
+
 let carObj = new Car("red");	// "red"
 carObj.drive();					// "The red car is running"
 ```
@@ -391,6 +393,7 @@ class Car {
  		console.log("Driving speed:", this.speed);
 	}
 }
+
 let carObj = new Car(100);
 carObj.drive();			    						// "Driving speed: 100"
 ```
@@ -460,7 +463,7 @@ class Car {
     }
 }
 
-// เมธอดสแตติก 
+// เรียกใช้งานเมธอดสแตติกผ่านชื่อคลาส
 Car.stop();             			// "Stop this car"
 
 let carObj = new Car(100);
