@@ -345,7 +345,7 @@ let car3 = new Car();
 
 ```js
 class Car { 
-    	constructor(param){ 		// ประกาศคอนสตรัคเตอร์
+    constructor(param){ 		// ประกาศคอนสตรัคเตอร์
 		console.log(param);
     	}
 	
@@ -365,7 +365,7 @@ carObj.drive();					// "The car is running"
 
 ```js
 class Car { 
-    	constructor(param){
+    constructor(param){
 		this.param = param; 	// ประกาศพร็อพเพอร์ตี้ param ขึ้นมา (แต่เป็นของอ็อบเจ็กต์) แล้วกำหนดค่าให้มัน
 	}
 	
@@ -448,24 +448,24 @@ console.log(carObj.speedValue);		// 60 (เข้าถึงได้ แต่
 
 ```js
 class Car {
-	constructor (speed){	// ห้ามมีคำว่า static นำหน้าคอนสตัคเตอร์
-		this.speed = speed;
-	}
-	drive(){			
-		console.log("Driving speed:", this.speed);
+    constructor (speed){    		// ห้ามมีคำว่า static นำหน้าคอนสตัคเตอร์
+        this.speed = speed;
+    }
+    drive(){            
+        console.log("Driving speed:", this.speed);
 
-	}
-   	static stop() { 		// เมธอดสแตติก
-        	console.log("Stop this car");
-    	}
+    }
+    static stop() {         		// เมธอดสแตติก
+            console.log("Stop this car");
+    }
 }
 
 // เมธอดสแตติก 
-Car.stop();				// "Stop this car"
+Car.stop();             			// "Stop this car"
 
 let carObj = new Car(100);
-carObj.drive();			// "Driving speed: 100"
-console.log(typeof carObj.stop);	// undefined
+carObj.drive();         			// "Driving speed: 100"
+console.log(typeof carObj.stop);    // undefined
 ```
 
 ## บทที่ 4 แนะนำ ES7
