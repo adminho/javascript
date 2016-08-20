@@ -319,7 +319,7 @@ ECMAScript 6 is very easy*/
 
 ![Hello world](images/chap02/hello_word_console.png)
 
-### เซมิโคลอน
+### Semicolon
 
 จาวาสคริปต์ถือว่าเป็นภาษาหนึ่ง ที่ไม่ต้องใช้เครื่องหมายเซมิโคลอน (;) ต่อท้ายแต่ละประโยคคำสั่งก็ได้ ดังตัวอย่าง
 
@@ -449,11 +449,15 @@ function myFunction(num){
 function calculate(num){
 	if (num > 10) {
 		let value = num*10;		// ประกาศตัวแปรแบบ let 
+		
 		// ซอร์สโค้ดส่วนที่เหลือ
 		console.log(value);		// มองเห็นตัวแปร value
 	} else {
+		
 		// มองไม่เห็นตัวแปร value		
+		
 	}	
+	
 	// มองไม่เห็นตัวแปร value
 }
 ```
@@ -492,7 +496,7 @@ console.log(arrowFunc(122)); 	// 122
 
 ```js
 let arrowFunc = value => { 
-return value;
+	return value;
 };
 
 // เรียกใช้ฟังก์ชั่นได้เหมือนปกติธรรมดา
