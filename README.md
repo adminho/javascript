@@ -543,6 +543,49 @@ console.log(typeof carObj.drive);   // "function"
 console.log(typeof carObj.stop);    // undefined
 ```
 
+#### Class Inheritance
+
+การสืบทอดคลาส  (Class Inheritance) ในจาวาสคริปต์ สามารถทำได้โดยใช้คีย์เวิร์ด extends ดังตัวอย่าง
+
+```js
+class Calculation {
+	constructor (a, b){
+		this.a = a;
+		this.b = b;
+	}
+	multiply(){
+		return this.a * this.b;
+	}   	
+}
+
+class Division extends Calculation {	// บรรทัด a -- Division สืบทอดมาจาก Calculation
+	constructor (a, b){
+		super(a, b);					// บรรทัด b -- เรียกใช้คอนสตรัคเตอร์ของ Calculation
+		
+		// สามารถกำหนดค่าให้กับ this.a และ this.b ที่อยู่ในคลาสแม่ได้โดยตรง 
+		// แต่การทำเช่นนี้จะไม่ปลอดภัย 
+		// this.a = a; 	// ไม่ควรทำ	
+		// this.b = b;	// ไม่ควรทำ
+	}
+	
+	divide(){
+		return this.a / this.b;
+	}
+}
+```
+
+ในตัวอย่างดังกล่าว Division จะสืบทอดสมาชิก (พร็อพเพอร์ตี้)  จากคลาส Calculation ได้แก่ a,b และ multiply และสามารถเข้าถึงพร็อพเพอร์ตี้ได้ดังนี้
+
+```js
+let div = new Division(20,10);
+console.log(div.multiply());					// 200
+console.log(div.divide());			 			// 2
+console.log(div.a, div.b);		 				// 20 10 (ไม่ควรเข้าถึงข้อมูลอ็อบเจ็กต์โดยตรง ด้วยวิธีนี้)
+console.log(div instanceof Division);   		// true
+console.log(div instanceof Calculation);   		// true
+console.log(div instanceof Object);   			// true
+```
+
 ## บทที่ 4 แนะนำ ES7
 
 หัวข้อต่อไปนี้จะแสดงฟีเจอร์ใหม่ที่เพิ่มเข้ามาใน ES7 (ECMAScript 2016) รวมทั้งที่เปลี่ยนแปลงไปจาก ES6 ซึ่งมันเปลี่ยนเล็กนิดเดียวเอง
