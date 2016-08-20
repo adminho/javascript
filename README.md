@@ -283,8 +283,40 @@ C:\ES6>
 ## บทที่ 2 ทวน ES5 (มาตรฐานเก่า)
 
 ### รอก่อนครับยังไม่เสร็จดีเนอะ
-#### หัวข้อย่อย
+
 ### คอมเมนต์
+
+คอมเมนต์ในจาวาสคริปต์ ก็จะเหมือนภาษาที่มีรากฐานมาจากภาษา C โดยจะใช้เครื่องหมาย // นำหน้าประโยคที่ต้องการคอมเมนต์ได้เพียงบรรทัดเดียวเท่านั้น 
+
+```js
+var x = 10; 	//This is an example.
+```
+แต่ถ้าต้องการคอมเมนต์หลายๆ บรรทัด ก็ให้ใช้เครื่องหมาย /*… */ มาครอบเปิดและปิดท้าย กลุ่มประโยคที่ต้องการ 
+
+```js
+/* This is an example
+ECMAScript 6 is very easy*/
+```
+### console.log
+
+ประโยคคำสั่ง console.log() จะเป็นฟังก์ชั่น (Function) ในจาวาสคริปต์ที่ใช้ประโยชน์ในแง่ของการดีบั๊ก (Debug) เพื่อแสดงข้อความออกทางหน้าคอนโซล (Console) 
+
+```js
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>Hello, world!</h1>
+<script>		
+             console.log("Hello, world!");
+</script>
+</body>
+</html>
+```
+
+จะปรากฏผลลัพธ์ดังนี้
+
+![Hello world](images/chap02/hello_word_console.png)
 
 ### เซมิโคลอน
 
@@ -300,8 +332,6 @@ console.log("Hello world");
 
 แต่ถ้ามี 2 ประโยคคำสั่งขึ้นไป เขียนติดกันอยู่ภายในบรรทัดเดียวกัน จะต้องมี ; แบ่งคันเอาไว้เสมอ
 
-![semicolon](images/chap02/semicolonForgot.png)
-
 ```js
 // แบบนี้จะเกิด Syntax Error เพราะไม่มี ; แบ่งคั่นประโยค
 // console.log("Hello, world!")  console.log("Hello, world!");
@@ -311,6 +341,9 @@ console.log("Hello, world!") ; console.log("Hello, world!")
 // Hello, world!
 ```
 แต่ทั้งนี้เขาจะนิยมใส่ ; ต่อท้ายประโยคเหมือนหลายๆ ภาษา
+
+
+![semicolon](images/chap02/semicolonForgot.png)
 
 ## บทที่ 3 แนะนำ ES6
 
