@@ -343,9 +343,7 @@ console.log("Hello, world!") ; console.log("Hello, world!")
 ```
 แต่ทั้งนี้เขาจะนิยมใส่ ; ต่อท้ายประโยคเหมือนหลายๆ ภาษา
 
-
 ![semicolon](images/chap02/semicolonForgot.png)
-
 
 ### การประกาศตัวแปร
 
@@ -365,6 +363,23 @@ var  x = 1, y = 2, z = 3;	// ประกาศตัวแปร x, y และ
 ```js
 var x; 	    
 console.log(x); 	// undefined
+```
+
+### Function
+
+ตัวอย่างต่อไปนี้จะเป็นการประกาศฟังก์ชั่น
+
+```js
+function calculate(param1, param2){
+	return param1 * param2;
+}
+```
+
+ส่วนวิธีเรียกใช้งานฟังก์ชั่น ก็จะเหมือนกับภาษาเขียนโปรแกรมทั่ว ๆ ไป ดังตัวอย่าง
+
+```js
+var result = calculate(10, 2);	
+console.log(result);		// 20
 ```
 
 ## บทที่ 3 แนะนำ ES6
