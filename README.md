@@ -638,6 +638,34 @@ console.log(div instanceof Object);   			// true
 ```
 ให้สังเกต ตอนสร้างอ็อบเจ็กต์ด้วยประโยค new Division(20,10); นอกจากเรียกคอนสตรัคเตอร์ของตัวเองแล้ว มันยังเรียกของคลาสแม่ด้วยประโยค super(a, b); (ในบรรทัด b ของคลาส  Division) ซึ่งจะหมายความว่าให้ส่ง 20 กับ 10 ไปให้คอนสตรัคเตอร์ของ Calculation เพื่อกำหนดค่าให้กับ this.a  และ this.b ตามลำดับ
 
+
+### Method overriding
+คลาสลูกที่สืบทอดมาจากคลาสแม่ เมธอดของลูกสามารถโอเวอร์ไรด์ (Override)  เมธอดของแม่ได้ด้วย และถ้าเมธอดของคลาสลูกจะเรียกเมธอดของคลาสแม่ (ที่ชื่อซ้ำกัน) ก็ให้เรียกผ่าน super แทน ตัวอย่าง
+
+```js
+class Calculation {
+	constructor (a, b){
+		this.a = a;
+		this.b = b;
+	}
+	multiply(){
+		return this.a * this.b;
+	}   	
+}
+
+class Multiplying extends Calculation {
+	constructor (a, b){
+		super(a, b);
+	}
+	multiply(){ 				// โอเวอร์ไรด์เมธอด multiply() ของคลาสแม่
+		return "The result is " + super.multiply();
+	}   	
+}
+
+let m = new  Multiplying(20,10);
+console.log(m.multiply());		// "The result is 200" 
+```
+
 (บทนี้ ยังไม่เสร็จดีครับ)
 
 ## บทที่ 4 แนะนำ ES7
