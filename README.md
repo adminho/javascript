@@ -362,7 +362,7 @@ var  x = 1, y = 2, z = 3;	// ประกาศตัวแปร x, y และ
 
 ```js
 var x; 	    
-console.log(x); 	// undefined
+console.log(x); 		// undefined
 ```
 
 ### Function
