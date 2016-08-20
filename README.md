@@ -407,6 +407,7 @@ console.log(typeof msg);      	// "string"
 let div = `<div>
 <h1>Hello world</h1>
 </div>`;
+
 console.log(div);
 ```
 
