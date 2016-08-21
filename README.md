@@ -97,10 +97,12 @@
 
 ![TypeScript](images/chap01/TypeScript.PNG)
 
-### เครื่องมือในการพัฒนาจาวาสคริปต์
+### เครื่องมือในการพัฒนาจาวาสคริปต์ (IDE)
 
 * มีให้ใช้ฟรีหลายตัวมาก เช่น Sublime Text, Atom, Free JavaScript Editor, Aptana Studio, NetBeans, Eclipse ฯลฯ 
 * หรือแม้แต่ใช้อิดิเตอร์ธรรมดา เช่น Notepad, Notepad++ และ EditPlus เป็นต้น 
+
+![TypeScript](images/chap01/Quotes.png)
 
 ### Node.js มันคืออะไรตับไตใส้พุง?
 
