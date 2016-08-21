@@ -290,11 +290,9 @@ C:\ES6>
 
 ![node.js es6 es7](images/chap01/node.js_es6_es7.png)
 
-
-
 ## บทที่ 2 ทวน ES5 (มาตรฐานเก่า)
 
-![cover](images/chap02/Introduction_edit.png)
+![cover](images/chap02/Introduction_edit1.png)
 
 จาวาสคริปต์ยังคงความอินดี้ของมาตรฐานตัวเดิมเอาไว้เช่นเดิม (ES5) โดยไม่ได้ลบเลือนจางหายไปไหนเลย (เศร้าใหม่) ซึ่งบทนี้เราจะมาทบทวนคร่าวๆ กัน
 
