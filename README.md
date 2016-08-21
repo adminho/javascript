@@ -551,6 +551,7 @@ console.log(arrowFunc(122)); 	// 122
 let arrowFunc = function(value){		
 	return value;
 };
+console.log(arrowFunc(122)); 	// 122
 ```
 
 อีกตัวอย่างหนึ่ง
@@ -566,6 +567,7 @@ arrowFunc2(122); 				// 122
 let arrowFunc2 = function(value){		
 	return console.log(value);
 };
+arrowFunc2(122); 				// 122
 ```
 
 ##### ตัวอย่างที่ 3
@@ -582,6 +584,7 @@ console.log(arrowFunc()); 		// 122
 let arrowFunc = function(){
 	return 122;
 };
+console.log(arrowFunc()); 		// 122
 ```
 
 ##### ตัวอย่างที่ 4
@@ -596,6 +599,7 @@ arrowFunc();
 
 ```js
 var arrowFunc = function(){};
+arrowFunc();
 ```
 
 ##### ตัวอย่างที่ 5
@@ -612,6 +616,7 @@ console.log(getFont());			// {color: "red", size: 200}
 let getFont = function(){
 	return {color: "red", size: 200};
 };
+console.log(getFont());			// {color: "red", size: 200}
 ```
 
 ##### ตัวอย่างที่ 6
@@ -628,6 +633,7 @@ console.log(sum(1,2,3));		//  6
 let sum = function(val1, val2, val3){
 	return val1 + val2 +val3;
 };
+console.log(sum(1,2,3));		//  6
 ```
 
 ##### ตัวอย่างที่ 7
@@ -644,6 +650,7 @@ console.log(sum());				//  6
 let sum = function(val1 = 1, val2 = 2, val3 = 3){
 	return val1 + val2 +val3;
 };
+console.log(sum());				//  6
 ```
 
 ##### ตัวอย่างที่ 8
@@ -660,6 +667,7 @@ console.log(max(1, 2, 3, 6));	// 6
 let max = function(...value){	// พารามิเตอร์แบบเรสต์
 	return Math.max(...value);	// โอเปอเรเตอร์สเปรด
 };
+console.log(max(1, 2, 3, 6));	// 6
 ```
 
 (ยังเขียนไม่เสร็จดี)
@@ -783,45 +791,6 @@ class Car {
 
 let carObj = new Car("red");	// "red"
 carObj.drive();					// "The red car is running"
-```
-
-#### เบื้องหลังของคลาส
-
-ให้ลองพิจารณาตัวอย่างต่อไปนี้ประกอบ 
-
-```js
-class Car {
-	constructor (speed){   
-		this.speed = speed;
-	}
-	
-	drive(){  
- 		console.log("Driving speed:", this.speed);
-	}
-}
-
-let carObj = new Car(100);
-carObj.drive();			    						// "Driving speed: 100"
-```
-จากคลาส Car และ carObj ในตัวอย่าง ถ้าเราลองใช้ instanceof ตรวจสอบอ็อบเจ็กต์ carObj จะพบว่านอกจากมันเป็นอินสแตนซ์ของ Car แล้ว ยังเป็นอินสแตนซ์ของ Object อีกด้วย โดยจะให้ลองพิจารณาตัวอย่างต่อไนี้ประกอบ
-
-```js
-console.log(typeof carObj);   	    				// "object"
-console.log(carObj instanceof Car);     			// true
-console.log(carObj instanceof Object);  			// true
-```
-
-จริงๆ แล้วเมธอด drive() ของคลาส Car จะถูกประกาศไว้ที่ Car.prototype ส่วนคลาส Car จริงๆ ก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่มีชื่อว่า "Car" นั่นเอง โดยจะให้ลองพิจารณาตัวอย่างต่อไนี้ประกอบ
-
-```js
-console.log(carObj.drive === Car.prototype.drive);	// true
-console.log(typeof Car.prototype.drive);			// "function"
-
-// คลาส Car ก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่ชื่อ Car
-console.log(typeof Car);                			// "function"
-console.log(Car.name);                  			// "Car"
-console.log(Car === Car.prototype.constructor);   	// true
-console.log(Car.prototype.constructor.name);      	// "Car"
 ```
 
 #### Property accessors 
