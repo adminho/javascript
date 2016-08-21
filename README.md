@@ -945,7 +945,8 @@ console.log(m.multiply());		// "The result is 200"
 
 (บทนี้ ยังไม่เสร็จดีครับ)
 
-### 3.8 Collection
+### 3.7 Collection
+### 3.8 Iterator กับ Generator
 ### 3.9 Meta Programming
 ### 3.10 Module
 ### 3.11 อื่นๆ
