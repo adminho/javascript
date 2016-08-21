@@ -356,7 +356,7 @@ console.log("Hello, world!") ; console.log("Hello, world!")
 ```
 แต่ทั้งนี้เขาจะนิยมใส่ ; ต่อท้ายประโยคเหมือนหลายๆ ภาษา
 
-![semicolon](images/chap02/semicolonForgot.png)
+![semicolon](images/chap02/semicolonForgot2.png)
 
 ### การประกาศตัวแปร
 
