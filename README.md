@@ -23,6 +23,10 @@
 
 * https://www.facebook.com/programmerthai/
 
+สามารถให้คำชี้แนะ แนะนำผม คอมเมนต์ผมได้ตลอดเวลาที่ 
+
+* http://www.patanasongsivilai.com/javascript.html
+
 ## ถ้าสนใจเล่มนี้สามารถสั่งซื้อได้ที่
 
 * [ศูนย์หนังสือจุฬา]( http://www.chulabook.com/description.asp?barcode=9786160825394)
@@ -120,8 +124,6 @@
 * http://www.ebooks.in.th/ebook/37836/เสียดายไม่ได้อ่าน_จาวาสคริปต์ฝั่งเซิร์ฟเวอร์_Node.js_ฉบับย่อ_เล่ม2/
 * http://www.ebooks.in.th/ebook/37861/การใช้งาน_MongoDB_เบื้องต้น/
 * เล่มอื่นเผื่อใครสนใจ http://www.ebooks.in.th/adminho/
-
-รบกวนให้คำชี้แนะผม และฟีดแบ็คมาได้ที่ http://www.patanasongsivilai.com/javascript.html
 
 ###  ตัวอย่างจาวาสคริปต์บนเว็บเบราเซอร์ 
 
