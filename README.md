@@ -48,8 +48,6 @@
 * [บทที่ 4 แนะนำ ES7](#บทที่-4-แนะนำ-es7)
 * [บทที่ 5 แนะนำ ES8](#บทที่-5-แนะนำ-es8)
 
-![cover](images/Introduction.png)
-
 ## บทที่ 1 แนะนำภาษาจาวาสคริปต์
 
 ### เกริ่นนำ
@@ -288,6 +286,8 @@ C:\ES6>
 รันไฟล์ test.js ผ่านทาง Node.js ด้วยความสั่งต่อไปนี้ ตามรูป
 
 ![node.js es6 es7](images/chap01/node.js_es6_es7.png)
+
+![cover](images/Introduction.png)
 
 ## บทที่ 2 ทวน ES5 (มาตรฐานเก่า)
 
