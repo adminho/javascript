@@ -1,6 +1,6 @@
 # JavaScript ยุคสมัยใหม่
 
-![cover](images/cover_big2.jpg)
+![cover](images/cover_big2.png)
 
 
 ![cover](images/Introduction2.png)
