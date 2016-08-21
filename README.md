@@ -3,7 +3,7 @@
 ![cover](images/cover_big2.png)
 
 
-![cover](images/Introduction2.png)
+![cover](images/Introduction3.png)
 
 ## เนื้อหาเกี่ยวกับอะไร
 
