@@ -230,6 +230,7 @@ C:\ES6>
 	let chat = new Chat("Hello, world!");	// let ไวยากรณ์ใหม่ของ ES6
 	chat.say();
 
+	// ตัวอย่างโค้ด ES7 ชุดนี้ยังรันได้เฉพาะบน Google Chrome
 	let array = ["A", "B", "C"];			// let ไวยากรณ์ใหม่ของ ES6
 	console.log(array.includes("A"));   	// true    -- เมธอดของอาร์เรย์ที่เพิ่มเข้ามาใน ES7
 </script>
@@ -248,7 +249,118 @@ C:\ES6>
 
 ![Hello world es6 es7](images/chap01/helloworld_es6_es7.png)
 
-*** Traceur ที่เห็นเป็นของ Google แต่ทั้งนี้ปัจจุบันตัว transpiler ก็มีหลายเจ้าให้เลือก (ผมแสดงให้ดูแค่เจ้าเดียวครับ) ซึ่งเท่าที่ผมลองใช้งานดูหลายเจ้า มันก็ยังไม่นิ่งเท่าไร ถ้าจะนำมันไปใช้งานยังไง ก็ควรหมั่นอัพเดตจากทีมสร้างเขาอีกทีนะครับ ...ที่สำคัญวิธีใช้งานแต่ละเจ้า ก็ดันแตกต่างกันอีกแฮะ!
+***สังเกต ในโค้ดจะต้องระบุ <script type="module">
+
+แต่ถ้าจะเขียนโค้ดจาวาสคริปต์ แยกออกมาเป็นไฟล์ .js เช่น mylib.js ตามโครงสร้างข้างล่าง
+
+```js
+C:\ES6>
+    |-- index.html
+    |-- mylib.js
+```
+
+เราก็เขียนอ้างไฟล์ .js ได้ง่ายๆ ดังนี้
+
+```js
+<!-- ไฟล์ index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--  Traceur (ใช้เป็นตัว transpiler)-->
+<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+<script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+</head>
+<body>
+<h1 id="element1"></h1>
+
+<script type="module">
+import "./mylib.js";  	// อ้างไฟล์ .js
+</script>
+
+</body>
+</html>
+```
+
+ต่อไปจะแสดงการเขียนจาวาสคริปต์บนเว็บเบราเซอร์ โดยใช้ Babel ทำตัวเป็น transpiler (ผลการทำงานจะเหมือนเวลาใช้ traceur )
+
+```js
+<!-- ไฟล์ index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--  Babel (ใช้เป็นตัว transpiler)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.14.0/babel.min.js"></script>
+
+</head>
+<body>
+<h1 id="element1"></h1>
+<script type="text/babel">						// ต้องเขียนกำกับ type = "text/babel"
+	class Chat{								// class ไวยากรณ์ใหม่ของ ES6
+		constructor(message) {				// constructor ไวยากรณ์ใหม่ของ ES6
+			this.message = message;
+		}
+		say(){
+			let element = document.querySelector('#element1');
+			element.innerHTML = this.message;				
+		}
+	}		
+	let chat = new Chat("Hello, world!");	// let ไวยากรณ์ใหม่ของ ES6
+	chat.say();
+
+	// ตัวอย่างโค้ด ES7 ชุดนี้ยังรันได้เฉพาะบน Google Chrome
+	let array = ["A", "B", "C"];			// let ไวยากรณ์ใหม่ของ ES6
+	console.log(array.includes("A"));   	// true    -- เมธอดของอาร์เรย์ที่เพิ่มเข้ามาใน ES7
+</script>
+</body>
+</html>
+```
+
+จะสมมติว่าบันทึกเป็นไฟล์ index.html โดยมีโครงสร้างโปรเจคดังนี้
+
+```js
+C:\ES6>
+    |-- index.html
+```
+
+เมื่อดับเบิลคลิกที่ไฟล์ index.html จะปรากฏตามรูป
+
+![Hello world es6 es7](images/chap01/helloworld_es6_es7.png)
+
+***สังเกต ในโค้ดจะต้องระบุ <script type="text/babel">
+
+แต่ถ้าจะเขียนโค้ดจาวาสคริปต์ แยกออกมาเป็นไฟล์ .js เช่น mylib.js ตามโครงสร้างข้างล่าง
+
+```js
+C:\ES6>
+    |-- index.html
+    |-- mylib.js
+```
+
+เราก็เขียนอ้างไฟล์ .js ได้ง่ายๆ ดังนี้
+
+```js
+<!-- ไฟล์ index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--  Babel (ใช้เป็นตัว transpiler)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.14.0/babel.min.js"></script>
+
+</head>
+<body>
+<h1 id="element1"></h1>
+<script type="text/babel" src="mylib.js">	// อ้างไฟล์ .js
+</script>
+</body>
+</html>
+```
+
+*** Traceur ที่เห็นเป็นของ Google กับ Babelแต่ทั้งนี้ปัจจุบันตัว transpiler ก็มีหลายเจ้าให้เลือก ซึ่งเท่าที่ผมลองใช้งานดู มันก็ยังไม่นิ่งเท่าไร ถ้าจะนำมันไปใช้งานยังไง ก็ควรหมั่นอัพเดตจากทีมสร้างเขาอีกทีนะครับ ...ที่สำคัญวิธีใช้งานแต่ละเจ้า ก็ดันแตกต่างกันอีกแฮะ!
 
 จนหนังสือที่ผมเขียนไป ถ้าใครลองทำตาม แล้วใช้งาน ES6 ไม่ได้ เค้าขอโทษแล้วกันน๊า! ยังไงเดี่ยวขออัพเดตโค้ดล่าสุดที่เว็บนี้แล้วกันเนอะ
 
@@ -256,9 +368,9 @@ C:\ES6>
 
 ต่อไปจะแสดงการเขียนจาวาสคริปต์ด้วย ES6 กับ ES7 แล้วสั่งรันผ่านทาง Node.js โดยตรง ไม่ต้องใช้  transpiler (หรือจะใช้ ก็แล้วแต่ครับ)
 
-*** ทั้งนี้ Node.js ตอนที่ผมเขียนหนังสือ มันรองรับ ES6 ได้แค่ 93 % (เศร้ากันไหม?)
+*** ทั้งนี้ Node.js เวอร์ชั่น 7 ขึ้นไปก็จะรองรับ ES6 
 
-*** ส่วน ES7 ก็ยังรองรับได้ไม่เต็มที่
+*** ส่วน ES7 ผมยังไม่ค่อยแน่ใจสักเท่าไร
 
 ```js
 class Chat{                 			// class ไวยากรณ์ใหม่ของ ES6
