@@ -249,7 +249,7 @@ C:\ES6>
 
 ![Hello world es6 es7](images/chap01/helloworld_es6_es7.png)
 
-***สังเกต ในโค้ดจะต้องระบุ <script type="module">
+สังเกต ในโค้ดจะต้องระบุ <script type="module">
 
 แต่ถ้าจะเขียนโค้ดจาวาสคริปต์ แยกออกมาเป็นไฟล์ .js เช่น mylib.js ตามโครงสร้างข้างล่าง
 
@@ -330,7 +330,7 @@ C:\ES6>
 
 ![Hello world es6 es7](images/chap01/helloworld_es6_es7.png)
 
-***สังเกต ในโค้ดจะต้องระบุ <script type="text/babel"> หรือเขียนเป็น <script type="text/jsx"> ก็ได้เหมือนกัน
+สังเกต ในโค้ดจะต้องระบุ <script type="text/babel"> หรือเขียนเป็น <script type="text/jsx"> ก็ได้เหมือนกัน
 
 แต่ถ้าจะเขียนโค้ดจาวาสคริปต์ แยกออกมาเป็นไฟล์ .js เช่น mylib.js ตามโครงสร้างข้างล่าง
 
