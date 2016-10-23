@@ -385,7 +385,7 @@ https://github.com/Daniel15/babel-standalone/releases
 
 ### Cross-origin resource sharing (CORS) 
 
-โดยปกติแล้วเว็บเพจ จะไม่สามารถแชร์  resources (เช่น ฟอนต์, ไฟล์จาวาสคริปต์ และรูปภาพ เป็นต้น) ข้าม domain กันได้  เพราะมันเป็นเรื่องของความปลอภัย (same-origin policy)
+โดยปกติแล้วเว็บเพจ จะไม่สามารถแชร์  resources ข้าม domain กันได้ (เช่น ฟอนต์, ไฟล์จาวาสคริปต์ และรูปภาพ เป็นต้น) เพราะมันเป็นเรื่องของความปลอภัย (same-origin policy)
 
 คราวนี้ถ้าเขียนจาวาสคริปต์แบบแยกไฟล์ .js แล้วอิมพอร์ตเข้ามา (จากตัวอย่างก่อนหน้านี้ ผมอิมพอร์ตไฟล์ mylib.js เข้ามา ด้วยวิธี Traceur หรือ Babel) เมื่อนำไปเปิดบน Google Chrome อาจทำงานไม่ได้  (ซวยแล้วไง!)  เพราะเมื่อไปดูที่ console จะเห็นมันฟ้องเรื่อง Cross origin ดังรูป
 
@@ -396,13 +396,14 @@ https://github.com/Daniel15/babel-standalone/releases
 
 *** วิธีการ
 
-สามารถทำได้ง่ายๆ เพียงแค่บอกให้เซิร์ฟเวอร์ เพิ่มค่าต่อไปนี้ลงไปใน HTTP Header (วิธีกำหนดค่านี้ ต้องดูที่คู่มือของเซิร์ฟเวอร์แต่ละเจ้าเอาเอง)
+สามารถทำได้ง่ายๆ เพียงแค่บอกให้เว็บเซิร์ฟเวอร์ เพิ่มค่าต่อไปนี้ลงไปใน HTTP Header (วิธีกำหนดค่านี้ ต้องดูที่คู่มือของเซิร์ฟเวอร์แต่ละเจ้าเอาเอง)
 
 ```js 
 Access-Control-Allow-Origin: *
 ```
 
 จริงๆ ทำแบบนี้ก็ดูไม่ปลอดภัยเท่าไร ทางที่ดีควรให้สิทธิเฉพาะ url เท่าที่จำเป็น อย่างเช่น
+
 ```js
 Access-Control-Allow-Origin: http://www.example.com http://test.example.com 
 ```
@@ -410,9 +411,9 @@ Access-Control-Allow-Origin: http://www.example.com http://test.example.com
 (ที่มา http://manit-tree.blogspot.com/2012/07/cross-origin-resource-sharing.html)
 
 
-แต่ถ้าเราไม่ได้เขียนเว็บบนเซอร์เวอร์ อารมณ์ทดสอบเว็บบนเครื่องตัวเองแบบ local ก็ต้องเปิด Google chrome ด้วยท่าพิศดาร โดยปลดความปลอดภัยเรื่องนี้ออก เพื่อให้มันทำ CORS ได้
+แต่ถ้าเราไม่ได้เขียนเว็บ แล้วเทสบนเว็บเซอร์เวอร์ อารมณ์ทดสอบเว็บบนเครื่องตัวเองแบบ local ก็ต้องเปิด Google chrome ด้วยท่าพิศดาร โดยปลดความปลอดภัยเรื่องนี้ออก เพื่อให้มันทำ CORS ได้
 
-บนวินโดวส์ก็ให้ไปที่คอมมานไลน์  แล้วพิมพ์ตามสั่งนี้ Google Chrome ก็จะเปิดขึ้นมา แล้วเราถึงเปิดไฟล์ HTML ตามมาทีหลัง
+บนวินโดวส์ก็ให้ไปที่คอมมานไลน์  แล้วพิมพ์คำสั่งตามนี้ เมื่อนั้น Google Chrome ก็จะเปิดขึ้นมา แล้วถึงเปิดไฟล์ HTML ตามทีหลัง
 
 ```js 
 chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
@@ -424,16 +425,16 @@ chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security "c:\ES
 
 ```
 
-อีกวิธีหนึ่งคือไปที่ Shortcut ของ Google Chrome แล้วคลิกขวาขึ้นมา แล้วเพิ่มค่า 
+อีกวิธีหนึ่งคือไปที่ Shortcut ของ Google Chrome แล้วคลิกขวาเปิดมันขึ้นมา แล้วเพิ่มค่าต่อไปนี้ตรงช่อง "Target:" 
 
 ```js 
 --user-data-dir="C:/Chrome dev session" --disable-web-security  
 ตามรูป
 ```
 
-![Hello world es6 es7](images/chap01/errorOnChome.png)
+![Hello world es6 es7](images/chap01/howto_open_chrome.png)
 
-ต่อไปนี้ ก็ให้เปิดที่ Shortcut ของ Google Chrome ก่อน แล้วจึงเปิดไฟล์ HTML ตามทีหลัง
+ต่อไปนี้ ก็ให้เปิดที่ Shortcut ของ Google Chrome ก่อนเสมอ แล้วหลังจากนั้น จึงเปิดไฟล์ HTML ตามทีหลัง
 
 
 ส่วนบน OSX กับ Linux ผมไม่มีเครื่องลองครับ จึงไม่กล้าเขียน ลองดูเพิ่มเติมได้ที่ 
