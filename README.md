@@ -385,13 +385,13 @@ https://github.com/Daniel15/babel-standalone/releases
 
 ### Cross-origin resource sharing (CORS) 
 
-โดยปกติแล้วเว็บเพจ จะไม่สามารถแชร์  resource (เช่น ฟอนต์, ไฟล์จาวาสคริปต์ และรูปภาพ เป็นต้น) ข้าม domain กันได้  เพราะมันเป็นเรื่องของความปลอภัย (same-origin policy)
+โดยปกติแล้วเว็บเพจ จะไม่สามารถแชร์  resources (เช่น ฟอนต์, ไฟล์จาวาสคริปต์ และรูปภาพ เป็นต้น) ข้าม domain กันได้  เพราะมันเป็นเรื่องของความปลอภัย (same-origin policy)
 
 คราวนี้ถ้าเขียนจาวาสคริปต์แบบแยกไฟล์ .js แล้วอิมพอร์ตเข้ามา (จากตัวอย่างก่อนหน้านี้ ผมอิมพอร์ตไฟล์ mylib.js เข้ามา ด้วยวิธี Traceur หรือ Babel) เมื่อนำไปเปิดบน Google Chrome อาจทำงานไม่ได้  (ซวยแล้วไง!)  เพราะเมื่อไปดูที่ console จะเห็นมันฟ้องเรื่อง Cross origin ดังรูป
 
 ![Hello world es6 es7](images/chap01/errorOnChome.png)
 
-แต่เราสามารถหลีกเลี่ยงกฏข้อนี้ได้ โดยใช้ Cross-origin resource sharing (CORS) ซึ่งเป็นกลไกอนุญาตให้ resource บนเว็บเพจ ถูกเข้าถึงจาก Domain อื่นได้
+แต่เราสามารถหลีกเลี่ยงกฏข้อนี้ได้ โดยใช้ Cross-origin resource sharing (CORS) ซึ่งเป็นกลไกอนุญาตให้ resources บนเว็บเพจ ถูกเข้าถึงจาก Domain อื่นได้
 
 
 *** วิธีการ
