@@ -411,7 +411,7 @@ Access-Control-Allow-Origin: http://www.example.com http://test.example.com
 (ที่มา http://manit-tree.blogspot.com/2012/07/cross-origin-resource-sharing.html)
 
 
-แต่ถ้าเราไม่ได้เขียนเว็บ แล้วเทสบนเว็บเซอร์เวอร์ อารมณ์ทดสอบเว็บบนเครื่องตัวเองแบบ local ก็ต้องเปิด Google chrome ด้วยท่าพิศดาร โดยปลดความปลอดภัยเรื่องนี้ออก เพื่อให้มันทำ CORS ได้
+แต่ถ้าเราไม่ได้เขียนเว็บ แล้วเทสบนเว็บเซิร์ฟเวอร์ อารมณ์ทดสอบเว็บบนเครื่องตัวเองแบบ local ก็ต้องเปิด Google chrome ด้วยท่าพิศดาร โดยปลดความปลอดภัยเรื่องนี้ออก เพื่อให้มันทำ CORS ได้
 
 บนวินโดวส์ก็ให้ไปที่คอมมานไลน์  แล้วพิมพ์คำสั่งตามนี้ เมื่อนั้น Google Chrome ก็จะเปิดขึ้นมา แล้วถึงเปิดไฟล์ HTML ตามทีหลัง
 
@@ -425,11 +425,10 @@ chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security "c:\ES
 
 ```
 
-อีกวิธีหนึ่งคือไปที่ Shortcut ของ Google Chrome แล้วคลิกขวาเปิดมันขึ้นมา แล้วเพิ่มค่าต่อไปนี้ตรงช่อง "Target:" 
+อีกวิธีหนึ่งง่ายดี ให้ไปที่ Shortcut ของ Google Chrome แล้วคลิกขวาเปิดมันขึ้นมา จากนั้นจึงเพิ่มค่าต่อไปนี้ตรงช่อง "Target:" 
 
 ```js 
 --user-data-dir="C:/Chrome dev session" --disable-web-security  
-ตามรูป
 ```
 
 ![Hello world es6 es7](images/chap01/howto_open_chrome.png)
