@@ -385,8 +385,8 @@ C:\ES6>npm install -save traceur
 
 ```js
 C:\ES6\node_modules\traceur\bin
-			                  |-- BrowserSystem.js
-			                  |-- traceur-runtime.js
+			                 |-- BrowserSystem.js
+			                 |-- traceur-runtime.js
 ```
 
 #### Babel แบบออฟไลน์
@@ -475,7 +475,7 @@ http://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)
 
 ต่อไปจะแสดงการเขียนจาวาสคริปต์ด้วย ES6 กับ ES7 แล้วสั่งรันผ่านทาง Node.js โดยตรง ไม่ต้องใช้  transpiler (หรือจะใช้ ก็แล้วแต่ครับ)
 
-*** ทั้งนี้ Node.js เวอร์ชั่น 7 ขึ้นไปก็จะรองรับ ES6 
+*** ทั้งนี้ Node.js เวอร์ชั่น 7 ขึ้นไปก็จะรองรับ ES6 ได้ 100%
 
 *** ส่วน ES7 ผมยังไม่ค่อยแน่ใจสักเท่าไร
 
