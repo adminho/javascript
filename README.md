@@ -366,9 +366,25 @@ C:\ES6>
 </html>
 ```
 
+
+*** ทริคเล็กน้อย สำหรับ Traceur
+
+จะเห็นว่าต้องอ้างถึงไฟล์ traceur.js กับ BrowserSystem.js แบบออนไลน์ แต่ถ้าจะโหลดไฟล์นี้ (ทั้งหมดที่เกี่ยวข้อง) มาเก็บไว้ที่เครื่อง ก็ให้ใช้คำสั่ง npm ข้างล่าง (วิธีการติดตั้งและใช้งาน npm ก็ตามหนังสือข้างบนที่แจก)
+
+```js
+C:\ES6>npm install -save traceur 
+```
+ก็จะเห็นไฟล์ถูกโหลดเข้ามาตามโครงสร้างดังนี้ traceur-runtime.js (ใช้แทน traceur.js) กับ BrowserSystem.js 
+
+```js
+C:\ES6\node_modules\traceur\bin
+			     |-- BrowserSystem.js
+			     |-- traceur-runtime.js
+```
+
 *** ทริคเล็กน้อย สำหรับ Babel 
 
-จะเห็นว่าต้องอ้างถึงไฟล์ babel.min.js แบบออนไลน์ แต่ถ้าจะโหลดไฟล์นี้ (ทั้งหมดที่เกี่ยวข้อง) มาเก็บไว้ที่เครื่อง ก็ให้ใช้คำสั่ง npm ข้างล่าง
+
 
 ```js
 npm install --save babel-standalone
