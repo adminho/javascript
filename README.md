@@ -394,18 +394,25 @@ C:\ES6>
 
 #### Traceur แบบออฟไลน์
 
-จากตัวอย่างก่อนๆ เวลาเขียน ES6 กับ ES7 บนว็บบราวเซอร์ ผมต้องอ้างถึงไฟล์ traceur.js กับ BrowserSystem.js แบบออนไลน์ แต่ถ้าจะโหลดไฟล์นี้ (ทั้งหมดที่เกี่ยวข้อง) มาเก็บไว้ที่เครื่องแบบออฟไลน์ ก็ให้ใช้คำสั่ง npm ข้างล่าง (วิธีติดตั้งและใช้งาน npm ก็ตามหนังสือข้างบนที่แจกให้อ่านฟรี)
+จากตัวอย่างก่อนๆ เวลาเขียน ES6 กับ ES7 บนว็บบราวเซอร์ด้วย Traceur ผมต้องอ้างถึงไฟล์ traceur.js, BrowserSystem.js และ bootstrap.js แบบออนไลน์ แต่ถ้าจะโหลดไฟล์นี้ (ทั้งหมดที่เกี่ยวข้อง) มาเก็บไว้ที่เครื่องแบบออฟไลน์ ก็ให้ใช้คำสั่ง npm ข้างล่าง (วิธีติดตั้งและใช้งาน npm ก็ตามหนังสือข้างบนที่แจกให้อ่านฟรี)
 
 ```js
 C:\ES6>npm install -save traceur 
 ```
 
-จะเห็นไฟล์ถูกโหลดเข้ามาได้แก่ traceur-runtime.js (ใช้แทน traceur.js) กับ BrowserSystem.js (ส่วนไฟล์ bootstrap.js ไม่จำเป็น เพราะโค้ดตัวอย่างไม่ได้ใช้)
+จะเห็นไฟล์ถูกโหลดเข้ามาได้แก่ traceur.js กับ BrowserSystem.js 
 
 ```js
 C:\ES6\node_modules\traceur\bin
 			                 |-- BrowserSystem.js
-			                 |-- traceur-runtime.js
+			                 |-- traceur.js
+```
+
+ส่วนไฟล์ bootstrap.js ก็จะอยู่ที่
+
+```js
+C:\ES6\node_modules\traceur\src
+					|-- bootstrap.js
 ```
 
 #### Babel แบบออฟไลน์
