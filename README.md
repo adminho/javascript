@@ -287,7 +287,7 @@ import "./mylib.js";  	// อ้างไฟล์ .js
 </html>
 ```
 
-*** หมายเหตนี้วิธีอิมพอร์ตไฟล์ด้วยวิธีนี้ ถ้าไปเปิดดูบน Google Chrome อาจไม่ทำงาน แต่ไม่ต้องซีเรียส เรามีทางแก้ไข แนะนำให้ไปอ่านหัวข้อ [Cross-origin resource sharing (CORS)] (#cross-origin-resource-sharing-cors)
+**หมายเหต** วิธีอิมพอร์ตไฟล์ด้วยวิธีนี้ ถ้าไปเปิดดูบน Google Chrome อาจไม่ทำงาน แต่ไม่ต้องซีเรียส เรามีทางแก้ไข แนะนำให้ไปอ่านหัวข้อ [Cross-origin resource sharing (CORS)] (#cross-origin-resource-sharing-cors)
 
 
 #### Babel
@@ -306,7 +306,7 @@ import "./mylib.js";  	// อ้างไฟล์ .js
 </head>
 <body>
 <h1 id="element1"></h1>
-<script type="text/babel">						// ต้องเขียนกำกับ type = "text/babel"
+<script type="text/babel">					// ต้องเขียนกำกับ type = "text/babel"
 	class Chat{								// class ไวยากรณ์ใหม่ของ ES6
 		constructor(message) {				// constructor ไวยากรณ์ใหม่ของ ES6
 			this.message = message;
@@ -368,7 +368,8 @@ C:\ES6>
 </body>
 </html>
 ```
-*** หมายเหตนี้วิธีอิมพอร์ตไฟล์ด้วยวิธีนี้ ถ้าไปเปิดดูบน Google Chrome อาจไม่ทำงาน แต่ไม่ต้องซีเรียส เรามีทางแก้ไข แนะนำให้ไปอ่านหัวข้อ [Cross-origin resource sharing (CORS)] (#cross-origin-resource-sharing-cors)
+
+**หมายเหต** วิธีอิมพอร์ตไฟล์ด้วยวิธีนี้ ถ้าไปเปิดดูบน Google Chrome อาจไม่ทำงาน แต่ไม่ต้องซีเรียส เรามีทางแก้ไข แนะนำให้ไปอ่านหัวข้อ [Cross-origin resource sharing (CORS)] (#cross-origin-resource-sharing-cors)
 
 ### โหลดไฟล์ Traceur กับ Babel มาเก็บไว้ที่เครื่องแบบออฟไลน์
 
@@ -384,8 +385,8 @@ C:\ES6>npm install -save traceur
 
 ```js
 C:\ES6\node_modules\traceur\bin
-			       |-- BrowserSystem.js
-			       |-- traceur-runtime.js
+			                  |-- BrowserSystem.js
+			                  |-- traceur-runtime.js
 ```
 
 #### Babel แบบออฟไลน์
@@ -400,8 +401,8 @@ C:\ES6>npm install --save babel-standalone
 
 ```js
 C:\ES6\node_modules\babel-standalone
-			            |-- babel.js
-			            |-- babel.min.js
+			             |-- babel.js
+			             |-- babel.min.js
 ```
 
 หรือไปที่เว็บข้างล่างแล้วเลือกโหลดไฟล์ทั้งสองนี้ก็ได้
@@ -424,7 +425,7 @@ https://github.com/Daniel15/babel-standalone/releases
 แต่เราสามารถหลีกเลี่ยงกฏข้อนี้ได้ โดยใช้ Cross-origin resource sharing (CORS) ซึ่งเป็นกลไกอนุญาตให้ resources บนเว็บเพจ ถูกเข้าถึงจาก Domain อื่นได้
 
 
-***วิธีการ
+**วิธีการ**
 
 สามารถทำได้ง่ายๆ เพียงแค่บอกให้เว็บเซิร์ฟเวอร์ เพิ่มค่าต่อไปนี้ลงไปใน HTTP Header (วิธีกำหนดค่านี้ ต้องดูที่คู่มือของเซิร์ฟเวอร์แต่ละเจ้าเอาเอง)
 
