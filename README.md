@@ -260,7 +260,29 @@ C:\ES6>
     |-- mylib.js
 ```
 
-เราก็เขียนอ้างไฟล์ .js ได้ง่ายๆ ดังนี้
+```js
+ส่วนไฟล์ mylib.js ก็หน้าตาแบบนี้ไง แค่แยกโค้ดจาวาสคริปต์ออกมา
+
+ // ไฟล์จาวาสคริปต์ที่แยกออกมา ตั้งชื่อไฟล์เป็น mylib.js
+class Chat{                             // class ไวยากรณ์ใหม่ของ ES6
+    constructor(message) {              // constructor ไวยากรณ์ใหม่ของ ES6
+        this.message = message;
+    }
+    say(){
+        let element = document.querySelector('#element1');
+        element.innerHTML = this.message;               
+    }
+}       
+
+let chat = new Chat("Hello, world!");   // let ไวยากรณ์ใหม่ของ ES6
+chat.say();
+
+// ตัวอย่างโค้ด ES7 ชุดนี้ยังรันได้เฉพาะบน Google Chrome
+let array = ["A", "B", "C"];            // let ไวยากรณ์ใหม่ของ ES6
+console.log(array.includes("A"));       // true    -- เมธอดของอาร์เรย์ที่เพิ่มเข้ามาใน ES7
+```
+
+สามารถเขียนอ้างไฟล์ .js ได้ง่ายๆ ดังนี้
 
 ```js
 <!-- ไฟล์ index.html-->
@@ -339,7 +361,7 @@ C:\ES6>
 
 สังเกตในโค้ดจะต้องระบุ < script type="text/babel" > หรือเขียนเป็น < script type="text/jsx" > ก็ได้เหมือนกัน
 
-แต่ถ้าจะเขียนโค้ดจาวาสคริปต์ แยกออกมาเป็นไฟล์ .js เช่น mylib.js ตามโครงสร้างข้างล่าง
+แต่ถ้าจะเขียนโค้ดจาวาสคริปต์ แยกออกมาเป็นไฟล์ .js เช่น mylib.js ตามโครงสร้างข้างล่าง (เหมือนตอนใช้ Traceur)
 
 ```js
 C:\ES6>
@@ -347,7 +369,7 @@ C:\ES6>
     |-- mylib.js
 ```
 
-เราก็เขียนอ้างไฟล์ .js ได้ง่ายๆ ดังนี้ (สังเกตโค้ดดีๆ วิธีการจะต่างกับ Traceur)
+สามารถเขียนอ้างไฟล์ .js ได้ง่ายๆ ดังนี้ (สังเกตโค้ดดีๆ วิธีอิมพอร์ตไฟล์ .js จะต่างกับ Traceur เล็กน้อย)
 
 ```js
 <!-- ไฟล์ index.html-->
