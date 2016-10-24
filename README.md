@@ -394,7 +394,7 @@ https://github.com/Daniel15/babel-standalone/releases
 แต่เราสามารถหลีกเลี่ยงกฏข้อนี้ได้ โดยใช้ Cross-origin resource sharing (CORS) ซึ่งเป็นกลไกอนุญาตให้ resources บนเว็บเพจ ถูกเข้าถึงจาก Domain อื่นได้
 
 
-*** วิธีการ
+***วิธีการ
 
 สามารถทำได้ง่ายๆ เพียงแค่บอกให้เว็บเซิร์ฟเวอร์ เพิ่มค่าต่อไปนี้ลงไปใน HTTP Header (วิธีกำหนดค่านี้ ต้องดูที่คู่มือของเซิร์ฟเวอร์แต่ละเจ้าเอาเอง)
 
@@ -402,7 +402,7 @@ https://github.com/Daniel15/babel-standalone/releases
 Access-Control-Allow-Origin: *
 ```
 
-จริงๆ ทำแบบนี้ก็ดูไม่ปลอดภัยเท่าไร ทางที่ดีควรให้สิทธิเฉพาะ url เท่าที่จำเป็น อย่างเช่น
+จริงๆ ทำแบบนี้ก็ดูไม่ปลอดภัยเท่าไร ทางที่ดีควรให้สิทธิเฉพาะ url เท่าที่จำเป็น ตัวอย่างเช่น
 
 ```js
 Access-Control-Allow-Origin: http://www.example.com http://test.example.com 
@@ -425,13 +425,13 @@ chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security "c:\ES
 
 ```
 
-อีกวิธีหนึ่งง่ายดี ให้ไปที่ Shortcut ของ Google Chrome แล้วคลิกขวาเปิดมันขึ้นมา จากนั้นจึงเพิ่มค่าต่อไปนี้ตรงช่อง "Target:" 
+อีกวิธีหนึ่งง่ายดี ให้ไปที่ Shortcut ของ Google Chrome แล้วคลิกขวาเปิดมันขึ้นมา จากนั้นจึงเพิ่มค่าต่อไปนี้ตรงช่อง "Target:" หลังข้อความเดิม
 
 ```js 
 --user-data-dir="C:/Chrome dev session" --disable-web-security  
 ```
 
-![Hello world es6 es7](images/chap01/howto_open_chrome.png)
+![Hello world es6 es7](images/chap01/howto_open_chrome_edit.png)
 
 ต่อไปนี้ ก็ให้เปิดที่ Shortcut ของ Google Chrome ก่อนเสมอ แล้วหลังจากนั้น จึงเปิดไฟล์ HTML ตามทีหลัง
 
