@@ -260,10 +260,10 @@ C:\ES6>
     |-- mylib.js
 ```
 
-```js
+
 ส่วนไฟล์ mylib.js ก็หน้าตาแบบนี้ไง แค่แยกโค้ดจาวาสคริปต์ออกมา
 
- // ไฟล์จาวาสคริปต์ที่แยกออกมา ตั้งชื่อไฟล์เป็น mylib.js
+```js
 class Chat{                             // class ไวยากรณ์ใหม่ของ ES6
     constructor(message) {              // constructor ไวยากรณ์ใหม่ของ ES6
         this.message = message;
