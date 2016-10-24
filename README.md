@@ -412,7 +412,7 @@ C:\ES6\node_modules\traceur\bin
 
 ```js
 C:\ES6\node_modules\traceur\src
-					|-- bootstrap.js
+					        |-- bootstrap.js
 ```
 
 #### Babel แบบออฟไลน์
