@@ -369,12 +369,13 @@ C:\ES6>
 
 *** ทริคเล็กน้อย สำหรับ Traceur
 
-จะเห็นว่าต้องอ้างถึงไฟล์ traceur.js กับ BrowserSystem.js แบบออนไลน์ แต่ถ้าจะโหลดไฟล์นี้ (ทั้งหมดที่เกี่ยวข้อง) มาเก็บไว้ที่เครื่อง ก็ให้ใช้คำสั่ง npm ข้างล่าง (วิธีการติดตั้งและใช้งาน npm ก็ตามหนังสือข้างบนที่แจก)
+จะเห็นว่าต้องอ้างถึงไฟล์ traceur.js กับ BrowserSystem.js แบบออนไลน์ แต่ถ้าจะโหลดไฟล์นี้ (ทั้งหมดที่เกี่ยวข้อง) มาเก็บไว้ที่เครื่องแบบออฟไลน์ ก็ให้ใช้คำสั่ง npm ข้างล่าง (วิธีติดตั้งและใช้งาน npm ก็ตามหนังสือข้างบนที่แจก)
 
 ```js
 C:\ES6>npm install -save traceur 
 ```
-ก็จะเห็นไฟล์ถูกโหลดเข้ามาตามโครงสร้างดังนี้ traceur-runtime.js (ใช้แทน traceur.js) กับ BrowserSystem.js 
+
+ก็จะเห็นไฟล์ถูกโหลดเข้ามาได้แก่ traceur-runtime.js (ใช้แทน traceur.js) กับ BrowserSystem.js (ส่วนไฟล์ bootstrap.js ไม่จำเป็น เพราะโค้ดไม่ได้ใช้)
 
 ```js
 C:\ES6\node_modules\traceur\bin
@@ -384,13 +385,21 @@ C:\ES6\node_modules\traceur\bin
 
 *** ทริคเล็กน้อย สำหรับ Babel 
 
-
+สำหรับ Babel ก็เช่นกัน สามารถโหลดไฟล์ babel.js หรือ babel.min.js มาใช้แบบออฟไลน์ได้ ด้วยคำสั่ง npm ดังนี้
 
 ```js
-npm install --save babel-standalone
+C:\ES6>npm install --save babel-standalone
 ```
 
-หรือไปที่เว็บข้างล่างแล้วเลือกโหลดไฟล์ babel.js หรือ babel.min.js ก็ได้
+ก็จะเห็นไฟล์ถูกโหลดลงมาเก็บตามนี้
+
+```js
+C:\ES6\node_modules\babel-standalone
+			   |-- babel.js
+			   |-- babel.min.js
+```
+
+หรือไปที่เว็บข้างล่างแล้วเลือกโหลดไฟล์ทั้งสองนี้ก็ได้
 
 https://github.com/Daniel15/babel-standalone/releases
 
