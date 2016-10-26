@@ -10,8 +10,6 @@
 * [บทที่ 4 แนะนำ ES7](#บทที่-4-แนะนำ-es7)
 * [บทที่ 5 แนะนำ ES8](#บทที่-5-แนะนำ-es8)
 
-![read books](images/read_book.png)
-
 ## บทที่ 1 แนะนำภาษาจาวาสคริปต์
 
 ### เกริ่นนำ
@@ -60,9 +58,17 @@
 
 ![TypeScript](images/chap01/TypeScript.PNG)
 
+### ลองมาดูความนิยมของ ES6 กัน
+
+![javascript_flavors](images/chap01/Javascript_flavor.PNG)
+
+จากรูปเป็นผลสำรวจปี 2016 จะเห็นว่ามาตรฐานใหม่ ES6 คนเริ่มใช้งานเยอะ ไล่จี้จาวาสคริปต์แบบเก่าติดๆ แล้ว (ES5)
+
+(ที่มา http://stateofjs.com/2016/flavors/)
+
 ### เครื่องมือในการพัฒนาจาวาสคริปต์ (IDE)
 
-* มีให้ใช้ฟรีหลายตัวมาก เช่น Sublime Text, Atom, Free JavaScript Editor, Aptana Studio, NetBeans, Eclipse ฯลฯ 
+* มีให้ใช้ฟรีหลายตัวมาก เช่น Visual Studio Code, Sublime Text, Atom, Free JavaScript Editor, Aptana Studio, NetBeans, Eclipse ฯลฯ 
 * หรือแม้แต่ใช้อิดิเตอร์ธรรมดา เช่น Notepad, Notepad++ และ EditPlus เป็นต้น 
 
 ![TypeScript](images/chap01/Quotes.png)
@@ -93,6 +99,8 @@
 * http://www.ebooks.in.th/ebook/37836/เสียดายไม่ได้อ่าน_จาวาสคริปต์ฝั่งเซิร์ฟเวอร์_Node.js_ฉบับย่อ_เล่ม2/
 * http://www.ebooks.in.th/ebook/37861/การใช้งาน_MongoDB_เบื้องต้น/
 * เล่มอื่นเผื่อใครสนใจ http://www.ebooks.in.th/adminho/
+
+![read books](images/read_book.png)
 
 ###  ตัวอย่างจาวาสคริปต์บนเว็บเบราเซอร์ 
 
