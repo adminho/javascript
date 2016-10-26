@@ -1,4 +1,4 @@
-# JavaScript ยุคสมัยใหม่
+# นี้มันปี 2016 แล้ว มาเรียนรู้ JavaScript ยุคสมัยใหม่กันเถอะ! 
 
 ![cover](images/Introduction3.png)
 
