@@ -60,7 +60,7 @@
 
 ### ลองมาดูความนิยมของ ES6 กัน
 
-![javascript_flavors](images/chap01/Javascript_flavor.PNG)
+![javascript_flavors](images/chap01/Javascript_flavors.PNG)
 
 จากรูปเป็นผลสำรวจปี 2016 จะเห็นว่ามาตรฐานใหม่ ES6 คนเริ่มใช้งานเยอะ ไล่จี้จาวาสคริปต์แบบเก่าติดๆ แล้ว (ES5)
 
@@ -1355,7 +1355,7 @@ let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 
 **(หนังสือที่เห็นเล่มนี้ พิมพ์ครั้งที่สองแล้วนะครับ มีการปรับปรุงแก้ไขคำผิดไป แต่มีจำนวนจำกัด มีขายบางแห่งเท่านั้น)**
 
-![cover](images/cover_big5png)
+![cover](images/cover_big5.png)
 
 * [ศูนย์หนังสือจุฬา]( http://www.chulabook.com/description.asp?barcode=9786160825394)
 * [ร้านนายอินทร์](https://www.naiin.com/product/detail/191081/)
