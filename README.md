@@ -69,7 +69,8 @@
 ### เครื่องมือในการพัฒนาจาวาสคริปต์ (IDE)
 
 * มีให้ใช้ฟรีหลายตัวมาก เช่น Visual Studio Code, Sublime Text, Atom, Free JavaScript Editor, Aptana Studio, NetBeans, Eclipse ฯลฯ 
-* หรือแม้แต่ใช้อิดิเตอร์ธรรมดา เช่น Notepad, Notepad++ และ EditPlus เป็นต้น 
+* หรือแม้แต่ใช้อิดิเตอร์ (Editor) ธรรมดา เช่น Notepad, Notepad++ และ EditPlus เป็นต้น 
+* หรือถ้าเป็น geek หน่อย ก็จะใช้ Text Editor อย่าง Vim, Emacs เป็นต้น
 
 ![TypeScript](images/chap01/Quotes.png)
 
