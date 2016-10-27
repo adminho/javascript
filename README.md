@@ -225,7 +225,7 @@ C:\ES6>
 ![Hello world es6 es7](images/chap01/helloworld_es6_es7.png)
 
 
-สังเกตในโค้ดจะต้องระบุ < script type="module\" >
+สังเกตในโค้ดจะต้องระบุ <script type="module">
 
 แต่ถ้าจะเขียนโค้ดจาวาสคริปต์ แยกออกมาเป็นไฟล์ .js เช่น mylib.js ก็สามารถทำได้ โดยจะมีโครงสร้างข้างล่าง
 
