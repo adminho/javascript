@@ -1327,6 +1327,9 @@ let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 * [2] https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 * [3] https://github.com/nzakas/understandinges6/blob/master/manuscript/B-ECMAScript-7.md
 * [4] https://tc39.github.io/ecma262/2016/
+* [5] https://github.com/google/traceur-compiler/wiki/Getting-Started
+* [6] https://github.com/babel/babel-standalone
+
 
 ## ทิ้งท้าย
 
