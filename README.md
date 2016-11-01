@@ -284,7 +284,6 @@ import "./mylib.js";  	// อ้างไฟล์ .js
 
 **หมายเหต** วิธีอิมพอร์ตไฟล์ด้วยวิธีนี้ ถ้าไปเปิดดูบน Google Chrome อาจไม่ทำงาน แต่ไม่ต้องซีเรียส เรามีทางแก้ไข แนะนำให้ไปอ่านหัวข้อ [Cross-origin resource sharing (CORS)] (#cross-origin-resource-sharing-cors)
 
-
 #### Babel
 
 ต่อไปจะแสดงการเขียนจาวาสคริปต์บนเว็บเบราเซอร์ โดยใช้ Babel ทำตัวเป็น transpiler (ผลการทำงานจะเหมือนตัวอย่างตอนใช้ traceur )
@@ -365,9 +364,137 @@ C:\ES6>
 
 **หมายเหต** วิธีอิมพอร์ตไฟล์ด้วยวิธีนี้ ถ้าไปเปิดดูบน Google Chrome อาจไม่ทำงาน แต่ไม่ต้องซีเรียส เรามีทางแก้ไข แนะนำให้ไปอ่านหัวข้อ [Cross-origin resource sharing (CORS)] (#cross-origin-resource-sharing-cors)
 
-**อีกวิธีเขียน ES6 ด้วย Babel**
+### โหลดไฟล์ Traceur กับ Babel มาเก็บไว้ที่เครื่องแบบออฟไลน์
 
-สามารถจะใช้กระบวนท่าแปลงซอร์โค้ดจาก ES6 เป็น ES5 ด้วยมือตนเองก็ได้ ตามตัวอย่างโค้ดจากเว็บต้นทางผู้สร้างตามนี้ 
+#### Traceur แบบออฟไลน์
+
+จากตัวอย่างก่อนๆ เวลาเขียน ES6 กับ ES7 บนว็บบราวเซอร์ด้วย Traceur ผมต้องอ้างถึงไฟล์ traceur.js, BrowserSystem.js และ bootstrap.js แบบออนไลน์ แต่ถ้าจะโหลดไฟล์นี้ (ทั้งหมดที่เกี่ยวข้อง) มาเก็บไว้ที่เครื่องแบบออฟไลน์ ก็ให้ใช้คำสั่ง npm ข้างล่าง (วิธีติดตั้งและใช้งาน npm ก็ตามหนังสือข้างบนที่แจกให้อ่านฟรี)
+
+```js
+C:\ES6>npm install -save traceur 
+```
+
+จะเห็นไฟล์ถูกโหลดเข้ามาได้แก่ traceur.js กับ BrowserSystem.js 
+
+```js
+C:\ES6\node_modules\traceur\bin
+			                 |-- BrowserSystem.js
+			                 |-- traceur.js
+```
+
+ส่วนไฟล์ bootstrap.js ก็จะอยู่ที่
+
+```js
+C:\ES6\node_modules\traceur\src
+					         |-- bootstrap.js
+```
+
+#### Babel แบบออฟไลน์
+
+สำหรับ Babel ก็เช่นกัน สามารถโหลดไฟล์ babel.js หรือ babel.min.js มาใช้แบบออฟไลน์ (เลือกใช้ไฟล์ไหนก็ได้) ด้วยคำสั่ง npm ดังนี้ 
+
+```js
+C:\ES6>npm install --save babel-standalone
+```
+
+จะเห็นไฟล์ถูกโหลดมาเก็บตามนี้
+
+```js
+C:\ES6\node_modules\babel-standalone
+			             |-- babel.js
+			             |-- babel.min.js
+```
+
+หรือไปที่เว็บข้างล่างแล้วเลือกโหลดไฟล์ทั้งสองนี้ก็ได้
+
+https://github.com/Daniel15/babel-standalone/releases
+
+*** Traceur ที่เห็นเป็นของ Google กับ Babelแต่เท่าที่ผมลองใช้งานดู มันก็ยังไม่นิ่งเท่าไร ถ้าจะนำมันไปใช้งานยังไง ก็ควรหมั่นอัพเดตจากทีมสร้างเขาอีกทีนะครับ ...ที่สำคัญวิธีใช้งานแต่ละเจ้า ก็ดันแตกต่างกันอีกแฮะ!
+
+จนหนังสือที่ผมเขียนไป ถ้าใครลองทำตาม แล้วใช้งาน ES6 ไม่ได้ เค้าขอโทษแล้วกันน๊า! ยังไงเดี่ยวขออัพเดตโค้ดล่าสุดที่เว็บนี้แล้วกันเนอะ
+
+### อีกวิธีเขียน ES6 ด้วย Traceur กับ
+
+#### Traceur
+
+เราสามารถใช้กระบวนท่าแปลงซอร์โค้ดจาก ES6 เป็น ES5 ด้วยมือตนเองก็ได้ ด้วยการเปิดคอมมานไลน์ขึ้นมา (ตัวอย่างจะใช้วินโดวส์) แล้วเรียกสคริปต์ traceur ซึ่งถ้าคุณทำตามตัวอย่างก่อนที่โหลดไฟล์ Traceur แบบออฟไลน์ ด้วยคำสั่ง npm install -save traceur ก็ให้ไปที่โฟลเดอร์ ...\node_modules\.bin ก็จะเห็นไฟล์สคริปดังตัวอย่าง
+
+```js
+C:\ES6\node_modules\.bin
+			 |-- traceur
+			 |-- traceur.cmd			 
+```
+
+จากไฟล์ mylib.js ในตัวอย่างก่อนหน้านี้ ที่มีโค้ดของ ES6 
+
+```js
+C:\ES6>
+    |-- index.html
+    |-- mylib.js
+```
+
+เราก็จะเรียกสคริปต์ traceur ให้คอมไฟล์ mylib.js เพื่อแปลงเป็น ES5 ดังนี้
+
+```js
+D:\ES6\node_modules\.bin>traceur --out ../../out/mylib.js --script ../../mylib.js
+```
+(ถ้าติดตั้งด้วยคำสั่ง npm install -g traceur ก็ไม่ต้อง cd มาที่ C:\ES6\node_modules\.bin)
+
+ผลลัพธ์ไฟล์ mylib.js ที่ถูกแปลงเป็น ES5 จะอยู่ที่โฟลเดอร์ out
+
+```js
+C:\ES6>
+    |-- index.html
+    |-- mylib.js
+    |-- out
+    	 |-- mylib.js
+```	
+
+ถ้าแอบไปเปิดไฟล์ที่แปลงโค้ดเป็น ES5 ก็จะมีหน้าตาดังนี้
+
+```js
+var Chat = function() {
+  "use strict";
+  function Chat(message) {
+    this.message = message;
+  }
+  return ($traceurRuntime.createClass)(Chat, {say: function() {
+      var element = document.querySelector('#element1');
+      element.innerHTML = this.message;
+    }}, {});
+}();
+var chat = new Chat("Hello, world!");
+chat.say();
+var array = ["A", "B", "C"];
+console.log(array.includes("A"));
+```
+จากตัวอย่างเดิม  ก็สามารถเขียนใหม่ได้ดังนี้
+
+```js
+<!-- ไฟล์ index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--  Babel (ใช้เป็นตัว transpiler)-->
+<script src="node_modules/traceur/bin/traceur-runtime.js"></script>
+
+
+
+</head>
+<body>
+<h1 id="element1"></h1>
+<!-- ไฟล์ .js ที่ถูกแปลงเป็น ES5 -->
+<script src="out/mylib.js"></script>
+</body>
+</html>
+```
+
+ซึ่งผลการทำงานจะเหมือนกับตัวอย่างก่อนๆ ที่ยกมา
+
+#### Babel
+
+และเช่นกัน เราสามารถใช้กระบวนท่าแปลงซอร์โค้ดจาก ES6 เป็น ES5 ด้วยมือตนเองก็ได้ โดยทำตามตัวอย่างจากเว็บต้นทางผู้สร้าง ก็โค้ดดิ่งตามนี้ 
 
 ```js
 var input = 'const getMessage = () => "Hello World";';
@@ -417,57 +544,8 @@ var output = Babel.transform(input, { presets: ['es2015'] }).code;
 </body>
 </html>
 ```
-ซึ่งผลการทำงานจะเหมือนกับตัวอย่างก่อนๆ
 
-### โหลดไฟล์ Traceur กับ Babel มาเก็บไว้ที่เครื่องแบบออฟไลน์
-
-#### Traceur แบบออฟไลน์
-
-จากตัวอย่างก่อนๆ เวลาเขียน ES6 กับ ES7 บนว็บบราวเซอร์ด้วย Traceur ผมต้องอ้างถึงไฟล์ traceur.js, BrowserSystem.js และ bootstrap.js แบบออนไลน์ แต่ถ้าจะโหลดไฟล์นี้ (ทั้งหมดที่เกี่ยวข้อง) มาเก็บไว้ที่เครื่องแบบออฟไลน์ ก็ให้ใช้คำสั่ง npm ข้างล่าง (วิธีติดตั้งและใช้งาน npm ก็ตามหนังสือข้างบนที่แจกให้อ่านฟรี)
-
-```js
-C:\ES6>npm install -save traceur 
-```
-
-จะเห็นไฟล์ถูกโหลดเข้ามาได้แก่ traceur.js กับ BrowserSystem.js 
-
-```js
-C:\ES6\node_modules\traceur\bin
-			                 |-- BrowserSystem.js
-			                 |-- traceur.js
-```
-
-ส่วนไฟล์ bootstrap.js ก็จะอยู่ที่
-
-```js
-C:\ES6\node_modules\traceur\src
-					         |-- bootstrap.js
-```
-
-#### Babel แบบออฟไลน์
-
-สำหรับ Babel ก็เช่นกัน สามารถโหลดไฟล์ babel.js หรือ babel.min.js มาใช้แบบออฟไลน์ (เลือกใช้ไฟล์ไหนก็ได้) ด้วยคำสั่ง npm ดังนี้ 
-
-```js
-C:\ES6>npm install --save babel-standalone
-```
-
-จะเห็นไฟล์ถูกโหลดมาเก็บตามนี้
-
-```js
-C:\ES6\node_modules\babel-standalone
-			             |-- babel.js
-			             |-- babel.min.js
-```
-
-หรือไปที่เว็บข้างล่างแล้วเลือกโหลดไฟล์ทั้งสองนี้ก็ได้
-
-https://github.com/Daniel15/babel-standalone/releases
-
-
-*** Traceur ที่เห็นเป็นของ Google กับ Babelแต่ทั้งนี้ปัจจุบันตัว transpiler ก็มีหลายเจ้าให้เลือก ซึ่งเท่าที่ผมลองใช้งานดู มันก็ยังไม่นิ่งเท่าไร ถ้าจะนำมันไปใช้งานยังไง ก็ควรหมั่นอัพเดตจากทีมสร้างเขาอีกทีนะครับ ...ที่สำคัญวิธีใช้งานแต่ละเจ้า ก็ดันแตกต่างกันอีกแฮะ!
-
-จนหนังสือที่ผมเขียนไป ถ้าใครลองทำตาม แล้วใช้งาน ES6 ไม่ได้ เค้าขอโทษแล้วกันน๊า! ยังไงเดี่ยวขออัพเดตโค้ดล่าสุดที่เว็บนี้แล้วกันเนอะ
+ซึ่งผลการทำงานจะเหมือนกับตัวอย่างก่อนๆ ที่ยกมา
 
 ### Cross-origin resource sharing (CORS) 
 
