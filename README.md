@@ -287,7 +287,7 @@ import "./mylib.js";  	// อ้างไฟล์ .js
 
 #### Babel
 
-ต่อไปจะแสดงการเขียนจาวาสคริปต์บนเว็บเบราเซอร์ โดยใช้ Babel ทำตัวเป็น transpiler (ผลการทำงานจะเหมือนเวลาใช้ traceur )
+ต่อไปจะแสดงการเขียนจาวาสคริปต์บนเว็บเบราเซอร์ โดยใช้ Babel ทำตัวเป็น transpiler (ผลการทำงานจะเหมือนตัวอย่างตอนใช้ traceur )
 
 ```js
 <!-- ไฟล์ index.html-->
@@ -333,7 +333,6 @@ C:\ES6>
 
 ![Hello world es6 es7](images/chap01/helloworld_es6_es7.png)
 
-
 สังเกตในโค้ดจะต้องระบุ < script type="text/babel" > หรือเขียนเป็น < script type="text/jsx" > ก็ได้เหมือนกัน
 
 แต่ถ้าจะเขียนโค้ดจาวาสคริปต์ แยกออกมาเป็นไฟล์ .js เช่น mylib.js ก็สามารถทำได้ โดยจะมีโครงสร้างข้างล่าง (ไฟล์ .js หน้าตาเหมือนตอนใช้ Traceur)
@@ -365,6 +364,60 @@ C:\ES6>
 ```
 
 **หมายเหต** วิธีอิมพอร์ตไฟล์ด้วยวิธีนี้ ถ้าไปเปิดดูบน Google Chrome อาจไม่ทำงาน แต่ไม่ต้องซีเรียส เรามีทางแก้ไข แนะนำให้ไปอ่านหัวข้อ [Cross-origin resource sharing (CORS)] (#cross-origin-resource-sharing-cors)
+
+**อีกวิธีเขียน ES6 ด้วย Babel**
+
+สามารถจะใช้กระบวนท่าแปลงซอร์โค้ดจาก ES6 เป็น ES5 ด้วยมือตนเองก็ได้ ตามตัวอย่างโค้ดจากเว็บต้นทางผู้สร้างตามนี้ 
+
+```js
+var input = 'const getMessage = () => "Hello World";';
+var output = Babel.transform(input, { presets: ['es2015'] }).code;
+```
+
+จากตัวอย่างเดิม  ก็สามารถเขียนใหม่ได้ดังนี้
+
+```js
+<!-- ไฟล์ index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+
+<!--  Babel (ใช้เป็นตัว transpiler)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.14.0/babel.min.js"></script>
+
+</head>
+<body>
+<h1 id="element1"></h1>
+<script type="text/babel">                  // ต้องเขียนกำกับ type = "text/babel"
+	
+	// ใช้ Template Strings ของ ES6 เขียนโค้ดจาวาสคริปต์
+	var input = `
+	class Chat{                             // class ไวยากรณ์ใหม่ของ ES6
+		constructor(message) {              // constructor ไวยากรณ์ใหม่ของ ES6
+			this.message = message;
+		}
+		say(){
+			let element = document.querySelector('#element1');
+			element.innerHTML = this.message;               
+		}
+	}       
+
+	let chat = new Chat("Hello, world!");   // let ไวยากรณ์ใหม่ของ ES6
+	chat.say();
+
+	// ตัวอย่างโค้ด ES7 ชุดนี้ยังรันได้เฉพาะบน Google Chrome
+	let array = ["A", "B", "C"];            // let ไวยากรณ์ใหม่ของ ES6
+	console.log(array.includes("A"));       // true    -- เมธอดของอาร์เรย์ที่เพิ่มเข้ามาใน ES7
+	`;
+
+	
+	var output = Babel.transform(input, { presets: ['es2015'] }).code; // คอมไฟล์ ES6 เป็น ES5
+	eval(output);	// ประมวลผล
+</script>
+</body>
+</html>
+```
+ซึ่งผลการทำงานจะเหมือนกับตัวอย่างก่อนๆ
 
 ### โหลดไฟล์ Traceur กับ Babel มาเก็บไว้ที่เครื่องแบบออฟไลน์
 
