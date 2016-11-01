@@ -286,7 +286,7 @@ import "./mylib.js";  	// อ้างไฟล์ .js
 
 #### Babel
 
-ต่อไปจะแสดงการเขียนจาวาสคริปต์บนเว็บเบราเซอร์ โดยใช้ Babel ทำตัวเป็น transpiler (ผลการทำงานจะเหมือนตัวอย่างตอนใช้ traceur )
+ต่อไปจะแสดงการเขียนจาวาสคริปต์บนเว็บเบราเซอร์ โดยใช้ Babel ทำตัวเป็น transpiler (ผลการทำงานจะเหมือนตัวอย่างตอนใช้ Traceur )
 
 ```js
 <!-- ไฟล์ index.html-->
@@ -374,7 +374,7 @@ C:\ES6>
 C:\ES6>npm install -save traceur 
 ```
 
-จะเห็นไฟล์ถูกโหลดเข้ามาได้แก่ traceur.js กับ BrowserSystem.js 
+จะเห็นไฟล์ถูกโหลดเข้ามาเก็บ ได้แก่ traceur.js กับ BrowserSystem.js 
 
 ```js
 C:\ES6\node_modules\traceur\bin
@@ -417,7 +417,7 @@ https://github.com/Daniel15/babel-standalone/releases
 
 #### Traceur
 
-เราสามารถใช้กระบวนท่าแปลงซอร์โค้ดจาก ES6 เป็น ES5 ด้วยมือตนเองก็ได้ ด้วยการเปิดคอมมานไลน์ขึ้นมา (ตัวอย่างจะใช้วินโดวส์) แล้วเรียกสคริปต์ traceur ซึ่งถ้าคุณทำตามตัวอย่างก่อนที่โหลดไฟล์ Traceur แบบออฟไลน์ ด้วยคำสั่ง npm install -save traceur ก็ให้ไปที่โฟลเดอร์ ...\node_modules\.bin ก็จะเห็นไฟล์สคริปดังตัวอย่าง
+เราสามารถใช้กระบวนท่าแปลงซอร์สโค้ดจาก ES6 เป็น ES5 ด้วยมือตนเองก็ได้ ด้วยการเปิดคอมมานไลน์ขึ้นมา (ตัวอย่างจะใช้วินโดวส์) แล้วเรียกสคริปต์ traceur ซึ่งถ้าคุณทำตามตัวอย่างก่อนที่โหลดไฟล์ Traceur แบบออฟไลน์ ด้วยคำสั่ง npm install -save traceur ก็ให้ไปที่โฟลเดอร์ ...\node_modules\ .bin ก็จะเห็นไฟล์สคริปดังตัวอย่าง
 
 ```js
 C:\ES6\node_modules\.bin
@@ -425,7 +425,7 @@ C:\ES6\node_modules\.bin
 			 |-- traceur.cmd			 
 ```
 
-จากไฟล์ mylib.js ในตัวอย่างก่อนหน้านี้ ที่มีโค้ดของ ES6 
+จากไฟล์ mylib.js ในตัวอย่างก่อนหน้านี้ (โค้ด ES6) 
 
 ```js
 C:\ES6>
@@ -436,11 +436,11 @@ C:\ES6>
 เราก็จะเรียกสคริปต์ traceur ให้คอมไฟล์ mylib.js เพื่อแปลงเป็น ES5 ดังนี้
 
 ```js
-D:\ES6\node_modules\.bin>traceur --out ../../out/mylib.js --script ../../mylib.js
+C:\ES6\node_modules\.bin>traceur --out ../../out/mylib.js --script ../../mylib.js
 ```
-(ถ้าติดตั้งด้วยคำสั่ง npm install -g traceur ก็ไม่ต้อง cd มาที่ C:\ES6\node_modules\.bin)
+(ถ้าติดตั้งด้วยคำสั่ง npm install -g traceur ก็ไม่ต้อง cd มาที่ C:\ES6\node_modules\ .bin)
 
-ผลลัพธ์ไฟล์ mylib.js ที่ถูกแปลงเป็น ES5 จะอยู่ที่โฟลเดอร์ out
+ผลลัพธ์ไฟล์ที่ถูกแปลงเป็น ES5 จะอยู่ที่โฟลเดอร์ out\mylib.js
 
 ```js
 C:\ES6>
@@ -450,7 +450,7 @@ C:\ES6>
     	 |-- mylib.js
 ```	
 
-ถ้าแอบไปเปิดไฟล์ที่แปลงโค้ดเป็น ES5 ก็จะมีหน้าตาดังนี้
+ถ้าแอบไปเปิดไฟล์ out\mylib.js ก็จะเห็นว่าโค้ดถูกแปลงเป็น ES5 เรียบร้อยดังนี้
 
 ```js
 var Chat = function() {
@@ -468,6 +468,7 @@ chat.say();
 var array = ["A", "B", "C"];
 console.log(array.includes("A"));
 ```
+
 จากตัวอย่างเดิม  ก็สามารถเขียนใหม่ได้ดังนี้
 
 ```js
@@ -476,16 +477,17 @@ console.log(array.includes("A"));
 <html>
 <head>
 
-<!--  Babel (ใช้เป็นตัว transpiler)-->
+<!--  ระบุตัว transpiler -->
 <script src="node_modules/traceur/bin/traceur-runtime.js"></script>
 
-
-
 </head>
+
 <body>
 <h1 id="element1"></h1>
+
 <!-- ไฟล์ .js ที่ถูกแปลงเป็น ES5 -->
 <script src="out/mylib.js"></script>
+
 </body>
 </html>
 ```
@@ -494,7 +496,7 @@ console.log(array.includes("A"));
 
 #### Babel
 
-และเช่นกัน เราสามารถใช้กระบวนท่าแปลงซอร์โค้ดจาก ES6 เป็น ES5 ด้วยมือตนเองก็ได้ โดยทำตามตัวอย่างจากเว็บต้นทางผู้สร้าง ก็โค้ดดิ่งตามนี้ 
+และเช่นกัน เราสามารถใช้กระบวนท่าแปลงซอร์สโค้ดจาก ES6 เป็น ES5 ด้วยมือตนเองก็ได้ โดยทำตามตัวอย่างจากเว็บต้นทางผู้สร้าง ก็ให้โค้ดดิ่งตามนี้ 
 
 ```js
 var input = 'const getMessage = () => "Hello World";';
@@ -515,7 +517,7 @@ var output = Babel.transform(input, { presets: ['es2015'] }).code;
 </head>
 <body>
 <h1 id="element1"></h1>
-<script type="text/babel">                  // ต้องเขียนกำกับ type = "text/babel"
+<script>                  // ไม่ต้องเขียนกำกับ type = "text/babel"
 	
 	// ใช้ Template Strings ของ ES6 เขียนโค้ดจาวาสคริปต์
 	var input = `
