@@ -1445,7 +1445,7 @@ function * generator() {}
 let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 ```
 
-## บทที่ 5 แนะนำ ES8
+## บทที่ 5 แนะนำ ES8 (ยังไม่เสร็จ)
 
 สิ่งที่คาดว่าจะเพิ่มเข้ามาใน ES8 (ECMAScript 2017) (มีนิดเดียว)
 
@@ -1457,9 +1457,15 @@ let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 * [1] หนังสือ “พัฒนาเว็บแอปพลิเคชั่นด้วย JavaScript” จะอธิบายถึงมาตรฐานตัวใหม่ ECMAScript 2015 หรือเรียกสั้น ๆ ว่า “ES6” หรือ “ES6 Harmony” โดยเล่มนี้ตีพิมพ์และจัดจำหน่ายโดยซีเอ็ด
 * [2] https://developer.mozilla.org/en-US/docs/Web/JavaScript/
 * [3] https://github.com/nzakas/understandinges6/blob/master/manuscript/B-ECMAScript-7.md
-* [4] https://tc39.github.io/ecma262/2016/
-* [5] https://github.com/google/traceur-compiler/wiki/Getting-Started
-* [6] https://github.com/babel/babel-standalone
+* [4] http://www.ecma-international.org/ecma-262/7.0/
+* [5] https://tc39.github.io/ecma262/
+* [6] https://github.com/google/traceur-compiler/wiki/Getting-Started
+* [7] https://github.com/babel/babel-standalone
+* [8] http://exploringjs.com/es6/
+* [9] https://leanpub.com/exploring-es2016-es2017/read
+* [10] https://leanpub.com/setting-up-es6/read#sec_es6-repls
+* [11] https://leanpub.com/ecmascript2015es6guide/read
+* [12] https://leanpub.com/understandinges6/read
 
 
 ## ทิ้งท้าย
