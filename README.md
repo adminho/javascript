@@ -635,7 +635,7 @@ D:\ES6>live-server
 
 เมื่อนั้นเว็บบราวเซอร์ที่ถูกตั้งไว้เป็นดีฟอลต์ ก็จะเด้งขึ้นมา และเปิดไฟล์ index.html อย่างอัตโนมัติ หรือถ้าเครื่องเรา Google Chrome ไม่ได้ตั้งเป็นดีฟอลต์ ก็ให้กรอก url ตรงๆ เป็น http://127.0.0.1:8080/ ตามรูป
 
-![Hello world es6 es7](images/chap01/run_withlive-server.png)
+![Hello world es6 es7](images/chap01/run_with_live-server.png)
 
 
 ### ตัวอย่างการเขียน ES6 กับ ES7 บน Node.js
