@@ -611,14 +611,6 @@ http://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)
 
 __วิธีที่ 3__
 
-ลองใช้เซิร์ฟเวอร์จำลอง จาก Node.js
-
-ก่อนอื่นให้ติดตั้งเซิร์ฟเวอร์ที่ว่า ก็คือ live-server ด้วยคำสั่งบน Node.js ดังนี้
-
-```js
-npm install -g live-server
-```
-
 จากไฟล์ index.html ที่มีปัญหาเวลาเปิด Google Chrome แล้วไม่ทำงาน
 
 ```js
@@ -627,10 +619,16 @@ C:\ES6>
     |-- mylib.js
 ```
 
-สั่งให้ live-server ทำงานก็ง่ายๆ ด้วยคำสั่งดังนี้
+ให้ลองใช้เซิร์ฟเวอร์จำลอง จาก Node.js แต่ก่อนอื่นจะให้ติดตั้งเซิร์ฟเวอร์ที่ว่า ก็คือ live-server ด้วยคำสั่ง npm ดังนี้
 
 ```js
-D:\ES6>live-server
+npm install -g live-server
+```
+
+จากนั้นก็ cd ไปที่ C:\ES6\ ต่อด้วยสั่งให้ live-server ทำการรัน index.html ด้วยคำสั่งง่ายๆ ดังนี้
+
+```js
+C:\ES6>live-server
 ```
 
 เมื่อนั้นเว็บบราวเซอร์ที่ถูกตั้งไว้เป็นดีฟอลต์ ก็จะเด้งขึ้นมา และเปิดไฟล์ index.html อย่างอัตโนมัติ หรือถ้าเครื่องเรา Google Chrome ไม่ได้ตั้งเป็นดีฟอลต์ ก็ให้กรอก url ตรงๆ เป็น http://127.0.0.1:8080/ ตามรูป
