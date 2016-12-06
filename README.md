@@ -560,6 +560,8 @@ var output = Babel.transform(input, { presets: ['es2015'] }).code;
 
 **วิธีการแก้ปัญหา**
 
+__วิธี1__
+
 สามารถทำได้ง่ายๆ เพียงแค่บอกให้เว็บเซิร์ฟเวอร์ เพิ่มค่าต่อไปนี้ลงไปใน HTTP Header (วิธีกำหนดค่านี้ ต้องดูที่คู่มือของเซิร์ฟเวอร์แต่ละเจ้าเอาเอง)
 
 ```js 
@@ -575,7 +577,9 @@ Access-Control-Allow-Origin: http://www.example.com http://test.example.com
 (ที่มา http://manit-tree.blogspot.com/2012/07/cross-origin-resource-sharing.html)
 
 
-แต่ถ้าเราไม่ได้เขียนเว็บ แล้วเทสบนเว็บเซิร์ฟเวอร์ อารมณ์ทดสอบเว็บบนเครื่องตัวเองแบบ local ก็ต้องเปิด Google chrome ด้วยท่าพิศดาร โดยปลดความปลอดภัยเรื่องนี้ออก เพื่อให้มันทำ CORS ได้
+__วิธีที่ 2__
+
+ถ้าเราไม่ได้เขียนเว็บ แล้วเทสบนเว็บเซิร์ฟเวอร์ อารมณ์ทดสอบเว็บบนเครื่องตัวเองแบบ local ก็ต้องเปิด Google chrome ด้วยท่าพิศดาร โดยปลดความปลอดภัยเรื่องนี้ออก เพื่อให้มันทำ CORS ได้
 
 บนวินโดวส์ก็ให้ไปที่คอมมานไลน์  แล้วพิมพ์คำสั่งตามนี้ เมื่อนั้น Google Chrome ก็จะเปิดขึ้นมา แล้วถึงเปิดไฟล์ HTML ตามทีหลัง
 
@@ -603,6 +607,36 @@ chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security "c:\ES
 ส่วนบน OSX กับ Linux ผมไม่มีเครื่องลองครับ จึงไม่กล้าเขียน ลองดูเพิ่มเติมได้ที่ 
 
 http://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)
+
+
+__วิธีที่ 3__
+
+ลองใช้เซิร์ฟเวอร์จำลอง จาก Node.js
+
+ก่อนอื่นให้ติดตั้งเซิร์ฟเวอร์ที่ว่า ก็คือ live-server ด้วยคำสั่งบน Node.js ดังนี้
+
+```js
+npm install -g live-server
+```
+
+จากไฟล์ index.html ที่มีปัญหาเวลาเปิด Google Chrome แล้วไม่ทำงาน
+
+```js
+C:\ES6>
+    |-- index.html
+    |-- mylib.js
+```
+
+สั่งให้ live-server ทำงานก็ง่ายๆ ด้วยคำสั่งดังนี้
+
+```js
+D:\ES6>live-server
+```
+
+เมื่อนั้นเว็บบราวเซอร์ที่ถูกตั้งไว้เป็นดีฟอลต์ ก็จะเด้งขึ้นมา และเปิดไฟล์ index.html อย่างอัตโนมัติ หรือถ้าเครื่องเรา Google Chrome ไม่ได้ตั้งเป็นดีฟอลต์ ก็ให้กรอก url ตรงๆ เป็น http://127.0.0.1:8080/ ตามรูป
+
+![Hello world es6 es7](images/chap01/run_withlive-server.png)
+
 
 ### ตัวอย่างการเขียน ES6 กับ ES7 บน Node.js
 
@@ -639,6 +673,7 @@ C:\ES6>
 รันไฟล์ test.js ผ่านทาง Node.js ด้วยความสั่งต่อไปนี้ ตามรูป
 
 ![node.js es6 es7](images/chap01/node.js_es6_es7.png)
+
 
 ## บทที่ 2 ทวน ES5 (มาตรฐานเก่า)
 
