@@ -635,6 +635,15 @@ C:\ES6>live-server
 
 ![Hello world es6 es7](images/chap01/run_with_live-server.png)
 
+++++++++++++++
+เสริมนิดหนึ่ง ถ้าใครใช้ Python ก็อาจใช้เซิร์ฟเวอร์จำลองได้ด้วยเช่นกัน อย่างกรณีผมใช้ Python 3 ก็จะพิมพ์คำสั่งดังนี้
+
+```js
+C:\ES6>python -m http.server 8080
+```
+
+จากนั้นก็เปิด Google Chrome ขึ้นมาโดยกรอก url เป็น http://127.0.0.1:8080/
+
 
 ### ตัวอย่างการเขียน ES6 กับ ES7 บน Node.js
 
