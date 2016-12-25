@@ -1496,6 +1496,7 @@ let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 * [12] https://leanpub.com/understandinges6/read
 * [13] https://github.com/nzakas/understandinges6/tree/master/manuscript
 * [14] https://github.com/sirisian/ecmascript-types
+* [15] http://exploringjs.com/es2016-es2017/
 
 
 ## ทิ้งท้าย
