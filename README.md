@@ -1489,7 +1489,7 @@ let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 * [5] https://tc39.github.io/ecma262/
 * [6] https://github.com/google/traceur-compiler/wiki/Getting-Started
 * [7] https://github.com/babel/babel-standalone
-* [8] http://exploringjs.com/es6/
+* [8] http://exploringjs.com/es6.html
 * [9] https://leanpub.com/exploring-es2016-es2017/read
 * [10] https://leanpub.com/setting-up-es6/read#sec_es6-repls
 * [11] https://leanpub.com/ecmascript2015es6guide/read
@@ -1497,7 +1497,6 @@ let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 * [13] https://github.com/nzakas/understandinges6/tree/master/manuscript
 * [14] https://github.com/sirisian/ecmascript-types
 * [15] http://exploringjs.com/es2016-es2017/
-
 
 ## ทิ้งท้าย
 
