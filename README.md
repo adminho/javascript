@@ -644,8 +644,6 @@ C:\ES6>python -m http.server 8080
 
 *** ทั้งนี้ Node.js เวอร์ชั่น 7 ขึ้นไปก็จะรองรับ ES6 ได้ 99%
 
-*** ส่วน ES7 ผมยังไม่ค่อยแน่ใจสักเท่าไร
-
 ```js
 class Chat{                 			// class ไวยากรณ์ใหม่ของ ES6
     constructor(message) {      		// constructor ไวยากรณ์ใหม่ของ ES6
