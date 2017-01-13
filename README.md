@@ -1482,6 +1482,7 @@ let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 * Async กับ await
 
 รายละเอียดหาอ่านเพิ่มได้ ในหนังสือแจกฟรีเล่มนี้นะครับ
+
 http://www.ebooks.in.th/ebook/40184/รีวีวฟรีเจอร์ใหม่ในจาวาสคริปต์_(JavaScript)_มาตรฐาน_ES7__ES8__(ECMAScript_2016_กับ_ECMAScript_2017)/
 
 ![Hello world es6 es7](images/chap05/cover_ES7_ES8.png)
