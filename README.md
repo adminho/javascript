@@ -1473,10 +1473,18 @@ let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 
 ## บทที่ 5 แนะนำ ES8 (ยังไม่เสร็จ)
 
-สิ่งที่คาดว่าจะเพิ่มเข้ามาใน ES8 (ECMAScript 2017) (มีนิดเดียว)
+สิ่งที่คาดว่าจะเพิ่มเข้ามาใน ES8 (ECMAScript 2017)
 
-* Object.values() 
-* Object.entries()
+* Object.entries() กับ  Object.values()
+* padStart() กับ padEnd()
+* Object.getOwnPropertyDescriptors()
+* การใช้คอมม่า (,)  ต่อท้ายในพารามิเตอร์ของฟังก์ชั่น ,ตอนเรียกใช้งานฟังก์ชั่น, ในอ็อบเจ็กต์ และอาเรย์
+* Async กับ await
+
+รายละเอียดหาอ่านเพิ่มได้ ในหนังสือแจกฟรีเล่มนี้นะครับ
+http://www.ebooks.in.th/ebook/40184/รีวีวฟรีเจอร์ใหม่ในจาวาสคริปต์_(JavaScript)_มาตรฐาน_ES7__ES8__(ECMAScript_2016_กับ_ECMAScript_2017)/
+
+![Hello world es6 es7](images/chap05/cover_ES7_ES8.png)
 
 ## อ้างอิง
 
