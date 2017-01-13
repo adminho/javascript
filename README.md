@@ -1471,7 +1471,7 @@ function * generator() {}
 let iterator = new generator(); 	// throws "TypeError: f is not a constructor"
 ```
 
-## บทที่ 5 แนะนำ ES8 (ยังไม่เสร็จ)
+## บทที่ 5 แนะนำ ES8
 
 สิ่งที่คาดว่าจะเพิ่มเข้ามาใน ES8 (ECMAScript 2017)
 
