@@ -9,7 +9,7 @@
 
 ## Use on browser
 
-Include library tesseract.js in HTML
+Include library __tesseract.js__ in HTML
  
 ```js
 <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
