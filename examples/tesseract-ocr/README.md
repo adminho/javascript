@@ -41,7 +41,7 @@ __imgObj__ is any ImageLike object.([see](https://github.com/naptha/tesseract.js
 
 __langValue__ is any property to config a language.([see](https://github.com/naptha/tesseract.js/blob/master/docs/tesseract_lang_list.md))
 
-### Detect language
+__Detect language__
 
 ```js
 Tesseract.detect(myImage)
