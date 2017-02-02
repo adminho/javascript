@@ -10,7 +10,7 @@
 
 [see](http://tesseract.projectnaptha.com/)
 
-## How to use on browser
+## Use on browser
 
 Include library tesseract.js in HTML
  
