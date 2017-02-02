@@ -39,7 +39,7 @@ Tesseract.recognize(imgObj, {
 
 __imgObj__ is any ImageLike object.([see](https://github.com/naptha/tesseract.js#imagelike))
 
-__langValue__ is any property to config a language. ([see](https://github.com/naptha/tesseract.js/blob/master/docs/tesseract_lang_list.md))
+__langValue__ is any property to config a language.([see](https://github.com/naptha/tesseract.js/blob/master/docs/tesseract_lang_list.md))
 
 ### Detect language
 
