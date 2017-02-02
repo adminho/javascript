@@ -20,6 +20,9 @@ Include library tesseract.js in HTML
 Tesseract.recognize(imgObj, {
 	lang: langValue    
 })
+.progress(function  (p) {
+	console.log('progress', p)
+})
 .then(function(result){	
 	console.log("Read the image success");		
 	/*To do something*/			
