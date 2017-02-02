@@ -106,6 +106,9 @@ $('#btn-create-text').click(function(){
 	Tesseract.recognize(imgObj, {
 		lang: langValue    
 	})
+	.progress(function  (p) {
+	    console.log('progress', p)
+	})
 	.then(function(result){	
 		console.log("Read the image success");		
 		display.html(result.text);			

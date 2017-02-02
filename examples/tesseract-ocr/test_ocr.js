@@ -1,5 +1,7 @@
-// command run on Node.js
-// node tes_ocr.js
+// First, must install the tesseract.js package with commands
+// > npm install tesseract.js --save
+// Then, command run on Node.js
+// > node tes_ocr.js
 let Tesseract = require('tesseract.js')
 let fs = require('fs')
 
