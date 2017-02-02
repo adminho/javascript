@@ -66,11 +66,9 @@ npm install tesseract.js --save
 
 I use a picture for testing from [wiki](https://en.wikipedia.org/wiki/Optical_character_recognition)
 
-[my source codes on Browser](index.html)
+[My source codes on Browser](index.html)
 
-[My source codes on Node.js](test_ocr.js)
-
-And run with this command
+[My source codes on Node.js](test_ocr.js) and run with this command
 
 ```js
 node test_ocr.js
