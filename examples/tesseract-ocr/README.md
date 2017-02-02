@@ -41,7 +41,7 @@ __imgObj__ is any ImageLike object.([see](https://github.com/naptha/tesseract.js
 
 __langValue__ is any property to config a language. ([see](https://github.com/naptha/tesseract.js/blob/master/docs/tesseract_lang_list.md))
 
-### Detect a language
+### Detect language
 
 ```js
 Tesseract.detect(myImage)
@@ -54,7 +54,7 @@ Tesseract.detect(myImage)
 
 ### Use on Node.js
 
-Install tesseract.js package  with npm
+Install __tesseract.js__ package  with __npm__
 
 ```js
 npm install tesseract.js --save
@@ -67,6 +67,7 @@ npm install tesseract.js --save
 I use a picture for testing from [wiki](https://en.wikipedia.org/wiki/Optical_character_recognition)
 
 [my source codes on Browser](index.html)
+
 [My source codes on Node.js](test_ocr.js)
 
 And run with this command
