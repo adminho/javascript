@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta Http-Equiv="Cache" content="no-cache">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+</head>
+
+<body>
+	<br/>
+	<div class="text-center">			
+		<p>เป็นตัวอย่างเว็บอย่างง่ายๆ เพื่อแสดงถึงการใช้งาน JavaScript ตามมาตรฐานใหม่ ES6 (ใช้ Babel) </p>
+		<p style="color:red;"> *** โค้ดนี้ผ่านการลองทดทดสอบบน Firefox, Google เท่านั้นนะครับ</p>
+	</div>
+	<hr/>
+	<div class="container-fluid">
+		<div class="row">	
+			<div class="text-center">				
+				<img id="preview" src="img/no-imgae-uploadfile.png" border="5"/>									
+			</div>
+		</div>
+		
+		<br/>		
+		<div class="row text-center">			
+			<div class="btn file-btn">
+				<input type="file" id="btn-upload">													
+			</div>		
+			<hr/>			
+		</div>			
+		
+		<br/>			
+		<div class="row text-center">
+			<div class="col-md-12" align="center">
+				<span class="label label-default">เลือกภาษา</span>
+				<select id="langList" >
+					<option value="eng" selected="selected">อังกฤษ</option>
+					<option value="tha">ไทย</option>					
+				</select>			
+				<input class="btn btn-success" type="button" value="คลิกที่นี้! ...เพื่ออ่านข้อความในรูป" id="btn-create-text">
+			<div>
+		</div>
+		
+		<div class="row text-center">		
+			<br/>
+			<div class="form-group">
+				<label for="comment">ผลลัพธ์:</label>
+				<textarea class="form-control" rows="5" id="btn-display-text" readonly></textarea>
+			</div>
+		<div>
+
+	</div>
+		
+	<div class="text-center">
+		<hr/>	
+    	<p>โค้ดตัวอย่างนี้ จะมีปัญหาเรื่อง Cross-origin resource sharing บน Google Chrome ...ถ้าเห็นว่ามันไม่ทำงาน ก็รบกวนดูลิงค์ข้างล่างนี้นะครับ  มีวิธีแก้เวลาเปิดด้วย Google Chrome</p>			  
+	  	<p><a href="https://github.com/adminho/javascript/blob/master/README.md#cross-origin-resource-sharing-cors">(หัวข้อ Cross-origin resource sharing)</a></p>	  	
+	</div>
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>		
+<script type="text/babel">
+$('#btn-upload').change(function(){	
+	// this is a uploaded file.
+	let imgObj = document.querySelector('#preview');
+	let uploadedFile = this;	
+	let file = uploadedFile.files[0];
+
+	if (file.files && file.files[0]) {				
+		console.log("No found uploaded file");				
+		imgObj.src = "img/no-imgae-uploadfile.png"; 
+		return;
+	}
+				
+	let reader  = new FileReader();
+	reader.addEventListener("load", function (e) {
+		imgObj.src = reader.result;			// show the uploaded file.		
+	}, false);
+
+	if (file) {
+		console.log("....Upload a file -> OK!");
+		reader.readAsDataURL(file);
+	}
+	
+	$('#display-text').empty();
+});
+
+$('#btn-create-text').click(function(){		
+	let imgObj = document.querySelector('#preview');
+	let createText = $('#btn-create-text');
+	createText.attr("disabled", true);
+	createText.val("....รอซักประเดี่ยว!  ....กำลังอ่านข้อความ");
+		
+	/* I comment this statement because sometime it is run slowly
+	Tesseract.detect(imgObj)
+	.then(function(result){
+		console.log("Language: ",result.script)
+	}).catch(function(err){
+		console.log("Read the image failed: ",err)
+	});*/
+	
+	let langValue = $('#langList').val();
+	let display = $('#btn-display-text');
+	display.empty();
+	
+	Tesseract.recognize(imgObj, {
+		lang: langValue    
+	})
+	.then(function(result){	
+		console.log("Read the image success");		
+		display.html(result.text);			
+	})
+	.catch(function(err){
+		console.log("Read the image failed");
+		display.empty();
+		display.html(err);			
+	})
+	.finally(function(resultOrError){		
+		console.log("Finally");
+		createText.attr("disabled", false);
+		createText.val("คลิกที่นี้! ...เพื่ออ่านข้อความในรูป");
+	});
+	
+});
+</script>
+
+</body>
+</html>
