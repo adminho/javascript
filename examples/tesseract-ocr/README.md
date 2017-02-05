@@ -52,6 +52,8 @@ Tesseract.detect(myImage)
 
 (then, progress, error and finally methods  can be used)
 
+[My source codes on Browser](index.html)
+
 ### Use on Node.js
 
 Install __tesseract.js__ package  with __npm__
@@ -62,18 +64,18 @@ npm install tesseract.js --save
 
 (requires node v6.8.0 or greater.)
 
-### My source codes 
+### Example code 1
 
 I use a picture for testing from [wiki](https://en.wikipedia.org/wiki/Optical_character_recognition)
-
-[My source codes on Browser](index.html)
 
 [My source codes on Node.js](test_ocr.js) and run with this command
 
 ```js
 node test_ocr.js
 ```
-	
+
+### Example code 2
+
 ## More example codes and API docs on GitHub.
 
 * https://github.com/naptha/tesseract.js#tesseractjs
