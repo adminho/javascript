@@ -128,7 +128,7 @@ class GrayDrawing extends Drawing {
 
 	// **************** Internal methods *****************
 	//////////////////////////////////////////////////////
-		
+	// Credit this source code: http://www.ajaxblender.com/howto-convert-image-to-grayscale-using-javascript.html	
 	_grayscaleImage(imgObj){ // Convert a picture to black and white that support with other browser (except IE)
 		let canvas = document.createElement('canvas');
 		let canvasContext = canvas.getContext('2d');
