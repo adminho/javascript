@@ -76,7 +76,7 @@ node test_ocr.js
 
 example output
 
-[example oupt node.js](example_output_nodejs.PNG)
+![example oupt node.js](example_output_nodejs.PNG)
 
 
 ## More example codes and API docs on GitHub.
