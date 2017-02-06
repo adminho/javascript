@@ -11,12 +11,12 @@
 
 Include library __tesseract.js__ in HTML
  
-```js
+```
 <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 ```
 ### Example code
 
-```js
+```
 Tesseract.recognize(imgObj, {
 	lang: langValue    
 })
@@ -43,7 +43,7 @@ __langValue__ is a property to config a language.([see](https://github.com/napth
 
 How to detect the language
 
-```js
+```
 Tesseract.detect(myImage)
 .then(function(result){
     console.log(result.script)
@@ -58,7 +58,7 @@ Tesseract.detect(myImage)
 
 Install __tesseract.js__ package  with __npm__
 
-```js
+```
 npm install tesseract.js --save
 ```
 
@@ -70,7 +70,7 @@ I use a picture for testing from [wiki](https://en.wikipedia.org/wiki/Optical_ch
 
 [My source codes on Node.js](test_ocr.js) and run with this command
 
-```js
+```
 node test_ocr.js
 ```
 
