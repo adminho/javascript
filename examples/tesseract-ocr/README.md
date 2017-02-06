@@ -1,4 +1,4 @@
-# How to use Tesseract.js
+# How to code with Tesseract.js
 
 ## What's Tesseract.js
 
