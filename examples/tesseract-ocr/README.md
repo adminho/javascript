@@ -3,7 +3,7 @@
 ## What's Tesseract.js
 
 * Tesseract.js is a pure javascript library for OCR ([Tesseract OCR engine.](https://github.com/tesseract-ocr/tesseract)) 
-* It gets words in almost any language (supports over 60 languages) out of images
+* It gets words out of images (supports over 60 languages) 
 * It can run either in a browser and Node.js.
 * Demo ([see](http://tesseract.projectnaptha.com/))
 
