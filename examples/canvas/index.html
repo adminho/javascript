@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<br/>
+	<div class="text-center">			
+		<p>เป็นตัวอย่างเว็บอย่างง่ายๆ เพื่อแสดงวิธีใช้งาน JavaScript ตามมาตรฐานใหม่ ES6 (ใช้ Babel) </p>
+		<p style="color:red;"> *** โค้ดนี้ผ่านการลองทดทดสอบบน Firefox, Google เท่านั้นนะครับ</p>
+	</div>	
+	<hr/>
+    
+	<div class="container-fluid">
+	
+		<div class="row">	
+			<div class="text-center">				
+				<img id="preview" src="img/no-imgae-uploadfile.png"/>									
+			</div>
+		</div>
+		
+		<br/>
+		<div class="row text-center">			
+			<div class="btn file-btn">
+				<input type="file" id="upload"/>													
+			</div>			
+		</div>			
+		<br/>	
+
+		<div id="btn-control" class="row" style="display: none">
+												
+			<div class="row text-center">
+				<hr/>			
+				<h3>ภาพผลลัพธ์</h3><br/>	
+				<form>
+					<h4>สามารถเลือกวิธีสร้างภาพแบบอื่นๆ ได้</h4>					
+    				<label class="checkbox-inline">
+      					<input type="radio" name="display" value="gray" checked="checked">สร้างภาพโทนสีเทาอย่างเดียว
+    				</label>
+    				<label class="checkbox-inline">
+      					<input type="radio" name="display" value="ribbon">สร้างภาพสีติดริบบิ้นสีดำ
+    				</label>
+    				<label class="checkbox-inline">
+      					<input type="radio" name="display" value="gray_ribbon">สร้างภาพโทนสีเทา และติดริบบิ้นสีดำ
+    				</label>					
+  				</form>		
+			</div>
+			<br/>
+
+			<div id="ribbon-disp" class="row text-center" style="display: none">								
+				<form>
+					<h4>เลือกภาพริบบิ้น</h4>					
+    				<label class="checkbox-inline">
+      					<input type="radio" name="ribbon_style" value="black_ribbon_1" checked="checked"> &nbsp; <img src="img/black_ribbon_top_left.png" width="30" height="30"/>
+    				</label>
+    				<label class="checkbox-inline">
+      					<input type="radio" name="ribbon_style" value="black_ribbon_2"> &nbsp; <img src="img/ribbon-black_68.png" width="30" height="30"/>
+					</label>    				
+  				</form>			
+				<br/>											
+				<form>
+					<h4>เลือกตำแหน่งที่จะติดริบบิ้น</h4>					
+    				<label class="checkbox-inline">
+      					<input type="radio" name="ribbon" value="top_left" checked="checked">ซ้ายมือบนสุด
+    				</label>
+    				<label class="checkbox-inline">
+      					<input type="radio" name="ribbon" value="top_right">ขวามือบนสุด
+    				</label>
+    				<label class="checkbox-inline">
+      					<input type="radio" name="ribbon" value="bottom_left">ซ้ายมือล่างสุด
+    				</label>
+					<label class="checkbox-inline">
+      					<input type="radio" name="ribbon" value="bottom_right">ขวามือล่างสุด
+    				</label>
+  				</form>		
+			</div>
+			<br/>
+
+			<div class="row text-center">																			
+				<input class="btn btn-success" type="button"  id= "createImg" value="กดสร้างรูปที่นี้!" style="display: none">				
+				<input class="btn btn-success" type="button"  id= "clearImg" value="ลบรูป">				
+			</div>				
+		</div>
+		
+		<br/>
+		<div id="pic-result-area" class="row text-center" style="display: none">
+			<div id="draw-img"></div>
+		</div>					
+	</div>
+		
+	<div class="text-center">
+		<hr/>	
+    	<p>โค้ดตัวอย่างนี้ จะมีปัญหาเวลาเปิดด้วย Google Chrome</p>
+		<p>ถ้าเห็นว่าไม่ทำงาน ก็รบกวนดูลิงค์ข้างล่างนี้นะครับ  มีวิธีแก้ เวลาเปิดด้วย Google Chrome</p>			  
+	  	<p><a href="https://github.com/adminho/javascript/blob/master/README.md#cross-origin-resource-sharing-cors">(หัวข้อ Cross-origin resource sharing)</a></p>	  	
+	</div>
+		
+	<!--  Babel (transpiler)-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>		
+	<script type="text/babel" src="js/drawing.js"></script>
+	<script type="text/babel" src="js/addEventToBtn.js"></script>
+</body>
+</html>
