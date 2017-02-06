@@ -1,4 +1,4 @@
-const drawer = new DrawingState("preview", "draw-img"); // const in ES6
+const drawer = new DrawingState("preview", "draw-img"); // const syntax in ES6
 
 // Upload a picture and show it
 $('#upload').change(function(){
