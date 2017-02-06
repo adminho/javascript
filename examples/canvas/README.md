@@ -2,7 +2,7 @@
 
 Example code for using convas to draw pricture over anther picture
 
-```js
+```
 grayImg.onload = () => {	
 	console.log("....loading first image");							
 				
