@@ -1,9 +1,9 @@
-# How to use Tesseract.js
+# How to code with Tesseract.js
 
 ## What's Tesseract.js
 
 * Tesseract.js is a pure javascript library for OCR ([Tesseract OCR engine.](https://github.com/tesseract-ocr/tesseract)) 
-* It gets words in almost any language (supports over 60 languages) out of images
+* It gets words out of images (supports over 60 languages) 
 * It can run either in a browser and Node.js.
 * Demo ([see](http://tesseract.projectnaptha.com/))
 
@@ -39,7 +39,7 @@ Tesseract.recognize(imgObj, {
 
 __imgObj__ is any ImageLike object.([see](https://github.com/naptha/tesseract.js#imagelike))
 
-__langValue__ is any property to config a language.([see](https://github.com/naptha/tesseract.js/blob/master/docs/tesseract_lang_list.md))
+__langValue__ is a property to config a language.([see](https://github.com/naptha/tesseract.js/blob/master/docs/tesseract_lang_list.md))
 
 How to detect the language
 
@@ -76,7 +76,7 @@ node test_ocr.js
 
 example output
 
-[example oupt node.js](example_output_nodejs.PNG)
+![example oupt node.js](img/example_output_nodejs.PNG)
 
 
 ## More example codes and API docs on GitHub.
