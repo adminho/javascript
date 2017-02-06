@@ -64,6 +64,12 @@ npm install tesseract.js --save
 
 (requires node v6.8.0 or greater.)
 
+Use it:
+
+```
+let Tesseract = require('tesseract.js')
+```
+
 ### Example code 1
 
 I use a picture for testing from [wiki](https://en.wikipedia.org/wiki/Optical_character_recognition)
