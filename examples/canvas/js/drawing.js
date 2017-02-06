@@ -177,7 +177,7 @@ class GrayDrawing extends Drawing {
 	drawImageToCanvas(imgObj){			
 		let grayImg = new Image();						
 						
-		grayImg.onload = () => { 	// Use arrow function to bind this, super	at here
+		grayImg.onload = () => { 	// Use arrow function to bind this, super at here
 					
 			let canvas = document.createElement('canvas');							
 			let canvasContext = canvas.getContext("2d");
@@ -208,7 +208,7 @@ class RibbonDrawing extends Drawing {
 		// initialize variables in ES6
 		let {ribbonSrc, xRibbon, yRibbon} = this.ribbonData.getData();	
 
-		ribbonImg.onload = () => {		//  Use arrow function to bind this, super	at here
+		ribbonImg.onload = () => {		//  Use arrow function to bind this, super at here
 				
 			let canvas = document.createElement('canvas');							
 			let canvasContext = canvas.getContext("2d");
@@ -241,7 +241,7 @@ class GrayRibbonDrawing extends GrayDrawing {
 		// initialize variables in ES6
 		let {ribbonSrc, xRibbon, yRibbon} = this.ribbonData.getData();
 
-		grayImg.onload = () => {			//  Use arrow function to bind this, super	at here
+		grayImg.onload = () => {			//  Use arrow function to bind this, super at here
 			console.log("....loading first image");							
 				
 			ribbonImg.onload = () => {		// Use arrow function to this, super at here
@@ -260,11 +260,11 @@ class GrayRibbonDrawing extends GrayDrawing {
 				super._addCanvasToDiv(canvas);				
 			};							
 			
-			ribbonImg.src = ribbonSrc;				// โหลดภาพริบบิ้นสีดำ			// โหลดภาพริบบิ้นสีดำ
+			ribbonImg.src = ribbonSrc;				
 		};			
 			
 
-		grayImg.src = super._convertToGrayImage(imgObj); 	// โหลดภาพโทนสีเทา 
+		grayImg.src = super._convertToGrayImage(imgObj); 	// Load picture 
 	}
 }
 
