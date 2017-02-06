@@ -74,7 +74,10 @@ I use a picture for testing from [wiki](https://en.wikipedia.org/wiki/Optical_ch
 node test_ocr.js
 ```
 
-### Example code 2
+example output
+
+[example oupt node.js](example_output_nodejs.PNG)
+
 
 ## More example codes and API docs on GitHub.
 
