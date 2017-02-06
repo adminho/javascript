@@ -1,6 +1,6 @@
-const drawer = new DrawingState("preview", "draw-img"); // const ไวยากรณ์ใหม่ใน ES6
+const drawer = new DrawingState("preview", "draw-img"); // const in ES6
 
-// อัพโหลดรูปภาพ และแสดงออกมา
+// Upload a picture and show it
 $('#upload').change(function(){
 	// this is a uploaded file.
 	let imgObj = document.querySelector('#preview');
@@ -61,7 +61,7 @@ $('input:radio[name=display]').change(function(){
 });	
 
 $('input:radio[name=ribbon_style]').change(function(){		
-	drawer.setRibbionStyle(this.value);		// Now, stye are "black_ribbon_1" and "black_ribbon_2"
+	drawer.setRibbionStyle(this.value);		// Now, style are "black_ribbon_1" and "black_ribbon_2"
 	drawer.setTopLeftRibbon();	
 	drawer.drawImage();	
 	turnOffCreatImg();
@@ -94,13 +94,13 @@ $('input:radio[name=ribbon]').change(function(){
 	turnOffCreatImg();	
 });	
 
-// กดสร้างรูปภาพ
+// Create a image
 $('#createImg').click(function(){
 	drawer.drawImage();		
 	turnOffCreatImg();	
 });		
 
-// กดลบรูปภาพ
+// Delete a image
 $('#clearImg').click(function(){
 	drawer.clearImage();
 	turnOnCreatImg();
