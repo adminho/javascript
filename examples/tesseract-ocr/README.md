@@ -1,4 +1,4 @@
-# How to code with Tesseract.js
+# Example read words from Image with Tesseract.js
 
 ## What's Tesseract.js
 
@@ -90,5 +90,6 @@ example output
 * https://github.com/naptha/tesseract.js#tesseractjs
 
 ##References
+
 * https://github.com/naptha/tesseract.js#tesseractjs
 * http://tesseract.projectnaptha.com/
