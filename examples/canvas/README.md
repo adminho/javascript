@@ -25,7 +25,7 @@ grayImg.onload = () => {
 };			
 ```
 
-__Credit: pictures of ribbon__
+__Credit: pictures of ribbons__
 
 * https://blackribbon.nuuneoi.com/
 * https://www.facebook.com/jibbazee/posts/10153967020642895
