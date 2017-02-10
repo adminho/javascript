@@ -1,4 +1,4 @@
-# Example read words from Image with Tesseract.js
+# Example read words from Images with Tesseract.js
 
 ## What's Tesseract.js
 
