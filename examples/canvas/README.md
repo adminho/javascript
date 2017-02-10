@@ -1,6 +1,6 @@
 # Convas example
 
-Example codes for using convas to draw pricture over anther picture
+Example code for using convas to draw pricture over anther picture
 
 ```
 grayImg.onload = () => {	
