@@ -30,5 +30,5 @@ __Credit: pictures of ribbon__
 * https://blackribbon.nuuneoi.com/
 * https://www.facebook.com/jibbazee/posts/10153967020642895
 
-and 'I borrowed some code from'
+and `I borrowed some code from`
 * http://www.ajaxblender.com/howto-convert-image-to-grayscale-using-javascript.html	
