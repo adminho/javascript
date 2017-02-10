@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/calendar.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<br/>
+	<div class="text-center">			
+		<p>เป็นตัวอย่างเว็บอย่างง่ายๆ เพื่อแสดงวิธีใช้งาน  JavaScript ตามมาตรฐานใหม่ ES6 (ใช้ Babel) </p>
+		<p style="color:red;"> *** โค้ดนี้ผ่านการลองทดทดสอบบน Firefox, Google เท่านั้นนะครับ</p>
+	</div>
+	<hr/>
+	<div class="container-fluid">		
+		<div class="row">
+			<div class="col-md-12" align="center">
+				<span class="label label-default">เดือน</span>
+				<select id="monthList"></select>
+				<span class="label label-default">ปี ค.ศ.</span>
+				<select id="yearList"></select>
+				<span class="label label-default">ระบบตัวเลข</span>
+				<select id="sytemNumList" >
+					<option value="2">เลขฐาน 2</option>
+					<option value="10">เลขฐาน 10</option>
+					<option value="16">เลขฐาน 16</option>
+				</select>
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-md-12" id="calendar_one"></div>		
+		</div>	
+	</div>
+
+	<!--  Babel (using for transpiler)-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.14.0/babel.min.js"></script>
+	<script type="text/babel" src="js/templateCal.js"></script>
+	<script type="text/babel" src="js/calendar.js"></script>
+	<script type="text/babel" src="js/addEventToBtn.js"></script>
+
+	<div class="text-center">
+		<hr/>	
+    	<p>โค้ดตัวอย่างนี้ จะมีปัญหาเวลาเปิดด้วย Google Chrome</p>
+		<p>ถ้าเห็นว่าไม่ทำงาน ก็รบกวนดูลิงค์ข้างล่างนี้นะครับ  มีวิธีแก้ เวลาเปิดด้วย Google Chrome</p>			  
+	  	<p><a href="https://github.com/adminho/javascript/blob/master/README.md#cross-origin-resource-sharing-cors">(หัวข้อ Cross-origin resource sharing)</a></p>	  	
+	</div>
+	
+</body>
+</html>
