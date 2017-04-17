@@ -1,24 +1,25 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script>
 function printContent(element){
-	var restorepage = document.body.innerHTML;
-	var printcontent = document.getElementById(element).innerHTML;
-	document.body.innerHTML = printcontent;
+	var oldPage = document.body.innerHTML;	
+	document.body.innerHTML = document.getElementById(element).innerHTML;
 	window.print();
-	document.body.innerHTML = restorepage
+	document.body.innerHTML = oldPage
 }
 </script>
 </head>
+
 <body>
-<h1>My page<h1>
+<h1>Print example<h1>
 <button onclick="window.print()">Print all page</button>
 <hr/>
-<div id='div1'>Display content 2...</div>
-<button onclick="printContent('div1')">Print content 2</button>
+<div id='printarea_1'>Display content 1</div>
+<button onclick="printContent('printarea_1')">Print content 1</button>
 <hr/>
-<div id='div2'>Display content 3...</div>
-<button onclick="printContent('div2')">Print content 3</button>
+<div id='printarea_2'>Display content 2</div>
+<button onclick="printContent('printarea_2')">Print content 2</button>
 </body>
 </html>
