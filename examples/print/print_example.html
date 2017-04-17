@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script>
+function printContent(element){
+	var restorepage = document.body.innerHTML;
+	var printcontent = document.getElementById(element).innerHTML;
+	document.body.innerHTML = printcontent;
+	window.print();
+	document.body.innerHTML = restorepage
+}
+</script>
+</head>
+<body>
+<h1>My page<h1>
+<button onclick="window.print()">Print all page</button>
+<hr/>
+<div id='div1'>Display content 2...</div>
+<button onclick="printContent('div1')">Print content 2</button>
+<hr/>
+<div id='div2'>Display content 3...</div>
+<button onclick="printContent('div2')">Print content 3</button>
+</body>
+</html>
