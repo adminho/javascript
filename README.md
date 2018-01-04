@@ -1,4 +1,4 @@
-# นี้มันปี 2016 แล้ว มาเรียนรู้ JavaScript ยุคสมัยใหม่กันเถอะ! 
+# มาเรียนรู้ JavaScript ยุคสมัยใหม่กันเถอะ! 
 
 ![cover](images/Introduction3.png)
 
@@ -846,8 +846,6 @@ function myFunction(num){
 
 ## บทที่ 3 แนะนำ ES6
 
-(บทนี้ ยังไม่เสร็จดีครับ)
-
 ### 3.1 การประกาศตัวแปร และการกำหนดค่า
 
 #### การประกาศตัวแปรแบบ let
@@ -1306,13 +1304,12 @@ let m = new  Multiplying(20,10);
 console.log(m.multiply());		// "The result is 200" 
 ```
 
-(บทนี้ ยังไม่เสร็จดีครับ)
-
 ### 3.7 Collection
 ### 3.8 Iterator กับ Generator
 ### 3.9 Meta Programming
 ### 3.10 Module
 ### 3.11 อื่นๆ
+[อ่านเพิ่มได้ในหนังสือ]( https://www.se-ed.com/product/พัฒนาเว็บแอปพลิเคชั่นด้วย-JavaScript.aspx?no=9786160825394)
 
 ## บทที่ 4 แนะนำ ES7
 
