@@ -145,3 +145,168 @@ __ตัวอย่าง 6__
 ```js
 console.log(Number.MIN_VALUE);   		//5e-324 (เป็นค่าโดยประมาณ)
 ```
+
+## สตริง
+
+__ตัวอย่าง 1__
+```js
+"Learning JavaScript"		
+'Learning JavaScript'
+```
+
+__ตัวอย่าง 2__
+```js
+// ใช้ \" อยู่ภายในสตริง ส่วนเครื่องหมาย ' สามารถเขียนอยู่ในสตริงได้เลย
+console.log("...\"Learning\" 'JavaScript'...");	// ..."Learning" 'JavaScript'...
+// ใช้ \' อยู่ภายในสตริง ส่วนเครื่องหมาย " สามารถเขียนอยู่ในสตริงได้เลย
+console.log('..."Learning" \'JavaScript\'...');	//  ..."Learning" 'JavaScript'...	
+```
+
+__ตัวอย่าง 3__
+```js
+var str= "line1\
+line2\
+line3";
+console.log(str);	// line1line2line3
+```
+
+__ตัวอย่าง 4__
+```js
+console.log("1234567890".length);	 // 10
+```
+
+
+## โอเปอเรเตอร์ทางคณิตศาสตร์ 
+__ตัวอย่าง 1__
+```js
+console.log(true + 0);        // ได้ผลลัพธ์เป็น 1 เพราะ true จะถือว่ามีค่าเป็น 1
+console.log(false + false);   // ได้ผลลัพธ์เป็น 0 เพราะ false จะถือว่ามีค่าเป็น 0
+console.log(100 - true);      // 99
+console.log(true * 30);       // 30
+console.log(true  / 2);       // 0.5
+console.log(true %10);        // 1
+console.log(+true);           // 1
+console.log(-false);          // -0
+var a = false,  b=true; 
+console.log(++a);	          // 1     
+console.log(--b);             // 0
+```
+
+__ตัวอย่าง 2__
+```js
+console.log(NaN + 30);        // NaN
+console.log(NaN - 30);        // NaN
+console.log(NaN * 30);        // NaN
+console.log(NaN / 30);        // NaN
+console.log(NaN % 30);       // NaN
+console.log(+NaN);           // NaN
+console.log(-NaN);           // NaN
+var x = NaN; 
+console.log(++x);             // NaN
+console.log(--x);             // NaN
+```
+
+__ตัวอย่าง 3__
+```js
+console.log(Infinity * 0);    // NaN
+console.log(Infinity * 1);    // Infinity
+console.log(Infinity * Infinity);   // Infinity
+console.log(Infinity * -Infinity);  // -Infinity
+console.log(Infinity / 0);          // Infinity
+```
+
+## โอเปอเรเตอร์ที่ใช้กำหนดค่าให้กับตัวแปร
+```js
+var a = 20;		
+a +=true;     	// true มีค่าเป็น 1
+console.log(a);	// 21
+a *=NaN;
+console.log(a);	// NaN
+```
+
+
+## โอเปเรอเตอร์แบบตรรกะ 
+```js
+console.log(true || true);		// true	(เงื่อนไข short circuit)
+console.log(true || false);	// true	(เงื่อนไข short circuit)
+console.log(false || true);	// true	
+console.log(false || false);	// false
+console.log(true && true);		// true
+console.log(true && false);	// false
+console.log(false && true);	// false	(เงื่อนไข short circuit)
+console.log(false && false);	// false	(เงื่อนไข short circuit)
+console.log(!true);			// false
+console.log(!false);		// true
+```
+
+## โอเปอเรเตอร์ระหว่างบิต
+__ตัวอย่าง 1__
+```js
+var a = 12;				// 1100 (เลขฐานสอง)
+var b = 5;				// 0101 (เลขฐานสอง)
+var c = a & b;			// 0100 (เลขฐานสอง)
+console.log(c.toString(2)); 	// 100 (เลขฐานสอง)
+console.log(c);			// 4
+console.log(12 & 5);		// 4
+```
+
+__ตัวอย่าง 2__
+```js
+var a = 12;				// 1100 
+var b = 5;				// 0101 
+var c = a | b;			// 1101
+console.log(c.toString(2));	// 1101
+console.log(c);			// 13
+console.log(12 | 5);		// 13
+```
+
+__ตัวอย่าง 3__
+```js
+var a =12;				// 1100 
+var b= 5;				// 0101 
+var c = a ^ b;			// 1001
+console.log(c.toString(2));	// 1001
+console.log(c);			// 9
+console.log(12 ^ 5);		// 9
+```
+
+__ตัวอย่าง 4__
+```js
+var a= 9;			 // 00000000000000000000000000001001
+var b = ~a;			 // 11111111111111111111111111110110 (1’s Complement)
+console.log(b);		 // -10 
+console.log(~9);		 // -10
+```
+
+__ตัวอย่าง 5__
+```js
+var a = 9; 			// 00000000000000000000000000001001
+var c = a << 2;		// เลื่อนบิตจากขวามือไปทางซ้ายมือ 2 ตำแหน่ง
+				// 00000000000000000000000000100100
+console.log(c);		// 36
+console.log(9 << 2);	// 36
+```
+
+__ตัวอย่าง 6__
+```js
+var a = 9; 			// 00000000000000000000000000001001
+var c = a >> 2;		// เลื่อนบิตจากซ้ายมือไปทางขวามือ 2 ตำแหน่ง
+				// 00000000000000000000000000000010
+console.log(c);		// 2
+console.log(9 >> 2);	// 2
+```
+
+__ตัวอย่าง 7__
+```js
+-9;                // 11111111111111111111111111110111 (เลขฐานสอง)
+-9 >> 2;    // 11111111111111111111111111111101 (เลขฐานสอง) = -3 (เลขฐานสิบ)
+```
+
+__ตัวอย่าง 8__
+```js
+var a = 9; 			// 00000000000000000000000000001001
+var c = a >>> 2;		// เลื่อนบิตจากซ้ายมือไปทางขวามือ 2 ตำแหน่ง พร้อมเติมเลข 0 ที่บิตด้านหน้าสุด
+				// 00000000000000000000000000000010
+console.log(c);		// 2
+console.log(9 >>> 2);	// 2
+```
