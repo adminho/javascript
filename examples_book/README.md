@@ -219,7 +219,6 @@ foo = true;  		// foo เปลี่ยนมาเก็บข้อมูล�
 
 
 ### null กับ undefined
-__ตัวอย่าง 1__
 ```js
 console.log(null === undefined) 	// false
 console.log(null == undefined) 	// true
