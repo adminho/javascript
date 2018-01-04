@@ -310,3 +310,36 @@ var c = a >>> 2;		// เลื่อนบิตจากซ้ายมือ�
 console.log(c);		// 2
 console.log(9 >>> 2);	// 2
 ```
+
+
+## โอเปอเรเตอร์ typeof
+```js
+console.log(typeof true);			// "boolean"
+console.log(typeof false); 		// "boolean"		
+console.log(typeof -0.13); 		// "number"
+console.log(typeof NaN); 			// "number"
+console.log(typeof Infinity); 		// "number"
+console.log(typeof undefined); 		// "undefined"
+console.log(typeof ''); 			// "string"
+console.log(typeof "Hi");			// "string"
+console.log(typeof (typeof 100) ); 	// "string"
+console.log(typeof null ); 		// "object"
+console.log(typeof {x: 1, y: 2});		// "object" 
+console.log(typeof [1, 2]); 		// "object"
+console.log(typeof function(){});		// "function"
+console.log(typeof Math.sqrt);		// "function"
+console.log(typeof class C {});		// "function" 
+console.log(typeof Symbol());		// "symbol"
+```
+
+## โอเปอเรเตอร์วงเล็บ
+```js
+var a = 1 + 2 * 3 + 5; 
+// จะเสมือนเขียนเป็น var a = 1 + (2 * 3) + 5;
+console.log(a); // 12
+```
+
+```js
+var a = (1 + 2) * (3 + 5); 
+console.log(a); // 24
+```
