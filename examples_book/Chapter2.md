@@ -25,7 +25,6 @@ var x = 10;
 </html>
 ```
 
-### ตัวอย่าง 2
 ```js
 console.log("Hello world", 122, 333.333); // "Hello world 122 333.333"
 ```
