@@ -590,6 +590,7 @@ function myFunction(num){
 // สามารถมองเห็นตัวแปร value ได้ หลังจากประโยค if …else ทำงานเสร็จสิ้น
 	console.log(value);			
 }
+```
 
 ```js
 function myFunction(num){
