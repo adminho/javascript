@@ -307,3 +307,450 @@ console.log(a); // 12
 var a = (1 + 2) * (3 + 5); 
 console.log(a); // 24
 ```
+
+## โอเปอเรเตอร์คอมม่า 
+```js
+var a = 1, b = 2;
+var x = (1+34, a+=2, b*=10, b+1);
+console.log(x);	// 21
+```
+
+```js
+var a = void 12;
+console.log(a);			// undefined
+console.log(Math.ceil(4.4));	// 5
+console.log(void Math.ceil(4.4)); // undefined  	
+var b = 1;
+console.log(void (++b)); 		// undefined  
+console.log(b);			// แสดงค่าออกมาเป็น 2 เพราะตัวแปร b ถูกบวกเพิ่มไป 1 ค่า
+```
+
+## อาร์เรย์
+```js
+[1, 1, 1, true, "Array"];	// อาร์เรย์
+```
+
+```js
+var a = ["a", "b", "c", "d", "e"];
+console.log(typeof a);				// "object"
+console.log(a[0], a[1], a[2], a[3], a [4]);	// "a b c d e"
+```
+
+```js
+var array = [];	// ประกาศเป็นอาร์เรย์ว่าง
+array[0] = 1;		
+array[1] = 2;	
+```
+
+```js
+var array = [1, 2, 3, 4, 5];
+console.log(array.length); 	// 5
+```
+
+```js
+var array = [1, 2, 3, 4, 5];
+console.log(array.length); // 5
+array.length = 7;		// เพิ่มขนาดอาร์เรย์จาก 5 เป็น 7 
+console.log(array);		// [ 1, 2, 3, 4, 5, <2 empty slots> ]
+console.log(array.length); // 7
+array[9] = 100;		
+console.log(array);		// [ 1, 2, 3, 4, 5, <4 empty slots>, 100 ]
+console.log(array.length); // 10
+```
+
+## การประกาศฟังก์ชั่น
+```js
+function function_Name (พารามิเตอร์1,  พารามิเตอร์2, …, พารามิเตอร์N) 
+{
+// ซอร์สโค้ดภายในบอดี้ของฟังก์ชั่น
+return [value]; 
+// จะมีหรือไม่มีประโยค return ก็ได้ 
+// ส่วนค่า value หลังคำว่า return จะมีหรือไม่มีก็ได้
+}
+```
+
+```js
+function calculate(param1, param2){
+return param1 * param2;
+}
+```
+
+```js
+var result = calculate(10, 2);	
+console.log(result);		// 20
+```
+
+```js
+function calculate(){
+return 20;
+}
+var result = calculate();		
+console.log(result);		// 20
+```
+
+## ประโยค return
+```js
+function myFunction (){
+	return 1;
+	console.log("myFunction");// บรรทัดนี้เส้นทางการทำงานของโปรแกรมจะมาไม่ถึง
+}
+var result = myFunction();		
+console.log(result);		// 1
+```
+
+```js
+function myFunction (){
+	return;
+}
+var result = myFunction(); 	
+console.log(result);		// undefined
+```
+
+```js
+function myFunction (){
+console.log("myFunction");
+// จะเสมือนมีประโยค return undefined; วางไว้ตำแหน่งสุดท้าย ก่อนฟังก์ชั่นจบการทำงาน
+}
+var result = myFunction();	// "myFunction"
+console.log(result);	// undefined
+```
+
+## ฟังก์ชั่นไร้ชื่อ 
+```js
+function (param1,param2){
+return param1 * param2;
+}
+```
+
+## นิพจน์ฟังก์ชั่น
+```js
+var calculate = function (param1,param2){
+return param1 * param2;
+}
+console.log(calculate(10, 2)); 	// 20
+calculate = 100; 			// ตัวแปร calculation สามารถแก้ไขให้เป็นค่าอื่นได้
+console.log(calculate);		// 100
+```
+
+```js
+var calculate = function calc2(param1,param2){
+return param1 * param2;
+}
+console.log(calculate(10,2)); 		// 20
+```
+
+## ฟังก์ชั่นคอลแบ็ค
+```js
+function sayHi(){
+console.log("Hi");
+}
+function sayBye(){
+console.log("Bye");
+}
+
+function say(func){
+	func();	// เรียกฟังก์ชั่นให้ทำงาน
+}
+say(sayHi);		// "Hi" 
+say(sayBye);		// "Bye"
+```
+
+```js
+function say(func){
+	console.log("Say...");
+function sayHi(){	
+      console.log("Hi");
+} 
+return sayHi;		// รีเทิร์นฟังก์ชั่น
+} 
+var hi = say();	// "Say..."
+hi();			// "Hi"
+```
+
+```js
+function say(func){
+	console.log("Say...");
+	return  function(){		// รีเทิร์นฟังก์ชั่นไร้ชื่อ
+      console.log("Hi");
+} 
+} // สิ้นสุดการประกาศฟังก์ชั่น
+var hi = say();	// "Say..."
+hi();			// "Hi"
+```
+
+## อ็อบเจ็กต์ arguments
+```js
+function myFunction(param1, param2){
+console.log(param1, param2);
+}
+myFunction();				// undefined undefined
+myFunction(100);			// 100	undefined
+myFunction(100,200);		// 100 200
+myFunction(100,200,300,400);	// 100 200
+```
+
+```js
+function myFunction (param1, param2){
+console.log(arguments);
+}
+myFunction(100,200,300,400);	// [100, 200, 300, 400]
+```
+
+```js
+function myFunction(param1,param2){ // ฟังก์ชั่นนี้ไม่เคยถูกเรียกใช้			
+	console.log("function1 value:", param1, param2); 
+}
+myFunction(100, 200);   		// เรียกใช้ฟังก์ชั่นที่ประกาศอยู่ด้านล่าง
+function myFunction(param){ 	// จะโอเวอร์ไรด์ทับฟังก์ชั่นที่ประกาศไว้ก่อนหน้านี้
+	console.log("function2 value:", param);
+}
+myFunction(100);     	
+myFunction(100, 200);  	
+/* แสดงผลลัพธ์เป็น
+"function2 value: 100"
+"function2 value: 100"
+"function2 value: 100" */
+```
+
+## ขอบเขตการมองเห็นของตัวแปร
+```js
+if(true){
+var a = 1;		// a มีขอบเขตการมองเห็นแบบโกลบอล
+}
+{
+var b = 2;		// b มีขอบเขตการมองเห็นแบบโกลบอล
+}
+console.log(a, b);		//  1 2
+```
+
+```html
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+var a = "Hi";    		// a มีขอบเขตการมองเห็นแบบโกลบอล
+function myFunction() {
+    	var a = "Bye"; 	// a มีขอบเขตการมองเห็นแบบโลคอล เพราะประกาศภายใต้ฟังก์ชั่น
+		console.log(a);	
+}
+myFunction();			// "Bye"
+console.log(a);		// "Hi"
+console.log(window.a);	// "Hi"
+</script>
+</body>
+</html>
+```
+
+```js
+console.log(NaN, undefined, Infinity);     // NaN undefined Infinity
+console.log(window.NaN, window.undefined, window.Infinity); // NaN undefined Infinity
+// ถ้ารันอยู่ใน Node.js
+// console.log(global.NaN,  global.undefined,  global.Infinity);	    
+// NaN undefined Infinity
+```
+
+## ฟังก์ชั่นซ้อนฟังก์ชั่น
+```js
+function outerFunc() {
+  var value = 0;
+  function innerFunc() {
+    console.log(++value);
+  }
+  return innerFunc;
+};
+var func1 = outerFunc();		// บรรทัด a
+func1();	// 1
+func1();	// 2
+
+var func2 = outerFunc();		// บรรทัด b
+func2();	// 1
+func2();	// 2
+```
+
+## Hoist
+```js
+var value = 100;	
+```
+
+```js
+function myFunction(num){
+	// สามารถมองเห็นตัวแปร value		
+	console.log(value);			// undefined
+
+	if(num > 10) {
+		var value = num*10;		// ประกาศตัวแปร value ที่ตรงนี้ แต่มองเห็นได้ทั่วฟังก์ชั่น
+		/* ซอร์สโค้ด */
+	} else {
+		// ถ้าเงื่อนไขประโยค if เป็นเท็จ ก็จะเข้ามาทำงานที่ else 
+ 	// ซึ่งจะเห็นตัวแปร value มีค่าเป็น undefined	
+		console.log(value);		// undefined
+	}			
+// สามารถมองเห็นตัวแปร value ได้ หลังจากประโยค if …else ทำงานเสร็จสิ้น
+	console.log(value);			
+}
+
+```js
+function myFunction(num){
+	var value; 			// ประกาศตัวแปร value โดยไม่มีค่าเริ่มต้น จึงทำให้มีค่าเป็น undefined
+console.log(value);		// undefined
+	if(num > 10) {
+		value = num*10;	// บรรทัดนี้เป็นเพียงการกำหนดค่าให้กับตัวแปร value
+		/* ซอร์สโค้ด */
+	} else {
+       console.log(value);	// undefined
+	}	
+	console.log(value);		
+}
+```
+
+```js
+// สามารถมองเห็นตัวแปร value 
+console.log(value); 	// undefined
+if(true) {
+var value = 100;	// ประกาศตัวแปรแบบ var
+}
+console.log(value);		// 100 
+```
+
+```js
+var value; 			// ประกาศตัวแปร value โดยไม่มีค่าเริ่มต้น จึงทำให้มีค่าเป็น undefined
+console.log(value); 	// undefined
+if(true) {
+	value = 100;		// บรรทัดนี้เป็นเพียงการกำหนดค่าให้กับตัวแปร value
+}
+console.log(value);		// 100 
+```
+
+```js
+// มองเห็นฟังก์ชั่นก่อนการประกาศใช้งาน
+myFunction(); 	// "Hoisted"
+function myFunction(){
+console.log("Hoisted");
+}
+
+myFunction();		// "Hoisted"
+```
+
+```js
+function outerFunc() {
+  innerFunc();	// มองเห็นฟังก์ชั่นก่อนการประกาศใช้งาน
+  function innerFunc() {  
+    console.log("inner function");
+  }
+};
+outerFunc();				// "inner function"
+console.log(typeof innerFunc);	// undefined
+```
+
+## สตริคท์โหมด
+```js
+"use strict";		// ประกาศโหมดสตริคท์ ด้วยการเขียนไว้ที่ตอนต้นของไฟล์
+var x = 1;       
+```
+
+```js
+function myFunction() {
+   "use strict"; 	// เฉพาะฟังก์ชั่นนี้จะอยู่ในโหมดสตริคท์
+    var x = 1;   
+}
+```
+
+```js
+"use strict";
+x = 1;           // เกิด error เพราะไม่ได้ประกาศตัวแปรแบบ var ถ้าอยู่ดี ๆ จะมากำหนดค่าให้ทันทีแบบนี้จะทำไม่ได้
+```
+
+```js
+"use strict";
+function x(a, a) {};    // เกิด error เพราะประกาศพารามิเตอร์ ที่มีชื่อ a ซ้ำกัน
+```
+
+```js
+"use strict";
+var x = 1;
+delete x;			// เกิด error ไม่สามารถลบตัวแปรได้
+```
+
+```js
+"use strict";
+delete Object.prototype; //เกิด error เพราะพร็อพเพอร์ตี้ตัวนี้ห้ามลบ
+```
+
+```js
+"use strict";
+var x = 010;             // เกิด error ไม่สามารถประกาศแบบนี้ได้
+var y = \010;            // เกิด error ไม่สามารถประกาศแบบนี้ได้
+```
+
+```js
+"use strict";
+var obj = {};
+Object.defineProperty(obj, "x", {value:0, writable:false});
+obj.x = 1;            // เกิด error เนื่องจากมันเป็นพร็อพเพอร์ตี้ที่อ่านค่าได้อย่างเดียว
+```
+
+```js
+"use strict";
+var obj = {get x() {return 0} };
+obj.x = 1;            // เกิด error ไม่สามารถกำหนดค่าให้กับ x ได้ 
+```
+
+```js
+"use strict";
+var obj = {};
+Object.preventExtensions(obj);  
+obj.a= 1; 		 // เกิด error ไม่สามารถเพิ่มพร็อพเพอร์ตี้เข้าไปในอ็อบเจ็กต์ได้
+```
+
+```js
+"use strict";
+function f() { return this; }
+console.log(f());	// undefined
+```
+
+```js
+"use strict";
+var eval = 1;         // เกิด error ไม่สามารถใช้ชื่อ eval เป็นตัวแปร
+```
+
+```js
+"use strict";
+var arguments = 1;     // เกิด error ไม่สามารถใช้ชื่อ arguments เป็นตัวแปร
+```
+
+```js
+"use strict";
+with (Math){ a = cos(1)}; 	//  เกิด error ไม่สามารถใช้ประโยคคำสั่ง  with ได้
+```
+
+```js
+"use strict";
+eval("var x = 1;");	  // ประกาศตัวแปร x ด้วย eval()
+x = 2;                // เกิด error
+// แบบนี้จะไม่เกิด error
+// eval("var x = 1; x = 2;"); // ไม่เกิด error
+```
+
+```js
+"use strict";
+var implements =1;     // เกิด error เพราะ implements คือคำสงวนในโหมดสตริคท์
+```
+
+```js
+"use strict";
+if(true) {
+function myFunction1(){ }			// ขอบเขตแบบโลบอล
+}
+
+{
+function myFunction2(){ }			// ขอบเขตแบบโลบอล
+
+}
+console.log(typeof myFunction1);	// undefined (ถ้าไม่ใช่โหมดสตริคท์จะแสดงค่าเป็น "function")
+console.log(typeof myFunction2);	// undefined (ถ้าไม่ใช่โหมดสตริคท์จะแสดงค่าเป็น "function")
+```
+
+
+
+
