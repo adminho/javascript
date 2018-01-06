@@ -315,6 +315,7 @@ var x = (1+34, a+=2, b*=10, b+1);
 console.log(x);	// 21
 ```
 
+## โอเปอเรเตอร์ void
 ```js
 var a = void 12;
 console.log(a);			// undefined
