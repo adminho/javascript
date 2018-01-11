@@ -594,3 +594,245 @@ for(var prop in font) {
 ```
 
 ## Object.preventExtensions() กับ Object.isExtensions()
+```js
+var obj1 = {};
+var obj2 = Object.preventExtensions(obj1);
+console.log(obj1 === obj2);		//  true
+
+obj1.a = 1;				// จะเพิกเฉย แต่ถ้าอยู่ในโหมดสตริคท์จะเกิด TypeError
+
+var obj3 = Object.create(obj1);
+console.log(obj3); 			// {}
+obj3.a = 1;				// เพิ่มพร็อพเพอร์ตี้เข้าไปได้
+console.log(Object.getPrototypeOf(obj3) === obj1); // true
+```
+
+```js
+var obj = {};
+console.log(Object.isExtensible(obj)); // true
+Object.preventExtensions(obj);
+console.log(Object.isExtensible(obj)); // false
+```
+
+## Object
+```js
+var obj1 = new Object(1234);		 
+var obj2 = new Object();			// อ็อบเจ็กต์ว่าง
+var obj3 = new Object(undefined);		// อ็อบเจ็กต์ว่าง
+var obj4 = new Object(null);		// อ็อบเจ็กต์ว่าง
+var obj5 = Object(1);			// เรียกแบบฟังก์ชั่น (ค่าอากิวเมนต์เป็นอะไรก็ได้)
+console.log(typeof obj5);			// "object"
+```
+
+## Boolean
+```js
+var obj = new Boolean(true);
+console.log(typeof obj);	// "object"
+var b = Boolean(true);     
+console.log(typeof b);	// "boolean"
+console.log(b);		// true
+console.log(obj == b);	// true
+console.log(obj === b);	// false
+```
+
+```js
+var false1 = Boolean();		// false
+var false2 = Boolean(false);	// false
+var false3 = Boolean(0);		// false
+var false4 = Boolean(-0);		// false
+var false5 = Boolean(null);	// false
+var false6 = Boolean('');		// false
+var false7 = Boolean(NaN);		// false
+var false8 = Boolean(undefined);	// false
+var true1 = Boolean(true);		// true
+var true2 = Boolean("Hi");		// true
+var true3 = Boolean("true");	// true
+var true4 = Boolean("false");	// true
+var true5 = Boolean([]);		// true
+var true6 = Boolean({}); 		// true
+var true7 = Boolean(true4); 	// true
+```
+
+## Number
+```js
+var obj = new Number(1);
+console.log(typeof obj);	// "object"
+var n1 = Number("1"); 	// รับค่าเป็นสตริงก็ได้เช่นกัน
+var n2 = Number("a"); 	// "a" ไม่ใช่ตัวเลข จึงทำให้ตัวแปร  n2 มีค่าเป็น NaN
+console.log(typeof n1, typeof n2);	// "number number"
+console.log(n1, n2);			// 1 NaN
+console.log(obj == n1);	// true
+console.log(obj === n1);	// false
+```
+
+## String
+```js
+var str1 = new String("MyString");
+console.log(typeof str1);			// "object"
+console.log(str1 ===  "MyString");	// false
+var str2 = String("MyString");
+console.log(typeof str2);			// "string"
+console.log(str2 ===  "MyString");	// true
+console.log(str1 ==  str2);		// true
+```
+
+## Array
+```js
+var array1 = Array( 3 );		 // เรียกแบบฟังก์ชั่น
+console.log(array1.length);       // 3
+console.log(array1);		 // [ <3 empty slots> ]
+var array2 = new Array(3);
+console.log(array2.length);       // 3
+console.log(array2);		// [ <3 empty slots> ]
+```
+
+## เมธอดของสตริง
+```js
+console.log( "  Learning JavaScript  ".trim() );	// แสดงผลเป็น "Learning JavaScript"	
+```
+
+```js
+console.log( "foo_foo_foo_".indexOf("foo") );			// 0
+console.log("foo_foo_foo_".lastIndexOf("foo") );		// 8
+```
+
+```js
+"use strict";
+var str = "MyString";
+console.log(str.length) 	// 8
+str.length = 0;		// TypeError (ถ้าไม่ใช่โหมดสตริคท์จะไม่เกิด error แต่จะเพิกเฉย)
+str.func = function(){};	// TypeError (ถ้าไม่ใช่โหมดสตริคท์จะไม่เกิด error แต่จะเพิกเฉย)
+```
+
+## เมธอดของอาร์เรย์
+```js
+var array = ["a","b","c","d"];
+var str = array.join("->");
+console.log(str); // "a->b->c->d"
+```
+
+```js
+var array = [];
+array.push("a","b","c","d");	// เพิ่มสมาชิกกี่ตัวก็ได้
+console.log(array);			// ["a", "b", "c", "d"]
+console.log(array.pop()); 		// "d"
+console.log(array);			// ["a", "b", "c"]
+```
+
+```js
+var array = ["a","b","c","d"];
+console.log(array.indexOf("c" ));       // 2
+console.log(array.indexOf("e" ));       // -1
+```
+
+```js
+var array = ["a","b","c","d"];
+var result = array.some( function matcher(value, index, arrayObj){
+    // value คือค่าสมาชิกของอาร์เรย์
+             // index คืออินเด็กซ์ของอาร์เรย์
+            // arrayObj คือ ["a", "b", "c", "d"]
+    return value == "c";
+} );                                
+console.log(result) // true
+```
+
+```js
+var array = ["a","b","c","d"];
+array.forEach(function (value, index, arrayObj) {
+    // value คือค่าสมาชิกของอาร์เรย์
+             // index คืออินเด็กซ์ของอาร์เรย์
+            // arrayObj คือ ["a", "b", "c", "d"]
+    console.log("a[", index, "] = ", value);
+});
+/* แสดงผลลัพธ์
+"a[ 0 ] =  a"
+"a[ 1 ] =  b"
+"a[ 2 ] =  c"
+"a[ 3 ] =  d" */
+```
+
+## Regular Expression
+```js
+var myRegex = new RegExp("Hello+");
+console.log(myRegex.toString());	// /Hello+/
+```
+
+```js
+var myRegex = /Hello+/;
+// ข้อความ regex ก็คืออ็อบเจ็กต์ตัวหนึ่ง 
+// จึงสามารถแชร์ใช้งานเมธอด  RegExp.prototype.toString()
+console.log(/Hello+/.toString());	// /Hello+/
+```
+
+## เมธอด test() กับ exec()
+```js
+console.log( /Hello+/.test("Hellooooo") ); 			// true
+console.log( (new RegExp("Hello+")).test("Hellooooo") ); 	// true
+```
+
+```js
+var result = /(foo).(bar)/.exec("0123foo_bar");
+console.log(result.index);	// 4
+console.log(result[0]);	// "foo_bar"
+console.log(result[1]);	// "foo"
+console.log(result[2]);	// "bar"
+console.log(result.input);	// "0123foo_bar"
+```
+
+## สตริงกับ regex
+```js
+console.log("012Hellooooo".search(/Hello+/));	// 3
+var result = "Hellooooo Hello".match(/Hello+/g);	
+console.log(result);				// ["Hellooooo", "Hello"]
+console.log(result.length);			// 2
+
+var str = "Hellooooo".replace(/Hello+/,"Bye"); 
+console.log(str);					// "Bye"
+var split = "1,2,3".split(/,/);	
+console.log(split);					// ["1", "2", "3"]
+```
+
+## ค่าแฟล็ก
+```js
+var regex = /Hello+/gi;
+console.log(regex.lastIndex);	// 0
+console.log(regex.source);		// "Hello+"
+console.log(regex.global);		// true
+console.log(regex.ignoreCase);	// true
+console.log(regex.multiline);	// false
+```
+
+```js
+var myRegex = /Hello+/g;
+var str = "01Hello Hellooo89";
+var result = myRegex.exec(str);		// ค้นหาครั้งแรก	
+console.log(result[0]);			// "Hello"
+console.log(myRegex.lastIndex); 		// 7
+myRegex.exec(str);				// ค้นหาครั้งที่ 2
+console.log(result[0]);			// "Hello"
+console.log(myRegex.lastIndex); 		// 15
+myRegex.exec(str);				// ค้นหาครั้งที่ 3
+console.log(result[0]);			// "Hello"
+console.log(myRegex.lastIndex); 		// 0
+myRegex.exec(str);				// ค้นหาครั้งที่ 4
+console.log(result[0]);			// "Hello"
+console.log(myRegex.lastIndex); 		// 7
+```
+
+```js
+console.log( /Hello+/g === /Hello+/g);		// false
+/Hello+/g.exec("Hello Hello Hello");		// บรรทัด 2
+console.log(/Hello+/g.lastIndex);			// 0 -- บรรทัด 3
+```
+
+## ตัวอย่างการใช้ regex
+```js
+var myRegex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+console.log(myRegex.test("xxxxxx.yyyyyy_zzzzz@abc.com"));		// true
+```
+
+```js
+var myRegex = /^(\-?|\+?)\d*$/;
+console.log(myRegex.test("-987"));		// true
+```
+
