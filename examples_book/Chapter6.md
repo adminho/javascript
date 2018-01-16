@@ -284,4 +284,195 @@ console.log(style);		// undefined
 ```
 
 ## อ็อบเจ็กต์ซ้อนอ็อบเจ็กต์
+```js
+let font = {
+	color: "red"
+,size: 200
+,text : {
+		name: "thai"
+}
+} ;
+// จะเสมือนประกาศแบบนี้ 
+// let color = font.color, size = font.size, name = font.text.name;
+let {color, size, text: {name} } = font; 
+console.log(color, size, name);	        // "red 200 thai"
+```
 
+## ดีสตรัคเตอร์ริ่งจากอาร์เรย์
+```js
+let font = [ "red", "bold", "thai"];
+// กำหนดค่าให้กับตัวแปร ด้วยวิธีดีสตรัคเตอร์ริ่ง
+// จะเสมือนประกาศตัวแปรแบบนี้
+// let color = font[0], style = font[1];
+let [ color, style] = font;	
+// จะประกาศตัวแปรเป็นแบบ var หรือ const ก็ทำได้เช่นกัน
+// var [color, style] = font;	
+// const [color, style] = font;	
+console.log(color);		// "red" จะมีค่าเท่ากับ font[0]
+console.log(style); 	// "bold" จะมีค่าเท่ากับ font[1]
+```
+
+```js
+let font = [ "red", "bold", "thai"];
+let [ , style ,  ] = font;
+console.log(style);		// "bold"
+```
+
+## อาร์เรย์ซ้อนอาร์เรย์
+```js
+let font = [ "red", ["200", "thai"], "bold"];
+let [ color, [size, lang], style, option] = font;	
+console.log(color);					// "red"
+console.log(color === font[0]);			// true
+console.log(size); 					// "200"
+console.log(size === font[1][0]);			// true
+console.log(lang);					// "thai"
+console.log(lang === font[1][1]);			// true
+console.log(style); 				// "bold"
+console.log(style === font[2]);			// true
+console.log(option); 				// undefined
+```
+
+```js
+let font = [ "red", ["200", "thai"], "bold"];
+let [ color, option , style] = font;	
+console.log(color, style);		// "red bold" 
+console.log(option[0]);		// "200" 
+console.log(option[1]); 		// "thai"
+console.log(option === font[1]); 	// true (เพราะมันอ้างอิงไปที่อาร์เรย์ตำแหน่งเดียวกัน)
+```
+
+## ข้อควรรู้เพิ่มเติมของวิธีดีสตรัคเตอร์ริ่ง 
+```js
+let action = {
+	save: true
+,undo: false
+};
+let save, undo;
+{save, undo} = action;		// เกิด error
+```
+
+```js
+let action = {
+	save: true
+,undo: false
+};
+let save, undo;
+({save, undo} = action);		// ใส่วงเล็บครอบทั้งประโยคจะไม่เกิด error
+console.log(save, undo);       	// true false
+```
+
+```js
+let font = [ "red", "bold"];
+let color, style; 
+[color, style] = font;		// ไม่เกิด error
+console.log(color, style);		// "red bold"
+```
+
+## การระบุค่าดีฟอลต์ให้กับตัวแปร
+```js
+let { color, size = 200  } = {color:"red"}
+console.log(color)		// "red"
+console.log(size)		// 200
+```
+
+```js
+let [ , ,lang = "thai"] = []
+console.log(lang);		// "thai"
+```
+
+## ข้อมูลผสมระหว่างอ็อบเจ็กต์และอาร์เรย์
+```js
+let action = {
+	save : "success",
+	undo : "none",
+	option : ["move", "stop", "slow"]
+};
+// กำหนดค่าให้กับตัวแปรด้วยวิธีดีสตรัคเตอร์ริ่ง 
+let {save, undo, option: [ moveOption, stopOption]} = action;
+console.log(save, undo, moveOption, stopOption);	// "success none move stop"
+```
+
+```js
+let action = {
+	save : "succes",
+	undo : "none",
+	option : ["move", "stop", "slow"]
+};
+	
+let {save, undo, option} = action;	// บรรทัด a
+console.log(save, undo);			// "success none"
+console.log(option[0]);			// "move"
+console.log(option[1]);			// "stop"
+console.log(option[2]);			// "slow"
+console.log(option === action.option); 	// true  (เพราะมันอ้างอิงไปที่อาร์เรย์ตำแหน่งเดียวกัน)
+```
+
+## การสลับข้อมูล 
+```js
+let a = 1, b =2
+let temp = a;				// temp เป็นตัวแปรชั่วคราวที่ใช้เก็บค่าของ a เอาไว้ก่อน
+a = b;
+b = temp;
+console.log(a);			// 2
+console.log(b);			// 1
+```
+
+```js
+let a = 1, b =2;
+[b , a] = [a , b];			// ดีสตรัคเตอร์ริ่งจากอาร์เรย์
+console.log(a);			// 2
+console.log(b);			// 1
+```
+
+```js
+let a = 1, b = 2, c = 3, d = 4;
+console.log(a, b, c, d);		// 1 2 3 4
+[d, c, b ,a] = [a, b, c, d];	// ดีสตรัคเตอร์ริ่งจากอาร์เรย์
+console.log(a, b, c, d);		// 4 3 2 1
+```
+
+
+## รับค่าจากฟังก์ชั่น
+```js
+function myFunctin(){
+	return {a:1 ,b: 2};
+}
+let {a, b} = myFunctin();
+console.log(a, b);	// 1, 2
+```
+
+```js
+function myFunctin(){
+	return [1, 2] ;
+}
+let [a, b] = myFunctin();
+console.log(a, b);	// 1 2
+```
+
+## ข้อมูล JSON
+```js
+// เป็นข้อมูล JSON ซึ่งเขียนด้วยเทมเพลตสตริง (บทที่ 8)
+let jsonText = `{					
+  "file": "index.html",		
+  "menu": [
+      {"value": "New", "onclick": "createDoc"},
+      {"value": "Open", "onclick": "openDoc"}
+      ]
+}`;						
+
+let jsonObj = JSON.parse(jsonText);	// อ็อบเจ็กต์ที่ใช้เป็นตัวแทนของ JSON
+console.log(jsonObj);
+/* แสดงผลลัพธ์เป็น
+{ file: "index.html",
+  menu:
+   [ { value: "New", onclick: "createDoc" },
+     { value: "Open", onclick: "openDoc" } ] }
+*/
+let {file, menu:[ menu1, menu2] } = jsonObj;
+console.log(file);		// "index.html"
+console.log(menu1.value);		// "New"
+console.log(menu1.onclick);	// "createDoc"
+console.log(menu2.value);		// "Open"
+console.log(menu2.onclick);	// "openDoc"
+```
