@@ -443,3 +443,448 @@ var objCar = new Car("Red");		// ทำงานได้
 var blueCar = Car.call(objCar, "Blue");	// เกิด Error: "Can't new Car object"
 var redCar = Car("Red");			// เกิด Error: "Can't new Car object"
 ```
+
+## ฟังก์ชั่นลูกศร
+
+### ตัวอย่าง 1
+```js
+let arrowFunc = function(value){		
+	return value;
+};
+console.log(arrowFunc(122)); 	// 122
+```
+
+เปลี่ยนมาเขียน
+
+```js
+let arrowFunc = value => { 
+return value;
+};
+// เรียกใช้ฟังก์ชั่นได้เหมือนปกติธรรมดา
+console.log(arrowFunc(122)); 	// 122
+```
+
+### ตัวอย่าง 2
+```js
+// เหมือนในตัวอย่างที่ 1 แต่การเขียนจะสั้นและกระชับกว่า
+// ไม่ต้องมีเครื่องหมายปีกกาครอบบอดี้ฟังก์ชั่น รวมทั้งไม่ต้องเขียนประโยคคำสั่ง return
+let arrowFunc = value => value;	
+console.log(arrowFunc(122)); 	// 122
+/* จะเสมือนเขียนเป็น
+let arrowFunc = function(value){		
+	return value;
+};*/
+let arrowFunc2 = value => console.log(value);	
+arrowFunc2(122); 	// 122
+/* จะเสมือนเขียนเป็น
+let arrowFunc2 = function(value){		
+	return console.log(value);
+};*/
+```
+
+### ตัวอย่าง 3
+```js
+// ฟังก์ชั่นลูกศรที่ไม่มีการประกาศพารามิเตอร์อะไรเลย
+let arrowFunc = () => 122; 	
+console.log(arrowFunc()); 	// 122
+/* จะเสมือนเขียนเป็น
+let arrowFunc = function(){
+	return 122;
+};*/
+```
+
+### ตัวอย่าง 4
+```js
+// ฟังก์ชั่นลูกศรที่ไม่มีพารามิเตอร์ และตัวบอดี้ของฟังก์ชั่นก็ว่างเปล่า
+let arrowFunc = () => {}; 
+arrowFunc();
+// จะเสมือนเขียนเป็น
+// var arrowFunc = function(){};
+```
+
+### ตัวอย่าง 5
+```js
+// ใส่เครื่องหมายวงเล็บ เพื่อครอบอ็อบเจ็กต์ที่ถูกรีเทิร์นออกมา
+let getFont = () => ( { color: "red", size: 200 } ); 
+console.log(getFont());	// {color: "red", size: 200}
+/* จะเสมือนเขียนเป็น
+let getFont = function(){
+	return {color: "red", size: 200};
+};*/
+```
+
+### ตัวอย่าง 6
+```js
+// มีวงเล็บครอบพารามิเตอร์เอาไว้
+let sum = (val1, val2, val3) => val1 + val2 + val3;
+console.log(sum(1,2,3));		//  6
+/* จะเสมือนเขียนเป็น
+let sum = function(val1, val2, val3){
+	return val1 + val2 +val3;
+};*/
+```
+
+### ตัวอย่าง 7
+```js
+// ฟังก์ชั่นลูกศรที่ใช้พารามิเตอร์แบบดีฟอลต์
+let sum = (val1 = 1, val2 = 2, val3 = 3) => val1 + val2 + val3;
+console.log(sum());		//  6
+/* จะเสมือนเขียนเป็น
+let sum = function(val1 = 1, val2 = 2, val3 = 3){
+	return val1 + val2 +val3;
+};*/
+```
+
+
+### ตัวอย่าง 8
+```js
+// ฟังก์ชั่นลูกศรที่ใช้พารามิเตอร์แบบเรสต์ 
+let max = (...value) => Math.max(...value);
+console.log(max(1, 2, 3, 6));		// 6
+/* จะเสมือนเขียน
+let max = function(...value){		// พารามิเตอร์แบบเรสต์
+	return Math.max(...value);		// โอเปอเรเตอร์สเปรด
+};*/
+```
+
+
+## ฟังก์ชั่นลูกศรต่างจากฟังก์ชั่นธรรมดาอย่างไร
+```js
+let arrowFunc = value => value;			
+console.log(typeof arrowFunc);			// "function"
+console.log(arrowFunc instanceof Function);	// true
+```
+
+
+
+```js
+let arrowFunc = () => {};
+console.log(arrowFunc.name); // จะแสดงชื่อ "arrowFunc" (ขึ้นอยู่กับจาวาสคริปต์เอ็นจิ้น)
+```
+
+## อ็อบเจ็กต์ arguments ในฟังก์ชั่นลูกศร
+```js
+// เขียนแบบฟังก์ชั่นลูกศร 
+var arrowFunc = () => console.log(arguments);	//  ไม่สามารถใช้อ็อบเจ็กต์ arguments ได้
+arrowFunc(1, 2, 3);		// [] (ถ้าใช้ Traceur  กับ Babel ตัว arguments จะเป็นอาร์เรย์ว่าง)
+// เขียนแบบฟังก์ชั่นธรรมดา
+var arrowFunc2 = function(){
+	return console.log(arguments);		// ฟังก์ชั่นธรรมดาสามารถใช้อ็อบเจ็กต์ arguments ได้ตามปกติ
+};
+arrowFunc2(1, 2, 3);	// [1, 2, 3]
+```
+
+```js
+function createArrow(value) {
+// ฟังก์ชั่นลูกศรสามารถเรียกใช้ arguments ของฟังก์ชั่น createArrow()
+	return () => arguments[0];	 
+}
+let arrowFunc = createArrow(1);
+console.log(arrowFunc())		// 1
+```
+
+## เทคนิคการเขียน IIFE
+```js
+// เทคนิค IIFE กับฟังก์ชั่นลูกศร
+var printItem = ( 
+(item) => function() {  console.log(item);  }  
+)("IIFE");			
+printItem();		// "IIFE"
+/* จะเสมือนใช้เทคนิค IIFE กับฟังก์ชั่นธรรมดา
+var printItem = function(item) {
+ return function() {  console.log(item);  };
+}("IIFE");
+printItem();		// "IIFE"
+*/
+```
+
+## ฟังก์ชั่นคอลแบ็ค
+```js
+var array = [1, 2, 3, 4];
+array.forEach( (value, index, arr) => arr[index] =  value *2 );
+console.log(array);		// [2, 4, 6, 8]
+/* จะเสมือนใช้ฟังก์ชั่นคอลแบ็คแบบปกติ
+var array = [1, 2, 3, 4];
+array.forEach(function(value, index, arr) {	 
+	return arr[index] = value * 2;
+}); 
+console.log(array);		// [2, 4, 6, 8]
+*/
+```
+
+## การใช้ this ในฟังก์ชั่นลูกศร
+```js
+<!-- ไฟล์ชื่อ index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+        <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+</head>
+<body>
+<!-- แสดงปุ่มคำว่า "Try it" ออกทางหน้าเว็บบราเซอร์ -->
+<!-- เมื่อกดปุ่มจะเกิด error -->
+<button type="button" id="b1">Try it</button>
+<script type="module">       
+let obj ={
+		value : "JavaScript"
+              ,printValue: function(){
+        		console.log("Message:", this.value); // this จะชี้ไปยังอ็อบเจ็กต์ obj
+              }
+              ,handle : function (){	
+			console.log("Press a button");
+              }
+              ,init : function(){
+                   let element = document.querySelector("#b1");// ปุ่ม "Try it"
+		      element.addEventListener("click", function(event){ 	// บรรทัด a
+				this.handle();	// this จะชี้ไปยังอ็อบเจ็กต์ element 
+		      }, false);
+       }
+}; // สิ้นสุดการประกาศอ็อบเจ็กต์
+       obj.printValue();	// บรรทัด b -- แสดงคำว่า "Message: JavaScript" ออกมาทางหน้าคอนโซล
+       obj.init();        	
+</script>
+</body>
+</html>
+```
+
+
+```js
+let obj ={
+	value : "JavaScript"
+       ,printValue: function(){
+             console.log("Message:", this.value); // this จะชี้ไปยังอ็อบเจ็กต์ obj
+       }
+       ,handle : function (){
+		console.log("Press a button");
+       }
+       ,init : function(){
+       	let element = document.querySelector("#b1");	// ปุ่ม "Try it"
+		element.addEventListener("click", function(event){
+			this.handle();	// this จะชี้ไปยังอ็อบเจ็กต์ obj
+		}.bind(this), false);	// บรรทัด a -- this จะชี้ไปยังไปอ็อบเจ็กต์ obj
+		//}.bind(obj), false);	// จะใช้บรรทัดนี้ก็ได้ มีความหมายเหมือนกัน
+       }
+}; // สิ้นสุดการประกาศอ็อบเจ็กต์
+              
+obj.printValue();	// "Message: JavaScript"
+obj.init();         
+```
+
+
+```js
+let obj ={
+	value : "JavaScript"
+       ,printValue: function(){
+             console.log("Message:", this.value); // this จะชี้ไปยังอ็อบเจ็กต์ obj
+       }
+       ,handle : function (){
+		console.log("Press a button");
+       }
+       ,init : function(){
+       	let element = document.querySelector("#b1");	// ปุ่ม "Try it"
+		element.addEventListener("click", (event)=> this.handle()); //this จะชี้ไปยัง obj 
+       }
+}; // สิ้นสุดการประกาศอ็อบเจ็กต์     
+obj.printValue(); 	// "Message: JavaScript"
+obj.init();         
+```
+
+
+## เมธอด apply(), call() และ bind()
+```js
+let sum = (val1, val2) => console.log(val1 + val2) ;
+sum.apply(null, [5, 5] );			// 10
+sum.call(null, 5, 5);			// 10
+let resultSum = sum.bind(null, 5, 5);		
+resultSum();					// 10
+```
+
+```js
+let objA = {value: "access objA"};
+let objB = {
+	value: "access objB"
+	,myFunction() {
+		console.log("this.value in myFunction:", this.value);
+ 	// this ในฟังก์ชั่นลูกศร จะเห็นเหมือนกับที่  myFunction() มองเห็น
+		let arrowFunc = () => console.log("Arrow function:", this.value) ;	
+
+		let func = function(){ // this ในฟังก์ชั่นปกติ สามารถเปลี่ยนไปชี้อ็อบเจ็กตัวอื่นได้
+			console.log("Normal function:", this.value);	
+		}
+		arrowFunc.call(objA);	// บรรทัด a –- ไม่สามารถเปลี่ยนค่า this ได้
+		func.call(objA);		// บรรทัด b -- สามารถเปลี่ยนค่า this ให้ชี้ไปยังอ็อบเจ็กต์ objA ได้
+	}
+}
+objB.myFunction();				// บรรทัด c
+/*แสดงผลลัพธ์
+"this.value in myFunction: access objB"
+"Arrow function: access objB"
+"Normal function: access objA"
+*/
+objB.myFunction.call(objA);		// บรรทัด d
+/*แสดงผลลัพธ์
+"this.value in myFunction: access objA"
+"Arrow function: access objA"
+"Normal function: access objA"
+*/
+```
+
+## Tail call optimization
+```js
+function foo(a) {
+       return a; 		// บรรทัด a
+}
+function bar(b) {
+       let c = b + 100;
+       return foo(c); 	// บรรทัด b
+}
+console.log( bar(30) );  	// บรรทัด c แสดงผลลัพธ์เป็น 130
+```
+
+## ตำแหน่ง Tail call
+### กรณีที่ 1
+```js
+function foo() {
+        bar(); 	// เรียกฟังก์ชั่นแบบนี้จะไม่ใช่ตำแหน่งสุดท้าย
+        // ถ้าเขียนเป็น return bar();   จะเป็นการเรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+}
+```
+จะเสมือนเขียน
+
+```js
+function foo() {
+   bar(); 	
+        return undefined;
+}
+```
+
+### กรณีที่ 2
+```js
+function foo() {
+       return 1+ bar(); 	// เรียกฟังก์ชั่นแบบนี้จะไม่ใช่ตำแหน่งสุดท้าย
+}
+```
+
+จะเสมือนเขียน
+
+```js
+function foo() {
+       let result = bar();
+       return 1 +	result;
+}
+
+
+กรณีที่ 3
+
+```js
+function foo(condition) {	
+       if(condition){
+		return bar();	// บรรทัด a  -- เรียกฟังก์ชั่นในตำแหน่งสุดท้าย		
+       } else {
+		bar();		// บรรทัด b -- เรียกฟังก์ชั่นแบบนี้จะไม่ใช่ตำแหน่งสุดท้าย	
+        }
+ }
+```
+
+## รีเคอร์ซีพ 
+```js
+function factorial(value) {
+        if (value <= 0) {
+            return 1;
+        } else {
+            return value * factorial(value-1); // บรรทัด a -- ไม่ใช่การเรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+        }
+    }
+console.log(factorial(4));		// จะได้ค่าเป็น 24 เพราะ 4! = 4 x 3 x 2 x 1 = 24
+// จะเกิด RangeError เพราะ stack frame โตเกินไป จนใช้หน่วยความจำหมด
+console.log(factorial(200000));	
+```
+
+```js
+// ต้องประกาศเพื่อทำ TCO แต่ถ้าเขียนบน Traceur หรือ Babel ซอร์สโค้ดจะเป็นสตริคท์โหมดโดยอัตโนมัติ
+"use strict";		
+function factorial(value) {
+        return callFac(1, value);
+}
+function callFac(temp, val) {
+        if (val <= 1) {
+            return temp;
+        } else {
+            return callFac(temp * val, val-1);    // บรรทัด a -- เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+        }
+}
+console.log(factorial(4));			// 24
+console.log(factorial(200000));       	// infinity
+```
+
+
+## นิพจน์อื่นที่เป็น Tail call
+### กรณีที่ 1 
+```js
+let arrowFunc = param => param ? foo() : bar();
+```
+
+จะเสมือนเขียน
+
+```js
+let arrowFunc = param => {
+	if(param){
+		return foo();		// เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+}else{
+	return bar();		// เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+}	
+};
+```
+
+
+## กรณีที่ 2 
+```js
+let arrowFunc = () => (foo(), bar(), zoo());
+```
+
+จะเสมือนเขียน
+
+```js
+let arrowFunc = () => {
+       foo();
+bar();
+ 	return zoo(); // เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+};
+```
+
+## กรณีที่ 3 
+```js
+let arrowFunc = () => foo() || bar();
+```
+
+จะเสมือนเขียน
+
+```js
+let arrowFunc = () => {
+ 	let temp = foo(); 
+       if (temp) {
+           return temp;
+       } else {
+           return bar();	// เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+ 	}
+};
+```
+
+## กรณีที่ 4
+```js
+let arrowFunc = () => foo() && bar();
+```
+
+
+```js
+let arrowFunc = () => {
+ 	let temp = foo(); 
+       if (!temp) {
+            return temp;
+       } else {
+            return bar();	// เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+       }
+};
+```
