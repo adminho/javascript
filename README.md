@@ -600,7 +600,7 @@ chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security "c:\ES
 
 ส่วนบน OSX กับ Linux ผมไม่มีเครื่องลองครับ จึงไม่กล้าเขียน ลองดูเพิ่มเติมได้ที่ 
 
-http://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome)
+http://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome
 
 
 __วิธีที่ 3__
