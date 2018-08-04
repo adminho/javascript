@@ -1,5 +1,7 @@
 # Fly example
 
+This example is simulator for the exam of Office of the Civil Service Commission (Thailand)
+
 
 ## Credit: pictures
 * truck.png: [Icon made by monkik from www.flaticon.com](https://www.flaticon.com/free-icon/delivery-truck_175461#term=transport&page=1&position=10)
