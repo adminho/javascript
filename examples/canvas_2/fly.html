@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startSimulate()">
+<script>
+//reference: https://www.w3schools.com/graphics/tryit.asp?filename=trygame_movement_forward
+var DISPLAY_WIDTH = 800;
+var DISPLAY_HEIGHT = 600;
+var BEGIN_DISTANCE_TRUCK_CAR  = 40;
+var SPEED_TRUCK = 60/60;  // 60 km/h
+var SPEED_CAR = 40/60; 	 // 40 km/h
+var SPEED_BEE = 80/60;    // 80 km/h
+var TIME_STEP = 0.1; // 0.1 minutes
+var SCALED =10; // adjust SCALED when display on screen
+var shift_display = 100;
+
+var control_object = {
+	direction_bee: 0, //0 is left to right , 1 is right to left
+	distance_bee: 0,
+	bee_flying: function(direction, distance_opposite){
+		this.distance_bee += SPEED_BEE*TIME_STEP; 		
+		if (this.distance_bee + distance_opposite  >=  BEGIN_DISTANCE_TRUCK_CAR){ // turn direction -> right or left				
+			direction ^= 1;		
+			this.distance_bee = distance_opposite;
+		}
+		if (direction == 0){
+			pos_bee = this.distance_bee ;
+		}else{
+			pos_bee = BEGIN_DISTANCE_TRUCK_CAR  - this.distance_bee;
+		}
+		return {pos_bee, direction};
+	},
+	
+	move_object: function (time){ // algorithim for moving the object such as truck, car and bee
+		var distance_truck = SPEED_TRUCK*time;
+		var distance_car = SPEED_CAR*time;
+		var total_distance_fly = SPEED_BEE* time;
+		var new_status_bee;
+	
+		var direction_name = ""; 
+		if (this.direction_bee ==0){
+			new_status_bee = this.bee_flying(this.direction_bee, distance_car  );
+			direction_name = "right";
+		}else{
+			new_status_bee = this.bee_flying(this.direction_bee, distance_truck );			
+			direction_name = "left";
+		}
+		this.direction_bee = new_status_bee.direction;
+		var pos_truck = distance_truck;
+		var pos_car = BEGIN_DISTANCE_TRUCK_CAR  -  distance_car	;
+		//for debug	
+		console.log(time.toFixed(2), pos_truck.toFixed(2)  , pos_car.toFixed(2) , pos_bee.toFixed(2), direction_name)
+		return {pos_truck, pos_car, pos_bee, total_distance_fly};
+	}
+}
+
+var myDisplayArea = {
+    canvas : document.createElement("canvas"),
+	createArea: function(){
+        this.canvas.width = 800;
+        this.canvas.height = 300;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+	},		
+    start : function() {
+        this.interval = setInterval(updateDisplayArea, 100);	
+    },
+	draw_line: function(){
+		this.context.beginPath();
+		this.context.moveTo(0,this.canvas.height/2+110);
+		this.context.lineTo(this.canvas.width, this.canvas.height/2+110);		
+		this.context.lineWidth=3;
+		this.context.stroke();
+	},
+	fill_text: function(text){
+		this.context.font="20px Arial";
+		this.context.fillText(text, this.canvas.width/2-130, this.canvas.height-240);
+	},
+    stop : function() {
+        clearInterval(this.interval);
+    },    
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);		
+		this.draw_line();
+    }
+}
+
+var time = 0;
+function updateDisplayArea() {			
+	var new_status = control_object.move_object(time);	 // move truck, car and bee on the screen	
+	myDisplayArea.clear();	
+	// adjust SCALED when display on screen for look well	
+	truck.updatePos(new_status.pos_truck*SCALED-50 + shift_display, myDisplayArea.canvas.height/2);
+	car.updatePos(new_status.pos_car*SCALED + 50 + shift_display, myDisplayArea.canvas.height/2+20);		
+	bee.updatePos(new_status.pos_bee*SCALED + 50 + shift_display,myDisplayArea.canvas.height/2);
+		
+	if(new_status.pos_truck >= new_status.pos_car){ // crashed
+		console.log('Crashed!', time.toFixed(2),new_status.pos_truck.toFixed(2),new_status.pos_car.toFixed(2),new_status.pos_bee.toFixed(2))
+		is_stop_move_objects=true;		
+		myDisplayArea.fill_text('Crashed! The bee is flying in '+new_status.total_distance_fly.toFixed(2)+' km');		
+		myDisplayArea.stop();
+	}else if(new_status.pos_truck < new_status.pos_car) {				
+		time+=TIME_STEP;	// increase time 
+		myDisplayArea.fill_text('The bee is flying: '+new_status.total_distance_fly.toFixed(2)+' km');		
+	} 
+}
+
+function component(file_image, label) {	
+	this.label = label ;	
+    this.updatePos = function(x,y) {
+		ctx = myDisplayArea.context;
+		ctx.drawImage(this.base_image, x,y);
+		ctx.font="14px Arial";
+		ctx.fillText(this.label,x, y);
+    }
+	this.base_image = new Image(2,2);
+	this.base_image.src = file_image;	
+}
+
+var car,truck,bee;
+function startSimulate() {
+	myDisplayArea.createArea();		
+	/* download images 
+	truck.png: Icon made by monkik from www.flaticon.com , https://www.flaticon.com/free-icon/delivery-truck_175461#term=transport&page=1&position=10
+	car.png : Icon made by Freepik from www.flaticon.com, https://www.flaticon.com/free-icon/car_263057#term=transport&page=1&position=18
+	bee.png: Icon made by Freepik from www.flaticon.com , https://www.flaticon.com/free-icon/bee_826995#term=bee&page=1&position=6
+	*/
+	truck = new component('truck.png', '60 km/h');
+    car = new component( 'car.png', '40 km/h');
+	bee = new component('https://image.flaticon.com/icons/svg/826/826995.svg', '80 km/h');
+		
+	step=6;
+	interval = setInterval(function(){	// for delay when start simulate			
+		if( step >1){				
+			step--; 			
+			myDisplayArea.clear();	
+			truck.updatePos(-50 + shift_display, myDisplayArea.canvas.height/2);
+			car.updatePos(40*SCALED+50 + shift_display, myDisplayArea.canvas.height/2+20);
+			bee.updatePos(50 + shift_display, myDisplayArea.canvas.height/2);
+			myDisplayArea.fill_text('Are you ready :' + step);	
+		} else {
+			myDisplayArea.start();	
+			clearInterval(interval);
+		}		
+	}, 1000);	
+}
+</script>
+</body>
+</html>
