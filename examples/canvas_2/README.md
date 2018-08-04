@@ -1,6 +1,6 @@
 # Fly example
 
-This example is simulator for the exam of Office of the Civil Service Commission (Thailand)
+This example is simulator for the exam of Office of the Civil Service Commission (Thailand) in 2018
 
 "
 รถยนต์สองคันอยู่ห่างกัน 40 กิโลเมตร วิ่งเข้าหากัน รถคันแรกวิ่งด้วยความเร็ว 40 กิโลเมตรต่อชั่วโมง คันที่สองวิ่งด้วยความเร็ว 60 กิโลเมตรต่อชั่วโมง มีแมลงวันอยู่หน้ารถคันหนึ่งบินด้วยความเร็ว 80 กิโลเมตรต่อชั่วโมง ไปยังรถอีกคันหนึ่ง พอไปถึงแล้วบินกลับมาที่รถอีกคัน บินสลับอย่างนี้เรื่อยไปจนรถทั้งสองคันวิ่งมาชนกัน ถามว่าแมลงวันตัวนี้บินได้ระยะทางกี่กิโลเมตร?
