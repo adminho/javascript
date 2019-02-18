@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--เครดิต https://www.google.com/intl/en/chrome/demos/speech.html-->
+<head>
+</head>
+<body>
+<textarea id="id_sentence" name="message" rows="10" cols="100">ลองทำการแปลภาษา</textarea>
+  <br/>
+<button onclick="mySubmit()">แปลภาษา</button>
+<br>
+<br/>
+<textarea id="id_translated" name="message" rows="10" cols="100"></textarea>
+
+<script>
+
+function translate(sentence, targetDiv, from_lang ='th', to_lang='en'){
+	/*if (language == 'english') {
+		endPoint = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=ar&tl=en&dt=t&ie=UTF-8&oe=UTF-8&q="
+	} */
+	
+  let endPoint = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${from_lang}&tl=${to_lang}&dt=t&ie=UTF-8&oe=UTF-8&q=${encodeURIComponent(sentence)}` ;
+						
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		var jsonText = JSON.parse(this.responseText);
+		text = jsonText[0][0][0]
+		text = text.replace(/<br>/g, '\n')
+      targetDiv.innerHTML = "&nbsp;" + text;	  
+    }
+  };
+  xhttp.open("GET", endPoint, true);
+  xhttp.send();
+}
+
+function mySubmit(){
+	sentence = id_sentence.value.replace(/\n/g, '<br>')
+	console.log(sentence)
+	translate(sentence, id_translated)
+}
+
+</script>
+</body>
+
+</html>
+
