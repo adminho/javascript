@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gaminglogy Game Set Up</title>
+<style>
+#info {
+    font-size: 20px;
+    }
+	#results {
+		font-size: 14px;
+		font-weight: bold;
+		border: 1px solid #ddd;
+		padding: 15px;
+		text-align: left;
+		min-height: 50px;
+		max-width: 600px;
+    }
+	#div_start {
+		text-align: left;
+	}
+    .interim {
+    color: gray;
+    }
+    .final {
+    color: black;
+    padding-right: 3px;
+    }
+    .marquee {
+    margin: 20px auto;
+    }
+ </style>
+</head>
+<body>
+		<div id="div_start">
+          <button id="start_button"><img alt="Start" id="start_img"
+          src="https://www.google.com/intl/en/chrome/assets/common/images/content/mic-animate.gif"></button>
+        </div>
+		
+<div class="marquee">
+		<div id="info" >
+		  <p id="info_support" style="display:none">		  
+			Your browser supports for Speech Recognition.
+		  <p>		 
+          <p id="info_start" style="display:none">
+            Click on the microphone icon and begin speaking for as long as you like.
+          </p>		  
+		  <p id="info_finish" style="display:none">
+            Speech recognition service disconnected.
+          </p>
+          <p id="info_speak_now" style="display:none">
+			สั่งตัวละคร: บน ล่าง ซ้าย ขวา หยุด <br/>
+			หรือเปลี่ยนสีพื้นหลัง: สีเทา สีเขียว สีน้ำเงิน สีแดง สีเหลือง สีดำ
+          </p>
+          <p id="info_no_speech" style="display:none">
+            No speech was detected. You may need to adjust your <a href=
+            "//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">microphone
+            settings</a>.
+          </p>
+          <p id="info_no_microphone" style="display:none">
+            No microphone was found. Ensure that a microphone is installed and that
+            <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+            microphone settings</a> are configured correctly.
+          </p>
+          <p id="info_allow" style="display:none">
+            Click the "Allow" button above to enable your microphone.
+          </p>
+          <p id="info_denied" style="display:none">
+            Permission to use microphone was denied.
+          </p>
+          <p id="info_blocked"  style="display:none">
+            Permission to use microphone is blocked. To change, go to
+            chrome://settings/contentExceptions#media-stream
+          </p>
+          <p id="info_upgrade" style="display:none">
+            Web Speech API is not supported by this browser. Upgrade to <a href=
+            "//www.google.com/chrome">Chrome</a> version 25 or later.
+          </p>
+        </div>
+</div>
+
+
+	<canvas id="gameCanvas">
+        Please upgrade your browser to support HTML5.<br/> 
+        One recommendation is to install the latest Chrome or Firefox.
+    </canvas>
+	
+<div id="results">
+   <span class="final" id="final_span"></span> 
+   <!--<span class="interim" id="interim_span"></span>-->
+</div>
+
+    <script type="text/javascript" src="constants.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+
+</body>
+</html>
+
