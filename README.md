@@ -917,4 +917,5 @@ http://www.ebooks.in.th/ebook/40184/รีวีวฟรีเจอร์ใ�
 เล่มใหม่เนื้อหาอัปเดต เป็นจาวาสคริปต์ตั้งแต่ ES6 เป็นต้นไป (ล่าสุดเนื้อหาถึง ES14) เนื้อหาเกือบ 900 กว่าหน้า
 
 ![cover](images/cover_new.png)
-[สั่งซ์้อได้ที่เว็บ MEB (ขายเป็นอีบุ๊กเท่านั้น)] (https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ)
+
+[สั่งซ์้อได้ที่เว็บ MEB (ขายเป็นอีบุ๊กเท่านั้น)](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ)
