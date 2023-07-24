@@ -22,7 +22,7 @@
 * [บทที่ 17](Chapter17.md)
 * [บทที่ 18](Chapter18.md)
 * [บทที่ 19](Chapter19.md)
-   * [ไฟล์ json ประกอบเนื้อหา Fetch API](json.php)
+   * [ไฟล์ json.php ประกอบเนื้อหา Fetch API](json.php)
 * [บทที่ 20](Chapter20.md)
 * [ภาคผนวก ข](Appendix_B)
 
