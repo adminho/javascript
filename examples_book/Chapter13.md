@@ -39,3 +39,20 @@ let obj = {
 } ;
 obj.myFunction(200);			 // 200
 ```
+
+## ชื่อคีย์ซ้ำกัน
+
+```js
+let font = { 
+	color: "red",
+	color: "green",			 // เลือกใช้ตัวนี้
+	myFunction() {				
+		console.log("myFunction1");
+	},
+	myFunction() {			 // เลือกใช้ตัวนี้
+		console.log("myFunction2");
+	}
+} ;
+console.log(font.color); 			 // "green"
+font.myFunction();			 // "myFunction2"
+```
