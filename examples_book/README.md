@@ -24,6 +24,6 @@
 * [บทที่ 19](Chapter19.md)
    * [ไฟล์ json ประกอบเนื้อหา Fetch API](json.php)
 * [บทที่ 20](Chapter20.md)
-*[ภาคผนวก ข](Appendix_B)
+* [ภาคผนวก ข](Appendix_B)
 
 
