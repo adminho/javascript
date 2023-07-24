@@ -2,6 +2,7 @@
 
 ![cover_new.PNG](https://github.com/adminho/javascript/blob/master/images/cover_new.png)
 
+(กำลังอัปเดตโค้ดอยู่นะครับ ยังไม่เรียบร้อยดี)
 
 * [บทที่ 1](Chapter1.md)
 * [บทที่ 2](Chapter2.md)
