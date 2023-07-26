@@ -4,20 +4,20 @@
 
 ```js
 let sym1 = Symbol();			 // ไม่มี description 
-let sym2 = Symbol(“example”);	             // มี description เป็น “example”
-let sym3 = Symbol(“example”);	             // มี description เป็น “example”
+let sym2 = Symbol("example");	             // มี description เป็น "example"
+let sym3 = Symbol("example");	             // มี description เป็น "example"
 console.log(sym2 === sym3);		 // false
 ```
 
 ```js
-let  sym = Symbol(“example”);
-console.log(sym.toString());		 // Symbol(example)
-console.log(sym);			 // Symbol(example)
+let  sym = Symbol("example");
+console.log(sym.toString());    // Symbol(example)
+console.log(sym);       // Symbol(example)
 ```
 
 ```js
-console.log( typeof Symbol() );		         // “symbol”
-console.log( typeof Symbol(“example”) );         // “symbol”
+console.log( typeof Symbol() );		         // "symbol"
+console.log( typeof Symbol("example") );         // "symbol"
 ```
 
 ## ข้อควรระวังการใช้ซิมโบล
@@ -30,16 +30,16 @@ let sym = new Symbol(); 		             // จะเกิด TypeError
 ```
 
 ```js
-let sym = Symbol(“example”);
+let sym = Symbol("example");
 let symObj1 = Object(sym);
 let symObj2 = new Object(sym);
-console.log(typeof sym);         	             // “symbol” 
-console.log(typeof symObj1);  	             // “object”
-console.log(typeof symObj2);  	             // “object”
+console.log(typeof sym);         	             // "symbol" 
+console.log(typeof symObj1);  	             // "object"
+console.log(typeof symObj2);  	             // "object"
 ```
 
 ```js
-let sym = Symbol(“example”);
+let sym = Symbol("example");
 console.log(sym == Object(sym));	
 // ถ้าใช้บน Firefox จะได้เป็น true แต่ถ้าใช้บน Google Chrome จะเป็น fasle
 ```
@@ -47,12 +47,12 @@ console.log(sym == Object(sym));
 ## ใช้ซิมโบลเป็นคีย์ในอ็อบเจ็กต์
 
 ```js
-let sym = Symbol(“first symbol”);
+let sym = Symbol("first symbol");
 let obj = { [sym]: 100 };		             // ใช้ซิมโบลเป็นชื่อคีย์ในอ็อบเจ็กต์
 console.log(obj[sym]);            	             // 100
 obj[sym] = 200;
 console.log(obj[sym]);			 // 200
-let lastSym = Symbol(“last symbol”);
+let lastSym = Symbol("last symbol");
 Object.defineProperties(obj, {
     [lastSym]: {		                         // ใช้ซิมโบลเป็นชื่อคีย์ในอ็อบเจ็กต์
         value: 300,
@@ -67,13 +67,13 @@ obj[sym] = 1;    	// จะเกิด error เพราะไม่สาม�
 ## การแชร์ซิมโบล
 
 ```js
-let uid = Symbol.for(“uid”);	             // มีค่า description เป็น “uid”
+let uid = Symbol.for("uid");	             // มีค่า description เป็น "uid"
 console.log(uid);                                      // Symbol(uid)
 ```
 
 ```js
-let sym1 = Symbol.for(“uid”);		 // ค้นหาซิมโบลครั้งแรก
-let sym2 = Symbol.for(“uid”);	             // ค้นหาซิมโบลครั้งที่สอง
+let sym1 = Symbol.for("uid");		 // ค้นหาซิมโบลครั้งแรก
+let sym2 = Symbol.for("uid");	             // ค้นหาซิมโบลครั้งที่สอง
 console.log(sym1 === sym2);                    // true (เพราะ sym1 กับ sym2 คือซิมโบลตัวเดียวกัน)
 console.log(sym1);		      	 // Symbol(uid)
 // เนื่องจาก sym1 กับ sym2 คือซิมโบลตัวเดียวกัน จึงสามารถใช้แทนกันได้
@@ -82,41 +82,41 @@ console.log(obj[sym2]);		             // 100
 ```
 
 ```js
-let sym1 = Symbol.for(“uid”);
-console.log(Symbol.keyFor(sym1));    // “uid”
-let sym2 = Symbol(“uid”);
+let sym1 = Symbol.for("uid");
+console.log(Symbol.keyFor(sym1));    // "uid"
+let sym2 = Symbol("uid");
 console.log(Symbol.keyFor(sym2));    // undefined
 ```
 
 ```js
-Symbol.for(“dojo.uid”);
-Symbol.for(“jquery.uid”);
+Symbol.for("dojo.uid");
+Symbol.for("jquery.uid");
 ```
 
 ## ซิมโบลในประโยค for...in 
 
 ```js
 let obj = {};
-obj.car = “100”;
-obj[“zoo”] = “200”;
-obj[Symbol(“foo”)] = “foo”;
-obj[Symbol(“bar”)] = “bar”;
+obj.car = "100";
+obj["zoo"] = "200";
+obj[Symbol("foo")] = "foo";
+obj[Symbol("bar")] = "bar";
 for (let i in obj) {
    console.log(i); 		
 }
 // ประโยค for จะแสดงผลลัพธ์	
-// “car” 
-// “zoo” 
+// "car" 
+// "zoo" 
 let keys = Object.getOwnPropertyNames(obj);
-console.log(keys);	// [“car”, “zoo”]
+console.log(keys);	// ["car", "zoo"]
 ```
 
 ```js
 let obj = {};
-obj.car = “100”;
-obj[“zoo”] = “200”;
-obj[Symbol(“foo”)] = “foo”;
-obj[Symbol(“bar”)] = “bar”;
+obj.car = "100";
+obj["zoo"] = "200";
+obj[Symbol("foo")] = "foo";
+obj[Symbol("bar")] = "bar";
 let keys = Object.getOwnPropertySymbols(obj);
 console.log(keys);	// [Symbol(foo), Symbol(bar)]
 ```
@@ -125,27 +125,27 @@ console.log(keys);	// [Symbol(foo), Symbol(bar)]
 
 ```js
 let obj = {
-[Symbol(“example”)]: “100”,
-“bar” : “200”
+[Symbol("example")]: "100",
+"bar" : "200"
 }
 // จะได้เป็นสตริงที่เขียนอยู่ในรูปแบบของ JSON  
-console.log(JSON.stringify(obj));    // ‘{“bar” : “200”}’
+console.log(JSON.stringify(obj));    // ‘{"bar" : "200"}’
 ```
 
 ## แปลงซิมโบลเป็นสตริง
 
 ```js
-let sym = Symbol(“foo”);
+let sym = Symbol("foo");
 ++sym;				             // TypeError
 sym + 0;			             // TypeError
 ```
 
 ```js
-Symbol(“foo”) + “bar”; 	                         // TypeError
+Symbol("foo") + "bar"; 	                         // TypeError
 ```
 
 ```js
-let sym = Symbol(“foo”);
+let sym = Symbol("foo");
 console.log(sym.toString());   		 // Symbol(foo)
 console.log(String(sym));		             // Symbol(foo)		
 new String(sym);			             //  TypeError
@@ -154,9 +154,9 @@ new String(sym);			             //  TypeError
 ## พร็อพเพอร์ตี้ description
 
 ```js
-let sym= Symbol(“foo”); 
+let sym= Symbol("foo"); 
 console.log(sym)                                                // Symbol(foo)
-console.log(String(sym) === `Symbol(${“foo”})`);    // true
-console.log(sym.toString());                                  // “Symbol(foo)”
-console.log(sym.description);                               // “foo”
+console.log(String(sym) === `Symbol(${"foo"})`);    // true
+console.log(sym.toString());                                  // "Symbol(foo)"
+console.log(sym.description);                               // "foo"
 ```
