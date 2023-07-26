@@ -151,8 +151,8 @@ let validation = { // handler
            }
            argumentList.forEach( function(value, index, thisObj) { 
 	           if(typeof value != “number”) { 	
-                                 // ตรวจสอบค่าอากิวเมนต์ที่ส่งให้ฟังก์ชั่น มันเป็นตัวเลขหรือไม่ ?
-		         throw new Error(“All arguments must be numbers”);
+				// ตรวจสอบค่าอากิวเมนต์ที่ส่งให้ฟังก์ชั่น มันเป็นตัวเลขหรือไม่ ?
+				throw new Error(“All arguments must be numbers”);
 	           } // สิ้นสุด if		 
            }); // สิ้นสุด argumentList.forEach()           
            // เรียกใช้งานฟังก์ชันเป้าหมาย
@@ -207,9 +207,7 @@ proxyMultiply(maxNum, maxNum);	 // error
 
 ```js
 let people = {};	
-```
 
-```js
 let preventObj = { 	// handler
 	// ดักจับตอนกำหนดโปรโตไทป์ให้กับอ็อบเจ็กต์เป้าหมาย
 	setPrototypeOf(targetObj, prototype) { 
@@ -220,30 +218,25 @@ let preventObj = { 	// handler
 	return Reflect.setPrototypeOf(targetObj, prototype);
        }	// สิ้นสุด  setPrototypeOf	
 }// สิ้นสุดประกาศอ็อบเจ้กต์
-```
 
-```js
 let man = { age: 17 };
 let woman = { age: 20 };
 let proxyMan = new Proxy(man, preventObj);
 let proxyWoman = new Proxy(woman, preventObj);
-```
 
-```js
 // กำหนดโปรโตไทป์เป็น people ก็จะทำงานได้ตามปกติ
 proxyMan.__proto__ = people; 		         // "Set the people prototype"
 proxyWoman.__proto__ = people;	         // "Set the people prototype"
 console.log( man.__proto__ === people );        // true
 console.log( woman.__proto__ === people );    // true
-```
 
-```js
 // เมื่อกำหนดโปรโตไทป์ที่ไม่ใช่ people ก็จะเกิด error
 let car = { speed: 100 };		            // กำหนดให้เป็นโปรโตไทป์ของ man กับ woman
 proxyMan.__proto__ = car; 		// error
 proxyWoman.__proto__ = car;	            // error
 ```
 
+ตัวอย่างที่ 4 จะแสดงกลไกป้องกันการกำหนดสมาชิกคนละชนิดในอาร์เรย์
 ```js
 let checkType = {
     set(targetObj, key, value, proxy) {
