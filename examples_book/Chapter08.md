@@ -288,7 +288,7 @@ console.log(newStr.length);    // 3
 ```
 
 ```js
-let newStr = "x".padStart(3, ‘ ’);
+let newStr = "x".padStart(3, ' ');
 console.log(newStr);             // "   x"
 console.log(newStr.length);   // 3
 ```
@@ -382,7 +382,7 @@ for(const c of str.matchAll("ไก่") ) {
 ```
 
 ```js
-let str = ‘นายไก่ เลี้ยงแต่ไก่ ไม่ขายไข่ไก่’;  
+let str = 'นายไก่ เลี้ยงแต่ไก่ ไม่ขายไข่ไก่';  
 for(const c of str.matchAll(/ไก่/g) ) {
   console.log("เจอคำว่า", c[0], "ที่ตำแหน่ง", c.index )
 } 
@@ -427,12 +427,11 @@ console.log(/^.$/u.test(str));      	// true
 ```
 
 ```js
-var result1 =  "𠮷กขคง𤭢".match(/[\s\S]/gu);
-console.log(result1.length);		// 6
-
+var result1 =  “𠮷กขคง𤭢”.match(/[\s\S]/gu);
+console.log(result1.length);	// 6
 // ถ้าไม่ใช้แฟล็ก u จะนับตัวอักษรผิด
-var result2 =  "𠮷กขคง𤭢".match(/[\s\S]/g);
-console.log(result2.length); 		// 8
+var result2 =  “𠮷กขคง𤭢”.match(/[\s\S]/g);
+console.log(result2.length); 	// 8
 ```
 
 ### แฟล็ก y
@@ -522,7 +521,7 @@ console.log(myRegex.flags);      		// "i"
 ```js
 let regEx = /[a-z]+.js/;
 let matchObj =   regEx.exec("test index.js");
-console.log(matchObj) // [ ‘index.js’, index: 5, input: ‘test index.js’, groups: undefined ]
+console.log(matchObj) // [ 'index.js', index: 5, input: 'test index.js', groups: undefined ]
 ```
 
 ```js
@@ -531,11 +530,11 @@ let matchObj =    regEx.exec("test index.js");
 console.log(matchObj);  
 /* แสดงผลลัพธ์
 [
-  ‘index.js’,
-  ‘index’,
+  'index.js',
+  'index',
   index: 5,
-  input: ‘test index.js’,
-  groups: [Object: null prototype] { filename: ‘index’ }
+  input: 'test index.js',
+  groups: [Object: null prototype] { filename: 'index' }
 ] */
 ```
 
@@ -544,19 +543,19 @@ console.log(matchObj);
 ```js
 let regex = /(?<=Java)Script/g;
 let result = "This is a JavaScript book".match( regex );
-console.log(result);           // [ ‘Script’ ]
+console.log(result);           // [ 'Script' ]
 ```
 
 ```js
 let  regex = /(?<=Java)[a-zA-Z\s]+/g;
 let result = "This is a JavaScript book".match( regex );
-console.log(result);           // [ ‘Script book’ ]
+console.log(result);           // [ 'Script book' ]
 ```
 
 ```js
 let  regex = /(?<!test).js/g;
 let result = "test.js build.js index.html run.js".match( regex );
-console.log(result);           // [ ‘.js’, ‘.js’ ]
+console.log(result);           // [ '.js', '.js' ]
 ```
 ### แฟล็ก s (dotAll)
 
