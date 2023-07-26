@@ -251,21 +251,15 @@ let checkType = {
         	}
     } // สิ้นสุดการประกาศ set
 }
-```
 
-```js
 let myArray = [ 0, 1, 2, 3, 4];
 let proxyArray = new Proxy(myArray, checkType);
-```
 
-```js
 // เพิ่มสมาชิกตัวที่ 5 (มีชนิดข้อมูลเป็นตัวเลข)
 proxyArray[5] = 5;
 console.log(proxyArray);	            // [ 0, 1, 2, 3, 4, 5 ]
 console.log(myArray);		// [ 0, 1, 2, 3, 4, 5 ]
-```
 
-```js
 // เพิ่มสมาชิกตัวที่ 6 แต่เป็นสตริง จะเกิด error ขึ้นได้
 proxyArray[6] = "6";	          // error
 ```
