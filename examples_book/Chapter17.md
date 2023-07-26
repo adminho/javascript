@@ -264,6 +264,7 @@ console.log(myArray);		// [ 0, 1, 2, 3, 4, 5 ]
 proxyArray[6] = "6";	          // error
 ```
 
+ตัวอย่างที่ 5 จะแสดงวิธีที่ทำให้อ็อบเจ๊กที่เคยสร้างแล้วจะถูก cached เก็บไว้ จะได้ไม่ต้องสร้างซ้ำ ๆ กันหลายรอบ
 ```js
 class Image{
 	constructor(imageName){
