@@ -464,21 +464,19 @@ console.log(regexY.lastIndex);   	// 10
 ```
 
 ```js
-var str = "foo1_foo2_foo3";
+var str = “foo1_foo2_foo3”;
 var  regex = /foo\d_?/;
-var  regexG = /foo\d_?/g;			// แฟล็ก g
-var  regexY = /foo\d_?/y;			// แฟลก y
-
+var  regexG = /foo\d_?/g;		             // แฟล็ก g
+var  regexY = /foo\d_?/y;		             // แฟลก y
 regex.lastIndex = 1;
 regexG.lastIndex = 1;
 regexY.lastIndex = 1;
 var result = regex.exec(str);
 var resultG = regexG.exec(str);
 var resultY = regexY.exec(str);
-
-console.log(result[0]);   			// "foo1_" 
-console.log(resultG[0]);   		// "foo2_"
-console.log(resultY);   			// มีค่าเป็น null เพราะค้นหาไม่เจอข้อความ
+console.log(result[0]);   			 // “foo1_” 
+console.log(resultG[0]);   		 // “foo2_”
+console.log(resultY);   			 // มีค่าเป็น null เพราะค้นหาไม่เจอข้อความ
 ```
 
 ```js
