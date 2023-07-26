@@ -34,7 +34,7 @@ obj.myFunction(200);			 // 200
 
 ```js
 let obj = { 
-	myFunction(param){		 //  ประกาศเมธอดแบบย่อ
+	myFunction(param) {		 //  ประกาศเมธอดแบบย่อ
 		console.log(param);
 	}
 } ;
@@ -223,7 +223,7 @@ let car = {
 	}
 };
 let taxi = {
-	drive(){ 
+	drive() { 
 	       console.log("Drive a taxi") ;
 	}
 };
@@ -234,6 +234,8 @@ Object.setPrototypeOf(driver, taxi);	                  // บรรทัด b -
 console.log( Object.getPrototypeOf(driver) === taxi);    // true
 driver.drive();					     // "Drive a taxi"
 ```
+
+## __proto__
 
 ```js
 let car = {
@@ -281,7 +283,8 @@ console.log(typeof driver.drive);		 // undefined
 console.log(driver["__proto__"] === car);	 // true
 ```
 
-##การใช้ supper
+## การใช้ supper
+
 ```js
 let car = {
 	speed: 100,
