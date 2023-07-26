@@ -1,6 +1,8 @@
 # บทที่ 8 ฟีเจอร์ใหม่ของตัวเลข สตริง และ regex
 
-## การแปลงสตริงเป็นตัวเลข
+## ตัวเลข
+### การแปลงสตริงเป็นตัวเลข
+
 ```js
 console.log(Number.parseInt("15")); 		// 15
 console.log(Number.parseFloat("123.5"));	// 123.5
@@ -17,7 +19,7 @@ console.log(typeof window.parseFloat);		// "function" (บนเว็บบร�
 //console.log(typeof global.parseFloat);	// "function" (บน Node.js)
 ```
 
-## เลขฐาน 2 ฐาน 8 และฐาน 16
+### เลขฐาน 2 ฐาน 8 และฐาน 16
 ```js
 console.log(Number("100"));		// 100
 console.log(Number("0b111"));		// 7
@@ -30,7 +32,7 @@ console.log(Number.parseInt("0o45"));	// 0
 console.log(Number.parseInt("0x17"));	// 23
 ```
 
-## เมธอด Number.isFinite() กับ Number.isNaN()
+### เมธอด Number.isFinite() กับ Number.isNaN()
 ```js
 console.log(isFinite(2560));			// true
 console.log(isFinite("2560"));			// true	
@@ -46,7 +48,7 @@ console.log(typeof window.isNaN);			// "function" (บนเว็บบรา�
 //console.log(typeof global.isNaN);		// "function" (บน Node.js)
 ```
 
-## เมธอด Number.isInteger() กับ Number.isSafeInteger()
+### เมธอด Number.isInteger() กับ Number.isSafeInteger()
 ```js
 console.log(Number.isInteger(34.6));		// false
 console.log(Number.isInteger(34.0));		// true (เขียนเป็นเลข 34.0 ก็จริง แต่จะถูกจัดเก็บเป็นเลข 34)
@@ -76,17 +78,73 @@ console.log(Number.isSafeInteger(outside_lower));	// false
 console.log(Number.isInteger(outside_lower));		// true
 ```
 
-## ค่าคงที่ Number.EPSILON
+### ค่าคงที่ Number.EPSILON
 ```js
 console.log(Number.EPSILON);	// 2.220446049250313e-16
 ```
+### BigInt
 
-## เมธอด repeat()
+```js
+let max = Number.MAX_SAFE_INTEGER;
+console.log(max);           //  9007199254740991
+console.log(++max);       //  9007199254740992  
+console.log(++max);       //  9007199254740992
+```
+
+```js
+let big = 9007199254740991n;
+console.log(big)            //  9007199254740991n  
+console.log(++big);        //  9007199254740992n  
+console.log(++big);        //  9007199254740993n  
+console.log(typeof big);  // bigint
+```
+
+```js
+let num = 1n;              // น้อยกว่า MAX_SAFE_INTEGER
+console.log(num);        // 1n
+```
+
+```js
+let num = 1000000000000n;
+console.log(num.toString());   // "1000000000000"
+```
+
+### ใช้เครื่องหมาย Underscores (_) ในตัวเลข
+```js
+let num1 = 128_556_790;
+let num2 = 880_000.71;
+console.log(num1);             // 128556790
+console.log(num2);             // 880000.71
+```
+
+```js
+let num3 = 1000_000_000_000n;
+console.log(num3.toString());       // "1000000000000"
+```
+
+```js
+let num4 = 177_3;
+console.log(num4);     // 1773
+```
+
+```js
+let num5 = _177_3;
+console.log(num5);     // จะเกิด error
+```
+
+```js
+let num6= 1773_;
+console.log(num6);     // จะเกิด error
+```
+
+## สตริง
+
+### เมธอด repeat()
 ```js
 console.log( "JavaScript".repeat(3) );     // "JavaScriptJavaScriptJavaScript"
 ```
 
-## เมธอด startsWith(), endsWith(), กับ includes()
+### เมธอด startsWith(), endsWith(), กับ includes()
 ```js
 console.log("JavaScript".startsWith("Java"));	// true (มีคำว่า "Java" อยู่ตำแหน่งแรก)
 console.log("JavaScript".startsWith("world"));	// false (ไม่มีคำว่า "world" อยู่ตำแหน่งแรก)
@@ -102,7 +160,7 @@ console.log("JavaScript".endsWith("va", 4));          // true
 console.log("JavaScript".includes("ri", 2));          // true
 ```
 
-## ยูนิโคด
+### ยูนิโคด
 ```js
 var a = "ABC";
 console.log(a.length);		   	// 3
@@ -154,7 +212,13 @@ var char = "𤭢";			// "\u{24b62}"	-- เป็นอักษรกลุ่�
 console.log(char.length);		// 2
 ```
 
-## การตั้งชื่อด้วยตัวอักษรพิเศษยูนิโคด
+```js
+console.log("\x41");		             // "A"
+console.log("\101");                                 // "A"   -   ทำไม่ได้ในโหมดสตริคท์             
+```
+
+### การตั้งชื่อด้วยตัวอักษรพิเศษยูนิโคด
+
 ```js
 var \u{e01} = 100;			// จะเหมือนเขียน  var ก = 100
 console.log(\u{e01});		// 100
@@ -168,33 +232,189 @@ var \u0e01 = 100;			// จะเหมือนเขียน  var ก = 100
 console.log(\u0e01);		// 100
 ```
 
-## เมธอด normalize()
+### เมธอด normalize()
 ```js
-function toCodePoint(str){		// ฟังก์ชั่นแสดงค่า code point ของสตริงออกทางหน้าคอนโซล
+function toCodePoint(str) {	// ฟังก์ชั่นแสดงค่า code point ของสตริงออกทางหน้าคอนโซล
 	var concat = "";
-	for(var i = 0; i < str.length; i++ ){
+	for(var i = 0; i < str.length; i++ ) {
 		concat += "0x" + str.codePointAt(i).toString(16) + " ";
 	}
 	console.log(concat);
 }
-
 // U+1E9B: LATIN SMALL LETTER LONG S WITH DOT ABOVE
 // U+0373: GREEK SMALL LETTER ARCHAIC SAMPI
 var str = "\u{1E9B}\u{0373}";
 var s1= str.normalize("NFC");
-toCodePoint(s1);			// 0x1e9b 0x373
-
+toCodePoint(s1);			             // 0x1e9b 0x373
 var s2= str.normalize("NFD");
-toCodePoint(s2);			// 0x17f 0x307 0x373
-
+toCodePoint(s2);			             // 0x17f 0x307 0x373
 var s3 = str.normalize("NFKC");
-toCodePoint(s3);			// 0x1e61 0x373
-
+toCodePoint(s3);			             // 0x1e61 0x373
 var s4 = str.normalize("NFKD");
-toCodePoint(s4);			// 0x73 0x307 0x373
+toCodePoint(s4);			             // 0x73 0x307 0x373
 ```
 
-## แฟล็ก u
+
+### เมธอด padStart()
+
+```js
+let str = "x";
+let newStr = str.padStart(5, "ab");
+console.log(newStr);             // "ababx"
+console.log(str);                   // "x"
+```
+
+```js
+let str = "x";
+let newStr = str.padStart(4, "ab");
+console.log(newStr);            // "abax"
+```
+
+```js
+let newStr = "abc".padStart(10, "0123456789");
+console.log(newStr);            // "0123456abc"
+
+```
+
+```js
+let newStr = "abcd".padStart(2, "x");
+console.log(newStr);            // "abcd"
+```
+
+```js
+let newStr = "x".padStart(3);
+console.log(newStr);              // "   x"
+console.log(newStr.length);    // 3
+```
+
+```js
+let newStr = "x".padStart(3, ‘ ’);
+console.log(newStr);             // "   x"
+console.log(newStr.length);   // 3
+```
+
+### เมธอด padEnd()
+
+```js
+// เติม ab จำนวน 2 ครั้งต่อท้าย x
+let str1 = "x";
+let newStr1 = str1.padEnd(5, "ab"); 			
+console.log(newStr1);                 // "xabab"
+// เติม ab จำนวน 2 ครั้งต่อท้าย x แต่ครั้งที่สองจะตัดให้ a
+let str2 = "x";
+let newStr2 = str2.padEnd(4, "ab");		
+console.log(newStr2);        	     // "xaba"
+// เมื่อ fillString ยาวเท่ากับ maxLength
+let newStr3 = "abc".padEnd(10, "0123456789");
+console.log(newStr3);                // "abc0123456"
+// เมื่อสตริงตัวตั้งต้นมีความยาวมากกว่าค่า maxLength
+let newStr4 = "abcd".padEnd(2, "x"); 		
+console.log(newStr4);               // "abcd"
+// เมื่อไม่ระบุ fillString
+let newStr5 = "x".padEnd(3); 			
+console.log(newStr5);               // "x   "
+console.log(newStr5.length);     // 3
+```
+
+```js
+let numStr = "12AF";
+let fillString = "0x";
+let maxLength  = numStr.length + fillString.length;
+console.log(numStr.padStart(maxLength, fillString));   // "0x12AF"
+```
+
+```js
+let str1 = "OK";
+let str2 = "Javascript";
+let str3 = "Wow";
+let fillString = "               ";
+let maxLength  = fillString.length;
+console.log(maxLength);     // 15
+console.log(str1.padStart(maxLength, fillString));   
+console.log(str2.padStart(maxLength, fillString));   
+console.log(str3.padStart(maxLength, fillString)); 
+/* แสดงผลลัพธ์
+             OK
+    Javascript
+           Wow
+*/
+```
+
+```js
+let filename = "test";
+let fillString = ".js";
+let maxLength  = filename.length + fillString.length;
+console.log(filename.padEnd(maxLength, fillString));   // "test.js"
+```
+
+```js
+let numStr = "525";
+let fillString = ".00";
+let maxLength  = numStr.length + fillString.length;
+console.log(numStr.padEnd(maxLength, fillString));   // "525.00"
+```
+
+### เมธอด trimStart() กับ trimEnd()
+
+```js
+let str1 = "        ฉันรัก JavaScript";
+console.log(str1.trimStart());      // "ฉันรัก JavaScript"
+let str2 = "ฉันรัก JavaScript        ";
+console.log(str2.trimEnd());       // "ฉันรัก JavaScript"
+```
+
+```js
+let str = "        ฉันรัก JavaScript        ";
+console.log(str.trim());             // "ฉันรัก JavaScript"
+```
+
+### เมธอด matchAll()
+
+```js
+let str = "นายไก่ เลี้ยงแต่ไก่ ไม่ขายไข่ไก่";  
+for(const c of str.matchAll("ไก่") ) {
+  console.log("เจอคำว่า", c[0], "ที่ตำแหน่ง", c.index )
+}  
+/* แสดงผลลัพธ์
+เจอคำว่า ไก่ ที่ตำแหน่ง 3
+เจอคำว่า ไก่ ที่ตำแหน่ง 16
+เจอคำว่า ไก่ ที่ตำแหน่ง 29 */
+```
+
+```js
+let str = ‘นายไก่ เลี้ยงแต่ไก่ ไม่ขายไข่ไก่’;  
+for(const c of str.matchAll(/ไก่/g) ) {
+  console.log("เจอคำว่า", c[0], "ที่ตำแหน่ง", c.index )
+} 
+/* แสดงผลลัพธ์
+เจอคำว่า ไก่ ที่ตำแหน่ง 3
+เจอคำว่า ไก่ ที่ตำแหน่ง 16
+เจอคำว่า ไก่ ที่ตำแหน่ง 29
+*/
+```
+
+### เมธอด replaceAll()
+
+```js
+let str = "สมชาย น้องสมปอง มีเพื่อนชื่อ สมชาย";
+let newStr = str.replace("สมชาย", "ประยุทธ์");
+console.log(newStr)       // ประยุทธ์ น้องสมปอง มีเพื่อนชื่อ สมชาย
+```
+
+```js
+let str = "สมชาย น้องสมปอง มีเพื่อนชื่อ สมชาย";
+let newStr = str.replace(/สมชาย/g, "ประยุทธ์");
+console.log(newStr)     // ประยุทธ์ น้องสมปอง มีเพื่อนชื่อ ประยุทธ์
+```
+
+```js
+let str = "สมชาย น้องสมปอง มีเพื่อนชื่อ สมชาย";
+let newStr = str.replaceAll("สมชาย", "ประยุทธ์");
+console.log(newStr)   // ประยุทธ์ น้องสมปอง มีเพื่อนชื่อ ประยุทธ์
+```
+## Regex
+### แฟล็ก u
+
 ```js
 var str = "𠮷";
 console.log(str.length);           	// 2 
@@ -215,7 +435,7 @@ var result2 =  "𠮷กขคง𤭢".match(/[\s\S]/g);
 console.log(result2.length); 		// 8
 ```
 
-## แฟล็ก y
+### แฟล็ก y
 ```js
 var str = "foo1_foo2_foo3";		// สตริงที่จะค้นหา
 var  regex = /foo\d_?/;			// ไม่มีแฟล็ก
@@ -268,7 +488,7 @@ console.log(myRegex.sticky);     // true
 myRegex.sticky = 1;			// TypeError ไม่สามารถแก้ไขค่าได้ มีไว้อ่านอย่างเดียว
 ```
 
-## RegExp
+### RegExp
 ```js
 var myRegex = /foo/g;
 var regex2 = new RegExp(myRegex);
@@ -288,11 +508,88 @@ var myRegex = new RegExp("foo", "y");	// จะเสมือนเขียน
 console.log(myRegex.exec("foo_abc"));	// ["foo"]
 ```
 
-## พร็อพเพอร์ตี้ flags
+### พร็อพเพอร์ตี้ flags
 ```js
 var myRegex = /foo/i;
 console.log(myRegex.source);     		// "foo"
 console.log(myRegex.flags);      		// "i"
 ```
 
+## เพิ่มเติมใน ES9
 
+### RegExp named capture groups
+
+```js
+let regEx = /[a-z]+.js/;
+let matchObj =   regEx.exec("test index.js");
+console.log(matchObj) // [ ‘index.js’, index: 5, input: ‘test index.js’, groups: undefined ]
+```
+
+```js
+let regEx = /(?<filename>[a-z]+).js/;
+let matchObj =    regEx.exec("test index.js");
+console.log(matchObj);  
+/* แสดงผลลัพธ์
+[
+  ‘index.js’,
+  ‘index’,
+  index: 5,
+  input: ‘test index.js’,
+  groups: [Object: null prototype] { filename: ‘index’ }
+] */
+```
+
+### Lookbehind assertions
+
+```js
+let regex = /(?<=Java)Script/g;
+let result = "This is a JavaScript book".match( regex );
+console.log(result);           // [ ‘Script’ ]
+```
+
+```js
+let  regex = /(?<=Java)[a-zA-Z\s]+/g;
+let result = "This is a JavaScript book".match( regex );
+console.log(result);           // [ ‘Script book’ ]
+```
+
+```js
+let  regex = /(?<!test).js/g;
+let result = "test.js build.js index.html run.js".match( regex );
+console.log(result);           // [ ‘.js’, ‘.js’ ]
+```
+### แฟล็ก s (dotAll)
+
+```js
+let regex = /./;
+let result = regex.test("\n");
+console.log(result);             // false
+```
+### Unicode character properties
+
+```js
+var str = "This is a book.";
+var result = /\p{White_Space}/u.test( str );
+console.log(result);         // true
+var result = /\p{Lowercase_Letter}/u.test (str );
+console.log(result);         // true
+var result = /\p{Uppercase_Letter}/u.test (str );
+console.log(result);         // true
+```
+
+```js
+var result = /\p{Script=Greek}+/u.test("μετά");
+console.log(result)      // true
+var result = /\p{Script=Thai}+/u.test("หนังสือไทย");
+console.log(result)     // true
+```
+
+```js
+var result = /\p{Uppercase_Letter}/u.test( "THAI" );
+console.log(result)
+```
+
+```js
+var result = /\p{General_Category=Uppercase_Letter}/u.test( "THAI" );
+console.log(result)
+```
