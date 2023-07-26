@@ -235,7 +235,7 @@ console.log( Object.getPrototypeOf(driver) === taxi);    // true
 driver.drive();					     // "Drive a taxi"
 ```
 
-## __proto__
+## '__proto__'
 
 ```js
 let car = {
