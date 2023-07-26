@@ -427,10 +427,10 @@ console.log(/^.$/u.test(str));      	// true
 ```
 
 ```js
-var result1 =  “𠮷กขคง𤭢”.match(/[\s\S]/gu);
+var result1 =  "𠮷กขคง𤭢".match(/[\s\S]/gu);
 console.log(result1.length);	// 6
 // ถ้าไม่ใช้แฟล็ก u จะนับตัวอักษรผิด
-var result2 =  “𠮷กขคง𤭢”.match(/[\s\S]/g);
+var result2 =  "𠮷กขคง𤭢".match(/[\s\S]/g);
 console.log(result2.length); 	// 8
 ```
 
