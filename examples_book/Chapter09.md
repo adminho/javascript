@@ -436,10 +436,10 @@ console.log(b);			// 1
 ```
 
 ```js
-let font = [ “red”, “bold”];
-let color, style; 
-[color, style] = font;		             // ไม่เกิด error
-console.log(color, style);		             // “red bold”
+let a = 1, b = 2, c = 3, d = 4;
+console.log(a, b, c, d);		// 1 2 3 4
+[d, c, b ,a] = [a, b, c, d];	            // ดีสตรัคเตอร์ริ่งจากอาร์เรย์
+console.log(a, b, c, d);		// 4 3 2 1
 ```
 
 ### รับค่าจากฟังก์ชั่น
