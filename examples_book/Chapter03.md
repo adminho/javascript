@@ -26,7 +26,7 @@
 </html>
 ```
 
-### ตัวอย่างการวางจาวาสคริต์ใน &lt;body&gt; ...&lt;/body&gt;'
+### ตัวอย่างการวางจาวาสคริต์ใน &lt;body&gt; ...&lt;/body&gt;
 
 ```html
 <!-- ไฟล์ชื่อ index.html -->
@@ -58,7 +58,7 @@
 </html>
 ```
 
-### ตัวอย่างการวางจาวาสคริต์ใน &lt;head&lt; ...&lt;/head&gt;'
+### ตัวอย่างการวางจาวาสคริต์ใน &lt;head&lt; ...&lt;/head&gt;
 
 ```html
 <!-- ไฟล์ชื่อ index.html-->
@@ -82,7 +82,7 @@
 <head>
 	<script>		
 	// ซอร์สโค้ดจาวาสคริปต์
-       	function say(message){
+       	function say(message) {
 	     var element = document.querySelector('#element1');
 	     element.innerHTML = message;			
             }
@@ -191,6 +191,8 @@
 	let chat = new Chat("Hello, world!");
 	chat.say();
 </script>
+</body>
+</html>
 ```
 
 ### ตัวอย่างการใช้งาน Babel
