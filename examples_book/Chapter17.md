@@ -147,19 +147,19 @@ delete proxyObj.c ; 	                         // exception: Can’t delete prope
 let validation = { // handler
     apply(targetObj, thisObj, argumentList) {         // ดักจับตอนฟังก์ชันเป้าหมายถูกเรียกใช้งาน
            if( argumentList.length == 0 ) { 	          // ไม่มีค่าอากิวเมนต์ส่งมาให้ฟังก์ชั่น
-	           throw new Error(“Must send arguments to the function”);
+	           throw new Error("Must send arguments to the function");
            }
            argumentList.forEach( function(value, index, thisObj) { 
-	           if(typeof value != “number”) { 	
+	           if(typeof value != "number") { 	
 				// ตรวจสอบค่าอากิวเมนต์ที่ส่งให้ฟังก์ชั่น มันเป็นตัวเลขหรือไม่ ?
-				throw new Error(“All arguments must be numbers”);
+				throw new Error("All arguments must be numbers");
 	           } // สิ้นสุด if		 
            }); // สิ้นสุด argumentList.forEach()           
            // เรียกใช้งานฟังก์ชันเป้าหมาย
            let result = Reflect.apply(targetObj, thisObj, argumentList); 
            // ตรวจสอบค่าที่รีเทิร์นจากฟังก์ชั่น มันอยู่ในช่วง safe integer หรือไม่ ?
            if( Number.isSafeInteger(result) == false) { 
-	           throw new Error(“The result is not safe integer”);
+	           throw new Error("The result is not safe integer");
           }; 
           return result;
     } // สิ้นสุด apply
