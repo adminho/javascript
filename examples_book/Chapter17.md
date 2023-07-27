@@ -164,39 +164,29 @@ let validation = { // handler
           return result;
     } // สิ้นสุด apply
 } // สิ้นสุดการประกาศอ็อบเจ็กต์ validation
-```
 
-```js
 function sum(param1, param2) {	             // หาผลบวก
 	return param1 + param2;
 }
 function multiply(param1, param2) {	 // หาผลคูณ
 	return param1 * param2;
 }
-```
 
-```js
 let proxySum = new Proxy(sum, validation);	
 let proxyMultiply = new Proxy(multiply, validation);	
 // เรียกฟังก์ชั่น โดยส่งค่าอากิวเมนต์ไปให้ ที่เป็นตัวเลข 
 // แล้วรีเทิร์นค่าไม่เกิน "safe integer" ก็จะทำงานได้ตามปกติ
 console.log(proxySum(2, 3 ));		 // 5 = 2 + 3
 console.log(proxyMultiply(2, 3));	             // 6 = 2 * 3
-```
 
-```js
 // ไม่มีค่าอากิวเมนต์ส่งไปให้ฟังก์ชั่น ก็จะเกิด error
 proxySum();			             // error
 proxyMultiply();		                         // error
-```
 
-```js
 // เมื่อส่งค่าอากิวเมนต์ที่ไม่ใช่ตัวเลข ก็จะเกิด error
 proxySum(2, "3");        		            // error
 proxyMultiply(2, "3");		            // error
-```
 
-```js
 // ค่าที่รีเทิร์นออกจากฟังก์ชั่น ถ้าเกินช่วง safe integer ก็จะเกิด error
 let maxNum = Number.MAX_SAFE_INTEGER + 1;
 proxySum(maxNum, maxNum);	             // error
