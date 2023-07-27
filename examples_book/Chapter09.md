@@ -445,7 +445,7 @@ console.log(a, b, c, d);		// 4 3 2 1
 ### รับค่าจากฟังก์ชั่น
 
 ```js
-function myFunctin(){
+function myFunctin() {
 	return {a:1 ,b: 2};
 }
 let {a, b} = myFunctin();
@@ -453,7 +453,7 @@ console.log(a, b);	// 1, 2
 ```
 
 ```js
-function myFunctin(){
+function myFunctin() {
 	return [1, 2] ;
 }
 let [a, b] = myFunctin();
