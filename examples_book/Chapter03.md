@@ -6,21 +6,21 @@
 
 ```html
 <!DOCTYPE html>
-<htm>
+<html>
 	<head>
 		<script>
 			function hello(msg) {			
-			     return “Hello “ + msg;
+			     return "Hello " + msg;
 			}
 		</script>
 	</head>
 	<body>
 		<h1></h1>
 		<div></div>
-		<h1 id=”element1”></h1>
+		<h1 id="element1"></h1>
 		<script>
-		         var element = document.querySelector(‘#element1’);	
-	                     element.innerHTML = hello(“JavaScript”);			           
+		         var element = document.querySelector('#element1');	
+	                     element.innerHTML = hello("JavaScript");			           
 		</script>
 	</body>
 </html>
