@@ -494,8 +494,8 @@ console.log(menu2.onclick);		 // "openDoc"
 ```js
 let obj = {foo: 1, bar: 2, zoo: 3};
 let {foo, ...rest} = obj;
-console.log(foo);
-console.log(rest) // { bar: 2, zoo: 3 }
+console.log(foo);        // 1
+console.log(rest)        // { bar: 2, zoo: 3 }
 ```
 
 ```js
