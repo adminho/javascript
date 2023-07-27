@@ -15,6 +15,8 @@ function calculate(num) {
 }
 ```
 
+### การใช้ตัวแปรแบบ  var เปรียบเทียบกับ let
+
 ```js
 var a = 1;
 console.log(a);	             // 1
@@ -35,12 +37,21 @@ console.log(a);	           // 1
 console.log(a);	          // 1
 ```
 
+### var กับ let ในประโยควนลูป
+
 ```js
 for(var i=0; i < 10; i++) {   // วนลูป 10 ครั้ง
      // ซอร์สโค้ด
 }
 // สามารถเข้าถึงตัวแปร i ที่ตอนนี้มีค่าเป็น 10 ได้
 console.log(i);     // 10
+```
+
+```js
+for(let i=0; i < 10; i++) {	// วนลูป 10 ครั้ง
+    // ซอร์สโค้ด
+}
+console.log(i);     // จะเกิด ReferenceError เพราะมองไม่เห็นตัวแปร i
 ```
 
 ```js
@@ -341,8 +352,8 @@ console.log(option === font[1]); 	             // true (เพราะมัน
 
 ```js
 let action = {
-	save: true
-          ,undo: false
+     save: true,
+     undo: false
 };
 let save, undo;
 {save, undo} = action;		              // เกิด error
@@ -350,12 +361,13 @@ let save, undo;
 
 ```js
 let action = {
-	save: true
-          ,undo: false
+     save: true,
+     undo: false
 };
 let save, undo;
 ({save, undo} = action);		              // ใส่วงเล็บครอบทั้งประโยคจะไม่เกิด error
 console.log(save, undo);       	              // true false
+
 ```
 
 ```js
@@ -421,6 +433,13 @@ let a = 1, b =2;
 [b , a] = [a , b];			// ดีสตรัคเตอร์ริ่งจากอาร์เรย์
 console.log(a);			// 2
 console.log(b);			// 1
+```
+
+```js
+let font = [ “red”, “bold”];
+let color, style; 
+[color, style] = font;		             // ไม่เกิด error
+console.log(color, style);		             // “red bold”
 ```
 
 ### รับค่าจากฟังก์ชั่น
