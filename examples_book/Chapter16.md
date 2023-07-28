@@ -453,8 +453,8 @@ for(let i of obj){
 
 ```js
 let obj = {  
-	array: [1, 5, 10]
-	,[Symbol.iterator] () { 
+	array: [1, 5, 10],
+	[Symbol.iterator] () { 
 	       return this.array[Symbol.iterator]();	 
  		// return this.array.values(); 	
 	}
