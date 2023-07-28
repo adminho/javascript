@@ -20,7 +20,7 @@ input[type=button], input[type=submit], input[type=reset] {
   color: white;
   padding: 8px 16px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 4px 2px 4px 0px;
   cursor: pointer;
 }
 
