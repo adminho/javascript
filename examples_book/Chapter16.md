@@ -384,7 +384,7 @@ for(let [key,value] of uint8.entries()) {
 
 * ตัวอย่างที่ 6
 ```js
-function myFunction(){
+function myFunction() {
 	return new Set(["red", "green"]);
 }
 let [a, b] = myFunction();
@@ -437,7 +437,7 @@ createGrade("Mana", "Dekdee", map.values());// "Mana Dekdee Male 19 Math 3.20"
 
 
 ```js
-let obj = { array: [1, 5, 10]};
+let obj = { array: [1, 5, 10] };
 obj[Symbol.iterator] = function () {	        // บรรทัดที่ 2
 	return this.array[Symbol.iterator]();       // บรรทัดที่ 3	 
 	// return this.array.values(); 	        // หรือจะเขียนแบบนี้ก็สามารถทำได้
