@@ -210,13 +210,15 @@ for (let entry of map) {		            // จะเหมือนกับกา
 
 ### โอเปอเรเตอร์สเปรด
 
-* ตัวอย่างที่ 1
+* ตัวอย่างที่ 1 จะแสดงการใช้งานโอเปอเรเตอร์สเปรดกับสตริง เพื่อนำไปกำหนดค่าให้เป็นสมาชิกของอาร์เรย์
+
 ```js
 let array = [..."abc"];	                         // จะเหมือนเขียนเป็น let array = ["a", "b", "c"];
 console.log(array[0], array[1], array[2]);	 // "a b c"
 ```
 
-* ตัวอย่างที่ 2
+* ตัวอย่างที่ 2  เมื่อใช้โอเปอเรเตอร์สเปรดกับเซท มันจะไปเรียกเมธอด @@iterator ของเซท ให้สร้างอิเทอเรเตอร์ขึ้นมา เพื่อใช้เข้าถึงและแตกสมาชิกของเซทออกมา
+
 ```js
 let set = new Set(["a", "b", "c"]) ;	
 let array = [...set];
@@ -238,7 +240,8 @@ console.log(entries[2][0]); 	            // "c"
 console.log(entries[2][1]); 	            // "c"
 ```
 
-* ตัวอย่างที่ 3
+* ตัวอย่างที่ 3 จะแสดงการใช้งานโอเปอเรเตอร์สเปรดกับแม็พ เพื่อนำไปกำหนดค่าให้เป็นสมาชิกของอาร์เรย์
+
 ```js
 let map = new Map([ [1,"a"] , [2, "b"] ]);
 let keys = [ ...map.keys() ],
@@ -253,7 +256,8 @@ console.log(entries[1][1]);	                         // "b"
 console.log( [...map]);		             // [ [1, "a"] , [2, "b"] ]
 ```
 
-* ตัวอย่างที่ 4
+* ตัวอย่างที่ 4 จะแสดงการใช้โอเปอเรเตอร์สเปรด กับอาร์เรย์
+
 ```js
 let array = [];
 array.length  = 3;
@@ -264,7 +268,7 @@ console.log(...array.entries());		 // [0, undefined] [1, "a"] [2, undefined]
 console.log(...array);			 // undefined "a" undefined
 ```
 
-* ตัวอย่างที่ 5
+* ตัวอย่างที่ 5 จะแสดงการใช้โอเปอเรเตอร์สเปรด กับอาร์เรย์ระดับบิต
 ```js
 let uint8 = new Uint8Array( 2 );
 uint8[0] = 10 ;
@@ -275,7 +279,7 @@ console.log(...uint8.entries());		 // [0, 10] [1, 20]
 console.log(...uint8);			 // 10 20
 ```
 
-* ตัวอย่างที่ 6
+* ตัวอย่างที่ 6 จะแสดงการใช้งานโอเปอรเตอร์สเปรดกับคอลเลคชั่น เพื่อแตกค่าออกมาก่อน แล้วจึงส่งมันให้เป็นค่าอากิวเมนต์แก่ฟังก์ชั่น 
 ```js
 let set = new Set([1, 2, 3]);
 let array = [10, 20, 30];
@@ -320,13 +324,15 @@ console.log(...diff);			 //  1 2
 
 ### ดีสตรัคเตอร์ริ่ง
 
-* ตัวอย่างที่ 1
+* ตัวอย่างที่ 1 ลองพิจารณาการใช้งานเซท กับวิธีดีสตรัคเตอร์ริ่ง
+
 ```js
 let [a, b, c] = new Set(["a", "b", "c"]);
 console.log(a, b, c)		             // "a b c"
 ```
 
-* ตัวอย่างที่ 2
+* ตัวอย่างที่ 2 ลองพิจารณาการใช้งานแม็พ กับวิธีดีสตรัคเตอร์ริ่ง
+
 ```js
 let map = new Map();
 map.set("firstname", "Somchai");
@@ -340,14 +346,15 @@ console.log(key1,key2);		             // "firstname lastname"
 console.log(value1,value2);		 // "Somchai Jaidee"
 ```
 
-* ตัวอย่างที่ 3
+* ตัวอย่างที่ 3 ลองพิจารณาการใช้งานอาร์เรย์ระดับบิต ด้วยการใช้โอเปอเรเตอร์สเปรด ร่วมกับวิธีดีสตรัคเตอร์ริ่ง
+
 ```js
 let uint8 = new Uint8Array( 2 );
 [...uint8] = [10, 20];
 console.log(uint8[0], uint8[1]);	             // 10 20
 ```
 
-* ตัวอย่างที่ 4
+* ตัวอย่างที่ 4 ลองพิจารณาการนำข้อมูลจากคอลเลคชั่นมากำหนดค่าให้กับอาร์เรย์ ด้วยการใช้โอเปอเรเตอร์สเปรด ร่วมกับวิธีดีสตรัคเตอร์ริ่ง
 ```js
 let a1 = [], a2 = [];
 let set = new Set([10, 20]);
@@ -361,7 +368,8 @@ console.log(a2[0][0], a2[0][1]);		 // "firstname Somchai"
 console.log(a2[1][0], a2[1][1]);   	             // "lastname Jaidee"
 ```
 
-* ตัวอย่างที่ 5
+* ตัวอย่างที่ 5 ลองพิจารณาการใช้งานเมธอด entries() ของคอลเลคชั่น ในประโยค for …of
+
 ```js
 let array = [5, 10];
 let set= new Set(["red", "green"]);
@@ -382,7 +390,7 @@ for(let [key,value] of uint8.entries()) {
 }
 ```
 
-* ตัวอย่างที่ 6
+* ตัวอย่างที่ 6 ลองพิจารณาการใช้วิธีดีสตรัคเตอร์ริ่ง มารับค่าจากการรีเทิร์นของฟังก์ชั่น 
 ```js
 function myFunction() {
 	return new Set(["red", "green"]);
@@ -411,13 +419,12 @@ createGrade("Mana", "Dekdee", map.values());// "Mana Dekdee Male 19 Math 3.20"
 <html>
 <head>  
 <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
-<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
 </head>
 <body>
     <ul>
         <li>One</li>
         <li>Two</li>
-        <li>Three</li>
+        <li>Three</li>    
     </ul>
     <script type="module">
 	let element = document.getElementsByTagName("li");		
