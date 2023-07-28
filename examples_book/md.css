@@ -1,0 +1,50 @@
+.norun {
+  background-color: #F0F0F0;
+  margin-top: 20px;
+  border: 1px solid #4CAF50;
+}
+
+.run {
+  background-color: #DAF7A6 ;
+  margin-top: 20px;
+  border: 1px solid #4CAF50;
+}
+
+.main {
+	margin-bottom: 100px;	
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+textarea {
+    font-size: 13pt;
+    width: 100%;
+}
+/*.clearBtn {
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%; 
+   text-align: center;   
+   cursor: pointer;
+}*/
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%; 
+   background-color: #7B68EE;
+   color: white;
+   text-align: left;
+   padding-left: 30px;
+}
