@@ -75,7 +75,7 @@ let obj = {
     1: "foo",
     2: "bar"
 };
-let array = Array.from( obj, function (value,index){
+let array = Array.from( obj, function (value,index) {
 	// console.log(this === obj);          // true
     	return this[index];
 },obj);				             // อากิวเมนต์ตัวที่สาม 
@@ -604,6 +604,8 @@ map.set([],"Bye");			 // 		--บรรทัด d
 console.log(map.has([]));		             // false  	--บรรทัด f
 ```
 
+### การสร้างแม็พด้วยปีกกา
+
 ```js
 let map = {};			    	 // จำลองการสร้างแม็พ
 let a = { x: 1 },  b = { y: 2 };
@@ -612,6 +614,8 @@ map[b] = "bar";		    	             // กำหนดให้ b เป็นค
 console.log(map[a]);             		 // "bar"
 console.log(map[b]);             		 // "bar"
 ```
+
+## WeakMap
 
 ```js
 let wmap = new WeakMap();
@@ -647,7 +651,6 @@ console.log(buffer.byteLength);  	 // 32
 let uint16 = new Uint16Array( buffer );
 console.log(uint16.length);             	 // สมาชิก 16 ตัว
 ```
-
 
 ```js
 let buffer = new ArrayBuffer( 2 );		 // 2 ไบต์ (16 บิต)
