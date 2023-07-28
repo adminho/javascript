@@ -555,6 +555,9 @@ for (let i of iterator) { // อิเทอเรเตอร์ของเจ
 10 */
 ```
 
+
+### ประโยค return ในเจนเนอเรเตอร์
+
 ```js
 function * genIterator () {
     yield 1;
@@ -758,7 +761,7 @@ for(let i of myClass.genIterator([1, 5, 10]) ) {
 ### สร้างอ็อบเจ็กต์ที่วนซ้ำได้ด้วยเจนเนอเรเตอร์
 
 ```js
-let obj = { item: [1, 5, 10]};
+let obj = { item: [1, 5, 10] };
 obj[Symbol.iterator] = function *() {          // ประกาศเจนเนอเรเตอร์
 	yield *this.item;
 };
@@ -799,28 +802,11 @@ class GenIterable {
     }
 }
 let obj = new GenIterable([1, 5, 10]);
-for(let i of obj){
+for(let i of obj) {
 	console.log(i);
 }
 /* แสดงผลลัพธ์
 1
 5
 10 */
-```
-
-### ประโยค return ในเจนเนอเรเตอร์
-
-```js
-function * genIterator () {
-    yield 1;
-    yield 5;
-    return 45;		       // จบการทำงานแค่บรรทัดนี้
-    yield 10;		       // การทำงานจะมาไม่ถึงบรรทัดนี้
-}
-let iterator = genIterator ();
-console.log(iterator.next());     // { value: 1, done: false }
-console.log(iterator.next());     // { value: 5, done: false }
-console.log(iterator.next());     // { value: 45, done: true }
-console.log(iterator.next());     // { value: undefined, done: true }
-console.log(iterator.next());     // { value: undefined, done: true }
 ```
