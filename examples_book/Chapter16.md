@@ -13,7 +13,7 @@ function createIterator(array) {
               	let done = (this.i >= array.length);    
 		// เข้าถึงสมาชิกในอาร์เรย์
 		let value = !done ? array[this.i++] : undefined;         		
-                   return {  value, done};
+                   return { value, done };
           	    } // สิ้นสุดการประกาศฟังก์ขั่น
 	};
 	return iterator;
@@ -63,8 +63,7 @@ for(let i of [1, 5, 10]) {
 /* แสดงผลลัพธ์
 1
 5
-10 
-*/
+10  */
 /* อาจเหมือนเขียนประโยคนี้
 let iterator = [1, 5, 10][Symbol.iterator]();
 let result;
