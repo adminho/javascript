@@ -716,7 +716,7 @@ ajax.then(handle, errorHandle)			        // บรรทัด f
 * [ไฟล์ json.php ประกอบเนื้อหา Fetch API](json.php)
 
 ```js
-fetch(“https://patanasongsivilai.com/example/json.php”)     // บรรทัด a
+fetch("https://patanasongsivilai.com/example/json.php")     // บรรทัด a
 .then( function (res) {                         // บรรทัด b
       return  res.text();                         // บรรทัด c
    }
@@ -726,7 +726,7 @@ fetch(“https://patanasongsivilai.com/example/json.php”)     // บรรท�
    } 
 );
 // แสดงผลลัพธ์
-// {“name”:“Somchai”,“age”:30,“city”:“Bangkok”}
+// {"name":"Somchai","age":30,"city":"Bangkok"}
 ```
 
 ```html
@@ -735,17 +735,17 @@ fetch(“https://patanasongsivilai.com/example/json.php”)     // บรรท�
 <html>
 <head></head>
 <body>
-<h1 id=“element1”></h1>
-<h1 id=“element2”></h1>
+<h1 id="element1"></h1>
+<h1 id="element2"></h1>
 <script>
-document.querySelector(“#element1”).innerHTML = “Sending a message”; 
-let element = document.querySelector(“#element2”);	
-fetch(“http://127.0.01:8001/message?msg=test promise”)
+document.querySelector("#element1").innerHTML = "Sending a message"; 
+let element = document.querySelector("#element2");	
+fetch("http://127.0.01:8001/message?msg=test promise")
 .then( function (res) { 
 	return res.text();
 })
 .then( function (text) { 	
-	element.innerHTML = “Get a message: ” + text;
+	element.innerHTML = "Get a message: " + text;
 	console.log(text);
 })
 .catch( function (errMsg) {
