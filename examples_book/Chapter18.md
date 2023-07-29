@@ -567,8 +567,8 @@ let p2 = new Promise(function(resolve, reject) {
 let p3 = Promise.reject("Promise3:");
 let p4 = Promise.all([p1, p2, p3]);       // มอนิเตอร์เฉพาะ p3 เพราะมีสถานะเป็น rejected ก่อนตัวอื่น
 p4.then(
-    function(value)  { 	console.log(value, "success");    }
-    ,function(value) {   console.log(value, "failed");     }
+    function(value) { console.log(value, "success"); }
+    ,function(value) { console.log(value, "failed"); }
 );
 // แสดงผลลัพธ์เป็น
 // "Promise3: failed"
@@ -590,8 +590,8 @@ let p2 = new Promise( function(resolve, reject) {
 let p3 = Promise.reject("Promise3:");
 let p4 = Promise.race([p1, p2, p3]); // มอนิเตอร์เฉพาะพรอมิส p3 เพราะมีสถานะเป็น settled ก่อนตัวอื่น
 p4.then(
-     function(value)  {  console.log(value, "success");   }
-     ,function(value) {   console.log(value, "failed");     }
+     function(value) { console.log(value, "success"); }
+     ,function(value) { console.log(value, "failed"); }
 );
 // แสดงผลลัพธ์เป็น
 // "Promise3: failed"
