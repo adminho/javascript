@@ -126,7 +126,7 @@ let promise = new Promise( function(resolve, reject ) {
 console.log("Line 1");			 // บรรทัดที่ 1
 //...
 console.log("Line 2000");		             // บรรทัดที่ 2000
-promise.catch( function(reason) {	             // จะวาง catch()ไว้หลังจากสร้างพรอมิสตำแหน่งใดก็ได้
+promise.catch( function(reason) {	             // จะวาง catch() ไว้หลังจากสร้างพรอมิสตำแหน่งใดก็ได้
 	console.log("Promise:", reason);	        	
 } );
 //...
@@ -277,7 +277,7 @@ promise.then(function(value) {	             // then() ตัวแรก
 "then3: 3" */
 ```
 
-การใช้ then() ร่วมกับ catch()
+## การใช้ then() ร่วมกับ catch()
 
 
 ```js
@@ -475,19 +475,6 @@ promise.then(function(value) {
 ```
 
 ## เมธอด finally()
-
-```js
-myPromise
-.then( result => {
-    // โค้ดอยู่ข้างใน
-})
-.catch( error => {
-   // โค้ดอยู่ข้างใน
-})
-.finally( () => {
-   // โค้ดอยู่ข้างใน
-});
-```
 
 ```js
 Promise.resolve("fulfilled")                               // บรรทัด a
