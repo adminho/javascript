@@ -768,7 +768,7 @@ function readJSONFile(fileName){
 		fs.readFile(fileName, function(err, text) {	            // บรรทัด a
 			if (err) {
 				reject(err.message);		// บรรทัด b 
-			}else{
+			} else {
 				let obj = JSON.parse(text);
 				let json = JSON.stringify(obj, null, 2);		
 				resolve(json);			// บรรทัด c 
@@ -790,7 +790,7 @@ reader.then(handle, errorHandle)		                                 // บรร�
 let iterator = generator();
 iterator.next();	// เริ่มทำงาน
 function *generator() {				
- 	for(let i=0; i<5; i++){		
+ 	for(let i=0; i<5; i++) {		
  		let result = yield runService(i);		// บรรทัด a
 		console.log("Message:" , result);
  	}	
@@ -800,13 +800,13 @@ function runService(data) {
    		console.log("to do something:", data);	// บรรทัด b
 		// การทำงานแบบอะซิงโครนัสอื่น ๆ
 		// ...			
-		setTimeout(function(){
+		setTimeout(function() {
 			resolve(data);			// บรรทัด c
  		}
  	,1000);						// ดีเลย์ 1 วินาที
 	}
 	let promise = new Promise(aysnCode);		
- 	promise.then(function(value){ 			// บรรทัด d
+ 	promise.then(function(value) { 			// บรรทัด d
 		let result = `service ${value} is success`;
 		iterator.next(result);			
  	});	
