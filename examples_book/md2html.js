@@ -64,7 +64,7 @@ function writeToHTML(allLines, fileName){
 	<div class="main"> ${allLines} </div>
 	<div id="displayArea" class="footer" style="visibility:hidden;">
 	   <div id="display"></div>
-	   <input  type="submit" value="Clear output" onclick="clearDisplay(true)" >
+	   <input  type="submit" value="Clear" onclick="clearDisplay(true)" >
 	</div>
 	
 	<script>
@@ -173,46 +173,46 @@ async function genHTML(fileName){
 }
 
 
-/*let files = [ "Chapter03", "Chapter05", "Chapter08", 
+let files = [ "Chapter03", "Chapter05", "Chapter08", 
 "Chapter09", "Chapter11", "Chapter12", "Chapter13", 
-"Chapter15", "Chapter17"];*/
-let files = [  "Chapter13"];
+"Chapter15", "Chapter16", "Chapter17"];
 
 
-genHTML("Chapter03");
-//genHTML("Chapter05");
-//genHTML("Chapter08");
-//genHTML("Chapter09");
-//genHTML("Chapter11");
-//genHTML("Chapter12");
-//genHTML("Chapter13");
-//genHTML("Chapter17");*/
+
+
+genHTML("Chapter05");
+genHTML("Chapter08");
+genHTML("Chapter09");
+genHTML("Chapter11");
+genHTML("Chapter12");
+genHTML("Chapter13");
+genHTML("Chapter15");
+genHTML("Chapter16");
+genHTML("Chapter17");
+genHTML("Chapter18");
 
 
 async function countline(fileName){
-  let count = 0;
-  
-  eachLine(`${fileName}.md`, function(line, last) {
-  line = line.trim();
+	let count = 0;
+	return new Promise( resovle => {
+	eachLine(`${fileName}.md`, function(line, last) {
+		line = line.trim();
     
-  if(!line.startsWith("```") && !line.startsWith("#") && line != ''){
-	  count++	  
-  } 
+		if(!line.startsWith("```") && !line.startsWith("#") && line != '' && !line.startsWith("*")){
+			count++	  
+		} 
   
-  if(last) {	  
+		if(last) {	  
      
     //console.log('\n\n-------------\n');
     //const used = process.memoryUsage().heapUsed / 1024 / 1024;
     //console.log(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
-	console.log('\n\n-------------\n.');
-    console.log(`The ${fileName}.md has line of codes are ${count}`);
-  }
-  
-})
+	//console.log('\n\n-------------\n.');
+			console.log(`The ${fileName}.md has line of codes are ${count}`);
+			resovle(count);
+		}
+	})
+	});
 
 }
 
-
-files.forEach(function(fileName) {
-	    countline(fileName);
-});

@@ -6,14 +6,14 @@
 let promise = new Promise(  function (resolve, reject) {  
 	console.log(typeof resolve);	 // บรรทัด a
 	console.log(typeof reject);	 // บรรทัด b
-	console.log(“Promise”);		 // บรรทัด c
+	console.log("Promise");		 // บรรทัด c
  } );
-console.log(“Last statement”);		 // บรรทัด d
+console.log("Last statement");		 // บรรทัด d
 /* แสดงผลลัพธ์เป็น
-“function”
-“function”
-“Promise”
-“Last statement” */
+"function"
+"function"
+"Promise"
+"Last statement" */
 ```
 
 ## เมธอด then()
@@ -23,45 +23,45 @@ function asynCode(resolve, reject) {
 	setTimeout( function() {		 // บรรทัด a
 		/* ซอร์สโค้ดอื่น ๆ */
 		//...
-    		resolve(“success”);	  // บรรทัด b -- แจ้งว่าพรอมิสทำงานสำเร็จ 
+    		resolve("success");	  // บรรทัด b -- แจ้งว่าพรอมิสทำงานสำเร็จ 
 	}, 1000);				 // ดีเลย์ 1 วินาที
 };
 let promise = new Promise(asynCode);	 // บรรทัด c
 promise.then( 
 	function (value) {		 // บรรทัด d -- มอนิเตอร์พรอมิส กรณีที่มันทำงานสำเร็จ
-          		console.log(“Promise:”, value);	
+          		console.log("Promise:", value);	
        	}
 );
-console.log(“Last statement”);		 // บรรทัด e
+console.log("Last statement");		 // บรรทัด e
 /* แสดงผลลัพธ์เป็น
-“Last statement”
-“Promise: success” */
+"Last statement"
+"Promise: success" */
 ```
 
 ```js
 let asynCode = function (resolve, reject) { 
-	console.log(“Start a job”);
+	console.log("Start a job");
 	let condition; 
 	/* ซอร์สโค้ดอะซิงโครนัส */
 	//...
 	if (condition) {
-		resolve(“success”);	// บรรทัด a -- แจ้งว่าพรอมิสทำงานสำเร็จ
+		resolve("success");	// บรรทัด a -- แจ้งว่าพรอมิสทำงานสำเร็จ
 	} else {
-    		reject(“failed”);		// บรรทัด b -- แจ้งว่าพรอมิสทำงานไม่สำเร็จ	
+    		reject("failed");		// บรรทัด b -- แจ้งว่าพรอมิสทำงานไม่สำเร็จ	
 	}
 };
 let promise = new Promise(asynCode);
 promise.then( 
-	function (value) {      	            // บรรทัด c -- มอนิเตอร์พรอมิส กรณีที่มันทำงานสำเร็จ			console.log(“Promise:”,value);	       		
+	function (value) {      	            // บรรทัด c -- มอนิเตอร์พรอมิส กรณีที่มันทำงานสำเร็จ			console.log("Promise:",value);	       		
 	}, function (reason) {  	           // บรรทัด d -- มอนิเตอร์พรอมิส กรณีที่มันทำงานไม่สำเร็จ
-          		console.log(“Promise:”, reason);	       
+          		console.log("Promise:", reason);	       
 	}
 );
-console.log(“Last statement”);				
+console.log("Last statement");				
 // แสดงผลลัพธ์เป็น
-// “Start a job”
-// “Last statement”
-// “Promise: success” หรือ “Promise: failed”
+// "Start a job"
+// "Last statement"
+// "Promise: success" หรือ "Promise: failed"
 ```
 
 ## เมธอด cath()
@@ -69,39 +69,39 @@ console.log(“Last statement”);
 ```js
 let promise = new Promise(  function (resolve, reject) {  
 	// เมื่อทำงานไม่สำเร็จ
-	console.log(“Start a job”);
-	reject(“failed”);			 // บรรทัด a
+	console.log("Start a job");
+	reject("failed");			 // บรรทัด a
 });
 promise.catch( function (reason){		// บรรทัด b
-	console.log(“Promise:”, reason);	
+	console.log("Promise:", reason);	
 });
-console.log(“Last statement”);				
+console.log("Last statement");				
 /* แสดงผลลัพธ์เป็น
-“Start a job”
-“Last statement”
-“Promise: failed” */
+"Start a job"
+"Last statement"
+"Promise: failed" */
 ```
 
 ```js
 let promise = new Promise( function(resolve, reject) {
-    console.log(“Start a job”);
-    throw new Error(“Error in promise”);	 // บรรทัด a
+    console.log("Start a job");
+    throw new Error("Error in promise");	 // บรรทัด a
 });
 promise.catch( function(error) {		 // บรรทัด b
     console.log(error.message);   			
 } );
-console.log(“Last statement”);	
+console.log("Last statement");	
 /* แสดงผลลัพธ์เป็น
-“Start a job”
-“Last statement”
-“Error in promise” */
+"Start a job"
+"Last statement"
+"Error in promise" */
 ```
 
 ```js
 let promise = new Promise( function(resolve, reject) {
     try{
-	console.log(“Start a job”);
-	throw new Error(“Error in promise”);		
+	console.log("Start a job");
+	throw new Error("Error in promise");		
     } catch(error) {
 	reject(error);
     }
@@ -109,172 +109,172 @@ let promise = new Promise( function(resolve, reject) {
 promise.catch( function(error) {
     console.log(error.message);        	
 } );
-console.log(“Last statement”);
+console.log("Last statement");
 /* แสดงผลลัพธ์เป็น
-“Start a job”
-“Last statement”
-“Error in promise” */
+"Start a job"
+"Last statement"
+"Error in promise" */
 ```
 
 ## ตำแหน่งการวาง then() กับ cath()
 
 ```js
 let promise = new Promise( function(resolve, reject ) {
-	// resolve(“success”);
-	// reject(“failed”);
+	// resolve("success");
+	// reject("failed");
 });
-console.log(“Line 1”);			 // บรรทัดที่ 1
+console.log("Line 1");			 // บรรทัดที่ 1
 //...
-console.log(“Line 2000”);		             // บรรทัดที่ 2000
+console.log("Line 2000");		             // บรรทัดที่ 2000
 promise.catch( function(reason) {	             // จะวาง catch()ไว้หลังจากสร้างพรอมิสตำแหน่งใดก็ได้
-	console.log(“Promise:”, reason);	        	
+	console.log("Promise:", reason);	        	
 } );
 //...
-console.log(“Line 5000”);		             // บรรทัดที่ 5000
+console.log("Line 5000");		             // บรรทัดที่ 5000
 promise.then( function(value) {	             // จะวาง then() ไว้หลังจากสร้างพรอมิสตำแหน่งใดก็ได้
-	console.log(“Promise:”, value);	        	
+	console.log("Promise:", value);	        	
 } );
 ```
 
 ```js
 let promise = new Promise( function(resolve, reject) {
-          console.log(“Start a job”);
-          resolve(“success”);
+          console.log("Start a job");
+          resolve("success");
 });
 promise.then( function(value) {		
-	console.log(“Outer Promise:”, value);	        	
+	console.log("Outer Promise:", value);	        	
 	promise.then( function (value) {	
- 		console.log(“Inner Promise:”, value);	       		
+ 		console.log("Inner Promise:", value);	       		
 	});
 } );
-console.log(“Last statement”);
+console.log("Last statement");
 /* แสดงผลลัพธ์เป็น
-“Start a job”
-“Last statement”
-“Outer Promise: success”
-“Inner Promise: success” */
+"Start a job"
+"Last statement"
+"Outer Promise: success"
+"Inner Promise: success" */
 ```
 
 ```js
 let promise = new Promise( function(resolve, reject) {
-	console.log(“Start a job”);
-	reject(“failed”);
+	console.log("Start a job");
+	reject("failed");
 });
 promise.catch( function(reason) {		
-	console.log(“Outer promise:”, reason);	        	
+	console.log("Outer promise:", reason);	        	
 	promise.catch( function (reason) {		
-		console.log(“Inner promise:”, reason);	       		
+		console.log("Inner promise:", reason);	       		
 	});
 } );
-console.log(“Last statement”);
+console.log("Last statement");
 /* แสดงผลลัพธ์เป็น
-“Start a job”
-“Last statement”
-“Outer promise: failed”
-“Inner promise: failed” */
+"Start a job"
+"Last statement"
+"Outer promise: failed"
+"Inner promise: failed" */
 ```
 
 ## เรียก then() แบบต่อเนื่อง
 
 ```js
 let p1 = new Promise( function(resolve, reject) {
-    resolve(“success”);			 // บรรทัด a
+    resolve("success");			 // บรรทัด a
 });
 let p2 = p1.then(  function(value) {
-    console.log(“Promise:”, value);	// บรรทัด b
+    console.log("Promise:", value);	// บรรทัด b
 });
 p2.then( function() {			 // บรรทัด c
-    console.log(“Finish”);			
+    console.log("Finish");			
 });
 /* แสดงผลลัพธ์เป็น
-“Promise: success”
-“Finish” */
+"Promise: success"
+"Finish" */
 ```
 
 ```js
 let promise = new Promise(function(resolve, reject) {
-    resolve(“success”);
+    resolve("success");
 });
 promise.then(function(value) {	             // then() ตัวแรก
-    console.log(“Promise:”, value);			
+    console.log("Promise:", value);			
 }).then(function() {			 // then() ตัวที่สอง ฟังก์ชั่นคอลแบ็คจะไม่มีพารามิเตอร์
-    console.log(“then1: finish”);
+    console.log("then1: finish");
 }). then(function() {			 // then() ตัวที่สาม ฟังก์ชั่นคอลแบ็คจะไม่มีพารามิเตอร์
-    console.log(“then2: finish”);
+    console.log("then2: finish");
 });
 /* แสดงผลลัพธ์เป็น
-“Promise: success”
-“then1: finish” 
-“then2: finish” */
+"Promise: success"
+"then1: finish" 
+"then2: finish" */
 ```
 
 ## ดักจับ error แบบต่อเนื่อง
 
 ```js
 let promise = new Promise (function(resolve, reject) {
-    throw new Error(“error1”);		 // บรรทัด a
+    throw new Error("error1");		 // บรรทัด a
 });
 promise.catch( function(error) {	             // catch() ตัวแรก
-    console.log(“catch1:”, error.message);    
-    throw new Error(“error2”);		
+    console.log("catch1:", error.message);    
+    throw new Error("error2");		
 }).catch( function(error) {		            // catch() ตัวที่สอง
-    console.log(“catch2:”, error.message);     		
-    throw new Error(“error3”);		
+    console.log("catch2:", error.message);     		
+    throw new Error("error3");		
 }).catch( function(error) {		            // catch() ตัวที่สาม
-    console.log(“catch3:”, error.message);    	
+    console.log("catch3:", error.message);    	
 });
 /* แสดงผลลัพธ์
-“catch1: error1
-“catch2: error2”
-“catch3: error3” */
+"catch1: error1
+"catch2: error2"
+"catch3: error3" */
 ```
 
 ```js
 let promise = new Promise(function(resolve, reject) {
-    throw new Error(“Error”);		
+    throw new Error("Error");		
 });
 promise.catch( function(error) {           // ฟังก์ชั่นชั่นคอลแบ็คของ catch() ตัวแรก จะทำงาน
     console.log(error.message);    
 }).catch( function() {		       // ฟังก์ชั่นชั่นคอลแบ็คของ catch() ตัวที่สอง ไม่ถูกเรียกให้ทำงาน
-    console.log(“Last error”);     			
+    console.log("Last error");     			
 });
 // แสดงผลลัพธ์
-// “Error”
+// "Error"
 ```
 
 ```js
 let promise = new Promise(function(resolve, reject) {
-    throw new Error(“Error”);		
+    throw new Error("Error");		
 });
 promise.catch( function(error) {		
     console.log(error.message);
 }).then( function(value) {			
-    console.log(“Last then”);         			
+    console.log("Last then");         			
 });
 /* แสดงผลลัพธ์
-“Error”
-“Last then” */
+"Error"
+"Last then" */
 ```
 
 ## ประโยค return
 
 ```js
 let promise = new Promise(function(resolve, reject) {
-    resolve(“success”);
+    resolve("success");
 });
 promise.then(function(value) {	             // then() ตัวแรก
-    console.log(“then1:”, value);
+    console.log("then1:", value);
     return 2;				 // ส่ง 2 ไปให้กับฟังก์ชั่นคอลแบ็คของ then() ตัวถัดไป
 }).then(function(value) {		             // ประกาศฟังก์ชั่นคอลแบ็คให้มีพารามิเตอร์
-    console.log(“then2:”, value);
+    console.log("then2:", value);
     return 3;				 // ส่ง 3 ไปให้กับฟังก์ชั่นคอลแบ็คของ then() ตัวถัดไป
 }). then(function(value) {		             // ประกาศฟังก์ชั่นคอลแบ็คให้มีพารามิเตอร์
-    console.log(“then3:”, value);
+    console.log("then3:", value);
 });
 /* แสดงผลลัพธ์เป็น
-“then1: success”
-“then2: 2”
-“then3: 3” */
+"then1: success"
+"then2: 2"
+"then3: 3" */
 ```
 
 การใช้ then() ร่วมกับ catch()
@@ -282,178 +282,178 @@ promise.then(function(value) {	             // then() ตัวแรก
 
 ```js
 let promise = new Promise( function(resolve, reject) {	// บรรทัด a
-     reject(“Promise:”);
+     reject("Promise:");
 });
 promise.then( function(value) {		
-     console.log(value, “success”);    	 // ไม่ถูกเรียกให้ทำงาน
+     console.log(value, "success");    	 // ไม่ถูกเรียกให้ทำงาน
 }).catch( function(reason) {		
-     console.log(reason, “failed”);    	 // ถูกเรียกให้ทำงาน
+     console.log(reason, "failed");    	 // ถูกเรียกให้ทำงาน
 });
 // แสดงผลลัพธ์
-// “Promise: failed”
+// "Promise: failed"
 ```
 
 ```js
 let promise = new Promise( function(resolve, reject) {
-     resolve(“Promise:”);
+     resolve("Promise:");
 });
 promise.catch( function(value) {		
-     console.log(value, “failed”);    	 // ไม่ถูกเรียกให้ทำงาน
+     console.log(value, "failed");    	 // ไม่ถูกเรียกให้ทำงาน
 }).then( function(reason) {		
-     console.log(reason, “success”);    	 // ถูกเรียกให้ทำงาน
+     console.log(reason, "success");    	 // ถูกเรียกให้ทำงาน
 });
 // แสดงผลลัพธ์
-// “Promise: success”
+// "Promise: success"
 ```
 
 ```js
 let promise = new Promise(function(resolve, reject) {
-	throw new Error(“Error”);
+	throw new Error("Error");
 });
 promise.catch(function(error) {		
 	console.log(error.message); 
 	return 1;	       // สามารถส่ง 1 ไปให้ฟังก์ชั่นคอลแบ็คของ then() ตัวถัดไปได้
 }).then(function(value) {			
-	console.log(“then:”, value);    		
+	console.log("then:", value);    		
 	return 2;	      // ไม่สามารถส่ง 2 ไปให้ฟังก์ชั่นคอลแบ็คของ  catch() ตัวถัดไปได้
 }).catch(function(error) {			
-	console.log(“catch:”, error);   	// ไม่ถูกเรียกให้ทำงาน	
+	console.log("catch:", error);   	// ไม่ถูกเรียกให้ทำงาน	
 });
 /* แสดงผลลัพธ์
-“Error”
-“then: 1” */
+"Error"
+"then: 1" */
 ```
 
 ```js
 let promise = new Promise(function(resolve, reject) {
-	throw new Error(“Error”);
+	throw new Error("Error");
 });
 promise.catch( function(error) {		
 	console.log(error.message); 
 	return 1;   
 }).then( function(value) {			
-	console.log(“then:”, value);    		
+	console.log("then:", value);    		
 	throw 2;
 }).catch( function(value) {			
-	console.log(“catch:”, value);    	 // ถูกเรียกให้ทำงานได้	
+	console.log("catch:", value);    	 // ถูกเรียกให้ทำงานได้	
 });
 /* แสดงผลลัพธ์
-“Error”
-“then: 1”
-“catch: 2” */
+"Error"
+"then: 1"
+"catch: 2" */
 ```
 
 ## รีเทิร์นพรอมิส
 
 ```js
 let p1 = new Promise( function(resolve, reject) {
-    resolve(“promise1”);				
+    resolve("promise1");				
 });
 let p2 = new Promise( function(resolve, reject) {
-    resolve(“promise2”);			 // บรรทัด a
+    resolve("promise2");			 // บรรทัด a
 });
 let p3 = p1.then( function(value) {
-    console.log(“First then:”, value);     
+    console.log("First then:", value);     
     return p2;				 // บรรทัด b
 });
 p3.then( function(value) {		 // บรรทัด c
-    console.log(“Second then:”, value);     
+    console.log("Second then:", value);     
 });
 /* แสดงผลลัพธ์
-“First then: promise1”
-“Second then: promise2” */
+"First then: promise1"
+"Second then: promise2" */
 ```
 
 ```js
 let p1 = new Promise( function(resolve, reject) {
-    resolve(“promise1”);
+    resolve("promise1");
 });
 let p2 = new Promise( function(resolve, reject) {
-    resolve(“promise2”);
+    resolve("promise2");
 });
 p1.then( function(value) {
-    console.log(“First then:”, value);     
+    console.log("First then:", value);     
     return p2;
 }).then( function(value) {
-    console.log(“Second then:”, value);     
+    console.log("Second then:", value);     
 });
 /* แสดงผลลัพธ์
-“First then: promise1”
-“Second then: promise2” */
+"First then: promise1"
+"Second then: promise2" */
 ```
 
 ```js
 let p1 = new Promise( function(resolve, reject) {
-    resolve(“success”);
+    resolve("success");
 });	
 let p2 = new Promise( function(resolve, reject) {
-    reject(“failed”);
+    reject("failed");
 });
 p1.then( function(value) {
-    console.log(“then:”,value);     
+    console.log("then:",value);     
     return p2;					
 }).catch( function(value) {		 // บรรทัด a	
-    console.log(“catch:”, value);     			
+    console.log("catch:", value);     			
 });
 /* แสดงผลลัพธ์
-“then: success”
-“catch: failed” */
+"then: success"
+"catch: failed" */
 ```
 
 ```js
 let p1 = new Promise( function(resolve, reject) {
-    console.log(“Promise1”);
-    resolve(“Success1”);
+    console.log("Promise1");
+    resolve("Success1");
 });
 p1.then( function(value) {
-    console.log(“p1.then:”, value);        	
+    console.log("p1.then:", value);        	
     let p2 = new Promise( function(resolve, reject) {	     // บรรทัด a 
-        console.log(“Promise2”);
-        resolve(“Success2”);			
+        console.log("Promise2");
+        resolve("Success2");			
     });
     return p2;					
 }).then(function(value) {
-     console.log(“p2.then:”, value);         
+     console.log("p2.then:", value);         
 });
 /* แสดงผลลัพธ์
-“Promise1”
-“p1.then: Success1”
-“Promise2”
-“p2.then: Success2” */
+"Promise1"
+"p1.then: Success1"
+"Promise2"
+"p2.then: Success2" */
 ```
 
 ## การสร้างพรอมิสที่มีสถานะ settled
 
 ```js
-let promise = Promise.resolve(“Promise is fulfilled”);
+let promise = Promise.resolve("Promise is fulfilled");
 /*ไม่ต้องเสียเวลาเขียนแบบนี้
 let promise = new Promise(function(resolve, reject) {
-	resolve(“Promise is fulfilled”);
+	resolve("Promise is fulfilled");
 }); */
 promise.then(function(value) {
     console.log(value);        
 });
 // แสดงผลลัพธ์เป็น
-// “Promise is fulfilled”
+// "Promise is fulfilled"
 ```
 
 ```js
-let promise = Promise.reject(“Promise is rejected”);
+let promise = Promise.reject("Promise is rejected");
 /*ไม่ต้องเสียเวลาเขียนแบบนี้
 let promise = new Promise(function(resolve, reject) {
-	reject(“Promise is rejected”);
+	reject("Promise is rejected");
 }); */
 promise.catch(function(reason) {
     console.log(reason);        
 });
 // แสดงผลลัพธ์เป็น
-// “Promise is rejected”
+// "Promise is rejected"
 ```
 
 ```js
 let thenable = {
     then(resolve, reject) {
-        resolve(“fulfilled”);
+        resolve("fulfilled");
     }
 };
 ```
@@ -461,17 +461,17 @@ let thenable = {
 ```js
 let thenable = {
     then (resolve, reject) {
-        console.log(“thenable”);
-        resolve(“fulfilled”);	// บรรทัด a -- จะส่งค่า “fulfilled” ไปให้ promise.then()
+        console.log("thenable");
+        resolve("fulfilled");	// บรรทัด a -- จะส่งค่า "fulfilled" ไปให้ promise.then()
     }
 };
 let promise = Promise.resolve(thenable);
 promise.then(function(value) {
-    console.log(“then:”, value);                  // บรรทัด b
+    console.log("then:", value);                  // บรรทัด b
 });
 /* แสดงผลลัพธ์เป็น
-“thenable”
-“then: fulfilled” */
+"thenable"
+"then: fulfilled" */
 ```
 
 ## เมธอด finally()
@@ -490,101 +490,101 @@ myPromise
 ```
 
 ```js
-Promise.resolve(“fulfilled”)                               // บรรทัด a
-.then( result => console.log(“then:”, result) )      // บรรทัด b
-.catch( result =>  console.log(“catch:”, result) )     
-.finally( () => console.log(“finally”) );                 // บรรทัด c
+Promise.resolve("fulfilled")                               // บรรทัด a
+.then( result => console.log("then:", result) )      // บรรทัด b
+.catch( result =>  console.log("catch:", result) )     
+.finally( () => console.log("finally") );                 // บรรทัด c
 /* แสดงผลลัพธ์
-“then: fulfilled”
-“finally” */
+"then: fulfilled"
+"finally" */
 ```
 
 ```js
-Promise.reject(“rejected”)                                // บรรทัด a
-.then( result => console.log(“then:”, result) )
-.catch( result => console.log(“catch:”, result) )  // บรรทัด b
-.finally( () => console.log(“finally”) );                // บรรทัด c
+Promise.reject("rejected")                                // บรรทัด a
+.then( result => console.log("then:", result) )
+.catch( result => console.log("catch:", result) )  // บรรทัด b
+.finally( () => console.log("finally") );                // บรรทัด c
 /* แสดงผลลัพธ์
-“catch: rejected”
-“finally” */
+"catch: rejected"
+"finally" */
 ```
 
 ```js
-Promise.resolve(“fulfilled”)                               // บรรทัด a
-.finally( () => console.log(“finally”) )                  // บรรทัด b
-.then( result => console.log(“then:”, result) )      // บรรทัด c
-.catch( result =>  console.log(“catch:”, result) );     
+Promise.resolve("fulfilled")                               // บรรทัด a
+.finally( () => console.log("finally") )                  // บรรทัด b
+.then( result => console.log("then:", result) )      // บรรทัด c
+.catch( result =>  console.log("catch:", result) );     
 /*
-“finally”
-“then: fulfilled” */
+"finally"
+"then: fulfilled" */
 ```
 
 ```js
-Promise.reject(“rejected”)                                 // บรรทัด a
-.finally( () => console.log(“finally”) )                  // บรรทัด b
-.then( result => console.log(“then:”, result) )          
-.catch( result =>  console.log(“catch:”, result) );  // บรรทัด c
+Promise.reject("rejected")                                 // บรรทัด a
+.finally( () => console.log("finally") )                  // บรรทัด b
+.then( result => console.log("then:", result) )          
+.catch( result =>  console.log("catch:", result) );  // บรรทัด c
 /*
-“finally”
-“catch: rejected” */
+"finally"
+"catch: rejected" */
 ```
 
 ```js
-Promise.reject(“rejected”)                                // บรรทัด a
+Promise.reject("rejected")                                // บรรทัด a
 .finally( () => { 
-    throw “error from finally”;                           // บรรทัด b
+    throw "error from finally";                           // บรรทัด b
 } )      
 .catch( error => console.log(error) );                  // บรรทัด c
 // แสดงข้อความ
-// “error from finally”
+// "error from finally"
 ```
 
 ```js
-Promise.resolve(“fulfilled”)                    
+Promise.resolve("fulfilled")                    
 .finally( ( ) => { return 1 } )                       // เขียนย่อเป็น .finally( ( ) => 1  )  ก็ได้
 .then( value => console.log(value));
 // แสดงผลลัพธ์
-// “fulfilled”
+// "fulfilled"
 ```
 
 ```js
-Promise.resolve(“fulfilled”)                          
-.finally( () => console.log(“finally”) )          // มีแค่ finally() อย่างเดียว
+Promise.resolve("fulfilled")                          
+.finally( () => console.log("finally") )          // มีแค่ finally() อย่างเดียว
 // แสดงผลลัพธ์
-// “finally”
+// "finally"
 ```
 
 ## Promise.all()
 
 ```js
-let p1 = Promise.resolve(“Promise1”);
-let p2 = Promise.resolve(“Promise2”);
-let p3 = Promise.resolve(“Promise3”);
+let p1 = Promise.resolve("Promise1");
+let p2 = Promise.resolve("Promise2");
+let p3 = Promise.resolve("Promise3");
 let p4 = Promise.all([p1, p2, p3]);         // มอนิเตอร์ p1, p2 และ p3 ที่มีสถานะเป็น fulfilled ทุกตัว
 p4.then(function(value) {
   console.log(value);     
 });
 // แสดงผลลัพธ์เป็น
-// [“Promise1”, “Promise2”, “Promise3”]
+// ["Promise1", "Promise2", "Promise3"]
 ```
 
 ```js
 let p1 = new Promise(function(resolve, reject) {
-    resolve(“Promise1:”);
+    resolve("Promise1:");
 });
 let p2 = new Promise(function(resolve, reject) {   	
 	setTimeout( function(){         
-		reject(“Promise2:”); 
+		reject("Promise2:"); 
 	},   1000);		      // ดีเลย์ไป 1 วินาที
 });
-let p3 = Promise.reject(“Promise3:”);
+let p3 = Promise.reject("Promise3:");
 let p4 = Promise.all([p1, p2, p3]);       // มอนิเตอร์เฉพาะ p3 เพราะมีสถานะเป็น rejected ก่อนตัวอื่น
 p4.then(
-    function(value)  { 	console.log(value, “success”);    }
-    ,function(value) {   console.log(value, “failed”);     }
+    function(value)  { 	console.log(value, "success");    }
+    ,function(value) {   console.log(value, "failed");     }
 );
 // แสดงผลลัพธ์เป็น
-// “Promise3: failed”
+// "Promise3: failed"
 ```
 
 ## Promise.race()
@@ -592,22 +592,22 @@ p4.then(
 ```js
 let p1 = new Promise( function(resolve, reject) {
 	setTimeout( function() {  
-		resolve(“Promise1:”); 
+		resolve("Promise1:"); 
 	},   500); 	// ดีเลย์ 0.5 วินาที
 });
 let p2 = new Promise( function(resolve, reject) {
 	setTimeout( function() {  
-		resolve(“Promise2:”); 
+		resolve("Promise2:"); 
 	},   1000);	// ดีเลย์ 1 วินาที
 });
-let p3 = Promise.reject(“Promise3:”);
+let p3 = Promise.reject("Promise3:");
 let p4 = Promise.race([p1, p2, p3]); // มอนิเตอร์เฉพาะพรอมิส p3 เพราะมีสถานะเป็น settled ก่อนตัวอื่น
 p4.then(
-     function(value)  {  console.log(value, “success”);   }
-     ,function(value) {   console.log(value, “failed”);     }
+     function(value)  {  console.log(value, "success");   }
+     ,function(value) {   console.log(value, "failed");     }
 );
 // แสดงผลลัพธ์เป็น
-// “Promise3: failed”
+// "Promise3: failed"
 ```
 
 ## Promise.allSettled()
@@ -628,7 +628,7 @@ Promise.allSettled( [p1, p2] )           // allSettled() รีเทิร์�
 ```js
 let p1 = Promise.resolve(123);
 let p2 = new Promise( resolve => {
-    throw “Error”                                      // บรรทัด a
+    throw "Error"                                      // บรรทัด a
 });
 Promise.allSettled( [p1, p2] )                     // บรรทัด b
 .then( arr => console.log(arr)  )                  // บรรทัด c
@@ -662,9 +662,9 @@ Promise.any([p1, p2, p3])                          // p2 เป็น fulfilled 
 ```
 
 ```js
-let p1 = Promise.reject(“Error 1”);
-let p2 = Promise.reject(“Error 2”); 
-let p3 = Promise.reject(“Error 3”); 
+let p1 = Promise.reject("Error 1");
+let p2 = Promise.reject("Error 2"); 
+let p3 = Promise.reject("Error 3"); 
 Promise.any([p1, p2, p3])
 .catch(aggregateError => console.log(aggregateError));
 /* แสดงผลลัพธ์
@@ -691,31 +691,31 @@ Promise.any([p1, p2, p3])
 <html>
 <head></head>
 <body>
-<h1 id=”element1”></h1>
-<h1 id=”element2”></h1>
+<h1 id="element1"></h1>
+<h1 id="element2"></h1>
 <script>
 function sendAjaxMsg( url, message) {
     function asynCode(resolve, reject) {
 	let request = new XMLHttpRequest();
-	let element = document.querySelector(“#element2”);	
+	let element = document.querySelector("#element2");	
 	request.onreadystatechange = function() {		// บรรทัด a
 	     if (request.readyState == 4 && request.status== 200) {	
-	            element.innerHTML=“Get a message: ” + request.responseText; 
+	            element.innerHTML="Get a message: " + request.responseText; 
 	            resolve(request.responseText);	
 	     } // สิ้นสุดประโยค if
 	}; // สิ้นสุดการประกาศฟังก์ชั่น
 	request.onerror = function (error) {		// บรรทัด b
-	     let errorMsg = “Error status “ + request.status;
+	     let errorMsg = "Error status " + request.status;
 	     element.innerHTML = errorMsg;
                  reject(errorMsg);				
            }; // สิ้นสุดการประกาศฟังก์ชั่น
-           request.open(“GET”, `${url}?msg=${message}`, true);
+           request.open("GET", `${url}?msg=${message}`, true);
            request.send();       			          // บรรทัด c	
     } // สิ้นสุดการประกาศฟังก์ชั่น asynCode
     return new Promise(asynCode);		         // บรรทัด d
  } // สิ้นสุดการประกาศฟังก์ชั่น sendAjaxMsg
-let ajax = sendAjaxMsg(“http://127.0.01:8001/message”, “test promise”)
-document.querySelector(“#element1”).innerHTML = “Sending a message”;  // บรรทัด e
+let ajax = sendAjaxMsg("http://127.0.01:8001/message", "test promise")
+document.querySelector("#element1").innerHTML = "Sending a message";  // บรรทัด e
 function handle(value) { console.log(value); }
 function errorHandle(errMsg) { console.log(`Error message: ${errMsg}`); }
 ajax.then(handle, errorHandle)			        // บรรทัด f
@@ -727,7 +727,7 @@ ajax.then(handle, errorHandle)			        // บรรทัด f
 * ตัวอย่างที่ 2
 
 ```js
-fetch(“https://patanasongsivilai.com/example/json.php”)     // บรรทัด a
+fetch("https://patanasongsivilai.com/example/json.php")     // บรรทัด a
 .then( function (res) {                         // บรรทัด b
       return  res.text();                         // บรรทัด c
    }
@@ -737,24 +737,24 @@ fetch(“https://patanasongsivilai.com/example/json.php”)     // บรรท�
    } 
 );
 // แสดงผลลัพธ์
-// {“name”:“Somchai”,“age”:30,“city”:“Bangkok”}
+// {"name":"Somchai","age":30,"city":"Bangkok"}
 ```
 
 ```html
 <head>
 </head>
 <body>
-<h1 id=”element1”></h1>
-<h1 id=”element2”></h1>
-<script type=”module”>
-document.querySelector(“#element1”).innerHTML = “Sending a message”; 
-let element = document.querySelector(“#element2”);	
-fetch(“http://127.0.01:8001/message?msg=test promise”)
+<h1 id="element1"></h1>
+<h1 id="element2"></h1>
+<script type="module">
+document.querySelector("#element1").innerHTML = "Sending a message"; 
+let element = document.querySelector("#element2");	
+fetch("http://127.0.01:8001/message?msg=test promise")
 .then( function (res) { 
 	return res.text();
 })
 .then( function (text) { 	
-	element.innerHTML = “Get a message: “ + text;
+	element.innerHTML = "Get a message: " + text;
 	console.log(text);
 })
 .catch( function (errMsg) {
@@ -773,7 +773,7 @@ fetch(“http://127.0.01:8001/message?msg=test promise”)
 ```js
 function readJSONFile(fileName){
 	function asynCode(resolve,reject) {
-		let fs = require(“fs”);				// ใช้อ่านไฟล์
+		let fs = require("fs");				// ใช้อ่านไฟล์
 		fs.readFile(fileName, function(err, text) {	            // บรรทัด a
 			if (err) {
 				reject(err.message);		// บรรทัด b 
@@ -786,10 +786,10 @@ function readJSONFile(fileName){
 	} // สิ้นสุดการประกาศฟังก์ชั่น asynCode	
 	return new Promise(asynCode);			           // บรรทัด d
 } // สิ้นสุดการประกาศฟังก์ชั่น readJSONFile
-let reader = readJSONFile(“json.txt”);		                      // อ่านไฟล์ json.text
-console.log(“Read a file”);
+let reader = readJSONFile("json.txt");		                      // อ่านไฟล์ json.text
+console.log("Read a file");
 function handle(value) { console.log(value); }
-function errorHandle(errMsg) { console.log(“Error message:”, errMsg); }
+function errorHandle(errMsg) { console.log("Error message:", errMsg); }
 reader.then(handle, errorHandle)		                                 // บรรทัด e
 ```
 
@@ -801,12 +801,12 @@ iterator.next();	// เริ่มทำงาน
 function *generator() {				
  	for(let i=0; i<5; i++){		
  		let result = yield runService(i);		// บรรทัด a
-		console.log(“Message:” , result);
+		console.log("Message:" , result);
  	}	
 }
 function runService(data) {
 	function aysnCode(resolve, reject) {
-   		console.log(“to do something:”, data);	// บรรทัด b
+   		console.log("to do something:", data);	// บรรทัด b
 		// การทำงานแบบอะซิงโครนัสอื่น ๆ
 		// ...			
 		setTimeout(function(){
@@ -832,13 +832,13 @@ Promise.resolve(123)
 );
 // แสดงผลลัพธ์
 // 123
-Promise.reject(“Error”)
+Promise.reject("Error")
 .catch(function (value) {
          console.log(value);                 // บรรทัด b -- ฟังก์ชันคอลแบ็คแบบไร้ชื่อ ขึ้นต้นด้วย function 
     } 
 );
 // แสดงผลลัพธ์
-// “Error”
+// "Error"
 ```
 
 ```js
@@ -846,8 +846,8 @@ Promise.resolve(123)
 .then( (value) =>  console.log(value));   // บรรทัด a -- ฟังก์ชันคอลแบ็คเป็นฟังก์ชันลูกศร
 // แสดงผลลัพธ์
 // 123
-Promise.reject(“Error”)
+Promise.reject("Error")
 .catch( (value) =>  console.log(value));  // บรรทัด b - ฟังก์ชันคอลแบ็คเป็นฟังก์ชันลูกศร
 // แสดงผลลัพธ์
-// “Error”
+// "Error"
 ```
