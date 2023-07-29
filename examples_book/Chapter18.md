@@ -669,7 +669,7 @@ Promise.any([p1, p2, p3])
 ```
 
 ## การประยุกต์ใช้งานพรอมิส
-
+   
 * ตัวอย่างที่ 1
 
 ```html
@@ -712,6 +712,8 @@ ajax.then(handle, errorHandle)			        // บรรทัด f
 ```
 
 * ตัวอย่างที่ 2
+
+* [ไฟล์ json.php ประกอบเนื้อหา Fetch API](json.php)
 
 ```js
 fetch("https://patanasongsivilai.com/example/json.php")     // บรรทัด a
