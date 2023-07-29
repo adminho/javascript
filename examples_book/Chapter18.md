@@ -609,7 +609,7 @@ Promise.allSettled( [p1, p2] );
 let p1 = Promise.resolve(123);
 let p2 = Promise.reject(456); 
 Promise.allSettled( [p1, p2] )           // allSettled() รีเทิร์นพรอมิสที่เป็น fulfilled
-.then( arr => console.log(arr)  );       // ค่า fulfillment และ rejection ที่ถูกส่งมาเป็นอาร์เรย์
+.then( arr => console.log(arr) );       // ค่า fulfillment และ rejection ที่ถูกส่งมาเป็นอาร์เรย์
 ```
 
 ```js
