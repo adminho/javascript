@@ -146,9 +146,9 @@
 ### แยกไฟล์จาวาสคริปต์ ออกจาก HTML
 
 
-[ไฟล์ myScript_1.js](Chapter03/myScript_1.js)
+* [ไฟล์ myScript_1.js](Chapter03/myScript_1.js)
 
-[ไฟล์ myScript_2.js](Chapter03/myScript_2.js)
+* [ไฟล์ myScript_2.js](Chapter03/myScript_2.js)
 
 ```html
 <!DOCTYPE html>

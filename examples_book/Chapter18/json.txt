@@ -1,0 +1,4 @@
+{"Font":[
+    {"color":"red", "lang":"thai"},
+    {"color":"blue", "lang":"eng"}
+]}
