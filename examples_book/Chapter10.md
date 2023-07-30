@@ -587,7 +587,6 @@ console.log(arrowFunc())		 // 1
 ```
 
 ### เทคนิคการเขียน IIFE
-
 ```js
 // เทคนิค IIFE กับฟังก์ชั่นลูกศร
 var printItem = ( 
@@ -598,8 +597,7 @@ printItem();		// "IIFE"
 var printItem = function(item) {
  return function() {  console.log(item);  };
 }("IIFE");
-printItem();		// "IIFE"
-*/
+printItem();		// "IIFE" */
 ```
 
 ### ฟังก์ชั่นคอลแบ็ค
@@ -613,8 +611,7 @@ var array = [1, 2, 3, 4];
 array.forEach(function(value, index, arr) {	 
 	return arr[index] = value * 2;
 }); 
-console.log(array);		// [2, 4, 6, 8]
-*/
+console.log(array);		// [2, 4, 6, 8] */
 ```
 
 ### การใช้ this ในฟังก์ชั่นลูกศร
