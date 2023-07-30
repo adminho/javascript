@@ -680,19 +680,19 @@ obj.init();
 
 ```js
 let obj ={
-       value : “JavaScript”,
+       value : "JavaScript",
        printValue: function() {
-             console.log(“Message:”, this.value);      // this จะชี้ไปยังอ็อบเจ็กต์ obj
+             console.log("Message:", this.value);      // this จะชี้ไปยังอ็อบเจ็กต์ obj
        },
        handle : function() {
-             console.log(“Press a button”);
+             console.log("Press a button");
        },
        init : function() {
-       	 let element = document.querySelector(“#b1”);	// ปุ่ม “Try it”
-	 element.addEventListener(“click”, (event)=> this.handle()); //this จะชี้ไปยัง obj 
+       	 let element = document.querySelector("#b1");	// ปุ่ม "Try it"
+	 element.addEventListener("click", (event)=> this.handle()); //this จะชี้ไปยัง obj 
        }
 };   // สิ้นสุดการประกาศอ็อบเจ็กต์     
-obj.printValue(); 	    // “Message: JavaScript”
+obj.printValue(); 	    // "Message: JavaScript"
 obj.init(); 
 ```
 
