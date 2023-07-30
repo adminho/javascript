@@ -101,6 +101,9 @@ sendMessage();	// "My_message_2 callback"
 ```
 
 ```js
+function add(value) {
+    return value + 10;
+}
 function calculate(a, b = add(a), c = a * b) {
     console.log(a, b, c) ;
 }
@@ -261,7 +264,7 @@ createGrade("Somchai", "Jaidee", {gender: "Male", age: 21, height: 175} );
 
 ```js
 function createGrade(firstName, lastName, options) {
-    	let { gender, age, subject, gpa } = options ; 
+         let { gender, age, subject, gpa } = options ; 
           // options ห้ามมีค่าเป็น null หรือ  undefined เพราะจะเกิด error
           console.log(firstName, lastName, gender, age, subject, gpa);
 }
@@ -682,13 +685,13 @@ resultSum();				// 10
 ```js
 let objA = {value: "access objA"};
 let objB = {
-     value: "access objB"
-     ,myFunction() {
+     value: "access objB",
+     myFunction() {
 	console.log("this.value in myFunction:", this.value);
             // this ในฟังก์ชั่นลูกศร จะเห็นเหมือนกับที่  myFunction() มองเห็น
-	let arrowFunc = () => console.log("Arrow function:", this.value) ;
-	let func = function(){ // this ในฟังก์ชั่นปกติ สามารถเปลี่ยนไปชี้อ็อบเจ็กตัวอื่นได้
-			console.log("Normal function:", this.value);	
+	let arrowFunc = () => console.log("Arrow function:", this.value);
+	let func = function() { // this ในฟังก์ชั่นปกติ สามารถเปลี่ยนไปชี้อ็อบเจ็กตัวอื่นได้
+	     console.log("Normal function:", this.value);	
 	}
 	arrowFunc.call(objA);	// บรรทัด a –- ไม่สามารถเปลี่ยนค่า this ได้
 	func.call(objA);	 // บรรทัด b -- สามารถเปลี่ยนค่า this ให้ชี้ไปยังอ็อบเจ็กต์ objA ได้
@@ -732,7 +735,7 @@ function foo() {
 
 ```js
 function foo() {
-   bar(); 	
+        bar(); 	
         return undefined;
 }
 ```
@@ -757,9 +760,9 @@ function foo() {
 ```js
 function foo(condition) {	
        if(condition) {
-		return bar();	// บรรทัด a  -- เรียกฟังก์ชั่นในตำแหน่งสุดท้าย	
+	return bar();	// บรรทัด a  -- เรียกฟังก์ชั่นในตำแหน่งสุดท้าย	
        } else {
-		bar();		// บรรทัด b -- เรียกฟังก์ชั่นแบบนี้จะไม่ใช่ตำแหน่งสุดท้าย	
+	bar();		// บรรทัด b -- เรียกฟังก์ชั่นแบบนี้จะไม่ใช่ตำแหน่งสุดท้าย	
         }
 }
 ```
@@ -806,11 +809,11 @@ let arrowFunc = param => param ? foo() : bar();
 
 ```js
 let arrowFunc = param => {
-	if(param) {
-		return foo();		 // เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
-	} else {
-		return bar();		 // เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
-	}	
+      if(param) {
+            return foo();		 // เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+      } else {
+            return bar();		 // เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
+      }	
 };
 ```
 กรณีที่ 2 
@@ -822,7 +825,7 @@ let arrowFunc = () => (foo(), bar(), zoo());
 ```js
 let arrowFunc = () => {
        foo();
-bar();
+       bar();
        return zoo();                                    // เรียกฟังก์ชั่นในตำแหน่งสุดท้าย
 };
 ```
