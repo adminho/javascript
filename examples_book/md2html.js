@@ -16,7 +16,9 @@ function writeToHTML(allLines, fileName){
 	<script>		
 	
 		function toString(data) {
-			if( typeof data === 'object'){
+			if(data == null || data == undefined ) {
+				return ""+ data;			
+			} else if( typeof data === 'object'){
 				
 				if( data instanceof Array){
 					let str = "[";
@@ -149,8 +151,9 @@ async function genHTML(fileName){
 				  </div>`;	  
 	  	  
 	  lineCodes = "";	  
-  } else if(line.startsWith("#")){
+  } else if(line.startsWith("#") || (line.startsWith("*") && !line.startsWith("*/")) ){
 	  line = line.replace(/#/g, "");
+	  line = line.replace(/\*/g, "");
 	  allLines += `<h3>${line}</h3>`;
   }
     
@@ -174,22 +177,23 @@ async function genHTML(fileName){
 
 
 let files = [ "Chapter03", "Chapter05", "Chapter08", 
-"Chapter09", "Chapter11", "Chapter12", "Chapter13", 
-"Chapter15", "Chapter16", "Chapter17"];
+"Chapter09", "Chapter10", "Chapter11", "Chapter12", "Chapter13", 
+"Chapter15", "Chapter16", "Chapter17", "Chapter18"];
 
 
 
-
-genHTML("Chapter05");
-genHTML("Chapter08");
-genHTML("Chapter09");
-genHTML("Chapter11");
-genHTML("Chapter12");
-genHTML("Chapter13");
-genHTML("Chapter15");
-genHTML("Chapter16");
-genHTML("Chapter17");
-genHTML("Chapter18");
+//genHTML("Chapter03");
+//genHTML("Chapter05");
+//genHTML("Chapter08");
+//genHTML("Chapter09");
+genHTML("Chapter10");
+//genHTML("Chapter11");
+//genHTML("Chapter12");
+//genHTML("Chapter13");
+//genHTML("Chapter15");
+//genHTML("Chapter16");
+//genHTML("Chapter17");
+//genHTML("Chapter18");
 
 
 async function countline(fileName){
@@ -216,3 +220,8 @@ async function countline(fileName){
 
 }
 
+let numLines= [];
+
+files.forEach(function(fileName) {
+	//countline(fileName);
+});
