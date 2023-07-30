@@ -122,7 +122,7 @@ function iterateItem(item) {
       let len = arguments.length;
       for(let i=1; i<len; i++) {	             // ค่าอากิวเมนต์ตัวที่ 2 เป็นต้นไป 
 	result += arguments[i];
-       }	
+       }
        console.log(result);
 }
 // แม้ว่าจะประกาศให้มีพารามิเตอร์เพียงตัวเดียว แต่ก็สามารถส่งค่าอากิวเมนต์หลาย ๆ ตัวให้กับฟังก์ชั่นได้
@@ -206,6 +206,12 @@ console.log(Math.max( val[0], val[1], val[2], val[3], val[4])) ;       // 33
 console.log(Math.max( val[0], val[1], val[2], val[3], val[4], 100)) ; // 100
 // ใช้เมธอด apply() ซึ่งสามารถรับค่าเป็นอาร์เรย์ได้ และจะรีเทิร์นค่าเป็น 33	
 console.log(Math.max.apply(Math, val));
+```
+
+```js
+let val = [-134, -20, -7, 33, 10];
+console.log(Math.max(...val)); 	   // 33
+// จะเหมือนเขียนเป็น console.log(Math.max( val[0], val[1], val[2], val[3], val[4]));
 ```
 
 ```js
