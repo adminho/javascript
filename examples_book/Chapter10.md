@@ -678,6 +678,24 @@ obj.printValue();	// "Message: JavaScript"
 obj.init();       
 ```
 
+```js
+let obj ={
+       value : “JavaScript”,
+       printValue: function() {
+             console.log(“Message:”, this.value);      // this จะชี้ไปยังอ็อบเจ็กต์ obj
+       },
+       handle : function() {
+             console.log(“Press a button”);
+       },
+       init : function() {
+       	 let element = document.querySelector(“#b1”);	// ปุ่ม “Try it”
+	 element.addEventListener(“click”, (event)=> this.handle()); //this จะชี้ไปยัง obj 
+       }
+};   // สิ้นสุดการประกาศอ็อบเจ็กต์     
+obj.printValue(); 	    // “Message: JavaScript”
+obj.init(); 
+```
+
 ### เมธอด apply(), call() และ bind()
 
 ```js
