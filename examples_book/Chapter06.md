@@ -174,7 +174,7 @@ var obj2 = {
     a: 1,
     bar : function() {      
 	       console.log("this.a =", this.a);
-      	       obj1.foo = function() {
+      	       obj1.foo = function() {          // บรรทัด a
 	                             console.log("this.a =", this.a);
           	                       }  // สิ้นสุดการประกาศฟังก์ชั่น foo()
    	 } // สิ้นสุดการประกาศฟังก์ชั่น bar()
