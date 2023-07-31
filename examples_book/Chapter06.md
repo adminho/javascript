@@ -467,7 +467,7 @@ function RedCar(color) {
     this.color = color;
 }
 RedCar.prototype = Object.create(Car.prototype); 	 // บรรทัด a
-console.log( Object.getPrototypeOf(RedCar.prototype) === Car.prototype);      // true
+console.log( Object.getPrototypeOf(RedCar.prototype) === Car.prototype );     // true
 RedCar.prototype.stop = function() {
     console.log("Stop a", this.color, "car");	             // this ชี้ไปยังอ็อบเจ็กต์ที่ถูกสร้างขึ้นมา
 }
