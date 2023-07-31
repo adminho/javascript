@@ -580,7 +580,7 @@ function Font() {
 }
 var coordinate = {x: 1, y: 1, z: 1}
 Font.prototype = Object.create(coordinate);
-Font.prototype.myFunction = function(){};
+Font.prototype.myFunction = function(){ };
 var font = new Font();
 font[1] = "fontValue";	
 for(var prop in font) {
@@ -604,7 +604,7 @@ function Font() {
 }
 var coordinate = {x: 1, y: 1, z: 1}
 Font.prototype = Object.create(coordinate);
-Font.prototype.myFunction = function(){};
+Font.prototype.myFunction = function(){ };
 var font = new Font();
 font[1] = "fontValue";
 for(var prop in font) {
@@ -885,8 +885,7 @@ console.log(obj);
 { people:
    [ { firstName: 'Somchai', lastName: 'Jaidee' },
      { firstName: 'Mana', lastName: 'Dekdee' },
-     { firstName: 'Surat', lastName: 'Khonthai' } ] }
-*/
+     { firstName: 'Surat', lastName: 'Khonthai' } ] } */
 ```
 
 * 	ตัวอย่าง ใช้ JSON.stringify() จะแปลงอ็อบเจ็กต์ในจาวาสคริปต์ ให้เป็นสตริงที่อยู่ในรูป JSON
