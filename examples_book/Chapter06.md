@@ -350,7 +350,7 @@ var blueCar = new Car;	           // "constructor"
 
 ```js
 var car = {
-	drive: function(){   console.log("driving a car") ; }
+	drive: function() { console.log("driving a car") ; }
 }
 var redCar = Object.create(car);
 var blueCar = Object.create(car,		
