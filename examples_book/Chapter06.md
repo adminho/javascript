@@ -263,7 +263,7 @@ console.log(font.color);		// "blue"
 ## โอเปอเรเตอร์ delete 
 
 ```js
-var obj = {x:1 ,y:2} ;
+var obj = {x:1 ,y:2};
 console.log(delete obj.x);	             // true
 console.log(delete obj["y"]); 	             // true
 console.log(obj); 		             // {}
@@ -288,7 +288,7 @@ console.log(a.length);	                         // 2
 ## Descriptor
 
 ```js
-var obj1 = {};
+var obj1 = { };
 Object.defineProperty(obj1, "foo", {  	          // อ็อบเจ็กต์ descriptor
     value: 100,
     writable: true  
@@ -296,7 +296,7 @@ Object.defineProperty(obj1, "foo", {  	          // อ็อบเจ็กต�
 console.log(obj1.foo);			          // 100
 console.log(Object.getOwnPropertyDescriptor(obj1,"foo"));	// รีเทิร์น descriptor
 // { value: 100, writable: true, enumerable: false, configurable: false }
-var obj2 = {};
+var obj2 = { };
 Object.defineProperties(obj2, {	  
      "foo": {		                                  // อ็อบเจ็กต์ descriptor
           value: "fooValue",
