@@ -753,7 +753,7 @@ str.func = function(){ };	      // TypeError (ถ้าไม่ใช่โห�
 ```js
 var array = ["a","b","c","d"];
 var str = array.join("->");
-console.log(str); // "a->b->c->d"
+console.log(str);      // "a->b->c->d"
 ```
 
 ```js
