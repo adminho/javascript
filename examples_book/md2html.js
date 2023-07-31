@@ -260,5 +260,5 @@ async function countline(fileName){
 let numLines= [];
 
 files.forEach(function(fileName) {
-	//countline(fileName);
+	countline(fileName);
 });
