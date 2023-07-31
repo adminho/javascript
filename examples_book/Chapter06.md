@@ -155,7 +155,7 @@ obj.zoo();		// 2
 var obj = {		
     foo: function () { 		
         this.a = 1;		// เพิ่มตัวแปร a เข้าไปในอ็อบเจ็กต์
-        console.log(this.a );
+        console.log(this.a);
     },
     bar: function() {
         console.log(this.a);
@@ -196,6 +196,8 @@ console.log(typeof obj);
 // undefined		(ถ้าเป็นโหมดสตริคท์)
 // "object"		(ถ้าไม่ใช่โหมดสตริคท์)
 ```
+
+### เมธอด call() apply() และ bind()
 
 ```js
 var obj1 = {
