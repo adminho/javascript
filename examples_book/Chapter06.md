@@ -157,7 +157,7 @@ var obj = {
         this.a = 1;		// เพิ่มตัวแปร a เข้าไปในอ็อบเจ็กต์
         console.log(this.a );
     },
-    bar: function(){
+    bar: function() {
         console.log(this.a);
     }		
 };
@@ -169,12 +169,12 @@ console.log(obj.a);	// 1
 ### การผูก this ไว้กับอ็อบเจ็กต์
 
 ```js
-var obj1 = {};
-var obj2 ={
+var obj1 = { };
+var obj2 = {
     a: 1,
-    bar : function(){      
+    bar : function() {      
 	       console.log("this.a =", this.a);
-      	       obj1.foo = function(){
+      	       obj1.foo = function() {
 	                             console.log("this.a =", this.a);
           	                       }  // สิ้นสุดการประกาศฟังก์ชั่น foo()
    	 } // สิ้นสุดการประกาศฟังก์ชั่น bar()
