@@ -3,7 +3,7 @@
 ## วิธีสร้างอ็อบเจ็กต์อย่างง่าย
 
 ```js
-var font = {};
+var font = { };
 ```
 
 ```js
@@ -67,7 +67,7 @@ console.log(obj[undefined]);	// 4
 
 ```js
 var obj = {	
-     {}: 1      // เกิด error ไม่สามารถใช้อ็อบเจ็กต์เป็นคีย์ได้โดยตรง
+     { }: 1      // เกิด error ไม่สามารถใช้อ็อบเจ็กต์เป็นคีย์ได้โดยตรง
 };
 ```
 
@@ -136,7 +136,7 @@ console.log(a === b);                 // true
 
 ```js
 var obj = {
-        a: 1,
+       a: 1,
        foo: function() {
 	return 2;
        },		
@@ -156,8 +156,8 @@ var obj = {
     foo: function () { 		
         this.a = 1;		// เพิ่มตัวแปร a เข้าไปในอ็อบเจ็กต์
         console.log(this.a );
-    }
-    ,bar: function(){
+    },
+    bar: function(){
         console.log(this.a);
     }		
 };
