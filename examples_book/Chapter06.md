@@ -220,7 +220,7 @@ f();					 // 1 10 20
 
 ```js
 var font = { color: "red" } ;
-font.color = "blue" ;
+font.color = "blue";
 ```
 
 ```js
@@ -228,7 +228,7 @@ var font = {
     set color(param) {	           // ประกาศเมธอด setter โดยมีพารามิเตอร์ ได้เพียงตัวเดียว
         this.col = param;               // กำหนดค่าให้กับข้อมูลภายในอ็อบเจ็กต์
     }
-} ;
+};
 font.color = "blue";	          // แก้ไขค่าได้
 console.log(font.color) 	          // undefined
 ```
@@ -254,7 +254,7 @@ var font = {
     get color() {
 	return this.col;
     }
-} ;
+};
 console.log(font.color);		// "red"
 font.color = "blue";
 console.log(font.color);		// "blue"
