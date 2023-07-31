@@ -32,8 +32,8 @@ function writeToHTML(allLines, fileName){
 					let str = "{";
 					for(const [key, value] of Object.entries(data)){
 						str += ""+key+":"+ toString(value) + ", ";
-					}				
-					return str.slice(0, -2) + '}';
+					}
+					return (str.length >1) ? str.slice(0, -2) + '}': '{}';					
 				}
 			
 			} else if( typeof data === 'string'){
@@ -71,6 +71,7 @@ function writeToHTML(allLines, fileName){
 	
 	<div class="left_menu">
 		<!-- Sidebar -->
+		<div style="text-align:center"><h4>สารบัญ</h4></div>
         <ul>
           <li><a href="chapter03.html" class="text-reset">บทที่ 3</a></li>
           <li><a href="chapter04.html" class="text-reset">บทที่ 4</a></li>
@@ -91,12 +92,14 @@ function writeToHTML(allLines, fileName){
           <li><a href="chapter19.html" class="text-reset">บทที่ 19</a></li>
           <li><a href="chapter20.html" class="text-reset">บทที่ 20</a></li>
         </ul>
+		<div style="text-align:center"><img src="https://cdn-local.mebmarket.com/meb/server1/156854/Thumbnail/book_detail_large.gif?9" width="80" height="100"></div>
+		<br>
 	</div>
 		
 	<div class="main"> ${allLines} </div>
 	<div id="displayArea" class="footer" style="visibility:hidden;">
 	   <div id="display"></div>
-	   <input  type="submit" value="Clear" onclick="clearDisplay(true)" >
+	   <input class="clear_btn" type="submit" value="Clear" onclick="clearDisplay(true)" >
 	</div>
 	
 	<script>
@@ -110,7 +113,7 @@ function writeToHTML(allLines, fileName){
 				clearBtn.style.visibility = "";
 			}
 		}
-		function evalCode(idTextArea) {
+		function evalCode(btn, idTextArea) {
 			clearDisplay(false);
 			
 			let textArea = document.querySelector(idTextArea);
@@ -131,15 +134,15 @@ function writeToHTML(allLines, fileName){
 			} else {
 				
 				try {
-					console.log("++++ผลการรัน++++");
+					console.log("++++ผลการรัน++++");					
 					eval(codeTxt);	
+					btn.value = "กดรันอีกครั้ง";
 				} catch (e){
 					console.log("++++Error++++");
 					console.log( e.stack);					
 				}
 			}
-			textArea.classList.add("run_already");
-			return false;
+			textArea.classList.add("run_already");			
 		}
 	</script>
 	</body></html>`;
@@ -157,7 +160,7 @@ async function genHTML(fileName){
   let btnValue = "";
   
   return eachLine(`${fileName}.md`, function(line, last) {
-  line = line.trim();
+  //line = line.trim();
     
   if(line.startsWith("```js") || line.startsWith("```html")){
 	  isCode = true;	
@@ -171,13 +174,11 @@ async function genHTML(fileName){
   } else if(line.startsWith("```")){
 	  isCode = false	  
 	  //allLines += `<div id="code${count}" class="norun">${lineCodes}</div><input type="submit" value="Run" onclick="evalCode('#code${count}')">`;	  
-	  const rows = lineCodes.trim().split('\n').length;
+	  const rows = lineCodes.split('\n').length;
 	  
-	  allLines += `<div>
-						<form>
-						<textarea class="showcode" id="code${count}" class="norun" rows=${rows+1}>${lineCodes}</textarea>
-						<input type="submit" value="${btnValue}" onclick="return evalCode('#code${count}')">
-						</form>
+	  allLines += `<div>						
+						<textarea class="showcode" id="code${count}" class="norun" rows=${rows}>${lineCodes}</textarea>
+						<input class="run_btn" type="submit" value="${btnValue}" onclick="evalCode(this, '#code${count}')">						
 				  </div>`;	  
 	  	  
 	  lineCodes = "";	  
