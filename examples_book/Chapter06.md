@@ -743,9 +743,9 @@ console.log("foo_foo_foo_".lastIndexOf("foo") );    // 8
 ```js
 "use strict";
 var str = "MyString";
-console.log(str.length)       // 8
+console.log(str.length)           // 8
 str.length = 0;		      // TypeError (ถ้าไม่ใช่โหมดสตริคท์จะไม่เกิด error แต่จะเพิกเฉย)
-str.func = function(){};	      // TypeError (ถ้าไม่ใช่โหมดสตริคท์จะไม่เกิด error แต่จะเพิกเฉย)
+str.func = function(){ };	      // TypeError (ถ้าไม่ใช่โหมดสตริคท์จะไม่เกิด error แต่จะเพิกเฉย)
 ```
 
 ## เมธอดของอาร์เรย์
