@@ -453,7 +453,7 @@ Car.prototype.stop = function() {			            // บรรทัด b
     console.log("Stop a", this.color, "car");
 };
 var redCar = new Car("red");
-console.log( Object.getPrototypeOf(redCar) === extend);     // true
+console.log( Object.getPrototypeOf(redCar) === extend );     // true
 redCar.drive();		// "Drive a red car"
 redCar.stop();		// "Stop a red car"
 ```
@@ -472,7 +472,7 @@ RedCar.prototype.stop = function() {
     console.log("Stop a", this.color, "car");	             // this ชี้ไปยังอ็อบเจ็กต์ที่ถูกสร้างขึ้นมา
 }
 var redCar = new RedCar("red");
-console.log( Object.getPrototypeOf(redCar) === RedCar.prototype); 	             // true
+console.log( Object.getPrototypeOf(redCar) === RedCar.prototype ); 	  // true
 redCar.drive();		// "Drive a red car"
 redCar.stop();		// "Stop a red car"
 ```
