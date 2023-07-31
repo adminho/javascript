@@ -11,8 +11,10 @@ let lineCodes = "";
 let count = 0;
 
 function writeToHTML(allLines, fileName){
-	let html = `<html>
+	let html = `<html lang="th">
 	<head>
+	<meta charset="UTF-8">
+	<title>${fileName}</title>
 	<link rel="stylesheet" href="md.css">  
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<script>		

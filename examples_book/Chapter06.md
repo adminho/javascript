@@ -40,14 +40,14 @@ var student = {
      "First name": "Somchai",
       "Last name": "Jaidee",
       "Who are you": function() {
-	console.log("I’m a student");
+	console.log("I'm a student");
        },
        nickname: "Tom"
 };
 console.log(student["First name"]); 	 // "Somchai"
 var lastName = "Last name";
 console.log(student[lastName]);		 // "Jaidee"
-student["Who are you"]();		 // "I’m a student"
+student["Who are you"]();		 // "I'm a student"
 console.log(student.nickname);		 // "Tom"
 console.log(student["nickname"]);	 // "Tom"
 ```
@@ -500,16 +500,16 @@ console.log(Object.getPrototypeOf(obj) === Object.prototype);        // false
 ## prototype ที่มีอยู่ในภาษา
 
 ```js
-console.log( Object.getPrototypeOf(function(){}) === Function.prototype);  // true
+console.log( Object.getPrototypeOf(function(){ }) === Function.prototype); // true
 console.log( Object.getPrototypeOf([]) === Array.prototype);	         // true
 console.log( Object.getPrototypeOf({}) === Object.prototype);	         // true
 console.log( Object.getPrototypeOf('') === String.prototype);	         // true
 console.log( Object.getPrototypeOf(true) === Boolean.prototype);	         // true
 console.log( Object.getPrototypeOf(1) === Number.prototype);	         // true
-console.log(function(){} instanceof Function);     // true
-console.log([] instanceof Array);		         // true
-console.log({} instanceof Object);		         // true
-console.log(''instanceof String);		         // false
+console.log(function(){ } instanceof Function);    // true
+console.log([ ] instanceof Array);		         // true
+console.log({ } instanceof Object);	         // true
+console.log('' instanceof String);		         // false
 console.log(true instanceof Boolean);	         // false
 console.log(1 instanceof Number);	         // false
 ```
