@@ -501,8 +501,8 @@ console.log(Object.getPrototypeOf(obj) === Object.prototype);        // false
 
 ```js
 console.log( Object.getPrototypeOf(function(){ }) === Function.prototype); // true
-console.log( Object.getPrototypeOf([]) === Array.prototype);	         // true
-console.log( Object.getPrototypeOf({}) === Object.prototype);	         // true
+console.log( Object.getPrototypeOf([ ]) === Array.prototype);	         // true
+console.log( Object.getPrototypeOf({ }) === Object.prototype);	         // true
 console.log( Object.getPrototypeOf('') === String.prototype);	         // true
 console.log( Object.getPrototypeOf(true) === Boolean.prototype);	         // true
 console.log( Object.getPrototypeOf(1) === Number.prototype);	         // true
