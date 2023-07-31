@@ -449,7 +449,7 @@ function Car(color) {
     this.color = color;
 }
 Car.prototype = extend;				            // บรรทัด a
-Car.prototype.stop = function(){			            // บรรทัด b
+Car.prototype.stop = function() {			            // บรรทัด b
     console.log("Stop a", this.color, "car");
 };
 var redCar = new Car("red");
@@ -459,7 +459,7 @@ redCar.stop();		// "Stop a red car"
 ```
 
 ```js
-function Car(color) {}
+function Car(color) { }
 Car.prototype.drive = function() {
     console.log("Drive a", this.color, "car");	              // this ชี้ไปยังอ็อบเจ็กต์ที่ถูกสร้างขึ้นมา
 };
