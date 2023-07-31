@@ -8,11 +8,11 @@ var font = {};
 
 ```js
 var font = {
-	color: "red"	     // คีย์ชื่อ color : ข้อมูลเป็นสตริง "red"
-	,myFunction: function (param) { // คีย์ชื่อ myFunction : ข้อมูลเป็นเมธอด (ฟังก์ชั่น)
+	color: "red",	     // คีย์ชื่อ color : ข้อมูลเป็นสตริง "red"
+	myFunction: function (param) { // คีย์ชื่อ myFunction : ข้อมูลเป็นเมธอด (ฟังก์ชั่น)
                    /* ซอร์สโค้ดของเมธอดอยู่นี้ */
-           }
-           ,option                 // คีย์ชื่อ option : ข้อมูลเป็นอ็อบเจ็กต์ (อ๊อบเจ็กต์ซ้อนอ๊อบเจ็กต์)
+           },
+           option: {                // คีย์ชื่อ option : ข้อมูลเป็นอ็อบเจ็กต์ (อ๊อบเจ็กต์ซ้อนอ๊อบเจ็กต์)
 	      value: 1
            }		
 };
@@ -40,14 +40,14 @@ var student = {
      "First name": "Somchai"
       ,"Last name": "Jaidee"
       ,"Who are you": function(){
-	console.log("I’m a student");
+	console.log("I'm a student");
        }
        ,nickname: "Tom"
 };
 console.log(student["First name"]); 	// "Somchai"
 var lastName = "Last name";
 console.log(student[lastName]);		// "Jaidee"
-student["Who are you"]();		// "I’m a student"
+student["Who are you"]();		// "I'm a student"
 console.log(student.nickname);		// "Tom"
 console.log(student["nickname"]);	// "Tom"
 ```
@@ -501,13 +501,13 @@ console.log(Object.getPrototypeOf(obj) === Object.prototype);        // false
 console.log( Object.getPrototypeOf(function(){}) === Function.prototype);  // true
 console.log( Object.getPrototypeOf([]) === Array.prototype);	         // true
 console.log( Object.getPrototypeOf({}) === Object.prototype);	         // true
-console.log( Object.getPrototypeOf(‘’) === String.prototype);	         // true
+console.log( Object.getPrototypeOf('') === String.prototype);	         // true
 console.log( Object.getPrototypeOf(true) === Boolean.prototype);	         // true
 console.log( Object.getPrototypeOf(1) === Number.prototype);	         // true
 console.log(function(){} instanceof Function);     // true
 console.log([] instanceof Array);		         // true
 console.log({} instanceof Object);		         // true
-console.log(‘’instanceof String);		         // false
+console.log(''instanceof String);		         // false
 console.log(true instanceof Boolean);	         // false
 console.log(1 instanceof Number);	         // false
 ```
@@ -667,7 +667,7 @@ var false2 = Boolean(false);	// false
 var false3 = Boolean(0);		// false
 var false4 = Boolean(-0);		// false
 var false5 = Boolean(null);	// false
-var false6 = Boolean(‘’);		// false
+var false6 = Boolean('');		// false
 var false7 = Boolean(NaN);	// false
 var false8 = Boolean(undefined);	// false
 var true1 = Boolean(true);	// true
@@ -802,9 +802,7 @@ function foo() {
 }
 
 foo();                        // undefined
-```
 
-```js
 foo.x = 100;                                // เพิ่มเข้าไป เพื่อให้ a.x หาเจอ
 console.log(foo.x)                        // 100
 foo();                                         // เรียกใช้ได้ แสดง 100 ออกมา
@@ -858,34 +856,34 @@ let obj = {
 
 ```js
 // ใช้ \ เชื่อมสตริงแต่ละบรรทัดเข้าดัวยกัน
-var json = ‘{"bold": true,\
+var json = '{"bold": true,\
  "color": "red",\
  "size": 100\
-}’;
+}';
 var obj = JSON.parse(json);	// obj คืออ็อบเจ็กต์ที่ใช้แทนข้อมูลแบบ JSON	
 console.log(typeof obj);	            // "object"
 console.log(obj);
 // แสดงผลลัพธ์เป็น
-// { bold: true, color: ‘red’, size: 100 }
+// { bold: true, color: 'red', size: 100 }
 ```
 
 * ตัวอย่าง จะทำการแปลงสตริงที่เขียนอยู่ในรูป JSON ซึ่งคราวนี้จะซับซ้อนหน่อยตรงที่คีย์ชื่อ "people" จะมีส่วน value เป็นอาร์เรย์ที่มีสมาชิกเป็นอ็อบเจ็กต์ (JSON) แล้วจะใช้เมธอด JSON.parse() แปลงให้กลายเป็นอ็อบเจ็กต์ที่อยู่ในรูปอ็อบเจ็กต์ของจาวาสคริปต์
 
 ```js
 // ใช้ \ เชื่อมสตริงแต่ละบรรทัดเข้าดัวยกัน
-var json = ‘{"people":[\
+var json = '{"people":[\
     {"firstName":"Somchai", "lastName":"Jaidee"},\
     {"firstName":"Mana", "lastName":"Dekdee"},\
     {"firstName":"Surat", "lastName":"Khonthai"}\
-]}’;
+]}';
 var obj = JSON.parse(json);	// obj คืออ็อบเจ็กต์ที่ใช้แทนข้อมูลแบบ JSON	
 console.log(typeof obj);	// "object"
 console.log(obj);
 /* แสดงผลลัพธ์เป็น
 { people:
-   [ { firstName: ‘Somchai’, lastName: ‘Jaidee’ },
-     { firstName: ‘Mana’, lastName: ‘Dekdee’ },
-     { firstName: ‘Surat’, lastName: ‘Khonthai’ } ] }
+   [ { firstName: 'Somchai', lastName: 'Jaidee' },
+     { firstName: 'Mana', lastName: 'Dekdee' },
+     { firstName: 'Surat', lastName: 'Khonthai' } ] }
 */
 ```
 

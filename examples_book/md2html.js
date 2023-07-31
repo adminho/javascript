@@ -12,7 +12,9 @@ let count = 0;
 
 function writeToHTML(allLines, fileName){
 	let html = `<html>
-	<head><link rel="stylesheet" href="md.css">
+	<head>
+	<link rel="stylesheet" href="md.css">  
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<script>		
 	
 		function toString(data) {
@@ -35,7 +37,7 @@ function writeToHTML(allLines, fileName){
 				}
 			
 			} else if( typeof data === 'string'){
-				return "'"+data+"'";				
+				return '"' +data + '"';				
 				
 			} else {
 				return String(data);
@@ -55,7 +57,10 @@ function writeToHTML(allLines, fileName){
 		console.log = function(...data){
 			let display = document.querySelector("#display");			
 			for( d of data){
-				display.innerHTML += toString( d ) + " ";
+				if( typeof d !== 'string'){
+					d = toString( d );
+				}					
+				display.innerHTML += d + " ";
 			}
 			display.innerHTML += "<br>";
 		}
@@ -63,6 +68,17 @@ function writeToHTML(allLines, fileName){
 	</script>
 	</head>
 	<body>	
+	
+	<div class="left_menu">
+		<!-- Sidebar -->
+        <ul>
+          <li><a href="chapter03.html" class="text-reset">บทที่ 3</a></li>
+          <li><a href="chapter04.html" class="text-reset">บทที่ 4</a></li>
+          <li><a href="chapter05.html" class="text-reset">บทที่ 5</a></li>
+          <li><a href="chapter06.html" class="text-reset">บทที่ 6</a></li>
+        </ul>
+	</div>
+		
 	<div class="main"> ${allLines} </div>
 	<div id="displayArea" class="footer" style="visibility:hidden;">
 	   <div id="display"></div>
@@ -80,11 +96,11 @@ function writeToHTML(allLines, fileName){
 				clearBtn.style.visibility = "";
 			}
 		}
-		function evalCode(idDev) {
+		function evalCode(idTextArea) {
 			clearDisplay(false);
 			
-			let div = document.querySelector(idDev);
-			let codeTxt = div.innerHTML;
+			let textArea = document.querySelector(idTextArea);
+			let codeTxt = textArea.value;
 			codeTxt = escapeHtml(codeTxt);			
 			
 			if( codeTxt.includes("<html>")>0 ) {
@@ -108,7 +124,7 @@ function writeToHTML(allLines, fileName){
 					console.log( e.stack);					
 				}
 			}
-			div.classList.add("run");
+			textArea.classList.add("run_already");
 			return false;
 		}
 	</script>
@@ -176,7 +192,7 @@ async function genHTML(fileName){
 }
 
 
-let files = [ "Chapter03", "Chapter05", "Chapter08", 
+let files = [ "Chapter03", "Chapter05", "Chapter06", "Chapter08", 
 "Chapter09", "Chapter10", "Chapter11", "Chapter12", "Chapter13", 
 "Chapter15", "Chapter16", "Chapter17", "Chapter18"];
 
@@ -184,9 +200,10 @@ let files = [ "Chapter03", "Chapter05", "Chapter08",
 
 //genHTML("Chapter03");
 //genHTML("Chapter05");
+genHTML("Chapter06");
 //genHTML("Chapter08");
 //genHTML("Chapter09");
-genHTML("Chapter10");
+//genHTML("Chapter10");
 //genHTML("Chapter11");
 //genHTML("Chapter12");
 //genHTML("Chapter13");
