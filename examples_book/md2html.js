@@ -76,6 +76,20 @@ function writeToHTML(allLines, fileName){
           <li><a href="chapter04.html" class="text-reset">บทที่ 4</a></li>
           <li><a href="chapter05.html" class="text-reset">บทที่ 5</a></li>
           <li><a href="chapter06.html" class="text-reset">บทที่ 6</a></li>
+		  <li><a href="chapter07.html" class="text-reset">บทที่ 7</a></li>
+          <li><a href="chapter08.html" class="text-reset">บทที่ 8</a></li>
+		  <li><a href="chapter09.html" class="text-reset">บทที่ 9</a></li>
+          <li><a href="chapter10.html" class="text-reset">บทที่ 10</a></li>
+          <li><a href="chapter11.html" class="text-reset">บทที่ 11</a></li>
+		  <li><a href="chapter12.html" class="text-reset">บทที่ 12</a></li>
+          <li><a href="chapter13.html" class="text-reset">บทที่ 13</a></li>
+          <li><a href="chapter14.html" class="text-reset">บทที่ 14</a></li>
+          <li><a href="chapter15.html" class="text-reset">บทที่ 15</a></li>
+		  <li><a href="chapter16.html" class="text-reset">บทที่ 16</a></li>
+		  <li><a href="chapter17.html" class="text-reset">บทที่ 17</a></li>
+          <li><a href="chapter18.html" class="text-reset">บทที่ 18</a></li>
+          <li><a href="chapter19.html" class="text-reset">บทที่ 19</a></li>
+          <li><a href="chapter20.html" class="text-reset">บทที่ 20</a></li>
         </ul>
 	</div>
 		
@@ -161,16 +175,19 @@ async function genHTML(fileName){
 	  
 	  allLines += `<div>
 						<form>
-						<textarea id="code${count}" class="norun" rows=${rows+1}>${lineCodes}</textarea>
+						<textarea class="showcode" id="code${count}" class="norun" rows=${rows+1}>${lineCodes}</textarea>
 						<input type="submit" value="${btnValue}" onclick="return evalCode('#code${count}')">
 						</form>
 				  </div>`;	  
 	  	  
 	  lineCodes = "";	  
-  } else if(line.startsWith("#") || (line.startsWith("*") && !line.startsWith("*/")) ){
-	  line = line.replace(/#/g, "");
+  } else if(line.startsWith("#")) { 
+	  line = line.replace(/#/g, "");	  
+	  allLines += `<h3>${line}</h4>`;
+	  
+  } else if(line.startsWith("*") && !line.startsWith("*/")){
 	  line = line.replace(/\*/g, "");
-	  allLines += `<h3>${line}</h3>`;
+	  allLines += `<p class="describe">${line}</p>`;
   }
     
   if(isCode && !line.startsWith("```js") && !line.startsWith("```html")){

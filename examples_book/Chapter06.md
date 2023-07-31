@@ -22,42 +22,42 @@ var font = {
 
 ```js
 var obj = {
-    a: 1					// กำหนดให้ a มีค่าตั้งต้นเป็น 1
-    ,myFunction : function() {
+    a: 1,					 // กำหนดให้ a มีค่าตั้งต้นเป็น 1
+    myFunction : function() {
           console.log("call myFunction");
     }	
 };	
-obj.a = 100;				// กำหนดให้ obj.a มีค่าเป็น 100
-console.log(obj.a);			// 100
-console.log(typeof obj.myFunction); 	// "function"
-obj.myFunction();			// "call myFunction"
+obj.a = 100;				 // กำหนดให้ obj.a มีค่าเป็น 100
+console.log(obj.a);			 // 100
+console.log(typeof obj.myFunction); 	 // "function"
+obj.myFunction();			 // "call myFunction"
 ```
 
 ## การใช้วงเล็บเหลี่ยม
 
 ```js
 var student = { 
-     "First name": "Somchai"
-      ,"Last name": "Jaidee"
-      ,"Who are you": function(){
-	console.log("I'm a student");
-       }
-       ,nickname: "Tom"
+     "First name": "Somchai",
+      "Last name": "Jaidee",
+      "Who are you": function() {
+	console.log("I’m a student");
+       },
+       nickname: "Tom"
 };
-console.log(student["First name"]); 	// "Somchai"
+console.log(student["First name"]); 	 // "Somchai"
 var lastName = "Last name";
-console.log(student[lastName]);		// "Jaidee"
-student["Who are you"]();		// "I'm a student"
-console.log(student.nickname);		// "Tom"
-console.log(student["nickname"]);	// "Tom"
+console.log(student[lastName]);		 // "Jaidee"
+student["Who are you"]();		 // "I’m a student"
+console.log(student.nickname);		 // "Tom"
+console.log(student["nickname"]);	 // "Tom"
 ```
 
 ```js
 var obj = {	
-    1: 1
-    ,true: 2
-    ,null : 3
-    ,undefined: 4
+    1: 1,
+    true: 2,
+    null : 3,
+    undefined: 4
 };	
 console.log(obj[1 + 0]);	 	// 1
 console.log(obj[true && true]); 	// 2
@@ -136,14 +136,14 @@ console.log(a === b);                 // true
 
 ```js
 var obj = {
-        a: 1
-       ,foo: function() {
+        a: 1,
+       foo: function() {
 	return 2;
-       }		
-       ,bar: function() { 		
+       },		
+       bar: function() { 		
 	console.log(this.a);
-       }		
-       ,zoo: function() {
+       },		
+       zoo: function() {
 	console.log(this.foo());
        }
 };
@@ -171,8 +171,8 @@ console.log(obj.a);	// 1
 ```js
 var obj1 = {};
 var obj2 ={
-    a: 1
-   ,bar : function(){      
+    a: 1,
+    bar : function(){      
 	       console.log("this.a =", this.a);
       	       obj1.foo = function(){
 	                             console.log("this.a =", this.a);
@@ -233,8 +233,8 @@ console.log(font.color) 	          // undefined
 
 ```js
 var font = { 
-    col: "red" 
-    ,get color(){		          // ประกาศเมธอด getter โดยไม่ต้องมีพารามิเตอร์
+    col: "red", 
+    get color() {		          // ประกาศเมธอด getter โดยไม่ต้องมีพารามิเตอร์
         return this.col;	          // รีเทิร์นข้อมูลภายในอ็อบเจ็กต์ออกไป
      }
 };
@@ -245,11 +245,11 @@ console.log(font.color);	         // "red"
 
 ```js
 var font = { 
-    col: "red"
-    ,set color(param) {
+    col: "red",
+    set color(param) {
 	this.col = param;
-    }
-    ,get color() {
+    },
+    get color() {
 	return this.col;
     }
 } ;
@@ -288,8 +288,8 @@ console.log(a.length);	                         // 2
 ```js
 var obj1 = {};
 Object.defineProperty(obj1, "foo", {  	          // อ็อบเจ็กต์ descriptor
-    value: 100
-    ,writable: true  
+    value: 100,
+    writable: true  
 });
 console.log(obj1.foo);			          // 100
 console.log(Object.getOwnPropertyDescriptor(obj1,"foo"));	// รีเทิร์น descriptor
@@ -299,8 +299,8 @@ Object.defineProperties(obj2, {
      "foo": {		                                  // อ็อบเจ็กต์ descriptor
           value: "fooValue",
           writable: true
-     }
-     ,"bar": {		                                  // อ็อบเจ็กต์ descriptor
+     },
+     "bar": {		                                  // อ็อบเจ็กต์ descriptor
          value: "barValue",
          writable: false
      }
@@ -353,8 +353,8 @@ var car = {
 var redCar = Object.create(car);
 var blueCar = Object.create(car,		
 {  // เพิ่มพร็อพเพอร์ตี้เข้าไป ด้วยการระบุ descriptor
-  	  foo: { writable: true, configurable: true, value: "fooValue" } // descriptor
-  	  ,bar:{ writable: true, configurable: true, value: "barValue" } // descriptor
+    foo: { writable: true, configurable: true, value: "fooValue" },           // descriptor
+    bar:{ writable: true, configurable: true, value: "barValue" }             // descriptor
 }
 );
 // สร้างอ็อบเจ็กต์ใหม่ได้เรื่อย ๆ ด้วย Object.create()
@@ -517,18 +517,18 @@ console.log(1 instanceof Number);	         // false
 Function.prototype.sayMsg = function(msg) {
     console.log("Function say:", msg);
 };
-function myFunction(){}
+function myFunction() { }
 myFunction.sayMsg("Hello");     // " Function say: Hello"
 // อาร์เรย์ 
 Array.prototype.sayMsg = function(msg) {
 	console.log("Array say:", msg);
 };
-[].sayMsg("Hello");	         // "Array say: Hello"
+[ ].sayMsg("Hello");	         // "Array say: Hello"
 // อ็อบเจ็กต์ 
 Object.prototype.sayMsg = function(msg) {
 	console.log("Object say:", msg);
 };
-var obj = {};
+var obj = { };
 obj.sayMsg("Hello");	       // "Object say: Hello"
 ({}).sayMsg("Hello");	       // "Object say: Hello"
 // สตริง 
@@ -755,7 +755,7 @@ console.log(str); // "a->b->c->d"
 ```
 
 ```js
-var array = [];
+var array = [ ];
 array.push("a", "b", "c", "d");	     // เพิ่มสมาชิกกี่ตัวก็ได้
 console.log(array);		     // ["a", "b", "c", "d"]
 console.log(array.pop()); 		     // "d"
@@ -958,7 +958,7 @@ console.log(JSON.stringify(obj, null, 2));       // ระบุค่าอา�
 ```js
 var obj = { 
     name: "Somchai",    
-    func: function(){},
+    func: function() { },
     age: Symbol("25")
 };
 console.log(JSON.stringify(obj));

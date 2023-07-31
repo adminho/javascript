@@ -4,7 +4,7 @@
   border: 1px solid #4CAF50;
 }
 
-.run {
+.run_already {
   background-color: #DAF7A6 ;
   margin-top: 20px;
   border: 1px solid #4CAF50;
@@ -12,6 +12,7 @@
 
 .main {
 	margin-bottom: 100px;	
+	margin-left: 135px;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -24,19 +25,26 @@ input[type=button], input[type=submit], input[type=reset] {
   cursor: pointer;
 }
 
+.showcode {    
+	margin:0px;    
+}
 
 textarea {
-    font-size: 13pt;
-    width: 100%;
+	font-size: 13pt;
+	width: 100%;
 }
-/*.clearBtn {
-   position: fixed;
-   left: 0;
-   top: 0;
-   width: 100%; 
-   text-align: center;   
-   cursor: pointer;
-}*/
+
+.describe {
+  margin:3px;	
+}
+
+.left_menu {
+  background-color: #ECFFDC;
+  position: fixed;
+  left: 0;
+  top:30;
+  width: 100px;
+}
 
 .footer {
    position: fixed;
@@ -46,5 +54,6 @@ textarea {
    background-color: #7B68EE;
    color: white;
    text-align: left;
-   padding-left: 30px;
+   margin-left: 135px;
+   border: 2px solid #023020;
 }
