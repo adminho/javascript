@@ -517,35 +517,35 @@ console.log(1 instanceof Number);	         // false
 ```js
 // ฟังก์ชั่น 
 Function.prototype.sayMsg = function(msg) {
-    console.log("Function say:", msg);
+     console.log("Function say:", msg);
 };
 function myFunction() { }
 myFunction.sayMsg("Hello");     // " Function say: Hello"
 // อาร์เรย์ 
 Array.prototype.sayMsg = function(msg) {
-	console.log("Array say:", msg);
+    console.log("Array say:", msg);
 };
 [ ].sayMsg("Hello");	         // "Array say: Hello"
 // อ็อบเจ็กต์ 
 Object.prototype.sayMsg = function(msg) {
-	console.log("Object say:", msg);
+    console.log("Object say:", msg);
 };
 var obj = { };
 obj.sayMsg("Hello");	       // "Object say: Hello"
-({}).sayMsg("Hello");	       // "Object say: Hello"
+({ }).sayMsg("Hello");	       // "Object say: Hello"
 // สตริง 
 String.prototype.sayMsg = function(msg) {
-	console.log("String say:", msg);
+    console.log("String say:", msg);
 };
 "123".sayMsg("Hello");	     // "String say: Hello"
 // บูลีน 
 Boolean.prototype.sayMsg = function(msg) {
-	console.log("Boolean say:", msg);
+    console.log("Boolean say:", msg);
 }
 true.sayMsg("Hello");	    // "Boolean say: Hello"
 // ตัวเลข 
 Number.prototype.sayMsg = function(msg) {
-	console.log("Number say:", msg);
+    console.log("Number say:", msg);
 }
 var num = 123;
 num.sayMsg("Hello");	    // "Number say: Hello"
