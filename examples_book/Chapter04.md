@@ -1,838 +1,1115 @@
-# บทที่ 4 ทบทวนอ็อบเจ็กต์
+# บทที่ 4 ทบทวนมาตรฐานเก่า
 
-## วิธีสร้างอ็อบเจ็กต์อย่างง่าย
-
+## คอมเมนต์
 ```js
-var font = {};
+var x = 10;	//This is an example.
 ```
 
 ```js
-var font = {
-	color: "red"				// คีย์ชื่อ color 	    : ข้อมูลจะเป็นสตริง "red"
-	,myFunction: function (param){ 	// คีย์ชื่อ myFunction : ข้อมูลจะเป็นเมธอด (ฟังก์ชั่น)
-		// ซอร์สโค้ดของเมธอด
-}
-,option: {				// คีย์ชื่อ option     : ข้อมูลจะเป็นอ็อบเจ็กต์
-	value: 1
-}		
-};
+/* This is an example
+ECMAScript 6 is very easy*/
+var x = 10;
 ```
 
-
-## การเข้าถึงพร็อพเพอร์ตี้
-```js
-var obj = {
-	a: 1					// กำหนดให้ a มีค่าตั้งต้นเป็น 1
-,myFunction : function() {
-      console.log("call myFunction");
-}	
-};	
-obj.a = 100;					// กำหนดให้ obj.a มีค่าเป็น 100
-console.log(obj.a);				// 100
-console.log(typeof obj.myFunction); 	// "function"
-obj.myFunction();				// "call myFunction"
-```
-
-## การใช้วงเล็บเหลี่ยม
-```js
-var student = { 
-"First name": "Somchai"
-,"Last name": "Jaidee"
-,"Who are you": function(){
-	console.log("I’m a student");
-}
-,nickname: "Tom"
-};
-console.log(student["First name"]); 	// "Somchai"
-var lastName = "Last name";
-console.log(student[lastName]);		// "Jaidee"
-student["Who are you"]();			// "I’m a student"
-console.log(student.nickname);		// "Tom"
-console.log(student["nickname"]);		// "Tom"
+## console.log()
+```html
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>Hello, world!</h1>
+<script>		
+             console.log("Hello, world!");
+</script>
+</body>
+</html>
 ```
 
 ```js
-var obj = {	
-1: 1
-,true: 2
-,null : 3
-,undefined: 4
-};	
-console.log(obj[1 + 0]);	 		// 1
-console.log(obj[true && true]); 		// 2
-console.log(obj[null]); 			// 3
-console.log(obj[undefined]); 		// 4
+console.log("Hello world", 122, 333.333);   // "Hello world 122 333.333"
+```
+
+### debugger
+```js
+console.log("line 1");
+debugger;  // บรรทัดนี้เป็นตำแหน่งของ breakpoint เพื่อหยุดการทำงานของโปรแกรมชั่วขณะ ตอนดีบั๊กโปรแกรม
+console.log("line 2");
+```
+
+## การใช้เซมิโคลอน (;)
+```js
+console.log("Hello world"); 
 ```
 
 ```js
-var obj = {	
-{}: 1 // เกิด error ไม่สามารถใช้อ็อบเจ็กต์เป็นคีย์ได้โดยตรง
-};
-```
-
-## เพิ่มพร็อพเพอร์ตี้เข้าไปทีหลัง
-```js
-var obj = {};	
-obj.a = 1;					// เพิ่มพร็อพเพอร์ตี้ที่เป็นตัวแปร a
-obj[1]=100;					// เพิ่มพร็อพเพอร์ตี้ที่มีคีย์เป็นตัวเลข 1
-obj["property name"]= 200;			// เพิ่มพร็อพเพอร์ตี้ที่มีคีย์เป็นสตริง "property name"
-obj.myFunction = function(){		// เพิ่มพร็อพเพอร์ตี้ที่เป็นเมธอด
-console.log("to do something");
-};	
-
-console.log(obj.a);				// 1
-console.log(obj[1]);			// 100
-console.log(obj["property name"]);	// 200
-obj.myFunction();				// "to do something"
-```
-
-```js
-var obj = { };	
-var key = { };
-obj[key] = 100;		// มีคีย์เป็นอ็อบเจ็กต์ว่าง
-console.log(obj[key]);	// 100
-```
-
-## การส่งค่าให้ตัวแปร
-```js
-function myFunction(param1, param2){
-      param1.a = 3;		// pass by reference
-                   param2 = 200;		// pass by value
-}
-var obj = {a:1, b:2}, value = 100;
-myFunction(obj, value);
-console.log(obj.a);		// 3
-console.log(value);		// 100
-```
-
-```js
-var obj1 = {a:1, b:2};
-var obj2 = obj1;		// บรรทัด a -- pass by reference
-obj2.a = 3;			// บรรทัด b
-console.log(obj1.a); 	// 3
-var value1 = 1;
-var value2 = value1;	// บรรทัด d  -- pass by value
-value2 = 3;			// บรรทัด e
-console.log(value1); 	// 1
-```
-
-## การเปรียบเทียบความเท่ากัน
-```js
-console.log({a:1} == {a:1});  // false 
-console.log({a:1} === {a:1}); // false 
-```
-
-```js
-var a = 1, b = 1;
-console.log(a == b);  // true 
-console.log(a === b); // true 
-```
-
-## this 
-```js
-var obj = {
-	a: 1
-       ,foo: function(){
-		return 2;
-       }		
-	,bar: function(){ 		
-	console.log(this.a);
-}		
-,zoo: function(){
-	console.log(this.foo());
-}
-};
-obj.bar();		// 1
-obj.zoo();		// 2
-```
-
-```js
-var obj = {		
-	foo: function (){ 		
-		this.a = 1;		// เพิ่มตัวแปร a เข้าไปในอ็อบเจ็กต์
-	console.log(this.a );
-}
-,bar: function(){
-	console.log(this.a);
-}		
-};
-
-obj.foo();		// 1
-obj.bar();		// 1
-console.log(obj.a);	// 1
-```
-
-## การผูก this ไว้กับอ็อบเจ็กต์
-```js
-var obj1 = {};
-var obj2 ={
-a: 1
-,bar : function(){      
-	       console.log("this.a =", this.a);
-      	obj1.foo = function(){
-			console.log("this.a =", this.a);
-      		} // สิ้นสุดการประกาศฟังก์ชั่น foo()
-   	 } // สิ้นสุดการประกาศฟังก์ชั่น bar()
-}; 
-obj2.bar();	// "this.a  = 1"
-obj1.foo();	// "this.a = undefined"
-```
-
-## this ในฟังก์ชั่น
-```js
-//"use strict";
-function myFunction() {
- 	return this;
-}	
-var obj = myFunction();
-console.log(typeof obj); 	  
-// แสดงผลลัพธ์เป็น
-// undefined		(ถ้าเป็นโหมดสตริคท์)
-// "object"		(ถ้าไม่ใช่โหมดสตริคท์)
-```
-
-## เมธอด call() apply() และ bind()
-```js
-var obj1 = {
-	value: 20
-};
-var obj2 = {
-myFunction: function(param1, param2){
- 	var value = this.value;	// this จะชี้ไปยัง obj1
- 	console.log(param1, param2, value);
-}
-}
-obj2.myFunction(1, 10);			// 1 10 undefined
-obj2.myFunction.call(obj1, 1, 10);	// 1 10 20
-obj2.myFunction.apply(obj1, [1, 10]);	// 1 10 20
-var f = obj2.myFunction.bind(obj1, 1, 10);
-f();						// 1 10 20
-```
-
-## พร็อพเพอร์ตี้แอคเซสเซอร์
-```js
-var font = { color: "red" } ;
-font.color = "blue" ;
-```
-
-```js
-var font = { 
-	set color(param){		// ประกาศเมธอด setter โดยมีพารามิเตอร์ ได้เพียงตัวเดียว
-		this.col = param;	// กำหนดค่าให้กับข้อมูลภายในอ็อบเจ็กต์
-}
-} ;
-font.color = "blue";		// แก้ไขค่าได้
-console.log(font.color) 		// undefined
-```
-
-```js
-var font = { 
-       col: "red" 
-       ,get color(){		// ประกาศเมธอด getter โดยไม่ต้องมีพารามิเตอร์
-		return this.col;	// รีเทิร์นข้อมูลภายในอ็อบเจ็กต์ออกไป
-}
-};
-console.log(font.color);		// "red"
-font.color = "blue";		// ไม่มีผลอะไรเกิดขึ้น หรือจะเกิด TypeError ในโหมดสตริคท์
-console.log(font.color);		// "red"
-```
-
-```js
-var font = { 
-col: "red"
-	,set color(param){
-		this.col = param;
-}
-,get color(){
-		return this.col;
-}
-} ;
-console.log(font.color);		// "red"
-font.color = "blue";
-console.log(font.color);		// "blue"
-```
-
-## โอเปอเรเตอร์ delete
-```js
-var obj = {x:1 ,y:2} ;
-console.log(delete obj.x);		// true
-console.log(delete obj["y"]); 	// true
-console.log(obj); 			// {}
-var a = 1;
-console.log(delete a);		// false หรือเกิด SyntaxError ในโหมดสตริคท์
-```
-
-```js
-console.log(delete Number.MAX_VALUE); //  false หรือเกิด TypeError โหมดสตริคต์
-```
-
-```js
-var a = [1, "Hi"];
-console.log(a.length);	// 2
-console.log(delete a[0]);	// true
-console.log(delete a[1]);	// true
-console.log(a[0]);		// undefined
-console.log(a[1]);		// undefined
-console.log(a.length);	// 2
-```
-
-## Descriptor
-```js
-var obj1 = {};
-Object.defineProperty(obj1, "foo", {  	// อ็อบเจ็กต์ descriptor
-  value: 100
-  ,writable: true  
-});
-console.log(obj1.foo);			// 100
-console.log(Object.getOwnPropertyDescriptor(obj1,"foo"));	// รีเทิร์น descriptor
-// { value: 100, writable: true, enumerable: false, configurable: false }
-var obj2 = {};
-Object.defineProperties(obj2, {	  
-  "foo": {		// อ็อบเจ็กต์ descriptor
-    value: "fooValue",
-    writable: true
-  }
-  ,"bar": {		// อ็อบเจ็กต์ descriptor
-    value: "barValue",
-    writable: false
-  }
-  // พร็อพเพอร์ตี้อื่น ๆ
-});
-console.log(obj2.foo, obj2.bar);		// "fooValue barValue"
-console.log(Object.getOwnPropertyDescriptor(obj2,"foo"));	// รีเทิร์น descriptor
-// { value: "fooValue", writable: true, enumerable: false, configurable: false }
-console.log(Object.getOwnPropertyDescriptor(obj2,"bar"));	// รีเทิร์น descriptor
-// { value: "barValue", writable: false, enumerable: false, configurable: false }
-```
-
-## ฟังก์ชั่นคอนสตรัคเตอร์
-```js
-function Car(color) {
-this.color = color;
-return true;
-}
-var redCar = new Car("red");
-var blueCar = new Car("blue");
-//… สร้างอ็อบเจ็กต์ใหม่ได้เรื่อยด้วยโอเปอเรเตอร์ new
-console.log(redCar.color);		// "red"
-console.log(blueCar.color);	// "blue"
-```
-
-```js
-function Car(color) {
-this.color = color;		// ถ้าเป็นโหมดสตริคท์จะเกิด error ขึ้นได้
-return true;
-}
-var blueCar = Car("blue");		// เป็นการเรียกฟังก์ชั่นธรรดา
-console.log(blueCar); 		// true
-```
-
-```js
-function Car(color) {
-console.log("constructor");
-}
-var redCar = new Car();	// "constructor"
-var blueCar = new Car;	// "constructor"
-```
-
-## เมธอด Object.create() 
-```js
-var car = {
-	drive: function(){   console.log("driving a car") ; }
-}
-var redCar = Object.create(car);
-var blueCar = Object.create(car,		
-{  // เพิ่มพร็อพเพอร์ตี้เข้าไป ด้วยการระบุ descriptor
-  	  foo: { writable: true, configurable: true, value: "fooValue" } // descriptor
-  	  ,bar:{ writable: true, configurable: true, value: "barValue" } // descriptor
-}
+console
+.log
+(
+"Hello world"
 );
-// สร้างอ็อบเจ็กต์ใหม่ได้เรื่อย ๆ ด้วย Object.create()
-// …
-redCar.drive();			//  "driving a car"
-blueCar.drive();			//  "driving a car"
-console.log(blueCar.foo);		// "fooValue"
-console.log(blueCar.bar);		// "barValue"
 ```
 
 ```js
-var car = { }
-var redCar = Object.create(car);
-var blueCar = Object.create(car);
-car.drive = function() {
-	console.log("driving a car");
+;
+;
+;
+```
+
+```js
+;;;;;
+```
+
+```js
+console.log("Hello world")
+console
+.log
+(
+"Hello world"
+)
+```
+
+```js
+var a = 1
+var b = 5 
+var c = a + b
+(a * b)
+```
+
+```js
+var a = 1;
+var b = 5; 
+var c = a + b(a * b);
+```
+
+```js
+var a = 1 + 2 
+-3 + 10
+console.log(a)     // 10
+```
+
+```js
+var a = 1 + 2 -3 + 10;
+console.log(a);   // 10
+```
+
+## เส้นทางการทำงานโปรแกรม
+
+```js
+console.log(1);
+console.log(2);
+console.log(3);
+console.log(4);
+```
+
+```js
+console.log(1); console.log(2); console.log(3); console.log(4); 
+```
+
+```js
+console.log(1) console.log(2) console.log(3) console.log(4)
+```
+
+## การตั้งชื่อ
+```js
+var _ = 100;		// ตั้งชื่อแบบนี้ได้
+var $ = 100;		// ตั้งชื่อแบบนี้ได้
+var _a =100; 		// ตั้งชื่อแบบนี้ได้
+var $a =100; 		// ตั้งชื่อแบบนี้ได้
+var Abc = 100;	            // ตั้งชื่อแบบนี้ได้
+var abc = 100;	           // ตั้งชื่อแบบนี้ได้ แต่ทว่าตัวแปร Abc กับ abc จะถือว่าคนละชื่อกัน 
+var a0123 = 100;	           // ตั้งชื่อแบบนี้ได้
+var 9b = 100;	           // ทำไม่ได้ มันจะเกิด SyntaxError เพราะมีเลข 9 นำหน้าชื่อตัวแปร
+var สวัสดีครับ = 100;       // ตั้งชื่อภาษาไทยแบบนี้ได้ แต่ส่วนใหญ่นิยมตั้งชื่อเป็นภาษาอังกฤษ)
+```
+
+## คำสงวน
+
+```js
+var let = -1;		// ทำไม่ได้ มันจะเกิด SyntaxError เพราะ let เป็นคำสงวน
+var this= -10;		// ทำไม่ได้ มันจะเกิด SyntaxError เพราะ this เป็นคำสงวน
+```
+
+```js
+var Date = 100;
+console.log(Date);	// แสดงผลลัพธ์ 100
+```
+
+```js
+var Date = 100;
+console.log(Date);	// แสดงผลลัพธ์ 100
+var d = new Date();
+console.log(d);
+```
+
+## การประกาศตัวแปร
+```js
+var x = 100;	
+```
+
+```js
+var  x = 1, y = 2, z = 3;	// ประกาศตัวแปร x, y และ z ให้อยู่ในบรรทัดเดียวกัน
+```
+
+```js
+var x = 1;
+var y = 2; 
+var z = 3;
+```
+
+```js
+var x= 1, y = x;
+/* จะเสมือนเขียนซอร์สโค้ดแบบนี้
+var x = 1;
+var y = x;
+*/
+```
+
+```js
+var x; 	    
+console.log(x); 	// undefined
+```
+
+```js
+var undefined = 55555; 	    
+console.log(undefined);   // บนเว็บเบราเซอร์จะแสดง 55555 แต่บน Node.js จะแสดง undefined	
+var x;
+console.log(x);		// undefined	
+```
+
+### การประกาศตัวแปรโดยไม่มี var
+```js
+x = 1;
+```
+
+```js
+console.log(x);		// ReferenceError
+```
+
+```js
+var x;                           // ประกาศตัวแปร แต่ยังไมีการกำหนดค่าให้ x จึงมีค่าเป็น undefined
+console.log(x);	           // undefined
+```
+
+
+## ไดนามิกไทป์
+```js
+var foo = 42;    	// เริ่มต้นตัวแปร foo จะมีชนิดข้อมูลเป็นตัวเลข
+foo = "bar"; 	// ภายหลัง foo เปลี่ยนมาเก็บข้อมูลเป็นสตริง
+foo = true;  	// ภายหลัง foo เปลี่ยนมาเก็บข้อมูลเป็นบูลีน
+```
+
+## ข้อมูล
+
+### null กับ undefined
+
+```js
+console.log(null === undefined) 	// false
+console.log(null == undefined) 	// true
+console.log(typeof null)        	// "object" 
+console.log(typeof undefined)     // "undefined"
+```
+
+## ตัวเลข
+```js
+console.log(100, 0, -0, -300, 3.14, -78.222);    // 100 0 -0 -300 3.14 -78.222
+```
+
+```js
+console.log(200e5); 	// 200 x 105  =  20000000
+console.log(2E-5);   	// 2 x 10-5 = 0.00002
+```
+
+```js
+console.log(Math.sqrt(-1)); 	//  NaN (ไม่สามารถถอดรากที่สองของ -1)
+console.log(0/0); 		//  NaN ( 0 หาร 0 ไม่มีนิยาม)
+console.log(parseInt("Hi"));	//  NaN (ไม่สามารถแปลง "Hi" เป็นตัวเลขได้)
+```
+
+```js
+console.log(Infinity * Infinity);	 // Infinity
+console.log(Infinity / Infinity);	 // NaN
+console.log(-344 * Infinity);	// -Infinity
+console.log(3 / Infinity);		// 0
+```
+
+```js
+console.log(Number.MAX_VALUE);	         //  1.7976931348623157e+308 โดยประมาณ
+console.log(Number.MAX_VALUE + 100); //  1.7976931348623157e+308 โดยประมาณ (บรรทัด 2)   
+console.log(Number.MAX_VALUE * 10);   //  Infinity (บรรทัด 3)
+console.log(Number.MAX_VALUE * -10);  //  -Infinity (บรรทัด 4)
+```
+
+```js
+console.log(Number.MIN_VALUE);         //5e-324 (เป็นค่าโดยประมาณ)
+```
+
+## สตริง
+```js
+"Learning JavaScript"
+'Learning JavaScript'
+```
+
+```js
+// ใช้ \" อยู่ภายในสตริง ส่วนเครื่องหมาย ' สามารถเขียนอยู่ในสตริงได้เลย
+console.log("...\"Learning\" 'JavaScript'...");	// ..."Learning" 'JavaScript'...
+// ใช้ \' อยู่ภายในสตริง ส่วนเครื่องหมาย " สามารถเขียนอยู่ในสตริงได้เลย
+console.log('..."Learning" \'JavaScript\'...');	//  ..."Learning" 'JavaScript'...
+```
+
+```js
+var str= "line1\
+line2\
+line3";
+console.log(str);	       // line1line2line3
+```
+
+```js
+console.log("1234567890".length);	 // 10
+```
+
+## บูลีน
+
+```js
+var TRUE_value = true;
+var FALSE_value = false
+console.log(TRUE_value);      // true
+console.log(FALSe_value);     // false
+```
+
+```js
+-5;
+-10.71;
+"Learning JavaScript";
+true;
+var a = -5;
+var b = -10.71;
+var c = "Learning JavaScript";
+var d = true;
+```
+
+## โอเปอเรเตอร์ทางคณิตศาสตร์ 
+```js
+console.log(true + 0);         // ได้ผลลัพธ์เป็น 1 เพราะ true จะถือว่ามีค่าเป็น 1
+console.log(false + false);   // ได้ผลลัพธ์เป็น 0 เพราะ false จะถือว่ามีค่าเป็น 0
+console.log(100 - true);      // 99
+console.log(true * 30);       // 30
+console.log(true / 2);         // 0.5
+console.log(true % 10);      // 1
+console.log(+true);            // 1
+console.log(-false);            // -0
+var a = false,  b=true; 
+console.log(++a);	  // 1     
+console.log(--b);               // 0
+```
+
+```js
+console.log(NaN + 30);      // NaN
+console.log(NaN - 30);       // NaN
+console.log(NaN * 30);      // NaN
+console.log(NaN / 30);      // NaN
+console.log(NaN % 30);    // NaN
+console.log(+NaN);          // NaN
+console.log(-NaN);           // NaN
+var x = NaN; 
+console.log(++x);            // NaN
+console.log(--x);              // NaN
+```
+
+```js
+console.log(Infinity * 0);           // NaN
+console.log(Infinity * 1);           // Infinity
+console.log(Infinity * Infinity);   // Infinity
+console.log(Infinity * -Infinity);  // -Infinity
+console.log(Infinity / 0);          // Infinity
+```
+
+* การใช้งานโอเปอเรเตอร์ยกกำลัง (Exponentiation Operator) 
+
+```js
+var ans = 10 ** 2;		          // นำเลข 10 มายกกำลัง 2  ( 102 )
+console.log(ans);                   	         // 100
+// เสมือนใช้เมธอด Math.pow() ดังนี้
+console.log(ans === Math.pow(10, 2));   // true
+```
+
+* ลำดับของโอเปอเรเตอร์ **
+
+```js
+var ans = 3 * 10 ** 2;	
+console.log(ans);              // 300
+```
+
+```js
+var ans = 3 * (10 ** 2);	
+console.log(ans);              // 300
+```
+* ข้อเข้มงวดของโอเปอเรเตอร์ **
+
+```js
+var ans1 = -10 ** 2; 	// syntax error
+var ans2 = +10 ** 2; 	// syntax error
+```
+
+```js
+ans1 = - (10 ** 2); 	// -100
+ans1 = (-10) ** 2; 	// 100
+ans2 = + (10 ** 2); 	// 100
+ans2 = (+10) ** 2; 	// 100
+```
+
+```js
+var value1 = 9, value2 = 10;
+// ใช้งานโอเปอเรเตอร์ ++ แบบ prefix
+// ค่าของ value1 ถูกบวกด้วยหนึ่ง ก่อนที่จะยกกำลัง 2 
+console.log(++value1 ** 2);     // 100
+console.log(value1);               // 10
+// ใช้งานโอเปอเรเตอร์ ++ แบบ postfix
+// หลังจากยกกำลัง 2 ไปแล้ว ค่าของ value2 จึงถูกบวกด้วยหนึ่งทีหลัง
+console.log(value2++ ** 2);    // 100
+console.log(value2);              // 11
+```
+
+```js
+var value1 = 11, value2 = 10;
+// ใช้งานโอเปอเรเตอร์ -- แบบ prefix
+// ค่า value1 ถูกลบด้วยหนึ่ง ก่อนที่จะยกกำลัง 2 
+console.log(--value1 ** 2);     // 100
+console.log(value1);             // 10 
+// ใช้งานโอเปอเรเตอร์ -- แบบ postfix
+// หลังจากยกกำลัง 2 ไปแล้ว ค่าของ value2 จึงถูกลบด้วยหนึ่งทีหลัง 
+console.log(value2-- ** 2);     // 100
+console.log(value2);             // 9
+```
+
+### โอเปอเรเตอร์ที่ใช้กำหนดค่าให้กับตัวแปร
+
+```js
+var a = 20;		
+a +=true;     	// true มีค่าเป็น 1
+console.log(a);	// 21
+a *=NaN;
+console.log(a);	// NaN
+```
+
+### โอเปอเรเตอร์ที่ใช้กับสตริง
+
+```js
+100 + true + "50"	 // "10150"
+// เสมือนเขียน (100 + true) + "50"
+```
+
+```js
+20 / "10" + "76";           // 276
+// เสมือนเขียน ( 20 / "10") + "276"
+```
+
+### โอเปเรอเตอร์แบบตรรกะ 
+```js
+console.log(true || true);	            // true	(เงื่อนไข short circuit)
+console.log(true || false);	            // true	(เงื่อนไข short circuit)
+console.log(false || true);	            // true	
+console.log(false || false);	            // false
+console.log(true && true);	            // true
+console.log(true && false);	// false
+console.log(false && true);	// false	(เงื่อนไข short circuit)
+console.log(false && false);	// false	(เงื่อนไข short circuit)
+console.log(!true);		// false
+console.log(!false);		// true
+```
+
+### โอเปอเรเตอร์ระหว่างบิต
+
+* ตัวอย่าง Bitwise AND
+```js
+var a = 12;			// 1100 (เลขฐานสอง)
+var b = 5;			// 0101 (เลขฐานสอง)
+var c = a & b;			// 0100 (เลขฐานสอง)
+console.log(c.toString(2)); 	            // 100 (เลขฐานสอง)
+console.log(c);			// 4
+console.log(12 & 5);		// 4
+```
+
+* ตัวอย่าง Bitwise OR
+
+```js
+var a = 12;			// 1100 
+var b = 5;			// 0101 
+var c = a | b;			// 1101
+console.log(c.toString(2));	            // 1101
+console.log(c);			// 13
+console.log(12 | 5);		// 13
+```
+
+* ตัวอย่าง Bitwise XOR
+
+```js
+var a =12;			// 1100 
+var b= 5;			// 0101 
+var c = a ^ b;			// 1001
+console.log(c.toString(2));	            // 1001
+console.log(c);			// 9
+console.log(12 ^ 5);		// 9
+```
+
+* ตัวอย่าง Bitwise NOT
+
+```js
+var a= 9;		// 00000000000000000000000000001001
+var b = ~a;		// 11111111111111111111111111110110 (1's Complement)
+console.log(b);		// -10 
+console.log(~9);	            // -10
+```
+
+* ตัวอย่าง การเลื่อนบิตไปทางซ้ายมือ
+
+```js
+var a = 9; 		// 00000000000000000000000000001001
+var c = a << 2;		// เลื่อนบิตจากขวามือไปทางซ้ายมือ 2 ตำแหน่ง
+			// 00000000000000000000000000100100
+console.log(c);		// 36
+console.log(9 << 2);	// 36
+```
+
+* ตัวอย่าง การเลื่อนบิตไปทางขวามือ
+
+```js
+var a = 9; 		// 00000000000000000000000000001001
+var c = a >> 2;		// เลื่อนบิตจากซ้ายมือไปทางขวามือ 2 ตำแหน่ง
+			// 00000000000000000000000000000010
+console.log(c);		// 2
+console.log(9 >> 2);	// 2
+```
+
+```js
+-9;            // 11111111111111111111111111110111 (เลขฐานสอง)
+-9 >> 2;    // 11111111111111111111111111111101 (เลขฐานสอง) = -3 (เลขฐานสิบ)
+```
+
+```js
+var a = 9; 	        // 00000000000000000000000000001001
+var c = a >>> 2;         // เลื่อนบิตจากซ้ายมือไปทางขวามือ 2 ตำแหน่ง พร้อมเติมเลข 0 ที่บิตด้านหน้าสุด
+		        // 00000000000000000000000000000010
+console.log(c);	        // 2
+console.log(9 >>> 2);  // 2
+```
+
+### โอเปอเรเตอร์ typeof
+
+```js
+console.log(typeof true);		             // "boolean"
+console.log(typeof false); 		 // "boolean"		
+console.log(typeof -0.13); 		 // "number"
+console.log(typeof NaN); 		 // "number"
+console.log(typeof Infinity); 		 // "number"
+console.log(typeof undefined);   	             // "undefined"
+console.log(typeof ''); 		             // "string"
+console.log(typeof "Hi");		             // "string"
+console.log(typeof (typeof 100) ); 	 // "string"
+console.log(typeof null ); 		 // "object"
+console.log(typeof {x: 1, y: 2});	             // "object" 
+console.log(typeof [1, 2]); 		 // "object"
+console.log(typeof function(){});	             // "function"
+console.log(typeof Math.sqrt);	             // "function"
+console.log(typeof class C {});	             // "function" 
+console.log(typeof Symbol());		 // "symbol"
+```
+
+### โอเปอเรเตอร์วงเล็บ
+
+```js
+var a = 1 + 2 * 3 + 5; 
+// จะเสมือนเขียนเป็น var a = 1 + (2 * 3) + 5;
+console.log(a); // 12
+```
+
+```js
+var a = (1 + 2) * (3 + 5); 
+console.log(a); // 24
+```
+
+### โอเปอเรเตอร์คอมม่า 
+
+```js
+var a = 1, b = 2;
+var x = (1+34, a+=2, b*=10, b+1);
+console.log(x);	     // 21
+```
+
+### โอเปอเรเตอร์ void
+
+```js
+var a = void 12;
+console.log(a);			   // undefined
+console.log(Math.ceil(4.4));	   // 5
+console.log(void Math.ceil(4.4));      // undefined  	
+var b = 1;
+console.log(void (++b)); 	              // undefined  
+console.log(b);			  // แสดงค่าออกมาเป็น 2 เพราะตัวแปร b ถูกบวกเพิ่มไป 1 ค่า
+```
+
+## อาร์เรย์
+```js
+[1, 1, 1, true, "Array"];	         // อาร์เรย์
+```
+
+```js
+var a = ["a", "b", "c", "d", "e"];
+console.log(typeof a);			     // "object"
+console.log(a[0], a[1], a[2], a[3], a [4]);	     // "a b c d e"
+```
+
+```js
+var array = [ ];	// ประกาศเป็นอาร์เรย์ว่าง
+array[0] = 1;		
+array[1] = 2;
+```
+
+```js
+var array = [1, 2, 3, 4, 5];
+console.log(array.length); 	// 5
+```
+
+```js
+var array = [1, 2, 3, 4, 5];
+console.log(array.length); 	// 5
+array.length = 7;		            // เพิ่มขนาดอาร์เรย์จาก 5 เป็น 7 
+console.log(array);		// [ 1, 2, 3, 4, 5, <2 empty slots> ]
+console.log(array.length); 	// 7
+array[9] = 100;		
+console.log(array);		// [ 1, 2, 3, 4, 5, <4 empty slots>, 100 ]
+console.log(array.length);             // 10
+```
+
+## การประกาศฟังก์ชั่น
+
+```js
+function calculate(param1, param2) {
+    return param1 * param2;
 }
-redCar.drive();			// "driving a car"
-blueCar.drive();			// "driving a car"
 ```
 
 ```js
-console.log( Object.getPrototypeOf(redCar) === car );		// true (เพราะโปรโตไทป์คือ car) 
-console.log( Object.getPrototypeOf(blueCar) === car );	// true (เพราะโปรโตไทป์คือ car) 
+var result = calculate(10, 2);	
+console.log(result);		// 20
 ```
 
 ```js
-var obj1 = Object.create(null); 		 	// ไม่มีโปรโตไทป์
-console.log(obj1); 					// {}
-console.log(Object.getPrototypeOf(obj1)); 	// null
-
-var obj2 = Object.create(Object.prototype); 	// จะเหมือนสร้างอ็อบเจ็กต์ด้วยวิธีนี้ var obj = {}
-console.log(obj2); 					// {}
-console.log(Object.getPrototypeOf(obj2) === Object.prototype); 	// true 
-```
-
-## prototype
-```js
-function Car(color) {
-this.color = color;
+function calculate() {
+    return 20;
 }
-var redCar = new Car("red");
-console.log( Object.getPrototypeOf(redCar) === Car.prototype); // true
+var result = calculate();		
+console.log(result);		// 20
+
+calculate();      // คืนค่า 20
+calculate();     // คืนค่า 20
+calculate();     // คืนค่า 20
+```
+## ประโยค return
+
+```js
+function myFunction() {
+	return 1;
+	console.log("myFunction");      // บรรทัดนี้เส้นทางการทำงานของโปรแกรมจะมาไม่ถึง
+}
+var result = myFunction();		
+console.log(result);		        // 1
 ```
 
 ```js
-function Car(color) {
-this.color = color;
+function myFunction() {
+	return;
 }
-Car.prototype.drive = function() {
-console.log("Drive a", this.color, "car");	// this จะชี้ไปยังอ็อบเจ็กต์ที่ถูกสร้างขึ้นมา
-};
-var redCar = new Car("red");
-redCar.drive();			// " Drive a red car"
-var blueCar = new Car("blue");
-blueCar.drive();			// " Drive a blue car"
-console.log( Object.getPrototypeOf(redCar) === Car.prototype); // true
-console.log( Object.getPrototypeOf(blueCar) === Car.prototype); // true
+var result = myFunction(); 	
+console.log(result);		         // undefined
 ```
 
 ```js
-function Car(color) {
-this.color = color;
+function myFunction() {
+    console.log("myFunction");
+    // จะเสมือนมีประโยค return undefined; วางไว้ตำแหน่งสุดท้าย ก่อนฟังก์ชั่นจบการทำงาน
 }
-Car.drive = function() {
-console.log("driving a car");
-};
-Car.drive();					// "driving a car"
-var redCar = new Car("red");
-console.log(typeof redCar.drive); 	// undefined
-```
-
-## การสืบทอดสมาชิกหลายระดับชั้น
-```js
-var extend = {
-drive: function(){
- 	console.log("Drive a", this.color, "car");
-}
-}
-function Car(color) {
-this.color = color;
-}
-Car.prototype = extend;						// บรรทัด a
-Car.prototype.stop = function(){					// บรรทัด b
-console.log("Stop a", this.color, "car");
-};
-var redCar = new Car("red");
-console.log( Object.getPrototypeOf(redCar) === extend); 	// true
-redCar.drive();		// "Drive a red car"
-redCar.stop();		// "Stop a red car"
+var result = myFunction();	// "myFunction"
+console.log(result);	            // undefined
 ```
 
 ```js
-function Car(color) {}
-Car.prototype.drive = function() {
-console.log("Drive a", this.color, "car");	// this ชี้ไปยังอ็อบเจ็กต์ที่ถูกสร้างขึ้นมา
-};
-function RedCar(color){
-	this.color = color;
+var result = calculate();		
+console.log(result);	   // 20
+function calculate() {
+    return 20;
 }
-RedCar.prototype = Object.create(Car.prototype); 	// บรรทัด a
-console.log( Object.getPrototypeOf(RedCar.prototype) === Car.prototype); // true
-RedCar.prototype.stop = function(){
-console.log("Stop a", this.color, "car");	// this ชี้ไปยังอ็อบเจ็กต์ที่ถูกสร้างขึ้นมา
+```
+
+### ฟังก์ชั่นไร้ชื่อ 
+
+```js
+function (param1,param2) {
+    return param1 * param2;
 }
-var redCar = new RedCar("red");
-console.log( Object.getPrototypeOf(redCar) === RedCar.prototype); 		// true
-redCar.drive();		// "Drive a red car"
-redCar.stop();		// "Stop a red car"
 ```
 
-## โอเปอรเตอร์ instanceof
-```js
-function Foo() { }				
-var obj = new Foo();			
-console.log(obj instanceof Foo);					// true
-console.log(Object.getPrototypeOf(obj) === Foo.prototype);	// true
-```
+### นิพจน์ฟังก์ชั่น
 
 ```js
-function Foo() { }				
-var obj = new Foo();			
-console.log(obj instanceof Foo);					// true
-console.log(Object.getPrototypeOf(obj) === Foo.prototype);	// true
-
-console.log(obj instanceof Object);				// true
-console.log(Foo.prototype instanceof Object);			// true
-console.log(Object.getPrototypeOf(Foo.prototype) === Object.prototype);	// true
-console.log(Object.getPrototypeOf(obj) === Object.prototype); // false
-```
-
-## prototype ที่มีอยู่ในภาษา
-```js
-console.log( Object.getPrototypeOf(function(){}) === Function.prototype); // true
-console.log( Object.getPrototypeOf([]) === Array.prototype);	// true
-console.log( Object.getPrototypeOf({}) === Object.prototype);	// true
-console.log( Object.getPrototypeOf('') === String.prototype);	// true
-console.log( Object.getPrototypeOf(true) === Boolean.prototype);	// true
-console.log( Object.getPrototypeOf(1) === Number.prototype);	// true
-console.log(function(){} instanceof Function);	// true
-console.log([] instanceof Array);			// true
-console.log({} instanceof Object);		// true
-console.log(''instanceof String);			// false
-console.log(true instanceof Boolean);		// false
-console.log(1 instanceof Number);			// false
-```
-
-```js
-// ฟังก์ชั่น 
-Function.prototype.sayMsg = function(msg) {
-	console.log("Function say:", msg);
-};
-function myFunction(){}
-myFunction.sayMsg("Hello");// " Function say: Hello"
-// อาร์เรย์ 
-Array.prototype.sayMsg = function(msg) {
-	console.log("Array say:", msg);
-};
-[].sayMsg("Hello");		// "Array say: Hello"
-// อ็อบเจ็กต์ 
-Object.prototype.sayMsg = function(msg) {
-	console.log("Object say:", msg);
-};
-var obj = {};
-obj.sayMsg("Hello");	// "Object say: Hello"
-({}).sayMsg("Hello");	// "Object say: Hello"
-// สตริง 
-String.prototype.sayMsg = function(msg) {
-	console.log("String say:", msg);
-};
-"123".sayMsg("Hello");	// "String say: Hello"
-// บูลีน 
-Boolean.prototype.sayMsg = function(msg) {
-	console.log("Boolean say:", msg);
+var calculate = function (param1,param2) {
+    return param1 * param2;
 }
-true.sayMsg("Hello");	// "Boolean say: Hello"
-// ตัวเลข 
-Number.prototype.sayMsg = function(msg) {
-	console.log("Number say:", msg);
-}
-var num = 123;
-num.sayMsg("Hello");	// "Number say: Hello"
-(123).sayMsg("Hello");	// "Number say: Hello"
-```
-
-## โอเปอเรเตอร์ in
-```js
-var obj = {x: 1, y: 2};
-console.log("x" in obj);		// true
-console.log("xyz" in obj);		// false	(อ็อบเจ็กต์ไม่มีพร็อพเพอร์ตี้ xyz)
-var a = ["a", "b", "c"];
-console.log(0 in a);		// true	(อาร์เรย์นี้มีอินเด็กซ์ 0)
-console.log(5 in a);		// false	(อาร์เรย์ไม่มีอินเด็กซ์ 5)
-console.log("1" in a); 		// true	(อาร์เรย์นี้มีอินเด็กซ์ 1)
-console.log("length" in a); 	// true	(อาร์เรย์จะมี length เป็นพร็อพเพอร์ตี้)
+console.log(calculate(10, 2)); 	// 20
+calculate = 100; 		            // ตัวแปร calculation สามารถแก้ไขให้เป็นค่าอื่นได้
+console.log(calculate);		// 100
 ```
 
 ```js
-var parent = {x:1};
-var obj = Object.create(parent);
-console.log("x" in obj);		// true
+var calculate = function calc2(param1,param2) {
+    return param1 * param2;
+}
+console.log(calculate(10,2)); 	// 20
 ```
 
-## ประโยคคำสั่ง for …in
 ```js
-function Font() {
-  	this.color = "red";
-  	this.size = 200;
+function cal(a, b) {
+    console.log(a * b);
 }
-var coordinate = {x: 1, y: 1, z: 1}
-Font.prototype = Object.create(coordinate);
-Font.prototype.myFunction = function(){};
-var font = new Font();
-font[1] = "fontValue";	
-for(var prop in font) {
-console.log(prop);
+```
+
+```js
+cal = function(a, b) {
+    console.log(a*b):
 }
+```
+
+```js
+var myFunction =  cal;
+```
+
+```js
+myFunction(5,4);   //  20
+cal(5,4);               // 20
+```
+
+### ฟังก์ชั่นคอลแบ็ค
+
+```js
+function sayHi() {
+    console.log("Hi");
+}
+function sayBye() {
+    console.log("Bye");
+}
+function say(func) {
+    func();	      // เรียกฟังก์ชั่นให้ทำงาน
+}
+say(sayHi);	     // "Hi" 
+say(sayBye);	     // "Bye"
+```
+
+### รีเทิร์นออกมาเป็นฟังก์ชั่น 
+
+```js
+function say(func) {
+          console.log("Say...");
+          function sayHi() {	
+              console.log("Hi");
+           } 
+          return sayHi;	// รีเทิร์นฟังก์ชั่น
+}  // สิ้นสุดการประกาศฟังก์ชั่น
+var hi = say();	           // "Say..."
+hi();		           // "Hi"
+```
+
+```js
+function say(func) {
+          console.log("Say...");
+          return  function() {		// รีเทิร์นฟังก์ชั่นไร้ชื่อ
+                console.log("Hi");
+          } 
+}  // สิ้นสุดการประกาศฟังก์ชั่น
+var hi = say();	           // "Say..."
+hi();			// "Hi"
+```
+
+### อ็อบเจ็กต์ arguments
+
+```js
+function myFunction(param1, param2) {
+    console.log(param1, param2);
+}
+myFunction();			// undefined undefined
+myFunction(100);		// 100	undefined
+myFunction(100,200);		// 100 200
+myFunction(100,200,300,400);	// 100 200
+```
+
+```js
+function myFunction (param1, param2) {
+    console.log(arguments);
+}
+myFunction(100,200,300,400);	// [100, 200, 300, 400]
+```
+
+```js
+function myFunction(param1,param2) { // ฟังก์ชั่นนี้ไม่เคยถูกเรียกใช้	
+	console.log("function1 value:", param1, param2); 
+}
+myFunction(100, 200);   		// เรียกใช้ฟังก์ชั่นที่ประกาศอยู่ด้านล่าง
+function myFunction(param) { 	// จะโอเวอร์ไรด์ทับฟังก์ชั่นที่ประกาศไว้ก่อนหน้านี้
+	console.log("function2 value:", param);
+}
+myFunction(100);     	
+myFunction(100, 200);  	
 /* แสดงผลลัพธ์เป็น
-"1"
-"color "
-"size "
-"myFunction"
-"x "
-"y "
-"z " */
+"function2 value: 100"
+"function2 value: 100"
+"function2 value: 100" */
+```
+
+### ระวังไป overriding ทับชื่อที่มีอยู่แล้ว
+
+```js
+alert = function(data) {
+    console.log(data);	         // แสดงข้อความออกทางหน้าคอนโซล
+}
+alert("Hello, World");               // แสดงข้อความ "Hello, World" ออกทางหน้าคอนโซล
+```
+
+### ขอบเขตการมองเห็นของตัวแปร
+```js
+if(true){
+var a = 1;		// a มีขอบเขตการมองเห็นแบบโกลบอล
+}
+{
+var b = 2;		// b มีขอบเขตการมองเห็นแบบโกลบอล
+}
+console.log(a, b);		//  1 2
+```
+
+### ขอบเขตการมองเห็นของตัวแปร
+
+```js
+if(true) {
+    var a = 1;		// a มีขอบเขตการมองเห็นแบบโกลบอล
+}
+{
+    var b = 2;		// b มีขอบเขตการมองเห็นแบบโกลบอล
+}
+console.log(a, b);		//  1 2
+```
+
+```html
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<script>
+var a = "Hi";    	             // a มีขอบเขตการมองเห็นแบบโกลบอล
+function myFunction() {
+    var a = "Bye";            // a มีขอบเขตการมองเห็นแบบโลคอล เพราะประกาศภายใต้ฟังก์ชั่น 
+    console.log(a);	
+}
+myFunction();		// "Bye"
+console.log(a);		// "Hi"
+console.log(window.a);	// "Hi"
+</script>
+</body>
+</html>
 ```
 
 ```js
-function Font() {
-  	this.color = "red";
-  	this.size = 200;
-}
-var coordinate = {x: 1, y: 1, z: 1}
-Font.prototype = Object.create(coordinate);
-Font.prototype.myFunction = function(){};
-var font = new Font();
-font[1] = "fontValue";
-for(var prop in font) {
-	if(font.hasOwnProperty( prop ) ) {	// เข้าถึงคีย์ที่อยู่ในอ็อบเจ็กต์เท่านั้น
-     console.log("font." + prop, "=", font[prop]);
-}
-}
-/* แสดงผลลัพธ์เป็น
-"font.1 = fontValue"
-"font.color = red"
-"font.size = 200" */
+console.log(NaN, undefined, Infinity);     // NaN undefined Infinity
+console.log(window.NaN, window.undefined, window.Infinity); // NaN undefined Infinity
+// ถ้ารันอยู่ใน Node.js
+// console.log(global.NaN,  global.undefined,  global.Infinity);	    
+// NaN undefined Infinity
 ```
 
-## Object.preventExtensions() กับ Object.isExtensions()
+### ฟังก์ชั่นซ้อนฟังก์ชั่น
+
 ```js
-var obj1 = {};
-var obj2 = Object.preventExtensions(obj1);
-console.log(obj1 === obj2);		//  true
-
-obj1.a = 1;				// จะเพิกเฉย แต่ถ้าอยู่ในโหมดสตริคท์จะเกิด TypeError
-
-var obj3 = Object.create(obj1);
-console.log(obj3); 			// {}
-obj3.a = 1;				// เพิ่มพร็อพเพอร์ตี้เข้าไปได้
-console.log(Object.getPrototypeOf(obj3) === obj1); // true
+function outerFunc() {
+  var value = 0;
+  function innerFunc() {
+    console.log(++value);
+  }
+  return innerFunc;
+}
+var func1 = outerFunc();		// บรรทัด a
+func1();	    // 1
+func1();	   // 2
+var func2 = outerFunc();		// บรรทัด b
+func2();	   // 1
+func2();	   // 2
 ```
 
 ```js
+function cumulative(num) {
+    n = num
+    return function(a) {
+           n += a
+          console.log("answer = ", n)
+      }
+}
+cumA= cumulative(100)
+cumA(1)      // "answer =  101"
+cumA(1)      //  "answer =  102"
+cumA(1)      //  "answer =  103"
+cumB = cumulative(20)
+cumB(-1)     // "answer =  19"
+cumB(-1);    // "answer =  18"
+cumB(-1);    // "answer =  17"
+```
+
+```js
+function part_cal(x) {
+  return function(y) {
+    return function(z) {
+      console.log(x+y+z);      // บรรทัด a
+    }
+  }
+}
+part_cal(10)(20)(30)           // 60
+```
+
+```js
+function cal(x, y, z) {
+  console.log(x + y + z)
+}
+cal(10, 20 , 30)    // 60
+```
+
+
+## Hoist
+```js
+var value = 100;		
+```
+
+```js
+console.log(x)
+x = 1
+/* แบบนี้ไม่เกิด error
+ x = 1
+ console.log(x) */
+```
+
+```js
+console.log(x)     // undefined
+var x = 1
+```
+
+```js
+x = undefined    // เสมือนลอยขึ้นไปข้างบน
+console.log(x)
+x = 1
+```
+
+```js
+function myFunction(num) {
+	// สามารถมองเห็นตัวแปร value		
+	console.log(value);		// undefined
+	if(num > 10) {
+		var value = num*10;	// ประกาศตัวแปร value ที่ตรงนี้ แต่มองเห็นได้ทั่วฟังก์ชั่น
+		/* ซอร์สโค้ด */
+	} else {
+		// ถ้าเงื่อนไขประโยค if เป็นเท็จ ก็จะเข้ามาทำงานที่ else 
+ 		// ซึ่งจะเห็นตัวแปร value มีค่าเป็น undefined	
+		console.log(value);		// undefined
+	}
+	// สามารถมองเห็นตัวแปร value ได้ หลังจากประโยค if …else ทำงานเสร็จสิ้น
+	console.log(value);			
+}
+```
+
+```js
+function myFunction(num) {
+	var value;     // ประกาศตัวแปร value โดยไม่มีค่าเริ่มต้น จึงทำให้มีค่าเป็น undefined
+            console.log(value);	// undefined
+	if(num > 10) {
+		value = num*10;   // บรรทัดนี้เป็นเพียงการกำหนดค่าให้กับตัวแปร value
+		/* ซอร์สโค้ด */
+	} else {
+               console.log(value);	     // undefined
+	}	
+	console.log(value);		
+}
+```
+
+```js
+// สามารถมองเห็นตัวแปร value 
+console.log(value); 	// undefined
+if(true) {
+    var value = 100;	// ประกาศตัวแปรแบบ var
+}
+console.log(value);	// 100 
+```
+
+```js
+var value; 		// ประกาศตัวแปร value โดยไม่มีค่าเริ่มต้น จึงทำให้มีค่าเป็น undefined
+console.log(value); 	// undefined
+if(true) {
+    value = 100;	            // บรรทัดนี้เป็นเพียงการกำหนดค่าให้กับตัวแปร value
+}
+console.log(value);	// 100 
+```
+
+```js
+// มองเห็นฟังก์ชั่นก่อนการประกาศใช้งาน
+myFunction(); 	           // "Hoisted"
+function myFunction() {
+    console.log("Hoisted");
+}
+myFunction();		// "Hoisted"
+```
+
+```js
+function outerFunc() {
+  innerFunc();	                        // มองเห็นฟังก์ชั่นก่อนการประกาศใช้งาน
+  function innerFunc() {  
+    console.log("inner function");
+  }
+};
+outerFunc();			// "inner function"
+console.log(typeof innerFunc);	// undefined
+```
+
+## สตริคท์โหมด
+
+```js
+"use strict";	// ประกาศโหมดสตริคท์ ด้วยการเขียนไว้ที่ตอนต้นของไฟล์
+var x = 1;
+```
+
+```js
+function myFunction() {
+   "use strict"; 	// เฉพาะฟังก์ชั่นนี้จะอยู่ในโหมดสตริคท์
+    var x = 1;   
+}
+```
+
+1) 
+
+```js
+"use strict";
+x = 1;           // เกิด error เพราะไม่ได้ประกาศตัวแปรแบบ var ถ้าอยู่ดี ๆ จะมากำหนดค่าให้ทันทีแบบนี้จะทำไม่ได้
+```
+
+2)
+
+```js
+"use strict";
+function x(a, a) { };               // เกิด error เพราะประกาศพารามิเตอร์ ที่มีชื่อ a ซ้ำกัน
+```
+
+3) 
+
+```js
+"use strict";
+var x = 1;
+delete x;		     // เกิด error ไม่สามารถลบตัวแปรได้
+```
+
+4)
+
+```js
+"use strict";
+delete Object.prototype;     //เกิด error เพราะพร็อพเพอร์ตี้ตัวนี้ห้ามลบ
+```
+
+5)
+
+```js
+"use strict";
+var x = 010;                       // เกิด error ไม่สามารถประกาศแบบนี้ได้
+var y = \010;                     // เกิด error ไม่สามารถประกาศแบบนี้ได้
+```
+
+6)
+
+```js
+"use strict";
 var obj = {};
-console.log(Object.isExtensible(obj)); // true
-Object.preventExtensions(obj);
-console.log(Object.isExtensible(obj)); // false
+Object.defineProperty(obj, "x", {value:0, writable:false});
+obj.x = 1;                          // เกิด error เนื่องจากมันเป็นพร็อพเพอร์ตี้ที่อ่านค่าได้อย่างเดียว
 ```
 
-## Object
-```js
-var obj1 = new Object(1234);		 
-var obj2 = new Object();			// อ็อบเจ็กต์ว่าง
-var obj3 = new Object(undefined);		// อ็อบเจ็กต์ว่าง
-var obj4 = new Object(null);		// อ็อบเจ็กต์ว่าง
-var obj5 = Object(1);			// เรียกแบบฟังก์ชั่น (ค่าอากิวเมนต์เป็นอะไรก็ได้)
-console.log(typeof obj5);			// "object"
-```
-
-## Boolean
-```js
-var obj = new Boolean(true);
-console.log(typeof obj);	// "object"
-var b = Boolean(true);     
-console.log(typeof b);	// "boolean"
-console.log(b);		// true
-console.log(obj == b);	// true
-console.log(obj === b);	// false
-```
+7)
 
 ```js
-var false1 = Boolean();		// false
-var false2 = Boolean(false);	// false
-var false3 = Boolean(0);		// false
-var false4 = Boolean(-0);		// false
-var false5 = Boolean(null);	// false
-var false6 = Boolean('');		// false
-var false7 = Boolean(NaN);		// false
-var false8 = Boolean(undefined);	// false
-var true1 = Boolean(true);		// true
-var true2 = Boolean("Hi");		// true
-var true3 = Boolean("true");	// true
-var true4 = Boolean("false");	// true
-var true5 = Boolean([]);		// true
-var true6 = Boolean({}); 		// true
-var true7 = Boolean(true4); 	// true
+"use strict";
+var obj = {get x() {return 0} };
+obj.x = 1;                         // เกิด error ไม่สามารถกำหนดค่าให้กับ x ได้
 ```
 
-## Number
-```js
-var obj = new Number(1);
-console.log(typeof obj);	// "object"
-var n1 = Number("1"); 	// รับค่าเป็นสตริงก็ได้เช่นกัน
-var n2 = Number("a"); 	// "a" ไม่ใช่ตัวเลข จึงทำให้ตัวแปร  n2 มีค่าเป็น NaN
-console.log(typeof n1, typeof n2);	// "number number"
-console.log(n1, n2);			// 1 NaN
-console.log(obj == n1);	// true
-console.log(obj === n1);	// false
-```
-
-## String
-```js
-var str1 = new String("MyString");
-console.log(typeof str1);			// "object"
-console.log(str1 ===  "MyString");	// false
-var str2 = String("MyString");
-console.log(typeof str2);			// "string"
-console.log(str2 ===  "MyString");	// true
-console.log(str1 ==  str2);		// true
-```
-
-## Array
-```js
-var array1 = Array( 3 );		 // เรียกแบบฟังก์ชั่น
-console.log(array1.length);       // 3
-console.log(array1);		 // [ <3 empty slots> ]
-var array2 = new Array(3);
-console.log(array2.length);       // 3
-console.log(array2);		// [ <3 empty slots> ]
-```
-
-## เมธอดของสตริง
-```js
-console.log( "  Learning JavaScript  ".trim() );	// แสดงผลเป็น "Learning JavaScript"	
-```
+8)
 
 ```js
-console.log( "foo_foo_foo_".indexOf("foo") );			// 0
-console.log("foo_foo_foo_".lastIndexOf("foo") );		// 8
+"use strict";
+var obj = { };
+Object.preventExtensions(obj);  
+obj.a= 1;                         // เกิด error ไม่สามารถเพิ่มพร็อพเพอร์ตี้เข้าไปในอ็อบเจ็กต์ได้
+```
+
+9)
+
+```js
+"use strict";
+function f() { return this; }
+console.log(f());                    // undefined
+```
+
+10)
+
+```js
+"use strict";
+var eval = 1;                       // เกิด error ไม่สามารถใช้ชื่อ eval เป็นตัวแปร
+
+```
+
+11)
+
+```js
+"use strict";
+var arguments = 1;               // เกิด error ไม่สามา รถใช้ชื่อ arguments เป็นตัวแปร
+```
+
+12)
+
+```js
+"use strict";
+with (Math) { a = cos(1) };        //  เกิด error ไม่สามารถใช้ประโยคคำสั่ง  with ได้
+```
+
+13)
+
+```js
+"use strict";
+eval("var x = 1;");	      // ประกาศตัวแปร x ด้วย eval()
+x = 2;                                  // เกิด error
+// แบบนี้จะไม่เกิด error
+// eval("var x = 1; x = 2;");     // ไม่เกิด error
+```
+
+14)
+
+```js
+"use strict";
+var implements =1;     // เกิด error เพราะ implements คือคำสงวนในโหมดสตริคท์
+```
+
+15)
+
+```js
+"use strict";
+if(true) {
+    function myFunction1(){ }  	  // ขอบเขตแบบโลบอล
+}
+{
+    function myFunction2(){ }	  // ขอบเขตแบบโลบอล
+}
+console.log(typeof myFunction1);  // undefined (ถ้าไม่ใช่โหมดสตริคท์จะแสดงค่าเป็น "function")
+console.log(typeof myFunction2);  // undefined (ถ้าไม่ใช่โหมดสตริคท์จะแสดงค่าเป็น "function")
 ```
 
 ```js
 "use strict";
-var str = "MyString";
-console.log(str.length) 	// 8
-str.length = 0;		// TypeError (ถ้าไม่ใช่โหมดสตริคท์จะไม่เกิด error แต่จะเพิกเฉย)
-str.func = function(){};	// TypeError (ถ้าไม่ใช่โหมดสตริคท์จะไม่เกิด error แต่จะเพิกเฉย)
+var isStrict = (function() { return !this; })( );
+console.log(isStrict);     // true
 ```
-
-## เมธอดของอาร์เรย์
-```js
-var array = ["a","b","c","d"];
-var str = array.join("->");
-console.log(str); // "a->b->c->d"
-```
-
-```js
-var array = [];
-array.push("a","b","c","d");	// เพิ่มสมาชิกกี่ตัวก็ได้
-console.log(array);			// ["a", "b", "c", "d"]
-console.log(array.pop()); 		// "d"
-console.log(array);			// ["a", "b", "c"]
-```
-
-```js
-var array = ["a","b","c","d"];
-console.log(array.indexOf("c" ));       // 2
-console.log(array.indexOf("e" ));       // -1
-```
-
-```js
-var array = ["a","b","c","d"];
-var result = array.some( function matcher(value, index, arrayObj){
-    // value คือค่าสมาชิกของอาร์เรย์
-             // index คืออินเด็กซ์ของอาร์เรย์
-            // arrayObj คือ ["a", "b", "c", "d"]
-    return value == "c";
-} );                                
-console.log(result) // true
-```
-
-```js
-var array = ["a","b","c","d"];
-array.forEach(function (value, index, arrayObj) {
-    // value คือค่าสมาชิกของอาร์เรย์
-             // index คืออินเด็กซ์ของอาร์เรย์
-            // arrayObj คือ ["a", "b", "c", "d"]
-    console.log("a[", index, "] = ", value);
-});
-/* แสดงผลลัพธ์
-"a[ 0 ] =  a"
-"a[ 1 ] =  b"
-"a[ 2 ] =  c"
-"a[ 3 ] =  d" */
-```
-
-## Regular Expression
-```js
-var myRegex = new RegExp("Hello+");
-console.log(myRegex.toString());	// /Hello+/
-```
-
-```js
-var myRegex = /Hello+/;
-// ข้อความ regex ก็คืออ็อบเจ็กต์ตัวหนึ่ง 
-// จึงสามารถแชร์ใช้งานเมธอด  RegExp.prototype.toString()
-console.log(/Hello+/.toString());	// /Hello+/
-```
-
-## เมธอด test() กับ exec()
-```js
-console.log( /Hello+/.test("Hellooooo") ); 			// true
-console.log( (new RegExp("Hello+")).test("Hellooooo") ); 	// true
-```
-
-```js
-var result = /(foo).(bar)/.exec("0123foo_bar");
-console.log(result.index);	// 4
-console.log(result[0]);	// "foo_bar"
-console.log(result[1]);	// "foo"
-console.log(result[2]);	// "bar"
-console.log(result.input);	// "0123foo_bar"
-```
-
-## สตริงกับ regex
-```js
-console.log("012Hellooooo".search(/Hello+/));	// 3
-var result = "Hellooooo Hello".match(/Hello+/g);	
-console.log(result);				// ["Hellooooo", "Hello"]
-console.log(result.length);			// 2
-
-var str = "Hellooooo".replace(/Hello+/,"Bye"); 
-console.log(str);					// "Bye"
-var split = "1,2,3".split(/,/);	
-console.log(split);					// ["1", "2", "3"]
-```
-
-## ค่าแฟล็ก
-```js
-var regex = /Hello+/gi;
-console.log(regex.lastIndex);	// 0
-console.log(regex.source);		// "Hello+"
-console.log(regex.global);		// true
-console.log(regex.ignoreCase);	// true
-console.log(regex.multiline);	// false
-```
-
-```js
-var myRegex = /Hello+/g;
-var str = "01Hello Hellooo89";
-var result = myRegex.exec(str);		// ค้นหาครั้งแรก	
-console.log(result[0]);			// "Hello"
-console.log(myRegex.lastIndex); 		// 7
-myRegex.exec(str);				// ค้นหาครั้งที่ 2
-console.log(result[0]);			// "Hello"
-console.log(myRegex.lastIndex); 		// 15
-myRegex.exec(str);				// ค้นหาครั้งที่ 3
-console.log(result[0]);			// "Hello"
-console.log(myRegex.lastIndex); 		// 0
-myRegex.exec(str);				// ค้นหาครั้งที่ 4
-console.log(result[0]);			// "Hello"
-console.log(myRegex.lastIndex); 		// 7
-```
-
-```js
-console.log( /Hello+/g === /Hello+/g);		// false
-/Hello+/g.exec("Hello Hello Hello");		// บรรทัด 2
-console.log(/Hello+/g.lastIndex);			// 0 -- บรรทัด 3
-```
-
-## ตัวอย่างการใช้ regex
-```js
-var myRegex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-console.log(myRegex.test("xxxxxx.yyyyyy_zzzzz@abc.com"));		// true
-```
-
-```js
-var myRegex = /^(\-?|\+?)\d*$/;
-console.log(myRegex.test("-987"));		// true
-```
-

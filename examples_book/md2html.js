@@ -54,8 +54,7 @@ function writeToHTML(allLines, fileName){
 				.replaceAll(/&quot;/g, '"')
 				.replaceAll(/&#039;/g, "'");
 		}
-		
-		let console = {};
+			
 		console.log = function(...data){
 			let display = document.querySelector("#display");			
 			for( d of data){
@@ -94,7 +93,7 @@ function writeToHTML(allLines, fileName){
           <li><a href="chapter19.html" class="text-reset">บทที่ 19</a></li>
           <li><a href="chapter20.html" class="text-reset">บทที่ 20</a></li>
         </ul>
-		<div style="text-align:center"><img src="https://cdn-local.mebmarket.com/meb/server1/156854/Thumbnail/book_detail_large.gif?9" width="80" height="100"></div>
+		<div style="text-align:center"><a href=""><img src="https://cdn-local.mebmarket.com/meb/server1/156854/Thumbnail/book_detail_large.gif?9" width="80" height="100"><a/></div>
 		<br>
 	</div>
 		
@@ -212,15 +211,16 @@ async function genHTML(fileName){
 }
 
 
-let files = [ "Chapter03", "Chapter05", "Chapter06", "Chapter08", 
-"Chapter09", "Chapter10", "Chapter11", "Chapter12", "Chapter13", 
-"Chapter15", "Chapter16", "Chapter17", "Chapter18"];
+let files = [ "Chapter03", "Chapter04","Chapter05", "Chapter06",  
+"Chapter08","Chapter09", "Chapter10", "Chapter11", "Chapter12",  
+"Chapter13","Chapter15", "Chapter16", "Chapter17", "Chapter18"];
 
 
 
 //genHTML("Chapter03");
+genHTML("Chapter04");
 //genHTML("Chapter05");
-genHTML("Chapter06");
+//genHTML("Chapter06");
 //genHTML("Chapter08");
 //genHTML("Chapter09");
 //genHTML("Chapter10");
