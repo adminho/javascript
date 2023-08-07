@@ -870,7 +870,7 @@ var value = 100;
 ```
 
 ```js
-console.log(x)
+console.log(x)     // เกิด error
 x = 1
 /* แบบนี้ไม่เกิด error
  x = 1
@@ -908,7 +908,7 @@ function myFunction(num) {
 ```js
 function myFunction(num) {
 	var value;     // ประกาศตัวแปร value โดยไม่มีค่าเริ่มต้น จึงทำให้มีค่าเป็น undefined
-            console.log(value);	// undefined
+    console.log(value);	// undefined
 	if(num > 10) {
 		value = num*10;   // บรรทัดนี้เป็นเพียงการกำหนดค่าให้กับตัวแปร value
 		/* ซอร์สโค้ด */
