@@ -213,12 +213,12 @@ async function genHTML(fileName){
 
 let files = [ "Chapter03", "Chapter04","Chapter05", "Chapter06",  
 "Chapter08","Chapter09", "Chapter10", "Chapter11", "Chapter12",  
-"Chapter13","Chapter15", "Chapter16", "Chapter17", "Chapter18"];
+"Chapter13","Chapter14","Chapter15", "Chapter16", "Chapter17", "Chapter18"];
 
 
 
 //genHTML("Chapter03");
-genHTML("Chapter04");
+//genHTML("Chapter04");
 //genHTML("Chapter05");
 //genHTML("Chapter06");
 //genHTML("Chapter08");
@@ -227,6 +227,7 @@ genHTML("Chapter04");
 //genHTML("Chapter11");
 //genHTML("Chapter12");
 //genHTML("Chapter13");
+genHTML("Chapter15");
 //genHTML("Chapter15");
 //genHTML("Chapter16");
 //genHTML("Chapter17");
