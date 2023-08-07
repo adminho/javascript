@@ -965,7 +965,7 @@ function outerFunc() {
   function innerFunc() {  
     console.log("inner function");
   }
-};
+}
 outerFunc();			// "inner function"
 console.log(typeof innerFunc);	// undefined
 ```
@@ -1025,7 +1025,7 @@ var y = \010;                     // เกิด error ไม่สามาร
 
 ```js
 "use strict";
-var obj = {};
+var obj = { };
 Object.defineProperty(obj, "x", {value:0, writable:false});
 obj.x = 1;                          // เกิด error เนื่องจากมันเป็นพร็อพเพอร์ตี้ที่อ่านค่าได้อย่างเดียว
 ```
