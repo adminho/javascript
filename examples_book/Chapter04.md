@@ -653,7 +653,7 @@ function (param1,param2) {
 ### นิพจน์ฟังก์ชั่น
 
 ```js
-var calculate = function (param1,param2) {
+var calculate = function (param1, param2) {
     return param1 * param2;
 }
 console.log(calculate(10, 2)); 	// 20
@@ -662,10 +662,10 @@ console.log(calculate);		// 100
 ```
 
 ```js
-var calculate = function calc2(param1,param2) {
+var calculate = function calc2(param1, param2) {
     return param1 * param2;
 }
-console.log(calculate(10,2)); 	// 20
+console.log(calculate(10, 2)); 	// 20
 ```
 
 ```js
