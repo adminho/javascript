@@ -645,7 +645,7 @@ function calculate() {
 ### ฟังก์ชั่นไร้ชื่อ 
 
 ```js
-function (param1,param2) {
+function (param1, param2) {
     return param1 * param2;
 }
 ```
@@ -676,15 +676,11 @@ function cal(a, b) {
 
 ```js
 cal = function(a, b) {
-    console.log(a*b):
+    console.log(a*b);
 }
-```
 
-```js
 var myFunction =  cal;
-```
 
-```js
 myFunction(5,4);   //  20
 cal(5,4);               // 20
 ```
