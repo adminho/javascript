@@ -209,7 +209,7 @@ console.log(typeof null)        	// "object"
 console.log(typeof undefined)     // "undefined"
 ```
 
-## ตัวเลข
+### ตัวเลข
 ```js
 console.log(100, 0, -0, -300, 3.14, -78.222);    // 100 0 -0 -300 3.14 -78.222
 ```
@@ -243,7 +243,7 @@ console.log(Number.MAX_VALUE * -10);  //  -Infinity (บรรทัด 4)
 console.log(Number.MIN_VALUE);         //5e-324 (เป็นค่าโดยประมาณ)
 ```
 
-## สตริง
+### สตริง
 ```js
 "Learning JavaScript"
 'Learning JavaScript'
@@ -267,7 +267,7 @@ console.log(str);	       // line1line2line3
 console.log("1234567890".length);	 // 10
 ```
 
-## บูลีน
+### บูลีน
 
 ```js
 var TRUE_value = true;
@@ -287,7 +287,9 @@ var c = "Learning JavaScript";
 var d = true;
 ```
 
-## โอเปอเรเตอร์ทางคณิตศาสตร์ 
+## โอเปอเรเตอร์
+
+### โอเปอเรเตอร์ทางคณิตศาสตร์ 
 ```js
 console.log(true + 0);         // ได้ผลลัพธ์เป็น 1 เพราะ true จะถือว่ามีค่าเป็น 1
 console.log(false + false);   // ได้ผลลัพธ์เป็น 0 เพราะ false จะถือว่ามีค่าเป็น 0
@@ -353,7 +355,7 @@ var ans2 = +10 ** 2; 	// syntax error
 ```js
 ans1 = - (10 ** 2); 	// -100
 ans1 = (-10) ** 2; 	// 100
-ans2 = + (10 ** 2); 	// 100
+ans2 = +(10 ** 2); 	// 100
 ans2 = (+10) ** 2; 	// 100
 ```
 
