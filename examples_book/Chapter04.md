@@ -353,7 +353,7 @@ var ans2 = +10 ** 2; 	// syntax error
 ```
 
 ```js
-ans1 = - (10 ** 2); 	// -100
+ans1 = -(10 ** 2); 	// -100
 ans1 = (-10) ** 2; 	// 100
 ans2 = +(10 ** 2); 	// 100
 ans2 = (+10) ** 2; 	// 100
@@ -396,7 +396,7 @@ console.log(a);	// NaN
 ### โอเปอเรเตอร์ที่ใช้กับสตริง
 
 ```js
-100 + true + "50"	 // "10150"
+100 + true + "50";	 // "10150"
 // เสมือนเขียน (100 + true) + "50"
 ```
 
@@ -510,9 +510,9 @@ console.log(typeof (typeof 100) ); 	 // "string"
 console.log(typeof null ); 		 // "object"
 console.log(typeof {x: 1, y: 2});	             // "object" 
 console.log(typeof [1, 2]); 		 // "object"
-console.log(typeof function(){});	             // "function"
+console.log(typeof function(){ });	             // "function"
 console.log(typeof Math.sqrt);	             // "function"
-console.log(typeof class C {});	             // "function" 
+console.log(typeof class C { });	             // "function" 
 console.log(typeof Symbol());		 // "symbol"
 ```
 
