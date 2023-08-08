@@ -33,6 +33,8 @@ console.log(car1 === car2);		 // false
 
 ## สมาชิกคลาส
 
+### คอนสตรัคเตอร์
+
 ```js
 class Car { 
     constructor(param) { 
