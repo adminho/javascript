@@ -4,7 +4,7 @@
 
 ```js
 class Car { 
-// สมาชิกภายในคลาส 
+      // สมาชิกภายในคลาส 
 }
 ```
 
@@ -36,10 +36,18 @@ console.log(car1 === car2);		 // false
 ```js
 class Car { 
     constructor(param) { 
+    	// ซอร์สโค้ดอื่นๆ 
+    }
+}
+```
+
+```js
+class Car { 
+    constructor(param) { 
 	console.log(param);
     }
 }
-let carObj = new Car(“red”);	// “red”
+let carObj = new Car("red");	// "red"
 ```
 
 ## ข้อมูลภายในอินสแตนซ์
@@ -50,8 +58,8 @@ class Car {
 	this.color = param;
     }
 }
-let carObj = new Car(“red”);
-console.log(carObj.color); 	// “red” (ไม่แนะนำให้เข้าถึงโดยตรงด้วยวิธีนี้)
+let carObj = new Car("red");
+console.log(carObj.color); 	// "red" (ไม่แนะนำให้เข้าถึงโดยตรงด้วยวิธีนี้)
 ```
 
 ```js
@@ -61,31 +69,31 @@ class Car {
     }
 }
 let carObj = new Car();
-carObj.intField(“red”) 	             // this.color ถูกสร้างขึ้นมา
-console.log(carObj.color); 	 // “red” (ไม่แนะนำให้เข้าถึงโดยตรงด้วยวิธีนี้)
+carObj.intField("red") 	             // this.color ถูกสร้างขึ้นมา
+console.log(carObj.color); 	 // "red" (ไม่แนะนำให้เข้าถึงโดยตรงด้วยวิธีนี้)
 ```
 
 ```js
-let c1 = new Car(“red”);
-let c2 = new Car(“black”);
-let c3 = new Car(“white”);
-console.log(c1.color);                  // “red”
-console.log(c2.color);                 // “black”
-console.log(c3.color);                 // “white”
+let c1 = new Car("red");
+let c2 = new Car("black");
+let c3 = new Car("white");
+console.log(c1.color);                  // "red"
+console.log(c2.color);                 // "black"
+console.log(c3.color);                 // "white"
 ```
 
 ```js
 class Car { 
-    color = “red”;                        // บรรทัด a  -- ประกาศฟิวด์ color
+    color = "red";                        // บรรทัด a  -- ประกาศฟิวด์ color
     speed = 100;                         // บรรทัด b  -- ประกาศฟิวด์ speed
     constructor() { 
-         console.log(this.color);      // “red”
+         console.log(this.color);      // "red"
          console.log(this.speed);    // 100
     }    
 }
 new Car();
 // แสดงผลลัพธ์
-// “red”
+// "red"
 // 100
 ```
 
@@ -107,15 +115,15 @@ class Car {
  	this.speed = speed;
      }	
      drive() {
-	console.log(“Driving speed:”, this.speed);
+	console.log("Driving speed:", this.speed);
      } 	
      stop() {
-	console.log(“Stop a car”);
+	console.log("Stop a car");
      }
 }
 let carObj = new Car(100);
-carObj.drive();		        // “Driving speed: 100”
-carObj.stop();	                    // “Stop a car”
+carObj.drive();		        // "Driving speed: 100"
+carObj.stop();	                    // "Stop a car"
 ```
 
 ```js
@@ -124,14 +132,14 @@ class Car {
 	this.speed = speed;
      }
      drive() {
-	console.log(“Driving speed:”, this.speed);	
+	console.log("Driving speed:", this.speed);	
      } 	
      drive() {            // เลือกใช้เมธอดตัวนี้
-	console.log(“Stop a car”);
+	console.log("Stop a car");
      }
 } 
 let carObj = new Car(100);
-carObj.drive();	   // “Stop a car”
+carObj.drive();	   // "Stop a car"
 ```
 
 ## เงื่อนไขการประกาศคลาส
@@ -167,7 +175,7 @@ for(let c in car) {
 	console.log(c);	
 }
 // แสดงผลลัพธ์เป็น
-// “speed”
+// "speed"
 ```
 
 * ตัวอย่างที่ 4
@@ -189,38 +197,38 @@ class Car {
 		this.speed = speed;
 	}
 	drive() {  
- 		console.log(“Driving speed:”, this.speed);
+ 		console.log("Driving speed:", this.speed);
 	}
 }
 let carObj = new Car(100);
-carObj.drive();			    		   // “Driving speed: 100”
-console.log(typeof carObj);   	    		   // “object”
+carObj.drive();			    		   // "Driving speed: 100"
+console.log(typeof carObj);   	    		   // "object"
 console.log(carObj instanceof Car);     	               // true
 console.log(carObj instanceof Object);  	               // true
 console.log(carObj.drive === Car.prototype.drive);     // true
-console.log(typeof Car.prototype.drive);	               // “function”
+console.log(typeof Car.prototype.drive);	               // "function"
 // คลาส Car ก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่ชื่อ Car
-console.log(typeof Car);                	               // “function”
-console.log(Car.name);                  	               // “Car”
+console.log(typeof Car);                	               // "function"
+console.log(Car.name);                  	               // "Car"
 console.log(Car === Car.prototype.constructor);        // true
-console.log(Car.prototype.constructor.name);           // “Car”
+console.log(Car.prototype.constructor.name);           // "Car"
 ```
 
 ```js
 let Car = function() {
-    “use strict”;
+    "use strict";
     const Car = function(speed) {
-    	if(typeof new.target === “undefined”) {
-          		throw new TypeError(“Cannot call a class as a function”);
+    	if(typeof new.target === "undefined") {
+          		throw new TypeError("Cannot call a class as a function");
           }
     	this.speed = speed;
     };
-    Object.defineProperty(Car.prototype, “drive”, {
+    Object.defineProperty(Car.prototype, "drive", {
         value: function() {
-        	   if(typeof new.target !== “undefined”) {
-             	throw new TypeError(“Method cannot be called with new.”);
+        	   if(typeof new.target !== "undefined") {
+             	throw new TypeError("Method cannot be called with new.");
 	   }
- 	   console.log(“Driving speed:”, this.speed);
+ 	   console.log("Driving speed:", this.speed);
         }
         ,enumerable: false
         ,writable: true
@@ -229,7 +237,7 @@ let Car = function() {
     return Car;
 }();	// เทคนิค IIFE 
 let carObj = new Car(100);
-carObj.drive();			// “Driving speed: 100”
+carObj.drive();			// "Driving speed: 100"
 ```
 
 ## เพิ่มสมาชิกเข้าไปในคลาสทีหลัง
@@ -241,18 +249,18 @@ class Car {
 	}
 }
 Car.prototype.drive = function() {	// เพิ่มเมธอดเข้าไปทีหลัง
-	console.log(“Driving speed:”, this.speed);
+	console.log("Driving speed:", this.speed);
 };
 let car = new Car(100);
 car.drive();			         
 // แสดงผลลัพธ์
-// “Driving speed: 100”
+// "Driving speed: 100"
 for(let c in car) {
       console.log(c);	
 }
 // ประโยค for ...in จะแสดงผลลัพธ์ดังนี้
-// “speed”
-// “drive”
+// "speed"
+// "drive"
 ```
 
 ```js
@@ -261,9 +269,9 @@ class Car {
 		this.speed = speed;
 	}
 }
-Object.defineProperty(Car.prototype, “drive”, {
+Object.defineProperty(Car.prototype, "drive", {
         value: function() {
-                     console.log(“Driving speed:”, this.speed);
+                     console.log("Driving speed:", this.speed);
         },
         enumerable: false,
         writable: true,
@@ -272,12 +280,12 @@ Object.defineProperty(Car.prototype, “drive”, {
 let car = new Car(100);
 car.drive();			
 // แสดงผลลัพธ์
-// “Driving speed: 100”
+// "Driving speed: 100"
 for(let c in car) {
 	console.log(c);	
 }
 // ประโยค for ...in จะแสดงผลลัพธ์ดังนี้
-// “speed”
+// "speed"
 ```
 
 ## นิพจน์คลาส
@@ -286,9 +294,9 @@ for(let c in car) {
 let Car = class {	                             // คลาสไร้ชื่อ
 	// สมาชิกคลาส
 };
-console.log(typeof Car);   	     // “function”
+console.log(typeof Car);   	     // "function"
 let carObj = new Car();
-console.log(typeof carObj);  	     // “object”
+console.log(typeof carObj);  	     // "object"
 console.log(carObj instanceof Car);   // true
 ```
 
@@ -296,7 +304,7 @@ console.log(carObj instanceof Car);   // true
 let Car2 = class Car1 {
 	// สมาชิกคลาส
 };
-console.log(typeof Car2);            // “function”
+console.log(typeof Car2);            // "function"
 let carObj = new Car2();
 ```
 
@@ -316,24 +324,24 @@ function myFunction(classExpr) {
 }
 myFunction( class {		// บรรทัด b -- คลาสไร้ชื่อ
     drive(speed) {
-        	console.log(“Driving speed:”, speed);
+        	console.log("Driving speed:", speed);
     }
 });
 // แสดงผลลัพธ์เป็น
-// “Driving speed: 100”
+// "Driving speed: 100"
 ```
 
 ```js
 function myFunction(classExpr) { 
 	return class {	
     		drive(speed) {
-        			console.log(“Driving speed:”, speed);
+        			console.log("Driving speed:", speed);
     		}
 	}
 }
 let Car = myFunction();
 let carObj = new Car();
-carObj.drive(100);		// “Driving speed: 100”
+carObj.drive(100);		// "Driving speed: 100"
 ```
 
 ```js
@@ -342,11 +350,11 @@ let carObj = new class {
 		this.speed = speed;
 	}
 	drive() {
-		console.log(“Driving speed:”, this.speed);
+		console.log("Driving speed:", this.speed);
 	}
 }(100);	
-console.log(typeof carObj);	// “object”
-carObj.drive(100);       		// “Driving speed: 100”
+console.log(typeof carObj);	// "object"
+carObj.drive(100);       		// "Driving speed: 100"
 ```
 
 ## พร็อพเพอร์ตี้แอคเซสเซอร์
@@ -371,9 +379,9 @@ console.log(carObj.speedValue);	            // 60 (เข้าถึงได�
 ```
 
 ```js
-let desc = Object.getOwnPropertyDescriptor(Car.prototype, “speed”);
-console.log(“get” in desc);          // true
-console.log(“set” in desc);          // true
+let desc = Object.getOwnPropertyDescriptor(Car.prototype, "speed");
+console.log("get" in desc);          // true
+console.log("set" in desc);          // true
 console.log(desc.enumerable);    // false
 ```
 
@@ -384,11 +392,11 @@ console.log(desc.enumerable);    // false
 ```js
 class Car {
     static speed = 100;
-    color = “red”;
+    color = "red";
 }
 console.log(Car.speed);                    // 100
 let carObj = new Car();
-console.log(carObj.color);                 // “red”
+console.log(carObj.color);                 // "red"
 console.log(typeof carObj.speed);	    // undefined
 ```
 
@@ -397,7 +405,7 @@ class Car {
     static speed = 100;                        // speed เป็นของคลาส
     speed = Car.speed * 10;                 // บรรทัด a  -- Car.speed * 10 = 1000
     drive() {
-        console.log(“Driving speed:”, Car.speed);   // บรรทัด b
+        console.log("Driving speed:", Car.speed);   // บรรทัด b
     }
 }
 console.log(Car.speed);                      // 100
@@ -414,26 +422,26 @@ class Car {
 		this.speed = speed;
 	}
 	drive() {			
-		console.log(“Driving speed:”, this.speed);
+		console.log("Driving speed:", this.speed);
 	}
    	static stop() { 		             // เมธอดสแตติก
-	        	console.log(“Stop this car”);
+	        	console.log("Stop this car");
     	}
 }
 // เมธอดสแตติก 
-Car.stop();				 // “Stop this car”
+Car.stop();				 // "Stop this car"
 let carObj = new Car(100);
-carObj.drive();			             // “Driving speed: 100”
+carObj.drive();			             // "Driving speed: 100"
 console.log(typeof carObj.stop);	             // undefined
 ```
 
 ```js
 class Car {
 	static constructor () {	             // จะกลายเป็นเมธอดสแตติกชื่อ constructor
-		console.log(“constructor function”);
+		console.log("constructor function");
 	}
 }
-Car.constructor();			             // “constructor function”
+Car.constructor();			             // "constructor function"
 ```
 
 ```js
@@ -445,9 +453,9 @@ class Car {
 		return this.value;	// จะเสมือนเขียนเป็น  return Car.value;
 	}
 }
-Car.color = “red”;			
-console.log(Car.color);			// “red”
-console.log(Car.value);		            // “red”
+Car.color = "red";			
+console.log(Car.color);			// "red"
+console.log(Car.value);		            // "red"
 let carObj = new Car();
 console.log(typeof carObj.color);	             // undefined
 ```
@@ -458,7 +466,7 @@ class Car {
 		this.speed = speed;
 	}
 	drive() {			
-		console.log(“Driving speed:”, this.speed);
+		console.log("Driving speed:", this.speed);
 	}
 	static set color(value) {	             // เมธอด setter
 		this.value = value; 
@@ -467,9 +475,9 @@ class Car {
 let carObj = new Car(100);
 console.log(carObj.value);		 // undefined
 console.log(carObj.speed);		 // 100
-carObj.drive();				 // “Driving speed: 100”
-Car.color= “red”;			
-console.log(Car.value);		             // “red”
+carObj.drive();				 // "Driving speed: 100"
+Car.color= "red";			
+console.log(Car.value);		             // "red"
 console.log(Car.speed);		             // undefined
 ```
 
@@ -483,17 +491,17 @@ class Car {
       }
       static drive() {           
             // หลีกเลี่ยงใช้ this 
-   	console.log(“Driving speed:”, Car.reduce(10) );   // บรรทัด b
+   	console.log("Driving speed:", Car.reduce(10) );   // บรรทัด b
       }
 }
-Car.drive();		                         // “Driving speed: 10”
+Car.drive();		                         // "Driving speed: 10"
 ```
 
 ```js
 class Car {
 	static speed = 100;
 	static drive(value) {	
-		console.log(“Driving speed:”, value);
+		console.log("Driving speed:", value);
 	}
 }
 let carObj = new Car();
@@ -507,20 +515,20 @@ for (let prop in Car) {
     console.log(prop)
 }
 // แสดงผลลัพธ์
-// “speed”
+// "speed"
 ```
 
 ## การใช้วงเล็บเหลี่ยมในคลาส
 
 ```js
-let name1=  “speed”;
-let name2 = “drive”;
-let name3 = “stop”;
-let name4 = Symbol(“reduce”);
+let name1=  "speed";
+let name2 = "drive";
+let name3 = "stop";
+let name4 = Symbol("reduce");
 class Car {
-         [“constructor”] (speedValue) {          // กลายเป็นเมธอดตัวหนึ่ง ไม่ใช่คอนสตรัคเตอร์
+         ["constructor"] (speedValue) {          // กลายเป็นเมธอดตัวหนึ่ง ไม่ใช่คอนสตรัคเตอร์
 	    this.speedValue = speedValue;
-	    console.log(“Not a constructor: speed =”, this.speedValue);
+	    console.log("Not a constructor: speed =", this.speedValue);
         }
         set [name1](speedValue) {	             // เมธอด setter
 	    this.speedValue = speedValue;
@@ -529,43 +537,43 @@ class Car {
 	    return this. speedValue;
          }
          [name2]() { 			 // เมธอดที่ไม่ใช่สแตติก
-	    console.log(“Driving speed:”, this.speedValue);
+	    console.log("Driving speed:", this.speedValue);
          }
          static [name3]() { 		             // เมธอดสแตติก
-        	    console.log(“Stop this car”);
+        	    console.log("Stop this car");
           }
           [name4]() {                                    // ชื่อเมธอดเป็นซิมโบล
-                console.log(“Reduce speed”);
+                console.log("Reduce speed");
           }
           [2+2]() {                                        // ชื่อเมธอดเป็นนิพจน์ 2+2 = 4
-                 console.log(“Start this car”);
+                 console.log("Start this car");
           } 
 }
 let carObj = new Car(100);
 console.log(carObj.speedValue);	             // undefined
-carObj.constructor(100);		             // “Not a constructor: speed = 100”
+carObj.constructor(100);		             // "Not a constructor: speed = 100"
 console.log(carObj.speedValue);	             // 100
 carObj.speed = 60;
 console.log(carObj.speed);		 // 60
-carObj.drive();			             // “Driving speed: 60”
-Car.stop();				 // “Stop this car”
+carObj.drive();			             // "Driving speed: 60"
+Car.stop();				 // "Stop this car"
 // หรือจะเรียกเมธอดผ่านวงเล็บเหลี่ยมก็ได้
-carObj[name4]();                                      // “Reduce speed”
-carObj[3+1]();                                          // “Start this car”
+carObj[name4]();                                      // "Reduce speed"
+carObj[3+1]();                                          // "Start this car"
 ```
 
 ```js
-let speed= “speed”;
-let reduce = Symbol(“reduce”);
+let speed= "speed";
+let reduce = Symbol("reduce");
 class Car {
     [speed] = 100;
-    [“drive”] = “Driving this car”;
+    ["drive"] = "Driving this car";
     [reduce] = 1;
     [2+2] = 20.5;
 }
 let carObj = new Car();
 console.log( carObj[speed] );                     // 100
-console.log( carObj[“drive”] );                   // “Driving this car”
+console.log( carObj["drive"] );                   // "Driving this car"
 console.log( carObj[reduce] );                    // 1
 console.log( carObj[3+1] );                        // 20.5
 ```
@@ -647,14 +655,14 @@ class Calculation {
 	constructor (a, b) {
 		this.a = a;
 		this.b = b;
-		console.log(“Calculation:”, a , b);		
+		console.log("Calculation:", a , b);		
 	}
 }
 class Division extends Calculation {
 	// ไม่มีคอนสตรัคเตอร์
 	// แต่จาวาสคริปต์ จะสร้างคอนสตรัคเตอร์ที่เป็นดีฟอลต์มาให้
 }
-let div = new Division(100 , 200);	// “Calculation: 100 200”
+let div = new Division(100 , 200);	// "Calculation: 100 200"
 // จะเสมือนมีคอนสตรัคเตอร์ที่เป็นค่าดีฟอลต์มาให้ดังนี้
 /* class Division extends Calculation {
  	constructor (...args) {
@@ -686,46 +694,46 @@ class Division extends Calculation {
 class Animal {
 	constructor(name) { 	
 		this.name = name; 				
-		 console.log(“Animal constructor”);             // บรรทัด a
+		 console.log("Animal constructor");             // บรรทัด a
 	}
 	showName() {
-		console.log(“Animal is”, this.name);
+		console.log("Animal is", this.name);
 	}
 	static sleep() {
-		console.log(“This animal is sleeping”);
+		console.log("This animal is sleeping");
 	}
 }
 class Quadruped extends Animal {
 	constructor(name) {      	 
 		super(name);		
-		console.log(“Quadruped constructor”);       // บรรทัด b
+		console.log("Quadruped constructor");       // บรรทัด b
 	}
 	showColor() {
-		console.log(this.name, “is red”);
+		console.log(this.name, "is red");
 	}
 }
 class Dog extends Quadruped {
 	constructor(name) {
                       super(name);
-	           console.log(“Dog constructor”);		// บรรทัด c
+	           console.log("Dog constructor");		// บรรทัด c
 	}
 	run() {
-		console.log(this.name, “is running”);
+		console.log(this.name, "is running");
 	}
 }
-let dogObj = new Dog(“Pit bull”);
+let dogObj = new Dog("Pit bull");
 // คอนสตรัคเตอร์จะทำงานก่อนรันเมธอด ด้วยการแสดงผลลัพธ์
-//”Animal constructor”
-//”Quadruped constructor”
-//”Dog constructor”
+//"Animal constructor"
+//"Quadruped constructor"
+//"Dog constructor"
 console.log(dogObj instanceof Dog);      	         // true
 console.log(dogObj instanceof Quadruped);       // true
 console.log(dogObj instanceof Animal);   	         // true
 console.log(dogObj instanceof Object);  	         // true
-dogObj.showName();			         // “Animal is Pit bull”
-dogObj.showColor();			         // “Pit bull is red”
-dogObj.run();				         // “Pit bull is running”
-Dog.sleep();				         // “This animal is sleeping”
+dogObj.showName();			         // "Animal is Pit bull"
+dogObj.showColor();			         // "Pit bull is red"
+dogObj.run();				         // "Pit bull is running"
+Dog.sleep();				         // "This animal is sleeping"
 console.log(typeof dogObj.sleep); 	         // undefined
 ```
 
@@ -746,11 +754,11 @@ class Multiplying extends Calculation {
 		super(a, b);
 	}
 	multiply() { 	            // โอเวอร์ไรด์เมธอด multiply() ของคลาสแม่
-		return “The result is “ + super.multiply();
+		return "The result is " + super.multiply();
 	}   	
 }
 let m = new  Multiplying(20,10);
-console.log(m.multiply());		// “The result is 200”
+console.log(m.multiply());		// "The result is 200"
 ```
 
 ```js
@@ -763,19 +771,19 @@ class Calculation {
 		return this.a * this.b;
  	}   	
 }
-let name = “multiply”;
+let name = "multiply";
 class Multiplying extends Calculation {
 	constructor (a, b) {
 		super(a, b);
 	}
 	[name]() {
-		return “The result is “ + super.multiply();
-		// หรือจะเขียนเป็น  return “The result is “ + super[name]();
+		return "The result is " + super.multiply();
+		// หรือจะเขียนเป็น  return "The result is " + super[name]();
 	}   	
 }
 let m = new Multiplying(20,10);
-console.log(m[name]());		// “The result is 200”
-console.log(m.multiply());		// “The result is 200”
+console.log(m[name]());		// "The result is 200"
+console.log(m.multiply());		// "The result is 200"
 ```
 
 ```js
@@ -795,19 +803,19 @@ class Dog extends Animal {
 		super(name);                            // บรรทัด b
 	}
 	showName() {
-		console.log(this.name);	           // “A dog” 
+		console.log(this.name);	           // "A dog" 
 		console.log(super.name);	           // undefined
 		// เข้าถึงพร็อพเพอร์ตี้แอคเซสเซอร์ของคลาสแม่ ผ่านทาง super
-		super.animalName=”Pit bull dog”;
-		console.log(super.animalName);	// “Pitbull dog”
+		super.animalName="Pit bull dog";
+		console.log(super.animalName);	// "Pitbull dog"
 	}
 }
-let dogObj = new  Dog(“A dog”);
+let dogObj = new  Dog("A dog");
 dogObj.showName();
 /* แสดงผลลัพธ์เป็น
-“A dog”
+"A dog"
 undefined
-“Pit bull dog” */
+"Pit bull dog" */
 ```
 
 ## สืบทอดคลาสแบบนิพจน์
@@ -905,11 +913,11 @@ class ArrayExt extends Array {
 		super(length);
 	}
 }
-let a1 = ArrayExt.of(“one”, “two”, “three”);
+let a1 = ArrayExt.of("one", "two", "three");
 console.log(a1 instanceof ArrayExt );	 // true
 console.log(a1 instanceof Array );	             // true
 console.log(a1.length);			 // 3
-let a2 = ArrayExt.from([“one”, “two”, “three”]);
+let a2 = ArrayExt.from(["one", "two", "three"]);
 console.log(a2 instanceof ArrayExt );	 // true
 console.log(a2 instanceof Array );	             // true
 console.log(a2.length);			 // 3
@@ -934,15 +942,15 @@ class Multiplying {
 	     }
 	}
 	multiply() { 	
-	     return “This value is “ + this.calcObj.execute(); // บรรทัด b
+	     return "This value is " + this.calcObj.execute(); // บรรทัด b
 	}   	
 }
 let c1 = new Calculation(10,10);
 let m1 = new Multiplying(c1);
-console.log(m1.multiply());		 // “This value is 100”
+console.log(m1.multiply());		 // "This value is 100"
 let c2 = new Calculation(20,20);
 let m2 = new Multiplying(c2);
-console.log(m2.multiply());		 // “This value is 400”
+console.log(m2.multiply());		 // "This value is 400"
 ```
 
 ## new.target
@@ -952,34 +960,34 @@ class Calculation {
      constructor () {
 	console.log(new.target === Calculation);   // true
            // new.target คือคลาส Calculation
-          	console.log(new.target);	                        // “class Calculation”	
-	console.log(Calculation);	                        // “class Calculation”
+          	console.log(new.target);	                        // "class Calculation"	
+	console.log(Calculation);	                        // "class Calculation"
     }
 }
 new Calculation();
 // แสดงผลลัพธ์
 // true
-// “class Calculation” (แต่ละจาวาสคริปต์รันไทม์แสดงผลไม่เหมือนกัน)
-// “class Calculation” (แต่ละจาวาสคริปต์รันไทม์แสดงผลไม่เหมือนกัน)
+// "class Calculation" (แต่ละจาวาสคริปต์รันไทม์แสดงผลไม่เหมือนกัน)
+// "class Calculation" (แต่ละจาวาสคริปต์รันไทม์แสดงผลไม่เหมือนกัน)
 ```
 
 ```js
 class Calculation {
      constructor () {
     	// ถ้าคลาสลูกเรียกคอนสตรัคเตอร์ของแม่  ค่าของ new.target จะมีค่าเท่ากับ undefined
-    	console.log(“new.target in Calculaton:”, new.target === Calculation); 
+    	console.log("new.target in Calculaton:", new.target === Calculation); 
     }
 }
 class Multiplying extends Calculation {
      constructor () {
           super();
-	console.log(“new.target in Multiplying:”, new.target === Multiplying);           
+	console.log("new.target in Multiplying:", new.target === Multiplying);           
      }
 }
 new Multiplying();		
 // แสดงผลลัพธ์
-// “new.target in Calculaton: false”
-// “new.target in Multiplying: true”
+// "new.target in Calculaton: false"
+// "new.target in Multiplying: true"
 ```
 
 ## สมาชิกแบบ private
@@ -1031,7 +1039,7 @@ class Car {
 ```js
 class Car {
     #drive() {                                        // บรรทัด a
-        console.log(“Driving this car”);
+        console.log("Driving this car");
     }
     /*static {
         console.log( #drive in new Car());  // true
@@ -1059,7 +1067,7 @@ console.log(Car.#speed );                         // error
 ```js
 class Car {    
     static #drive() {
-        console.log(“Driving this car”);
+        console.log("Driving this car");
     }
     /*static {
         console.log( #drive in Car );     // true
@@ -1110,11 +1118,11 @@ class MyClass {
 class Car {
     #speed = 100;                                                 
     drive() {			
-	console.log(“Driving speed:”, this.#speed);   // บรรทัด a
+	console.log("Driving speed:", this.#speed);   // บรรทัด a
     }
 }
 let objCar = new Car();
-objCar.drive();                                                      // “Driving speed: 100”
+objCar.drive();                                                      // "Driving speed: 100"
 ```
 
 * ตัวอย่าง การเข้าถึงเมธอดที่เป็น private ภายในอินสแตนซ์
@@ -1125,11 +1133,11 @@ class Car {
            return 100;                                                   
     }
     drive() {			
-	console.log(“Driving speed:”, this.#getSpeed());   // บรรทัด a
+	console.log("Driving speed:", this.#getSpeed());   // บรรทัด a
     }   
 }
 let objCar = new Car();
-objCar.drive();                                                             // “Driving speed: 100”
+objCar.drive();                                                             // "Driving speed: 100"
 ```
 
 * ตัวอย่าง การเข้าถึงฟิวด์ที่เป็น private จากคอนสตรัคเตอร์ และ getter กับ setter ภายในอินสแตนซ์
@@ -1158,7 +1166,7 @@ console.log(objCar.speed);                        // 5
 class Car {
     static #speed = 100;         
     drive() {			
-	  console.log(“Driving speed:”, Car.#speed);   // บรรทัด a
+	  console.log("Driving speed:", Car.#speed);   // บรรทัด a
     }
 }
 let objCar = new Car();
@@ -1173,11 +1181,11 @@ class Car {
            return 100;                                                   
     }
     drive() {			
-	console.log(“Driving speed:”, Car.#getSpeed());   // บรรทัด a
+	console.log("Driving speed:", Car.#getSpeed());   // บรรทัด a
     }   
 }
 let objCar = new Car();
-objCar.drive();                                                            // “Driving speed: 100”
+objCar.drive();                                                            // "Driving speed: 100"
 ```
 
 *สรุป สมาชิกใดๆ ที่จะเข้าถึงสมาชิกที่เป็น private ก็ขอให้ประกาศอยู่ภายใต้บอดี้ของคลาสเดียวกันก็สามารถเข้าถึงได้หมดเลย ดังตัวอย่าง
@@ -1198,12 +1206,12 @@ class MyClass {
          this.#myField = value;
     }
     showValue(inst) {
-          console.log(“Show value:”, inst.#myField );
+          console.log("Show value:", inst.#myField );
     }
 }
 let inst1 = new MyClass(1);
 let inst2 = new MyClass(100);
-inst1.showValue(inst2);       // “Show value: 100”
+inst1.showValue(inst2);       // "Show value: 100"
 ```
 
 ### การสืบทอดสมาชิกที่เป็น private
@@ -1214,7 +1222,7 @@ class SuperClass {
 }
 class MyClass extends SuperClass {
     showMsg() {
-        console.log(“Result:”, this.#superField);     // บรรทัด a -- เกิด error
+        console.log("Result:", this.#superField);     // บรรทัด a -- เกิด error
     }
 }
 ```
@@ -1228,11 +1236,11 @@ class SuperClass {
 }
 class MyClass extends SuperClass {
      showMsg() {
-        console.log(“Result:”, super.superField);           // บรรทัด a
+        console.log("Result:", super.superField);           // บรรทัด a
      }
 }
 let inst = new MyClass();
-inst.showMsg();                                                       // “Result: 1”
+inst.showMsg();                                                       // "Result: 1"
 ```
 
 ### ข้อควรรู้ชื่อ private ในอินสแตนซ์
@@ -1240,7 +1248,7 @@ inst.showMsg();                                                       // “Resu
 ```js
 class Car {
     #speed = 100;
-    color = “red”;
+    color = "red";
     showSpeed() {
         console.log( this.#speed );
     }
@@ -1250,7 +1258,7 @@ class Car {
 }
 /*let carObj = new Car()
 carObj.showSpeed();   // 100
-carObj.showColor();   // “red”*/
+carObj.showColor();   // "red"*/
 ```
 
 ```js
@@ -1261,7 +1269,7 @@ let Car;
     __PrivateElements__ = new Map([
       [speed, 100],
     ]);
-    color = “red”
+    color = "red"
     showSpeed() {
         console.log( this.__PrivateElements__.get(speed) );
     }
@@ -1293,11 +1301,11 @@ class SuperClass {
 class MyClass extends SuperClass {
       #myField = 2;         // บรรทัด b
       showMsg() {
-           console.log(“Result:”, super.myField + this.#myField);  // บรรทัด c
+           console.log("Result:", super.myField + this.#myField);  // บรรทัด c
       }
 }
 let inst = new MyClass();
-inst.showMsg();                                                                   // “Result: 3”
+inst.showMsg();                                                                   // "Result: 3"
 ```
 
 ### ชื่อที่เป็น private กับ public จะไม่ชนกัน
@@ -1316,60 +1324,60 @@ class MyClass {
 ```js
 class MyClass {
     constructor() {
-         console.log(“MyClass constructor”);          // บรรทัด a
+         console.log("MyClass constructor");          // บรรทัด a
     }
-    pubField = console.log(“pubField”);              // บรรทัด b
-    #privateField = console.log(“privateField”);    // บรรทัด c
+    pubField = console.log("pubField");              // บรรทัด b
+    #privateField = console.log("privateField");    // บรรทัด c
 }
 new MyClass();
 // แสดงผลลัพธ์
-// “pubField”
-// “privateField”
-// “MyClass constructor”
+// "pubField"
+// "privateField"
+// "MyClass constructor"
 ```
 
 ```js
 class SuperClass {
-    superField = console.log(“superField”);          // บรรทัด a
+    superField = console.log("superField");          // บรรทัด a
     constructor() {
-      console.log(“SuperClass constructor”);         // บรรทัด b
+      console.log("SuperClass constructor");         // บรรทัด b
     }
   }
 class MyClass extends SuperClass {
-    myField = console.log(“myField”);                 // บรรทัด c
+    myField = console.log("myField");                 // บรรทัด c
     constructor() {
       super();
-      console.log(“MyClass constructor”);             // บรรทัด d
+      console.log("MyClass constructor");             // บรรทัด d
     }
  }
 new MyClass();
 // แสดงผลลัพธ์
-// “superField”
-// “SuperClass constructor”
-// “myField”
-// “MyClass constructor”
+// "superField"
+// "SuperClass constructor"
+// "myField"
+// "MyClass constructor"
 ```
 
 ```js
 class SuperClass {
-    #superField = console.log(“#superField”);      // บรรทัด a
+    #superField = console.log("#superField");      // บรรทัด a
     constructor() {
-      console.log(“SuperClass constructor”);         // บรรทัด b
+      console.log("SuperClass constructor");         // บรรทัด b
     }
   }
 class MyClass extends SuperClass {
-    #myField = console.log(“#myField”);             // บรรทัด c
+    #myField = console.log("#myField");             // บรรทัด c
     constructor() {
       super();
-      console.log(“MyClass constructor”);             // บรรทัด d
+      console.log("MyClass constructor");             // บรรทัด d
     }
  }
 new MyClass();
 // แสดงผลลัพธ์
-// “#superField”
-// “SuperClass constructor”
-// “#myField”
-// “MyClass constructor”
+// "#superField"
+// "SuperClass constructor"
+// "#myField"
+// "MyClass constructor"
 ```
 
 ## บล็อกสแตติก
@@ -1377,11 +1385,11 @@ new MyClass();
 ```js
 class Car {      
     static {			             // บรรทัด a
-	  console.log(“Driving this car”);     // บรรทัด b
+	  console.log("Driving this car");     // บรรทัด b
     }                                                     
 }
 // แสดงผลลัพธ์
-// “Driving this car”
+// "Driving this car"
 ```
 
 * ตัวอย่าง การใช้สแตติกบล็อกเข้าถึงฟิวด์ของอินสแตนซ์ที่เป็น private 
@@ -1434,7 +1442,7 @@ class Car {
 class Car {
     static speed = 100;
     static  drive() {
-        console.log(“Driving this car”);
+        console.log("Driving this car");
     }
     static {
         console.log(this.speed);      // บรรทัด a
@@ -1443,14 +1451,14 @@ class Car {
 }
 // แสดงผลลัพธ์ 
 // 100
-// “Driving this car”
+// "Driving this car"
 ```
 
 ```js
 class Car {
     static #speed = 100;
     static  #drive() {
-        console.log(“Driving this car”);
+        console.log("Driving this car");
     }
     static {
         console.log(this.#speed);                  // บรรทัด a
@@ -1459,7 +1467,7 @@ class Car {
 }
 // แสดงผลลัพธ์ 
 // 100
-// “Driving this car”
+// "Driving this car"
 ```
 
 ```js
@@ -1489,67 +1497,67 @@ class Car {
 ```js
 class Car {
     static {
-        console.log(“static”);                        // บรรทัด a 
+        console.log("static");                        // บรรทัด a 
     }
-    static speed = console.log(“speed”);     // บรรทัด b
-    static color = console.log(“color”);        // บรรทัด c
+    static speed = console.log("speed");     // บรรทัด b
+    static color = console.log("color");        // บรรทัด c
 }
 // แสดงผลลัพธ์ 
-// “static”
-// “speed”
-// “color”
+// "static"
+// "speed"
+// "color"
 ```
 
 ```js
 class MyClass {
     static {
-        console.log(“Line a”);                      // บรรทัด a
+        console.log("Line a");                      // บรรทัด a
      }
     static {
-        console.log(“Line b”);                     // บรรทัด b     
+        console.log("Line b");                     // บรรทัด b     
     }
 }
 // แสดงผลลัพธ์ 
-// “Line a”
-// “Line b”
+// "Line a"
+// "Line b"
 ```
 
 ```js
 class MyClass {
-    static myFiled1 = console.log(“myFiled1”);       // บรรทัด a
+    static myFiled1 = console.log("myFiled1");       // บรรทัด a
     static {
-        console.log(“Static line b”);                        // บรรทัด b
+        console.log("Static line b");                        // บรรทัด b
     }
-    static myFiled2 = console.log(“myFiled2”);       // บรรทัด c 
+    static myFiled2 = console.log("myFiled2");       // บรรทัด c 
     static {
-        console.log(“Static line d”);                        // บรรทัด d     
+        console.log("Static line d");                        // บรรทัด d     
     }
 }
 // แสดงผลลัพธ์ 
-// “myFiled1”
-// “Static line a”
-// “myFiled2”
-// “Static line d”
+// "myFiled1"
+// "Static line a"
+// "myFiled2"
+// "Static line d"
 ```
 
 ```js
 class SuberClass {
-    static superFiled = console.log(“superFiled”);    // บรรทัด a
+    static superFiled = console.log("superFiled");    // บรรทัด a
     static {
-        console.log(“Static line b”);                         // บรรทัด b
+        console.log("Static line b");                         // บรรทัด b
      }
 }
 class MyClass extends SuberClass{    
-    static myFiled = console.log(“myFiled”);          // บรรทัด c   
+    static myFiled = console.log("myFiled");          // บรรทัด c   
     static {
-        console.log(“Static line d”);                        // บรรทัด d     
+        console.log("Static line d");                        // บรรทัด d     
     }
 }
 // แสดงผลลัพธ์
-// “superFiled”
-// “Static line b”
-// “myFiled”
-// “Static line d”
+// "superFiled"
+// "Static line b"
+// "myFiled"
+// "Static line d"
 ```
 
 ```js
@@ -1631,7 +1639,7 @@ class Car {
 class Car {
      get #speed() { return 100; }
      set #speed(value) {  }
-     get color() { return “red”; }
+     get color() { return "red"; }
      set color(value) {  }
      static {
         let car1 = new Car();
@@ -1706,7 +1714,7 @@ Car.check(Car);                                        // false
 ```js
 class Car {
     #drive() {
-        console.log(“Driving this car”);
+        console.log("Driving this car");
     }
     static check(target) {
         console.log(  #drive in target );          // บรรทัด a
@@ -1732,7 +1740,7 @@ Car.check(Car);                                        // true
 ```js
 class Car {
     static #drive() {
-        console.log(“Driving this car”);
+        console.log("Driving this car");
     }
     static check(target) {
         console.log( #drive in target );         // บรรทัด a
@@ -1749,7 +1757,7 @@ Car.check(Car);                                        // true
 class Calculation {
 	constructor() {
 		if(new.target === Calculation) {
-            		throw new Error(“Abstract class cannot be instantiated.”)
+            		throw new Error("Abstract class cannot be instantiated.")
         		}
 	}
 	execute() {  
@@ -1778,7 +1786,7 @@ console.log(m.execute());			 // 4
 class Calculation {
 	constructor (a,b) {
 		if (new.target === Calculation) {
-            		throw new Error(“Abstract class cannot be instantiated.”)
+            		throw new Error("Abstract class cannot be instantiated.")
 	        	}
 		this.a = a;
 		this.b = b
