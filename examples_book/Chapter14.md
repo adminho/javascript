@@ -1104,6 +1104,8 @@ class MyClass {
 
 ### ตัวอย่างการเข้าถึงสมาชิกที่เป็น private
 
+* ตัวอย่าง การเข้าถึงฟิวด์ที่เป็น private ภายในอินสแตนซ์
+	
 ```js
 class Car {
     #speed = 100;                                                 
@@ -1114,6 +1116,8 @@ class Car {
 let objCar = new Car();
 objCar.drive();                                                      // “Driving speed: 100”
 ```
+
+* ตัวอย่าง การเข้าถึงเมธอดที่เป็น private ภายในอินสแตนซ์
 
 ```js
 class Car {
@@ -1128,13 +1132,15 @@ let objCar = new Car();
 objCar.drive();                                                             // “Driving speed: 100”
 ```
 
+* ตัวอย่าง การเข้าถึงฟิวด์ที่เป็น private จากคอนสตรัคเตอร์ และ getter กับ setter ภายในอินสแตนซ์
+
 ```js
 class Car {
     #speed ;                                             // บรรทัด a
-    constructor(speed){
+    constructor(speed) {
         this.#speed = speed;                        // บรรทัด b
     } 
-   get speed() {			
+    get speed() {			
         return  this.#speed;                        // บรรทัด c
     }
     set speed(speed) {
@@ -1145,6 +1151,8 @@ let objCar = new Car(100);
 objCar.speed = 5;                                          
 console.log(objCar.speed);                        // 5
 ```
+
+* ตัวอย่าง การเข้าถึงฟิวด์สแตติกที่เป็น private จากภายในบอดี้ของคลาส
 
 ```js
 class Car {
@@ -1157,6 +1165,8 @@ let objCar = new Car();
 objCar.drive();                                                      // Driving speed: 100
 ```
 
+* ตัวอย่าง การเข้าถึงเมธอดแตติกที่เป็น private จากภายในบอดี้ของคลาส
+	
 ```js
 class Car {
     static #getSpeed() {                                                         
@@ -1169,6 +1179,8 @@ class Car {
 let objCar = new Car();
 objCar.drive();                                                            // “Driving speed: 100”
 ```
+
+*สรุป สมาชิกใดๆ ที่จะเข้าถึงสมาชิกที่เป็น private ก็ขอให้ประกาศอยู่ภายใต้บอดี้ของคลาสเดียวกันก็สามารถเข้าถึงได้หมดเลย ดังตัวอย่าง
 
 ```js
 class Car {
@@ -1601,7 +1613,7 @@ console.log(Object.keys(MyClass))           // [ ‘pubField’ ]
 
 ```js
 class Car {
-     #drive() {}
+     #drive() { }
      stop() { }
      static {
         let car1 = new Car();
@@ -1723,7 +1735,7 @@ class Car {
         console.log(“Driving this car”);
     }
     static check(target) {
-        console.log(  #drive in target );         // บรรทัด a
+        console.log( #drive in target );         // บรรทัด a
     }
 }
 let objCar = new Car();
@@ -1736,7 +1748,7 @@ Car.check(Car);                                        // true
 ```js
 class Calculation {
 	constructor() {
-		if (new.target === Calculation) {
+		if(new.target === Calculation) {
             		throw new Error(“Abstract class cannot be instantiated.”)
         		}
 	}
