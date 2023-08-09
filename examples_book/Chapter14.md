@@ -1,4 +1,4 @@
-# บทที่ 14 คลาส
+# โค้ดบทที่ 14 คลาส
 
 ## คลาส
 
@@ -1772,9 +1772,7 @@ class Calculation {
 	} 
 }
 new Calculation();    // จะโยน error ออกมา
-```
 
-```js
 class Multiplying extends Calculation {
 	constructor (a, b) {
 		super();
@@ -1828,11 +1826,11 @@ class Subtraction extends Calculation {
 }
 function calc(calcObj) {
 	if(calcObj instanceof Calculation) {
-                 // ผลการทำงานจะขึ้นอยู่กับอ็อบเจ็กต์ที่ส่งเข้ามา ว่ามันเป็นอะไร
+	     // ผลการทำงานจะขึ้นอยู่กับอ็อบเจ็กต์ที่ส่งเข้ามา ว่ามันเป็นอะไร
 	     console.log(calcObj.execute()); 
 	}
 }
-calc(new Multiplying(20,10) );		 // 200
-calc(new Division(20,10) );		 // 2
-calc(new Subtraction(20,10) );		 // 10
+calc(new Multiplying(20, 10) );		 // 200
+calc(new Division(20, 10) );		 // 2
+calc(new Subtraction(20, 10) );		 // 10
 ```
