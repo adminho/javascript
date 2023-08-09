@@ -957,10 +957,10 @@ console.log(m2.multiply());		 // "This value is 400"
 ```js
 class Calculation {
      constructor () {
-	console.log(new.target === Calculation);   // true
-           // new.target คือคลาส Calculation
-          	console.log(new.target);	                        // "class Calculation"	
-	console.log(Calculation);	                        // "class Calculation"
+    	console.log(new.target === Calculation);   // true
+    	// new.target คือคลาส Calculation
+    	console.log(new.target);	                        // "class Calculation"	
+    	console.log(Calculation);	                        // "class Calculation"
     }
 }
 new Calculation();
