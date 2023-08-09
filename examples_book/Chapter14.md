@@ -677,8 +677,6 @@ class Division extends Calculation {
 }
 ```
 
-## การสืบทอดคลาสหลายระดับชั้น
-
 ```js
 class Calculation {
 }
@@ -688,6 +686,8 @@ class Division extends Calculation {
     }
 }
 ```
+
+## การสืบทอดคลาสหลายระดับชั้น
 
 ```js
 class Animal {
