@@ -220,7 +220,7 @@ console.log(Car.prototype.constructor.name);           // "Car"
 let Car = function() {
     "use strict";
     const Car = function(speed) {
-    	if(typeof new.target === "undefined") {
+          if(typeof new.target === "undefined") {
           		throw new TypeError("Cannot call a class as a function");
           }
     	this.speed = speed;
@@ -246,7 +246,7 @@ carObj.drive();			// "Driving speed: 100"
 
 ```js
 class Car {
-	constructor (speed){
+	constructor (speed) {
 		this.speed = speed;
 	}
 }
@@ -267,7 +267,7 @@ for(let c in car) {
 
 ```js
 class Car {
-	constructor (speed){
+	constructor (speed) {
 		this.speed = speed;
 	}
 }
@@ -312,7 +312,7 @@ let carObj = new Car2();
 
 ```js
 let carObj = new Car();               // จะเกิด TypeError ได้
-var Car = class{};	                       // บรรทัด 2 --  นิพจน์คลาสจะถูกมองเห็นตั้งแต่บรรทัดนี้เป็นต้นไป
+var Car = class{ };	                       // บรรทัด 2 --  นิพจน์คลาสจะถูกมองเห็นตั้งแต่บรรทัดนี้เป็นต้นไป
 /* จะเสมือนเขียนแบบนี้
 var Car;
 let carObj = new Car();
@@ -611,9 +611,6 @@ console.log(div.a, div.b);		             // 20 10 (ไม่ควรเข้�
 console.log(div instanceof Division);   	 // true
 console.log(div instanceof Calculation);   	 // true
 console.log(div instanceof Object);   	 // true
-```
-
-```js
 // เบื้องหลังจะมีการทำ prototype chain
 console.log(Object.getPrototypeOf(div) === Division.prototype);                     // true
 console.log(Object.getPrototypeOf(Division.prototype) === Calculation.prototype);   // true
@@ -638,7 +635,7 @@ Division.prototype = Object.create(Calculation.prototype, { // prototype chain
         configurable: true
     }
 });
-Division.prototype.divide = function(){
+Division.prototype.divide = function() {
      return this.a / this.b;
 }
 let div = new Division(20,10);
