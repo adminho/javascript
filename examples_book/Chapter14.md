@@ -1789,12 +1789,14 @@ let m = new Multiplying(2, 2);
 console.log(m.execute());			 // 4
 ```
 
+## Polymorphism 
+
 ```js
 class Calculation {
-	constructor (a,b) {
+	constructor (a, b) {
 		if (new.target === Calculation) {
             		throw new Error("Abstract class cannot be instantiated.")
-	        	}
+		}
 		this.a = a;
 		this.b = b
 	}
