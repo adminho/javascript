@@ -1546,7 +1546,7 @@ class SuberClass {
         console.log("Static line b");                         // บรรทัด b
      }
 }
-class MyClass extends SuberClass{    
+class MyClass extends SuberClass {    
     static myFiled = console.log("myFiled");          // บรรทัด c   
     static {
         console.log("Static line d");                        // บรรทัด d     
@@ -1689,7 +1689,7 @@ class Car {
 class Car {
     drive() { }
     get speed() { return 100; }
-    set speed(value) {}
+    set speed(value) { }
 }
 let objCar = new Car();
 console.log(objCar.drive == Car.prototype.drive);       // true   -- บรรทัด a
@@ -1697,6 +1697,8 @@ console.log(objCar.speed == Car.prototype.speed);    // true   -- บรรท�
 ```
 
 ## ตรวจสอบสมาชิกที่เป็น private
+
+* ตัวอย่าง ตรวจสอบฟิวด์ที่เป็น private ด้วยโอเปอเรเตอร์ in
 
 ```js
 class Car {
@@ -1709,6 +1711,8 @@ let objCar = new Car();
 Car.check(objCar);                                    // true
 Car.check(Car);                                        // false
 ```
+
+* ตัวอย่าง ตรวจสอบเมธอดที่เป็น private ด้วยโอเปอเรเตอร์ in 
 
 ```js
 class Car {
@@ -1724,6 +1728,8 @@ Car.check(objCar);                                    // true
 Car.check(Car);                                        // false
 ```
 
+*ตัวอย่าง ตรวจสอบฟิวด์สแตติกที่เป็น private ด้วยโอเปอเรเตอร์ in
+	
 ```js
 class Car {
     static #speed = 100;    
@@ -1735,6 +1741,8 @@ let objCar = new Car();
 Car.check(objCar);                                   // false
 Car.check(Car);                                        // true
 ```
+
+* ตัวอย่าง ตรวจสอบเมธอดสแตติกที่เป็น private ด้วยโอเปอเรเตอร์ in
 
 ```js
 class Car {
@@ -1757,7 +1765,7 @@ class Calculation {
 	constructor() {
 		if(new.target === Calculation) {
             		throw new Error("Abstract class cannot be instantiated.")
-        		}
+		}
 	}
 	execute() {  
 	       // ไม่มีซอร์สโค้ด ต้องให้คลาสอื่นมา extends เพื่อไปใช้งานต่อ
