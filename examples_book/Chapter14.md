@@ -979,8 +979,8 @@ class Calculation {
 }
 class Multiplying extends Calculation {
      constructor () {
-          super();
-	console.log("new.target in Multiplying:", new.target === Multiplying);           
+    	super();
+    	console.log("new.target in Multiplying:", new.target === Multiplying);           
      }
 }
 new Multiplying();		
