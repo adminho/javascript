@@ -1187,7 +1187,7 @@ let objCar = new Car();
 objCar.drive();                                                            // "Driving speed: 100"
 ```
 
-*สรุป สมาชิกใดๆ ที่จะเข้าถึงสมาชิกที่เป็น private ก็ขอให้ประกาศอยู่ภายใต้บอดี้ของคลาสเดียวกันก็สามารถเข้าถึงได้หมดเลย ดังตัวอย่าง
+* สรุป สมาชิกใดๆ ที่จะเข้าถึงสมาชิกที่เป็น private ก็ขอให้ประกาศอยู่ภายใต้บอดี้ของคลาสเดียวกันก็สามารถเข้าถึงได้หมดเลย ดังตัวอย่าง
 
 ```js
 class Car {
@@ -1440,7 +1440,7 @@ class Car {
 ```js
 class Car {
     static speed = 100;
-    static  drive() {
+    static drive() {
         console.log("Driving this car");
     }
     static {
@@ -1456,7 +1456,7 @@ class Car {
 ```js
 class Car {
     static #speed = 100;
-    static  #drive() {
+    static #drive() {
         console.log("Driving this car");
     }
     static {
