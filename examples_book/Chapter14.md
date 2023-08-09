@@ -837,7 +837,7 @@ class Multiplying extends getClass() {	 // สืบทอดคลาสแบ�
 		super(a, b);
 	}
 }
-let m = new Multiplying(20,10);
+let m = new Multiplying(20, 10);
 console.log(m.multiply());			 // 200
 ```
 
@@ -854,7 +854,7 @@ class Multiplying extends Calculation {
 		super(a, b);
 	}
 }
-let m = new Multiplying(20,10);
+let m = new Multiplying(20, 10);
 console.log(m.multiply());			 // 200
 ```
 
@@ -944,10 +944,10 @@ class Multiplying {
 	     return "This value is " + this.calcObj.execute(); // บรรทัด b
 	}   	
 }
-let c1 = new Calculation(10,10);
+let c1 = new Calculation(10, 10);
 let m1 = new Multiplying(c1);
 console.log(m1.multiply());		 // "This value is 100"
-let c2 = new Calculation(20,20);
+let c2 = new Calculation(20, 20);
 let m2 = new Multiplying(c2);
 console.log(m2.multiply());		 // "This value is 400"
 ```
