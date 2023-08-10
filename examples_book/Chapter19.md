@@ -29,7 +29,7 @@ asyncFunc()                                            // บรรทัด a
 
 ```js
 async function asyncFunc() {
-    console.log(“aysnc function”);
+    console.log("aysnc function");
     // บรรทัด 3 - จะเสมือนมีประโยค return undefined; 
 }
 ```
@@ -37,7 +37,7 @@ async function asyncFunc() {
 ```js
 function asyncFunc() {                            // เสมือนเขียนฟังก์ช่ันปกติธรรมดา
   return new Promise( resolve => {           // จะรีเทิร์นพรอมิส
-    console.log(“aysnc function”);             // โค้ดถูกห่ออยู่ในพรอมิสที่สร้างขึ้นมา
+    console.log("aysnc function");             // โค้ดถูกห่ออยู่ในพรอมิสที่สร้างขึ้นมา
     resolve(undefined);                             // จะเสมือนมี resolve(undefined) ต่อท้าย                
   });
 }
@@ -45,13 +45,13 @@ function asyncFunc() {                            // เสมือนเขี
 
 ```js
 async function asyncFunc() {
-    console.log(“aysnc function”);               
+    console.log("aysnc function");               
     // บรรทัด 3 - จะเสมือนมีประโยค return undefined;  
 }
 asyncFunc()                                            // บรรทัด a -- เรียกฟังก์ชันให้ทำงาน
 .then(x => console.log(x));	            // undefined
 /* แสดงผลลัพธ์
-“aysnc function”
+"aysnc function"
 undefined */
 ```
 
@@ -59,21 +59,21 @@ undefined */
 
 ```js
 async function asyncFunc() {
-    throw new Error(“Problem!”);  // error ที่ส่งไปให้ฟังก์ชั่นคอลแบ็คของ catch
+    throw new Error("Problem!");  // error ที่ส่งไปให้ฟังก์ชั่นคอลแบ็คของ catch
 }
 ```
 
 ```js
 function asyncFunc() {
   return new Promise( (resolve,reject) => {
-       reject( new Error(“Problem!”) ) ;
+       reject( new Error("Problem!") ) ;
   });
 }
 ```
 
 ```js
 async function asyncFunc() {
-    throw new Error(“Problem!”);  // error ที่ส่งไปให้ฟังก์ชั่นคอลแบ็คของ catch
+    throw new Error("Problem!");  // error ที่ส่งไปให้ฟังก์ชั่นคอลแบ็คของ catch
 }
 asyncFunc()
 .catch(err => console.log(err));    // Error: Problem!
@@ -81,17 +81,17 @@ asyncFunc()
 
 ```js
 async function asyncFunc() {
-    console.log(“aysnc function()”);              // บรรทัด a -- ซิงโครนัส 
+    console.log("aysnc function()");              // บรรทัด a -- ซิงโครนัส 
     return 123;                                          // บรรทัด b 
 }
-console.log(“Start”);                                 // บรรทัด c -- ซิงโครนัส 
+console.log("Start");                                 // บรรทัด c -- ซิงโครนัส 
 asyncFunc().                                            // บรรทัด d
 then(x => console.log(`Resolved: ${x}`));     // บรรทัด e - อะซิงโครนัส
-console.log(“End”); 			 // บรรทัด f  - ซิงโครนัส
-“Start”
-“aysnc function”
-“End”
-“Resolved: 123”
+console.log("End"); 			 // บรรทัด f  - ซิงโครนัส
+"Start"
+"aysnc function"
+"End"
+"Resolved: 123"
 ```
 
 * เมื่อฟังก์ชันแบบ async รีเทิร์นพรอมิสออกมาโดยตรง
@@ -168,28 +168,28 @@ asyncFunc()
 ```js
 async function asyncFunc() {
   try {
-    let result = await new Promise((resolve, reject) => reject(“Error!”));  // บรรทัด a
+    let result = await new Promise((resolve, reject) => reject("Error!"));  // บรรทัด a
    } catch (err) {                                          
     console.error(err);      // บรรทัด b
   }   
 }
-asyncFunc(); // “Error!”
+asyncFunc(); // "Error!"
 ```
 
 ```js
 async function asyncFunc() {
-  return new Promise((resolve, reject) => reject(“Error!”))
+  return new Promise((resolve, reject) => reject("Error!"))
   .catch(err => console.log(err));  
 }
-asyncFunc();   // “Error!”
+asyncFunc();   // "Error!"
 ```
 
 ```js
 async function otherAsyncFunc(ms) {
    return new Promise (resolve =>                 
       setTimeout( () => {
-            console.log(“call otherAsyncFunc”);      // บรรทัด a
-            resolve(“Time out”);                           // บรรทัด b
+            console.log("call otherAsyncFunc");      // บรรทัด a
+            resolve("Time out");                           // บรรทัด b
      }
     , 1000)    // กำหนดระยะเวลาในการ timeout ไป 1000 ms หรือ 1 วินาที
   );
@@ -198,37 +198,37 @@ async function otherAsyncFunc(ms) {
 
 ```js
 async function asyncFunc() {
-  console.log(“Start”);                                      // บรรทัด a
+  console.log("Start");                                      // บรรทัด a
   otherAsyncFunc();                                         // บรรทัด b
-  console.log(“End”);                                       // บรรทัด c
+  console.log("End");                                       // บรรทัด c
 }
 asyncFunc();
-“Start”
-“End”
-“call otherAsyncFunc”
+"Start"
+"End"
+"call otherAsyncFunc"
 ```
 
 ```js
 async function asyncFunc() {
-  console.log(“Start”);                              // บรรทัด a
+  console.log("Start");                              // บรรทัด a
   await otherAsyncFunc();                         // บรรทัด b
-  console.log(“End”);                               // บรรทัด c
+  console.log("End");                               // บรรทัด c
 }
 asyncFunc();
-“Start”
-“call otherAsyncFunc”
-“End”
+"Start"
+"call otherAsyncFunc"
+"End"
 ```
 
 ```js
 async function asyncFunc() {
-  console.log(“Start”);                              // บรรทัด a
+  console.log("Start");                              // บรรทัด a
   let result = await otherAsyncFunc();        // บรรทัด a
   console.log(result);                                // บรรทัด b
 }
-“Start”
-“call otherAsyncFunc”
-“Time out”
+"Start"
+"call otherAsyncFunc"
+"Time out"
 ```
 
 * การใช้ awiat แบบเรียงต่อเนื่องกัน
@@ -300,23 +300,23 @@ asyncFunc();                                            // เรียกให
 * ตัวอย่างเปลี่ยนจากการเรียกเมธอด then() ต่อเนื่อง มาเป็น await จะสะดวกกว่า
 	
 ```js
-fetch(“https://patanasongsivilai.com/example/json.php”)     // บรรทัด a
+fetch("https://patanasongsivilai.com/example/json.php")     // บรรทัด a
 .then( res =>  res.text())                            // บรรทัด b
 .then( txt =>  console.log(txt) );                 // บรรทัด c
-console.log(“Hello”);
+console.log("Hello");
 // แสดงผลลัพธ์
-// “Hello”
-// {“name”:”Somchai”,“age”:30,“city”:“Bangkok”}
+// "Hello"
+// {"name":"Somchai","age":30,"city":"Bangkok"}
 ```
 
 ```js
-let res = await fetch(“https://patanasongsivilai.com/example/json.php”)  // บรรทัด a
+let res = await fetch("https://patanasongsivilai.com/example/json.php")  // บรรทัด a
 let txt = await res.text()                           // บรรทัด b
 console.log(txt)                                      // บรรทัด c
-console.log(“Hello”);                              // บรรทัด d
+console.log("Hello");                              // บรรทัด d
 // แสดงผลลัพธ์
-// {“name”:”Somchai”,“age”:30,“city”:“Bangkok”}
-// “Hello”
+// {"name":"Somchai","age":30,"city":"Bangkok"}
+// "Hello"
 ```
 
 ```js
@@ -327,14 +327,14 @@ function myFunc() {                                // ไม่มี async น�
 
 ```js
 let result = await Promise.resolve("Success!");
-console.log(result);      // “Success!”
+console.log(result);      // "Success!"
 ```
 
 ```js
 try {
-     await Promise.reject(“Error!”);
+     await Promise.reject("Error!");
 } catch (error) {
-      console.log(error);   // “Error!”
+      console.log(error);   // "Error!"
 }  
 ```
 
@@ -463,13 +463,13 @@ for await (const x of [1, 2, 3]) {
 ```
 
 ```js
-let arr = [Promise.resolve(“foo”), Promise.resolve(“bar”)];
+let arr = [Promise.resolve("foo"), Promise.resolve("bar")];
 for await (const item of arr) {
   console.log(item);
 }
 /* แสดงผลลัพธ์
-“foo”
-“bar” */
+"foo"
+"bar" */
 ```
 
 ## Asynchronous generators
