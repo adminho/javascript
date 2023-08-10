@@ -10,6 +10,7 @@ async function asyncFunc() {
 }
 ```
 
+* เสมือนเขียนดังนี้
 ```js
 function asyncFunc() {                            // เสมือนเขียนฟังก์ชันปกติธรรมดา
   return new Promise( resolve  => {         // จะรีเทิร์นพรอมิส
