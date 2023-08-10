@@ -312,7 +312,7 @@ a.say("I love JavaScript");		// "I love JavaScript"
 
 ```js
 // -------------- ไฟล์ mylib.js ------------------
-export const msg = "I love JavaScriptt";
+export const msg = "I love JavaScript";
 ```
 
 ```js
@@ -322,6 +322,8 @@ export const msg = "I love JavaScriptt";
 </script>
 ```
 
+### วิธีใช้งานมอดูลบน Node.js
+ 
 ```js
 // -------------- ไฟล์ mylib.mjs ------------------
 export const msg = "I love JavaScript";
