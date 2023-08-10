@@ -109,7 +109,7 @@ asyncFunc()                                            // บรรทัด b
 	
 ```js
 async function asyncFunc() {
-    return Promise.reject(new Error(‘Problem!’));  // บรรทัด a ส่งพรอมิสที่เป็น rejected ออกมา
+    return Promise.reject(new Error('Problem!'));  // บรรทัด a ส่งพรอมิสที่เป็น rejected ออกมา
 }
 asyncFunc()                                             // บรรทัด b
 .catch(err => console.error(err));                // Error: Problem!
@@ -206,9 +206,10 @@ async function asyncFunc() {
   console.log("End");                                       // บรรทัด c
 }
 asyncFunc();
+/* แสดงผลลัพธ์
 "Start"
 "End"
-"call otherAsyncFunc"
+"call otherAsyncFunc" */
 ```
 
 ```js
