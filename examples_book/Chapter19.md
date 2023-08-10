@@ -327,8 +327,8 @@ console.log("Hello");                              // บรรทัด d
 ```
 
 ```js
-function myFunc() {                                // ไม่มี async นำหน้า
-    let result1 = await otherAsyncFunc(1000);      
+function myFunc() {                                     // ไม่มี async นำหน้า
+    let result1 = await otherAsyncFunc(1000);   // "Error!"
 }
 ```
 
