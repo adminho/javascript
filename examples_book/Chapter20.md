@@ -206,7 +206,7 @@ export default function(num1, num2) {    // ฟังก์ชั่นไร้
 
 ```js
 // -------------- ไฟล์ main.js -------------------
-import multiply,{value, square} from "mydefault";
+import multiply, {value, square} from "mydefault";
 console.log(value);			 // 100
 console.log(square(2,2));		             // 4
 console.log(multiply(2,2));	             // 4
@@ -218,7 +218,7 @@ console.log(multiply(2,2));	             // 4
 // -------------- ไฟล์ mylib.js --------------
 var foo = 1;
 var bar = 2;
-export { foo, bar };
+export {foo, bar};
 ```
 
 ```js
@@ -227,18 +227,18 @@ export {foo, bar} from "mylib";
 ```
 
 ```js
-// ไฟล์ example.js
+// -------------- ไฟล์ example.js --------------
 import {foo, bar} from "mylib";
 export {foo, bar};
 ```
 
 ```js
-// ไฟล์ example.js
+// -------------- ไฟล์ example.js --------------
 export {foo as foo1, bar} from "mylib";
 ```
 
 ```js
-// ไฟล์ example.js
+// -------------- ไฟล์ example.js --------------
 export * from "mylib";
 ```
 
