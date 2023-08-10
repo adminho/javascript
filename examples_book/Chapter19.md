@@ -13,7 +13,7 @@ async function asyncFunc() {
 * เสมือนเขียนดังนี้
 ```js
 function asyncFunc() {                            // เสมือนเขียนฟังก์ชันปกติธรรมดา
-  return new Promise( resolve  => {         // จะรีเทิร์นพรอมิส
+  return new Promise( resolve => {          // จะรีเทิร์นพรอมิส
     resolve(123);                                      // จากประโยค return 123 เสมือนเรียก resolve(123)
   });
 }
@@ -63,9 +63,11 @@ async function asyncFunc() {
 }
 ```
 
+* เสมือนเขียนดังนี้
+
 ```js
 function asyncFunc() {
-  return new Promise( (resolve,reject) => {
+  return new Promise( (resolve, reject) => {
        reject( new Error("Problem!") ) ;
   });
 }
