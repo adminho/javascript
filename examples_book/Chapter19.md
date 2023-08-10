@@ -219,9 +219,10 @@ async function asyncFunc() {
   console.log("End");                               // บรรทัด c
 }
 asyncFunc();
+/* แสดงผลลัพธ์
 "Start"
 "call otherAsyncFunc"
-"End"
+"End" */
 ```
 
 ```js
