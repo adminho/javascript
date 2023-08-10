@@ -245,7 +245,7 @@ export * from "mylib";
 ## Namespace re-exporting
 
 ```js
-export * as ns from 'http';
+export * as ns from "http";
 ```
 
 * ลองพิจารณาตัวอย่างไฟล์ 3 อัน ดังต่อไปนี้
@@ -261,7 +261,7 @@ export {firstname, lastname};                    // ส่งออก firstname
 * 2) ไฟล์ student.js เป็นมอดูลอย่างง่าย ข้างในทำการ export ส่งออกตัวแปร age และจะนำเข้ามอดูล name.js พร้อม export ส่องออกมอดูลออกมาเป็นชื่อ person (เปลี่ยนชื่อ namespace)
 
 ```js
-// ไฟล์ student.js
+// -------------- ไฟล์ student.js ------------------
 const age = 25;
 export {age};                                          // ส่งออก age
 export * as person from "./name.js"        // ส่งออก person
@@ -270,7 +270,7 @@ export * as person from "./name.js"        // ส่งออก person
 * 3) ไฟล์ myprogram.js เอาไว้รันทดสอบโปรแกรม โดยจะนำเข้ามอดูล student.js ดังตัวอย่าง
 
 ```js
-// ไฟล์ myprogram.js
+// -------------- ไฟล์ myprogram.js -----------------
 import {age, person} from "./student.js"
 console.log(age);                                     // 25
 console.log(person.firstname);                  // "Somchai"         
