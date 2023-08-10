@@ -304,6 +304,7 @@ asyncFunc();                                            // เรียกให
 ```
 
 * ตัวอย่างเปลี่ยนจากการเรียกเมธอด then() ต่อเนื่อง มาเป็น await จะสะดวกกว่า
+* [ไฟล์ json.php](json.php)
 	
 ```js
 fetch("https://patanasongsivilai.com/example/json.php")     // บรรทัด a
