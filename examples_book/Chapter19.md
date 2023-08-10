@@ -231,9 +231,10 @@ async function asyncFunc() {
   let result = await otherAsyncFunc();        // บรรทัด a
   console.log(result);                                // บรรทัด b
 }
+/* แสดงผลลัพธ์
 "Start"
 "call otherAsyncFunc"
-"Time out"
+"Time out" */
 ```
 
 * การใช้ awiat แบบเรียงต่อเนื่องกัน
