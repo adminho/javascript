@@ -289,7 +289,7 @@ Object.prototype.say = function(msg) {
 ```js
 // -------------- ไฟล์ main.js ------------------
 import "example";
-let a = {};
+let a = { };
 a.say("I love JavaScript");		// "I love JavaScript"
 ```
 
@@ -303,7 +303,7 @@ a.say("I love JavaScript");		// "I love JavaScript"
 <head> </head>
 <body> 
      <script type="module" > 
-        import {msg} from './mylib.js';
+        import {msg} from "./mylib.js";
         alert(msg);   
    </script>
 </body>
