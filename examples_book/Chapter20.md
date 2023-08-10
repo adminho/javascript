@@ -302,7 +302,7 @@ a.say("I love JavaScript");		// "I love JavaScript"
 <html>
 <head> </head>
 <body> 
-     <script type="module" > 
+     <script type="module"> 
         import {msg} from "./mylib.js";
         alert(msg);   
    </script>
