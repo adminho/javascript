@@ -317,7 +317,7 @@ export const msg = "I love JavaScript";
 
 ```js
 <script nomodule>
-  import {msg} from "./mylib.js" ;
+  import {msg} from "./mylib.js";
   alert(msg);
 </script>
 ```
@@ -341,7 +341,7 @@ export const msg = "I love JavaScript";
 ```
 
 ```js
-// -------------- ไฟล์ myapp.mjs ------------------
+// -------------- ไฟล์ myapp.js ------------------
 import { msg } from './mylib.js';
 console.log(msg);
 ```
