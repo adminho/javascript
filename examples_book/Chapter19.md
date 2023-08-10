@@ -90,10 +90,11 @@ console.log("Start");                                 // บรรทัด c --
 asyncFunc().                                            // บรรทัด d
 then(x => console.log(`Resolved: ${x}`));     // บรรทัด e - อะซิงโครนัส
 console.log("End"); 			 // บรรทัด f  - ซิงโครนัส
+/* แสดงผลลัพธ์
 "Start"
 "aysnc function"
 "End"
-"Resolved: 123"
+"Resolved: 123" */
 ```
 
 * เมื่อฟังก์ชันแบบ async รีเทิร์นพรอมิสออกมาโดยตรง
