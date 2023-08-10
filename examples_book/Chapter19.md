@@ -352,7 +352,7 @@ console.log(result)      // 123
 
 ```js
 async function asyncFunc() {
-    function innerFunc(){        
+    function innerFunc() {        
        return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้  
     }
     innerFunc()
