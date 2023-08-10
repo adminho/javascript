@@ -212,7 +212,7 @@ async function genHTML(fileName){
 
 
 let files = [ "Chapter03", "Chapter04","Chapter05", "Chapter06",  
-"Chapter08","Chapter09", "Chapter10", "Chapter11", "Chapter12",  
+"Chapter07","Chapter08","Chapter09", "Chapter10", "Chapter11", "Chapter12",  
 "Chapter13","Chapter14","Chapter15", "Chapter16", "Chapter17", 
 "Chapter18","Chapter19","Chapter20"];
 
@@ -222,6 +222,7 @@ let files = [ "Chapter03", "Chapter04","Chapter05", "Chapter06",
 //genHTML("Chapter04");
 //genHTML("Chapter05");
 //genHTML("Chapter06");
+genHTML("Chapter07");
 //genHTML("Chapter08");
 //genHTML("Chapter09");
 //genHTML("Chapter10");
@@ -234,7 +235,7 @@ let files = [ "Chapter03", "Chapter04","Chapter05", "Chapter06",
 //genHTML("Chapter17");
 //genHTML("Chapter18");
 //genHTML("Chapter19");
-genHTML("Chapter20");
+//genHTML("Chapter20");
 
 
 async function countline(fileName){
