@@ -5,7 +5,7 @@
 ```js
 // ไฟล์ main.js
 // ไม่ได้โหลดอะไรเข้ามา
-import “lib/mylib”;
+import "lib/mylib";
 ```
 
 ```js
@@ -13,7 +13,7 @@ import “lib/mylib”;
 export var a = 1;
 export var b = 2;
 // -------------- ไฟล์ main.js --------------------
-import { a, b } from “lib/mylib”;
+import { a, b } from "lib/mylib";
 console.log(a); // 1
 console.log(b); // 2
 ```
@@ -92,7 +92,7 @@ export {square, calculate, multiply};
 
 ```js
 // -------------- ไฟล์ main.js -----------------
-import {square, calculate} from “example”;
+import {square, calculate} from "example";
 console.log(square(2)); 	                         // 4
 console.log(calculate(2, 2)); 	             // 800
 square =1;		                         // error	
@@ -103,7 +103,7 @@ var calculate = 2 ;	                         // error
 
 ```js
 // -------------- ไฟล์ msg.js -----------------
-export var message = “Hi”;
+export var message = "Hi";
 export function setMessage(msg) {
     message = msg;
 }
@@ -111,31 +111,31 @@ export function setMessage(msg) {
 
 ```js
 // -------------- ไฟล์ main.js --------------
-import { message, setMessage } from “msg”;
-console.log(message);	                         // “Hi”
-setMessage(“Bye”);      	                         // บรรทัด a
-console.log(message);                              // “Bye” 
-message = “Good morning”;                     // บรรทัด b -- จะเกิด error
+import { message, setMessage } from "msg";
+console.log(message);	                         // "Hi"
+setMessage("Bye");      	                         // บรรทัด a
+console.log(message);                              // "Bye" 
+message = "Good morning";                     // บรรทัด b -- จะเกิด error
 ```
 
 ```js
 // ไฟล์ main.js 
-import * as lib from “example”;
+import * as lib from "example";
 console.log(lib.square(2)); 	 
 console.log(lib.calculate(2, 2));
 ```
 
 ```js
-import { square } from “example”;
-import { calculate} from “example”;
-import { multiply} from “example”;
+import { square } from "example";
+import { calculate} from "example";
+import { multiply} from "example";
 ```
 
 ## เปลี่ยนชื่อสิ่งที่ต้องการโหลด และเอ็กซ์พอร์ต
 
 ```js
 // ไฟล์ main.js 
-import { square, calculate as calc} from “example”;
+import { square, calculate as calc} from "example";
 console.log(square(2)); 
 console.log(calc(2, 2));
 ```
@@ -157,7 +157,7 @@ export { square as sqr, calculate as calc, multiply as mul};	// บรรทั�
 
 ```js
 // -------------- ไฟล์ main.js -----------------
-import {sqr, calc, mul} from “example”;
+import {sqr, calc, mul} from "example";
 console.log(sqr(2)); 	// 4
 console.log(calc(2, 2)); 	// 800
 console.log(mul(2,2)); 	// 4
@@ -187,10 +187,10 @@ export default param => param;
 
 ```js
 // ไฟล์ main.js 
-import func from “MyFunc”;
-impot _class from “MyClas”;
-impot value from “MyValue”;
-impot arrowFunc from “MyArrow”;
+import func from "MyFunc";
+impot _class from "MyClas";
+impot value from "MyValue";
+impot arrowFunc from "MyArrow";
 ```
 
 ```js
@@ -206,7 +206,7 @@ export default function(num1, num2) {    // ฟังก์ชั่นไร้
 
 ```js
 // -------------- ไฟล์ main.js -------------------
-import multiply,{value, square} from “mydefault”;
+import multiply,{value, square} from "mydefault";
 console.log(value);			 // 100
 console.log(square(2,2));		             // 4
 console.log(multiply(2,2));	             // 4
@@ -223,29 +223,29 @@ export { foo, bar };
 
 ```js
 // -------------- ไฟล์ example.js --------------
-export {foo, bar} from “mylib”;
+export {foo, bar} from "mylib";
 ```
 
 ```js
 // ไฟล์ example.js
-import {foo, bar} from “mylib”;
+import {foo, bar} from "mylib";
 export {foo, bar};
 ```
 
 ```js
 // ไฟล์ example.js
-export {foo as foo1, bar} from “mylib”;
+export {foo as foo1, bar} from "mylib";
 ```
 
 ```js
 // ไฟล์ example.js
-export * from “mylib”;
+export * from "mylib";
 ```
 
 ## Namespace re-exporting
 
 ```js
-export * as ns from ‘http’;
+export * as ns from 'http';
 ```
 
 * ลองพิจารณาตัวอย่างไฟล์ 3 อัน ดังต่อไปนี้
@@ -253,8 +253,8 @@ export * as ns from ‘http’;
 	
 ```js
 // -------------- ไฟล์ name.js ------------------
-const firstname = “Somchai”;
-const lastname = “Jaidee”;
+const firstname = "Somchai";
+const lastname = "Jaidee";
 export {firstname, lastname};                    // ส่งออก firstname กับ lastname
 ```
 
@@ -264,17 +264,17 @@ export {firstname, lastname};                    // ส่งออก firstname
 // ไฟล์ student.js
 const age = 25;
 export {age};                                          // ส่งออก age
-export * as person from “./name.js”        // ส่งออก person
+export * as person from "./name.js"        // ส่งออก person
 ```
 
 * 3) ไฟล์ myprogram.js เอาไว้รันทดสอบโปรแกรม โดยจะนำเข้ามอดูล student.js ดังตัวอย่าง
 
 ```js
 // ไฟล์ myprogram.js
-import {age, person} from “./student.js”
+import {age, person} from "./student.js"
 console.log(age);                                     // 25
-console.log(person.firstname);                  // “Somchai”         
-console.log(person.lastname);                  // “Jaidee”
+console.log(person.firstname);                  // "Somchai"         
+console.log(person.lastname);                  // "Jaidee"
 ```
 
 ## อ็อบเจ็กต์โกลบอล
@@ -288,9 +288,9 @@ Object.prototype.say = function(msg) {
 
 ```js
 // -------------- ไฟล์ main.js ------------------
-import “example”;
+import "example";
 let a = {};
-a.say(“I love JavaScript”);		// “I love JavaScript”
+a.say("I love JavaScript");		// "I love JavaScript"
 ```
 
 ## ลองใช้งานมอดูลกันจริงๆ
@@ -302,8 +302,8 @@ a.say(“I love JavaScript”);		// “I love JavaScript”
 <html>
 <head> </head>
 <body> 
-     <script type=“module” > 
-        import {msg} from ‘./mylib.js’;
+     <script type="module" > 
+        import {msg} from './mylib.js';
         alert(msg);   
    </script>
 </body>
@@ -312,78 +312,78 @@ a.say(“I love JavaScript”);		// “I love JavaScript”
 
 ```js
 // -------------- ไฟล์ mylib.js ------------------
-export const msg = “I love JavaScriptt”;
+export const msg = "I love JavaScriptt";
 ```
 
 ```js
 <script nomodule>
-  import {msg} from “./mylib.js” ;
+  import {msg} from "./mylib.js" ;
   alert(msg);
 </script>
 ```
 
 ```js
 // -------------- ไฟล์ mylib.mjs ------------------
-export const msg = “I love JavaScript”;
+export const msg = "I love JavaScript";
 ```
 
 ```js
 // -------------- ไฟล์ myapp.mjs ------------------
-import { msg } from ‘./mylib.mjs’;
+import { msg } from './mylib.mjs';
 console.log(msg);
 ```
 
 ```js
 // -------------- ไฟล์ mylib.js ------------------
-export const msg = “I love JavaScript”;
+export const msg = "I love JavaScript";
 ```
 
 ```js
 // -------------- ไฟล์ myapp.mjs ------------------
-import { msg } from ‘./mylib.js’;
+import { msg } from './mylib.js';
 console.log(msg);
 ```
 
 ```js
-{ “type”: “module” }
+{ "type": "module" }
 ```
 
 ```js
 {
-  “name”: “my-awesome-package”,
-  “version”: “1.0.0”
-  ,“type”: “module”
+  "name": "my-awesome-package",
+  "version": "1.0.0"
+  ,"type": "module"
 }
 ```
 
 ```js
-var http = require(“http”);
-var fs = require(“fs”),
-var url = require(“url”); 
+var http = require("http");
+var fs = require("fs"),
+var url = require("url"); 
 ```
 
 ```js
-import * as http from “http”;
-import * as fs from “fs”;
-import * as url from “url”;
+import * as http from "http";
+import * as fs from "fs";
+import * as url from "url";
 ```
 
 ## โอเปอเรเตอร์ import()
 
 ```js
-import(“http”)
+import("http")
 .then((httpModule) => {
   console.log(httpModule.maxHeaderSize);    //16384
 });
 ```
 
 ```js
-const httpModule = await import(“http”);
+const httpModule = await import("http");
 console.log(httpModule.maxHeaderSize);     //16384
 ```
 
 ## import.meta
 
 ```js
-console.log(import.meta.url);     // “file:///c:/javascript/mymodule.js”
+console.log(import.meta.url);     // "file:///c:/javascript/mymodule.js"
 ```
