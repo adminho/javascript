@@ -127,15 +127,15 @@ console.log(lib.calculate(2, 2));
 
 ```js
 import { square } from "example";
-import { calculate} from "example";
-import { multiply} from "example";
+import { calculate } from "example";
+import { multiply } from "example";
 ```
 
 ## เปลี่ยนชื่อสิ่งที่ต้องการโหลด และเอ็กซ์พอร์ต
 
 ```js
 // ไฟล์ main.js 
-import { square, calculate as calc} from "example";
+import { square, calculate as calc } from "example";
 console.log(square(2)); 
 console.log(calc(2, 2));
 ```
@@ -188,9 +188,9 @@ export default param => param;
 ```js
 // ไฟล์ main.js 
 import func from "MyFunc";
-impot _class from "MyClas";
-impot value from "MyValue";
-impot arrowFunc from "MyArrow";
+import _class from "MyClas";
+import value from "MyValue";
+import arrowFunc from "MyArrow";
 ```
 
 ```js
