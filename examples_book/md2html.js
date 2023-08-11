@@ -75,34 +75,35 @@ function writeToHTML(allLines, fileName){
 	</head>
 	<body>	
 	
-	<div class="left_menu">
+	<div class="left_menu">		
 		<!-- Sidebar -->
-		<div style="text-align:center"><h4>สารบัญ</h4></div>
-        <ul>
-          <li><a href="chapter03.html" class="text-reset">บทที่ 3</a></li>
-          <li><a href="chapter04.html" class="text-reset">บทที่ 4</a></li>
-          <li><a href="chapter05.html" class="text-reset">บทที่ 5</a></li>
-          <li><a href="chapter06.html" class="text-reset">บทที่ 6</a></li>
-		  <li><a href="chapter07.html" class="text-reset">บทที่ 7</a></li>
-          <li><a href="chapter08.html" class="text-reset">บทที่ 8</a></li>
-		  <li><a href="chapter09.html" class="text-reset">บทที่ 9</a></li>
-          <li><a href="chapter10.html" class="text-reset">บทที่ 10</a></li>
-          <li><a href="chapter11.html" class="text-reset">บทที่ 11</a></li>
-		  <li><a href="chapter12.html" class="text-reset">บทที่ 12</a></li>
-          <li><a href="chapter13.html" class="text-reset">บทที่ 13</a></li>
-          <li><a href="chapter14.html" class="text-reset">บทที่ 14</a></li>
-          <li><a href="chapter15.html" class="text-reset">บทที่ 15</a></li>
-		  <li><a href="chapter16.html" class="text-reset">บทที่ 16</a></li>
-		  <li><a href="chapter17.html" class="text-reset">บทที่ 17</a></li>
-          <li><a href="chapter18.html" class="text-reset">บทที่ 18</a></li>
-          <li><a href="chapter19.html" class="text-reset">บทที่ 19</a></li>
-          <li><a href="chapter20.html" class="text-reset">บทที่ 20</a></li>
-        </ul>
-		<div style="text-align:center">
-			<font color="blue">สั่งซื้อหนังสือ</font><br>
+		<div style="text-align:left; padding:20px; 3px;">			
 			<a href="https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ" target="_blank"><img src="https://cdn-local.mebmarket.com/meb/server1/156854/Thumbnail/book_detail_large.gif?9" width="80" height="100"><a/>
-			</div>
-		<br>
+		</div>
+		
+        <ul>
+          <li class="list-group-item"><a href="chapter03.html" class="text-reset">บทที่ 3</a></li>
+          <li class="list-group-item"><a href="chapter04.html" class="text-reset">บทที่ 4</a></li>
+          <li class="list-group-item"><a href="chapter05.html" class="text-reset">บทที่ 5</a></li>
+          <li class="list-group-item"><a href="chapter06.html" class="text-reset">บทที่ 6</a></li>
+		  <li class="list-group-item"><a href="chapter07.html" class="text-reset">บทที่ 7</a></li>
+          <li class="list-group-item"><a href="chapter08.html" class="text-reset">บทที่ 8</a></li>
+		  <li class="list-group-item"><a href="chapter09.html" class="text-reset">บทที่ 9</a></li>
+          <li class="list-group-item"><a href="chapter10.html" class="text-reset">บทที่ 10</a></li>
+          <li class="list-group-item"><a href="chapter11.html" class="text-reset">บทที่ 11</a></li>
+		  <li class="list-group-item"><a href="chapter12.html" class="text-reset">บทที่ 12</a></li>
+          <li class="list-group-item"><a href="chapter13.html" class="text-reset">บทที่ 13</a></li>
+          <li class="list-group-item"><a href="chapter14.html" class="text-reset">บทที่ 14</a></li>
+          <li class="list-group-item"><a href="chapter15.html" class="text-reset">บทที่ 15</a></li>
+		  <li class="list-group-item"><a href="chapter16.html" class="text-reset">บทที่ 16</a></li>
+		  <li class="list-group-item"><a href="chapter17.html" class="text-reset">บทที่ 17</a></li>
+          <li class="list-group-item"><a href="chapter18.html" class="text-reset">บทที่ 18</a></li>
+          <li class="list-group-item"><a href="chapter19.html" class="text-reset">บทที่ 19</a></li>
+          <li class="list-group-item"><a href="chapter20.html" class="text-reset">บทที่ 20</a></li>
+		  <li class="list-group-item"><a href="https://github.com/adminho/javascript/tree/master/examples_book/Appendix_B" class="text-reset" target="_blank">ภาคผนวก ข</a></li>
+		  <li class="list-group-item"><a href="https://github.com/adminho/javascript/blob/master/examples_book/json.php" class="text-reset" target="_blank">ไฟล์ json.php</a></li>		  
+        </ul>
+			
 	</div>
 		
 	<div class="main"> ${allLines} </div>
@@ -219,55 +220,65 @@ async function genHTML(fileName){
 }
 
 
-let files = [ "Chapter03", "Chapter04","Chapter05", "Chapter06",  
-"Chapter07","Chapter08","Chapter09", "Chapter10", "Chapter11", "Chapter12",  
-"Chapter13","Chapter14","Chapter15", "Chapter16", "Chapter17", 
-"Chapter18","Chapter19","Chapter20"];
+let files = [ "chapter03", "chapter04","chapter05", "chapter06",  
+"chapter07","chapter08","chapter09", "chapter10", "chapter11", "chapter12",  
+"chapter13","chapter14","chapter15", "chapter16", "chapter17", 
+"chapter18","chapter19","chapter20"];
 
 
 
-//genHTML("Chapter03");
-//genHTML("Chapter04");
-//genHTML("Chapter05");
-//genHTML("Chapter06");
-genHTML("Chapter07");
-//genHTML("Chapter08");
-//genHTML("Chapter09");
-//genHTML("Chapter10");
-//genHTML("Chapter11");
-//genHTML("Chapter12");
-//genHTML("Chapter13");
-//genHTML("Chapter14");
-//genHTML("Chapter15");
-//genHTML("Chapter16");
-//genHTML("Chapter17");
-//genHTML("Chapter18");
-//genHTML("Chapter19");
-//genHTML("Chapter20");
+//genHTML("chapter03");
+//genHTML("chapter04");
+//genHTML("chapter05");
+//genHTML("chapter06");
+//genHTML("chapter07");
+//genHTML("chapter08");
+//genHTML("chapter09");
+//genHTML("chapter10");
+//genHTML("chapter11");
+//genHTML("chapter12");
+//genHTML("chapter13");
+//genHTML("chapter14");
+//genHTML("chapter15");
+//genHTML("chapter16");
+//genHTML("chapter17");
+//genHTML("chapter18");
+//genHTML("chapter19");
+//genHTML("chapter20");
+
+genHTML("chapter03")
+.then(() => genHTML("chapter04"))
+.then(() => genHTML("chapter05"))
+.then(() => genHTML("chapter06"))
+.then(() => genHTML("chapter07"))
+.then(() => genHTML("chapter08"))
+.then(() => genHTML("chapter09"))
+.then(() => genHTML("chapter10"))
+.then(() => genHTML("chapter11"))
+.then(() => genHTML("chapter12"))
+.then(() => genHTML("chapter13"))
+.then(() => genHTML("chapter14"))
+.then(() => genHTML("chapter15"))
+.then(() => genHTML("chapter16"))
+.then(() => genHTML("chapter17"))
+.then(() => genHTML("chapter18"))
+.then(() => genHTML("chapter19"))
+.then(() => genHTML("chapter19"))
 
 
 async function countline(fileName){
 	let count = 0;
-	return new Promise( resovle => {
-	eachLine(`${fileName}.md`, function(line, last) {
+	return eachLine(`${fileName}.md`, function(line, last) {
 		line = line.trim();
     
 		if(!line.startsWith("```") && !line.startsWith("#") && line != '' && !line.startsWith("*")){
 			count++	  
 		} 
   
-		if(last) {	  
-     
-    //console.log('\n\n-------------\n');
-    //const used = process.memoryUsage().heapUsed / 1024 / 1024;
-    //console.log(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
-	//console.log('\n\n-------------\n.');
-			console.log(`The ${fileName}.md has line of codes are ${count}`);
-			resovle(count);
+		if(last) {	       
+			console.log(`The ${fileName}.md has line of codes are ${count}`);			
 		}
-	})
 	});
-
 }
 
 let numLines= [];

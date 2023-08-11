@@ -36,7 +36,7 @@ console.log(myRegex.test("-987"));	 // true
 
 ```js
 var result = /(foo).(bar)/.exec("0123foo_bar");
-console.log(result.index);	// 4
+console.log(result.index);	                         // 4
 console.log(result[0]);	                         // "foo_bar"
 console.log(result[1]);	                         // "foo"
 console.log(result[2]);	                         // "bar"

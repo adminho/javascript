@@ -12,7 +12,7 @@
 
 .main {
 	margin-bottom: 100px;	
-	margin-left: 135px;
+	margin-left: 150px;
 }
 
 /*input[type=button], input[type=submit], input[type=reset] {*/
@@ -51,11 +51,11 @@ textarea {
 }
 
 .left_menu {
-  background-color: #ECFFDC;
+  background-color: #ECFFEF;
   position: fixed;
   left: 0;
-  top:30;
-  width: 100px;
+  top:10;
+  width: 140px;
   display: block;
 }
 
@@ -68,7 +68,7 @@ textarea {
    background-color: #606060;
    color: white;
    text-align: left;
-   margin-left: 135px;
+   margin-left: 150px;
    padding-left: 5px;
    border: 2px solid #023020;
 }
