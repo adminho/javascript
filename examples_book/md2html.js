@@ -14,9 +14,11 @@ function writeToHTML(allLines, fileName){
 	let html = `<html lang="th">
 	<head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>${fileName}</title>
 	<link rel="stylesheet" href="md.css">  
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 	<script>		
 	
 		function toString(data) {
@@ -28,8 +30,11 @@ function writeToHTML(allLines, fileName){
 					let str = "[";
 					for(const value of data) {
 						str += ""+ toString(value) + ", ";
-					}				
-					return str.slice(0, -2) + ']';		
+					}
+					if("index" in data) str = str + "index: " + toString(data.index) + ", ";;
+					if("input" in data) str = str + "input: " + toString(data.input) + ", ";;
+					if("groups" in data) str = str + "groups: " + toString(data.groups) + ", ";;					
+					return (str.length >1) ? str.slice(0, -2) + ']': '[]';		
 				} else {
 					let str = "{";
 					for(const [key, value] of Object.entries(data)){
@@ -93,14 +98,17 @@ function writeToHTML(allLines, fileName){
           <li><a href="chapter19.html" class="text-reset">บทที่ 19</a></li>
           <li><a href="chapter20.html" class="text-reset">บทที่ 20</a></li>
         </ul>
-		<div style="text-align:center"><a href=""><img src="https://cdn-local.mebmarket.com/meb/server1/156854/Thumbnail/book_detail_large.gif?9" width="80" height="100"><a/></div>
+		<div style="text-align:center">
+			<font color="blue">สั่งซื้อหนังสือ</font><br>
+			<a href="https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ" target="_blank"><img src="https://cdn-local.mebmarket.com/meb/server1/156854/Thumbnail/book_detail_large.gif?9" width="80" height="100"><a/>
+			</div>
 		<br>
 	</div>
 		
 	<div class="main"> ${allLines} </div>
 	<div id="displayArea" class="footer" style="visibility:hidden;">
 	   <div id="display"></div>
-	   <input class="clear_btn" type="submit" value="Clear" onclick="clearDisplay(true)" >
+	   <input class="clear_btn" type="submit" value="clear" onclick="clearDisplay(true)" >
 	</div>
 	
 	<script>
