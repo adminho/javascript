@@ -207,17 +207,6 @@ var split = "1,2,3".split(/,/);
 console.log(split);				          // ["1", "2", "3"]
 ```
 
-```js
-console.log("012Hellooooo".search(/Hello+/));	           // 3
-var result = "Hellooooo Hello".match(/Hello+/g);	
-console.log(result);					// ["Hellooooo", "Hello"]
-console.log(result.length);				// 2
-var str = "Hellooooo".replace(/Hello+/,"Bye"); 
-console.log(str);					          // "Bye"
-var split = "1,2,3".split(/,/);	
-console.log(split);				          // ["1", "2", "3"]
-```
-
 ### ค่าแฟล็ก
 
 ```js
