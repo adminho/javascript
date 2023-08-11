@@ -263,7 +263,7 @@ genHTML("chapter03")
 .then(() => genHTML("chapter17"))
 .then(() => genHTML("chapter18"))
 .then(() => genHTML("chapter19"))
-.then(() => genHTML("chapter19"))
+.then(() => genHTML("chapter20"))
 
 
 async function countline(fileName){
