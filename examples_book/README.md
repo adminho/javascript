@@ -29,4 +29,4 @@ https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVz
 
 * [พื้นฐาน React](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjI0ODU5NiI7fQ)
 
-หมายเหตุ * [สามารถทดลองรันโค้ดตัวอย่างในหนังสือได้ (ควรเปิดบนคอม)](https://www.patanasongsivilai.com/example/javascript_book/)
+###หมายเหตุ [สามารถทดลองรันโค้ดตัวอย่างในหนังสือได้ (ควรเปิดบนคอม)](https://www.patanasongsivilai.com/example/javascript_book/)
