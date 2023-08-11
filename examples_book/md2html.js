@@ -148,8 +148,8 @@ function writeToHTML(allLines, fileName){
 					eval(codeTxt);	
 					btn.value = "กดรันอีกครั้ง";
 				} catch (e){
-					console.log("++++Error++++");
-					console.log( e.stack);					
+					console.log("<font color='yellow'>++++Error++++</font>");
+					console.log( "<font color='yellow'>" + e.stack + "</font>");					
 				}
 			}
 			textArea.classList.add("run_already");			
