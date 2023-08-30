@@ -4,6 +4,8 @@
 
 [สามารถสั่งซ์้อได้ที่เว็บ MEB (ขายเป็นอีบุ๊กเท่านั้น)](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ)
 
+* บทที่ 1 แนะนำจาวาสคริปต์
+* บทที่ 2 ทบทวน HTML5 โดยย่อ
 * [บทที่ 3 รันจาวาสคริปต์อย่างง่าย](Chapter03.md)
 * [บทที่ 4 ทบทวนมาตรฐานเก่า](Chapter04.md)
 * [บทที่ 5 ทบทวนประโยคคำสั่งเบื้องต้น](Chapter05.md)
