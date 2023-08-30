@@ -32,5 +32,5 @@ https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVz
 ### หมายเหตุ [สามารถทดลองรันโค้ดตัวอย่างในหนังสือได้ (ควรเปิดบนคอม)](https://www.patanasongsivilai.com/example/javascript_book/)
 
 
-### หมายเหตุ เล่มนี้ตามรูปข้างล่างเนื้อหาเก่าแล้ว (ปัจจุบันไม่มีตีพิมพ์เพิ่ม)
+#### ปล. เล่มนี้ตามรูปข้างล่างเนื้อหาเก่าแล้ว (ปัจจุบันไม่มีตีพิมพ์เพิ่ม)
 ![cover_big.jpg](https://github.com/adminho/javascript/blob/master/images/cover_big.jpg)
