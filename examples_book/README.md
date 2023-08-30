@@ -30,3 +30,6 @@ https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVz
 * [พื้นฐาน React](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjI0ODU5NiI7fQ)
 
 ### หมายเหตุ [สามารถทดลองรันโค้ดตัวอย่างในหนังสือได้ (ควรเปิดบนคอม)](https://www.patanasongsivilai.com/example/javascript_book/)
+
+![cover_png.PNG](https://github.com/adminho/javascript/blob/master/images/cover_big.png)
+### หมายเหตุ เล่มนี้เนื้อหาเก่าแล้ว (ปัจจุบันไม่มีตีพิมพ์เพิ่ม)
