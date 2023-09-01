@@ -15,6 +15,11 @@
 	margin-left: 160px;
 }
 
+.sale {
+	margin-top: 10px;	
+	margin-left: 160px;
+}
+
 /*input[type=button], input[type=submit], input[type=reset] {*/
 .run-btn {
   background-color: #04AA6D;

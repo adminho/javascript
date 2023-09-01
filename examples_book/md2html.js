@@ -110,6 +110,9 @@ function writeToHTML(headline, allLines, fileName){
 		
 	<div class="main">${allLines}</div>
 	
+	<div class="sale">	<iframe class="iframe_seller_link" width="430" height="220" src="https://www.mebmarket.com/embed.php?seller_link=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ" frameborder="0"></iframe>
+	</div>
+	
 	<script>
 		function clearDisplay(flag) {
 			let display = document.querySelector(displayAreaId);	
