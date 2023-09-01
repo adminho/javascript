@@ -10,7 +10,7 @@ let isCode = false;
 let lineCodes = "";
 let count = 0;
 
-function writeToHTML(allLines, fileName){
+function writeToHTML(headline, allLines, fileName){
 	let html = `<html lang="th">
 	<head>
 	<meta charset="UTF-8">
@@ -75,6 +75,8 @@ function writeToHTML(allLines, fileName){
 	</head>
 	<body>	
 	
+	<div class="header"><h2>${headline}</h2></div>
+	
 	<div class="left_menu">		
 		<!-- Sidebar -->
 		<div style="text-align:left; padding:20px; 3px;">			
@@ -106,7 +108,7 @@ function writeToHTML(allLines, fileName){
 			
 	</div>
 		
-	<div class="main"> ${allLines} </div>
+	<div class="main">${allLines}</div>
 	
 	<script>
 		function clearDisplay(flag) {
@@ -160,6 +162,7 @@ function writeToHTML(allLines, fileName){
 
 
 async function genHTML(fileName){
+  let headline = "";
   let allLines = "";
   let btnValue = "";
   
@@ -176,8 +179,7 @@ async function genHTML(fileName){
 	  }
 	  
   } else if(line.startsWith("```")){
-	  isCode = false	  
-	  //allLines += `<div id="code${count}" class="norun">${lineCodes}</div><input type="submit" value="Run" onclick="evalCode('#code${count}')">`;	  
+	  isCode = false	  	  
 	  const rows = lineCodes.split('\n').length-1;
 	  
 	  allLines += `<div>						
@@ -188,8 +190,12 @@ async function genHTML(fileName){
 	  	  
 	  lineCodes = "";	  
   } else if(line.startsWith("#")) { 
-	  line = line.replace(/#/g, "");	  
-	  allLines += `<h3>${line}</h4>`;
+	  line = line.replace(/#/g, "");	
+	  if(line.includes("โค้ดบทที่")) {
+		  headline = line;
+	  } else {
+		allLines += `<h4>${line}</h4>`;
+	  }
 	  
   } else if(line.startsWith("*") && !line.startsWith("*/")){
 	  line = line.replace(/\*/g, "");
@@ -202,7 +208,7 @@ async function genHTML(fileName){
   }
   
   if(last) {	  
-	writeToHTML(allLines, fileName);
+	writeToHTML(headline, allLines, fileName);
   }
   
 })
