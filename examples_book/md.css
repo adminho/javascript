@@ -4,19 +4,19 @@
   border: 1px solid #4CAF50;
 }
 
-.run_already {
+.run-already {
   background-color: #DAF7A6 ;
   margin-top: 20px;
   border: 1px solid #4CAF50;
 }
 
 .main {
-	margin-top: 50px;	
-	margin-left: 150px;
+	margin-top: 60px;	
+	margin-left: 160px;
 }
 
 /*input[type=button], input[type=submit], input[type=reset] {*/
-.run_btn {
+.run-btn {
   background-color: #04AA6D;
   border: none;
   color: white;
@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 
-.clear_btn {
+/*.clear_btn {
   background-color: #04AA6D;
   border: none;
   color: white;
@@ -34,7 +34,7 @@
   text-decoration: none;
   margin: 10px 2px 5px 0px;
   cursor: pointer;
-}
+}*/
 
 .showcode {    
 	margin-top:3px;    
@@ -50,16 +50,21 @@ textarea {
   margin:3px;	
 }
 
-.left_menu {
+.left-menu {
   background-color: #ECFFEF;
   position: fixed;
   left: 0;
-  top:3;
-  width: 140px;
+  top:15;
+  width: 135px;
   display: block;
 }
 
-.display_result {
+.picture-left-menu {
+  text-align:left; 
+  margin:10px 0px 5px 20px;
+}
+
+.display-result {
    width: 100%; 
    /*background-color: #7B68EE;*/
    background-color: #606060;
@@ -71,16 +76,16 @@ textarea {
 }
 
 .header {
-  background-color: #ECFFEF;
+  background-color: #3CB371;
   position: fixed;
   left: 0;
   top:0;
   width: 100%;
-  margin-left: 150px;  
+  margin-left: 160px;  
 }
 
 @media all and (max-width: 768px){
-.left_menu {
+.left-menu {
     display: none;
 }
 .main {

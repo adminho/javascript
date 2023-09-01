@@ -77,9 +77,9 @@ function writeToHTML(headline, allLines, fileName){
 	
 	<div class="header"><h2>${headline}</h2></div>
 	
-	<div class="left_menu">		
+	<div class="left-menu">		
 		<!-- Sidebar -->
-		<div style="text-align:left; padding:20px; 3px;">			
+		<div class="picture-left-menu">			
 			<a href="https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ" target="_blank"><img src="https://cdn-local.mebmarket.com/meb/server1/156854/Thumbnail/book_detail_large.gif?9" width="80" height="100"><a/>
 		</div>
 		
@@ -148,7 +148,7 @@ function writeToHTML(headline, allLines, fileName){
 					console.log( "<font color='yellow'>" + e.stack + "</font>");					
 				}
 			}
-			textArea.classList.add("run_already");			
+			textArea.classList.add("run-already");			
 		}
 	</script>
 	</body></html>`;
@@ -184,8 +184,8 @@ async function genHTML(fileName){
 	  
 	  allLines += `<div>						
 						<textarea class="showcode" id="code${count}" class="norun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>
-						<div id="display${count}" class="display_result"></div>
-						<input class="run_btn" type="submit" value="${btnValue}" onclick="evalCode(this, ${count})">						
+						<div id="display${count}" class="display-result "></div>
+						<input class="run-btn" type="submit" value="${btnValue}" onclick="evalCode(this, ${count})">						
 				  </div>`;	  
 	  	  
 	  lineCodes = "";	  
