@@ -238,7 +238,6 @@ class Chat {
 };
 let chat = new Chat("Hello, world!");
 chat.say();
-
 ```
 
 ### ตัวอย่างการรันจาวาสคริปต์ให้กลายเป็นเซิร์ฟเวอร์
@@ -261,7 +260,6 @@ console.log("http://localhost:8000/");
 for await (const req of s) {
   req.respond({ body: "Hello, world!" });
 }
-
 ```
 
 ## เครื่องมือในการดีบั๊ก

@@ -20,7 +20,7 @@ function writeToHTML(allLines, fileName){
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 	<script>		
-	
+	    let displayAreaId = "";
 		function toString(data) {
 			if(data == null || data == undefined ) {
 				return ""+ data;			
@@ -61,7 +61,7 @@ function writeToHTML(allLines, fileName){
 		}
 			
 		console.log = function(...data){
-			let display = document.querySelector("#display");			
+			let display = document.querySelector(displayAreaId);			
 			for( d of data){
 				if( typeof d !== 'string'){
 					d = toString( d );
@@ -107,32 +107,26 @@ function writeToHTML(allLines, fileName){
 	</div>
 		
 	<div class="main"> ${allLines} </div>
-	<div id="displayArea" class="footer" style="visibility:hidden;">
-	   <div id="display"></div>
-	   <input class="clear_btn" type="submit" value="clear" onclick="clearDisplay(true)" >
-	</div>
 	
 	<script>
 		function clearDisplay(flag) {
-			let display = document.querySelector("#display");	
+			let display = document.querySelector(displayAreaId);	
 			display.innerHTML = "";		
-			let clearBtn = document.querySelector("#displayArea");			
+			/*let clearBtn = document.querySelector("#displayArea");			
 			if(flag) {
 				clearBtn.style.visibility  = "hidden";
 			} else {
 				clearBtn.style.visibility = "";
-			}
+			}*/
 		}
-		function evalCode(btn, idTextArea) {
-			clearDisplay(false);
-			
-			let textArea = document.querySelector(idTextArea);
+		function evalCode(btn, count) {
+			displayAreaId = "#display"+count;
+			clearDisplay(false);						
+			let textArea = document.querySelector("#code"+count);
 			let codeTxt = textArea.value;
 			codeTxt = escapeHtml(codeTxt);			
 			
 			if( codeTxt.includes("<html>")>0 ) {
-				//codeTxt = codeTxt.replaceAll(/\\n/g,"");
-				
 				const link = document.createElement("a");
 				const content = codeTxt;
 				const file = new Blob([content], { type: 'text/plain' });
@@ -144,7 +138,7 @@ function writeToHTML(allLines, fileName){
 			} else {
 				
 				try {
-					console.log("++++ผลการรัน++++");					
+					console.log("ผลการรัน:");		                    
 					eval(codeTxt);	
 					btn.value = "กดรันอีกครั้ง";
 				} catch (e){
@@ -184,11 +178,12 @@ async function genHTML(fileName){
   } else if(line.startsWith("```")){
 	  isCode = false	  
 	  //allLines += `<div id="code${count}" class="norun">${lineCodes}</div><input type="submit" value="Run" onclick="evalCode('#code${count}')">`;	  
-	  const rows = lineCodes.split('\n').length;
+	  const rows = lineCodes.split('\n').length-1;
 	  
 	  allLines += `<div>						
-						<textarea class="showcode" id="code${count}" class="norun" rows=${rows}>${lineCodes}</textarea>
-						<input class="run_btn" type="submit" value="${btnValue}" onclick="evalCode(this, '#code${count}')">						
+						<textarea class="showcode" id="code${count}" class="norun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>
+						<div id="display${count}" class="display_result"></div>
+						<input class="run_btn" type="submit" value="${btnValue}" onclick="evalCode(this, ${count})">						
 				  </div>`;	  
 	  	  
 	  lineCodes = "";	  
@@ -208,11 +203,6 @@ async function genHTML(fileName){
   
   if(last) {	  
 	writeToHTML(allLines, fileName);
-  
-    //console.log('\n\n-------------\nLast line printed.');
-    //const used = process.memoryUsage().heapUsed / 1024 / 1024;
-    //console.log(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
-
   }
   
 })
