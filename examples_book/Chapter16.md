@@ -96,9 +96,7 @@ for (let i of str) {
 /* แสดงผลลัพธ์
 "a"
 "b" 
-"𠮷"
-*
-/
+"𠮷" */
 ```
 
 ### เมธอด values(), keys และ entries()
