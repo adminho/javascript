@@ -41,7 +41,7 @@
 		}
 		
 		.time {
-			width:10%; text-align:center; font-size:2.4em; color: darkred; 
+			width:15%; text-align:center; font-size:2.4em; color: darkred; padding:0px;
 			/*border: 1px dashed green;*/
 		}
 		
@@ -61,7 +61,7 @@
 		}
 		
 		.rotate {
-			animation: animName 2s linear infinite;
+			animation: animName 2s linear infinite;	
 		}
 
 		@keyframes animName {
@@ -71,6 +71,10 @@
 			100%{
 				transform: rotate(360deg);
 			}
+		}
+
+		@media all and (max-width: 768px){	
+
 		}
 
 		</style>
@@ -83,7 +87,7 @@
    <div class="box">
 		<table width=100%>
 		<td class="icon-time" >
-			<img width="10px" id="animateId" src="https://www.svgrepo.com/show/137846/sand-clock.svg"/>
+			<img width=10px id="animateId" src="https://www.svgrepo.com/show/137846/sand-clock.svg"/>
 		</td>
 		<td class="time" id="outputId"></td>
 		<td class="time-ms" id="msDisplayId"></td>	
@@ -167,7 +171,9 @@
 		 timeElapsed = beginTime + timeElapsed;		
 		 offsetTime = timeElapsed;  // remeber this value for continue time		 
 		 
-		 msDisplay.innerHTML = `.${ Math.round(timeElapsed)%1000 }`;
+		 mseconds = Math.round(timeElapsed)%1000;
+		 mseconds = mseconds.toString().padStart(3, "0");
+		 msDisplay.innerHTML = `.${ mseconds }`;
       }, 50);
 	  
 		animateDiv.className = 'rotate';
