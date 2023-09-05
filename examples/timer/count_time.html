@@ -1,0 +1,212 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+        <meta name="viewport"
+              content="width=device-width,
+                       initial-scale=1.0" />
+		<style>
+		
+		.main {		
+			width: 70%; border: 1px solid green; 
+			padding: 10px; 
+			margin-top:10%;
+			margin-left:13%;			
+			text-align: center;			
+		}
+		
+		.box {
+			display: flex;
+			flex-direction: row;
+			align: center;
+			padding-top:10px;			
+            /*border: 1px dashed green;*/            
+            width: 100%;
+		}
+		
+		.head-line {
+			font-size: 1.5em;
+			color: green;
+		}
+		
+		.icon-time {
+			width:100%; text-align:right; padding-top:6px; padding-right:10px;
+		}
+		
+		.time {
+			width:30%; text-align:center; font-size:1.2em; color: darkred;; 
+		}
+		
+		.time-ms {
+			width:100%; text-align:left; padding-top:9.5px; font-size:0.5em; color:blue;
+		}
+		
+		.blink {
+			animation: blinker 1s step-start infinite;
+		}
+
+		@keyframes blinker {
+			50% {
+				opacity: 0;
+			}
+		}
+		
+		.rotate {
+			animation: animName 2s linear infinite;
+		}
+
+		@keyframes animName {
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+
+		</style>
+	</head>
+	<body>
+   <div class="main">
+   
+   <div><strong class="head-line"> พักเบรก 15 นาทีนะครับ </strong><div>
+   
+   <div class="box">
+		<div class="icon-time" >
+			<img width="10px" id="animateId" src="https://www.svgrepo.com/show/137846/sand-clock.svg"/>
+		</div>
+		<div class="time" id="outputId"></div>
+		<div class="time-ms" id="msDisplayId"></div>	
+   </div>
+   <br>
+   <div>   
+		<button id="startId" onclick="countTime(true)">Start</button>
+		<button id="resetId" onclick="resetTime()" style="display:none">Reset</button>
+		<button id="pauseId" onclick="pauseTime()" style="display:none">Pause</button>
+		<button id="continueId"onclick="continueTime()" style="display:none">Continue</button>
+   <div>
+   </div>
+   
+   <script>
+	 const TIME_DEFAULT = "0:00:00";
+     let myTimer = undefined;
+	 let myMsTime = undefined;
+	 
+	 let offsetTime = 0;
+	 let animateDiv = document.getElementById('animateId');
+	 let output = document.getElementById('outputId');
+	 let msDisplay = document.getElementById('msDisplayId');
+	 let startBtn = document.getElementById('startId');
+	 let resetBtn = document.getElementById('resetId');
+	 let pauseBtn = document.getElementById('pauseId');	 
+	 let continueBtn = document.getElementById('continueId');
+	 
+     function countTime(isReset){
+	  if(myTimer!=undefined){
+		clearInterval(myTimer);	
+	  }
+	  
+	  startBtn.style.display = 'none';
+	  resetBtn.style.display = '';
+	  
+	  pauseBtn.style.display = '';
+	  continueBtn.style.display = 'none';
+	  	  
+	  let startTime = performance.now(); // start new time 
+	  let beginTime = 0;
+	  
+	  if(isReset) {        
+		output.innerHTML = TIME_DEFAULT;
+		beginTime = 0;
+	  } else {
+		beginTime = offsetTime;
+	  }
+	  
+      myTimer = setInterval(function () {
+         let endTime = performance.now();
+         let timeElapsed = endTime - startTime;		 
+		 
+		 timeElapsed = beginTime + timeElapsed;		 
+		 offsetTime = timeElapsed;  // remeber this value for continue time
+		 		 
+         //output.innerHTML = 'Time elapsed: ' + timeElapsed + ' milliseconds';
+		 let seconds = Math.round(timeElapsed / 1000);
+		 if( seconds > 60) {
+			seconds = seconds % 60;	
+		 }
+		 seconds = seconds.toString().padStart(2, "0");
+		 
+		 
+		 let minutes = Math.floor(timeElapsed / (1000 * 60));
+		 if( minutes > 60) {
+			minutes = minutes % 60;			
+		 }
+		 minutes = minutes.toString().padStart(2, "0");
+		 
+		 let hours = Math.floor(timeElapsed / (1000 * 60 * 60));
+		 
+		 output.innerHTML = `${ hours}:${ minutes }:${ seconds }`;
+      }, 1000);	  
+	  
+	  
+	  myMsTime = setInterval(function () {
+         let endTime = performance.now();
+         let timeElapsed = endTime - startTime;		 
+		 
+		 timeElapsed = beginTime + timeElapsed;		
+		 offsetTime = timeElapsed;  // remeber this value for continue time		 
+		 
+		 msDisplay.innerHTML = `.${ Math.round(timeElapsed)%1000 }`;
+      }, 50);
+	  
+		animateDiv.className = 'rotate';
+	 }
+	 
+	 function resetTime(){
+		clearInterval(myTimer);	
+		offsetTime = 0;
+		output.innerHTML = TIME_DEFAULT;
+		
+		clearInterval(myMsTime);
+		msDisplay.innerHTML = "";
+		
+		startBtn.style.display = '';
+		resetBtn.style.display = 'none';
+		
+		pauseBtn.style.display = 'none';
+		continueBtn.style.display = 'none';		
+
+		animateDiv.className = '';		
+	 }
+	 
+	 function pauseTime(){
+		clearInterval(myTimer);	
+		clearInterval(myMsTime);
+		
+		startBtn.style.display = 'none';
+		resetBtn.style.display = '';
+		
+		pauseBtn.style.display = 'none';
+		continueBtn.style.display = '';	
+
+		animateDiv.className = '';
+	 }
+	 
+	 function continueTime(){
+		countTime(false)
+		
+		startBtn.style.display = 'none';
+		resetBtn.style.display = '';
+		
+		pauseBtn.style.display = '';
+		continueBtn.style.display = 'none';
+		
+		animateDiv.className = 'rotate';
+	 }
+	 
+	 window.onload = function(){ 
+       output.innerHTML = TIME_DEFAULT;
+    }
+
+   </script>
+</body>
+</html>

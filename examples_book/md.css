@@ -13,6 +13,7 @@
 .main {
 	margin-top: 60px;	
 	margin-left: 160px;
+	margin-bottom: 50px;
 }
 
 .sale {
@@ -87,19 +88,34 @@ textarea {
   top:0;
   width: 100%;
   margin-left: 160px;  
+  z-index: 100;
+}
+
+.footer {
+  background-color: #3CB371;
+  position: fixed;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  color: white;
+  text-align:center;
+  display:none;
 }
 
 @media all and (max-width: 768px){
-.left-menu {
-    display: none;
-}
-.main {
-	margin-left: 10px;
-}
-.header {
-	margin-left: 10px;
-}
-.sale {
-	margin-left: 10px;
-}
+	.left-menu {
+		display: none;
+	}	
+	.main {
+		margin-left: 10px;
+	}
+	.header {
+		margin-left: 10px;
+	}
+	.sale {
+		margin-left: 10px;
+	}
+	.footer {
+		display: block;
+	}
 }
