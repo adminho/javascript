@@ -15,29 +15,33 @@
 		}
 		
 		.box {
-			display: flex;
+		padding-top:10px;
+			/*display: flex;
 			flex-direction: row;
-			align: center;
-			padding-top:10px;			
-            /*border: 1px dashed green;*/            
-            width: 100%;
+			align: center;				
+			width: 100%;*/		
+            /*border: 1px dashed green;*/           
+            
 		}
 		
 		.head-line {
-			font-size: 1.5em;
+			font-size: 3em;
 			color: green;
 		}
 		
 		.icon-time {
-			width:100%; text-align:right; padding-top:6px; padding-right:10px;
+			width:40%;text-align:right; padding-top:6px; padding-right:10px;
+			/*border: 1px dashed green;*/
 		}
 		
 		.time {
-			width:30%; text-align:center; font-size:1.2em; color: darkred;; 
+			width:10%; text-align:center; font-size:2.4em; color: darkred; 
+			/*border: 1px dashed green;*/
 		}
 		
 		.time-ms {
-			width:100%; text-align:left; padding-top:9.5px; font-size:0.5em; color:blue;
+			width:40%;text-align:left; padding-top:15px; padding-left:0px; font-size:1.0em; color:blue;
+			/*border: 1px dashed green;*/
 		}
 		
 		.blink {
@@ -71,11 +75,13 @@
    <div><strong class="head-line"> พักเบรก 15 นาทีนะครับ </strong><div>
    
    <div class="box">
-		<div class="icon-time" >
+		<table width=100%>
+		<td class="icon-time" >
 			<img width="10px" id="animateId" src="https://www.svgrepo.com/show/137846/sand-clock.svg"/>
-		</div>
-		<div class="time" id="outputId"></div>
-		<div class="time-ms" id="msDisplayId"></div>	
+		</td>
+		<td class="time" id="outputId"></td>
+		<td class="time-ms" id="msDisplayId"></td>	
+		</table>
    </div>
    <br>
    <div>   
