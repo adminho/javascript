@@ -92,6 +92,23 @@ var a = 1 + 2 -3 + 10;
 console.log(a);   // 10
 ```
 
+```js
+function todo() {
+     return { 
+	"foo" : 1
+     };	
+}
+```
+
+```js
+function todo() {
+     return 
+     { 
+	"foo" : 1
+     };	
+}
+```
+
 ## เส้นทางการทำงานโปรแกรม
 
 ```js
@@ -171,9 +188,9 @@ console.log(x); 	// undefined
 
 ```js
 var undefined = 55555; 	    
-console.log(undefined);   // บนเว็บเบราเซอร์จะแสดง 55555 แต่บน Node.js จะแสดง undefined	
+console.log(undefined);   // บนเว็บเบราเซอร์จะแสดงเป็น undefined แต่บน Node.js จะแสดงเป็น 55555
 var x;
-console.log(x);		// undefined	
+console.log(x);		// undefined		
 ```
 
 ### การประกาศตัวแปรโดยไม่มี var

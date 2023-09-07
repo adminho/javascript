@@ -12,13 +12,12 @@
 
 .main {
 	margin-top: 60px;	
-	margin-left: 160px;
-	margin-bottom: 50px;
+	margin-left: 160px;	
 }
 
 .sale {
-	margin-top: 10px;	
-	margin-left: 160px;
+	margin-top: 0px;	
+	margin-left: 160px;	
 }
 
 /*input[type=button], input[type=submit], input[type=reset] {*/
@@ -88,7 +87,7 @@ textarea {
   top:0;
   width: 100%;
   margin-left: 160px;  
-  z-index: 100;
+  z-index: 1000;
 }
 
 .footer {
@@ -100,6 +99,7 @@ textarea {
   color: white;
   text-align:center;
   display:none;
+  z-index: 1000;
 }
 
 @media all and (max-width: 768px){
