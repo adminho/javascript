@@ -330,7 +330,7 @@ console.log(blueCar.color);	             // "blue"
 
 ```js
 function Car(color) {
-    this.color = color;		// ถ้าเป็นโหมดสตริคท์จะเกิด error ขึ้นได้
+    this.color = color;		// ถ้าเป็นโหมดสตริคท์จะเกิด SyntaxError ขึ้นได้
     return true;
 }
 var blueCar = Car("blue");	// เป็นการเรียกฟังก์ชั่นธรรดา

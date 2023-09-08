@@ -17,11 +17,11 @@
 					return (str.length >1) ? str.slice(0, -2) + ']': '[]';		
 					
 				} else {
-					let str = "{";
+					let str = "{ ";
 					for(const [key, value] of Object.entries(data)){
-						str += ""+key+":"+ toString(value) + ", ";
+						str += ""+key+": "+ toString(value) + ", ";
 					}
-					return (str.length >1) ? str.slice(0, -2) + '}': '{}';					
+					return (str.length >1) ? str.slice(0, -2) + ' }': '{}';					
 				}
 			
 			} else if( typeof data === 'string'){
