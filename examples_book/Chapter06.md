@@ -417,9 +417,9 @@ Car.prototype.drive = function() {
     console.log("Drive a", this.color, "car");         // this จะชี้ไปยังอ็อบเจ็กต์ที่ถูกสร้างขึ้นมา
 };
 var redCar = new Car("red");
-redCar.drive();			             // " Drive a red car"
+redCar.drive();			             // "Drive a red car"
 var blueCar = new Car("blue");
-blueCar.drive();			             // " Drive a blue car"
+blueCar.drive();			             // "Drive a blue car"
 console.log( Object.getPrototypeOf(redCar) === Car.prototype);      // true
 console.log( Object.getPrototypeOf(blueCar) === Car.prototype);    // true
 ```
