@@ -106,8 +106,11 @@
 					//codeTxt = codeTxt.replaceAll(/-0.(?<!\,)$/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -0 ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'										
 					eval(codeTxt);						
 				} catch (e){
-					console.log("#<font color='orange'>++++Error++++</font>");
-					console.log("#<font color='orange'>" + e.stack + "</font>");					
+					console.log("#<font color='orange'>++++Error++++</font>");	
+					console.log("#<font color='orange'>Uncaught " + e + "</font>");
+					if(e.stack) {
+						console.log("#<font color='orange'>" + e.stack + "</font>");					
+					} 
 				}
 			}
 			textCodeArea.classList.add("run-already");

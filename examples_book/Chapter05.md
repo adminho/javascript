@@ -317,7 +317,7 @@ console.log(foo());                          // บรรทัด c ไม่�
 /* แสดงผลลัพธ์
 "finally"
 จากนั้นจะจบการทำงานพร้อมแจ้ง error ว่า 
-"error: Uncaught ReferenceError: x is not defined" 
+"Uncaught ReferenceError: x is not defined" 
 */
 ```
 
