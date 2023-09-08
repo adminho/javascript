@@ -290,7 +290,7 @@ console.log("1234567890".length);	 // 10
 var TRUE_value = true;
 var FALSE_value = false
 console.log(TRUE_value);      // true
-console.log(FALSe_value);     // false
+console.log(FALSE_value);     // false
 ```
 
 ```js
