@@ -1,10 +1,11 @@
-		let displayAreaId = "";	
+		let resultAreaId = "";	
 		
 		function toString(data) {
 			if(data == null || data == undefined ) {
-				return ""+ data;			
-			} else if( typeof data === 'object'){
+				return ""+ data;
 				
+			} else if( typeof data === 'object'){			
+						
 				if( data instanceof Array){
 					let str = "[";
 					for(const value of data) {
@@ -26,8 +27,9 @@
 			} else if( typeof data === 'string'){
 				return '"' +data + '"';				
 				
-			} else {
+			}  else {				
 				return String(data); // recursive
+				
 			}
 		}
 
@@ -50,20 +52,20 @@
 		}
 			
 		console.log = function(...data){
-			let display = document.querySelector(displayAreaId);			
+			let display = document.querySelector(resultAreaId);			
 			for( let d of data){
 				if( typeof d !== 'string'){					
 					d = toString(d);					
 				} 
 				
-				if(d == '@negzero'){
+				if(d == '@negzero'){ // figbugs
 					d = "-0";					
 				} 
 				
 				if(d.startsWith('#')){
-					d = d.substring(1);					
+					d = d.substring(1);	 // เมื่อเจอ # นำหน้า ต้องการให้สตริง html มันทำงานในเว็บเบราเซอร์ 				
 				} else {
-					d = decodeHtml(d);
+					d = decodeHtml(d);   // ไม่ต้องการให้สตริง html ทำงานในเว็บเบราเซอร์
 				}
 				
 				display.innerHTML += d + " ";
@@ -71,16 +73,23 @@
 			display.innerHTML += "<br>";
 		}
 		
-		function clearDisplay() {
+		function clearDisplay(displayAreaId, textAreaId=undefined) {
 			let display = document.querySelector(displayAreaId);	
-			display.innerHTML = "";		
+			display.innerHTML = "";	
+			
+			if(textAreaId){
+				let textCodeArea = document.querySelector(textAreaId);
+				textCodeArea.classList.remove("run-already");
+				textCodeArea.classList.add("notrun");						
+			}
 		}
 		
-		function evalCode(btn, count) {
-			displayAreaId = `#display${count}`;
-			clearDisplay();						
-			let textArea = document.querySelector(`#code${count}`);
-			let codeTxt = textArea.value;
+		function evalCode(count) {
+			resultAreaId = `#displayResult${count}`;		
+									
+			let textCodeArea = document.querySelector(`#codeArea${count}`);
+			let codeTxt = textCodeArea.value;				
+			clearDisplay(resultAreaId);
 			
 			if( codeTxt.includes("<html>")>0 ) {
 				const link = document.createElement("a");
@@ -93,13 +102,13 @@
 			} else {				
 				try {
 					console.log("#<font color='lightgreen'>ผลการรัน:</font>");	
-					codeTxt = codeTxt.replaceAll(/-0/g, "'@negzero'");					
+					codeTxt = codeTxt.replaceAll(/-false/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -false ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'					
+					//codeTxt = codeTxt.replaceAll(/-0.(?<!\,)$/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -0 ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'										
 					eval(codeTxt);						
 				} catch (e){
 					console.log("#<font color='orange'>++++Error++++</font>");
 					console.log("#<font color='orange'>" + e.stack + "</font>");					
 				}
 			}
-			textArea.classList.add("run-already");		
-			btn.value = "รันอีกครั้ง";
+			textCodeArea.classList.add("run-already");
 		}

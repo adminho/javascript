@@ -46,10 +46,11 @@ async function genHTML(fileName){
 	  isCode = false	  	  
 	  const rows = lineCodes.split('\n').length-1;
 	  
-	  allLines += `<div>						
-						<textarea class="showcode" id="code${count}" class="norun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>
-						<div id="display${count}" class="display-result "></div>
-						<input class="run-btn" type="submit" value="${btnValue}" onclick="evalCode(this, ${count})">						
+	  allLines += `<div><label for="codeArea${count}"></label>						
+						<textarea id="codeArea${count}" class="notrun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>
+						<div id="displayResult${count}" class="display-result"></div>
+						<input class="run-btn" type="submit" value="${btnValue}" onclick="evalCode(${count})">
+						<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay('#displayResult${count}', '#codeArea${count}')">						
 				  </div>`;	  
 	  	  
 	  lineCodes = "";	  

@@ -1,4 +1,4 @@
-.norun {
+.notrun {
   background-color: #F0F0F0;
   margin-top: 20px;
   border: 1px solid #4CAF50;
@@ -41,10 +41,6 @@
   cursor: pointer;
 }*/
 
-.showcode {    
-	margin-top:3px;    
-}
-
 textarea {
 	font-size: 13pt;
 	background-color: #F5F5F5;
@@ -75,7 +71,7 @@ textarea {
    background-color: #606060;
    color: white;
    text-align: left;
-   margin-top: 0.6px;
+   margin-top: 1px;
    margin-bottom: 3px;
    border: 0.5px #023020;
 }

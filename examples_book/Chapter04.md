@@ -31,9 +31,9 @@ console.log("Hello world", 122, 333.333);   // "Hello world 122 333.333"
 
 ### debugger
 ```js
-console.log("line 1");
-debugger;  // บรรทัดนี้เป็นตำแหน่งของ breakpoint เพื่อหยุดการทำงานของโปรแกรมชั่วขณะ ตอนดีบั๊กโปรแกรม
-console.log("line 2");
+console.log("line 1");   // "line 1"
+debugger; // บรรทัดนี้เป็นตำแหน่งของ breakpoint เพื่อหยุดการทำงานของโปรแกรมชั่วขณะ ตอนดีบั๊กโปรแกรม
+console.log("line 2");   // "line 2"
 ```
 
 ## การใช้เซมิโคลอน (;)
@@ -164,7 +164,7 @@ var x = 100;
 ```
 
 ```js
-var  x = 1, y = 2, z = 3;	// ประกาศตัวแปร x, y และ z ให้อยู่ในบรรทัดเดียวกัน
+var x = 1, y = 2, z = 3;	// ประกาศตัวแปร x, y และ z ให้อยู่ในบรรทัดเดียวกัน
 ```
 
 ```js
@@ -186,6 +186,7 @@ var x;
 console.log(x); 	// undefined
 ```
 
+* หมายเหตุ แสดงผลลัพธ์เหมือนรันใน Node.js
 ```js
 var undefined = 55555; 	    
 console.log(undefined);   // บนเว็บเบราเซอร์จะแสดงเป็น undefined แต่บน Node.js จะแสดงเป็น 55555
@@ -198,6 +199,7 @@ console.log(x);		// undefined
 x = 1;
 ```
 
+* หมายเหตุ ควรรันคำส่ง  delete x; ก่อน เพื่อลบตัวแปร  x = 1; ที่รันก่อนหน้านี้
 ```js
 console.log(x);		// ReferenceError
 ```
@@ -257,7 +259,7 @@ console.log(Number.MAX_VALUE * -10);  //  -Infinity (บรรทัด 4)
 ```
 
 ```js
-console.log(Number.MIN_VALUE);         //5e-324 (เป็นค่าโดยประมาณ)
+console.log(Number.MIN_VALUE);         // 5e-324 (เป็นค่าโดยประมาณ)
 ```
 
 ### สตริง
@@ -419,7 +421,7 @@ console.log(a);	// NaN
 
 ```js
 20 / "10" + "76";           // 276
-// เสมือนเขียน ( 20 / "10") + "276"
+// เสมือนเขียน ( 20 / "10") + "76"
 ```
 
 ### โอเปเรอเตอร์แบบตรรกะ 
@@ -605,9 +607,7 @@ console.log(array.length);             // 10
 function calculate(param1, param2) {
     return param1 * param2;
 }
-```
 
-```js
 var result = calculate(10, 2);	
 console.log(result);		// 20
 ```
@@ -662,7 +662,7 @@ function calculate() {
 ### ฟังก์ชั่นไร้ชื่อ 
 
 ```js
-function (param1, param2) {
+function (param1, param2) {   // ถ้ารันจะเกิด error
     return param1 * param2;
 }
 ```
