@@ -23,23 +23,14 @@
 /*input[type=button], input[type=submit], input[type=reset] {*/
 .run-btn {
   background-color: #04AA6D;
+  font-weight: bold;
   border: none;
   color: white;
-  padding: 8px 16px;
+  padding: 4px 16px;
   text-decoration: none;
   margin: 0px 2px 20px 0px;
   cursor: pointer;
 }
-
-/*.clear_btn {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 5px 20px;
-  text-decoration: none;
-  margin: 10px 2px 5px 0px;
-  cursor: pointer;
-}*/
 
 textarea {
 	font-size: 13pt;
