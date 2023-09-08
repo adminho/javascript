@@ -720,12 +720,13 @@ console.log(array2);		             // [ <3 empty slots> ]
 ### Date
 
 ```js
-console.log(Date());         // "Mon Feb 06 2023 09:28:22 GMT+0700 (Indochina Time)"
-console.log(new Date());  // "2023-02-06T02:25:29.853" 
+console.log(Date());          // "Fri Sep 08 2023 21:33:45 GMT+0700 (Indochina Time)"
+console.log(new Date());   // "Fri Sep 08 2023 21:33:45 GMT+0700 (Indochina Time)" 
 ```
 
 ```js
-console.log( new Date("October 20, 2023 11:13:00") );  // 2023-10-20T04:13:00.000Z
+console.log( new Date("October 20, 2023 11:13:00") );  
+// "Fri Oct 20 2023 11:13:00 GMT+0700 (Indochina Time)"
 ```
 
 ## เมธอดของสตริง
@@ -789,10 +790,10 @@ array.forEach(function (value, index, arrayObj) {
     console.log("a[", index, "] = ", value);
 });
 /* แสดงผลลัพธ์
-"a[ 0 ] =  a"
-"a[ 1 ] =  b"
-"a[ 2 ] =  c"
-"a[ 3 ] =  d" */
+"a[ 0 ] = a"
+"a[ 1 ] = b"
+"a[ 2 ] = c"
+"a[ 3 ] = d" */
 ```
 
 ## ฟังก์ชั่นก็เป็นอ็อบเจ็กต์
