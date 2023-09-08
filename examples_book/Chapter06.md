@@ -519,7 +519,7 @@ Function.prototype.sayMsg = function(msg) {
      console.log("Function say:", msg);
 };
 function myFunction() { }
-myFunction.sayMsg("Hello");     // " Function say: Hello"
+myFunction.sayMsg("Hello");     // "Function say: Hello"
 // อาร์เรย์ 
 Array.prototype.sayMsg = function(msg) {
     console.log("Array say:", msg);
