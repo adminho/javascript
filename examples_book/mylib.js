@@ -4,31 +4,31 @@
 			if(data == null || data == undefined ) {
 				return ""+ data;
 				
-			} else if( typeof data === 'object'){			
+			//} else if( typeof data === 'object'){			
 						
-				if( data instanceof Array){
-					let str = "[";
+			}	else if( data instanceof Array){
+					let str = "[ ";
 					for(const value of data) {
 						str += ""+ toString(value) + ", ";
 					}
 					if("index" in data) str = str + "index: " + toString(data.index) + ", ";;
 					if("input" in data) str = str + "input: " + toString(data.input) + ", ";;
 					if("groups" in data) str = str + "groups: " + toString(data.groups) + ", ";;					
-					return (str.length >1) ? str.slice(0, -2) + ']': '[]';	
+					return (str.length >2) ? str.slice(0, -2) + ' ]': '[]';	
 					
 				} else if( data instanceof Date){	
 					return data.toString();
 					
-				} else {
+				} else if( typeof data === 'object'){
 					let str = "{ ";
 					for(const [key, value] of Object.entries(data)){
 						str += ""+key+": "+ toString(value) + ", ";
 					}
 					return (str.length >2) ? str.slice(0, -2) + ' }': '{}';					
-				}
+				//}
 			
 			} else if( typeof data === 'string'){
-				return '"' +data + '"';				
+				return `"${data}"`;				
 				
 			}  else {				
 				return String(data); // recursive
