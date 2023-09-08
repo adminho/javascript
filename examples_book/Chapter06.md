@@ -178,7 +178,7 @@ var obj2 = {
           	                       }  // สิ้นสุดการประกาศฟังก์ชั่น foo()
    	 } // สิ้นสุดการประกาศฟังก์ชั่น bar()
 }; 
-obj2.bar();	// "this.a  = 1"
+obj2.bar();	// "this.a = 1"
 obj1.foo();	// "this.a = undefined"
 ```
 
