@@ -58,7 +58,7 @@
 					d = toString(d);					
 				} 
 				
-				if(d == '@negzero'){ // figbugs
+				if(d == '@negzero'){ // fix bugs
 					d = "-0";					
 				} 
 				
