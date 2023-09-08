@@ -1,0 +1,105 @@
+		let displayAreaId = "";	
+		
+		function toString(data) {
+			if(data == null || data == undefined ) {
+				return ""+ data;			
+			} else if( typeof data === 'object'){
+				
+				if( data instanceof Array){
+					let str = "[";
+					for(const value of data) {
+						str += ""+ toString(value) + ", ";
+					}
+					if("index" in data) str = str + "index: " + toString(data.index) + ", ";;
+					if("input" in data) str = str + "input: " + toString(data.input) + ", ";;
+					if("groups" in data) str = str + "groups: " + toString(data.groups) + ", ";;					
+					return (str.length >1) ? str.slice(0, -2) + ']': '[]';		
+					
+				} else {
+					let str = "{";
+					for(const [key, value] of Object.entries(data)){
+						str += ""+key+":"+ toString(value) + ", ";
+					}
+					return (str.length >1) ? str.slice(0, -2) + '}': '{}';					
+				}
+			
+			} else if( typeof data === 'string'){
+				return '"' +data + '"';				
+				
+			} else {
+				return String(data); // recursive
+			}
+		}
+
+		function escapeHtml(unsafe) {
+			return unsafe
+				.replaceAll(/&amp;/g, "&")
+				.replaceAll(/&lt;/g, "<")
+				.replaceAll(/&gt;/g, ">")
+				.replaceAll(/&quot;/g, '"')
+				.replaceAll(/&#039;/g, "'");
+		}
+		
+		function decodeHtml(str) {
+			return str
+				.replaceAll(/&/g, "&amp;")
+				.replaceAll(/</g, "&lt;")
+				.replaceAll(/>/g, "&gt;")
+				.replaceAll(/"/g, '&quot;')
+				.replaceAll(/'/g, "&#039;");
+		}
+			
+		console.log = function(...data){
+			let display = document.querySelector(displayAreaId);			
+			for( let d of data){
+				if( typeof d !== 'string'){					
+					d = toString(d);					
+				} 
+				
+				if(d == '@negzero'){
+					d = "-0";					
+				} 
+				
+				if(d.startsWith('#')){
+					d = d.substring(1);					
+				} else {
+					d = decodeHtml(d);
+				}
+				
+				display.innerHTML += d + " ";
+			}
+			display.innerHTML += "<br>";
+		}
+		
+		function clearDisplay() {
+			let display = document.querySelector(displayAreaId);	
+			display.innerHTML = "";		
+		}
+		
+		function evalCode(btn, count) {
+			displayAreaId = `#display${count}`;
+			clearDisplay();						
+			let textArea = document.querySelector(`#code${count}`);
+			let codeTxt = textArea.value;
+			
+			if( codeTxt.includes("<html>")>0 ) {
+				const link = document.createElement("a");
+				const content = codeTxt;
+				const file = new Blob([content], { type: 'text/plain' });
+				link.href = URL.createObjectURL(file);
+				link.download = "sample.html";
+				link.click();
+				URL.revokeObjectURL(link.href);
+			} else {				
+				try {
+					console.log("#<font color='lightgreen'>ผลการรัน:</font>");	
+					codeTxt = codeTxt.replaceAll(/-0/g, "'@negzero'");					
+					eval(codeTxt);						
+				} catch (e){
+					console.log("#<font color='orange'>++++Error++++</font>");
+					console.log("#<font color='orange'>" + e.stack + "</font>");					
+				}
+			}
+			textArea.classList.add("run-already");		
+			btn.value = "รันอีกครั้ง";
+		}
