@@ -88,11 +88,11 @@ for(var i=0; i<3; i++) {
 ### ประโยคคำสั่ง label
 
 ```js
-outer: for(var i=0; i < 2; i++)	{	// บรรทัด a
+outer: for(var i=0; i < 2; i++) {	             // บรรทัด a
        console.log("i: ", i);
        for (var j=i; j < 2; j++ ) {	
         	if ( j == 1) {
-          		continue outer;	// บรรทัด b
+          		continue outer;	             // บรรทัด b
        	}
        	console.log("j: ", j);
         } // สิ้นสุดประโยคคำสั่ง for
@@ -100,8 +100,7 @@ outer: for(var i=0; i < 2; i++)	{	// บรรทัด a
 /* แสดงผลลัพธ์
 "i:  0"
 "j:  0"
-"i:  1" 
- */
+"i:  1" */
 ```
 
 ```js
