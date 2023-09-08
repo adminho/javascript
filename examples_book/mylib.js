@@ -7,14 +7,15 @@
 			//} else if( typeof data === 'object'){			
 						
 			}	else if( data instanceof Array){
-					let str = "[ ";
+					let str = "[";
 					for(const value of data) {
 						str += ""+ toString(value) + ", ";
 					}
-					if("index" in data) str = str + "index: " + toString(data.index) + ", ";;
-					if("input" in data) str = str + "input: " + toString(data.input) + ", ";;
-					if("groups" in data) str = str + "groups: " + toString(data.groups) + ", ";;					
-					return (str.length >2) ? str.slice(0, -2) + ' ]': '[]';	
+					// .replaceAll(/"/g, "'")
+					if("index" in data) str = str + `index: ${toString(data.index)}, `;
+					if("input" in data) str = str + `input: ${toString(data.input)}, `;
+					if("groups" in data) str = str + `groups: ${toString(data.groups)}, `;					
+					return (str.length >1) ? str.slice(0, -2) + ']': '[]';	
 					
 				} else if( data instanceof Date){	
 					return data.toString();
@@ -28,7 +29,7 @@
 				//}
 			
 			} else if( typeof data === 'string'){
-				return `"${data}"`;				
+				return `'${data}'`;				
 				
 			}  else {				
 				return String(data); // recursive
