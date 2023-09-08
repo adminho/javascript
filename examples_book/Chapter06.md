@@ -914,16 +914,16 @@ console.log(JSON.stringify(obj));
 ```js
 var obj = { 
     people:  [ 
-        { firstName: "Somchai", lastName: "Jaidee" },
-        { firstName: "Mana", lastName: "Dekdee" },
-        { firstName: "Surat", lastName: "Khonthai" } 
+        { firstName: “Somchai”, lastName: “Jaidee” },
+        { firstName: “Mana”, lastName: “Dekdee” },
+        { firstName: “Surat”, lastName: “Khonthai” } 
    ] ,
-   age: Symbol("1")
+   age: Symbol(“1”)
 };
 console.log(JSON.stringify(obj));
-// แสดงผลลัพธ์เป็น
-// {"people":[{"firstName":"Somchai","lastName":"Jaidee"},{"firstName":"Mana",
-// "lastName":"Dekdee"},{"firstName":"Surat","lastName":"Khonthai"}]}
+/* แสดงผลลัพธ์เป็น
+{“people”:[{“firstName”:“Somchai”,“lastName”:“Jaidee”},{“firstName”:“Mana”,
+ “lastName”:”Dekdee”},{“firstName”:“Surat”,“lastName”:“Khonthai”}]} */
 ```
 
 ```js
