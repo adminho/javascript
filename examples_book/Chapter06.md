@@ -240,7 +240,7 @@ var font = {
      }
 };
 console.log(font.color);	         // "red"
-font.color = "blue";	         // ไม่มีผลอะไรเกิดขึ้น หรือจะเกิด TypeError ในโหมดสตริคท์
+font.color = "blue";	         // ไม่มีผลอะไรเกิดขึ้น หรือเกิด TypeError ในโหมดสตริคท์
 console.log(font.color);	         // "red"
 ```
 
