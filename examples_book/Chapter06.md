@@ -815,17 +815,16 @@ foo["name"] = "My function";     // ใช้วงเล็บเหลี่�
 ## เกร็ดความรู้
 
 ```js
+function showData(person) {
+    console.log("Person is", person.name, ", age is", person.age );
+}
 let person = {                 // บรรทัด a
     name: "Somchai",
     age: 23
 }
-function showData(person) {
-    console.log("Person is", person.name, ", age is", person.age );
-}
 showData(person)            // บรรทัด b
 /* แสดงผลลัพธ์
-Person is Somchai , age is 23
-*/
+Person is Somchai , age is 23 */
 ```
 
 ```js
