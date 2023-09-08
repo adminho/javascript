@@ -901,7 +901,7 @@ var x = 1
 
 ```js
 x = undefined    // เสมือนลอยขึ้นไปข้างบน
-console.log(x)
+console.log(x)    // undefined
 x = 1
 ```
 
@@ -990,6 +990,7 @@ function myFunction() {
 
 * 1) 
 
+* หมายเหตุ  ถ้าไม่เกิด error ให้รันคำส่ง  delete x; ก่อน เพื่อลบตัวแปร  var x = 1; ที่รันก่อนหน้านี้ จะได้เกิด error ตามตัวอย่าง
 ```js
 "use strict";
 x = 1;           // เกิด error เพราะไม่ได้ประกาศตัวแปรแบบ var ถ้าอยู่ดี ๆ จะมากำหนดค่าให้ทันทีแบบนี้จะทำไม่ได้
@@ -1064,7 +1065,6 @@ console.log(f());                    // undefined
 ```js
 "use strict";
 var eval = 1;                       // เกิด error ไม่สามารถใช้ชื่อ eval เป็นตัวแปร
-
 ```
 
 * 11)
