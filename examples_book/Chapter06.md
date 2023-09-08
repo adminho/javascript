@@ -123,7 +123,6 @@ console.log(value1); 	         // 1
 ```js
 console.log( {a:1} == {a:1} );          // false 
 console.log( {a:1} === {a:1} );        // false 
-
 ```
 
 ```js
