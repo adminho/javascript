@@ -836,8 +836,7 @@ showData({                     // บรรทัด a
     age: 23
 })  
 /* แสดงผลลัพธ์
-Person is Somchai , age is 23
-*/
+Person is Somchai , age is 23 */
 ```
 
 ```js
