@@ -148,7 +148,7 @@ console.log(re.exec("555"));    // [ '55', index: 0, input: '555', groups: undef
 ```
 
 ```js
-var re = /e{1, 3}/;
+var re = /e{1,3}/;
 console.log(re.exec("deep"));   // [ 'ee', index: 1, input: 'deep', groups: undefined ]
 ```
 
