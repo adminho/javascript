@@ -771,7 +771,6 @@ array.push("a", "b", "c", "d");	     // เพิ่มสมาชิกกี�
 console.log(array);		     // [ 'a', 'b', 'c', 'd' ]
 console.log(array.pop()); 		     // "d"
 console.log(array);		     // [ 'a', 'b', 'c' ]
-
 ```
 
 ```js
