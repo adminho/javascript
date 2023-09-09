@@ -551,6 +551,16 @@ num.sayMsg("Hello");	    // "Number say: Hello"
 (123).sayMsg("Hello");	    // "Number say: Hello"
 ```
 
+* หมายเหตุ เพื่อป้องกันความผิดจากการรันโคดด้านล่าง ก็ควรจะลบ sayMsg ออกไปก่อน ด้วยโค้ดต่อไปนี้(ในหนังสือไม่มีโค้ดชุดนี้)
+```js
+delete Function.prototype.sayMsg;
+delete Array.prototype.sayMsg;
+delete Object.prototype.sayMsg 
+delete String.prototype.sayMsg
+delete Boolean.prototype.sayMsg
+delete Number.prototype.sayMsg
+```
+
 ## โอเปอเรเตอร์ in
 
 ```js
