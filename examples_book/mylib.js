@@ -88,7 +88,7 @@
 			}
 		}
 		
-		function evalCodeBtn(btn, count) {
+		function evalCodeBtn(count) {
 			resultAreaId = `#displayResult${count}`;
 			clearDisplay(resultAreaId);
 									
@@ -118,5 +118,5 @@
 				}
 			}
 			textCodeArea.classList.add("run-already");
-			btn.vate = "Run again";
+			//btn.value = "Run again";
 		}
