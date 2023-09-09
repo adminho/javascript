@@ -768,9 +768,10 @@ console.log(str);      // "a->b->c->d"
 ```js
 var array = [ ];
 array.push("a", "b", "c", "d");	     // เพิ่มสมาชิกกี่ตัวก็ได้
-console.log(array);		     // ['a', 'b', 'c', 'd']
+console.log(array);		     // [ 'a', 'b', 'c', 'd' ]
 console.log(array.pop()); 		     // "d"
-console.log(array);		     // ['a', 'b', 'c']
+console.log(array);		     // [ 'a', 'b', 'c' ]
+
 ```
 
 ```js
