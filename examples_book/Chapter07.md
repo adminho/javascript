@@ -86,7 +86,7 @@ console.log(re.exec("COM"));    // [ 'C', index: 0, input: 'COM', groups: undefi
 
 ```js
 var re = /[a-cA-C]/;
-console.log(re.exec("AND"));    // [ 'A', index: 0, input: 'ANT', groups: undefined ]
+console.log(re.exec("AND"));    // [ 'A', index: 0, input: 'AND', groups: undefined ]
 ```
 
 ```js
