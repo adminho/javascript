@@ -54,7 +54,7 @@ console.log(re.exec("I like u"));   // [ 'like', index: 2, input: 'I like u', gr
 
 ```js
 var re = /html|div|br/;
-console.log(re.exec("<div>"));    //[ 'div', index: 1, input: '<div>', groups: undefined ]
+console.log(re.exec("<div>"));    // [ 'div', index: 1, input: '<div>', groups: undefined ]
 ```
 
 ### การระบุช่วงตัวอักษรที่จับคู่
