@@ -49,7 +49,7 @@ async function genHTML(fileName){
 	  allLines += `<div><label for="codeArea${count}"></label>					
 						<textarea id="codeArea${count}" class="notrun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>
 						<div id="displayResult${count}" class="display-result"></div>
-						<input class="run-btn" type="submit" value="${btnValue}" onclick="evalCode(${count})">
+						<input class="run-btn" type="submit" value="${btnValue}" onclick="evalCodeBtn(this, ${count})">
 						<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay('#displayResult${count}', '#codeArea${count}')">						
 				  </div>`;	  
 	  	  

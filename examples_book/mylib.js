@@ -88,13 +88,13 @@
 			}
 		}
 		
-		function evalCode(count) {
-			resultAreaId = `#displayResult${count}`;		
+		function evalCodeBtn(btn, count) {
+			resultAreaId = `#displayResult${count}`;
+			clearDisplay(resultAreaId);
 									
 			let textCodeArea = document.querySelector(`#codeArea${count}`);
 			let codeTxt = textCodeArea.value;				
-			clearDisplay(resultAreaId);
-			
+						
 			if( codeTxt.includes("<html>")>0 ) {
 				const link = document.createElement("a");
 				const content = codeTxt;
@@ -118,4 +118,5 @@
 				}
 			}
 			textCodeArea.classList.add("run-already");
+			btn.vate = "Run again";
 		}
