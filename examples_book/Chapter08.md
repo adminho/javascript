@@ -477,8 +477,9 @@ console.log(resultY);   			 // มีค่าเป็น null เพราะ�
 
 ```js
 var  myRegex = /foo+/y;
-console.log(myRegex.sticky);  // true
+console.log(myRegex.sticky);     // true
 myRegex.sticky = 1;  // ไม่สามารถแก้ไขค่าได้ มีไว้อ่านอย่างเดียว ถ้าอยู่ในโหมดสตริคท์จะเกิด TypeError
+console.log(myRegex.sticky);     // true
 ```
 
 ### RegExp
