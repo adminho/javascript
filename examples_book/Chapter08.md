@@ -201,7 +201,7 @@ console.log("\u0e01");		// "ก"
 ```
 
 ```js
-console.log("\u20BB7");        	// " 7"
+console.log("\u20BB7");        	// "₻7"
 console.log("\u{20BB7}");     	// "𠮷"
 ```
 
