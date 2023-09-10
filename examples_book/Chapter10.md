@@ -241,7 +241,7 @@ let a,b;
 let spreadArr = [];
 [a, b, ...spreadArr] = [-134, -20, -7, 33, 10];
 console.log(a, b);		// -134 -20
-console.log(spreadArr);	// [-7, 33, 10]
+console.log(spreadArr);	// [ -7, 33, 10 ]
 ```
 
 ## พารามิเตอร์แบบดีสตรัคเตอร์
