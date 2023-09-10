@@ -5,9 +5,7 @@ const fs = Promise.promisifyAll(require('fs'));
 const lineReader = require('line-reader');
 const eachLine = Promise.promisify(lineReader.eachLine);
 
-let isCode = false;
-let lineCodes = "";
-let count = 0;
+
 let templateHTML = "";
 try {
    templateHTML = fs.readFileSync('template.html', { encoding: 'utf8' });   
@@ -15,7 +13,7 @@ try {
    console.log(err);
 }
 
-function writeToHTML(headline, allLines, fileName){
+/*function writeToHTML(headline, allLines, fileName){
     let html = templateHTML.replace("${headline}", headline)
 			.replace("${allLines}", allLines)
 			.replace("${fileName}", fileName);
@@ -23,9 +21,13 @@ function writeToHTML(headline, allLines, fileName){
 		if (err) throw err;
 		console.log(`${fileName}.html is Saved!`);
 	}); 	
-}
+}*/
 
 async function genHTML(fileName){
+  let isCode = false;
+  let lineCodes = "";
+  let count = 0;
+
   let headline = "";
   let allLines = "";
   let btnValue = "";
@@ -72,7 +74,14 @@ async function genHTML(fileName){
   }
   
   if(last) {	  
-	writeToHTML(headline, allLines, fileName);
+	// writeToHTML(headline, allLines, fileName);
+	let html = templateHTML.replace("${headline}", headline)
+			.replace("${allLines}", allLines)
+			.replace("${fileName}", fileName);
+    fs.writeFile(`${fileName}.html`, html, function (err) {
+		if (err) throw err;
+		console.log(`${fileName}.html is Saved!`);
+	});	
   }
   
 })
@@ -80,7 +89,7 @@ async function genHTML(fileName){
 }
 
 
-let files = [ "chapter03", "chapter04","chapter05", "chapter06",  
+let files = [ "chapter02", "chapter03", "chapter04","chapter05", "chapter06",  
 "chapter07","chapter08","chapter09", "chapter10", "chapter11", "chapter12",  
 "chapter13","chapter14","chapter15", "chapter16", "chapter17", 
 "chapter18","chapter19","chapter20"];
@@ -109,7 +118,8 @@ let files = [ "chapter03", "chapter04","chapter05", "chapter06",
 
 
 
-genHTML("chapter03")
+genHTML("chapter02")
+.then(() => genHTML("chapter03"))
 .then(() => genHTML("chapter04"))
 .then(() => genHTML("chapter05"))
 .then(() => genHTML("chapter06"))

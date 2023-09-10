@@ -5,12 +5,12 @@
 [สามารถสั่งซ์้อได้ที่เว็บ MEB (ขายเป็นอีบุ๊กเท่านั้น)](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ)
 
 * บทที่ 1 แนะนำจาวาสคริปต์
-* บทที่ 2 ทบทวน HTML5 โดยย่อ
-* [บทที่ 3 รันจาวาสคริปต์อย่างง่าย](Chapter03.md)
-* [บทที่ 4 ทบทวนมาตรฐานเก่า](Chapter04.md)
-* [บทที่ 5 ทบทวนประโยคคำสั่งเบื้องต้น](Chapter05.md)
-* [บทที่ 6 ทบทวนอ็อบเจ็กต์](Chapter06.md)
-* [บทที่ 7  ทบทวน Regex](Chapter07.md)
+* [บทที่ 2 รันจาวาสคริปต์อย่างง่าย](Chapter02.md)
+* [บทที่ 3 ทบทวนมาตรฐานเก่า](Chapter03.md)
+* [บทที่ 4 ทบทวนประโยคคำสั่งเบื้องต้น](Chapter04.md)
+* [บทที่ 5 ทบทวนอ็อบเจ็กต์](Chapter05.md)
+* [บทที่ 6 ทบทวน Regex](Chapter06.md)
+* [บทที่ 7 ทบทวน HTML DOM](Chapter07.md)
 * [บทที่ 8 ฟีเจอร์ใหม่ของตัวเลข สตริง และ regex](Chapter08.md)
 * [บทที่ 9  การประกาศตัวแปร และการกำหนดค่า](Chapter09.md)
 * [บทที่ 10 ฟังก์ชั่น](Chapter10.md)
