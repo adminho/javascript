@@ -498,8 +498,8 @@ console.log(regex2.test("FOO"));        // false
 ```
 
 ```js
-var myRegex = new RegExp("foo", "y");	// จะเสมือนเขียน var myRegex = /foo/y;	
-console.log(myRegex.exec("foo_abc"));	// ["foo"]
+var myRegex = new RegExp("foo", "y"); // จะเสมือนเขียน var myRegex = /foo/y;	
+console.log(myRegex.exec("foo_abc"));  // [ 'foo', index: 0, input: 'foo_abc', groups: undefined ]
 ```
 
 ### พร็อพเพอร์ตี้ flags
@@ -587,10 +587,10 @@ console.log(result)     // true
 
 ```js
 var result = /\p{Uppercase_Letter}/u.test( "THAI" );
-console.log(result)
+console.log(result)      // true
 ```
 
 ```js
 var result = /\p{General_Category=Uppercase_Letter}/u.test( "THAI" );
-console.log(result)
+console.log(result)      // true
 ```
