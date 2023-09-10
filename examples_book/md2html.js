@@ -94,7 +94,11 @@ let files = [ "chapter02", "chapter03", "chapter04","chapter05", "chapter06",
 "chapter13","chapter14","chapter15", "chapter16", "chapter17", 
 "chapter18","chapter19","chapter20"];
 
-
+(async () => {
+	for await (const f of files) {
+      genHTML(f);
+    } 
+})();
 
 //genHTML("chapter03");
 //genHTML("chapter04");
@@ -116,8 +120,7 @@ let files = [ "chapter02", "chapter03", "chapter04","chapter05", "chapter06",
 //genHTML("chapter20");
 
 
-
-
+/*
 genHTML("chapter02")
 .then(() => genHTML("chapter03"))
 .then(() => genHTML("chapter04"))
@@ -137,7 +140,7 @@ genHTML("chapter02")
 .then(() => genHTML("chapter18"))
 .then(() => genHTML("chapter19"))
 .then(() => genHTML("chapter20"))
-
+*/
 
 async function countline(fileName){
 	let count = 0;
