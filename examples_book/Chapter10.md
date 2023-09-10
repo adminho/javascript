@@ -413,7 +413,7 @@ console.log(typeof sayBye);		         // undefined
 
 ```js
 if(true) {
-          console.log(typeof sayHello);	 // undefined	
+          // console.log(typeof sayHello);	 // ถ้าอ้างถึง sayHello ตรงนี้ จะเกิด ReferenceError
           let sayHello = function() {	             // ประกาศฟังก์ชั่น
 	    // ซอร์สโค้ดฟังก์ชั่น
           }
