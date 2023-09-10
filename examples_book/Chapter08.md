@@ -334,8 +334,8 @@ console.log(str2.padStart(maxLength, fillString));
 console.log(str3.padStart(maxLength, fillString)); 
 /* แสดงผลลัพธ์
              OK
-    Javascript
-           Wow
+     Javascript
+            Wow
 */
 ```
 
