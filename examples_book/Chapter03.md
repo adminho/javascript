@@ -791,7 +791,7 @@ alert("Hello, World");               // แสดงข้อความ "Hello
 
 * 3)
 ```js
-function todo(a,  a,  a) {     // ประกาศพารามิเตอร์ชื่อ a ซ้ำกัน 3 ครั้ง
+function todo(a,  a,  a) {     // ประกาศพารามิเตอร์ชื่อ a ซ้ำกัน
     console.log(a);
 }
 todo(1, 5, 10);                   // 10
