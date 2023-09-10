@@ -447,9 +447,7 @@ console.log(resultY[0]);   		// "foo1_"
 console.log(regex.lastIndex);  	 	// 0
 console.log(regexG.lastIndex);  	 	// 5
 console.log(regexY.lastIndex);  	 	// 5
-```
 
-```js
 result = regex.exec(str);
 resultG = regexG.exec(str),
 resultY = regexY.exec(str);
