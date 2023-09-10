@@ -129,12 +129,12 @@ console.log(num4);     // 1773
 
 ```js
 let num5 = _177_3;
-console.log(num5);     // จะเกิด error
+console.log(num5);     // จะเกิด ReferenceError
 ```
 
 ```js
 let num6= 1773_;
-console.log(num6);     // จะเกิด error
+console.log(num6);     // จะเกิด SyntaxError
 ```
 
 ## สตริง
