@@ -766,7 +766,7 @@ myFunction(100,200,300,400);	// [100, 200, 300, 400]
 
 * 1) 
 ```js
-function myFunction(param1, param2) {    // ฟังก์ชั่นนี้ไม่เคยถูกเรียกใช้	
+function myFunction(param1, param2) {    // ฟังก์ชั่นนี้ไม่เคยถูกเรียกใช้งาน	
 	console.log("function1 value:", param1, param2); 
 }
 myFunction(100, 200);   		// เรียกใช้ฟังก์ชั่นที่ประกาศอยู่ด้านล่าง
