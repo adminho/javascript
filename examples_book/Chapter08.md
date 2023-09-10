@@ -273,7 +273,6 @@ console.log(newStr);            // "abax"
 ```js
 let newStr = "abc".padStart(10, "0123456789");
 console.log(newStr);            // "0123456abc"
-
 ```
 
 ```js
@@ -283,13 +282,13 @@ console.log(newStr);            // "abcd"
 
 ```js
 let newStr = "x".padStart(3);
-console.log(newStr);              // "   x"
+console.log(newStr);              // "  x"
 console.log(newStr.length);    // 3
 ```
 
 ```js
 let newStr = "x".padStart(3, ' ');
-console.log(newStr);             // "   x"
+console.log(newStr);             // "  x"
 console.log(newStr.length);   // 3
 ```
 
@@ -312,7 +311,7 @@ let newStr4 = "abcd".padEnd(2, "x");
 console.log(newStr4);               // "abcd"
 // เมื่อไม่ระบุ fillString
 let newStr5 = "x".padEnd(3); 			
-console.log(newStr5);               // "x   "
+console.log(newStr5);               // "x  "
 console.log(newStr5.length);     // 3
 ```
 
