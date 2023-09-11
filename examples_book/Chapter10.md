@@ -657,6 +657,8 @@ console.log(array);		// [ 2, 4, 6, 8 ] */
 </html>
 ```
 
+* หมายเหตุ วิธีรันโค้ดนี้ให้ copy โค้ดจาวาสคริปต์ข้างล่าง ไปแปะไว้ในโครง <script></script> ของโครงสร้าง HTML ข้างบน แล้วถึงกดรันได้
+
 ```js
 let obj ={
        value : "JavaScript",
@@ -677,6 +679,8 @@ let obj ={
 obj.printValue();	// "Message: JavaScript"
 obj.init();       
 ```
+
+* หมายเหตุ วิธีรันโค้ดนี้ให้ copy โค้ดจาวาสคริปต์ข้างล่าง ไปแปะไว้ในโครง <script></script> ของโครงสร้าง HTML ข้างบน แล้วถึงกดรันได้
 
 ```js
 let obj ={
