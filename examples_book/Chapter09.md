@@ -122,7 +122,7 @@ if(true) {
 
 ```js
 var count = 89;
-let count = 12; 			// เกิด error เพราะประกาศชื่อตัวแปรซ้ำกัน
+let count = 12; 			// เกิด SyntaxError เพราะประกาศชื่อตัวแปรซ้ำกัน
 ```
 
 ```js
