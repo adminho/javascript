@@ -499,8 +499,8 @@ console.log(rest)        // { bar: 2, zoo: 3 }
 
 ```js
 let obj = {foo: 1, bar: 2, zoo: 3};
-let {...rest, zoo} = obj;                               // ...rest วางไว้ด้านหน้าไม่ได้ จะเกิด error
-let {foo, ...rest1, ...rest2} = obj;                   // ...rest1 , ...rest2 ใช้ซ้ำกันไม่ได้ จะเกิด error
+let {...rest, zoo} = obj;                               // ...rest วางไว้ด้านหน้าไม่ได้ จะเกิด SyntaxError
+let {foo, ...rest1, ...rest2} = obj;                   // ...rest1 , ...rest2 ใช้ซ้ำกันไม่ได้ จะเกิด SyntaxError
 ```
 
 
