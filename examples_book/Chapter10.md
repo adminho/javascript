@@ -932,9 +932,7 @@ let arr = [
 function foo(param1, param2, ) {
 	console.log(arguments);
 }
-```
 
-```js
 foo( "abc", "def", );    // [Arguments] { '0': 'abc', '1': 'def' }
 ```
 
