@@ -146,7 +146,7 @@ MESSAGE = "Bye";  // เกิด TypeError เพราะไปแก้ไข
 ```
 
 ```js
-console.log(count);	// undefined	หรือเกิด ReferenceError (ขึ้นอยู่กับจาวาสคริปต์เอ็นจิ้น)
+console.log(count);	// เกิด ReferenceError
 const count = 89;	// จะมองเห็นตัวแปร count ตั้งแต่จุดนี้เป็นต้นไป
 if(true) {
     console.log(count);	// 89
