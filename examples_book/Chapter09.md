@@ -404,7 +404,7 @@ console.log(save, undo, moveOption, stopOption);	// "success none move stop"
 
 ```js
 let action = {
-	save : "succes",
+	save : "success",
 	undo : "none",
 	option : ["move", "stop", "slow"]
 };
