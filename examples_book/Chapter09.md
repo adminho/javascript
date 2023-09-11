@@ -113,7 +113,7 @@ array.forEach(function(printLog){
 ### สรุปขอบเขตการมองเห็นตัวแปรแบบ let
 
 ```js
-console.log(count); 	// undefined หรือเกิด ReferenceError (ขึ้นอยู่กับจาวาสคริปต์เอ็นจิ้น)
+console.log(count); 	// เกิด ReferenceError
 let count = 89;	            // จะมองเห็นตัวแปร count ตั้งแต่จุดนี้เป็นต้นไป
 if(true) {
     console.log(count);	// 89
