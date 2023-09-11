@@ -759,7 +759,7 @@ myFunction(100,200,300,400);	// 100 200
 function myFunction (param1, param2) {
     console.log(arguments);
 }
-myFunction(100,200,300,400);	// [100, 200, 300, 400]
+myFunction(100,200,300,400);	// [Arguments] { ‘0’: 100, ‘1’: 200, ‘2’: 300, ‘3’: 400 }
 ```
 
 ### ข้อควรระวังในการประกาศฟังก์ชั่น

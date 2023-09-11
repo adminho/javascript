@@ -20,8 +20,17 @@
 					
 			} else if( typeof data === 'object'){
 				let str = "{ ";
-				for(const [key, value] of Object.entries(data)){
-					str += ""+key+": "+ toString(value) + ", ";
+
+				if( data.toString().includes("Arguments")){
+					for(const [key, value] of Object.entries(data)){
+						str += `'${key}': ${toString(value)}, `;
+					}
+					str ="[Arguments] " + str;	
+					
+				} else {
+					for(const [key, value] of Object.entries(data)){
+						str += `${key}: ${toString(value)}, `;
+					}					
 				}
 				return (str.length >2) ? str.slice(0, -2) + ' }': '{}';					
 						
