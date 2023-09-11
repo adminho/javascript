@@ -367,7 +367,6 @@ let action = {
 let save, undo;
 ({save, undo} = action);		              // ใส่วงเล็บครอบทั้งประโยคจะไม่เกิด error
 console.log(save, undo);       	              // true false
-
 ```
 
 ```js
