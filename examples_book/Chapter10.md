@@ -517,7 +517,7 @@ arrowFunc();
 ```js
 // ใส่เครื่องหมายวงเล็บ เพื่อครอบอ็อบเจ็กต์ที่ถูกรีเทิร์นออกมา
 let getFont = () => ( { color: "red", size: 200 } ); 
-console.log(getFont());	// {color: "red", size: 200}
+console.log(getFont());	// { color: 'red', size: 200 }
 /* จะเสมือนเขียนเป็น
 let getFont = function() {
 	return {color: "red", size: 200};
