@@ -63,6 +63,7 @@
 				.replaceAll(/"/g, '&quot;')
 				.replaceAll(/'/g, "&#039;")
 				.replaceAll(/\n/g,'<br>')
+				.replaceAll(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
 				.replaceAll(/\s/g, "&nbsp;");				
 		}
 			

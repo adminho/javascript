@@ -89,6 +89,15 @@ Last line`;
 console.log(msg);
 ```
 
+* โค้ดข้างบนจะแสดงผลดังนี้ (ไม่ต้องกดรัน)
+```js
+First line   // This is not a comment
+/*
+This is not a comment
+*/
+Last line
+```
+
 ### ความยาวของเทมเพลตสตริง
 
 ```js
