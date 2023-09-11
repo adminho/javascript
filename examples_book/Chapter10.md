@@ -806,8 +806,8 @@ function factorial(value) {
         }
     }
 console.log(factorial(4));		             // จะได้ค่าเป็น 24 เพราะ 4! = 4 x 3 x 2 x 1 = 24
-// จะเกิด RangeError เพราะ stack frame โตเกินไป จนใช้หน่วยความจำหมด
-console.log(factorial(200000));	
+// จะเกิด RangeError เพราะ stack frame โตมากเกินไป จนใช้หน่วยความจำหมด
+console.log(factorial(200000));
 ```
 
 ```js
