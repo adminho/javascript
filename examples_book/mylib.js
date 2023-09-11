@@ -62,7 +62,8 @@
 				.replaceAll(/>/g, "&gt;")
 				.replaceAll(/"/g, '&quot;')
 				.replaceAll(/'/g, "&#039;")
-				.replaceAll(/\s/g, "&nbsp;");
+				.replaceAll(/\n/g,'<br>')
+				.replaceAll(/\s/g, "&nbsp;");				
 		}
 			
 		console.log = function(...data){

@@ -23,7 +23,7 @@ let div = `<div>
 console.log(div);
 /* แสดงผลลัพธ์เป็น
 <div>
-	<h1>Hello world</h1>
+<h1>Hello world</h1>
 </div>
 */
 ```
