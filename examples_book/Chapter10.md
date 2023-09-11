@@ -578,12 +578,12 @@ console.log(arrowFunc.name);         // จะแสดงชื่อ "arrowFun
 ```js
 // เขียนแบบฟังก์ชั่นลูกศร 
 var arrowFunc = () => console.log(arguments);     //  ไม่สามารถใช้อ็อบเจ็กต์ arguments ได้
-arrowFunc(1, 2, 3);	// [] 
+arrowFunc(1, 2, 3);	// ถ้ารันบนเว็บเบราเซอร์จะเกิด error แต่บน Node.js ไม่เกิด error
 // เขียนแบบฟังก์ชั่นธรรมดา
 var arrowFunc2 = function() {
     return console.log(arguments);   // ฟังก์ชั่นธรรมดาสามารถใช้อ็อบเจ็กต์ arguments ได้ตามปกติ
 };
-arrowFunc2(1, 2, 3);	              // [1, 2, 3]
+arrowFunc2(1, 2, 3);	              // [Arguments] { '0': 1, '1': 2, '2': 3 }
 ```
 
 ```js

@@ -1,5 +1,5 @@
 		let resultAreaId = "";	
-		
+				
 		function toString(data) {
 			if(data == null || data == undefined ) {
 				return ""+ data;				
@@ -21,7 +21,7 @@
 			} else if( typeof data === 'object'){
 				let str = "{ ";
 
-				if( data.toString().includes("Arguments")){
+				if( data.toString().includes("Arguments")){					
 					for(const [key, value] of Object.entries(data)){
 						str += `'${key}': ${toString(value)}, `;
 					}
@@ -76,12 +76,16 @@
 					d = "-0";					
 				} 
 				
+				if(d === "@not use Arguments"){ // fix bugs
+					throw new ReferenceError("arguments is not defined");
+				}
+				
 				if(d.startsWith('#')){
 					d = d.substring(1);	 // เมื่อเจอ # นำหน้า ต้องการให้สตริง html มันทำงานในเว็บเบราเซอร์ 				
 				} else {
 					d = decodeHtml(d);   // ไม่ต้องการให้สตริง html ทำงานในเว็บเบราเซอร์
 				}
-				
+								
 				display.innerHTML += d + " ";
 			}
 			display.innerHTML += "<br>";
@@ -97,12 +101,12 @@
 				textCodeArea.classList.add("notrun");						
 			}
 		}
-		
-		function evalCodeBtn(count) {
-			resultAreaId = `#displayResult${count}`;
+
+		function runCodeBtn(countTarget) {
+			resultAreaId = `#displayResult${countTarget}`;
 			clearDisplay(resultAreaId);
 									
-			let textCodeArea = document.querySelector(`#codeArea${count}`);
+			let textCodeArea = document.querySelector(`#codeArea${countTarget}`);
 			let codeTxt = textCodeArea.value;				
 						
 			if( codeTxt.includes("<html>")>0 ) {
@@ -118,6 +122,7 @@
 					console.log("#<font color='lightgreen'>ผลการรัน:</font>");	
 					codeTxt = codeTxt.replaceAll(/-false/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -false ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'					
 					//codeTxt = codeTxt.replaceAll(/-0.(?<!\,)$/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -0 ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'										
+					arguments = "@not use Arguments"; // fixbugs					
 					eval(codeTxt);						
 				} catch (e){
 					console.log("#<font color='orange'>++++Error++++</font>");	
