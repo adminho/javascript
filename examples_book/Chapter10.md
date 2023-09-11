@@ -950,5 +950,5 @@ foo(
  "abc",  
 ); 
 // แสดงผลลัพธ์
-[Arguments] { '0': 'def', '1': 'abc' }
+// [Arguments] { '0': 'def', '1': 'abc' }
 ```
