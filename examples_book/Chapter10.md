@@ -614,13 +614,13 @@ printItem();		// "IIFE" */
 ```js
 var array = [1, 2, 3, 4];
 array.forEach( (value, index, arr) => arr[index] =  value *2 );
-console.log(array);		// [2, 4, 6, 8]
+console.log(array);		// [ 2, 4, 6, 8 ]
 /* จะเสมือนใช้ฟังก์ชั่นคอลแบ็คแบบปกติ
 var array = [1, 2, 3, 4];
 array.forEach(function(value, index, arr) {	 
 	return arr[index] = value * 2;
 }); 
-console.log(array);		// [2, 4, 6, 8] */
+console.log(array);		// [ 2, 4, 6, 8 ] */
 ```
 
 ### การใช้ this ในฟังก์ชั่นลูกศร
