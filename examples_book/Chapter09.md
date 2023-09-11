@@ -356,7 +356,7 @@ let action = {
      undo: false
 };
 let save, undo;
-{save, undo} = action;		              // เกิด error
+{save, undo} = action;		              // เกิด SyntaxError
 ```
 
 ```js
