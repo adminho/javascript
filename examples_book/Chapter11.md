@@ -18,13 +18,13 @@ console.log(msg);    	   	// แสดงคำว่า `One` "Two" ‘Three’
 
 ```js
 let div = `<div>
-<h1>Hello world</h1>
+	<h1>Hello world</h1>
 </div>`;
 console.log(div);
 /* แสดงผลลัพธ์เป็น
 <div>
-<h1>Hello world</h1>
-</div>
+	<h1>Hello world</h1>
+</div> 
 */
 ```
 
