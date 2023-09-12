@@ -109,7 +109,7 @@ for (let i in obj) {
 // "car" 
 // "zoo" 
 let keys = Object.getOwnPropertyNames(obj);
-console.log(keys);	// ["car", "zoo"]
+console.log(keys);	// [ "car", "zoo" ]
 ```
 
 ```js
