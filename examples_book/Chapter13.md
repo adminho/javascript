@@ -470,7 +470,7 @@ let car = {
 let driver = {
       __proto__: car,
       speed: 100,
-      drive: function() {           	             //  บรรทัด a -- ไม่ได้ประกาศเมธอดแบบย่อ
+      drive: function() {           	             // บรรทัด a -- ไม่ได้ประกาศเมธอดแบบย่อ
             super.drive();		             // บรรทัด b - เกิด SyntaxError
       } // สิ้นสุดการประกาศ drive()                
 };

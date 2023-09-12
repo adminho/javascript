@@ -4,6 +4,13 @@
 			if(data == null || data == undefined ) {
 				return ""+ data;				
 						
+			} else if (data instanceof Map) {
+				let str = `Map(${data.size}) { `;
+				for(const [key, value] of data.entries()){
+						str += `'${key}' => ${toString(value)}, `;
+				}
+				return str.slice(0, -2) + ' }';	
+				
 			} else if( data instanceof Array){
 				let str = "[ ";
 				for(const value of data) {
