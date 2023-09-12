@@ -10,7 +10,7 @@
 						str += `'${key}' => ${toString(value)}, `;
 				}
 				
-				return (str == `Map(${data.size}) { ` ) ? str.slice(0, -2) + ' }': `Map(${data.size}) { `;	
+				return (str != `Map(${data.size}) { ` ) ? str.slice(0, -2) + ' }': `Map(${data.size}) {}`;	
 				
 			} else if( data instanceof Array){
 				let str = "[ ";
@@ -30,17 +30,17 @@
 				
 				
 				if( data.toString().includes("Arguments")){		
-					let str = "[Arguments] { ";				
+					let str = "[Arguments] { ";		
 					
 					for(const [key, value] of Object.entries(data)){
 						str += `'${key}': ${toString(value)}, `;
 					}
 					
 					for(const sym of Object.getOwnPropertySymbols(data)){ // get properties of Symbol
-						str += `'[${sym.toString()}]': ${toString(data[sym])}, `;
+						//str += `${sym.toString()}: ${toString(data[sym])}, `;
 					}
 					
-					return (str == "[Arguments] { " ) ? str.slice(0, -2) + " }": "[Arguments] {}";	
+					return (str != "[Arguments] { " ) ? str.slice(0, -2) + " }": "[Arguments] {}";	
 					
 				} else {
 					let str = "{ ";
