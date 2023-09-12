@@ -601,6 +601,19 @@ let obj = {
     [Symbol("zoo")]: 3
 };
 console.log(Object.getOwnPropertyDescriptors(obj));
+
+/* แสดงผลลัพธ์
+{
+  foo: { value: 1, writable: true, enumerable: true, configurable: true },
+  bar: {
+    get: [Function: get bar],
+    set: undefined,
+    enumerable: true,
+    configurable: true
+  },
+  [Symbol(zoo)]: { value: 3, writable: true, enumerable: true, configurable: true }
+}
+*/
 ```
 
 ## เมธอด Object.fromEntries()
