@@ -437,7 +437,7 @@ driver.drive();		                         // "Drive a car. It has speed: 100"
 
 ```js
 function startCar() {
-	console.log( super.drive());	 // เกิด SytnaxError
+	console.log( super.drive());	 // เกิด SyntaxError
 }
 ```
 
