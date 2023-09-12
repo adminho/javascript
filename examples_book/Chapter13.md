@@ -712,7 +712,7 @@ let data = {
 }; 
 console.log(data.parent.child.name.firstName);    // "สมชาย"
 console.log(data.parent.child.name.surname);     // undefined
-console.log(data.parent.child.NAME.firstName);    //  บรรทัด a -- เกิด error
+console.log(data.parent.child.NAME.firstName);    //  บรรทัด a - เกิด SyntaxError
 
 console.log(data.parent.child.NAME?.firstName);        // undefined
 console.log(data.parent.child.name?.firstName);        // "สมชาย"
@@ -720,7 +720,7 @@ console.log(data.parent.child.name?.firstName);        // "สมชาย"
 console.log(data.parent.child.NAME?.["firstName"]);     // undefined
 console.log(data.parent.child.name?.["firstName"]);     // "สมชาย"
 
-console.log(data.parent.child.name.surname?);   // วาง ? ไว้ท้ายสุด เกิด error ทำไม่ได้
+console.log(data.parent.child.name.surname?);   // วาง ? ไว้ท้ายสุด เกิด SyntaxError ทำไม่ได้
 ```
 
 ```js
