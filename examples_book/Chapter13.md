@@ -449,7 +449,7 @@ let car = {
 };
 let driver = {
 	__proto__: car,
-    speed: 100,
+	speed: 100,
 	drive() { 
 	       console.log("Drive a taxi") ;
 	}
@@ -458,7 +458,7 @@ function startCar() {
 	return super.drive() + " :100";	 // บรรทัด a - เกิด SytnaxError
 }
 driver.drive = startCar;                              // กำหนดค่าทับพร็อพเพอร์ตี้ driver.drive
-driver.drive();				 // เกิด error
+driver.drive();				 // เกิด SyntaxError
 ```
 
 
