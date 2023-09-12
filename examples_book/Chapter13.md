@@ -455,7 +455,7 @@ let driver = {
 	}
 };
 function startCar() {
-	return super.drive() + " :100";	 // บรรทัด a - เกิด SytnaxError
+	return super.drive() + " :100";	 // บรรทัด a - เกิด SyntaxError
 }
 driver.drive = startCar;                              // กำหนดค่าทับพร็อพเพอร์ตี้ driver.drive
 driver.drive();		 		 		 
