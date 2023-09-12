@@ -119,7 +119,7 @@ obj["zoo"] = "200";
 obj[Symbol("foo")] = "foo";
 obj[Symbol("bar")] = "bar";
 let keys = Object.getOwnPropertySymbols(obj);
-console.log(keys);	// [Symbol(foo), Symbol(bar)]
+console.log(keys);	// [ Symbol(foo), Symbol(bar) ]
 ```
 
 ## JSON.stringify()
