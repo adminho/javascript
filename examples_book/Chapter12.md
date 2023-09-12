@@ -130,7 +130,7 @@ let obj = {
 "bar" : "200"
 }
 // จะได้เป็นสตริงที่เขียนอยู่ในรูปแบบของ JSON  
-console.log(JSON.stringify(obj));    // '{"bar" : "200"}'
+console.log(JSON.stringify(obj));    // {"bar":"200"}
 ```
 
 ## แปลงซิมโบลเป็นสตริง
