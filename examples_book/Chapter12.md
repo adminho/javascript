@@ -40,8 +40,8 @@ console.log(typeof symObj2);  	             // "object"
 
 ```js
 let sym1 = Symbol("example1");
-console.log(sym1 == Object(sym1));	         // true
 let sym2 = Symbol("example2");
+console.log(sym1 == Object(sym1));	         // true
 console.log(sym2 == Object(sym1));	         // false
 ```
 
