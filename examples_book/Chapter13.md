@@ -685,9 +685,9 @@ console.log(obj3)       // { a: 'foo', b: 'bar', d: 'car', x: 'zoo', y: 'car' }
 ```js
 let obj1 = {a:"foo", b:"bar"};
 let obj2 = {a:"zoo", ...obj1};
-console.log(obj2)   // { a: 'foo', b: 'bar' }
+console.log(obj2)       // { a: 'foo', b: 'bar' }
 let obj3 = {...obj1, a:"zoo"};
-console.log(obj3)   // { a: 'zoo', b: 'bar' }
+console.log(obj3)       // { a: 'zoo', b: 'bar' }
 ```
 
 ```js

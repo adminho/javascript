@@ -45,7 +45,7 @@
 				} else {
 					let str = "{ ";
 					
-					for(const [key, value] of Object.entries(data)){
+					for(const [key, value] of Object.entries(data)){						
 						str += `${key}: ${toString(value)}, `;
 					}	
 
