@@ -661,25 +661,25 @@ console.log( bar.hasOwnProperty("fooProp") );  // false    -- bar ไม่ใ�
 ## การกระจายพร็อพเพอร์ตี้ไปให้อีกอ็อบเจ็กต์
 ```js
 let obj1 = {a: "foo", b: "bar"};
-let obj2 = {...obj1 };                  // ใช้โอเปอเรเตอร์สเปรด ประกาศสมาชิก
-console.log(obj2)                     // { a: 'foo', b: 'bar' }
+let obj2 = {...obj1 };   // ใช้โอเปอเรเตอร์สเปรด ประกาศสมาชิก
+console.log(obj2)       // { a: 'foo', b: 'bar' }
 // แก้ไขอ็อบเจ็กต์ obj1 ก็ไม่กระทบต่อ obj2
 obj1.a = "zoo";
-console.log(obj1);   // { a: 'zoo', b: 'bar' }
-console.log(obj2);   // { a: 'foo', b: 'bar' }
+console.log(obj1);      // { a: 'zoo', b: 'bar' }
+console.log(obj2);      // { a: 'foo', b: 'bar' }
 ```
 
 ```js
 let obj1 = {a: "foo", b: "bar"};
 let obj2 = {...obj1, c: "zoo"};
-console.log(obj2)   // { a: 'foo', b: 'bar', c: 'zoo' }
+console.log(obj2)       // { a: 'foo', b: 'bar', c: 'zoo' }
 ```
 
 ```js
 let obj1 = {a:"foo", b:"bar"};
 let obj2 = {x:"zoo", y:"car"};
 let obj3 = {...obj1, d:"car", ...obj2};
-console.log(obj3)   // { a: 'foo', b: 'bar', d: 'car', x: 'zoo', y: 'car' }
+console.log(obj3)       // { a: 'foo', b: 'bar', d: 'car', x: 'zoo', y: 'car' }
 ```
 
 ```js
@@ -695,7 +695,7 @@ console.log( {...undefined});               //  {}
 console.log( {...null} );                       //  {}
 console.log( {...123} );                       //  {}
 console.log( {..."abc"} );                    // { '0': 'a', '1': 'b', '2': 'c' }
-console.log( {...["foo", "bar"]});          // { '0': 'foo', '1': 'bar'
+console.log( {...["foo", "bar"]});          // { '0': 'foo', '1': 'bar' }
 ```
 
 ## Optional Chaining
