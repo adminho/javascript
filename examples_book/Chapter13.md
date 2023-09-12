@@ -121,8 +121,8 @@ let obj1 = { x: 1 };
 let obj2 = { y: 2 };
 let obj3 = { z: 3 };		
 let merged = Object.assign(obj1, obj2, obj3);
-console.log(merged);		// { x: 1, y : 2, z: 3 }
-console.log(obj1);			// { x: 1, y : 2, z: 3 }	
+console.log(merged);		// { x: 1, y: 2, z: 3 }
+console.log(obj1);		    // { x: 1, y: 2, z: 3 }	
 console.log(merged === obj1); 	// true
 console.log(merged === obj2); 	// false
 console.log(merged === obj3); 	// false

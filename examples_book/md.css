@@ -46,9 +46,10 @@ textarea {
   background-color: #ECFFEF;
   position: fixed;
   left: 0;
-  top:15;
+  top:5;
   width: 135px;
   display: block;
+  overflow-y: auto;
 }
 
 .picture-left-menu {
