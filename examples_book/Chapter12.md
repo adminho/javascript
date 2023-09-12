@@ -158,6 +158,6 @@ new String(sym);			             //  TypeError
 let sym= Symbol("foo"); 
 console.log(sym)                                                // Symbol(foo)
 console.log(String(sym) === `Symbol(${"foo"})`);    // true
-console.log(sym.toString());                                  // "Symbol(foo)"
+console.log(sym.toString());                                  // Symbol(foo)
 console.log(sym.description);                               // "foo"
 ```
