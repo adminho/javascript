@@ -70,7 +70,8 @@ async function genHTML(fileName){
   }
     
   if(isCode && !line.startsWith("```js") && !line.startsWith("```html")){
-	  lineCodes += `${line}\n`;
+	  line = line.replaceAll(/\$\$/g, "@-@"); // fix bugs กรณีที่ line มี $$ วางติดกันอยู่ในสตริง	  
+	  lineCodes += `${line}\n`;	  
   }
   
   if(last) {	  
@@ -78,6 +79,8 @@ async function genHTML(fileName){
 	let html = templateHTML.replace("${headline}", headline)
 			.replace("${allLines}", allLines)
 			.replace("${fileName}", fileName);
+			
+	html = html.replaceAll(/@-@/g, "$$$"); // fix bugs
     fs.writeFile(`${fileName}.html`, html, function (err) {
 		if (err) throw err;
 		console.log(`${fileName}.html is Saved!`);

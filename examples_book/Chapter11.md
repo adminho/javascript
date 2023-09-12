@@ -106,7 +106,6 @@ JavaScript
   String`;	
 console.log(msg.length);		            // 20
 console.log(msg.trim().length); 	            // 19
-
 ```
 
 ## นิพจน์ในเทมเพลตสตริง
@@ -140,11 +139,6 @@ console.log(`My name is ${name}`);
 ```
 
 ## การติดแท็ก
-
-```js
-let n = 1, a = 3, b = 6;
-console.log(divTag`${n}) Hello world : ${a * b} items`);	// บรรทัด 2
-```
 
 ```js
 function divTag(strings, ...values) {

@@ -78,7 +78,7 @@
 					d = "-0";					
 				} 
 				
-				if(d === "@not use Arguments"){ // fix bugs
+				if(d === "@not_use_Arguments"){ // fix bugs
 					throw new ReferenceError("arguments is not defined");
 				}
 				
@@ -124,7 +124,7 @@
 					console.log("#<font color='lightgreen'>ผลการรัน:</font>");	
 					codeTxt = codeTxt.replaceAll(/-false/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -false ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'					
 					//codeTxt = codeTxt.replaceAll(/-0.(?<!\,)$/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -0 ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'										
-					arguments = "@not use Arguments"; // fixbugs					
+					arguments = "@not_use_Arguments"; // fixbugs					
 					eval(codeTxt);						
 				} catch (e){
 					console.log("#<font color='orange'>++++Error++++</font>");	

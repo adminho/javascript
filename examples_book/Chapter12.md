@@ -39,9 +39,10 @@ console.log(typeof symObj2);  	             // "object"
 ```
 
 ```js
-let sym = Symbol("example");
-console.log(sym == Object(sym));	
-// ถ้าใช้บน Firefox จะได้เป็น true แต่ถ้าใช้บน Google Chrome จะเป็น fasle
+let sym1 = Symbol("example1");
+console.log(sym1 == Object(sym1));	         // true
+let sym2 = Symbol("example2");
+console.log(sym2 == Object(sym1));	         // false
 ```
 
 ## ใช้ซิมโบลเป็นคีย์ในอ็อบเจ็กต์
