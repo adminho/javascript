@@ -562,7 +562,7 @@ console.log(array);         //  [ [ 'foo', 1 ], [ 'bar', 2 ] ]
 ```js
 let foo = Symbol("foo");
 let obj = {
-    [foo]: 1,
+    [foo]: 1,                    // มีคีย์เป็นซิมโบล
     bar: 2,
  };
 let array = Object.entries(obj);
@@ -571,7 +571,7 @@ console.log(array);         // [ [ 'bar', 2 ] ]
 
 ```js
 let obj = { foo: 1, bar: 2 };
-for (let [k,v] of Object.entries(obj)) {   // สกัดคีย์กับข้อมูลจากอ็อบเจ็กต์ obj ออกมา
+for (let [k, v] of Object.entries(obj)) {   // สกัดคีย์กับข้อมูลจากอ็อบเจ็กต์ obj ออกมา
     console.log(`${k}: ${v}`);
 }
 /* แสดงผลลัพธ์
