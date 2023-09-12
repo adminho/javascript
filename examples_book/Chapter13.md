@@ -458,9 +458,8 @@ function startCar() {
 	return super.drive() + " :100";	 // บรรทัด a - เกิด SytnaxError
 }
 driver.drive = startCar;                              // กำหนดค่าทับพร็อพเพอร์ตี้ driver.drive
-driver.drive();				 // เกิด SyntaxError
+driver.drive();		 		 		 
 ```
-
 
 ```js
 let car = {
@@ -472,10 +471,10 @@ let driver = {
       __proto__: car,
       speed: 100,
       drive: function() {           	             //  บรรทัด a -- ไม่ได้ประกาศเมธอดแบบย่อ
-            super.drive();		
-      } // สิ้นสุดการประกาศ drive()
+            super.drive();		             // บรรทัด b - เกิด SyntaxError
+      } // สิ้นสุดการประกาศ drive()                
 };
-driver.drive();			             // SyntaxError
+driver.drive();          
 ```
 
 ## เมธอด Object.is()
