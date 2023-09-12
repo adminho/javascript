@@ -62,7 +62,7 @@ Object.defineProperties(obj, {
 });
 console.log(obj[lastSym]); // 300
 Object.defineProperty(obj, sym, { writable: false }); // กำหนดให้พร็อพเพอร์ตี้ ไม่สามารถแก้ไขค่าได้
-obj[sym] = 1;    	// จะเกิด error เพราะไม่สามารถแก้ไขค่าได้ (อยู่ในโหมดสตริคท์)
+obj[sym] = 1;    	// ถ้าอยู่ในโหมดสตริคท์ จะเกิด TypeError เพราะไม่สามารถแก้ไขค่าได้
 ```
 
 ## การแชร์ซิมโบล
