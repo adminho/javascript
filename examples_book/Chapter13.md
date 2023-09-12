@@ -556,7 +556,7 @@ for (let v of Object.values(obj)) {      // สกัดส่วนข้อม
 ```js
 let obj = { foo: 1, bar: 2 };
 let array = Object.entries(obj);
-console.log(array);         //  [ [ ‘foo’, 1 ], [ ‘bar’, 2 ] ]
+console.log(array);         //  [ [ 'foo', 1 ], [ 'bar', 2 ] ]
 ```
 
 ```js
@@ -566,7 +566,7 @@ let obj = {
     bar: 2,
  };
 let array = Object.entries(obj);
-console.log(array);         // [ [ ‘bar’, 2 ] ]
+console.log(array);         // [ [ 'bar', 2 ] ]
 ```
 
 ```js
@@ -582,7 +582,7 @@ bar: 2 */
 ```js
 let obj = { foo: 1, bar: 2 };
 let map = new Map(Object.entries(obj));
-console.log(map);       // Map(2) { ‘foo’ => 1, ‘bar’ => 2 }
+console.log(map);       // Map(2) { 'foo' => 1, 'bar' => 2 }
 ```
 
 ## เมธอด Object.getOwnPropertyDescriptors()
@@ -608,14 +608,14 @@ console.log(Object.getOwnPropertyDescriptors(obj));
 ```js
 let array = [["name", "somchai"], ["age", 65]];
 let obj = Object.fromEntries(array);
-console.log(obj);    // { name: ‘somchai’, age: 65 }
+console.log(obj);    // { name: 'somchai', age: 65 }
 ```
 
 ```js
 let map = new Map([["name", "somchai"], ["age", 65]]);    // สร้างแม็พขึ้นมาก่อน
-console.log(map);   // Map(2) { ‘name’ => ‘somchai’, ‘age’ => 65 }
+console.log(map);   // Map(2) { 'name' => 'somchai', 'age' => 65 }
 let obj = Object.fromEntries(map)
-console.log(obj);      // { name: ‘somchai’, age: 65 }
+console.log(obj);      // { name: 'somchai', age: 65 }
 ```
 
 ## เมธอด Object.hasOwn()
@@ -641,40 +641,40 @@ console.log( bar.hasOwnProperty("fooProp") );  // false    -- bar ไม่ใ�
 ```js
 let obj1 = {a: "foo", b: "bar"};
 let obj2 = {...obj1 };                  // ใช้โอเปอเรเตอร์สเปรด ประกาศสมาชิก
-console.log(obj2)                     // { a: ‘foo’, b: ‘bar’ }
+console.log(obj2)                     // { a: 'foo', b: 'bar' }
 // แก้ไขอ็อบเจ็กต์ obj1 ก็ไม่กระทบต่อ obj2
 obj1.a = "zoo";
-console.log(obj1);   // { a: ‘zoo’, b: ‘bar’ }
-console.log(obj2);   // { a: ‘foo’, b: ‘bar’ }
+console.log(obj1);   // { a: 'zoo', b: 'bar' }
+console.log(obj2);   // { a: 'foo', b: 'bar' }
 ```
 
 ```js
 let obj1 = {a: "foo", b: "bar"};
 let obj2 = {...obj1, c: "zoo"};
-console.log(obj2)   // { a: ‘foo’, b: ‘bar’, c: ‘zoo’ }
+console.log(obj2)   // { a: 'foo', b: 'bar', c: 'zoo' }
 ```
 
 ```js
 let obj1 = {a:"foo", b:"bar"};
 let obj2 = {x:"zoo", y:"car"};
 let obj3 = {...obj1, d:"car", ...obj2};
-console.log(obj3)   // { a: ‘foo’, b: ‘bar’, d: ‘car’, x: ‘zoo’, y: ‘car’ }
+console.log(obj3)   // { a: 'foo', b: 'bar', d: 'car', x: 'zoo', y: 'car' }
 ```
 
 ```js
 let obj1 = {a:"foo", b:"bar"};
 let obj2 = {a:"zoo", ...obj1};
-console.log(obj2)   // { a: ‘foo’, b: ‘bar’ }
+console.log(obj2)   // { a: 'foo', b: 'bar' }
 let obj3 = {...obj1, a:"zoo"};
-console.log(obj3)   // { a: ‘zoo’, b: ‘bar’ }
+console.log(obj3)   // { a: 'zoo', b: 'bar' }
 ```
 
 ```js
 console.log( {...undefined});               //  {}
 console.log( {...null} );                       //  {}
 console.log( {...123} );                       //  {}
-console.log( {..."abc"} );                    // { ‘0’: ‘a’, ‘1’: ‘b’, ‘2’: ‘c’ }
-console.log( {...["foo", "bar"]});          // { ‘0’: ‘foo’, ‘1’: ‘bar’
+console.log( {..."abc"} );                    // { '0': 'a', '1': 'b', '2': 'c' }
+console.log( {...["foo", "bar"]});          // { '0': 'foo', '1': 'bar'
 ```
 
 ## Optional Chaining
