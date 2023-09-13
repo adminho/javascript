@@ -49,7 +49,7 @@ async function genHTML(fileName){
 	  const rows = lineCodes.split('\n').length-1;
 	  
 	  allLines += `<div>
-					<form id="form${count}" style="margin:0px" action="http://localhost/display_html.php" method="POST" target="_blank">
+					<form id="form${count}" style="margin:0px" action="display_html.php" method="POST" target="_blank">
 						<label for="codeArea${count}"></label>					
 						<textarea id="codeArea${count}" name="html" class="notrun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>					
 					</form>						
