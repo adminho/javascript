@@ -26,8 +26,16 @@
 			} else if( data instanceof Date){	
 				return data.toString();
 					
-			} else if( typeof data === 'object'){				
+			} else if( data instanceof Window){	
+				return `Window`;
+		
+			} else if( typeof data === 'string'){
+				return `'${data}'`;				
 				
+			} else if(typeof data == 'bigint') {
+				return `${data}n`;	
+				
+			} else if( typeof data === 'object'){
 				
 				if( data.toString().includes("Arguments")){		
 					let str = "[Arguments] { ";		
@@ -54,14 +62,7 @@
 					}
 					
 					return (str.length >2) ? str.slice(0, -2) + " }": "{}";	
-				}
-				
-						
-			} else if( typeof data === 'string'){
-				return `'${data}'`;				
-				
-			} else if(typeof data == 'bigint') {
-				return `${data}n`;	
+				}	
 				
 			} else {				
 				return String(data); // recursive
@@ -90,6 +91,15 @@
 				.replaceAll(/\s/g, "&nbsp;");				
 		}
 			
+		function dowloadfile(content){
+			const link = document.createElement("a");			
+			const file = new Blob([content], { type: 'text/plain' });
+			link.href = URL.createObjectURL(file);
+			link.download = "sample.html";
+			link.click();
+			URL.revokeObjectURL(link.href);	
+		}
+		
 		console.log = function(...data){
 			let display = document.querySelector(resultAreaId);			
 			for( let d of data){
@@ -106,7 +116,7 @@
 				}
 				
 				if(d.startsWith('#')){
-					d = d.substring(1);	 // เมื่อเจอ # นำหน้า ต้องการให้สตริง html มันทำงานในเว็บเบราเซอร์ 				
+					d = d.substring(1);	 // เมื่อเจอ # นำหน้า เป็นการบอกว่าต้องการให้สตริง html มันทำงานในเว็บเบราเซอร์ 				
 				} else {
 					d = decodeHtml(d);   // ไม่ต้องการให้สตริง html ทำงานในเว็บเบราเซอร์
 				}
@@ -128,6 +138,7 @@
 		}
 
 		function runCodeBtn(countTarget) {
+			
 			resultAreaId = `#displayResult${countTarget}`;
 			clearDisplay(resultAreaId);
 									
@@ -135,14 +146,9 @@
 			let codeTxt = textCodeArea.value;				
 						
 			if( codeTxt.includes("<html>")>0 ) {
-				const link = document.createElement("a");
-				const content = codeTxt;
-				const file = new Blob([content], { type: 'text/plain' });
-				link.href = URL.createObjectURL(file);
-				link.download = "sample.html";
-				link.click();
-				URL.revokeObjectURL(link.href);
-			} else {				
+				document.querySelector(`#form${countTarget}`).submit();				
+			} else {
+				
 				try {
 					console.log("#<font color='lightgreen'>ผลการรัน:</font>");	
 					codeTxt = codeTxt.replaceAll(/-false/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -false ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'					
@@ -158,8 +164,11 @@
 					if(e.stack) {
 						console.log("#<font color='orange'>" + e.stack + "</font>");					
 					} 
-				}
+				}				
+				
 			}
+			
 			textCodeArea.classList.add("run-already");
 			//btn.value = "Run again";
+			return false;
 		}

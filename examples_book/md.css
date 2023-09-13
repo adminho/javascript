@@ -27,7 +27,7 @@
   font-weight: bold;
   border: none;
   color: white;
-  padding: 4px 16px;
+  padding: 4px 20px;
   text-decoration: none;
   margin: 0px 2px 20px 0px;
   cursor: pointer;
@@ -56,8 +56,16 @@ textarea {
 }
 
 .picture-left-menu {
-  text-align:left; 
-  margin:10px 0px 5px 20px;
+  text-align:left;   
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-bottom: 10px; 
+}
+
+.link-menu {
+  text-align: left; 
+  font-size: 0.98em;
+  padding-left: 20px;
 }
 
 .display-result {
@@ -66,7 +74,7 @@ textarea {
    background-color: #606060;
    color: white;
    text-align: left;
-   margin-top: 1px;
+   margin-top: 3px;
    margin-bottom: 3px;
    border: 0.5px #023020;
 }

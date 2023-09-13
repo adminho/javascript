@@ -41,21 +41,25 @@ async function genHTML(fileName){
 	  if(line.startsWith("```js")){
 		btnValue = "Run";
 	  } else if(line.startsWith("```html")) {
-		  btnValue = "Download HTML";
+		  btnValue = "Open HTML";
 	  }
 	  
   } else if(line.startsWith("```")){
 	  isCode = false	  	  
 	  const rows = lineCodes.split('\n').length-1;
 	  
-	  allLines += `<div><label for="codeArea${count}"></label>					
-						<textarea id="codeArea${count}" class="notrun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>
-						<div id="displayResult${count}" class="display-result"></div>
-						<input class="run-btn" type="submit" value="${btnValue}" onclick="runCodeBtn(${count})">
-						<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay('#displayResult${count}', '#codeArea${count}')">						
+	  allLines += `<div>
+					<form id="form${count}" style="margin:0px" action="http://localhost/display_html.php" method="POST" target="_blank">
+						<label for="codeArea${count}"></label>					
+						<textarea id="codeArea${count}" name="html" class="notrun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>					
+					</form>						
+					<div id="displayResult${count}" class="display-result"></div>
+					<input class="run-btn" type="submit" value="${btnValue}" onclick="runCodeBtn(${count})">
+					<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay('#displayResult${count}', '#codeArea${count}')">												
 				  </div>`;	  
 	  	  
-	  lineCodes = "";	  
+	  lineCodes = "";
+	  
   } else if(line.startsWith("#")) { 
 	  line = line.replace(/#/g, "");	
 	  if(line.includes("โค้ดบทที่")) {
