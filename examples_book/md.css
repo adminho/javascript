@@ -44,13 +44,12 @@ textarea {
 }
 
 .left-menu {
-  background-color: #ECFFEF;
   position: fixed;
   left: 0;
   top: 0;
   width: 135px;
   height: 100%;
-  display: block;
+  background-color: #ECFFEF;
   /*overflow-y: scroll;**/
   overflow: auto;  
 }
@@ -65,7 +64,10 @@ textarea {
 .link-menu {
   text-align: left; 
   font-size: 0.98em;
-  padding-left: 20px;
+  padding-left: 0px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .display-result {
