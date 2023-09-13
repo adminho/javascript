@@ -34,9 +34,9 @@
 }
 
 textarea {
-	font-size: 13pt;
-	background-color: #F5F5F5;
-	width: 100%;
+  font-size: 13em;
+  background-color: #F5F5F5;
+  width: 100%;
 }
 
 .describe {
@@ -47,10 +47,12 @@ textarea {
   background-color: #ECFFEF;
   position: fixed;
   left: 0;
-  top:5;
+  top: 0;
   width: 135px;
+  height: 100%;
   display: block;
-  overflow-y: auto;
+  /*overflow-y: scroll;**/
+  overflow: auto;  
 }
 
 .picture-left-menu {
@@ -69,6 +71,7 @@ textarea {
    border: 0.5px #023020;
 }
 
+/*wrap text*/
 div.display-result {
    white-space: pre-wrap;
    white-space: -moz-pre-wrap;

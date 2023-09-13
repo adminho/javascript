@@ -152,6 +152,13 @@ console.log(String(sym));		             // Symbol(foo)
 new String(sym);			             //  TypeError
 ```
 
+```js
+let sym = Symbol("foo");
+console.log(`${sym.toString()}`);   		 // Symbol(foo)
+console.log(`${String(sym)}`);	             // Symbol(foo)	
+console.log(`${sym}`)                                // TypeError
+```
+
 ## พร็อพเพอร์ตี้ description
 
 ```js
