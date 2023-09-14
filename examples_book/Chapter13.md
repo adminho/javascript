@@ -571,7 +571,7 @@ console.log(array);         // [ [ 'bar', 2 ] ]
 
 ```js
 let obj = { foo: 1, [Symbol("bar")]: 2 };
-// เข้าถึงคีย์ของ obj รวมทั้งที่เป็นซิมโบลด้วย
+// เข้าถึงคีย์ของ obj รวมทั้งคีย์ที่เป็นซิมโบลด้วย
 console.log(Reflect.ownKeys(obj).map( (k)=>[k, obj[k]]));  // [ [ 'foo', 1 ], [ Symbol(bar), 2 ] ]
 // เข้าถึงคีย์ของ obj ที่เป็นซิมโบลอย่างเดียว
 console.log(Object.getOwnPropertySymbols(obj).map( (k)=>[k, obj[k]]));  // [ [ Symbol(bar), 2 ] ]

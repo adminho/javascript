@@ -56,15 +56,15 @@ textarea {
 
 .picture-left-menu {
   text-align:left;   
-  padding-left: 20px;
-  padding-top: 5px;
+  padding-left: 25px;
+  padding-top: 10px;
   margin-bottom: 10px; 
 }
 
 .link-menu {
   text-align: left; 
   font-size: 0.98em;
-  padding-left: 0px;
+  padding-left: 15px;
   display: table-cell;
   text-align: center;
   vertical-align: middle;

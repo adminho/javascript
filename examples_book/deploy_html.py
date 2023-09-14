@@ -15,9 +15,10 @@ for fname in os.listdir(directory):
     if os.path.isfile(fulll_filefname) == False:
         continue
 
-    if fname.endswith('.html') and fname != "template.html":         
+    if (fname.endswith('.html') and fname != "template.html") or fname == "mylib.js" or fname == "md.css" :         
          with open(fulll_filefname, 'r', encoding='utf-8') as f:             
             data['content'] = f.read()
             data['filename'] = fname    
             res = requests.post(url=url, data = data)
             print("Upload %s -> %s" % (fname, res.text))
+
