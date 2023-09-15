@@ -2,7 +2,7 @@
 import requests
 import os
 
-url = 'http://localhost/deploy/javascript_bookcodes.php'
+url = 'http://localhost/deploy/deploy_javascript_bookcodes.php'
 
 
 data = {'token': "@E45!a5;6x76top8$3@spG-+"}
