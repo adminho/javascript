@@ -690,11 +690,11 @@ console.log(obj3)       // { a: 'zoo', b: 'bar' }
 ```
 
 ```js
-console.log( {...undefined});               //  {}
-console.log( {...null} );                       //  {}
-console.log( {...123} );                       //  {}
-console.log( {..."abc"} );                    // { '0': 'a', '1': 'b', '2': 'c' }
-console.log( {...["foo", "bar"]});          // { '0': 'foo', '1': 'bar' }
+console.log( {...undefined});               // {}
+console.log( {...null} );                       // {}
+console.log( {...123} );                       // {}
+console.log( {..."abc"} );                    // { 0: 'a', 1: 'b', 2: 'c' }
+console.log( {...["foo", "bar"]});          // { 0: 'foo', 1: 'bar' }
 ```
 
 ## Optional Chaining
