@@ -620,8 +620,7 @@ console.log(Object.getOwnPropertyDescriptors(obj));
     configurable: true
   },
   [Symbol(zoo)]: { value: 3, writable: true, enumerable: true, configurable: true }
-}
-*/
+} */
 ```
 
 ## เมธอด Object.fromEntries()

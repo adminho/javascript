@@ -45,7 +45,7 @@
 					}
 					
 					for(const sym of Object.getOwnPropertySymbols(data)){ // get properties of Symbol
-						//str += `${sym.toString()}: ${toString(data[sym])}, `;
+						str += `${sym.toString()}: ${toString(data[sym])}, `;
 					}
 					
 					return (str != "[Arguments] { " ) ? str.slice(0, -2) + " }": "[Arguments] {}";	
