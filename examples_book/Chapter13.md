@@ -711,7 +711,7 @@ let data = {
 }; 
 console.log(data.parent.child.name.firstName);    // "สมชาย"
 console.log(data.parent.child.name.surname);     // undefined
-console.log(data.parent.child.NAME.firstName);    //  บรรทัด a - เกิด SyntaxError
+console.log(data.parent.child.NAME.firstName);    //  บรรทัด a - เกิด TypeError
 
 console.log(data.parent.child.NAME?.firstName);        // undefined
 console.log(data.parent.child.name?.firstName);        // "สมชาย"
