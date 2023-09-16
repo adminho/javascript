@@ -107,48 +107,6 @@ let files = [ "chapter02", "chapter03", "chapter04","chapter05", "chapter06",
     } 
 })();
 
-//genHTML("chapter03");
-//genHTML("chapter04");
-//genHTML("chapter05");
-//genHTML("chapter06");
-//genHTML("chapter07");
-//genHTML("chapter08");
-//genHTML("chapter09");
-//genHTML("chapter10");
-//genHTML("chapter11");
-//genHTML("chapter12");
-//genHTML("chapter13");
-//genHTML("chapter14");
-//genHTML("chapter15");
-//genHTML("chapter16");
-//genHTML("chapter17");
-//genHTML("chapter18");
-//genHTML("chapter19");
-//genHTML("chapter20");
-
-
-/*
-genHTML("chapter02")
-.then(() => genHTML("chapter03"))
-.then(() => genHTML("chapter04"))
-.then(() => genHTML("chapter05"))
-.then(() => genHTML("chapter06"))
-.then(() => genHTML("chapter07"))
-.then(() => genHTML("chapter08"))
-.then(() => genHTML("chapter09"))
-.then(() => genHTML("chapter10"))
-.then(() => genHTML("chapter11"))
-.then(() => genHTML("chapter12"))
-.then(() => genHTML("chapter13"))
-.then(() => genHTML("chapter14"))
-.then(() => genHTML("chapter15"))
-.then(() => genHTML("chapter16"))
-.then(() => genHTML("chapter17"))
-.then(() => genHTML("chapter18"))
-.then(() => genHTML("chapter19"))
-.then(() => genHTML("chapter20"))
-*/
-
 async function countline(fileName){
 	let count = 0;
 	return eachLine(`${fileName}.md`, function(line, last) {
