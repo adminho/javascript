@@ -55,7 +55,7 @@ async function genHTML(fileName){
 					</form>						
 					<div id="displayResult${count}" class="display-result"></div>
 					<input class="run-btn" type="submit" value="${btnValue}" onclick="runCodeBtn(${count})">
-					<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay('#displayResult${count}', '#codeArea${count}')">												
+					<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay(${count})">
 				  </div>`;	  
 	  	  
 	  lineCodes = "";

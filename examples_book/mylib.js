@@ -1,4 +1,4 @@
-		let resultAreaId = "";	
+		let _resultAreaId = "";	
 				
 		function toString(data) {
 			if(data == null || data == undefined ) {
@@ -101,7 +101,7 @@
 		}
 		
 		console.log = function(...data){
-			let display = document.querySelector(resultAreaId);			
+			let display = document.querySelector(_resultAreaId);			
 			for( let d of data){
 				if( typeof d !== 'string'){					
 					d = toString(d);					
@@ -126,27 +126,26 @@
 			display.innerHTML += "<br>";
 		}
 		
-		function clearDisplay(displayAreaId, textAreaId=undefined) {
-			let display = document.querySelector(displayAreaId);	
-			display.innerHTML = "";	
+		function clearDisplay(targetCount) {			
+			let displayResult = document.querySelector(`#displayResult${targetCount}`);	
+			displayResult.innerHTML = "";	
 			
-			if(textAreaId){
-				let textCodeArea = document.querySelector(textAreaId);
+			let textCodeArea = document.querySelector(`#codeArea${targetCount}`);			
+			if(textCodeArea.classList.contains("run-already")){				
 				textCodeArea.classList.remove("run-already");
 				textCodeArea.classList.add("notrun");						
 			}
 		}
 
-		function runCodeBtn(countTarget) {
+		function runCodeBtn(targetCount) {						
+			clearDisplay(targetCount);
 			
-			resultAreaId = `#displayResult${countTarget}`;
-			clearDisplay(resultAreaId);
-									
-			let textCodeArea = document.querySelector(`#codeArea${countTarget}`);
+			_resultAreaId = `#displayResult${targetCount}`;						
+			let textCodeArea = document.querySelector(`#codeArea${targetCount}`);
 			let codeTxt = textCodeArea.value;				
 						
 			if( codeTxt.includes("<html>")>0 ) {
-				document.querySelector(`#form${countTarget}`).submit();				
+				document.querySelector(`#form${targetCount}`).submit();				
 			} else {
 				
 				try {

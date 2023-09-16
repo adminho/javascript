@@ -12,13 +12,13 @@
 
 .main {
 	margin-top: 60px;	
-	margin-left: 160px;	
-	margin-right: 15px;	
+	margin-left: 20%;	
+	margin-right: 20%;	
 }
 
 .sale {
 	margin-top: 0px;	
-	margin-left: 160px;	
+	margin-left: 20%;
 }
 
 /*input[type=button], input[type=submit], input[type=reset] {*/
@@ -43,31 +43,50 @@ textarea {
   margin:3px;	
 }
 
-.left-menu {
+.picture-ads {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 135px;
-  height: 100%;
-  background-color: #ECFFEF;
+  left: 7%;
+  top: 10%;
+  text-align:left;   
+  padding-left: 25px;  
+  z-index: 15;   
+}
+
+.show-menu{  
+  position: fixed;
+  left: 7%;
+  top: 5;
+  z-index: 103;  
+}
+
+.my-btn{	
+	padding: 5px;
+	border: 2px solid;
+	border-color: #e7e7e7;
+	background: #558415;
+    color: white;	
+	padding: 12px 28px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.left-menu {
+  width: 200%;
+  height: 100%; 
+  margin-top:15px;
+  padding-left:20px; 
+  padding-bottom:20px; 
+  background-color: #BDDB94;
   /*overflow-y: scroll;**/
   overflow: auto;  
-}
-
-.picture-left-menu {
-  text-align:left;   
-  padding-left: 25px;
-  padding-top: 10px;
-  margin-bottom: 10px; 
-}
-
-.link-menu {
+  z-index: 102;   
   text-align: left; 
-  font-size: 0.98em;
-  padding-left: 15px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
+  font-size: 0.9em;
+  display: none;
+}
+
+.show-menu:hover  .left-menu {
+  display: block;
 }
 
 .display-result {
@@ -95,9 +114,9 @@ div.display-result {
   position: fixed;
   left: 0;
   top:0;
-  width: 100%;
-  margin-left: 160px;  
-  z-index: 1000;
+  text-align: center;
+  width: 100%;    
+  z-index: 10;
 }
 
 .footer {
@@ -117,9 +136,6 @@ div.display-result {
 		display: none;
 	}	
 	.main {
-		margin-left: 10px;
-	}
-	.header {
 		margin-left: 10px;
 	}
 	.sale {
