@@ -35,7 +35,7 @@ async function genHTML(fileName){
   return eachLine(`${fileName}.md`, function(line, last) {
   //line = line.trim();
     
-  if(line.startsWith("```js") || line.startsWith("```html")){
+  if(line.startsWith("```js") || line.startsWith("```html")){ // start codes
 	  isCode = true;	
 	  count++;
 	  if(line.startsWith("```js")){
@@ -44,7 +44,7 @@ async function genHTML(fileName){
 		  btnValue = "Open HTML";
 	  }
 	  
-  } else if(line.startsWith("```")){
+  } else if( isCode==true && line.startsWith("```")){ // reach to end of codes
 	  isCode = false	  	  
 	  const rows = lineCodes.split('\n').length-1;
 	  
@@ -60,17 +60,24 @@ async function genHTML(fileName){
 	  	  
 	  lineCodes = "";
 	  
-  } else if(line.startsWith("#")) { 
-	  line = line.replace(/#/g, "");	
-	  if(line.includes("โค้ดบทที่")) {
-		  headline = line;
-	  } else {
-		allLines += `<h4>${line}</h4>`;
-	  }
+  } else if(isCode==false) { // not codes
 	  
-  } else if(line.startsWith("*") && !line.startsWith("*/")){
-	  line = line.replace(/\*/g, "");
-	  allLines += `<p class="describe">${line}</p>`;
+	 if(line.startsWith("#")) { 
+		line = line.replace(/#/g, "");	
+		if(line.includes("โค้ดบทที่")) {
+			headline = line;
+		} else {
+			allLines += `<h4>${line}</h4>`;
+		}
+		
+	} else if(line.startsWith("*") && !line.startsWith("*/")){
+		line = line.replace(/\*/g, "\u2022&nbsp;");
+		allLines += `<p class="describe-2">${line}</p>`;
+		
+	} else {
+		allLines += `<p class="describe-1">${line}</p>`;
+	}
+	
   }
     
   if(isCode && !line.startsWith("```js") && !line.startsWith("```html")){
