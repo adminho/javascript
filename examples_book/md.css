@@ -45,7 +45,7 @@ textarea {
 
 .picture-ads {
   position: fixed;
-  left: 7%;
+  right: 7%;
   top: 10%;
   text-align:left;   
   padding-left: 25px;  
@@ -54,14 +54,14 @@ textarea {
 
 .show-menu{  
   position: fixed;
-  left: 7%;
+  left: 2%;
   top: 5;
   z-index: 103;  
 }
 
-.my-btn{	
+.my-btn-menu {	
 	padding: 5px;
-	border: 2px solid;
+	border: ๅpx solid;
 	border-color: #e7e7e7;
 	background: #558415;
     color: white;	
@@ -71,7 +71,7 @@ textarea {
 }
 
 .left-menu {
-  width: 200%;
+  width: 120%;
   height: 100%; 
   margin-top:15px;
   padding-left:20px; 
@@ -114,7 +114,8 @@ div.display-result {
   position: fixed;
   left: 0;
   top:0;
-  text-align: center;
+  padding-left: 20%;
+  text-align: left;
   width: 100%;    
   z-index: 10;
 }

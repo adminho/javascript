@@ -2,3 +2,4 @@ node_modules/
 *.html
 *.json
 deploy*
+*.bat
