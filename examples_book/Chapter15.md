@@ -21,10 +21,10 @@ let array1 = Array.from(a);
 console.log(array1);		             // [ 1, 2, 3 ] 
 let str = "456";
 let array2 = Array.from(str);
-console.log(array2);		             // ["4", "5", "6"]
+console.log(array2);		             // [ '4', '5', '6' ]
 let set = new Set([7, 8, 9]);	
 let array3 = Array.from(set);
-console.log(array3);		             // [7, 8, 9]
+console.log(array3);		             // [ 7, 8, 9 ]
 ```
 
 ```js
@@ -195,7 +195,7 @@ console.log(array.includes(+0));             // true
 
 ### flat()
 
-หมายเหตุ ในหัวข้อ flat() โค้ดต่อไปนี้จะเป็นการประกาศตัวแปร arr1 ขึ้นมา จึงต้องก็อปปี้ไปรันในโค้ดถัดๆ ไปด้วย มิฉะนั้นจะหาตัวแปร arr1 ไม่เจอ
+หมายเหตุ โค้ดต่อไปนี้จะเป็นการประกาศตัวแปร arr1 ขึ้นมา จึงต้องก็อปปี้ไปรันในโค้ดถัดๆ ไป ภายในในหัวข้อ flat()ด้วย มิฉะนั้นจะหาตัวแปร arr1 ไม่เจอ
 ```js
 let arr1 = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11, 12]]]];
 ```
