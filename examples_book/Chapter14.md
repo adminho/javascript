@@ -675,9 +675,10 @@ class Calculation {
 }
 class Division extends Calculation {
     constructor() {
- 	// ปราศจาก super(); จะเกิด error
+ 	// ปราศจากการเรียกใช้ super()
     }
 }
+new Division();           // เกิด ReferenceError
 ```
 
 ## การสืบทอดคลาสหลายระดับชั้น
