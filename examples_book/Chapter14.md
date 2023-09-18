@@ -62,9 +62,7 @@ class Car {
 }
 let carObj = new Car("red");
 console.log(carObj.color); 	// "red" (ไม่แนะนำให้เข้าถึงโดยตรงด้วยวิธีนี้)
-```
 
-```js
 let c1 = new Car("red");
 let c2 = new Car("black");
 let c3 = new Car("white");
