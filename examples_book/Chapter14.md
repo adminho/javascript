@@ -1214,7 +1214,7 @@ class SuperClass {
 }
 class MyClass extends SuperClass {
     showMsg() {
-        console.log("Result:", this.#superField);     // บรรทัด a -- เกิด error
+        console.log(“Result:”, this.#superField);     // บรรทัด a -- เกิด SyntaxError
     }
 }
 ```
