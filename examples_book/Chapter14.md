@@ -375,9 +375,7 @@ console.log(carObj.speed);		// 100
 carObj.speed = 60;
 console.log(carObj.speed);		// 60
 console.log(carObj.speedValue);	            // 60 (เข้าถึงได้ แต่ไม่ควรเข้าถึงด้วยวิธีนี้ โดยตรง)
-```
 
-```js
 let desc = Object.getOwnPropertyDescriptor(Car.prototype, "speed");
 console.log("get" in desc);          // true
 console.log("set" in desc);          // true
