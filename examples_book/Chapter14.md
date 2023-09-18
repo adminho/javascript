@@ -505,9 +505,7 @@ let carObj = new Car();
 for (let prop in carObj) {
     console.log(prop)    // จะไม่เข้ามาทำงานในประโยค for
 }
-```
 
-```js
 for (let prop in Car) {
     console.log(prop)
 }
