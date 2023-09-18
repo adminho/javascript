@@ -65,17 +65,6 @@ console.log(carObj.color); 	// "red" (ไม่แนะนำให้เข้
 ```
 
 ```js
-class Car { 
-    intField(param) { 
-	this.color = param;    // บรรทัด a
-    }
-}
-let carObj = new Car();
-carObj.intField("red") 	             // this.color ถูกสร้างขึ้นมา
-console.log(carObj.color); 	 // "red" (ไม่แนะนำให้เข้าถึงโดยตรงด้วยวิธีนี้)
-```
-
-```js
 let c1 = new Car("red");
 let c2 = new Car("black");
 let c3 = new Car("white");
@@ -103,11 +92,21 @@ new Car();
 class Car { 
     color;                                   // undefined
     var speed = 100;                   // ทำไม่ได้ 
-    let weight = 50;                     // ทำไม่ได้  
+    let weight = 50;                    // ทำไม่ได้  
     const height = 1.5;                // ทำไม่ได้    
 }
 ```
 
+```js
+class Car { 
+    intField(param) { 
+	this.color = param;    // บรรทัด a
+    }
+}
+let carObj = new Car();
+carObj.intField("red") 	             // this.color ถูกสร้างขึ้นมา
+console.log(carObj.color); 	 // "red" (ไม่แนะนำให้เข้าถึงโดยตรงด้วยวิธีนี้)
+```
 
 ### ประกาศเมธอด
 

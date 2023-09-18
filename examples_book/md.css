@@ -14,6 +14,7 @@
 	margin-top: 60px;	
 	margin-left: 20%;	
 	margin-right: 20%;	
+	overflow:auto;
 }
 
 .sale {
@@ -47,13 +48,18 @@ textarea {
   margin:3px;	
 }
 
-.picture-ads {
+.ads {
   position: fixed;
-  right: 7%;
-  bottom: 2%;
+  /*right: 7%;*/
+  right:35;
+  top: 80;
   text-align:left;   
-  padding-left: 0;  
-  z-index: 15;   
+  /*padding-left: 0;*/
+  z-index: 15;
+}
+
+.img-ads {
+	width: 200;	
 }
 
 .header {
@@ -75,9 +81,10 @@ textarea {
 
 .main-menu{  
   position: fixed;
-  left: 7%;
-  top: 14;
+  left: 5;
+  top: 80;
   z-index: 103;  
+  
 }
 
 .btn-menu {		
@@ -85,9 +92,10 @@ textarea {
 	border-color: #508010;
 	background: #558415;
     color: white;	
-	padding: 0.7rem 28px;	
+	padding: 0.7rem 5rem;	
 	font-size: 15px;
 	cursor: pointer;
+	
 }
 
 .left-menu {
@@ -156,5 +164,12 @@ div.display-result {
 	}
 	.footer {
 		display: block;
+	}	
+	.ads {
+		display: none;	
 	}
+	.main-menu {
+		display: none;
+	}
+	
 }
