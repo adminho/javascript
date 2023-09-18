@@ -1004,7 +1004,7 @@ class Car {
 }
 let carObj = new Car();
 console.log(carObj.speed);     // undefined
-console.log(carObj.#speed);   // เกิด error
+console.log(carObj.#speed);   // เกิด SyntaxError
 ```
 
 ```js
