@@ -72,10 +72,14 @@ async function genHTML(fileName){
 		
 	} else if(line.startsWith("*") && !line.startsWith("*/")){
 		line = line.replace(/\*/g, "\u2022&nbsp;");
-		allLines += `<p class="describe-2">${line}</p>`;
+		allLines += `<p class="describe">${line}</p>`;
+		
+	} else if(line.startsWith("หมายเหตุ")){
+		line = line.replace(/หมายเหตุ/g, "<font color='green'><strong>หมายเหตุ</strong></font>");
+		allLines += `<p class="describe">${line}</p>`;
 		
 	} else {
-		allLines += `<p class="describe-1">${line}</p>`;
+		allLines += `<p class="describe">${line}</p>`;
 	}
 	
   }

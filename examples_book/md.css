@@ -1,3 +1,7 @@
+body {
+	
+}	
+
 .notrun {
   background-color: #F0F0F0;
   margin-top: 3px;
@@ -35,18 +39,17 @@
 }
 
 textarea {
-  font-size: 13em;
+  font-size: 1.0em;
   background-color: #F5F5F5;
   width: 100%;
 }
 
-.describe-1 {
+.describe {
   margin:3px;	
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-size:16px;
 }
 
-.describe-2 {
-  margin:3px;	
-}
 
 .ads {
   position: fixed;
