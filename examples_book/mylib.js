@@ -115,8 +115,8 @@
 					throw new ReferenceError("arguments is not defined");
 				}
 				
-				if(d.startsWith('#')){
-					d = d.substring(1);	 // เมื่อเจอ # นำหน้า เป็นการบอกว่าต้องการให้สตริง html มันทำงานในเว็บเบราเซอร์ 				
+				if(d.startsWith('@html')){
+					d = d.substring(5);	 // เมื่อเจอ @html นำหน้า เป็นการบอกว่าต้องการให้สตริง html มันทำงานในเว็บเบราเซอร์ 				
 				} else {
 					d = decodeHtml(d);   // ไม่ต้องการให้สตริง html ทำงานในเว็บเบราเซอร์
 				}
@@ -149,7 +149,7 @@
 			} else {
 				
 				try {
-					console.log("#<font color='lightgreen'>ผลการรัน:</font>");	
+					console.log("@html<font color='lightgreen'>ผลการรัน:</font>");	
 					codeTxt = codeTxt.replaceAll(/-false/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -false ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'					
 					//codeTxt = codeTxt.replaceAll(/-0.(?<!\,)$/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -0 ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'										
 					//fix bugs ถ้าเป็นเลข -0 ต้องแสดง -0 เลยต้องแทนด้วย '@negzero' 
@@ -158,10 +158,10 @@
 					arguments = "@not_use_Arguments"; // fixbugs ในบทที่ 10 เรื่อง arguments ในฟังก์ชั่นลูกศร				
 					eval(codeTxt);						
 				} catch (e){
-					console.log("#<font color='orange'>++++Error++++</font>");	
-					console.log("#<font color='orange'>Uncaught " + e + "</font>");
+					console.log("@html<font color='orange'>++++Error++++</font>");	
+					console.log("@html<font color='orange'>Uncaught " + e + "</font>");
 					if(e.stack) {
-						console.log("#<font color='orange'>" + e.stack + "</font>");					
+						console.log("@html<font color='orange'>" + e.stack + "</font>");					
 					} 
 				}				
 				

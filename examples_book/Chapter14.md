@@ -1562,7 +1562,7 @@ class SuperClass {
 class MyClass extends SuperClass {
     // สืบทอด showMsg() มาด้วย
 }
-SuperClass.showMsg();                              // error
+MyClass.showMsg();                              // TypeError
 ```
 
 ```js
