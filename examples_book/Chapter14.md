@@ -1528,7 +1528,7 @@ class MyClass {
 }
 // แสดงผลลัพธ์ 
 // "myFiled1"
-// "Static line a"
+// "Static line b"
 // "myFiled2"
 // "Static line d"
 ```
