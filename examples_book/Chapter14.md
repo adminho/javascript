@@ -1065,7 +1065,7 @@ class Car {
         console.log( #drive in Car );     // true
     }*/
 }
-Car.#drive();                                 // เกิด error
+Car.#drive();                                 // เกิด SyntaxError
 ```
 
 ```js
