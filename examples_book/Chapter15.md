@@ -40,14 +40,14 @@ console.log(array);  		             // [ undefined, "foo", "bar", undefined ]
 
 ```js
 let a = Array.from( { length: 4 } );   	// มีสมาชิกทั้งหมด 4 ตัว ที่มีค่าเป็น undefined
-console.log(a);				// [undefined, undefined, undefined, undefined]
+console.log(a);				// [ undefined, undefined, undefined, undefined ]
 ```
 
 ```js
 let b = Array( 4 );                             
 console.log(b);				// [ <4 empty  items> ] 
 let c = Array.apply( null, { length: 4 } );     
-console.log(c);				// [undefined, undefined, undefined, undefined]
+console.log(c);				// [ undefined, undefined, undefined, undefined ] 
 ```
 
 ```js
