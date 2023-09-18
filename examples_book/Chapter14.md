@@ -1051,7 +1051,7 @@ class Car {
     }*/
 }
 console.log(Car.speed);                            // undefined
-console.log(Car.#speed );                         // error
+console.log(Car.#speed );                         // SyntaxError
 ```
 
 ### เมธอดสแตติกที่เป็น private
