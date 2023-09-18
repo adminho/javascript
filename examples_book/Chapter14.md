@@ -1575,7 +1575,7 @@ class SuperClass {
 class MyClass extends SuperClass {
     // สืบทอด showMsg() มาด้วย
 }
-SuperClass.showMsg();                           // 1
+MyClass.showMsg();                           // 1
 ```
 
 ## เบื้องหลังสมาชิกของอินสแตนซ์
