@@ -1592,7 +1592,7 @@ class MyClass {
     set pubFieldValue(field) {  }  
 }
 let inst = new MyClass();
-console.log(Object.keys(inst))                     // [ ‘pubField’ ]
+console.log(Object.keys(inst))                     // [ 'pubField' ]
 ```
 
 ```js
@@ -1606,7 +1606,7 @@ class MyClass {
     static get pubFieldValue() {  }
     static set pubFieldValue(field) {  }  
 }
-console.log(Object.keys(MyClass))           // [ ‘pubField’ ]
+console.log(Object.keys(MyClass))           // [ 'pubField' ]
 ```
 
 ### การแชร์เมธอดระหว่างอินสแตนซ์
