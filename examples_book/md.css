@@ -11,7 +11,7 @@
 }
 
 .main {
-	margin-top: 60px;	
+	margin-top: 70px;	
 	margin-left: 20%;	
 	margin-right: 20%;	
 	overflow:auto;
@@ -52,7 +52,7 @@ textarea {
   position: fixed;
   /*right: 7%;*/
   right:35;
-  top: 80;
+  top: 70;
   text-align:left;   
   /*padding-left: 0;*/
   z-index: 15;
@@ -66,7 +66,7 @@ textarea {
   background-color: #3CB371;
   position: fixed;
   width: 100%;   
-  height: 7%;   
+  height: 8%;   
   left: 0;
   top:0;  
   z-index: 10;	
@@ -74,6 +74,7 @@ textarea {
 
 .headline {
   padding-left: 20%;  
+  margin-top: 5px;
   text-align: left;
   font-weight: 500;
   font-size: 1.5em;
@@ -81,19 +82,20 @@ textarea {
 
 .main-menu{  
   position: fixed;
-  left: 5;
-  top: 80;
+  left: 10;
+  top: 15;
   z-index: 103;  
   
 }
 
 .btn-menu {		
 	border: 1px solid;
-	border-color: #508010;
-	background: #558415;
+	border-color: #5A8A1A;
+	border-radius: 20px;
+	background: #558415;	
     color: white;	
-	padding: 0.7rem 5rem;	
-	font-size: 15px;
+	padding: 0.5rem 3rem;	
+	font-size: 14px;
 	cursor: pointer;
 	
 }
