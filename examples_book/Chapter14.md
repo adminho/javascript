@@ -1038,7 +1038,7 @@ class Car {
     }*/
 }
 let carObj = new Car(); 
-carObj.#drive();                                  // เกิด error
+carObj.#drive();                                  // เกิด SyntaxError
 ```
 
 ### ฟิวด์สแตติกที่เป็น private	
