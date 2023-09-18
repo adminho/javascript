@@ -89,9 +89,9 @@ new Car();
 ```js
 class Car { 
     color;                                   // undefined
-    var speed = 100;                   // ทำไม่ได้ 
-    let weight = 50;                    // ทำไม่ได้  
-    const height = 1.5;                // ทำไม่ได้    
+    var speed = 100;                   // ทำไม่ได้ เกิด SyntaxError
+    let weight = 50;                    // ทำไม่ได้ เกิด SyntaxError  
+    const height = 1.5;                // ทำไม่ได้ เกิด SyntaxError    
 }
 ```
 
