@@ -1021,7 +1021,7 @@ let carObj = new Car();      // เมื่ออินสแตนซ์ถู
 class Car {
     constuctor() {
         this.speed = 100;              // บรรทัด a  -- ทำงานได้ปกติ
-        this.#value = 1;                // บรรทัด b  -- เกิด error  
+        this.#value = 1;                // บรรทัด b  -- เกิด SyntaxError  
     }
 }
 ```
