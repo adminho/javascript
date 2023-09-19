@@ -377,15 +377,15 @@ console.log(set);		   // Set(3) { 1, 2, 3 }
 
 ```js
 let set1 = new Set( ["a", "b", "c"] );
-console.log(set1);			 // Set {"a", "b", "c"}
+console.log(set1);			 // Set(3) { 'a', 'b', 'c' }
 let set2 = new Set( "def" );
-console.log(set2);			 // Set {"d", "e", "f"}
+console.log(set2);			 // Set(3) { 'd', 'e', 'f' }
 ```
 
 ```js
 let set1 = new Set( ["a", "b", "c"] );			
 let set2 = new Set( set1);		             // สร้าง set2 จาก set1 ที่มีอยู่ก่อนแล้ว
-console.log(set2);			 // Set {"a", "b", "c"}
+console.log(set2);			 // Set(3) { 'a', 'b', 'c' }
 ```
 
 ### วิธีลบสมาชิกของเซท
