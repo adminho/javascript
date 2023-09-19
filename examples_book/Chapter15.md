@@ -578,7 +578,7 @@ console.log(map.has(1));                           // true
 
 ```js
 function log(value, key, mapObj) {
-    // console.log(mapObj);		 // Map {1 => "a", 2 => "b"}
+    // console.log(mapObj);		 // Map(2) { 1 => 'a', 2 => 'b' }
     // console.log(this === map);	             // true
     console.log(`[${key}] = ${value}`);    
 }
