@@ -416,16 +416,16 @@ console.log(Object.is(0,-0));	// false
 
 ```js
 function log(value1, value2, setObj) {
-    // console.log(setObj);		// Set {"a", "b", "c"}
+    // console.log(setObj);		// Set { 'a', 'b', 'c' }
     // console.log(this === set);	// true
     console.log(`[${value1}] = ${value2}`);   
 }
 let set = new Set( ["a", "b", "c"] );
 set.forEach( log, set);		// ระบุค่าอากิวเมนต์ตัวที่สองเป็น set
 /*แสดงผลลัพธ์เป็น
-"[a] = a"
-"[b] = b"
-"[c] = c" */
+[a] = a
+[b] = b
+[c] = c */
 ```
 
 ```js
