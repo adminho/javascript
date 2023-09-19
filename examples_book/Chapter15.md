@@ -640,7 +640,7 @@ let wmap = new WeakMap();
 let a = { x: 1 }, b = { y: 2};
 wmap.set(a,b);
 b=null
-console.log(wmap.get(a));	                         // { y: 2}
+console.log(wmap.get(a));	                         // { y: 2 }
 ```
 
 ## อาร์เรย์ระดับบิต
