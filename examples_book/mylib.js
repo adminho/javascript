@@ -26,7 +26,7 @@
 				
 				return (str != strBegin ) ? str.slice(0, -2) + ' }': `${strBegin}}`;
 				
-			} else if( data instanceof Array){
+			} else if( data instanceof Array){				
 				if(data.length>0 && !(0 in data)) {
 					return `[ <${data.length} empty  items> ]`;					
 				}
@@ -54,8 +54,12 @@
 				return `${data}n`;	
 				
 			} else if( typeof data === 'object'){
+				let stringTag =  data[Symbol.toStringTag];
+				if( stringTag == "Float32Array" || stringTag == "Int32Array" || stringTag == "Uint8Array"){			
+					let arraString = data.toString().replaceAll(/\,/g, ", ");				
+					return `${stringTag}(${data.length}) [ ${arraString} ]`;
 				
-				if( data.toString().includes("Arguments")){						
+				} else if( data.toString().includes("Arguments")){						
 					//let str = `Arguments(${data.length}) { `	
 					let strBegin = "[Arguments] { ";
 					let str = strBegin;	

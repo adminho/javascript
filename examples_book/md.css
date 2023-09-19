@@ -50,7 +50,6 @@ textarea {
   font-size:16px;
 }
 
-
 .ads {
   position: fixed;
   /*right: 7%;*/
@@ -81,6 +80,10 @@ textarea {
   text-align: left;
   font-weight: 500;
   font-size: 1.5em;
+}
+
+.link-chap {
+	
 }
 
 .main-menu{  
