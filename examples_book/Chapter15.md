@@ -106,7 +106,7 @@ console.log(a4);       		// [ 3, 4, 2, 3, 4, 5 ]
 
 ```js
 let array = Array.of("a", "b", "c", "d");
-console.log(array);		// ["a", "b", "c", "d"];
+console.log(array);		// [ 'a', 'b', 'c', 'd' ]
 array.fill( 1 );
 console.log(array);		// [ 1, 1, 1, 1 ]
 ```
