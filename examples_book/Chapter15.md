@@ -348,7 +348,7 @@ let set = new Set();
 set.add( 1 );		
 set.add("2");	
 set.add({id : 1});	
-console.log(set);	   // Set(3) { 1, “2”, Object {id: 1} }
+console.log(set);	   // Set(3) { 1, '2', Object {id: 1} }
 ```
 
 ```js
