@@ -79,7 +79,7 @@ let array = Array.from( obj, function (value,index) {
 	// console.log(this === obj);          // true
     	return this[index];
 },obj);				             // อากิวเมนต์ตัวที่สาม 
-console.log(array);		             // [ undefined, "foo", "bar", undefined ]
+console.log(array);		             // [ undefined, 'foo', 'bar', undefined ]
 ```
 
 ### copyWithin()
