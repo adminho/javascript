@@ -530,7 +530,7 @@ console.log(map);		// Map(3) { 1 => 'a', 2 => 'b', 3 => 'c' }
 
 ```js
 let map = new Map( [ [1, "a"] , [2, "b"] ]);
-console.log(map);		// Map {1 => "a", 2 => "b"}
+console.log(map);		// Map(2) { 1 => 'a', 2 => 'b' }
 ```
 
 ```js
