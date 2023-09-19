@@ -326,7 +326,7 @@ let result = arr.flatMap(value => [value, value * 2]);
 console.log(result);
 /* แสดงผลลัพธ์
 [
-  1, 2, 2, 4,  3,
+  1, 2, 2, 4, 3,
   6, 4, 8, 5, 10
 ] */
 ```
