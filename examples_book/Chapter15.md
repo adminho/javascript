@@ -732,7 +732,7 @@ array.sort();
 console.log(array);			 // [1,10, 5]
 let uint8 = new Uint8Array([1,10, 5]);
 uint8.sort();                               
-console.log(uint8);			 // [1,5,10]
+console.log(uint8);			 // Uint8Array(3) [1,5,10]
 ```
 
 ```js
