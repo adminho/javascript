@@ -370,7 +370,7 @@ console.log(set.size); 	   // 7
 ```js
 let set = new Set();
 set.add(1).add(2).add(3);	   // เรียกเมธอด add() ต่อเนื่องกันได้
-console.log(set);		   // Set {1, 2, 3}
+console.log(set);		   // Set(3) { 1, 2, 3 }
 ```
 
 ### คอนสตรัคเตอร์ของเซท
