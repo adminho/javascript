@@ -1,28 +1,34 @@
 		let _resultAreaId = "";	
 				
-		function collectionToStr(data) {			
-			let name = data.toString().split(/\s/g)[1].slice(0,-1);
-			let strBegin = `${name}(${data.size}) { `;
-				
-			let str = strBegin;
-			for(const [key, value] of data.entries()){
-					str += `'${key}' => ${toString(value)}, `;
-			}
-				
-			return (str != strBegin ) ? str.slice(0, -2) + ' }': `${strBegin}}`;
-		}		
-		
 		function toString(data) {
 			if(data == null || data == undefined ) {
 				return ""+ data;				
 						
-			} else if (data instanceof Map || data instanceof Set) {
-				return collectionToStr(data);
+			} else if (data instanceof Map) {
+				let name = data.toString().split(/\s/g)[1].slice(0,-1);
+				let strBegin = `${name}(${data.size}) { `;
+				
+				let str = strBegin;
+				for(const [key, value] of data.entries()){
+					str += `'${key}' => ${toString(value)}, `;
+				}
+				
+				return (str != strBegin ) ? str.slice(0, -2) + ' }': `${strBegin}}`;
+				
+			} else if(data instanceof Set) {
+				let name = data.toString().split(/\s/g)[1].slice(0,-1);
+				let strBegin = `${name}(${data.size}) { `;
+				
+				let str = strBegin;
+				for(const [key, value] of data.entries()){
+					str += `${toString(value)}, `;
+				}
+				
+				return (str != strBegin ) ? str.slice(0, -2) + ' }': `${strBegin}}`;
 				
 			} else if( data instanceof Array){
 				if(data.length>0 && !(0 in data)) {
-					return `[ <${data.length} empty  items> ]`;
-					
+					return `[ <${data.length} empty  items> ]`;					
 				}
 				
 				let str = "[ ";
@@ -51,7 +57,8 @@
 				
 				if( data.toString().includes("Arguments")){						
 					//let str = `Arguments(${data.length}) { `	
-					let str = "[Arguments] { ";		
+					let strBegin = "[Arguments] { ";
+					let str = strBegin;	
 					
 					for(const [key, value] of Object.entries(data)){
 						str += `'${key}': ${toString(value)}, `;
@@ -61,7 +68,7 @@
 						str += `${sym.toString()}: ${toString(data[sym])}, `;
 					}
 					
-					return (str != "[Arguments] { " ) ? str.slice(0, -2) + " }": "[Arguments] {}";	
+					return (str != strBegin ) ? str.slice(0, -2) + ' }': `${strBegin}}`;
 					//return (str != `Arguments(${data.length}) { ` ) ? str.slice(0, -2) + " }": `Arguments(${data.length}) {}`;	
 					
 				} else {

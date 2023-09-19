@@ -363,7 +363,7 @@ set.add( undefined );
 set.add( undefined );
 set.add({});		   // บรรทัด a
 set.add({})		   // บรรทัด b
-console.log(set);	   // Set {1, "1",  true, null, undefined, Object {}, Object {}}
+console.log(set);	   // Set { 1, "1",  true, null, undefined, Object {}, Object {} }
 console.log(set.size); 	   // 7
 ```
 
