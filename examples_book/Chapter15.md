@@ -721,7 +721,7 @@ int32 [2] = 3;
 let result = int32.map( function(i) {
     return i*i;
 } );
-console.log(result);		             // [ 1, 4, 9 ]
+console.log(result);		             // Int32Array(3) [ 1, 4, 9 ]
 let join = int32.join( "," );
 console.log(join);		                         // "1,2,3"
 ```
