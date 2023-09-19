@@ -516,7 +516,7 @@ map.set( undefined, "Good");
 map.set( undefined, "Bye");		 // เลือกใช้สมาชิกตัวนี้		
 console.log(map);
 /*แสดงผลลัพธ์เป็น
-Map {"1" => "Hi", Object {id: 2} => "World", Object {id: 2} => "World", null => "We", undefined => "Bye"} 
+Map(5) { '1' => 'Hi', { id: 2 } => 'World', { id: 2 } => 'World', null => 'We', undefined => 'Bye' } 
 */
 ```
 
