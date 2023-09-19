@@ -753,7 +753,7 @@ uint8[1] = 40;
 let result1 = Uint8Array.from(uint8,  function(i) {
     return i * i;
 } );
-console.log(result1);      // [ 144, 64 ]
+console.log(result1);      // Uint8Array(2) [ 144, 64 ]
 let result2 = Array.from(uint8,  function(i) {
     return i * i;
 } );
