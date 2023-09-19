@@ -506,7 +506,7 @@ console.log(map.size)	                         // 0
 
 ```js
 let map = new Map();
-map.set("1", "Hello" );		
+map.set("1", "Hello");		
 map.set("1", "Hi" );			 // เลือกใช้สมาชิกตัวนี้
 map.set( {id:2}, "World");		             // บรรทัด a	
 map.set( {id:2}, "World");		             // บรรทัด b
@@ -535,22 +535,22 @@ console.log(map);		// Map(2) { 1 => 'a', 2 => 'b' }
 
 ```js
 let map1 = new Map();
-map1.set( 1, "a" );
+map1.set( 1, "a");
 map1.set( 2, "b");
 let map2 = new Map(map1);
-console.log(map2);		// Map {1 => "a", 2 => "b"}
+console.log(map2);		// Map(2) { 1 => 'a', 2 => 'b' }
 ```
 
 ### วิธีลบสมาชิกของแม็พ
 
 ```js
 let map = new Map();
-map.set( 1, "a" );			
+map.set( 1, "a");			
 map.set( 2, "b");	
 map.set( 3, "c");	
-console.log(map);			 // Map {1 => "a", 2 => "b", 3 => "c"}
+console.log(map);			 // Map(3) { 1 => 'a', 2 => 'b', 3 => 'c' }
 console.log(map.delete(1)); 		 // true 
-console.log(map);			 // Map {2 => "b", 3 => "c"}
+console.log(map);			 // Map(2) { 2 => 'b', 3 => 'c' }
 map.clear();
 console.log(map.size);			 // 0
 ```
