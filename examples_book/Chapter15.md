@@ -148,7 +148,7 @@ console.log(result);	           // 'blue'
 ```js
 let a = ["red", "green", "blue", "yellow"];
 function search (value ,index, array) {  // ฟังก์ชั่นคอลแบ็ค
-    // console.log(array);	// ["red", "green", "blue", "yellow"]
+    // console.log(array);	// [ 'red', 'green', 'blue', 'yellow' ]
     return value == "blue";
 };
 let result = a.findIndex( search );                          
@@ -158,7 +158,7 @@ console.log(result);	// 2
 ```js
 let a = ["red", "green", "blue", "yellow"];
 let result = a.findIndex( function (value, index, array){
-    // console.log(array);		// ["red", "green", "blue", "yellow"]
+    // console.log(array);		// [ 'red', 'green', 'blue', 'yellow' ]
     // console.log(this === a);	// true
     return this[index] == "blue";
 }, a);                          	           // อากิวเมนต์ตัวที่สอง
