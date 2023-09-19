@@ -178,7 +178,7 @@
 					codeTxt = codeTxt.replaceAll(/-false/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -false ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'					
 					//codeTxt = codeTxt.replaceAll(/-0.(?<!\,)$/g, "'@negzero'"); // fix bugs ถ้าเป็นเลข -0 ต้องแสดง -0 เลยต้องแทนด้วย '@negzero'										
 					//fix bugs ถ้าเป็นเลข -0 ต้องแสดง -0 เลยต้องแทนด้วย '@negzero' 
-					// ทั้งนี้ยังแก้ปัญหาเช่น -0.56 ไม่ได้เลยต้องค้นหา -0, แทน เฉพาะตัวอย่างบทที่ 2									
+					// ทั้งนี้ยังแก้ปัญหาเช่น -0.56 ไม่ได้เลยต้องค้นหา -0, แทน เฉพาะตัวอย่างบทที่ 2	แต่ก็จะเกิดปัญหาบทที่ 15 ในตัวอย่าง array = [-0 , NaN, 1];								
 					codeTxt = codeTxt.replaceAll(/-0,/g, "'@negzero',"); 
 					arguments = "@not_use_Arguments"; // fixbugs ในบทที่ 10 เรื่อง arguments ในฟังก์ชั่นลูกศร				
 					eval(codeTxt);						
