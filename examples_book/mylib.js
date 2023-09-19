@@ -13,6 +13,7 @@
 				return (str != `Map(${data.size}) { ` ) ? str.slice(0, -2) + ' }': `Map(${data.size}) {}`;	
 				
 			} else if( data instanceof Array){
+				alert(Object.getPrototypeOf(data));			
 				let str = "[ ";
 				for(const value of data) {
 					str += ""+ toString(value) + ", ";
@@ -37,7 +38,8 @@
 				
 			} else if( typeof data === 'object'){
 				
-				if( data.toString().includes("Arguments")){		
+				if( data.toString().includes("Arguments")){						
+					//let str = `Arguments(${data.length}) { `	
 					let str = "[Arguments] { ";		
 					
 					for(const [key, value] of Object.entries(data)){
@@ -49,6 +51,7 @@
 					}
 					
 					return (str != "[Arguments] { " ) ? str.slice(0, -2) + " }": "[Arguments] {}";	
+					//return (str != `Arguments(${data.length}) { ` ) ? str.slice(0, -2) + " }": `Arguments(${data.length}) {}`;	
 					
 				} else {
 					let str = "{ ";
