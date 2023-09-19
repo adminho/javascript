@@ -585,8 +585,8 @@ function log(value, key, mapObj) {
 let map = new Map( [ [1, "a"] , [2, "b"] ]);
 map.forEach( log, map);		             //ระบุค่าอากิวเมนต์ตัวที่สองเป็น map
 /*แสดงผลลัพธ์เป็น
-"[1] = a"
-"[2] = b" */
+[1] = a
+[2] = b */
 ```
 
 ```js
