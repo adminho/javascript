@@ -56,17 +56,17 @@ let obj = {
     1: "foo",
     2: "bar"
 };
-let toUpper =  function (value,index){     // ฟังก์ชั่นคอลแบ็ค
+let toUpper =  function (value,index) {     // ฟังก์ชั่นคอลแบ็ค
     if (typeof value == "string") {
-        return value.toUpperCase();	          // รีเทิร์นสตริงตัวพิมพ์ใหญ่
+        return value.toUpperCase();	           // รีเทิร์นสตริงตัวพิมพ์ใหญ่
     } else {
         return "index_" + index;    // รีเทิร์นข้อความที่ขึ้นต้นด้วยคำว่า "index_" แล้วตามด้วยอินเด็กซ์
     }
 };
 let array = Array.from( obj, toUpper );
 console.log(array); 
-// จะแปลงจาก [ undefined, "foo", "bar", undefined ] 
-// ให้กลายมาเป็น  [ "index_0", "FOO", "BAR", "index_3" ]
+// จะแปลงจาก [ undefined, 'foo', 'bar', undefined ] 
+// ให้กลายมาเป็น  [ 'index_0', 'FOO', 'BAR', 'index_3' ]
 ```
 
 ```js
