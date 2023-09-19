@@ -10,7 +10,7 @@
 				
 				let str = strBegin;
 				for(const [key, value] of data.entries()){
-					str += `'${key}' => ${toString(value)}, `;
+					str += `${toString(key)} => ${toString(value)}, `;
 				}
 				
 				return (str != strBegin ) ? str.slice(0, -2) + ' }': `${strBegin}}`;

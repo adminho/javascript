@@ -523,7 +523,7 @@ Map(5) { '1' => 'Hi', { id: 2 } => 'World', { id: 2 } => 'World', null => 'We', 
 ```js
 let map = new Map();
 map.set(1, "a").set(2, "b").set(3, "c");
-console.log(map);		// Map {1 => "a", 2 => "b", 3 => "c"}
+console.log(map);		// Map(3) { 1 => 'a', 2 => 'b', 3 => 'c' }
 ```
 
 ### คอนสตรัคเตอร์ของแม็พ
