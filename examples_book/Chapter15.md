@@ -693,12 +693,6 @@ console.log(d[0] == 0x10);		 // true
 ```
 
 ```js
-new TypedArray(length); 	                     // ระบุความยาว length (จำนวนสมาชิก)  ไม่ต้องใช้บัฟเฟอร์
-new TypedArray(typedArr);  	         // สร้างจากอาร์เรย์ระดับบิตตัวอื่น ๆ อีกที
-new TypedArray(obj); 		         // สร้างจากอาร์เรย์ หรืออ็อบเจ็กต์ที่ทำตัวเสมือนเป็นอาร์เรย์
-```
-
-```js
 let a = new Float32Array(2);
 console.log(a.length);	                     // 2
 console.log(a[0], a[1]);    	                     // 0 0
