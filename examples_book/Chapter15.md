@@ -392,9 +392,9 @@ console.log(set2);			 // Set(3) { 'a', 'b', 'c' }
 
 ```js
 let set = new Set(["a", "b", "c"]);
-console.log(set);			             // Set {"a", "b", "c"}
+console.log(set);			             // Set(3) { 'a', 'b', 'c' }
 console.log(set.delete("a"));	             // true
-console.log(set);			             // Set {"b", "c"}
+console.log(set);			             // Set(2) { 'b', 'c' }
 set.clear();
 console.log(set.size);		             // 0
 ```
@@ -477,22 +477,22 @@ b = null;		// อ็อบเจ็กต์ {y: 2} จะรอให้ GC ม
 
 ```js
 let set = new Set();
-let a = { x: 1}, b = { y: 2};
+let a = { x: 1 }, b = { y: 2 };
 set.add(a).add(b);
-a = null;		                        // อ็อบเจ็กต์ {x: 1} ยังไม่ถูก GC มาเรียกคืนหน่วยความจำ
-b = null;		            // อ็อบเจ็กต์ {y: 2} ยังไม่ถูก GC มาเรียกคืนหน่วยความจำ
-console.log(set);  	            // Set {Object {x: 1}, Object {y: 2}}
+a = null;		                        // อ็อบเจ็กต์ { x: 1 } ยังไม่ถูก GC มาเรียกคืนหน่วยความจำ
+b = null;		            // อ็อบเจ็กต์ { y: 2 } ยังไม่ถูก GC มาเรียกคืนหน่วยความจำ
+console.log(set);  	            // Set(2) { { x: 1 }, { y: 2 } }
 ```
 
 ```js
 let wset = new WeakSet();
-let a = { x: 1 }, b = { y: 2};
+let a = { x: 1 }, b = { y: 2 };
 wset.add( a);
 wset.add( b ); 
 console.log(wset.has(a));  	// true
 console.log(wset.has(b));  	// true
-a = null;			            // อ็อบเจ็กต์ {x: 1} จะรอให้  GC มาเรียกคืนหน่วยความจำ
-b = null;			// อ็อบเจ็กต์ {y: 2} จะรอให้  GC มาเรียกคืนหน่วยความจำ
+a = null;			            // อ็อบเจ็กต์ { x: 1 } จะรอให้  GC มาเรียกคืนหน่วยความจำ
+b = null;			// อ็อบเจ็กต์ { y: 2 } จะรอให้  GC มาเรียกคืนหน่วยความจำ
 console.log(wset.has(a));  	// false
 console.log(wset.has(b)); 	            // false
 ```
