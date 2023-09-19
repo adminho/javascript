@@ -35,7 +35,7 @@ let obj = {
 };
 let array = Array.from(obj);
 console.log(obj.length);	                         // 4
-console.log(array);  		             // [ undefined, "foo", "bar", undefined ]
+console.log(array);  		             // [ undefined, 'foo', 'bar', undefined ]
 ```
 
 ```js

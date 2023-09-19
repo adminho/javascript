@@ -1,19 +1,30 @@
 		let _resultAreaId = "";	
 				
+		function collectionToStr(data) {			
+			let name = data.toString().split(/\s/g)[1].slice(0,-1);
+			let strBegin = `${name}(${data.size}) { `;
+				
+			let str = strBegin;
+			for(const [key, value] of data.entries()){
+					str += `'${key}' => ${toString(value)}, `;
+			}
+				
+			return (str != strBegin ) ? str.slice(0, -2) + ' }': `${strBegin}}`;
+		}		
+		
 		function toString(data) {
 			if(data == null || data == undefined ) {
 				return ""+ data;				
 						
-			} else if (data instanceof Map) {
-				let str = `Map(${data.size}) { `;
-				for(const [key, value] of data.entries()){
-						str += `'${key}' => ${toString(value)}, `;
-				}
-				
-				return (str != `Map(${data.size}) { ` ) ? str.slice(0, -2) + ' }': `Map(${data.size}) {}`;	
+			} else if (data instanceof Map || data instanceof Set) {
+				return collectionToStr(data);
 				
 			} else if( data instanceof Array){
-				alert(Object.getPrototypeOf(data));			
+				if(data.length>0 && !(0 in data)) {
+					return `[ <${data.length} empty  items> ]`;
+					
+				}
+				
 				let str = "[ ";
 				for(const value of data) {
 					str += ""+ toString(value) + ", ";
@@ -68,7 +79,7 @@
 				}	
 				
 			} else {				
-				return String(data); // recursive
+				return String(data); // stop recursive
 				
 			}
 		}
