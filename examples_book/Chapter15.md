@@ -606,8 +606,8 @@ let obj =  {a:1} ; 			             // 		--บรรทัด a
 map.set( obj, "HI");		
 console.log(map.delete({a:1}));	             // false 	--บรรทัด b
 console.log(map.has({a:1}));		 // false   	--บรรทัด c	
-map.set([],"Bye");			 // 		--บรรทัด d
-console.log(map.has([]));		             // false  	--บรรทัด f
+map.set([ ],"Bye");			 // 		--บรรทัด d
+console.log(map.has([ ]));		             // false  	--บรรทัด f
 ```
 
 ### การสร้างแม็พด้วยปีกกา
