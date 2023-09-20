@@ -31,9 +31,9 @@ console.log(iterator.next());		 // { value: undefined, done: true }
 ```js
 let array = [1, 5];
 let iterator = array[Symbol.iterator](); 
-console.log(iterator.next());		 // {value: 1, done: false}
-console.log(iterator.next());		 // {value: 5, done: false}
-console.log(iterator.next());		 // {value: undefined, done: true}
+console.log(iterator.next());		 // { value: 1, done: false }
+console.log(iterator.next());		 // { value: 5, done: false }
+console.log(iterator.next());		 // { value: undefined, done: true }
 ```
 
 ```js
