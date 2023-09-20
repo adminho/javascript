@@ -625,21 +625,21 @@ function * f() {
 	return 2;		// บรรทัด b
 }
 function * g(count) {
-	for(let i=0; i<2 ; i++){
+	for(let i=0; i<2 ; i++) {
 	      yield count + i;	// บรรทัด c
 	}
 }
 function * genIterator() {
 	let result = yield *f();	// บรรทัด d
 	yield result + 10;	// บรรทัด e
-	yield *g(result);	// บรรทัด f
+	yield *g(result);	            // บรรทัด f
 }
 let iterator = genIterator();
-console.log(iterator.next());           // {value: 1, done: false}
-console.log(iterator.next());           // {value: 12, done: false}
-console.log(iterator.next());           // {value: 2, done: false}
-console.log(iterator.next());           // {value: 3, done: false}
-console.log(iterator.next());           // {value: undefined, done: true}
+console.log(iterator.next());           // { value: 1, done: false }
+console.log(iterator.next());           // { value: 12, done: false }
+console.log(iterator.next());           // { value: 2, done: false }
+console.log(iterator.next());           // { value: 3, done: false }
+console.log(iterator.next());           // { value: undefined, done: true }
 ```
 
 ### ส่งค่าอากิวเมนต์ไปให้เมธอด next()
