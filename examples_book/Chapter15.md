@@ -729,7 +729,7 @@ console.log(join);		                         // "1,2,3"
 ```js
 var array = [ 10, 1, 5 ];
 array.sort();                               
-console.log(array);			 // [1,10, 5]
+console.log(array);			 // [ 1, 10, 5 ]
 let uint8 = new Uint8Array([1,10, 5]);
 uint8.sort();                               
 console.log(uint8);			 // Uint8Array(3) [ 1, 5, 10 ]
