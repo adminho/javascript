@@ -257,12 +257,12 @@ console.log( [...map]);		             // [ [ 1, 'a' ], [ 2, 'b' ] ]
 * ตัวอย่างที่ 4 จะแสดงการใช้โอเปอเรเตอร์สเปรด กับอาร์เรย์
 
 ```js
-let array = [];
+let array = [ ];
 array.length  = 3;
 array[1] = "a";
 console.log(...array.keys());		 // 0 1 2
-console.log(...array.values());		 // undefined "a" undefined 
-console.log(...array.entries());		 // [0, undefined] [1, "a"] [2, undefined]
+console.log(...array.values());		 // undefined a undefined 
+console.log(...array.entries());		 // [ 0, undefined ] [ 1, 'a' ] [ 2, undefined ]
 console.log(...array);			 // undefined "a" undefined
 ```
 
