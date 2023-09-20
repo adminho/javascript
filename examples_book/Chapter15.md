@@ -772,14 +772,14 @@ console.log(uint8.includes(10)); 	             // false
 ## เมธอด at()
 
 ```js
-let array = ['a', 'b', 'c', 'd', 'e'];
-console.log(array.at(3));             // 'd'
-console.log(array.at(-3));            // 'c'
+let array = ["a", "b", "c", "d", "e"];
+console.log(array.at(3));             // "d"
+console.log(array.at(-3));            // "c"
 ```
 
 ```js
 let str = "abcde";
-console.log(str.at(3));               // 'd'    
-console.log(str.at(-3));              // 'c'
+console.log(str.at(3));               // "d"    
+console.log(str.at(-3));              // "c"
 ```
 
