@@ -701,7 +701,7 @@ let b = new Float64Array(a);
 console.log(b.length);   	                     // 2
 console.log(b[0], b[1]);	                     // 0 0
 let c = new Int32Array([100, 200]);
-console.log(c[0], c[1]);	                     // 100  200
+console.log(c[0], c[1]);	                     // 100 200
 let likeArray = {
 	length: 2,
 	0: 300,
