@@ -360,8 +360,8 @@ let set = new Set([10, 20]);
 console.log(a1[0], a1[1]);		             // 10 20
 let map = new Map( [["firstname","Somchai"] , ["lastname", "Jaidee"] ]);
 [...a2] = [...map];
-console.log(a2[0]);			 // ["firstname", "Somchai"]
-console.log(a2[1]);  			 // ["lastname", "Jaidee"]
+console.log(a2[0]);			 // [ 'firstname', 'Somchai' ]
+console.log(a2[1]);  			 // [ 'lastname', 'Jaidee' ]
 console.log(a2[0][0], a2[0][1]);		 // "firstname Somchai"
 console.log(a2[1][0], a2[1][1]);   	             // "lastname Jaidee"
 ```
