@@ -292,8 +292,8 @@ plus(...array);		// 60
 
 * ยูเนียน
 ```js
-let a = new Set([1, 2, 3, 4, 5]);		  // Set {1, 2, 3, 4, 5}
-let b = new Set([3, 4, 5, 6, 7]);		  // Set {3, 4, 5, 6, 7}
+let a = new Set([1, 2, 3, 4, 5]);		  // Set(5) { 1, 2, 3, 4, 5 } 
+let b = new Set([3, 4, 5, 6, 7]);		  // Set(5) { 3, 4, 5, 6, 7 }
 let union = new Set([...a, ...b]);	
 console.log(...union);			  //  1 2 3 4 5 6 7
 ```
