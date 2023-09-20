@@ -652,8 +652,8 @@ console.log(buffer.byteLength);  		 // 32
 ```
 
 ```js
-let buffer = new ArrayBuffer( 32 );	 // ระบุความยาว 32 ไบต์ (256 บิต)
-console.log(buffer.byteLength);  	 // 32 
+let buffer = new ArrayBuffer( 32 );	            // ระบุความยาว 32 ไบต์ (256 บิต)
+console.log(buffer.byteLength);  	            // 32 
 let uint16 = new Uint16Array( buffer );
 console.log(uint16.length);             	 // สมาชิก 16 ตัว
 ```
