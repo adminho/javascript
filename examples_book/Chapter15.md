@@ -684,7 +684,7 @@ console.log(uint16[0]);			 // 23312
 ```js
 let buffer = new ArrayBuffer(2);	             // 2 ไบต์ (16 บิต) 
 let a = new Int16Array(buffer);	             // มองเห็น 16 บิตของบัฟเฟอร์
-let b = new Int8Array(buffer, 0, 1);	             // มองเห็น 8 บิตล่างของบัฟเฟอร์
+let b = new Int8Array(buffer, 0, 1);	 // มองเห็น 8 บิตล่างของบัฟเฟอร์
 let c = new Int8Array(buffer, 1, 1);	             //  มองเห็น 8 บิตบนของบัฟเฟอร์
 let d = new Int8Array(buffer,1);	             // เข้าถึงบัฟเฟอร์ตั้งแต่ offset มีค่าเป็น 1 เป็นต้นไป
 a[0] = 0x105b;				 // 4187 (เลขฐานสิบ)
