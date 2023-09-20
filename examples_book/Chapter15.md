@@ -602,7 +602,7 @@ b */
 
 ```js
 let map = new Map();
-let obj =  {a:1} ; 			             // 		--บรรทัด a
+let obj =  { a:1 }; 			  // 		--บรรทัด a
 map.set( obj, "HI");		
 console.log(map.delete({a:1}));	             // false 	--บรรทัด b
 console.log(map.has({a:1}));		 // false   	--บรรทัด c	
