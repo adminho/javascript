@@ -685,7 +685,7 @@ function * genIterator() {
 let iterator = genIterator();
 console.log(iterator.next());        		 // { value: 1, done: false }
 console.log(iterator.next(2));              	 // { value: 5, done: false }
-console.log(iterator.throw(new Error(‘’)));	 // { value: 10, done: false }
+console.log(iterator.throw(new Error('')));	 // { value: 10, done: false }
 console.log(iterator.next());            	 // { value: undefined, done: true }
 ```
 
