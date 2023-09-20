@@ -666,8 +666,8 @@ function * genIterator() {
     yield b + 7;                   
 }
 let iterator = genIterator ();
-console.log(iterator.next());                          // {value: 1, done: false}
-console.log(iterator.next(2));                        // {value: 5, done: false}
+console.log(iterator.next());                          // { value: 1, done: false }
+console.log(iterator.next(2));                        // { value: 5, done: false }
 console.log(iterator.throw(new Error('')));      // error
 ```
 
