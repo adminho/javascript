@@ -263,7 +263,7 @@ array[1] = "a";
 console.log(...array.keys());		 // 0 1 2
 console.log(...array.values());		 // undefined a undefined 
 console.log(...array.entries());		 // [ 0, undefined ] [ 1, 'a' ] [ 2, undefined ]
-console.log(...array);			 // undefined "a" undefined
+console.log(...array);			 // undefined a undefined
 ```
 
 * ตัวอย่างที่ 5 จะแสดงการใช้โอเปอเรเตอร์สเปรด กับอาร์เรย์ระดับบิต
