@@ -311,8 +311,8 @@ console.log(...intersect);			 //  3 4 5
 
 * ผลต่างของเซต 
 ```js
-let a = new Set([1, 2, 3, 4, 5]);		 // Set {1, 2, 3, 4, 5}
-let b = new Set([3, 4, 5, 6, 7]);		 // Set {3, 4, 5, 6, 7}
+let a = new Set([1, 2, 3, 4, 5]);		 // Set(5) { 1, 2, 3, 4, 5 } 
+let b = new Set([3, 4, 5, 6, 7]);		 // Set(5) { 3, 4, 5, 6, 7 }
 let temp = [...a];		// แตกสมาชิกของเซทออกมา ให้กลายมาเป็นอาร์เรย์ชั่วคราว
 let diff = new Set(temp.filter(item => !b.has(item) ) );
 // หรือจะเขียนสั้น ๆ ได้เป็น 
