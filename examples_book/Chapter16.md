@@ -538,10 +538,10 @@ function * genIterator(array) {
     }
 }
 let iterator = genIterator ([1, 5, 10]);
-console.log(iterator.next());	// {value: 1, done: false}
-console.log(iterator.next());	// {value: 5, done: false}
-console.log(iterator.next());	// {value: 10, done: false}
-console.log(iterator.next());	// {value: undefined, done: true}
+console.log(iterator.next());	// { value: 1, done: false }
+console.log(iterator.next());	// { value: 5, done: false }
+console.log(iterator.next());	// { value: 10, done: false }
+console.log(iterator.next());	// { value: undefined, done: true }
 ```
 
 ```js
