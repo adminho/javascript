@@ -703,9 +703,9 @@ console.log(b[0], b[1]);	                     // 0 0
 let c = new Int32Array([100, 200]);
 console.log(c[0], c[1]);	                     // 100  200
 let likeArray = {
-	length: 2
-	,0: 300
-	,1: 400
+	length: 2,
+	0: 300,
+	1: 400
 }
 let d = new Uint32Array(likeArray);
 console.log(d[0], d[1]);	                     // 300 400
