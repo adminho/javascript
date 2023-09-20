@@ -39,9 +39,9 @@ console.log(iterator.next());		 // { value: undefined, done: true }
 ```js
 let say = "hi";
 let iterator = say[Symbol.iterator]();          
-console.log(iterator.next());		 // {value: "h", done: false}
-console.log(iterator.next());		 // {value: "i", done: false}
-console.log(iterator.next());		 // {value: undefined, done: true}
+console.log(iterator.next());		 // { value: "h", done: false }
+console.log(iterator.next());		 // { value: "i", done: false }
+console.log(iterator.next());		 // { value: undefined, done: true }
 ```
 
 ```js
