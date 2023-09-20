@@ -447,7 +447,7 @@ obj[Symbol.iterator] = function () {	        // บรรทัดที่ 2
 	return this.array[Symbol.iterator]();       // บรรทัดที่ 3	 
 	// return this.array.values(); 	        // หรือจะเขียนแบบนี้ก็สามารถทำได้
 };	
-for(let i of obj){
+for(let i of obj) {
 	console.log(i);		
 }
 /* แสดงผลลัพธ์
