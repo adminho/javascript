@@ -1,5 +1,5 @@
 body {
-	
+	 /*font-family: 'Noto Sans Thai', sans-serif;*/
 }	
 
 .notrun {
@@ -39,14 +39,13 @@ body {
 }
 
 textarea {
-  font-size: 1.0em;
+  font-size: 0.9em;
   background-color: #F5F5F5;
   width: 100%;
 }
 
 .describe {
   margin:3px;	
-  font-family: 'Noto Sans Thai', sans-serif;
   font-size:16px;
 }
 
@@ -90,27 +89,24 @@ textarea {
   background-color: #EFFEC9;
 }
 
+.group-menu{
+	
+}
+
 .btn-menu {		
     position: fixed;
-    left: 5;
-    top: 8;
+    left: 0;
+    top: 0;
 	border: 1px solid;
 	border-color: #5A8A1A;
 	border-radius: 15px;
-	background: #558415;	
-    color: white;	
-	padding: 0.5rem 4.5rem;	
-	font-size: 14px;
+	background: #558415;	    	
+	padding: 0.5rem 4.5rem;		
 	cursor: pointer;	
 	z-index: 50; 
-}
-
-.hidden-menu {
+	color:white; 
+	font-size:18px;
 	display:none;
-}
-
-.btn-menu:hover  .hidden-menu {
-  display: block;
 }
 
 .main-menu{  
@@ -125,6 +121,7 @@ textarea {
   padding-left:10px; 
   padding-bottom:100px; 
   background-color: #BDDB94;
+  font-size: 16px;
   /*overflow-y: scroll;**/
   overflow: auto;  
   z-index: 5;   
@@ -138,6 +135,7 @@ textarea {
    background-color: #606060;
    color: white;
    text-align: left;
+   font-size: 0.9rem;
    margin-top: 3px;
    margin-bottom: 3px;
    border: 0.5px #023020;
@@ -152,8 +150,6 @@ div.display-result {
    word-wrap: break-word;
 }
 
-
-
 .footer {
   background-color: #3CB371;
   position: fixed;
@@ -167,11 +163,9 @@ div.display-result {
 }
 
 @media all and (max-width: 768px){
-	.left-menu {
-		display: none;
-	}	
 	.main {
-		margin-left: 10px;
+		margin-left: 2%;	
+		margin-right: 2%;		
 	}
 	.sale {
 		margin-left: 10px;
@@ -182,8 +176,23 @@ div.display-result {
 	.ads {
 		display: none;	
 	}
-	.main-menu {
-		display: none;
+	
+	/*
+	.headline {
+		display: none; 
 	}
+	
+	.btn-menu {
+		display: block;
+	}
+	.main-menu {
+		display: none;	
+		width: 100%;
+	}
+	.group-menu:hover  .main-menu {
+		display: block;
+		margin-top: 10px;
+	}
+	*/
 	
 }

@@ -5,22 +5,11 @@ const fs = Promise.promisifyAll(require('fs'));
 const lineReader = require('line-reader');
 const eachLine = Promise.promisify(lineReader.eachLine);
 
-
-let templateHTML = "";
+/*let templateHTML = "";
 try {
    templateHTML = fs.readFileSync('template.html', { encoding: 'utf8' });   
 } catch (err) {
    console.log(err);
-}
-
-/*function writeToHTML(headline, allLines, fileName){
-    let html = templateHTML.replace("${headline}", headline)
-			.replace("${allLines}", allLines)
-			.replace("${fileName}", fileName);
-    return fs.writeFile(`${fileName}.html`, html, function (err) {
-		if (err) throw err;
-		console.log(`${fileName}.html is Saved!`);
-	}); 	
 }*/
 
 async function genHTML(fileName){
@@ -90,10 +79,10 @@ async function genHTML(fileName){
   }
   
   if(last) {	  	
-	let html = templateHTML.replace("${headline}", headline)
+	/*let html = templateHTML.replace("${headline}", headline)
 			.replace("${allLines}", allLines)
-			.replace("${fileName}", fileName);			
-			
+			.replace("${fileName}", fileName);*/			
+	let html = allLines;		
 	html = html.replaceAll(/@-@/g, "$$$"); // fix bugs	
     fs.writeFile(`${fileName}.html`, html, function (err) {
 		if (err) throw err;
