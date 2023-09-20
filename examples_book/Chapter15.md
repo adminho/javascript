@@ -488,7 +488,7 @@ console.log(set);  	            // Set(2) { { x: 1 }, { y: 2 } }
 ```js
 let wset = new WeakSet();
 let a = { x: 1 }, b = { y: 2 };
-wset.add( a);
+wset.add( a );
 wset.add( b ); 
 console.log(wset.has(a));  	// true
 console.log(wset.has(b));  	// true
