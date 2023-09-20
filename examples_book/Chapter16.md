@@ -202,8 +202,8 @@ for (let entry of map) {		            // จะเหมือนกับกา
 10
 "red"
 "green"
-["firstname", "Somchai"]
-["lastname", "Jaidee"] */
+[ 'firstname', 'Somchai' ]
+[ 'lastname', 'Jaidee' ] */
 ```
 
 ### โอเปอเรเตอร์สเปรด
