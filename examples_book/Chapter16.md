@@ -273,7 +273,7 @@ uint8[0] = 10 ;
 uint8[1] = 20 ;
 console.log(...uint8.keys());		 // 0 1
 console.log(...uint8.values());		 // 10 20
-console.log(...uint8.entries());		 // [0, 10] [1, 20]
+console.log(...uint8.entries());		 // [ 0, 10 ] [ 1, 20 ]
 console.log(...uint8);			 // 10 20
 ```
 
