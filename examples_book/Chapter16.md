@@ -172,14 +172,14 @@ for (let entry of map.entries()) {
 }
 /* จะแสดงผลลัพธ์ดังนี้
 เมื่อใช้ array.entries() จะแสดงผลลัพธ์เป็น
-[0, 5]
-[1,10]
+[ 0, 5 ]
+[ 1, 10 ]
 เมื่อใช้ set.entries() จะแสดงผลลัพธ์เป็น
-["red", "red"]
-["green", "green"]
+[ 'red', 'red' ]
+[ 'green', 'green' ]
 เมื่อใช้ map.entries() จะแสดงผลลัพธ์เป็น
-["firstname", "Somchai"]
-["lastname", "Jaidee"] */
+[ 'firstname', 'Somchai' ]
+[ 'lastname', 'Jaidee' ] */
 ```
 
 ```js
@@ -668,7 +668,7 @@ function * genIterator() {
 let iterator = genIterator ();
 console.log(iterator.next());                          // {value: 1, done: false}
 console.log(iterator.next(2));                        // {value: 5, done: false}
-console.log(iterator.throw(new Error(‘’)));      // error
+console.log(iterator.throw(new Error('')));      // error
 ```
 
 ```js
@@ -685,7 +685,7 @@ function * genIterator() {
 let iterator = genIterator();
 console.log(iterator.next());        		 // {value: 1, done: false}
 console.log(iterator.next(2));              	 // {value: 5, done: false}
-console.log(iterator.throw(new Error(‘’)));	 // {value: 10, done: false}
+console.log(iterator.throw(new Error('')));	 // {value: 10, done: false}
 console.log(iterator.next());            	 // {value: undefined, done: true}
 ```
 
