@@ -270,10 +270,10 @@ console.log(newArr2);
 let array = [1, 2, 3, 4];
 array.forEach( (value, index, arrayObj) => console.log(`a[${index}] = ${value}`) );
 /*แสดงผลลัพธ์
-a[0] = 1
-a[1] = 2
-a[2] = 3
-a[3] = 4 */
+"a[0] = 1"
+"a[1] = 2"
+"a[2] = 3"
+"a[3] = 4" */
 ```
 
 ```js
@@ -424,9 +424,9 @@ function log(value1, value2, setObj) {
 let set = new Set( ["a", "b", "c"] );
 set.forEach( log, set);		// ระบุค่าอากิวเมนต์ตัวที่สองเป็น set
 /*แสดงผลลัพธ์เป็น
-[a] = a
-[b] = b
-[c] = c */
+"[a] = a"
+"[b] = b"
+"[c] = c" */
 ```
 
 ```js
@@ -586,8 +586,8 @@ function log(value, key, mapObj) {
 let map = new Map( [ [1, "a"] , [2, "b"] ]);
 map.forEach( log, map);		             //ระบุค่าอากิวเมนต์ตัวที่สองเป็น map
 /*แสดงผลลัพธ์เป็น
-[1] = a
-[2] = b */
+"[1] = a"
+"[2] = b" */
 ```
 
 ```js

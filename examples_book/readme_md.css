@@ -16,8 +16,8 @@ body {
 
 .main {
 	margin-top: 70px;	
-	margin-left: 20%;	
-	margin-right: 20%;	
+	margin-left: 21%;	
+	margin-right: 21%;	
 	overflow:auto;
 }
 
@@ -86,7 +86,7 @@ textarea {
 }
 
 .link-chap:hover {
-  background-color: #EFFEC9;
+  background-color: #FBFBFB;
 }
 
 .group-menu{
@@ -114,7 +114,7 @@ textarea {
   left: 0;
   top: 30;
   height: 100%;
-  width: 17%;
+  width: 18%;
   height: 100%; 
   margin-top:18px;
   padding-top:12px; 
@@ -160,6 +160,37 @@ div.display-result {
   text-align:center;
   display:none;
   z-index: 1000;
+}
+
+.rotate {
+	animation: animName 2s linear infinite;	
+	opacity: 10;
+	width:30%;
+	position: fixed; 
+	left:35%;
+	top:20%;
+	z-index: 100;
+	display: none;
+}
+
+@keyframes animName {
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.loading {
+	animation: blinker 1s step-start;
+	/*background-color: #FBFBFB;*/
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
 }
 
 @media all and (max-width: 768px){
