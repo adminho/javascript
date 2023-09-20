@@ -606,17 +606,17 @@ function * genIterator() {
 	let item = new Set([8, 9]);		
 	yield* item.values();		 // บรรทัด e
 }
-let iterator = genIterator(6, 7);		 // บรรทัด f	
-console.log(iterator.next()); 		 // {value: 1, done: false}
-console.log(iterator.next()); 		 // {value: 2, done: false}
-console.log(iterator.next()); 		 // {value: 3, done: false}
-console.log(iterator.next()); 		 // {value: "4", done: false}
-console.log(iterator.next()); 		 // {value: "5", done: false}
-console.log(iterator.next()); 		 // {value: 6, done: false}
-console.log(iterator.next()); 		 // {value: 7, done: false}
-console.log(iterator.next()); 		 // {value: 8, done: false}
-console.log(iterator.next()); 		 // {value: 9, done: false}
-console.log(iterator.next()); 		 // {value: undefined, done: true}
+let iterator = genIterator(6, 7);		 // บรรทัด f
+console.log(iterator.next()); 		 // { value: 1, done: false }
+console.log(iterator.next()); 		 // { value: 2, done: false }
+console.log(iterator.next()); 		 // { value: 3, done: false }
+console.log(iterator.next()); 		 // { value: '4', done: false }
+console.log(iterator.next()); 		 // { value: '5', done: false }
+console.log(iterator.next()); 		 // { value: 6, done: false }
+console.log(iterator.next()); 		 // { value: 7, done: false }
+console.log(iterator.next()); 		 // { value: 8, done: false }
+console.log(iterator.next()); 		 // { value: 9, done: false }
+console.log(iterator.next()); 		 // { value: undefined, done: true }
 ```
 
 ```js
