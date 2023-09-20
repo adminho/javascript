@@ -85,17 +85,16 @@ async function genHTML(fileName){
   }
     
   if(isCode && !line.startsWith("```js") && !line.startsWith("```html")){
-	  line = line.replaceAll(/\$\$/g, "@-@"); // fix bugs กรณีที่ line มี $$ วางติดกันอยู่ในสตริง	  
+	  line = line.replaceAll(/\$\$/g, "@-@"); // fix bugs กรณีที่ line มี $$ วางติดกันอยู่ในสตริง เพื่อไม่ให้มันทำงาน	(ในบทที่ 11 เรื่องเทมเพลตสตริง)
 	  lineCodes += `${line}\n`;	  
   }
   
-  if(last) {	  
-	// writeToHTML(headline, allLines, fileName);
+  if(last) {	  	
 	let html = templateHTML.replace("${headline}", headline)
 			.replace("${allLines}", allLines)
-			.replace("${fileName}", fileName);
+			.replace("${fileName}", fileName);			
 			
-	html = html.replaceAll(/@-@/g, "$$$"); // fix bugs
+	html = html.replaceAll(/@-@/g, "$$$"); // fix bugs	
     fs.writeFile(`${fileName}.html`, html, function (err) {
 		if (err) throw err;
 		console.log(`${fileName}.html is Saved!`);
