@@ -337,8 +337,8 @@ map.set("firstname", "Somchai");
 map.set("lastname", "Jaidee");
 //let map = new Map( [["firstname","Somchai"] , ["lastname", "Jaidee"] ]);
 let [a, b] = map;
-console.log(a); 			             // [ "firstname", "Somchai" ]
-console.log(b); 			             // [ "lastname", "Jaidee" ]
+console.log(a); 			             // [ 'firstname', 'Somchai' ]
+console.log(b); 			             // [ 'lastname', 'Jaidee' ]
 let [ [key1, value1] , [key2, value2]] = map;
 console.log(key1,key2);		             // "firstname lastname"
 console.log(value1,value2);		 // "Somchai Jaidee"
