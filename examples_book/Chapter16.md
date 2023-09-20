@@ -251,7 +251,7 @@ console.log(entries[0][0]);	                         // 1
 console.log(entries[0][1]);	                         // "a"
 console.log(entries[1][0]);	                         // 2
 console.log(entries[1][1]);	                         // "b"
-console.log( [...map]);		             // [ [ 1, 'a' ], [ 2, 'b' ]  ]
+console.log( [...map]);		             // [ [ 1, 'a' ], [ 2, 'b' ] ]
 ```
 
 * ตัวอย่างที่ 4 จะแสดงการใช้โอเปอเรเตอร์สเปรด กับอาร์เรย์
