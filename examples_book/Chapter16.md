@@ -392,11 +392,11 @@ for(let [key,value] of uint8.entries()) {
 0 5
 1 10
 เมื่อใช้ set.entries() จะแสดงผลลัพธ์เป็น
-“red red”
-“green green”
+"red red"
+"green green"
 เมื่อใช้ map.entries() จะแสดงผลลัพธ์เป็น
-“firstname Somchai”
-“lastname Jaidee”
+"firstname Somchai"
+"lastname Jaidee"
 เมื่อใช้ uint8.entries() จะแสดงผลลัพธ์เป็น
 0 10
 1 20
