@@ -224,13 +224,13 @@ console.log(array[0], array[1], array[2]);	 // "a b c"
 ```
 
 ```js
-let set = new Set(["a", "b", "b", "c", "c",]);      // Set {"a", "b", "c"}
+let set = new Set(["a", "b", "b", "c", "c",]);      // Set(3) { 'a', 'b', 'c' }
 let keys = [ ...set.keys() ],
     values = [ ...set.values() ],
     entries = [ ...set.entries() ];
-console.log(keys);		            // ["a", "b", "c"]
-console.log(values);		            // ["a", "b", "c"]
-console.log(entries[0][0]);	            // "a"
+console.log(keys);		            // [ 'a', 'b', 'c' ]
+console.log(values);		            // [ 'a', 'b', 'c' ]
+console.log(entries[0][0]);	                        // "a"
 console.log(entries[0][1]); 	            // "a"
 console.log(entries[1][0]); 	            // "b"
 console.log(entries[1][1]); 	            // "b"
