@@ -1,4 +1,5 @@
 node_modules/
+test_js/
 *.html
 *.json
 deploy*
