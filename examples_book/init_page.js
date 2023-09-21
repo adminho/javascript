@@ -9,12 +9,13 @@
 		link.addEventListener('click', function(event) {					
 			//if ( WURFL.form_factor === "Desktop") {		     
 			if(  window.innerWidth >=768 ) {					
-				event.preventDefault();								
+				event.preventDefault();	
+				let file = link.href;		
 				includeHTML(link);
 			} else {
 				let str =link.href.split("chapter")[1];
 				let no = str.replace(".html", "");						
-				link.href = `chapter.php?no=${parseInt(no)}`;							
+				link.href = `chapter.php?no=${parseInt(no)-1}`;							
 			}			
 			
 		});
@@ -24,30 +25,33 @@
 		});
 	}			
 			
-	function includeHTML(link) {		
+	function includeHTML(link) {	
+	    
+		if(!link){
+			throw new Error(`Not have a link`);
+		}
+		
 		document.title =  link.innerHTML;
-		healineDiv.innerHTML = link.innerHTML;	
-		statusLoading.style.display = "block";		
-		bottomAds.style.display = "none";	
-				
+				healineDiv.innerHTML = link.innerHTML;	
+				statusLoading.style.display = "block";		
+				bottomAds.style.display = "none";	
+		
 		let options =  {
 			headers: {
 				'Cache-Control': 'no-cache'
 				}
 		};
-		
-		let file = link.href;
-		fetch(file, options)
+				
+		fetch(link.href, options)
 		.then( res => res.text())		
 		.then( text => { 
+			statusLoading.style.display = "none";
 			if(text.includes("404")){
 				targetDiv.innerHTML = '<h1>Not found page</h1>';		
 			} else {
 				targetDiv.innerHTML = text;		
 				bottomAds.style.display = "block";	
 			}
-			statusLoading.style.display = "none";	
-			//if(link.href.startsWith("test_js"))transferHTM('test_js');
 		 }
 		)
 		.catch( err => {
