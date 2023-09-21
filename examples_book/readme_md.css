@@ -79,6 +79,7 @@ textarea {
   text-align: left;
   font-weight: 500;
   font-size: 1.5em;
+  font:bold;
 }
 
 .link-chap {
@@ -110,30 +111,29 @@ a:active {
 	border-color: #5A8A1A;
 	border-radius: 15px;
 	background: #558415;	    	
-	padding: 0.5rem 4.5rem;		
+	padding: 0.5rem 4.0rem;		
 	cursor: pointer;	
-	z-index: 50; 
+	z-index: 80; 
 	color:white; 
-	font-size:18px;
-	display:none;
+	font-size:16px;	
 }
 
 .main-menu{  
   position: fixed;
   left: 0;
-  top: 30;
+  top: 0;
   height: 100%;
   width: 250;
   height: 100%; 
-  margin-top:18px;
-  padding-top:12px; 
+  margin-top:0px;
+  padding-top:50px; 
   padding-left:10px; 
   padding-bottom:100px; 
   background-color: #DAF7A6;
   font-size: 16px;
   /*overflow-y: scroll;**/
   overflow: auto;  
-  z-index: 5;   
+  z-index: 75;   
   text-align: left; 
   font-size: 0.9em;  
 }
@@ -216,10 +216,10 @@ div.display-result {
 	.ads {
 		display: none;	
 	}
-	
-
+		
 	.headline {
-		display: none; 
+		font-size: 1.5em;
+		text-align: right;
 	}
 	
 	.btn-menu {
