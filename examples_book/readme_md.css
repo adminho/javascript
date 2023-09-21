@@ -82,11 +82,20 @@ textarea {
 }
 
 .link-chap {
-    text-decoration: none;
+    text-decoration: none;	
 }
 
-.link-chap:hover {
+a:link {
+  color: black;
+}
+
+a:hover {
   background-color: #FBFBFB;
+}
+
+/* selected link */
+a:active {
+  background-color: #CBCBCB;
 }
 
 .group-menu{
@@ -114,7 +123,7 @@ textarea {
   left: 0;
   top: 30;
   height: 100%;
-  width: 18%;
+  width: 250;
   height: 100%; 
   margin-top:18px;
   padding-top:12px; 
@@ -183,7 +192,7 @@ div.display-result {
 }
 
 .loading {
-	animation: blinker 1s step-start;
+	animation: blinker 0.5s step-start infinite;
 	/*background-color: #FBFBFB;*/
 }
 
@@ -208,7 +217,7 @@ div.display-result {
 		display: none;	
 	}
 	
-	/*
+
 	.headline {
 		display: none; 
 	}
@@ -224,6 +233,6 @@ div.display-result {
 		display: block;
 		margin-top: 10px;
 	}
-	*/
+
 	
 }
