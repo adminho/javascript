@@ -335,7 +335,7 @@ console.log(a, b, c)		             // "a b c"
 let map = new Map();
 map.set("firstname", "Somchai");
 map.set("lastname", "Jaidee");
-//let map = new Map( [["firstname","Somchai"] , ["lastname", "Jaidee"] ]);
+//let map = new Map( [ ["firstname","Somchai"] , ["lastname", "Jaidee"] ] );
 let [a, b] = map;
 console.log(a); 			             // [ 'firstname', 'Somchai' ]
 console.log(b); 			             // [ 'lastname', 'Jaidee' ]
@@ -358,7 +358,7 @@ let a1 = [], a2 = [];
 let set = new Set([10, 20]);
 [...a1] = [...set];
 console.log(a1[0], a1[1]);		             // 10 20
-let map = new Map( [["firstname","Somchai"] , ["lastname", "Jaidee"] ]);
+let map = new Map( [ ["firstname","Somchai"] , ["lastname", "Jaidee"] ] );
 [...a2] = [...map];
 console.log(a2[0]);			 // [ 'firstname', 'Somchai' ]
 console.log(a2[1]);  			 // [ 'lastname', 'Jaidee' ]
