@@ -2,7 +2,7 @@
 	$no = isset($_GET['no']) ? $_GET['no'] : '';
 	
 	if( empty($no) ){
-		echo "not found page";		
+		$no = 2;
 	}
 ?>
 
@@ -22,8 +22,8 @@
 	<!--https://web.wurfl.io/#wurfl-js-->
 	<script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
 	
-	<link href="readme_md.css?v=573" rel="stylesheet" >  
-	<script src="runcode.js?v=123"></script>
+	<link href="readme_md.css?v=5173" rel="stylesheet" >  
+	<script src="runcode.js?v=1231"></script>
 			
 </head>
 <body>	
@@ -81,10 +81,14 @@
 	</div>
 	
 	<div class="footer"><strong>แนะนำเปิดบนคอมพิวเตอร์ตั้งโต๊ะ หรือโน๊ตบุค </strong></div>
-	<script src="init_page.js"></script>
+	<script src="init_page.js?v=5.6"></script>
 	<script>
-		let link = document.getElementsByClassName("link-chap")[<?php echo $no-1; ?>]
-		includeHTML(link)
+		let no = <?php echo $no; ?>;				
+		//let url = `chapter${no.toString().padStart(2,'0')}.html`;
+		let alink = document.getElementsByClassName("link-chap")[no];
+		includeHTML(alink);
+		//window.location.replace(url);
+		
 	</script>
 </body>
 </html>
