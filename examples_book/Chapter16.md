@@ -386,6 +386,21 @@ for(let [key,value] of map.entries()) {
 for(let [key,value] of uint8.entries()) {
 	console.log(key, value);
 }
+
+/*
+เมื่อใช้ array.entries() จะแสดงผลลัพธ์เป็น
+0 5
+1 10
+เมื่อใช้ set.entries() จะแสดงผลลัพธ์เป็น
+“red red”
+“green green”
+เมื่อใช้ map.entries() จะแสดงผลลัพธ์เป็น
+“firstname Somchai”
+“lastname Jaidee”
+เมื่อใช้ uint8.entries() จะแสดงผลลัพธ์เป็น
+0 10
+1 20
+*/
 ```
 
 * ตัวอย่างที่ 6 ลองพิจารณาการใช้วิธีดีสตรัคเตอร์ริ่ง มารับค่าจากการรีเทิร์นของฟังก์ชั่น 
