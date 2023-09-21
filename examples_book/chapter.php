@@ -80,7 +80,6 @@
 		</div>		
 	</div>
 	
-	
 	<div class="footer"><strong>แนะนำเปิดบนคอมพิวเตอร์ตั้งโต๊ะ หรือโน๊ตบุค </strong></div>
 	<script src="init_page.js"></script>
 	<script>

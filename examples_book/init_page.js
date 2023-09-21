@@ -44,9 +44,9 @@
 				targetDiv.innerHTML = '<h1>Not found page</h1>';		
 			} else {
 				targetDiv.innerHTML = text;		
+				bottomAds.style.display = "block";	
 			}
 			statusLoading.style.display = "none";	
-			bottomAds.style.display = "block";	
 			//if(link.href.startsWith("test_js"))transferHTM('test_js');
 		 }
 		)
