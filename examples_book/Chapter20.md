@@ -8,10 +8,13 @@
 import "lib/mylib";
 ```
 
-```module.js
+```module
 // -------------- ไฟล์ lib/mylib.js ---------------
 export var a = 1;
 export var b = 2;
+```
+
+```run.module
 // -------------- ไฟล์ main.js --------------------
 import { a, b } from "lib/mylib";
 console.log(a); // 1
@@ -20,7 +23,7 @@ console.log(b); // 2
 
 ## เอ็กซ์พอร์ตด้วยการระบุชื่อ
 
-```js
+```module
 // ไฟล์ lib.js
 export var a = 1;
 export let b = 2;
@@ -36,7 +39,7 @@ export  class MyClass {
 }
 ```
 
-```js
+```module
 // ไฟล์ example.js 
 const CONST_VALUE = 100;		  // บรรทัด a -- จะไม่ถูกเอ็กซ์พอร์ตออกไป
 export function square(x) {		  // บรรทัด b
@@ -51,7 +54,7 @@ function multiply(num1, num2) { 	             // บรรทัด d
 export multiply;			             // บรรทัด e -- เอ็กซ์พอร์ตภายหลัง
 ```
 
-```js
+```module
 // ไฟล์ example.js 
 const CONST_VALUE = 100;		 
 function square(x) {	
@@ -66,7 +69,7 @@ function multiply(num1, num2) {
 export { square, calculate, multiply};	 // เขียนคำว่า export ที่บรรทัดสุดท้ายที่เดียว
 ```
 
-```js
+```module
 let condition = true;
 if (condition) {
     export condition;    // syntax error
@@ -75,7 +78,7 @@ if (condition) {
 
 ## วิธีโหลดมอดูล
 
-```js
+```module
 // -------------- ไฟล์ example.js --------------
 const CONST_VALUE = 100;		 
 function square(x) {	
@@ -90,7 +93,7 @@ function multiply(num1, num2) {
 export {square, calculate, multiply};
 ```
 
-```js
+```run.module
 // -------------- ไฟล์ main.js -----------------
 import {square, calculate} from "example";
 console.log(square(2)); 	                         // 4
@@ -101,7 +104,9 @@ var square = 1;  	                                     // error
 var calculate = 2 ;	                         // error	
 ```
 
-```js
+-----
+
+```module
 // -------------- ไฟล์ msg.js -----------------
 export var message = "Hi";
 export function setMessage(msg) {
@@ -109,7 +114,7 @@ export function setMessage(msg) {
 }
 ```
 
-```js
+```run.module
 // -------------- ไฟล์ main.js --------------
 import { message, setMessage } from "msg";
 console.log(message);	                         // "Hi"
@@ -118,14 +123,14 @@ console.log(message);                              // "Bye"
 message = "Good morning";                     // บรรทัด b -- จะเกิด error
 ```
 
-```js
+```run.module
 // ไฟล์ main.js 
 import * as lib from "example";
 console.log(lib.square(2)); 	 
 console.log(lib.calculate(2, 2));
 ```
 
-```js
+```run.module
 import { square } from "example";
 import { calculate } from "example";
 import { multiply } from "example";
@@ -133,14 +138,14 @@ import { multiply } from "example";
 
 ## เปลี่ยนชื่อสิ่งที่ต้องการโหลด และเอ็กซ์พอร์ต
 
-```js
+```module
 // ไฟล์ main.js 
 import { square, calculate as calc } from "example";
 console.log(square(2)); 
 console.log(calc(2, 2));
 ```
 
-```js
+```module
 // -------------- ไฟล์ example.js --------------
 const CONST_VALUE = 100;		
 export function square(x) {
@@ -155,7 +160,7 @@ function multiply(num1, num2) {
 export { square as sqr, calculate as calc, multiply as mul};	// บรรทัด a
 ```
 
-```js
+```run.module
 // -------------- ไฟล์ main.js -----------------
 import {sqr, calc, mul} from "example";
 console.log(sqr(2)); 	// 4
@@ -165,27 +170,27 @@ console.log(mul(2,2)); 	// 4
 
 ## เอ็กซ์พอร์ตแบบดีฟอลต์ 
 
-```js
+```module
 // -------------- ไฟล์ MyFunc.js --------------
 export default function () { /*…*/ }
 ```
 
-```js
+```module
 // -------------- ไฟล์ MyClass.js --------------
 export default class { /*…*/ }
 ```
 
-```js
+```module
 // -------------- ไฟล์ MyValue.js --------------
 export default 123;
 ```
 
-```js
+```module
 // -------------- ไฟล์ MyArrow.js --------------
 export default param => param;
 ```
 
-```js
+```run.module
 // ไฟล์ main.js 
 import func from "MyFunc";
 import _class from "MyClas";
@@ -193,7 +198,9 @@ import value from "MyValue";
 import arrowFunc from "MyArrow";
 ```
 
-```js
+----
+
+```module
 // -------------- ไฟล์ mydefault.js --------------
 export var value = 100;
 export function square(x) {	
@@ -204,7 +211,7 @@ export default function(num1, num2) {    // ฟังก์ชั่นไร้
 }
 ```
 
-```js
+```run.module
 // -------------- ไฟล์ main.js -------------------
 import multiply, {value, square} from "mydefault";
 console.log(value);			 // 100
@@ -214,44 +221,44 @@ console.log(multiply(2,2));	             // 4
 
 ## เอ็กซ์พอร์ตซ้ำจากมอดูลอื่น
 
-```js
+```module
 // -------------- ไฟล์ mylib.js --------------
 var foo = 1;
 var bar = 2;
 export {foo, bar};
 ```
 
-```js
+```module
 // -------------- ไฟล์ example.js --------------
 export {foo, bar} from "mylib";
 ```
 
-```js
+```module
 // -------------- ไฟล์ example.js --------------
 import {foo, bar} from "mylib";
 export {foo, bar};
 ```
 
-```js
+```module
 // -------------- ไฟล์ example.js --------------
 export {foo as foo1, bar} from "mylib";
 ```
 
-```js
+```module
 // -------------- ไฟล์ example.js --------------
 export * from "mylib";
 ```
 
 ## Namespace re-exporting
 
-```js
+```module
 export * as ns from "http";
 ```
 
 * ลองพิจารณาตัวอย่างไฟล์ 3 อัน ดังต่อไปนี้
 * 1) ไฟล์ name.js จะเป็นมอดูลง่ายๆ เก็บตัวแปร firstname กับ lastname
 	
-```js
+```module
 // -------------- ไฟล์ name.js ------------------
 const firstname = "Somchai";
 const lastname = "Jaidee";
@@ -260,7 +267,7 @@ export {firstname, lastname};                    // ส่งออก firstname
 
 * 2) ไฟล์ student.js เป็นมอดูลอย่างง่าย ข้างในทำการ export ส่งออกตัวแปร age และจะนำเข้ามอดูล name.js พร้อม export ส่องออกมอดูลออกมาเป็นชื่อ person (เปลี่ยนชื่อ namespace)
 
-```js
+```module
 // -------------- ไฟล์ student.js ------------------
 const age = 25;
 export {age};                                          // ส่งออก age
@@ -269,7 +276,7 @@ export * as person from "./name.js"        // ส่งออก person
 
 * 3) ไฟล์ myprogram.js เอาไว้รันทดสอบโปรแกรม โดยจะนำเข้ามอดูล student.js ดังตัวอย่าง
 
-```js
+```run.module
 // -------------- ไฟล์ myprogram.js -----------------
 import {age, person} from "./student.js"
 console.log(age);                                     // 25
@@ -279,14 +286,14 @@ console.log(person.lastname);                  // "Jaidee"
 
 ## อ็อบเจ็กต์โกลบอล
 
-```js
+```module
 // --------------  ไฟล์ example.js --------------
 Object.prototype.say = function(msg) {
      console.log(msg);
 };
 ```
 
-```js
+```run.module
 // -------------- ไฟล์ main.js ------------------
 import "example";
 let a = { };
@@ -324,23 +331,23 @@ export const msg = "I love JavaScript";
 
 ### วิธีใช้งานมอดูลบน Node.js
  
-```js
+```module
 // -------------- ไฟล์ mylib.mjs ------------------
 export const msg = "I love JavaScript";
 ```
 
-```js
+```run.module
 // -------------- ไฟล์ myapp.mjs ------------------
 import { msg } from './mylib.mjs';
 console.log(msg);
 ```
 
-```js
+```module
 // -------------- ไฟล์ mylib.js ------------------
 export const msg = "I love JavaScript";
 ```
 
-```js
+```run.module
 // -------------- ไฟล์ myapp.js ------------------
 import { msg } from './mylib.js';
 console.log(msg);
