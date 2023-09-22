@@ -7,14 +7,9 @@
 	function isDesktop(){
 		//if ( WURFL.form_factor === "Desktop") {		     
 		if(  window.innerWidth >=768 ) {		
-			return true;
-				
-		} else {
-				//let str =link.href.split("chapter")[1];
-				//let no = str.replace(".html", "");						
-				//link.href = `chapter.php?no=${parseInt(no)-1}`;	
-			return false;	
-		}	
+			return true;				
+		} 
+		return false;		
 	}
 
 	let allLink = document.getElementsByClassName("link-chap");
@@ -40,7 +35,7 @@
 		}
 		
 		document.title =  link.innerHTML;
-				healineDiv.innerHTML = link.innerHTML;	
+				healineDiv.innerHTML = `โค้ด${link.innerHTML}`;	
 				statusLoading.style.display = "block";		
 				bottomAds.style.display = "none";	
 		

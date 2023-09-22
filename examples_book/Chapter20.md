@@ -8,7 +8,7 @@
 import "lib/mylib";
 ```
 
-```js
+```module.js
 // -------------- ไฟล์ lib/mylib.js ---------------
 export var a = 1;
 export var b = 2;
