@@ -14,8 +14,8 @@ body {
   border: 1px solid #4CAF50;
 }
 
-.main {
-	margin-top: 70px;	
+.main {	
+	margin-top: 70px;
 	margin-left: 20%;	
 	margin-right: 20%;	
 	width: 60%;
@@ -25,6 +25,7 @@ body {
 .sale {
 	margin-top: 0px;	
 	margin-left: 20%;
+	display: none;
 }
 
 /*input[type=button], input[type=submit], input[type=reset] {*/
@@ -68,7 +69,7 @@ textarea {
   background-color: #3CB371;
   position: fixed;
   width: 100%;   
-  height: 8%;   
+  height: 50px;   
   left: 0;
   top:0;  
   z-index: 50;	
@@ -76,12 +77,12 @@ textarea {
 }
 
 .headline {
-  padding-left: 21%;  
-  margin-top: 5px;
+  padding-left: 20%; 
+  margin-bottom: 15px;	
   text-align: left;
   font-weight: 500;
-  font-size: 1.5em;
-  font:bold;
+  font-size: 1.7em;  
+  color:white;
 }
 
 .link-chap {
@@ -113,11 +114,10 @@ a:active {
 	border-color: #5A8A1A;
 	border-radius: 15px;
 	background: #558415;	    	
-	padding: 0.5rem 4.0rem;		
+	padding: 0.5rem 1.0rem;		
 	cursor: pointer;	
-	z-index: 80; 
-	color:white; 
-	font-size:16px;	
+	z-index: 80; 	
+	text-align: center;		
 }
 
 .main-menu{  
@@ -128,7 +128,7 @@ a:active {
   width: 18%;
   height: 100%; 
   margin-top:0px;
-  padding-top:50px; 
+  padding-top:60px; 
   padding-left:10px; 
   padding-bottom:100px; 
   background-color: #DAF7A6;
@@ -137,7 +137,7 @@ a:active {
   overflow: auto;  
   z-index: 75;   
   text-align: left; 
-  font-size: 0.9em;  
+  font-size: 0.9em;    
 }
 
 .display-result {
@@ -224,17 +224,18 @@ div.display-result {
 		text-align: right;
 	}
 	
-	.btn-menu {
+	/*.btn-menu {
 		display: block;
-	}
+	}*/
 	.main-menu {
 		display: none;	
 		width: 100%;
 	}
+	/*
 	.group-menu:hover  .main-menu {
 		display: block;
 		margin-top: 10px;
-	}
+	}*/
 
 	
 }
