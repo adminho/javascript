@@ -22,7 +22,7 @@
 	<!--https://web.wurfl.io/#wurfl-js-->
 	<script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
 	
-	<link href="readme_md.css?v=5173" rel="stylesheet" >  
+	<link href="readme_md.css?v=1.1513" rel="stylesheet" >  
 	<script src="runcode.js?v=1231"></script>
 			
 </head>
@@ -88,6 +88,7 @@
 		let alink = document.getElementsByClassName("link-chap")[no];
 		includeHTML(alink);
 		//window.location.replace(url);
+		
 		
 	</script>
 </body>
