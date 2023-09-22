@@ -135,9 +135,9 @@ let proxyObj = new Proxy(obj, trapLogic);
 proxyObj.foo = 100;
 console.log(proxyObj.foo); 		 // 100
 // console.log(delete proxyObj.foo);           // true
-proxyObj.a = 1;		                         // exception: Can't write property: a
-console.log(proxyObj.b);	                         // exception: Can't read property: b
-delete proxyObj.c ; 	                         // exception: Can't delete property: c
+proxyObj.a = 1;		                         // error: Can't write property: a
+console.log(proxyObj.b);	                         // error: Can't read property: b
+delete proxyObj.c ; 	                         // error: Can't delete property: c
 ```
 
 * ตัวอย่างที่ 2 จะแสดงการตรวจสอบค่าอากิวเมนต์ที่ส่งไปให้พารามิเตอร์ของฟังก์ชั่น รวมทั้งค่ารีเทิร์นจากฟังก์ชั่นด้วย
