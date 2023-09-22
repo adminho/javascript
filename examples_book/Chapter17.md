@@ -221,8 +221,8 @@ console.log( woman.__proto__ === people );    // true
 
 // เมื่อกำหนดโปรโตไทป์ที่ไม่ใช่ people ก็จะเกิด error
 let car = { speed: 100 };		            // กำหนดให้เป็นโปรโตไทป์ของ man กับ woman
-proxyMan.__proto__ = car; 		// error
-proxyWoman.__proto__ = car;	            // error
+proxyMan.__proto__ = car; 		// Error: Prototype must be people object only
+proxyWoman.__proto__ = car;	            // Error: Prototype must be people object only
 ```
 
 * ตัวอย่างที่ 4 จะแสดงกลไกป้องกันการกำหนดสมาชิกคนละชนิดในอาร์เรย์
