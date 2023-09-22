@@ -16,8 +16,8 @@ body {
 
 .main {
 	margin-top: 70px;	
-	margin-left: 21%;	
-	margin-right: 21%;	
+	margin-left: 20%;	
+	margin-right: 20%;	
 	width: 60%;
 	overflow:auto;
 }
@@ -206,8 +206,8 @@ div.display-result {
 
 @media all and (max-width: 768px){
 	.main {
-		margin-left: 2%;	
-		margin-right: 2%;		
+		margin-left: 2%;
+		width: 96%;	
 	}
 	.sale {
 		margin-left: 10px;

@@ -113,21 +113,21 @@ let trapLogic  = {
         if(Reflect.has( targetObj, key )) {
             return Reflect.set( targetObj, key, value );
         } else {
-            throw `Can’t write property: ${key}`;
+            throw `Can't write property: ${key}`;
         }
      }
     ,get(targetObj, key, proxy) {		 // อ่านค่าพร็อพเพอร์ตี้
         if(Reflect.has( targetObj, key )) {
             return Reflect.get(targetObj, key);
         } else {
-            throw `Can’t read property: ${key}`;
+            throw `Can't read property: ${key}`;
         }
      }	 
      ,deleteProperty(targetObj, key){	// ลบพร็อพเพอร์ตี้
         if(Reflect.has( targetObj, key )) {
             return Reflect.deleteProperty(targetObj, key);
         } else {
-            throw `Can’t delete property: ${key}`;
+            throw `Can't delete property: ${key}`;
         }
       }
 }
@@ -135,9 +135,9 @@ let proxyObj = new Proxy(obj, trapLogic);
 proxyObj.foo = 100;
 console.log(proxyObj.foo); 		 // 100
 // console.log(delete proxyObj.foo);           // true
-proxyObj.a = 1;		                         // exception: Can’t write property: a
-console.log(proxyObj.b);	                         // exception: Can’t read property: b
-delete proxyObj.c ; 	                         // exception: Can’t delete property: c
+proxyObj.a = 1;		                         // exception: Can't write property: a
+console.log(proxyObj.b);	                         // exception: Can't read property: b
+delete proxyObj.c ; 	                         // exception: Can't delete property: c
 ```
 
 * ตัวอย่างที่ 2 จะแสดงการตรวจสอบค่าอากิวเมนต์ที่ส่งไปให้พารามิเตอร์ของฟังก์ชั่น รวมทั้งค่ารีเทิร์นจากฟังก์ชั่นด้วย
@@ -236,7 +236,7 @@ let checkType = {
  	if( typeof val0 == typeof value ) { // ข้อมูลสมาชิกที่กำหนดเข้ามาเป็นชนิดเดียวกัน
             	return Reflect.set( targetObj, key, value );
         	} else {   // ถ้าเป็นคนข้อมูลคนละชนิดกัน ก็จะเกิด error
-            	throw new Error(`Can’t add this type: ${typeof value}`);
+            	throw new Error(`Can't add this type: ${typeof value}`);
         	}
     } // สิ้นสุดการประกาศ set
 }
@@ -357,9 +357,9 @@ obj[{}] = 800;
 obj[10] = "foo";
 obj[0] = "bar";
 console.log(Reflect.ownKeys(obj));         
-/* [ "0", "10", "z", "y", "3.14", "-10", "null", "undefined", "true", "Object{}", Symbol(c), Symbol(a)]] */
+// [ '0', '10', 'z', 'y', '3.14', '-10', 'null', 'undefined', 'true', '[object Object]', Symbol(c), Symbol(a) ] 
 console.log(Object.getOwnPropertyNames(obj)); 	
-// [ "0", "10", "z", "y", "3.14", "-10", "null", "undefined", "true", "Object{}"]
-console.log(Object.getOwnPropertySymbols(obj));     // [Symbol(c), Symbol(a)]
+// [ '0', '10', 'z', 'y', '3.14', '-10', 'null', 'undefined', 'true', '[object Object]' ]
+console.log(Object.getOwnPropertySymbols(obj));     // [ Symbol(c), Symbol(a) ]
 ```
 
