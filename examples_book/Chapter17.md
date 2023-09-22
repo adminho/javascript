@@ -179,17 +179,17 @@ console.log(proxySum(2, 3 ));		 // 5 = 2 + 3
 console.log(proxyMultiply(2, 3));	             // 6 = 2 * 3
 
 // ไม่มีค่าอากิวเมนต์ส่งไปให้ฟังก์ชั่น ก็จะเกิด error
-proxySum();			             // error: Must send arguments to the function
-proxyMultiply();		                         // error: Must send arguments to the function
+proxySum();			             // Error: Must send arguments to the function
+proxyMultiply();		                         // Error: Must send arguments to the function
 
 // เมื่อส่งค่าอากิวเมนต์ที่ไม่ใช่ตัวเลข ก็จะเกิด error
-proxySum(2, "3");        		            // error: All arguments must be numbers
-proxyMultiply(2, "3");		            // error: All arguments must be numbers
+proxySum(2, "3");        		            // Error: All arguments must be numbers
+proxyMultiply(2, "3");		            // Error: All arguments must be numbers
 
 // ค่าที่รีเทิร์นออกจากฟังก์ชั่น ถ้าเกินช่วง safe integer ก็จะเกิด error
 let maxNum = Number.MAX_SAFE_INTEGER + 1;
-proxySum(maxNum, maxNum);	             // error: The result is not safe integer
-proxyMultiply(maxNum, maxNum);	 // error: The result is not safe integer
+proxySum(maxNum, maxNum);	             // Error: The result is not safe integer
+proxyMultiply(maxNum, maxNum);	 // Error: The result is not safe integer
 ```
 
 * ตัวอย่างที่ 3 จะแสดงกลไกการป้องกันเวลากำหนดโปรโตไทป์ให้กับอ็อบเจ็กต์
