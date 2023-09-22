@@ -250,7 +250,7 @@ console.log(proxyArray);	            // [ 0, 1, 2, 3, 4, 5 ]
 console.log(myArray);		// [ 0, 1, 2, 3, 4, 5 ]
 
 // เพิ่มสมาชิกตัวที่ 6 แต่เป็นสตริง จะเกิด error ขึ้นได้
-proxyArray[6] = "6";	          // error
+proxyArray[6] = "6";	          // Error: Can't add this type: string
 ```
 
 * ตัวอย่างที่ 5 จะแสดงวิธีที่ทำให้อ็อบเจ๊กที่เคยสร้างแล้วจะถูก cached เก็บไว้ จะได้ไม่ต้องสร้างซ้ำ ๆ กันหลายรอบ
