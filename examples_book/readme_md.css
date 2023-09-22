@@ -123,19 +123,19 @@ a:active {
 .main-menu{  
   position: fixed;
   left: 0;
-  top: 0;
+  top: 40;
   height: 100%;
   width: 18%;
   height: 100%; 
   margin-top:0px;
-  padding-top:60px; 
+  padding-top:20px; 
   padding-left:10px; 
   padding-bottom:100px; 
   background-color: #DAF7A6;
   font-size: 16px;
   /*overflow-y: scroll;**/
   overflow: auto;  
-  z-index: 75;   
+  z-index: 5;   
   text-align: left; 
   font-size: 0.9em;    
 }

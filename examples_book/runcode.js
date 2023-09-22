@@ -1,4 +1,4 @@
-let _resultAreaId = "";	
+let __resultAreaId__ = "";	
 
 function toString(data) {
 	if(data == null || data == undefined ) {
@@ -125,7 +125,7 @@ function dowloadfile(content){
 }
 		
 console.log = function(...data){
-	let display = document.querySelector(_resultAreaId);			
+	let display = document.querySelector(__resultAreaId__);			
 	for( let d of data){
 		if( typeof d !== 'string'){					
 			d = toString(d);					
@@ -164,12 +164,24 @@ function clearDisplay(targetCount) {
 function runCodeBtn(targetCount) {						
 	clearDisplay(targetCount);
 		
-	_resultAreaId = `#displayResult${targetCount}`;						
+	__resultAreaId__ = `#displayResult${targetCount}`;						
 	let textCodeArea = document.querySelector(`#codeArea${targetCount}`);
-	let codeTxt = textCodeArea.value;				
-						
-	if( codeTxt.includes("<html>")>0 ) {
-		document.querySelector(`#form${targetCount}`).submit();				
+	let btn = document.querySelector(`#btn${targetCount}`);
+	let myform = document.querySelector(`#form${targetCount}`);
+	let codeTxt = textCodeArea.value;										
+	
+	if( codeTxt.includes("<html>")>0 && btn.value=="Open HTML" ) {		
+		myform.action="display_html.php"
+		myform.submit();		
+		
+	} else if( btn.value=="Import" ) {
+		myform.action="test_module/save_module.php"
+		myform.submit();		
+		
+	} else if( btn.value=="Run New Tab" ) {		
+		myform.action="test_module/run_module.php"
+		myform.submit();		
+		
 	} else {
 				
 		try {

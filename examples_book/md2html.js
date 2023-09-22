@@ -5,12 +5,12 @@ const fs = Promise.promisifyAll(require('fs'));
 const lineReader = require('line-reader');
 const eachLine = Promise.promisify(lineReader.eachLine);
 
-/*let templateHTML = "";
-try {
-   templateHTML = fs.readFileSync('template.html', { encoding: 'utf8' });   
-} catch (err) {
-   console.log(err);
-}*/
+function isStartCode(line){
+	if(line.startsWith("```js") || line.startsWith("```html") || line.startsWith("```module") || line.startsWith("```run.module")) {
+		return true;
+	}	
+	return false;
+}
 
 async function genHTML(fileName){
   let isCode = false;
@@ -20,34 +20,41 @@ async function genHTML(fileName){
   let headline = "";
   let allLines = "";
   let btnValue = "";
-  
-  return eachLine(`${fileName}.md`, function(line, last) {
-  //line = line.trim();
     
-  if(line.startsWith("```js") || line.startsWith("```html")){ // start codes
+  return eachLine(`${fileName}.md`, function(line, last) {
+    
+  if(isStartCode(line)){ // start codes
 	  isCode = true;	
 	  count++;
 	  if(line.startsWith("```js")){
 		btnValue = "Run";
 	  } else if(line.startsWith("```html")) {
 		  btnValue = "Open HTML";
+	  } else if(line.startsWith("```module")){
+		  btnValue = "Import";					  
+	  } else if(line.startsWith("```run.module")) {
+		  btnValue = "Run New Tab";
 	  }
 	  
   } else if( isCode==true && line.startsWith("```")){ // reach to end of codes
 	  isCode = false	  	  
 	  const rows = lineCodes.split('\n').length-1;
-	  
+	  let clearBtnHTML = "";
+	  if ( btnValue == "Run") {
+		  clearBtnHTML = `<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay(${count})">`;	  
+	  }
 	  allLines += `<div>
-					<form id="form${count}" style="margin:0px" action="display_html.php" method="POST" target="_blank">
+					<form id="form${count}" style="margin:0px" method="POST" target="_blank">
 						<label for="codeArea${count}"></label>					
-						<textarea id="codeArea${count}" name="html" class="notrun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>					
+						<textarea id="codeArea${count}" name="code" class="notrun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>						
 					</form>						
 					<div id="displayResult${count}" class="display-result"></div>
-					<input class="run-btn" type="submit" value="${btnValue}" onclick="runCodeBtn(${count})">
-					<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay(${count})">
+					<input class="run-btn" type="submit" id="btn${count}" value="${btnValue}" onclick="runCodeBtn(${count})">
+					${clearBtnHTML}
 				  </div>`;	  
 	  	  
 	  lineCodes = "";
+	  moduleField = "";
 	  
   } else if(isCode==false) { // not codes
 	  
@@ -60,7 +67,7 @@ async function genHTML(fileName){
 		}
 		
 	} else if(line.startsWith("*") && !line.startsWith("*/")){
-		line = line.replace(/\*/g, "\u2022&nbsp;");
+		line = line.replace(/\*/g, "\u2022&nbsp;"); // show a bullet
 		allLines += `<p class="describe">${line}</p>`;
 		
 	} else if(line.startsWith("หมายเหตุ")){
@@ -73,7 +80,7 @@ async function genHTML(fileName){
 	
   }
     
-  if(isCode && !line.startsWith("```js") && !line.startsWith("```html")){
+  if(isCode && !line.startsWith("```js") && !isStartCode(line)){
 	  line = line.replaceAll(/\$\$/g, "@-@"); // fix bugs กรณีที่ line มี $$ วางติดกันอยู่ในสตริง เพื่อไม่ให้มันทำงาน	(ในบทที่ 11 เรื่องเทมเพลตสตริง)
 	  lineCodes += `${line}\n`;	  
   }
@@ -90,10 +97,8 @@ async function genHTML(fileName){
 	});	
   }
   
-})
-
+});
 }
-
 
 let files = [ "chapter02", "chapter03", "chapter04","chapter05", "chapter06",  
 "chapter07","chapter08","chapter09", "chapter10", "chapter11", "chapter12",  
