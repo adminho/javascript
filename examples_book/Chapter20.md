@@ -69,10 +69,10 @@ function multiply(num1, num2) {
 export { square, calculate, multiply};	 // เขียนคำว่า export ที่บรรทัดสุดท้ายที่เดียว
 ```
 
-```module
+```js
 let condition = true;
 if (condition) {
-    export condition;    // syntax error
+    export condition;    // SyntaxError
 }
 ```
 
