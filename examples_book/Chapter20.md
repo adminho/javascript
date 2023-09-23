@@ -241,12 +241,12 @@ export {foo, bar};
 
 ```module
 // -------------- ไฟล์ example.js --------------
-export {foo as foo1, bar} from "mylib";
+export {foo as foo1, bar} from "./mylib.js";
 ```
 
 ```module
 // -------------- ไฟล์ example.js --------------
-export * from "mylib";
+export * from "./mylib.js";
 ```
 
 หมายเหตุ โค้ดสำหรับเทสในหัวข้อนี้ (ไม่มีในหนังสือ)
