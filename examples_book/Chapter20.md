@@ -98,10 +98,10 @@ export {square, calculate, multiply};
 import {square, calculate} from "./example.js";
 console.log(square(2)); 	                         // 4
 console.log(calculate(2, 2)); 	             // 800
-square =1;		                         // error	
-calculate= 2; 	                                     // error	
-var square = 1;  	                                     // error	
-var calculate = 2 ;	                         // error	
+square =1;		                         // TypeError	
+calculate= 2; 	                                     // TypeError	
+var square = 1;  	                                     // SyntaxError	
+var calculate = 2 ;	                         // SyntaxError	
 ```
 
 -----
