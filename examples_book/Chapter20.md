@@ -314,6 +314,8 @@ a.say("I love JavaScript");		// "I love JavaScript"
 
 หมายเหตุ ตัวอย่างหน้า HTML นี้ ต้องมีมอดูล mylib.js ข้างล่างเสียก่อน ไม่เช่นนั้นตัวอย่างหน้าเว็บจะไม่เจอมอดูล
 
+เช่น mylib.js อยู่ในโฟลเดอร์ test_module เราก็อ้างถึงพาธ "./test_module/mylib.js"
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -326,6 +328,8 @@ a.say("I love JavaScript");		// "I love JavaScript"
 </body>
 </html>
 ```
+
+หมายเหตุ mylib.js สมมติอยู่ในโฟลเดอร์ test_module
 
 ```module
 // -------------- ไฟล์ mylib.js ------------------
@@ -340,6 +344,8 @@ export const msg = "I love JavaScript";
 ```
 
 ### วิธีใช้งานมอดูลบน Node.js
+ 
+หมายเหตุ ตัวอย่างต่อไปนี้ต้องเทสบน Node.js บนเว็บเบราเซอร์ยังไม่รองรับ
  
 ```module
 // -------------- ไฟล์ mylib.mjs ------------------
