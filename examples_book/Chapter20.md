@@ -312,6 +312,8 @@ a.say("I love JavaScript");		// "I love JavaScript"
 
 ### วิธีใช้งานมอดูลบนเว็บเบราเซอร์
 
+หมายเหตุ ตัวอย่างหน้า HTML นี้ต้องนำเข้ามอดูล mylib.js ข้างล่างเสียก่อน ไม่เช่นนั้นหน้าตัวอย่างเว็บจะไม่เจอมอดูล
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -324,6 +326,7 @@ a.say("I love JavaScript");		// "I love JavaScript"
 </body>
 </html>
 ```
+
 
 ```js
 // -------------- ไฟล์ mylib.js ------------------
