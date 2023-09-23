@@ -95,7 +95,7 @@ export {square, calculate, multiply};
 
 ```run.module
 // -------------- ไฟล์ main.js -----------------
-import {square, calculate} from "example";
+import {square, calculate} from "./example.js";
 console.log(square(2)); 	                         // 4
 console.log(calculate(2, 2)); 	             // 800
 square =1;		                         // error	
