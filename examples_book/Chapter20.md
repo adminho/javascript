@@ -116,7 +116,7 @@ export function setMessage(msg) {
 
 ```run.module
 // -------------- ไฟล์ main.js --------------
-import { message, setMessage } from "msg";
+import { message, setMessage } from "./msg.js";
 console.log(message);	                         // "Hi"
 setMessage("Bye");      	                         // บรรทัด a
 console.log(message);                              // "Bye" 
