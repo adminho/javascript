@@ -192,10 +192,10 @@ export default param => param;
 
 ```run.module
 // ไฟล์ main.js 
-import func from "MyFunc";
-import _class from "MyClas";
-import value from "MyValue";
-import arrowFunc from "MyArrow";
+import func from "./MyFunc.js";
+import _class from "./MyClas.js";
+import value from "./MyValue.js";
+import arrowFunc from "./MyArrow.js";
 ```
 
 ----
