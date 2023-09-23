@@ -38,14 +38,19 @@
 				healineDiv.innerHTML = `โค้ด${link.innerHTML}`;	
 				statusLoading.style.display = "block";		
 				bottomAds.style.display = "none";	
-		
+
 		let options =  {
-			headers: {
-				'Cache-Control': 'no-cache'
-				}
+			mode: 'no-cors',
+			cache: "no-cache",				
 		};
-				
-		fetch(link.href, options)
+		
+		//let currentLocation =  window.location.protocol + "//" + window.location.host + "/" + window.location.pathname;
+		//let tmp = link.href.split('/');
+		//let fileLink = tmp[tmp.length-1];
+		//let url = `https://raw.githubusercontent.com/adminho/javascript/master/examples_book/${fileLink}`;		
+		//alert(url);
+		let url = link.href;
+		fetch(url, options)
 		.then( res => res.text())		
 		.then( text => { 
 			statusLoading.style.display = "none";

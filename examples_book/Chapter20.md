@@ -48,7 +48,7 @@ export function square(x) {		  // บรรทัด b
 export function calculate(x, y) {	             // บรรทัด c
         return (square(x) + square(y)) * CONST_VALUE; 
 }
-function multiply(num1, num2) { 	             // บรรทัด d 
+function multiply(num1, num2) { 	 // บรรทัด d 
     return num1 * num2;
 }
 export multiply;			             // บรรทัด e -- เอ็กซ์พอร์ตภายหลัง
