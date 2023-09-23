@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		exit();
 	}
 		
-	if( strpos($modulename, ".js") != False){
+	if( strpos($modulename, ".js") == False){
 		echo "Sorry! It can't upload beacause this is a not *.js file";
 		exit();
 	}

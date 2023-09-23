@@ -1,4 +1,4 @@
-let __resultAreaId__ = "";	
+let __resultAreaId__ = undefined;	
 
 function toString(data) {
 	if(data == null || data == undefined ) {
@@ -123,9 +123,19 @@ function dowloadfile(content){
 	link.click();
 	URL.revokeObjectURL(link.href);	
 }
-		
+
+const __old__console__ = console.log;		
+
 console.log = function(...data){
-	let display = document.querySelector(__resultAreaId__);			
+	if(!__resultAreaId__) {
+		return __old__console__(data);
+	}
+	
+	let display = document.querySelector(__resultAreaId__);		
+	if(!display) {
+		return __old__console__(data);
+	}
+	
 	for( let d of data){
 		if( typeof d !== 'string'){					
 			d = toString(d);					

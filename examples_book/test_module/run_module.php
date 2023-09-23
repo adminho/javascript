@@ -5,6 +5,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo "not found javascript code";
 		exit();
 	}
+	
+	$allLines = preg_split("/(\r\n|\n|\r)/", $code);
+	$importCode = "";
+	$remainCode = "";
+	foreach ($allLines as $line) {
+		$line = trim($line);		
+		if( str_starts_with($line, '//')) {			
+			continue;
+		} else if( str_starts_with($line, 'import') ) {
+			$importCode = $importCode."\n".$line;
+			
+		} else {			
+			$remainCode = $remainCode."\n".$line;			
+		}
+	}
 }
 ?>
 
@@ -36,7 +51,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </script>
 
 <script type="module">
-  <?php echo $code; ?>  
+ <?php echo $importCode; ?>  
+ console.log("@html<font color='lightgreen'>ผลการรัน:</font>");
+try {  
+  <?php echo $remainCode; ?>  
+} catch(e) {
+	console.log("@html<font color='orange'>++++Error++++</font>");	
+	console.log("@html<font color='orange'>Uncaught " + e + "</font>");
+	if(e.stack) {
+		console.log("@html<font color='orange'>" + e.stack + "</font>");					
+	} 
+}
 </script>
 
 </body>

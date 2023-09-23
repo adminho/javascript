@@ -24,7 +24,7 @@
 			event.preventDefault();			
 		});
 	}			
-			
+				
 	function showMenu() {
 		mainMenu.style.display = "block";			
 	}
@@ -52,7 +52,8 @@
 			if(text.includes("404")){
 				targetDiv.innerHTML = '<h1>Not found page</h1>';		
 			} else {
-				targetDiv.innerHTML = text;		
+				allLineArray = text.split("\n");
+				targetDiv.innerHTML = genHTMLfromArray(allLineArray);		
 				bottomAds.style.display = "block";	
 			}
 						
