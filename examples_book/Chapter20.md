@@ -213,7 +213,7 @@ export default function(num1, num2) {    // ฟังก์ชั่นไร้
 
 ```run.module
 // -------------- ไฟล์ main.js -------------------
-import multiply, {value, square} from "mydefault";
+import multiply, {value, square} from "./mydefault.js";
 console.log(value);			 // 100
 console.log(square(2,2));		             // 4
 console.log(multiply(2,2));	             // 4
