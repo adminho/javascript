@@ -162,7 +162,7 @@ export { square as sqr, calculate as calc, multiply as mul};	// บรรทั�
 
 ```run.module
 // -------------- ไฟล์ main.js -----------------
-import {sqr, calc, mul} from "example";
+import {sqr, calc, mul} from "./example.js";
 console.log(sqr(2)); 	// 4
 console.log(calc(2, 2)); 	// 800
 console.log(mul(2,2)); 	// 4
