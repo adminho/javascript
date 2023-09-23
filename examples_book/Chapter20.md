@@ -126,8 +126,8 @@ message = "Good morning";                     // บรรทัด b -- จะ�
 ```run.module
 // ไฟล์ main.js 
 import * as lib from "./example.js";
-console.log(lib.square(2)); 	 
-console.log(lib.calculate(2, 2));
+console.log(lib.square(2)); 	// 4	 
+console.log(lib.calculate(2, 2));	// 800
 ```
 
 ```run.module
