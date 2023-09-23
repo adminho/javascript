@@ -138,7 +138,7 @@ import { multiply } from "./example.js";
 
 ## เปลี่ยนชื่อสิ่งที่ต้องการโหลด และเอ็กซ์พอร์ต
 
-```module
+```run.module
 // ไฟล์ main.js 
 import { square, calculate as calc } from "./example.js";
 console.log(square(2)); 
