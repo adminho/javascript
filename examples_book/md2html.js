@@ -8,7 +8,7 @@ const eachLine = Promise.promisify(lineReader.eachLine);
 */
 
 /*async function genHTML(fileName){
-  let isCode = false;
+  let isAreaCode = false;
   let lineCodes = "";
   let count = 0;
 
@@ -19,7 +19,7 @@ const eachLine = Promise.promisify(lineReader.eachLine);
   return eachLine(`${fileName}.md`, function(line, last) {
     
   if(isBeginCode(line)){ // start codes
-	  isCode = true;	
+	  isAreaCode = true;	
 	  count++;
 	  if(line.startsWith("```js")){
 		btnValue = "Run";
@@ -31,8 +31,8 @@ const eachLine = Promise.promisify(lineReader.eachLine);
 		  btnValue = "Run New Tab";
 	  }
 	  
-  } else if( isCode==true && line.startsWith("```")){ // reach to end of codes
-	  isCode = false	  	  
+  } else if( isAreaCode==true && line.startsWith("```")){ // reach to end of codes
+	  isAreaCode = false	  	  
 	  const rows = lineCodes.split('\n').length-1;
 	  let clearBtnHTML = "";
 	  if ( btnValue == "Run") {
@@ -50,7 +50,7 @@ const eachLine = Promise.promisify(lineReader.eachLine);
 	  	  
 	  lineCodes = "";
 	  
-  } else if(isCode==false) { // not codes
+  } else if(isAreaCode==false) { // not codes
 	  
 	 if(line.startsWith("#")) { 
 		line = line.replace(/#/g, "");	
@@ -77,7 +77,7 @@ const eachLine = Promise.promisify(lineReader.eachLine);
 	
   }
     
-  if(isCode && !line.startsWith("```js") && !isBeginCode(line)){
+  if(isAreaCode && !line.startsWith("```js") && !isBeginCode(line)){
 	  line = line.replaceAll(/\$\$/g, "@-@"); // fix bugs กรณีที่ line มี $$ วางติดกันอยู่ในสตริง เพื่อไม่ให้มันทำงาน	(ในบทที่ 11 เรื่องเทมเพลตสตริง)
 	  lineCodes += `${line}\n`;	  
   }
@@ -142,7 +142,7 @@ function writeHTML(fileName, html){
   
 function genHTMLfromArray(arrayMdFiles) {
   	
-  let isCode = false;
+  let isAreaCode = false;
   let lineCodes = "";
   let count = 0;
 
@@ -153,7 +153,7 @@ function genHTMLfromArray(arrayMdFiles) {
 arrayMdFiles.forEach( (line) =>  {
 		
   if(isBeginCode(line)){ // start codes
-	  isCode = true;	
+	  isAreaCode = true;	
 	  count++;
 	  if(line.startsWith("```js")){
 		btnValue = "Run";
@@ -165,9 +165,12 @@ arrayMdFiles.forEach( (line) =>  {
 		  btnValue = "Run New Tab";
 	  }
 	  
-  } else if( isCode==true && line.startsWith("```")){ // reach to end of codes
-	  isCode = false	  	  
-	  const rows = lineCodes.split('\n').length-1;
+  } else if( isAreaCode==true && line.startsWith("```")){ // reach to end of codes
+	  isAreaCode = false	  	  
+	  lineCodes = lineCodes.slice(0,-2);
+	  const rows = lineCodes.split('\r\n').length;
+	  console.log(lineCodes);
+	  
 	  let clearBtnHTML = "";
 	  if ( btnValue == "Run") {
 		  clearBtnHTML = `<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay(${count})">`;	  
@@ -175,7 +178,7 @@ arrayMdFiles.forEach( (line) =>  {
 	  allLines += `<div>
 					<form id="form${count}" style="margin:0px" method="POST" target="_blank">
 						<label for="codeArea${count}"></label>					
-						<textarea id="codeArea${count}" name="code" class="notrun" rows=${rows}>${lineCodes.slice(0,-1)}</textarea>						
+						<textarea id="codeArea${count}" name="code" class="notrun" rows=${rows}>${lineCodes}</textarea>						
 					</form>						
 					<div id="displayResult${count}" class="display-result"></div>
 					<input class="run-btn" type="submit" id="btn${count}" value="${btnValue}" onclick="runCodeBtn(${count})">
@@ -184,11 +187,11 @@ arrayMdFiles.forEach( (line) =>  {
 	  	  
 	  lineCodes = "";
 	  
-  } else if( isCode==true && !isBeginCode(line) && !line.startsWith("```") ){
+  } else if( isAreaCode==true && !isBeginCode(line) && !line.startsWith("```") ){ // ยังอยู่ในโค้ด
 	  line = line.replaceAll(/\$\$/g, "@-@"); // fix bugs กรณีที่ line มี $$ วางติดกันอยู่ในสตริง เพื่อไม่ให้มันทำงาน	(ในบทที่ 11 เรื่องเทมเพลตสตริง)
 	  lineCodes += `${line}\n`;	  
 	  
-  } else if(isCode==false) { // not codes
+  } else if(isAreaCode==false) { // not codes
 	  
 	 if(line.startsWith("#")) { 
 		line = line.replace(/#/g, "");	
