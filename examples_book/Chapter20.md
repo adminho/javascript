@@ -140,7 +140,7 @@ import { multiply } from "./example.js";
 
 ```module
 // ไฟล์ main.js 
-import { square, calculate as calc } from "example";
+import { square, calculate as calc } from "./example.js";
 console.log(square(2)); 
 console.log(calc(2, 2));
 ```
