@@ -53,9 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script type="module">
  <?php echo $importCode; ?>  
  console.log("@html<font color='lightgreen'>ผลการรัน:</font>");
-try {  
-  <?php echo $remainCode; ?>  
-} catch(e) {
+ try {  
+   <?php echo $remainCode; ?>  
+ } catch(e) {
 	console.log("@html<font color='orange'>++++Error++++</font>");	
 	console.log("@html<font color='orange'>Uncaught " + e + "</font>");
 	if(e.stack) {
