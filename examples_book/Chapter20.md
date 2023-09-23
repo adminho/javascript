@@ -120,7 +120,7 @@ import { message, setMessage } from "./msg.js";
 console.log(message);	                         // "Hi"
 setMessage("Bye");      	                         // บรรทัด a
 console.log(message);                              // "Bye" 
-message = "Good morning";                     // บรรทัด b -- จะเกิด error
+message = "Good morning";                     // บรรทัด b -- จะเกิด TypeError
 ```
 
 ```run.module
