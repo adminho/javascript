@@ -161,6 +161,24 @@ function clearDisplay(targetCount) {
 	}
 }
 
+async function saveModule(codeText) {
+	fetch('test_module/save_module.php', {
+		method: "POST",
+         headers: {
+			'Accept': 'application/json, text/plain, */*',
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			code: codeText
+		})		
+	})
+	.then( response => response.text())
+	.then( text => alert(text) )
+	.catch(error => console.error('Error:', error)); 
+
+}
+JSON.stringify({ "id": 78912 })
+
 function runCodeBtn(targetCount) {						
 	clearDisplay(targetCount);
 		
@@ -175,12 +193,13 @@ function runCodeBtn(targetCount) {
 		myform.submit();		
 		
 	} else if( btn.value=="Import" ) {
-		myform.action="test_module/save_module.php"
-		myform.submit();		
+		myform.action="test_module/import_module.php"
+		myform.submit();				
+		//saveModule(codeTxt);
 		
 	} else if( btn.value=="Run New Tab" ) {		
 		myform.action="test_module/run_module.php"
-		myform.submit();		
+		myform.submit();	
 		
 	} else {
 				
