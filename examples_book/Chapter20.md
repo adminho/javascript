@@ -24,7 +24,7 @@ console.log(b); // 2
 ## เอ็กซ์พอร์ตด้วยการระบุชื่อ
 
 ```module
-// ไฟล์ lib.js
+// -------------- ไฟล์ lib.js --------------------
 export var a = 1;
 export let b = 2;
 export const MY_CONST = 100;
@@ -40,7 +40,7 @@ export  class MyClass {
 ```
 
 ```module
-// ไฟล์ example.js 
+// -------------- ไฟล์ example.js -------------------- 
 const CONST_VALUE = 100;		  // บรรทัด a -- จะไม่ถูกเอ็กซ์พอร์ตออกไป
 export function square(x) {		  // บรรทัด b
         return x * x;
@@ -55,7 +55,7 @@ export multiply;			             // บรรทัด e -- เอ็กซ์พ
 ```
 
 ```module
-// ไฟล์ example.js 
+// -------------- ไฟล์ example.js -------------------- 
 const CONST_VALUE = 100;		 
 function square(x) {	
         return x * x;
