@@ -345,7 +345,7 @@ export const msg = "I love JavaScript";
 
 ### วิธีใช้งานมอดูลบน Node.js
  
-หมายเหตุ ตัวอย่างต่อไปนี้ต้องเทสบน Node.js บนเว็บเบราเซอร์ยังไม่รองรับ
+หมายเหตุ หลายตัวอย่างต่อไปนี้ต้องทดสอบบน Node.js เท่านั้น เพราะบนเว็บเบราเซอร์ยังไม่รองรับ
  
 ```module
 // -------------- ไฟล์ mylib.mjs ------------------
@@ -354,7 +354,7 @@ export const msg = "I love JavaScript";
 
 ```run.module
 // -------------- ไฟล์ myapp.mjs ------------------
-import { msg } from './mylib.mjs';
+import { msg } from "./mylib.mjs";
 console.log(msg);
 ```
 
@@ -365,7 +365,7 @@ export const msg = "I love JavaScript";
 
 ```run.module
 // -------------- ไฟล์ myapp.js ------------------
-import { msg } from './mylib.js';
+import { msg } from "./mylib.js";
 console.log(msg);
 ```
 
@@ -373,15 +373,9 @@ console.log(msg);
 { "type": "module" }
 ```
 
-```js
-{
-  "name": "my-awesome-package",
-  "version": "1.0.0"
-  ,"type": "module"
-}
-```
-
 ### เสริมเพิ่มเติม
+
+หมายเหตุ โค้ดต่อไปนี้ให้รันบน Node.js 
 
 ```js
 var http = require("http");
@@ -396,6 +390,8 @@ import * as url from "url";
 ```
 
 ## โอเปอเรเตอร์ import()
+
+หมายเหตุ โค้ดต่อไปนี้ให้รันบน Node.js 
 
 ```js
 import("http")
