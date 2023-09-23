@@ -125,15 +125,15 @@ message = "Good morning";                     // บรรทัด b -- จะ�
 
 ```run.module
 // ไฟล์ main.js 
-import * as lib from "example";
+import * as lib from "./example.js";
 console.log(lib.square(2)); 	 
 console.log(lib.calculate(2, 2));
 ```
 
 ```run.module
-import { square } from "example";
-import { calculate } from "example";
-import { multiply } from "example";
+import { square } from "./example.js";
+import { calculate } from "./example.js";
+import { multiply } from "./example.js";
 ```
 
 ## เปลี่ยนชื่อสิ่งที่ต้องการโหลด และเอ็กซ์พอร์ต
