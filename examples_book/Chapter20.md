@@ -253,7 +253,7 @@ export * from "./mylib.js";
 
 ```run.module
 // -------------- ไฟล์ main.js --------------
-import {foo, bar} from "./mylib.js";
+import {foo, bar} from "./example.js";
 console.log(foo, bar);
 ```
 
