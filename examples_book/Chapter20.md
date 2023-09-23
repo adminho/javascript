@@ -369,8 +369,18 @@ import { msg } from "./mylib.js";
 console.log(msg);
 ```
 
+ตัวอย่างไฟล์ package.json 
+
 ```js
 { "type": "module" }
+```
+
+```js
+{
+  "name": "my-awesome-package",
+  "version": "1.0.0"
+  ,"type": "module"
+}
 ```
 
 ### เสริมเพิ่มเติม

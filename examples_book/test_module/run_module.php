@@ -47,12 +47,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  __resultAreaId__ = "#result";
 
  let textArea = document.getElementById("target"); 
- textArea.rows=textArea.innerHTML .split('\n').length; 
+ textArea.rows = textArea.innerHTML.split('\n').length; 
 </script>
 
 <script type="module">
+
  <?php echo $importCode; ?>  
+  
  console.log("@html<font color='lightgreen'>ผลการรัน:</font>");
+  <?php echo $allCode; ?>
  try {  
    <?php echo $remainCode; ?>  
  } catch(e) {
