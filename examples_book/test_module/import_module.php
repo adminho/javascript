@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
     if(file_put_contents($modulename , $code)>0){
 		echo "<h1>Import module <font color='blue'>".$modulename."</font> -> success</h1>";
+		echo  str_replace("\n","<br>",$code);$code;
 		exit();
 	}else {
 		echo "Empty file: ".$modulename;

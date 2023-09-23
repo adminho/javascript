@@ -230,12 +230,12 @@ export {foo, bar};
 
 ```module
 // -------------- ไฟล์ example.js --------------
-export {foo, bar} from "mylib";
+export {foo, bar} from "./mylib.js";
 ```
 
 ```module
 // -------------- ไฟล์ example.js --------------
-import {foo, bar} from "mylib";
+import {foo, bar} from "./mylib.js";
 export {foo, bar};
 ```
 
@@ -249,9 +249,17 @@ export {foo as foo1, bar} from "mylib";
 export * from "mylib";
 ```
 
+หมายเหตุ โค้ดสำหรับเทสในหัวข้อนี้ (ไม่มีในหนังสือ)
+
+```run.module
+// -------------- ไฟล์ main.js --------------
+import {foo, bar} from "./mylib.js";
+console.log(foo, bar);
+```
+
 ## Namespace re-exporting
 
-```module
+```js
 export * as ns from "http";
 ```
 
@@ -295,7 +303,7 @@ Object.prototype.say = function(msg) {
 
 ```run.module
 // -------------- ไฟล์ main.js ------------------
-import "example";
+import "./example.js";
 let a = { };
 a.say("I love JavaScript");		// "I love JavaScript"
 ```
