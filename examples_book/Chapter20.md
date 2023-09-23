@@ -16,7 +16,7 @@ export var b = 2;
 
 ```run.module
 // -------------- ไฟล์ main.js --------------------
-import { a, b } from "lib/mylib";
+import { a, b } from "./lib/mylib.js";
 console.log(a); // 1
 console.log(b); // 2
 ```
