@@ -5,20 +5,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo "not found javascript code";
 		exit();
 	}
-	
+		
 	$allLines = preg_split("/(\r\n|\n|\r)/", $code);
 	$importCode = "";
 	$remainCode = "";
-	foreach ($allLines as $line) {
-		$line = trim($line);		
-		if( str_starts_with($line, '//')) {			
-			continue;
-		} else if( str_starts_with($line, 'import') ) {
-			$importCode = $importCode."\n".$line;
-			
-		} else {			
-			$remainCode = $remainCode."\n".$line;			
-		}
+	$allCode = "";
+	
+	if( str_starts_with($allLines[0],'//')) {
+		foreach ($allLines as $line) {
+			$line = trim($line);		
+			if( str_starts_with($line, '//')) {			
+				continue;
+			} else if( str_starts_with($line, 'import') ) {
+				$importCode = $importCode."\n".$line;
+			} else {			
+				$remainCode = $remainCode."\n".$line;			
+			}
+		}	
+	} else {		
+		$allCode  = $code;
 	}
 }
 ?>
@@ -56,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
  console.log("@html<font color='lightgreen'>ผลการรัน:</font>");
   <?php echo $allCode; ?>
+  
  try {  
    <?php echo $remainCode; ?>  
  } catch(e) {

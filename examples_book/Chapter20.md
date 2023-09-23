@@ -5,7 +5,7 @@
 ```js
 // ไฟล์ main.js
 // ไม่ได้โหลดอะไรเข้ามา
-import "lib/mylib";
+import "./lib/mylib.js";
 ```
 
 ```module
@@ -389,7 +389,7 @@ console.log(msg);
 
 ```js
 var http = require("http");
-var fs = require("fs"),
+var fs = require("fs");
 var url = require("url"); 
 ```
 
@@ -403,20 +403,20 @@ import * as url from "url";
 
 หมายเหตุ โค้ดต่อไปนี้ให้รันบน Node.js 
 
-```js
+```run.module
 import("http")
 .then((httpModule) => {
   console.log(httpModule.maxHeaderSize);    //16384
 });
 ```
 
-```js
+```run.module
 const httpModule = await import("http");
 console.log(httpModule.maxHeaderSize);     //16384
 ```
 
 ## import.meta
 
-```js
+```run.module
 console.log(import.meta.url);     // "file:///c:/javascript/mymodule.js"
 ```
