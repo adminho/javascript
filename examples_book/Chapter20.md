@@ -312,7 +312,7 @@ a.say("I love JavaScript");		// "I love JavaScript"
 
 ### วิธีใช้งานมอดูลบนเว็บเบราเซอร์
 
-หมายเหตุ ตัวอย่างหน้า HTML นี้ต้องนำเข้ามอดูล mylib.js ข้างล่างเสียก่อน ไม่เช่นนั้นหน้าตัวอย่างเว็บจะไม่เจอมอดูล
+หมายเหตุ ตัวอย่างหน้า HTML นี้ ต้องมีมอดูล mylib.js ข้างล่างเสียก่อน ไม่เช่นนั้นตัวอย่างหน้าเว็บจะไม่เจอมอดูล
 
 ```html
 <!DOCTYPE html>
@@ -327,8 +327,7 @@ a.say("I love JavaScript");		// "I love JavaScript"
 </html>
 ```
 
-
-```js
+```module
 // -------------- ไฟล์ mylib.js ------------------
 export const msg = "I love JavaScript";
 ```
