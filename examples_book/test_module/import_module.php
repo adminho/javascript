@@ -25,6 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		exit();
 	}
 	
+	if (file_exists($modulename)) {
+		unlink($modulename);
+	}
+	
     if(file_put_contents($modulename , $code)>0){
 		echo "<h1>Import module: <font color='blue'>".$modulename."</font> -> success</h1>";
 		exit();
