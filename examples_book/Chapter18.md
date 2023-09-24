@@ -713,6 +713,7 @@ function sendAjaxMsg( url, message) {
     } // สิ้นสุดการประกาศฟังก์ชั่น asynCode
     return new Promise(asynCode);		         // บรรทัด d
  } // สิ้นสุดการประกาศฟังก์ชั่น sendAjaxMsg
+// สามารถเปลี่ยน url เป็น https://patanasongsivilai.com/example/ajax.php
 let ajax = sendAjaxMsg("http://127.0.01:8001/message", "test promise")
 document.querySelector("#element1").innerHTML = "Sending a message";  // บรรทัด e
 function handle(value) { console.log(value); }
@@ -722,6 +723,8 @@ ajax.then(handle, errorHandle)			        // บรรทัด f
 </body>
 </html>
 ```
+ตัวอย่างข้างต้นจะแสดงผลลัพธ์หน้าคอนโซลของเว็บเบราเซอร์เป็น
+{"echo": "test promise"}
 
 * ตัวอย่างที่ 2
 
