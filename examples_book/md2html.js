@@ -33,8 +33,8 @@ allLineArray.forEach( (line) =>  {
 	  
   } else if( isAreaCode==true && line.startsWith("```")){ // reach to end of codes
 	  isAreaCode = false	  	  
-	  lineCodes = lineCodes.slice(0,-2);
-	  const rows = lineCodes.split('\r\n').length;
+	  lineCodes = lineCodes.slice(0,-1);
+	  const rows = lineCodes.split('\n').length;
 	  	  
 	  let clearBtnHTML = "";
 	  if ( btnValue == "Run") {

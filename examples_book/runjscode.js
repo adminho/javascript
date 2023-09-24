@@ -40,7 +40,12 @@ function toString(data) {
 		if("input" in data) str = str + `input: ${toString(data.input)}, `;
 		if("groups" in data) str = str + `groups: ${toString(data.groups)}, `;					
 		return (str.length >2) ? str.slice(0, -2) + ' ]': '[]';	
-					
+	} else if( data instanceof AggregateError){
+		str = "";
+		str += `[${data.stack}] {\n`
+		str += `  [errors]: ${toString(data.errors)}\n}`
+		return str;
+				
 	} else if( data instanceof Date){	
 		return data.toString();
 					
@@ -210,6 +215,5 @@ function runCodeBtn(targetCount) {
 	}
 			
 	textCodeArea.classList.add("run-already");
-	//btn.value = "Run again";
 	return false;
 }
