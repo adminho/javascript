@@ -22,6 +22,10 @@ body {
 	overflow:auto;
 }
 
+.blur {
+  filter: blur(2.5rem);
+}
+
 .sale {
 	margin-top: 0px;	
 	margin-left: 20%;

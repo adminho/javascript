@@ -1,12 +1,12 @@
 	let targetDiv = document.getElementById("main");
 	let statusLoading = document.getElementById("statusLoading");	
 	let bottomAds = document.getElementById("bottom-ads");
-	let healineDiv = document.getElementById("headline");
-	let mainMenu = document.getElementById("main-menu");
+	let rightAds = document.getElementById("right-ads"); 
+	let headlineDiv = document.getElementById("headline");
+	let mainMenu = document.getElementById("main-menu");	
 		
-	function isDesktop(){
-		//if ( WURFL.form_factor === "Desktop") {		     
-		if(  window.innerWidth >=768 ) {		
+	function isDesktop(){	
+		if(  window.innerWidth >=768 || WURFL.form_factor === "Desktop") {		
 			return true;				
 		} 
 		return false;		
@@ -15,27 +15,28 @@
     function initMenuEvent(func){
 		let allLink = document.getElementsByClassName("link-chap");
 		for(const link of allLink) {
-			link.addEventListener('click', function(event) {	
+			link.addEventListener('click', function(event) {
+				if( !isDesktop()) {					
+					mainMenu.style.display = "none";	
+				}				
 				event.preventDefault();	
 				let file = link.href;		
 				includeHTML(link);		
-			});
-		
+			});		
 			link.addEventListener('contextmenu', function(event) {
 				event.preventDefault();			
-			});
-			
+			});			
 			link.convertToHTML = func;
 		}			
 	}
 	
-	async function createLeftMenu() {
+	async function bildHTML(div, html) {
 		let options =  {			
 			cache: "no-cache",				
 		};		
-		let res = await fetch("left_menu.html", options)
-		let htmlMenu = await res.text();
-		mainMenu.innerHTML = htmlMenu;		
+		let res = await fetch(html, options)
+		let content = await res.text();
+		div.innerHTML = content;		
 	}	
 	
 	async function createAdsRight(){
@@ -56,12 +57,12 @@
 		}
 		
 		document.title =  link.innerHTML;
-				healineDiv.innerHTML = `โค้ด${link.innerHTML}`;	
+				headlineDiv.innerHTML = `โค้ด${link.innerHTML}`;	
 				statusLoading.style.display = "block";		
-				bottomAds.style.display = "none";	
+				targetDiv.classList.add("blur");
+				bottomAds.style.display = "none";
 
-		let options =  {
-			mode: 'no-cors',
+		let options =  {		
 			cache: "no-cache",				
 		};
 		
@@ -75,40 +76,37 @@
 		.then( res => res.text())		
 		.then( text => { 
 			statusLoading.style.display = "none";
+			targetDiv.classList.remove("blur");
 			if(text.includes("404 Not Found")){
 				targetDiv.innerHTML = '<h1>Not found page</h1>';		
 			} else {				
 				//targetDiv.innerHTML = genHTMLfromMDFile(text);		
 				targetDiv.innerHTML = link.convertToHTML(text);		
-				bottomAds.style.display = "block";	
-			}
-						
-			if(  !isDesktop()) {					
-				mainMenu.style.display = "none";	
-			}
-			
+				bottomAds.style.display = "block";					
+			}			
 		 }
 		)
 		.catch( err => {
 			targetDiv.innerHTML = 'Not found page';		
-			statusLoading.style.display = "none";	
+			statusLoading.style.display = "none";
+			targetDiv.classList.remove("blur");			
 			bottomAds.style.display = "block";				
 		});
     }
  
-
 	function selectMenu(index){
 		includeHTML(document.getElementsByClassName("link-chap")[index]); // select default link
 	}
 	
 	window.onload = async function() {
-		await createLeftMenu();	
+		await bildHTML(mainMenu, "left_menu.html");	
+		await bildHTML(bottomAds, "ads_bottom.html");	
+		await bildHTML(rightAds, "ads_right.html");	
 		//initMenuEvent(genHTMLfromIpynb);
 		initMenuEvent(genHTMLfromMDFile);
-		//selectMenu(2);
+		selectMenu(2);
 	}
 	
-	window.resize = function(){		
-		alert();
+	window.resize = function(){				
 		!isDesktop?mainMenu.style.display = "block":mainMenu.style.display = "none";
 	}
