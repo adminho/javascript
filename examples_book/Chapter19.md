@@ -43,11 +43,6 @@ function asyncFunc() {                            // เสมือนเขี
 }
 ```
 
-หมายเหตุ โค้ดก่อนหน้านี้เราสามารถก็อปปี้ โค้ดต่อไปนี้
-asyncFunc()                                            // บรรทัด a -- เรียกฟังก์ชันให้ทำงาน
-.then(x => console.log(x));	            // undefined
-ไปใช้ทดสอบได้
-
 ```js
 async function asyncFunc() {
     console.log("aysnc function");               
