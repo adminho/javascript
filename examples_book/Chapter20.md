@@ -4,8 +4,7 @@
 
 ```js
 // ไฟล์ main.js
-// ไม่ได้โหลดอะไรเข้ามา
-import "./lib/mylib.js";
+import "./lib/mylib.js"; // ไม่ได้โหลดอะไรเข้ามา
 ```
 
 ```module
@@ -191,7 +190,7 @@ export default param => param;
 ```
 
 ```run.module
-// ไฟล์ main.js 
+// -------------- ไฟล์ main.js -------------- 
 import func from "./MyFunc.js";
 import _class from "./MyClass.js";
 import value from "./MyValue.js";
