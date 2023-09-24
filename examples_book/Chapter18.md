@@ -727,7 +727,6 @@ ajax.then(handle, errorHandle)			        // บรรทัด f
 </html>
 ```
 
-
 * ตัวอย่างที่ 2
 
 * [ไฟล์ json.php ประกอบเนื้อหา Fetch API](json.php)
