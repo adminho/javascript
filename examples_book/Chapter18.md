@@ -545,15 +545,15 @@ Promise.resolve("fulfilled")
 ## Promise.all()
 
 ```js
-let p1 = Promise.resolve("Promise1");
-let p2 = Promise.resolve("Promise2");
-let p3 = Promise.resolve("Promise3");
+let p1 = Promise.resolve("Promise1”);
+let p2 = Promise.resolve("Promise2”);
+let p3 = Promise.resolve("Promise3”);
 let p4 = Promise.all([p1, p2, p3]);         // มอนิเตอร์ p1, p2 และ p3 ที่มีสถานะเป็น fulfilled ทุกตัว
 p4.then(function(value) {
   console.log(value);     
 });
 // แสดงผลลัพธ์เป็น
-// ["Promise1", "Promise2", "Promise3"]
+// [ 'Promise1', 'Promise2', 'Promise3' ]
 ```
 
 ```js
@@ -657,7 +657,7 @@ Promise.any([p1, p2, p3])
 .catch(aggregateError => console.log(aggregateError));
 /* แสดงผลลัพธ์
 [AggregateError: All promises were rejected] {
-  [errors]: [ ‘Error 1’, ‘Error 2’, ‘Error 3’ ]
+  [errors]: [ 'Error 1', 'Error 2', 'Error 3' ]
 }
 */
 ```
@@ -666,7 +666,7 @@ Promise.any([p1, p2, p3])
 Promise.any([p1, p2, p3])
 .catch(aggregateError => console.log(aggregateError.errors));  // เข้าถึงพร็อพเพอร์ตี้ errors
 // แสดงผลลัพธ์
-// [ ‘Error 1’, ‘Error 2’, ‘Error 3’ ]
+// [ 'Error 1', 'Error 2', 'Error 3' ]
 ```
 
 ## การประยุกต์ใช้งานพรอมิส
