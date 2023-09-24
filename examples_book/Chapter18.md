@@ -766,9 +766,10 @@ fetch("http://127.0.01:8001/message?msg=test promise")
 </html>
 ```
 
-* ตัวอย่างที่ 3
+* ตัวอย่างที่ 3 (ต้องรันบน Node.js เท่านั้น)
 
 * [ไฟล์ json.txt](Chapter18/json.txt)
+อยู่ที่ https://raw.githubusercontent.com/adminho/javascript/master/examples_book/Chapter18/json.txt
 
 ```js
 function readJSONFile(fileName){
@@ -820,6 +821,18 @@ function runService(data) {
 		iterator.next(result);			
  	});	
 }
+
+/* แสดงผลลัพธ์
+to do something: 0
+Message: service 0 is success
+to do something: 1
+Message: service 1 is success
+to do something: 2
+Message: service 2 is success
+to do something: 3
+Message: service 3 is success
+to do something: 4
+Message: service 4 is success */
 ```
 
 ## สไตล์การเขียนด้วยฟังก์ชั่นคอลแบ็ค
