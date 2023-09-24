@@ -12,19 +12,40 @@
 		return false;		
 	}
 
-	let allLink = document.getElementsByClassName("link-chap");
-	for(const link of allLink) {
-		link.addEventListener('click', function(event) {	
-			event.preventDefault();	
-			let file = link.href;		
-			includeHTML(link);		
-		});
+    function initMenuEvent(func){
+		let allLink = document.getElementsByClassName("link-chap");
+		for(const link of allLink) {
+			link.addEventListener('click', function(event) {	
+				event.preventDefault();	
+				let file = link.href;		
+				includeHTML(link);		
+			});
 		
-		link.addEventListener('contextmenu', function(event) {
-			event.preventDefault();			
-		});
-	}			
-				
+			link.addEventListener('contextmenu', function(event) {
+				event.preventDefault();			
+			});
+			
+			link.convertToHTML = func;
+		}			
+	}
+	
+	async function createLeftMenu() {
+		let options =  {			
+			cache: "no-cache",				
+		};		
+		let res = await fetch("left_menu.html", options)
+		let htmlMenu = await res.text();
+		mainMenu.innerHTML = htmlMenu;		
+	}	
+	
+	async function createAdsRight(){
+		
+	}
+	
+	async function createAdsBottom(){
+		
+	}
+	
 	function showMenu() {
 		mainMenu.style.display = "block";			
 	}
@@ -54,11 +75,11 @@
 		.then( res => res.text())		
 		.then( text => { 
 			statusLoading.style.display = "none";
-			if(text.includes("404")){
+			if(text.includes("404 Not Found")){
 				targetDiv.innerHTML = '<h1>Not found page</h1>';		
-			} else {
-				allLineArray = text.split("\n");
-				targetDiv.innerHTML = genHTMLfromArray(allLineArray);		
+			} else {				
+				//targetDiv.innerHTML = genHTMLfromMDFile(text);		
+				targetDiv.innerHTML = link.convertToHTML(text);		
 				bottomAds.style.display = "block";	
 			}
 						
@@ -75,7 +96,17 @@
 		});
     }
  
-   	includeHTML(document.getElementsByClassName("link-chap")[1]); // select default link
+
+	function selectMenu(index){
+		includeHTML(document.getElementsByClassName("link-chap")[index]); // select default link
+	}
+	
+	window.onload = async function() {
+		await createLeftMenu();	
+		//initMenuEvent(genHTMLfromIpynb);
+		initMenuEvent(genHTMLfromMDFile);
+		//selectMenu(2);
+	}
 	
 	window.resize = function(){		
 		alert();

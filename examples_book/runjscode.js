@@ -93,28 +93,7 @@ function toString(data) {
 		return String(data); // stop recursive		
 	}
 }
-
-function escapeHtml(unsafe) {
-	return unsafe
-		.replaceAll(/&amp;/g, "&")
-		.replaceAll(/&lt;/g, "<")
-		.replaceAll(/&gt;/g, ">")
-		.replaceAll(/&quot;/g, '"')
-		.replaceAll(/&#039;/g, "'");
-}
 		
-function decodeHtml(str) {
-	return str
-		.replaceAll(/&/g, "&amp;")
-		.replaceAll(/</g, "&lt;")
-		.replaceAll(/>/g, "&gt;")
-		.replaceAll(/"/g, '&quot;')
-		.replaceAll(/'/g, "&#039;")
-		.replaceAll(/\n/g,'<br>')
-		.replaceAll(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
-		.replaceAll(/\s/g, "&nbsp;");				
-		}
-			
 function dowloadfile(content){
 	const link = document.createElement("a");			
 	const file = new Blob([content], { type: 'text/plain' });
@@ -171,23 +150,21 @@ function clearDisplay(targetCount) {
 	}
 }
 
-async function saveModule(codeText) {
-	fetch('test_module/save_module.php', {
-		method: "POST",
-         headers: {
-			'Accept': 'application/json, text/plain, */*',
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			code: codeText
-		})		
-	})
-	.then( response => response.text())
-	.then( text => alert(text) )
-	.catch(error => console.error('Error:', error)); 
-
-}
-JSON.stringify({ "id": 78912 })
+//async function saveModule(codeText) {
+//	fetch('test_module/save_module.php', {
+//		method: "POST",
+//        headers: {
+//			'Accept': 'application/json, text/plain, */*',
+//			'Content-Type': 'application/json'
+//		},
+//		body: JSON.stringify({
+//			code: codeText
+//		})		
+//	})
+//	.then( response => response.text())
+//	.then( text => alert(text) )
+//	.catch(error => console.error('Error:', error)); 
+//}
 
 function runCodeBtn(targetCount) {						
 	clearDisplay(targetCount);
