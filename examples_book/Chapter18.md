@@ -670,9 +670,7 @@ Promise.any([p1, p2, p3])
   [errors]: [ 'Error 1', 'Error 2', 'Error 3' ]
 }
 */
-```
 
-```js
 Promise.any([p1, p2, p3])
 .catch(aggregateError => console.log(aggregateError.errors));  // เข้าถึงพร็อพเพอร์ตี้ errors
 // แสดงผลลัพธ์
