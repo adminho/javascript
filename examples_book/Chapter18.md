@@ -760,7 +760,8 @@ fetch("https://patanasongsivilai.com/example/json.php")     // บรรทั�
 <h1 id="element2"></h1>
 <script>
 document.querySelector("#element1").innerHTML = "Sending a message"; 
-let element = document.querySelector("#element2");	
+let element = document.querySelector("#element2");
+// สามารถเปลี่ยน url เป็น https://patanasongsivilai.com/example/ajax.php?msg=test promise
 fetch("http://127.0.01:8001/message?msg=test promise")
 .then( function (res) { 
 	return res.text();
