@@ -684,6 +684,9 @@ Promise.any([p1, p2, p3])
 แต่ถ้าไม่สะดวก็ให้เปลี่ยน url จาก http://127.0.01:8001/messagepromise
 ไปเป็น https://patanasongsivilai.com/example/ajax.php
 
+และตัวอย่างข้างล่างจะแสดงผลลัพธ์หน้าคอนโซลของเว็บเบราเซอร์ด้วย
+{"echo": "test promise"}
+
 ```html
 <!-- ไฟล์ชื่อ index.html-->
 <!DOCTYPE html>
@@ -723,8 +726,7 @@ ajax.then(handle, errorHandle)			        // บรรทัด f
 </body>
 </html>
 ```
-ตัวอย่างข้างต้นจะแสดงผลลัพธ์หน้าคอนโซลของเว็บเบราเซอร์เป็น
-{"echo": "test promise"}
+
 
 * ตัวอย่างที่ 2
 
