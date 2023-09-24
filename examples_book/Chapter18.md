@@ -769,7 +769,7 @@ fetch("http://127.0.01:8001/message?msg=test promise")
 * ตัวอย่างที่ 3 (ต้องรันบน Node.js เท่านั้น)
 
 * [ไฟล์ json.txt](Chapter18/json.txt)
-อยู่ที่ https://raw.githubusercontent.com/adminho/javascript/master/examples_book/Chapter18/json.txt
+ตัวอย่างไฟล์ json.txt อยู่ที่ https://raw.githubusercontent.com/adminho/javascript/master/examples_book/Chapter18/json.txt
 
 ```js
 function readJSONFile(fileName){
