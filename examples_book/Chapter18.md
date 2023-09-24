@@ -614,8 +614,8 @@ Promise.allSettled( [p1, p2] )           // allSettled() รีเทิร์�
 
 /* แสดงผลลัพธ์
 [
-  { status: ‘fulfilled’, value: 123 },
-  { status: ‘rejected’, reason: 456 }
+  { status: 'fulfilled', value: 123 },
+  { status: 'rejected', reason: 456 }
 ] */
 ```
 
@@ -630,8 +630,8 @@ Promise.allSettled( [p1, p2] )                     // บรรทัด b
 
 /* แสดงผลลัพธ์
 [
-  { status: ‘fulfilled’, value: 123 },
-  { status: ‘rejected’, reason: ‘Error’ }
+  { status: 'fulfilled', value: 123 },
+  { status: 'rejected', reason: 'Error' }
 ] */
 ```
 
