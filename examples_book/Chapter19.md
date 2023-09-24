@@ -92,7 +92,7 @@ then(x => console.log(`Resolved: ${x}`));     // บรรทัด e - อะ�
 console.log("End"); 			 // บรรทัด f  - ซิงโครนัส
 /* แสดงผลลัพธ์
 "Start"
-"aysnc function"
+"aysnc function()"
 "End"
 "Resolved: 123" */
 ```

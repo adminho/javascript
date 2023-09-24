@@ -58,7 +58,7 @@ function toString(data) {
 	} else if(typeof data == 'bigint') {
 		return `${data}n`;	
 				
-	} else if( typeof data === 'object'){
+	} else if( typeof data === 'object'){		
 		let stringTag =  data[Symbol.toStringTag];
 		if( stringTag == "Float32Array" || stringTag == "Int32Array" || stringTag == "Uint8Array"){			
 			let arraString = data.toString().replaceAll(/\,/g, ", ");				
@@ -80,6 +80,9 @@ function toString(data) {
 			return (str != strBegin ) ? str.slice(0, -2) + ' }': `${strBegin}}`;
 			//return (str != `Arguments(${data.length}) { ` ) ? str.slice(0, -2) + " }": `Arguments(${data.length}) {}`;	
 					
+		} else if (data instanceof Error){
+			return data.stack;
+			
 		} else {
 			let str = "{ ";
 					
@@ -206,9 +209,9 @@ function runCodeBtn(targetCount) {
 			eval(codeTxt);						
 		} catch (e){
 			console.log("@html<font color='orange'>++++Error++++</font>");	
-			console.log("@html<font color='orange'>Uncaught " + e + "</font>");
+			console.log(`@html<font color='orange'>Uncaught ${e}</font>`);
 			if(e.stack) {
-				console.log("@html<font color='orange'>" + e.stack + "</font>");					
+				console.log(`@html<font color='orange'>${e.stack}</font>`);					
 			} 
 		}				
 				

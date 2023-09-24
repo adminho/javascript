@@ -6,7 +6,8 @@
 	let mainMenu = document.getElementById("main-menu");	
 		
 	function isDesktop(){	
-		if(  window.innerWidth >=768 || WURFL.form_factor === "Desktop") {		
+		//if(  window.innerWidth >=768 || WURFL.form_factor === "Desktop") {		
+		if(  window.innerWidth >=768 ) {	
 			return true;				
 		} 
 		return false;		
