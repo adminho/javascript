@@ -35,7 +35,7 @@ async function asyncFunc() {
 ```
 
 ```js
-function asyncFunc() {                            // เสมือนเขียนฟังก์ช่ันปกติธรรมดา
+function asyncFunc() {                            // เสมือนเขียนฟังก์ชั่นปกติธรรมดา
   return new Promise( resolve => {           // จะรีเทิร์นพรอมิส
     console.log("aysnc function");             // โค้ดถูกห่ออยู่ในพรอมิสที่สร้างขึ้นมา
     resolve(undefined);                             // จะเสมือนมี resolve(undefined) ต่อท้าย                
