@@ -52,7 +52,8 @@ let asynCode = function (resolve, reject) {
 };
 let promise = new Promise(asynCode);
 promise.then( 
-	function (value) {      	            // บรรทัด c -- มอนิเตอร์พรอมิส กรณีที่มันทำงานสำเร็จ			console.log("Promise:",value);	       		
+	function (value) {      	            // บรรทัด c -- มอนิเตอร์พรอมิส กรณีที่มันทำงานสำเร็จ
+		console.log("Promise:",value);	       		
 	}, function (reason) {  	           // บรรทัด d -- มอนิเตอร์พรอมิส กรณีที่มันทำงานไม่สำเร็จ
           		console.log("Promise:", reason);	       
 	}
