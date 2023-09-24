@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <html>
 <head>
-	<link href="../readme_md.css?v=1.1513" rel="stylesheet">  	
+	<link href="../readmemd.css?v=1.1513" rel="stylesheet">  	
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
 	<style>
 		body {
@@ -46,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<br><br><span>แสดงผลลัพธ์</span>
 	<div id="result" class="display-result"></div>
 </div>
-	
-<script src="../runcode.js?v=11231"></script>
+<script src="../util.js?v=11231"></script>	
+<script src="../runjscode.js?v=11231"></script>
 <script>
  __resultAreaId__ = "#result";
 
