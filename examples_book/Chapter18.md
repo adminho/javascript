@@ -642,9 +642,7 @@ let p1 = Promise.resolve(123);
 let p2 = Promise.resolve(456); 
 let p3 = Promise.reject(789); 
 Promise.any([p1, p2, p3]);
-```
 
-```js
 Promise.any([p1, p2, p3])                          // p1 เป็น fulfilled ก่อน p2 
 .then(value=> console.log(value) );            // จะส่งค่า 123 ของ p1 มาให้ then()  
 // แสดงผลลัพธ์
