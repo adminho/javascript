@@ -406,13 +406,13 @@ import * as url from "url";
 ```run.module
 import("http")
 .then((httpModule) => {
-  console.log(httpModule.maxHeaderSize);    //16384
+  console.log(httpModule.maxHeaderSize);    // 16384
 });
 ```
 
 ```run.module
 const httpModule = await import("http");
-console.log(httpModule.maxHeaderSize);     //16384
+console.log(httpModule.maxHeaderSize);     // 16384
 ```
 
 ## import.meta
