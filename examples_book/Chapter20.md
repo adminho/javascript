@@ -130,6 +130,7 @@ console.log(lib.calculate(2, 2));	// 800
 ```
 
 ```run.module
+// -------------- ไฟล์ main.js -------------- 
 import { square } from "./example.js";
 import { calculate } from "./example.js";
 import { multiply } from "./example.js";
