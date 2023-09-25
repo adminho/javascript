@@ -331,7 +331,7 @@ asyncFunc();                                            // เรียกให
 fetch("https://patanasongsivilai.com/example/json.php")     // บรรทัด a
 .then( res =>  res.text())                            // บรรทัด b
 .then( txt =>  console.log(txt) );                 // บรรทัด c
-console.log("Hello");
+console.log("Hello");                               // บรรทัด d
 // แสดงผลลัพธ์
 // "Hello"
 // {"name":"Somchai","age":30,"city":"Bangkok"}
