@@ -227,6 +227,8 @@ asyncFunc();
 "End" */
 ```
 
+หมายเหตุ ถ้าจะรันโค้ดนี้ให้ก็อปปี้การประกาศ otherAsyncFunc() มาด้วย
+
 ```js
 async function asyncFunc() {
   console.log("Start");                              // บรรทัด a
