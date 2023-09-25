@@ -159,9 +159,7 @@ async function asyncFunc() {
    let result = await new Promise(resolve => resolve(123));   // result = 123
    return result;  // รีเทิร์นพรอมิส พร้อมส่งค่า result = 123 ออกไป                                          
 }
-```
 
-```js
 asyncFunc()    
 .then( value => console.log(value))
 // แสดงผลลัพธ์
