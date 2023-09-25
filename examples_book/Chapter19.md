@@ -233,6 +233,7 @@ async function asyncFunc() {
   let result = await otherAsyncFunc();        // บรรทัด a
   console.log(result);                                // บรรทัด b
 }
+asyncFunc();
 /* แสดงผลลัพธ์
 "Start"
 "call otherAsyncFunc"
