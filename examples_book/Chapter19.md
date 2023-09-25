@@ -171,7 +171,7 @@ async function asyncFunc() {
   try {
     let result = await new Promise((resolve, reject) => reject("Error!"));  // บรรทัด a
    } catch (err) {                                          
-    console.error(err);      // บรรทัด b
+    console.log(err);      // บรรทัด b
   }   
 }
 asyncFunc(); // "Error!"
