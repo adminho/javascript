@@ -347,7 +347,7 @@ console.log("Hello");                              // บรรทัด d
 // "Hello"
 ```
 
-```run.module
+```js
 function myFunc() {                                     // ไม่มี async นำหน้า
     let result1 = await otherAsyncFunc(1000);   // "Error!"
 }
@@ -382,10 +382,10 @@ async function asyncFunc() {
 asyncFunc();  
 ```
 
-```run.module
+```js
 async function asyncFunc() {
     await function innerFunc() {        
-       return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ได้ 
+       return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้ 
     }
     innerFunc()
     .then(value => console.log(value))   
