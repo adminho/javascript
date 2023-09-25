@@ -337,7 +337,7 @@ console.log("Hello");
 // {"name":"Somchai","age":30,"city":"Bangkok"}
 ```
 
-```js
+```run.module
 let res = await fetch("https://patanasongsivilai.com/example/json.php")  // บรรทัด a
 let txt = await res.text()                           // บรรทัด b
 console.log(txt)                                      // บรรทัด c
@@ -347,18 +347,18 @@ console.log("Hello");                              // บรรทัด d
 // "Hello"
 ```
 
-```js
+```run.module
 function myFunc() {                                     // ไม่มี async นำหน้า
     let result1 = await otherAsyncFunc(1000);   // "Error!"
 }
 ```
 
-```js
+```run.module
 let result = await Promise.resolve("Success!");
 console.log(result);      // "Success!"
 ```
 
-```js
+```run.module
 try {
      await Promise.reject("Error!");
 } catch (error) {
@@ -366,7 +366,7 @@ try {
 }  
 ```
 
-```js
+```run.module
 let result = await 123;
 console.log(result)      // 123
 ```
@@ -382,7 +382,7 @@ async function asyncFunc() {
 asyncFunc();  
 ```
 
-```js
+```run.module
 async function asyncFunc() {
     await function innerFunc() {        
        return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ได้ 
