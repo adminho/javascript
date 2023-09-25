@@ -502,8 +502,9 @@ for await (const item of arr) {
 
 ## Asynchronous generators
 
+รูปแบบโครงสร้างของเจนเนอเรเตอร์แบบอะซิงโครนัส จะเป็นดังนี้
 
-```js
+```notrun
 async function* asynGenerator() {
   // ส่วนอินพุต
   let x = await myPromise;
@@ -516,7 +517,8 @@ async function* asynGenerator() {
 }
 ```
 
-```js
+ตัวอย่างโค้ด
+```run.module
 async function* asynGenerator () {
     yield 1;                                              // บรรทัด a
     yield 2;                                              // บรรทัด b
@@ -528,9 +530,7 @@ console.log(await asyncIterator.next());       // { value: 1, done: false }
 console.log(await asyncIterator.next());       // { value: 2, done: false }
 console.log(await asyncIterator.next());       // { value: 3, done: false }
 console.log(await asyncIterator.next());       // { value: undefined, done: true }
-```
 
-```js
 for await(const i of asynGenerator()) {
       console.log(i)    // บรรทัด a
 }
@@ -540,7 +540,7 @@ for await(const i of asynGenerator()) {
 3 */
 ```
 
-```js
+```run.module
 async function* asynGenerator () {
     yield Promise.resolve(1);                      // บรรทัด a
     yield Promise.resolve(2);                      // บรรทัด b
@@ -555,7 +555,7 @@ for await(const i of asynGenerator()) {
 3 */
 ```
 
-```js
+```run.module
 async function* otherAsynGenerator() {
     yield Promise.resolve(2); 
     yield Promise.resolve(3); 
