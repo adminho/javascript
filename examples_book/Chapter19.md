@@ -197,6 +197,8 @@ async function otherAsyncFunc(ms) {
 }
 ```
 
+หมายเหตุ ถ้าจะรันโค้ดนี้ให้ก็อปปี้การประกาศ otherAsyncFunc() มาด้วย
+
 ```js
 async function asyncFunc() {
   console.log("Start");                                      // บรรทัด a
@@ -209,6 +211,8 @@ asyncFunc();
 "End"
 "call otherAsyncFunc" */
 ```
+
+หมายเหตุ ถ้าจะรันโค้ดนี้ให้ก็อปปี้การประกาศ otherAsyncFunc() มาด้วย
 
 ```js
 async function asyncFunc() {
