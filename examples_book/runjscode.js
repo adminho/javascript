@@ -112,7 +112,10 @@ function dowloadfile(content){
 }
 
 const __old__console__ = console.log;		
-
+console.error = function(...data){
+	console.log("@html<font color='orange'>++++Error++++</font>");
+	console.log(`@html<font color='orange'>${data}</font>`);
+}	
 console.log = function(...data){
 	if(!__resultAreaId__) {
 		return __old__console__(data);

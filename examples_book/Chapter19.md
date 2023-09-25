@@ -185,6 +185,8 @@ async function asyncFunc() {
 asyncFunc();   // "Error!"
 ```
 
+หมายเหตุ otherAsyncFunc() ถูกนำไปใช้ในหลายๆ ตัวอย่าง
+
 ```js
 async function otherAsyncFunc(ms) {
    return new Promise (resolve =>                 
