@@ -404,13 +404,9 @@ async function foo() {      // ประกาศชื่อ foo ซ้ำก�
 
 ```js
 let asyncIterable = [1, 5, 10];
-```
 
-```js
 asyncIterable[Symbol.asyncIterator]=createAsyncIterator;
-```
 
-```js
 function createAsyncIterator() {
     let array = this;      // ในตัวอย่างนี้ this ชี้ไปยังอาร์เรย์ [1, 5, 10]
     let i =  0;              // เอาไว้นับจำนวนรอบเข้าถึงสมาชิกในอาร์เรย์
@@ -429,13 +425,9 @@ function createAsyncIterator() {
         }  // สิ้นสุดการประกาศฟังก์ชัน next()
      };    
 }
-```
 
-```js
 let asyncIterator = asyncIterable[Symbol.asyncIterator]();
-```
 
-```js
 asyncIterator.next()                          // เรียก nex() ครั้งที่ 1
 .then(function(iteratorResult ) {
   console.log(iteratorResult);            // { value: 1, done: false }
@@ -460,7 +452,8 @@ asyncIterator.next()                          // เรียก nex() ครั
 */
 ```
 
-```js
+ตัวอย่างนี้ต้องก็อปปี้การประกาศ asyncIterable จากตัวอย่างก่อนมาใช้งาน
+```run.module
 let asyncIterator2 = asyncIterable[Symbol.asyncIterator]();
 let obj1 = await asyncIterator2.next();
 let obj2 = await asyncIterator2.next();
@@ -474,7 +467,8 @@ console.log(obj4);       // { value: undefined, done: true }
 
 ## ประโยคคำสั่ง for ...await ...of
 
-```js
+ตัวอย่างนี้ต้องก็อปปี้การประกาศ asyncIterable จากตัวอย่างก่อนมาใช้งาน
+```run.module
 for await (const x of asyncIterable) {
     console.log(x);
 }
@@ -484,13 +478,13 @@ for await (const x of asyncIterable) {
 10 */
 ```
 
-```js
+```run.module
 for await (const x of [1, 2, 3]) {
   console.log(x);
 }
 ```
 
-```js
+```run.module
 let arr = [Promise.resolve("foo"), Promise.resolve("bar")];
 for await (const item of arr) {
   console.log(item);
