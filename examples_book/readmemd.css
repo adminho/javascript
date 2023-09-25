@@ -23,7 +23,7 @@ body {
 }
 
 .blur {
-  filter: blur(0.8rem);
+  filter: blur(0.5rem);
 }
 
 .sale {

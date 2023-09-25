@@ -1,5 +1,7 @@
 function isBeginCode(line){
-	if(line.startsWith("```js") || line.startsWith("```html") || line.startsWith("```module") || line.startsWith("```run.module")) {
+	if(line.startsWith("```js") || line.startsWith("```html") 
+		|| line.startsWith("```module") || line.startsWith("```run.module")
+	    || line.startsWith("```notrun")) {
 		return true;
 	}	
 	return false;
@@ -28,7 +30,9 @@ allLineArray.forEach( (line) =>  {
 	  } else if(line.startsWith("```module")){
 		  btnValue = "Import";					  
 	  } else if(line.startsWith("```run.module")) {
-		  btnValue = "Run New Tab";
+		  btnValue = "Run New Tab (Support Module)";
+	  } else if(line.startsWith("```notrun")) {
+		  btnValue = "Not run";
 	  }
 	  
   } else if( isAreaCode==true && line.startsWith("```")){ // reach to end of codes
@@ -36,9 +40,13 @@ allLineArray.forEach( (line) =>  {
 	  lineCodes = lineCodes.slice(0,-1);
 	  const rows = lineCodes.split('\n').length;
 	  	  
-	  let clearBtnHTML = "";
-	  if ( btnValue == "Run") {
-		  clearBtnHTML = `<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay(${count})">`;	  
+	  let runBtnHTML = `<input class="run-btn" type="submit" id="btn${count}" value="${btnValue}" onclick="runCodeBtn(${count})">`
+	  let clearBtnHTML = `<input class="run-btn" type="submit" value="Clear" onclick="clearDisplay(${count})">`;
+	  if ( btnValue == "Import" || btnValue == "Run New Tab (Support Module)" ){
+		   clearBtnHTML ="";
+	  } else if (btnValue == "Not run"){
+		  runBtnHTML = "";
+		  clearBtnHTML = "";
 	  }
 	  allLines += `<div>
 					<form id="form${count}" style="margin:0px" method="POST" target="_blank">
@@ -46,7 +54,7 @@ allLineArray.forEach( (line) =>  {
 						<textarea id="codeArea${count}" name="code" class="notrun" rows=${rows}>${lineCodes}</textarea>						
 					</form>						
 					<div id="displayResult${count}" class="display-result"></div>
-					<input class="run-btn" type="submit" id="btn${count}" value="${btnValue}" onclick="runCodeBtn(${count})">
+					${runBtnHTML}
 					${clearBtnHTML}
 				  </div>`;	  	  	  
 	  lineCodes = "";

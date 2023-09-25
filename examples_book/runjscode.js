@@ -195,7 +195,7 @@ function runCodeBtn(targetCount) {
 		myform.submit();				
 		//saveModule(codeTxt);
 		
-	} else if( btn.value=="Run New Tab" ) {		
+	} else if( btn.value.startsWith("Run New Tab") ) {		
 		myform.action="test_module/run_module.php"
 		myform.submit();	
 		

@@ -80,6 +80,8 @@
 			targetDiv.classList.remove("blur");
 			if(text.includes("404 Not Found")){
 				targetDiv.innerHTML = '<h1>Not found page</h1>';		
+			} else if (text.includes("Failed to open stream") || text.includes("Warning") ){
+				targetDiv.innerHTML = '<h1>Failed to Connect</h1>';
 			} else {				
 				//targetDiv.innerHTML = genHTMLfromMDFile(text);		
 				targetDiv.innerHTML = link.convertToHTML(text);		
