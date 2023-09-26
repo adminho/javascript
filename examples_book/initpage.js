@@ -114,7 +114,7 @@
 		await bildHTML(bottomAds, "ads_bottom.html");	
 		await bildHTML(rightAds, "ads_right.html");			
 		initMenuEvent(genHTMLfromMDFile);
-		selectMenu(2);
+		selectMenu(1);
 	}
 	
 	async function showPythonIpynb(){	
@@ -122,7 +122,7 @@
 		await bildHTML(bottomAds, "ads_bottom_ipynb.html");
 		await bildHTML(rightAds, "ads_right.html");	
 		initMenuEvent(genHTMLfromIpynb);		
-		selectMenu(1);
+		selectMenu(0);
 	}
 	
 	window.onload = async function() {
