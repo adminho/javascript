@@ -4,4 +4,4 @@ test_js/
 *.json
 deploy*
 *.bat
-*deploy*
+mybooks/
