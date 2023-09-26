@@ -101,14 +101,7 @@
 		includeHTML(document.getElementsByClassName("link-chap")[index]); // select default link
 	}
 	
-	window.onload = async function() {
-		await bildHTML(mainMenu, "left_menu.html");	
-		await bildHTML(bottomAds, "ads_bottom.html");	
-		await bildHTML(rightAds, "ads_right.html");	
-		//initMenuEvent(genHTMLfromIpynb);
-		initMenuEvent(genHTMLfromMDFile);
-		selectMenu(2);
-	}
+
 	
 	window.resize = function(){				
 		!isDesktop?mainMenu.style.display = "block":mainMenu.style.display = "none";

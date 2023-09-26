@@ -347,12 +347,12 @@ export const msg = "I love JavaScript";
  
 หมายเหตุ หลายตัวอย่างต่อไปนี้ต้องทดสอบบน Node.js เท่านั้น เพราะบนเว็บเบราเซอร์ยังไม่รองรับ
  
-```module
+```js
 // -------------- ไฟล์ mylib.mjs ------------------
 export const msg = "I love JavaScript";
 ```
 
-```run.module
+```js
 // -------------- ไฟล์ myapp.mjs ------------------
 import { msg } from "./mylib.mjs";
 console.log(msg);
@@ -403,14 +403,14 @@ import * as url from "url";
 
 หมายเหตุ โค้ดต่อไปนี้ให้รันบน Node.js 
 
-```run.module
+```js
 import("http")
 .then((httpModule) => {
   console.log(httpModule.maxHeaderSize);    // 16384
 });
 ```
 
-```run.module
+```js
 const httpModule = await import("http");
 console.log(httpModule.maxHeaderSize);     // 16384
 ```

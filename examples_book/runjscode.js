@@ -191,12 +191,12 @@ function runCodeBtn(targetCount) {
 		myform.submit();		
 		
 	} else if( btn.value=="Import" ) {
-		myform.action="test_module/import_module.php"
+		myform.action="test_module/importmodule.php"
 		myform.submit();				
 		//saveModule(codeTxt);
 		
 	} else if( btn.value.startsWith("Run New Tab") ) {		
-		myform.action="test_module/run_module.php"
+		myform.action="test_module/runmodule.php"
 		myform.submit();	
 		
 	} else {
