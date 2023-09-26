@@ -187,7 +187,7 @@ function runCodeBtn(targetCount) {
 	let codeTxt = textCodeArea.value;										
 	
 	if( codeTxt.includes("<html>")>0 && btn.value=="Open HTML" ) {		
-		myform.action="display_html.php"
+		myform.action="displayhtml.php"
 		myform.submit();		
 		
 	} else if( btn.value=="Import" ) {

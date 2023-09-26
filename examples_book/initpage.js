@@ -4,7 +4,11 @@
 	let rightAds = document.getElementById("right-ads"); 
 	let headlineDiv = document.getElementById("headline");
 	let mainMenu = document.getElementById("main-menu");	
-		
+	
+	document.getElementById("btn-menu").onclick= function() {		
+		mainMenu.style.display = "block";			
+	}
+	
 	function isDesktop(){	
 		//if(  window.innerWidth >=768 || WURFL.form_factor === "Desktop") {		
 		if(  window.innerWidth >=768 ) {	
@@ -13,17 +17,19 @@
 		return false;		
 	}
 
-    function initMenuEvent(func){
-		let allLink = document.getElementsByClassName("link-chap");
-		for(const link of allLink) {
-			link.addEventListener('click', function(event) {
+	function clickMenu(event) {		
 				if( !isDesktop()) {					
 					mainMenu.style.display = "none";	
 				}				
 				event.preventDefault();	
+				let link = event.target
 				let file = link.href;		
-				includeHTML(link);		
-			});		
+				includeHTML(link);				
+	}
+    function initMenuEvent(func){
+		let allLink = document.getElementsByClassName("link-chap");
+		for(const link of allLink) {
+			link.addEventListener('click', clickMenu);		
 			link.addEventListener('contextmenu', function(event) {
 				event.preventDefault();			
 			});			
@@ -40,28 +46,35 @@
 		div.innerHTML = content;		
 	}	
 	
-	async function createAdsRight(){
+	function clearAllLinkHilight() {
+		let allLink = document.getElementsByClassName("link-chap");
+		for(const link of allLink) {
+			link.classList.remove("hilight-link");
+		}					
+	}
+	
+    function showMsgWaiting(enable=true){
+		if (enable) {
+			statusLoading.style.display = "block";
+			targetDiv.classList.add("blur");
+			bottomAds.style.display="none";
+		} else {
+			statusLoading.style.display = "none";
+			targetDiv.classList.remove("blur");
+			bottomAds.style.display="block";
+		}
 		
-	}
-	
-	async function createAdsBottom(){
-		
-	}
-	
-	function showMenu() {
-		mainMenu.style.display = "block";			
-	}
-	
+	}	
 	function includeHTML(link) {		    
 		if(!link){
 			throw new Error(`Not have a link`);
 		}
 		
 		document.title =  link.innerHTML;
-				headlineDiv.innerHTML = `โค้ด${link.innerHTML}`;	
-				statusLoading.style.display = "block";		
-				targetDiv.classList.add("blur");
-				bottomAds.style.display = "none";
+		headlineDiv.innerHTML = `โค้ด${link.innerHTML}`;	
+		showMsgWaiting(enable=true);		
+		clearAllLinkHilight();
+		link.classList.add("hilight-link");
 
 		let options =  {		
 			cache: "no-cache",				
@@ -76,24 +89,19 @@
 		fetch(url, options)
 		.then( res => res.text())		
 		.then( text => { 
-			statusLoading.style.display = "none";
-			targetDiv.classList.remove("blur");
+			showMsgWaiting(enable=false);
 			if(text.includes("404 Not Found")){
 				targetDiv.innerHTML = '<h1>Not found page</h1>';		
 			} else if (text.includes("Failed to open stream") || text.includes("Warning") ){
 				targetDiv.innerHTML = '<h1>Failed to Connect</h1>';
-			} else {				
-				//targetDiv.innerHTML = genHTMLfromMDFile(text);		
+			} else {								
 				targetDiv.innerHTML = link.convertToHTML(text);		
-				bottomAds.style.display = "block";					
 			}			
 		 }
 		)
 		.catch( err => {
 			targetDiv.innerHTML = 'Not found page';		
-			statusLoading.style.display = "none";
-			targetDiv.classList.remove("blur");			
-			bottomAds.style.display = "block";				
+			showMsgWaiting(enable=false);							
 		});
     }
  
@@ -101,7 +109,25 @@
 		includeHTML(document.getElementsByClassName("link-chap")[index]); // select default link
 	}
 	
-
+	async function showJavaScriptBookCode(){		
+		await bildHTML(mainMenu, "left_menu.html");			
+		await bildHTML(bottomAds, "ads_bottom.html");	
+		await bildHTML(rightAds, "ads_right.html");			
+		initMenuEvent(genHTMLfromMDFile);
+		selectMenu(2);
+	}
+	
+	async function showPythonIpynb(){	
+		await bildHTML(mainMenu, "left_menu_ipynb.html");	
+		await bildHTML(bottomAds, "ads_bottom_ipynb.html");
+		await bildHTML(rightAds, "ads_right.html");	
+		initMenuEvent(genHTMLfromIpynb);		
+		selectMenu(1);
+	}
+	
+	window.onload = async function() {
+		showJavaScriptBookCode();
+	}
 	
 	window.resize = function(){				
 		!isDesktop?mainMenu.style.display = "block":mainMenu.style.display = "none";

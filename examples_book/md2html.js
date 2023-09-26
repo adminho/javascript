@@ -14,7 +14,6 @@ function genHTMLfromMDFile(content) {
   let lineCodes = "";
   let count = 0;
 
-  let headline = "";
   let allLines = "";
   let btnValue = "";
   
@@ -67,11 +66,7 @@ allLineArray.forEach( (line) =>  {
 	  
 	 if(line.startsWith("#")) { 
 		line = line.replace(/#/g, "");	
-		if(line.includes("โค้ดบทที่")) {
-			headline = line;
-		} else {
-			allLines += `<h4>${line}</h4>`;
-		}
+		allLines += `<h4>${line}</h4>`;		
 		
 	} else if(line.startsWith("*") && !line.startsWith("*/")){
 		line = line.replace(/\*/g, "\u2022&nbsp;"); // show a bullet
