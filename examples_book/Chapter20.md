@@ -136,6 +136,29 @@ import { calculate } from "./example.js";
 import { multiply } from "./example.js";
 ```
 
+เพื่อให้เข้าใจถึงหลักการทำงานเวลามอดูลถูกโหลดเข้ามา สมมติว่ามีไฟล์มอดูล say.js ดังนี้
+```module
+// -------------- ไฟล์ say.js -----------------
+export const msg = "Hello";                   // บรรทัด a
+console.log(msg);                                    // บรรทัด b
+```
+
+```run.module
+// -------------- ไฟล์ main.js -------------- 
+import { msg } from "./say.js";
+// แสดงผลลัพธ์
+// "Hello"
+```
+
+```run.module
+// -------------- ไฟล์ main.js -------------- 
+import { msg } from "./say.js";
+import { msg } from "./say.js";
+import { msg } from "./say.js";
+// แสดงผลลัพธ์
+// "Hello"
+```
+
 ## เปลี่ยนชื่อสิ่งที่ต้องการโหลด และเอ็กซ์พอร์ต
 
 ```run.module
