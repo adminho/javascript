@@ -868,11 +868,11 @@ Promise.reject("Error")
 
 ```js
 Promise.resolve(123)
-.then( (value) =>  console.log(value));   // บรรทัด a -- ฟังก์ชันคอลแบ็คเป็นฟังก์ชันลูกศร
+.then( value =>  console.log(value));   // บรรทัด a -- ฟังก์ชันคอลแบ็คเป็นฟังก์ชันลูกศร
 // แสดงผลลัพธ์
 // 123
 Promise.reject("Error")
-.catch( (value) =>  console.log(value));  // บรรทัด b - ฟังก์ชันคอลแบ็คเป็นฟังก์ชันลูกศร
+.catch( value =>  console.log(value));  // บรรทัด b - ฟังก์ชันคอลแบ็คเป็นฟังก์ชันลูกศร
 // แสดงผลลัพธ์
 // "Error"
 ```
