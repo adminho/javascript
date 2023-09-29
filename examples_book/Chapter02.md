@@ -174,7 +174,6 @@
 <!--  Traceur -->
 <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
 <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
-<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
 </head>
 <body>
 <h1 id="element1"></h1>
