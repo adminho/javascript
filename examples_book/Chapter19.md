@@ -185,6 +185,59 @@ async function asyncFunc() {
 asyncFunc();   // "Error!"
 ```
 
+```js
+function myFunc() {                                     // ไม่มี async นำหน้า
+    let result1 = await otherAsyncFunc(1000);   // "Error!"
+}
+```
+
+```run.module
+let result = await Promise.resolve("Success!");
+console.log(result);      // "Success!"
+```
+
+```run.module
+try {
+     await Promise.reject("Error!");
+} catch (error) {
+      console.log(error);   // "Error!"
+}  
+```
+
+```run.module
+let result = await 123;
+console.log(result)      // 123
+```
+
+```js
+async function asyncFunc() {
+    function innerFunc() {        
+       return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้  
+    }
+    innerFunc()
+    .then(value => console.log(value))   
+}
+asyncFunc();  
+```
+
+```js
+async function asyncFunc() {
+    await function innerFunc() {        
+       return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้ 
+    }
+    innerFunc()
+    .then(value => console.log(value))   
+}
+asyncFunc();   // Time out: 1000 ms
+```
+
+```js
+async function foo() {
+}
+async function foo() {      // ประกาศชื่อ foo ซ้ำกันไม่ได้    
+}
+```
+
 หมายเหตุ otherAsyncFunc(ms) ถูกนำไปใช้ในหลายๆ ตัวอย่าง
 
 ```js
@@ -345,59 +398,6 @@ console.log("Hello");                              // บรรทัด d
 // แสดงผลลัพธ์
 // {"name":"Somchai","age":30,"city":"Bangkok"}
 // "Hello"
-```
-
-```js
-function myFunc() {                                     // ไม่มี async นำหน้า
-    let result1 = await otherAsyncFunc(1000);   // "Error!"
-}
-```
-
-```run.module
-let result = await Promise.resolve("Success!");
-console.log(result);      // "Success!"
-```
-
-```run.module
-try {
-     await Promise.reject("Error!");
-} catch (error) {
-      console.log(error);   // "Error!"
-}  
-```
-
-```run.module
-let result = await 123;
-console.log(result)      // 123
-```
-
-```js
-async function asyncFunc() {
-    function innerFunc() {        
-       return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้  
-    }
-    innerFunc()
-    .then(value => console.log(value))   
-}
-asyncFunc();  
-```
-
-```js
-async function asyncFunc() {
-    await function innerFunc() {        
-       return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้ 
-    }
-    innerFunc()
-    .then(value => console.log(value))   
-}
-asyncFunc();   // Time out: 1000 ms
-```
-
-```js
-async function foo() {
-}
-async function foo() {      // ประกาศชื่อ foo ซ้ำกันไม่ได้    
-}
 ```
 
 ## Asynchronous iteration
