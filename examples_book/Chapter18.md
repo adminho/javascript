@@ -876,3 +876,15 @@ Promise.reject("Error")
 // แสดงผลลัพธ์
 // "Error"
 ```
+
+```js
+let promise = new Promise(function(resolve, reject) {
+      console.log("Line a ...to do something")       // บรรทัด a                                                                           
+});
+console.log("I done already");                           // บรรทัดนี้ถูกเรียกให้ทำงาน
+promise.then( value =>  console.log(value))        // บรรทัด b
+.catch( value =>  console.log(value));                 // บรรทัด c
+// แสดงผลลัพธ์
+// "I done already"
+// "Line a ...to do something"
+```
