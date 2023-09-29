@@ -885,6 +885,6 @@ console.log("I done already");                           // บรรทัด�
 promise.then( value =>  console.log(value))        // บรรทัด b
 .catch( value =>  console.log(value));                 // บรรทัด c
 // แสดงผลลัพธ์
-// "I done already"
 // "Line a ...to do something"
+// "I done already"
 ```
