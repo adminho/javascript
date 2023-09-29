@@ -167,7 +167,7 @@
 
 ### ตัวอย่างการใช้งาน Traceur
 
-```html
+```tab.html
 <!-- ไฟล์ชื่อ index.html-->
 <!DOCTYPE html>
 <html>
@@ -197,7 +197,7 @@
 
 ### ตัวอย่างการใช้งาน Babel
 
-```html
+```tab.html
 <!-- ไฟล์ชื่อ index.html-->
 <html>
 <head>
