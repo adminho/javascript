@@ -884,7 +884,7 @@ let promise = new Promise(function(resolve, reject) {
 console.log("I done already");                           // บรรทัดนี้ถูกเรียกให้ทำงาน
 promise.then( value =>  console.log(value))        // บรรทัด b
 .catch( value =>  console.log(value));                 // บรรทัด c
-// แสดงผลลัพธ์
-// "Line a ...to do something"
-// "I done already"
+/* แสดงผลลัพธ์เป็น
+"Line a ...to do something"
+"I done already" */
 ```
