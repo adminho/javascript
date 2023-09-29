@@ -152,9 +152,9 @@ import { msg } from "./say.js";
 
 ```run.module
 // -------------- ไฟล์ main.js -------------- 
-import { msg } from "./say.js";
-import { msg } from "./say.js";
-import { msg } from "./say.js";
+import * as say1 from "./say.js";
+import * as say2 from "./say.js";
+import * as say3 from "./say.js";
 // แสดงผลลัพธ์
 // "Hello"
 ```
