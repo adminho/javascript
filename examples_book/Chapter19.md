@@ -444,7 +444,7 @@ func2();        // บรรทัด b
 /* แสดงผลลัพธ์
 "func1-> Time out: 100 ms"
 "func2-> Time out: 1000 ms" */
-```run.module
+```
 
 
 ## Asynchronous iteration
