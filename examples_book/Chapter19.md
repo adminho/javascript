@@ -436,14 +436,14 @@ async function func1() {
 }
 async function func2() { // ส่งค่าอากิวเมนต์เข้ามา
    let time = await otherAsyncFunc(100);     
-   let t = await "func2: " + time;
+   let t = await "func2-> " + time;
    console.log(t);                                          
 }
 func1();        // บรรทัด a
 func2();        // บรรทัด b
 /* แสดงผลลัพธ์
-"func2-> Time out: 1000 ms" 
-"func1-> Time out: 100 ms" */
+"func2-> Time out: 100 ms" 
+"func1-> Time out: 1000 ms" */
 ```
 
 
