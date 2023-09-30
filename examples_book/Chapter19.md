@@ -210,6 +210,13 @@ console.log(result)      // 123
 ```
 
 ```js
+(async () => {
+let result = await 123;
+console.log(result)      // 123
+})();
+```
+
+```js
 async function asyncFunc() {
     function innerFunc() {        
        return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้  
