@@ -421,6 +421,32 @@ console.log("Hello");                              // บรรทัด d
 // "Hello"
 ```
 
+```run.module
+async function otherAsyncFunc(ms) {        // ส่งค่าอากิวเมนต์เข้ามา
+   return new Promise (
+                 resolve =>  setTimeout(
+                   () => resolve(`Time out: ${ms} ms`, ms )
+                   ,ms )   // กำหนด timeout หน่วยเป็นมิลลิวินาที (millisecond)
+             );
+}
+async function func1() { 
+   let time = await otherAsyncFunc(1000);  
+   let t = await "func1-> " + time;
+   console.log(t);                                      
+}
+async function func2() { // ส่งค่าอากิวเมนต์เข้ามา
+   let time = await otherAsyncFunc(100);     
+   let t = await "func2: " + time;
+   console.log(t);                                          
+}
+func1();        // บรรทัด a
+func2();        // บรรทัด b
+/* แสดงผลลัพธ์
+"func1-> Time out: 100 ms"
+"func2-> Time out: 1000 ms" */
+```run.module
+
+
 ## Asynchronous iteration
 
 ```js
