@@ -451,8 +451,8 @@ func2();        // บรรทัด b
 await func1();
 await func2();
 /* แสดงผลลัพธ์
-“func1-> Time out: 1000 ms”
-“func2-> Time out: 100 ms” */
+"func1-> Time out: 1000 ms"
+"func2-> Time out: 100 ms" */
 ```
 
 ## Asynchronous iteration
