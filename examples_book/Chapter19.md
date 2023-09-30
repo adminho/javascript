@@ -434,7 +434,7 @@ async function func1() {
    let t = await "func1-> " + time;
    console.log(t);                                      
 }
-async function func2() { // ส่งค่าอากิวเมนต์เข้ามา
+async function func2() { 
    let time = await otherAsyncFunc(100);     
    let t = await "func2-> " + time;
    console.log(t);                                          
