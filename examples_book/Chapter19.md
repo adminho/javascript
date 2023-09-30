@@ -186,6 +186,20 @@ asyncFunc();   // "Error!"
 ```
 
 ```js
+async function asyncFunc() {
+  try {
+         let result = await new Promise((resolve, reject) => {});  // บรรทัด a
+         console.log(2333);               // บรรทัด b
+   } catch (err) {                                          
+         console.log(err);                 // บรรทัด c       
+  }   
+}
+asyncFunc();     
+```                        
+
+ข้อควรระวังในการใช้ await
+
+```js
 function myFunc() {                                     // ไม่มี async นำหน้า
     let result1 = await otherAsyncFunc(1000);   // "Error!"
 }
