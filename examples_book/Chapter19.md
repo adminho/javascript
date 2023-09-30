@@ -446,6 +446,14 @@ func2();        // บรรทัด b
 "func1-> Time out: 1000 ms" */
 ```
 
+นำตัวอย่างก่อนหน้ามาใช้ด้วยการ เติม await นำหน้า (อย่าลืมก็อปปี้โค้ด func1() กับ func2() มาใช้งานด้วย)
+```run.module
+await func1();
+await func2();
+/* แสดงผลลัพธ์
+“func1-> Time out: 1000 ms”
+“func2-> Time out: 100 ms” */
+```
 
 ## Asynchronous iteration
 
