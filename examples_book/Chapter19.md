@@ -194,7 +194,7 @@ async function asyncFunc() {
          console.log(err);                 // บรรทัด c       
   }   
 }
-asyncFunc();                             
+asyncFunc();                                                                
 ```                        
 
 ข้อควรระวังในการใช้ await
