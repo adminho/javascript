@@ -595,8 +595,8 @@ async function* asynGenerator () {
     yield Promise.resolve(2);                      // บรรทัด b
     yield Promise.resolve(3);                      // บรรทัด c
 }
-for await(const i of asynGenerator()) {
-    console.log(i)                                      // บรรทัด d
+for await(const i of asynGenerator()) {        // บรรทัด d
+    console.log(i)                                      // บรรทัด e 
  }
 /* แสดงผลลัพธ์
 1
@@ -605,16 +605,16 @@ for await(const i of asynGenerator()) {
 ```
 
 ```run.module
-async function* otherAsynGenerator() {
+async function* otherAsynGenerator() {     // บรรทัด a
     yield Promise.resolve(2); 
     yield Promise.resolve(3); 
 }
 async function* asynGenerator() {
     yield Promise.resolve(1);  
-    yield  *otherAsynGenerator();            // บรรทัด a
-    yield Promise.resolve(4);                  // บรรทัด c
+    yield  *otherAsynGenerator();                // บรรทัด b
+    yield Promise.resolve(4);                      // บรรทัด c
 } 
-for await(const i of asynGenerator()) {
+for await(const i of asynGenerator()) {        // บรรทัด d
     console.log(i)                                        
  }
 /* แสดงผลลัพธ์
