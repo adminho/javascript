@@ -189,12 +189,12 @@ asyncFunc();   // "Error!"
 async function asyncFunc() {
   try {
          let result = await new Promise((resolve, reject) => {});  // บรรทัด a
-         console.log(2333);               // บรรทัด b
+         console.log(result);               // บรรทัด b
    } catch (err) {                                          
          console.log(err);                 // บรรทัด c       
   }   
 }
-asyncFunc();     
+asyncFunc();                             
 ```                        
 
 ข้อควรระวังในการใช้ await
