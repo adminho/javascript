@@ -233,7 +233,7 @@ console.log(result)      // 123
 ```js
 async function asyncFunc() {
     function innerFunc() {        
-       return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้  
+       return await Promise.resolve("Success!");    // await อยู่ใต้ innerFunc() ไม่ได้  
     }
     innerFunc()
     .then(value => console.log(value))   
@@ -243,8 +243,8 @@ asyncFunc();
 
 ```js
 async function asyncFunc() {
-    await async function innerFunc() {        
-       return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้ 
+    async function innerFunc() {        
+       return await Promise.resolve("Success!");    // await สามารถอยู่ใต้ innerFunc() ได้ 
     }
     innerFunc()
     .then(value => console.log(value))   
