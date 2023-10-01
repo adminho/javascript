@@ -201,7 +201,7 @@ asyncFunc();
 
 ```js
 function myFunc() {                                                // ไม่มี async นำหน้า
-    let result1 = await Promise.resolve("Success!");      // "Error!"      
+    let result1 = await Promise.resolve("Success!");      // SyntaxError     
 }
 ```
 
