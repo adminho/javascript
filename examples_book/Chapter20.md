@@ -65,7 +65,7 @@ function calculate(x, y) {
 function multiply(num1, num2) { 	
     return num1 * num2;
 }
-export { square, calculate, multiply};	 // เขียนคำว่า export ที่บรรทัดสุดท้ายที่เดียว
+export { square, calculate, multiply };	 // เขียนคำว่า export ที่บรรทัดสุดท้ายที่เดียว
 ```
 
 ```js
@@ -89,12 +89,12 @@ function calculate(x, y) {
 function multiply(num1, num2) { 	
     return num1 * num2;
 }
-export {square, calculate, multiply};
+export { square, calculate, multiply };
 ```
 
 ```run.module
 // -------------- ไฟล์ main.js -----------------
-import {square, calculate} from "./example.js";
+import { square, calculate } from "./example.js";
 console.log(square(2)); 	                         // 4
 console.log(calculate(2, 2)); 	             // 800
 square =1;		                         // บรรทัด a -- จะเกิด TypeError	
@@ -210,12 +210,12 @@ export function calculate(x, y) {
 function multiply(num1, num2) { 
         return num1 * num2;
 }
-export { square as sqr, calculate as calc, multiply as mul};	// บรรทัด a
+export { square as sqr, calculate as calc, multiply as mul };	      // บรรทัด a
 ```
 
 ```run.module
 // -------------- ไฟล์ main.js -----------------
-import {sqr, calc, mul} from "./example.js";
+import { sqr, calc, mul } from "./example.js";
 console.log(sqr(2)); 	// 4
 console.log(calc(2, 2)); 	// 800
 console.log(mul(2,2)); 	// 4
@@ -266,7 +266,7 @@ export default function(num1, num2) {    // ฟังก์ชั่นไร้
 
 ```run.module
 // -------------- ไฟล์ main.js -------------------
-import multiply, {value, square} from "./mydefault.js";
+import multiply, { value, square } from "./mydefault.js";
 console.log(value);			 // 100
 console.log(square(2,2));		             // 4
 console.log(multiply(2,2));	             // 4
@@ -278,23 +278,23 @@ console.log(multiply(2,2));	             // 4
 // -------------- ไฟล์ mylib.js --------------
 var foo = 1;
 var bar = 2;
-export {foo, bar};
+export { foo, bar };
 ```
 
 ```module
 // -------------- ไฟล์ example.js --------------
-export {foo, bar} from "./mylib.js";
+export { foo, bar } from "./mylib.js";
 ```
 
 ```module
 // -------------- ไฟล์ example.js --------------
-import {foo, bar} from "./mylib.js";
-export {foo, bar};
+import { foo, bar } from "./mylib.js";
+export { foo, bar };
 ```
 
 ```module
 // -------------- ไฟล์ example.js --------------
-export {foo as foo1, bar} from "./mylib.js";
+export { foo as foo1, bar } from "./mylib.js";
 ```
 
 ```module
@@ -306,7 +306,7 @@ export * from "./mylib.js";
 
 ```run.module
 // -------------- ไฟล์ main.js --------------
-import {foo, bar} from "./example.js";
+import { foo, bar } from "./example.js";
 console.log(foo, bar);
 ```
 
@@ -323,7 +323,7 @@ export * as ns from "http";
 // -------------- ไฟล์ name.js ------------------
 const firstname = "Somchai";
 const lastname = "Jaidee";
-export {firstname, lastname};                    // ส่งออก firstname กับ lastname
+export { firstname, lastname };                    // ส่งออก firstname กับ lastname
 ```
 
 * 2) ไฟล์ student.js เป็นมอดูลอย่างง่าย ข้างในทำการ export ส่งออกตัวแปร age และจะนำเข้ามอดูล name.js พร้อม export ส่องออกมอดูลออกมาเป็นชื่อ person (เปลี่ยนชื่อ namespace)
@@ -338,8 +338,8 @@ export * as person from "./name.js"        // ส่งออก person
 * 3) ไฟล์ myprogram.js เอาไว้รันทดสอบโปรแกรม โดยจะนำเข้ามอดูล student.js ดังตัวอย่าง
 
 ```run.module
-// -------------- ไฟล์ myprogram.js -----------------
-import {age, person} from "./student.js"
+// -------------- ไฟล์ myprogram.js ------------------
+import { age, person } from "./student.js"
 console.log(age);                                     // 25
 console.log(person.firstname);                  // "Somchai"         
 console.log(person.lastname);                  // "Jaidee"
@@ -389,9 +389,9 @@ a.say("I love JavaScript");		// "I love JavaScript"
 export const msg = "I love JavaScript";
 ```
 
-```js
+```notrun
 <script nomodule>
-  import {msg} from "./mylib.js";
+  import { msg } from "./mylib.js";
   alert(msg);
 </script>
 ```
@@ -424,11 +424,11 @@ console.log(msg);
 
 ตัวอย่างไฟล์ package.json 
 
-```js
+```notrun
 { "type": "module" }
 ```
 
-```js
+```notrun
 {
   "name": "my-awesome-package",
   "version": "1.0.0"
