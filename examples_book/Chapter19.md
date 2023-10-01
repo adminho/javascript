@@ -200,8 +200,8 @@ asyncFunc();
 ข้อควรระวังในการใช้ await
 
 ```js
-function myFunc() {                                     // ไม่มี async นำหน้า
-    let result1 = await otherAsyncFunc(1000);   // "Error!"
+function myFunc() {                                                // ไม่มี async นำหน้า
+    let result1 = await Promise.resolve("Success!");      // "Error!"      
 }
 ```
 
@@ -243,7 +243,7 @@ asyncFunc();
 
 ```js
 async function asyncFunc() {
-    await function innerFunc() {        
+    await async function innerFunc() {        
        return await otherAsyncFunc(1000);    // await อยู่ใต้ innerFunc() ไม่ได้ 
     }
     innerFunc()
