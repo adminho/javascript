@@ -97,10 +97,10 @@ export {square, calculate, multiply};
 import {square, calculate} from "./example.js";
 console.log(square(2)); 	                         // 4
 console.log(calculate(2, 2)); 	             // 800
-square =1;		                         // TypeError	
-calculate= 2; 	                                     // TypeError	
-var square = 1;  	                                     // SyntaxError	
-var calculate = 2 ;	                         // SyntaxError	
+square =1;		                         // บรรทัด a -- จะเกิด TypeError	
+calculate= 2; 	                                     // บรรทัด b -- จะเกิด ypeError	
+var square = 1;  	                                     // บรรทัด c -- จะเกิด SyntaxError	
+var calculate = 2 ;	                         // บรรทัด d -- จะเกิด SyntaxError	
 ```
 
 -----
