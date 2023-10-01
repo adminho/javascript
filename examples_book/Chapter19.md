@@ -249,7 +249,7 @@ async function asyncFunc() {
     innerFunc()
     .then(value => console.log(value))   
 }
-asyncFunc();   // Time out: 1000 ms
+asyncFunc();   // "Success!"
 ```
 
 ```js
