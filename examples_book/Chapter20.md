@@ -173,6 +173,22 @@ import { msg as msg2 } from "./say.js";
 // "Hello"
 ```
 
+```run.module
+// -------------- ไฟล์ main.js -------------- 
+console.log(“Hi”)                                    // บรรทัด a
+import { msg } from “./say.js”;                 // บรรทัด b
+// แสดงผลลัพธ์
+// “Hello”
+// “Hi”
+```
+
+```run.module
+// -------------- ไฟล์ main.js -------------- 
+{ 
+     import { msg } from “./say.js”;            // SyntaxError     
+}
+```
+
 ## เปลี่ยนชื่อสิ่งที่ต้องการโหลด และเอ็กซ์พอร์ต
 
 ```run.module
