@@ -98,7 +98,7 @@ import {square, calculate} from "./example.js";
 console.log(square(2)); 	                         // 4
 console.log(calculate(2, 2)); 	             // 800
 square =1;		                         // บรรทัด a -- จะเกิด TypeError	
-calculate= 2; 	                                     // บรรทัด b -- จะเกิด ypeError	
+calculate= 2; 	                                     // บรรทัด b -- จะเกิด TypeError	
 var square = 1;  	                                     // บรรทัด c -- จะเกิด SyntaxError	
 var calculate = 2 ;	                         // บรรทัด d -- จะเกิด SyntaxError	
 ```
