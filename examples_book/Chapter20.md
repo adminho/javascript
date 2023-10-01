@@ -175,17 +175,17 @@ import { msg as msg2 } from "./say.js";
 
 ```run.module
 // -------------- ไฟล์ main.js -------------- 
-console.log(“Hi”)                                    // บรรทัด a
-import { msg } from “./say.js”;                 // บรรทัด b
+console.log("Hi")                                    // บรรทัด a
+import { msg } from "./say.js";                 // บรรทัด b
 // แสดงผลลัพธ์
-// “Hello”
-// “Hi”
+// "Hello"
+// "Hi"
 ```
 
 ```run.module
 // -------------- ไฟล์ main.js -------------- 
 { 
-     import { msg } from “./say.js”;            // SyntaxError     
+     import { msg } from "./say.js";            // SyntaxError     
 }
 ```
 
@@ -367,9 +367,9 @@ a.say("I love JavaScript");		// "I love JavaScript"
 
 หมายเหตุ ตัวอย่างหน้า HTML นี้ ต้องมีมอดูล mylib.js ข้างล่างเสียก่อน ไม่เช่นนั้นตัวอย่างหน้าเว็บจะไม่เจอมอดูล
 
-เช่น mylib.js อยู่ในโฟลเดอร์ test_module เราก็อ้างถึงพาธ "./test_module/mylib.js"
+เช่น mylib.js อยู่ในโฟลเดอร์ test_module เราก็อ้างถึงพาธ "./test_modulejs/mylib.js"
 
-```html
+```tab.html
 <!DOCTYPE html>
 <html>
 <head> </head>
@@ -382,7 +382,7 @@ a.say("I love JavaScript");		// "I love JavaScript"
 </html>
 ```
 
-หมายเหตุ mylib.js สมมติอยู่ในโฟลเดอร์ test_module
+หมายเหตุ mylib.js สมมติอยู่ในโฟลเดอร์ test_modulejs
 
 ```module
 // -------------- ไฟล์ mylib.js ------------------
