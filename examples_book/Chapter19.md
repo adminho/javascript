@@ -200,8 +200,8 @@ asyncFunc();
 ข้อควรระวังในการใช้ await
 
 ```js
-function myFunc() {                                                // ไม่มี async นำหน้า
-    let result1 = await Promise.resolve("Success!");      // SyntaxError     
+function myFunc() {                                               // ไม่มี async นำหน้า
+    let result = await Promise.resolve("Success!");      // SyntaxError     
 }
 ```
 
