@@ -199,7 +199,7 @@ async function asyncFunc() {
 asyncFunc();                                                                
 ```                        
 
-###  ข้อควรระวังในการใช้ await
+### ข้อควรระวังในการใช้ await
 
 ```js
 function myFunc() {                                               // ไม่มี async นำหน้า
