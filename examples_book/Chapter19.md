@@ -185,6 +185,8 @@ async function asyncFunc() {
 asyncFunc();   // "Error!"
 ```
 
+ขอฝากเตือน
+
 ```js
 async function asyncFunc() {
   try {
