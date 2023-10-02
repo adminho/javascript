@@ -190,7 +190,7 @@ asyncFunc();   // "Error!"
 ```js
 async function asyncFunc() {
   try {
-         let result = await new Promise((resolve, reject) => {});  // บรรทัด a
+         let result = await new Promise((resolve, reject) => { });  // บรรทัด a
          console.log(result);               // บรรทัด b
    } catch (err) {                                          
          console.log(err);                 // บรรทัด c       
