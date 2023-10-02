@@ -204,7 +204,7 @@ console.log(value);	// "foo" หรือ  "bar"
 ```js
 while(true);	// วนลูปไม่รู้จบ
 // หรือจะใช้ในประโยค for
-for(;;);	         // วนลูปไม่รู้จบ
+for(;;);	           // วนลูปไม่รู้จบ
 ```
 
 ## การจัดการความผิดพลาด
@@ -362,4 +362,29 @@ try {
     );
 }
 /* โปรแกรมจะตาย และแจ้ง error ออกมา */
+```
+
+### ทิ้งท้าย
+```js
+try {
+         va a=1		            // บรรทัด a เกิด SyntaxError
+} catch {                 
+           console.log("Error"); 	
+}  finally {
+           console.log("finally");	
+}
+/* โปรแกรมจะตาย และแจ้งว่าเกิด SyntaxError ออกมา */
+```
+
+```js
+try {
+         throw new SyntaxError()	            // บรรทัด a เกิด SyntaxError
+} catch {                 
+           console.log("Error"); 	
+}  finally {
+           console.log("finally");	
+}
+/* แสดงผลลัพธ์
+"Error"
+"finally" */
 ```
