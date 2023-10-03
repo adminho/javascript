@@ -1,6 +1,6 @@
 # โค้ดบทที่ 19 การใช้งาน async กับ await
 
-## ประกาศฟังก์ชั่นด้วย async
+## ประกาศฟังก์ชันด้วย async
 
 * กรณีที่ฟังก์ชันแบบ async รีเทิร์นพรอมิสที่เป็น fulfilled
 
@@ -21,7 +21,7 @@ function asyncFunc() {                            // เสมือนเขี
 
 ```js
 async function asyncFunc() {
-    return 123;                                        // 123 คือค่าที่ส่งไปให้ฟังก์ชั่นคอลแบ็คของ then()
+    return 123;                                        // 123 คือค่าที่ส่งไปให้ฟังก์ชันคอลแบ็คของ then()
 }
 asyncFunc()                                            // บรรทัด a
 .then(x => console.log(x));                       // 123
@@ -35,7 +35,7 @@ async function asyncFunc() {
 ```
 
 ```js
-function asyncFunc() {                            // เสมือนเขียนฟังก์ชั่นปกติธรรมดา
+function asyncFunc() {                            // เสมือนเขียนฟังก์ชันปกติธรรมดา
   return new Promise( resolve => {           // จะรีเทิร์นพรอมิส
     console.log("aysnc function");             // โค้ดถูกห่ออยู่ในพรอมิสที่สร้างขึ้นมา
     resolve(undefined);                             // จะเสมือนมี resolve(undefined) ต่อท้าย                
@@ -59,7 +59,7 @@ undefined */
 
 ```js
 async function asyncFunc() {
-    throw new Error("Problem!");  // error ที่ส่งไปให้ฟังก์ชั่นคอลแบ็คของ catch
+    throw new Error("Problem!");  // error ที่ส่งไปให้ฟังก์ชันคอลแบ็คของ catch
 }
 ```
 
@@ -75,7 +75,7 @@ function asyncFunc() {
 
 ```js
 async function asyncFunc() {
-    throw new Error("Problem!");  // error ที่ส่งไปให้ฟังก์ชั่นคอลแบ็คของ catch
+    throw new Error("Problem!");  // error ที่ส่งไปให้ฟังก์ชันคอลแบ็คของ catch
 }
 asyncFunc()
 .catch(err => console.log(err));    // Error: Problem!
@@ -115,7 +115,7 @@ asyncFunc()                                             // บรรทัด b
 .catch(err => console.error(err));                // Error: Problem!
 ```
 
-* สรุป การรีเทิร์นของฟังก์ชั่นแบบ asyn ก็ใช้หลักเกณฑ์เดียวกันกับการ return ของพรอมิส
+* สรุป การรีเทิร์นของฟังก์ชันแบบ asyn ก็ใช้หลักเกณฑ์เดียวกันกับการ return ของพรอมิส
 
 ```js
 async function asyncFunc() {
