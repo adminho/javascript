@@ -198,9 +198,9 @@ let promise = new Promise(function(resolve, reject) {
 });
 promise.then(function(value) {	             // then() ตัวแรก
     console.log("Promise:", value);			
-}).then(function() {			 // then() ตัวที่สอง ฟังก์ชั่นคอลแบ็คจะไม่มีพารามิเตอร์
+}).then(function() {			 // then() ตัวที่สอง ฟังก์ชันคอลแบ็คจะไม่มีพารามิเตอร์
     console.log("then1: finish");
-}). then(function() {			 // then() ตัวที่สาม ฟังก์ชั่นคอลแบ็คจะไม่มีพารามิเตอร์
+}). then(function() {			 // then() ตัวที่สาม ฟังก์ชันคอลแบ็คจะไม่มีพารามิเตอร์
     console.log("then2: finish");
 });
 /* แสดงผลลัพธ์เป็น
@@ -234,9 +234,9 @@ promise.catch( function(error) {	             // catch() ตัวแรก
 let promise = new Promise(function(resolve, reject) {
     throw new Error("Error");		
 });
-promise.catch( function(error) {           // ฟังก์ชั่นชั่นคอลแบ็คของ catch() ตัวแรก จะทำงาน
+promise.catch( function(error) {           // ฟังก์ชันชั่นคอลแบ็คของ catch() ตัวแรก จะทำงาน
     console.log(error.message);    
-}).catch( function() {		       // ฟังก์ชั่นชั่นคอลแบ็คของ catch() ตัวที่สอง ไม่ถูกเรียกให้ทำงาน
+}).catch( function() {		       // ฟังก์ชันชั่นคอลแบ็คของ catch() ตัวที่สอง ไม่ถูกเรียกให้ทำงาน
     console.log("Last error");     			
 });
 // แสดงผลลัพธ์
@@ -265,11 +265,11 @@ let promise = new Promise(function(resolve, reject) {
 });
 promise.then(function(value) {	             // then() ตัวแรก
     console.log("then1:", value);
-    return 2;				 // ส่ง 2 ไปให้กับฟังก์ชั่นคอลแบ็คของ then() ตัวถัดไป
-}).then(function(value) {		             // ประกาศฟังก์ชั่นคอลแบ็คให้มีพารามิเตอร์
+    return 2;				 // ส่ง 2 ไปให้กับฟังก์ชันคอลแบ็คของ then() ตัวถัดไป
+}).then(function(value) {		             // ประกาศฟังก์ชันคอลแบ็คให้มีพารามิเตอร์
     console.log("then2:", value);
-    return 3;				 // ส่ง 3 ไปให้กับฟังก์ชั่นคอลแบ็คของ then() ตัวถัดไป
-}). then(function(value) {		             // ประกาศฟังก์ชั่นคอลแบ็คให้มีพารามิเตอร์
+    return 3;				 // ส่ง 3 ไปให้กับฟังก์ชันคอลแบ็คของ then() ตัวถัดไป
+}). then(function(value) {		             // ประกาศฟังก์ชันคอลแบ็คให้มีพารามิเตอร์
     console.log("then3:", value);
 });
 /* แสดงผลลัพธ์เป็น
@@ -313,10 +313,10 @@ let promise = new Promise(function(resolve, reject) {
 });
 promise.catch(function(error) {		
 	console.log(error.message); 
-	return 1;	       // สามารถส่ง 1 ไปให้ฟังก์ชั่นคอลแบ็คของ then() ตัวถัดไปได้
+	return 1;	       // สามารถส่ง 1 ไปให้ฟังก์ชันคอลแบ็คของ then() ตัวถัดไปได้
 }).then(function(value) {			
 	console.log("then:", value);    		
-	return 2;	      // ไม่สามารถส่ง 2 ไปให้ฟังก์ชั่นคอลแบ็คของ  catch() ตัวถัดไปได้
+	return 2;	      // ไม่สามารถส่ง 2 ไปให้ฟังก์ชันคอลแบ็คของ  catch() ตัวถัดไปได้
 }).catch(function(error) {			
 	console.log("catch:", error);   	// ไม่ถูกเรียกให้ทำงาน	
 });
@@ -704,17 +704,17 @@ function sendAjaxMsg( url, message) {
 	            element.innerHTML="Get a message: " + request.responseText; 
 	            resolve(request.responseText);	
 	     } // สิ้นสุดประโยค if
-	}; // สิ้นสุดการประกาศฟังก์ชั่น
+	}; // สิ้นสุดการประกาศฟังก์ชัน
 	request.onerror = function (error) {		// บรรทัด b
 	     let errorMsg = "Error status " + request.status;
 	     element.innerHTML = errorMsg;
                  reject(errorMsg);				
-           }; // สิ้นสุดการประกาศฟังก์ชั่น
+           }; // สิ้นสุดการประกาศฟังก์ชัน
            request.open("GET", `${url}?msg=${message}`, true);
            request.send();       			          // บรรทัด c	
-    } // สิ้นสุดการประกาศฟังก์ชั่น asynCode
+    } // สิ้นสุดการประกาศฟังก์ชัน asynCode
     return new Promise(asynCode);		         // บรรทัด d
- } // สิ้นสุดการประกาศฟังก์ชั่น sendAjaxMsg
+ } // สิ้นสุดการประกาศฟังก์ชัน sendAjaxMsg
 // สามารถเปลี่ยน url เป็น https://patanasongsivilai.com/example/ajax.php
 let ajax = sendAjaxMsg("http://127.0.01:8001/message", "test promise")
 document.querySelector("#element1").innerHTML = "Sending a message";  // บรรทัด e
@@ -796,9 +796,9 @@ function readJSONFile(fileName){
 				resolve(json);			// บรรทัด c 
 			} // สิ้นสุดประโยค if
 		});
-	} // สิ้นสุดการประกาศฟังก์ชั่น asynCode	
+	} // สิ้นสุดการประกาศฟังก์ชัน asynCode	
 	return new Promise(asynCode);			           // บรรทัด d
-} // สิ้นสุดการประกาศฟังก์ชั่น readJSONFile
+} // สิ้นสุดการประกาศฟังก์ชัน readJSONFile
 let reader = readJSONFile("json.txt");		                      // อ่านไฟล์ json.text
 console.log("Read a file");
 function handle(value) { console.log(value); }
@@ -847,7 +847,7 @@ to do something: 4
 Message: service 4 is success */
 ```
 
-## สไตล์การเขียนด้วยฟังก์ชั่นคอลแบ็ค
+## สไตล์การเขียนด้วยฟังก์ชันคอลแบ็ค
 
 ```js
 Promise.resolve(123)
