@@ -206,7 +206,7 @@ console.log(carObj instanceof Car);     	               // true
 console.log(carObj instanceof Object);  	               // true
 console.log(carObj.drive === Car.prototype.drive);     // true
 console.log(typeof Car.prototype.drive);	               // "function"
-// คลาส Car ก็คือฟังก์ชั่นคอนสตรัคเตอร์ที่ชื่อ Car
+// คลาส Car ก็คือฟังก์ชันคอนสตรัคเตอร์ที่ชื่อ Car
 console.log(typeof Car);                	               // "function"
 console.log(Car.name);                  	               // "Car"
 console.log(Car === Car.prototype.constructor);        // true
@@ -618,7 +618,7 @@ Calculation.prototype.multiply = function() {
 	return this.a * this.b;
 }
 function Division (a, b) {
-	Calculation.call(this, a, b);	 // เรียกใช้ฟังก์ชั่นคอนสตรัคเตอร์ Calculation
+	Calculation.call(this, a, b);	 // เรียกใช้ฟังก์ชันคอนสตรัคเตอร์ Calculation
 }
 Division.prototype = Object.create(Calculation.prototype, { // prototype chain
     constructor: {
@@ -866,10 +866,10 @@ let DivisionObj = {
 	}
 };
 function getClass (...args) {
-    let merged = function() {};		 // ฟังก์ชั่นคอนสตรัคเตอร์
+    let merged = function() {};		 // ฟังก์ชันคอนสตรัคเตอร์
     // เมธอดของ MultiplyingObj กับ DivisionObj จะมารวมอยู่ที่ merged.prototype
     Object.assign(merged.prototype, ...args);	 // บรรทัด a
-    return merged;		             // รีเทิร์น  merged ซึ่งทำหน้าที่เป็นฟังก์ชั่นคอนสตรัคเตอร์
+    return merged;		             // รีเทิร์น  merged ซึ่งทำหน้าที่เป็นฟังก์ชันคอนสตรัคเตอร์
 }
 class MyCalc extends getClass(MultiplyingObj, DivisionObj) {	
  	// สืบทอดมาจาก  MultiplyingObj กับ DivisionObj
