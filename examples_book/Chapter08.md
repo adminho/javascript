@@ -531,6 +531,7 @@ console.log(matchObj);
   input: 'test index.js',
   groups: [Object: null prototype] { filename: 'index' }
 ] */
+console.log(matchObj .groups.filename);      // "index"
 ```
 
 ### Lookbehind assertions
