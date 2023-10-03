@@ -259,7 +259,7 @@ export var value = 100;
 export function square(x) {	
     return x * x;
 }
-export default function(num1, num2) {    // ฟังก์ชั่นไร้ชื่อ
+export default function(num1, num2) {    // ฟังก์ชันไร้ชื่อ
     return num1 + num2;
 }
 ```
