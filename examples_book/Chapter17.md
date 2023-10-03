@@ -2,7 +2,7 @@
 
 ## เมต้าโปรแกรมมิ่ง
 
-### ฟังก์ชั่น eval()
+### ฟังก์ชัน eval()
 
 ```js
 var function1 = "function myFunction (a, b) { console.log(a*b); }";
@@ -69,7 +69,7 @@ console.log(obj.a);			 // 100 (บรรทัด 5)
 let proxyArray = new Proxy( [1, 2, 3], {});				// บรรทัด a
 console.log(proxyArray[1]);				    	// 2
 console.log(...proxyArray);					           // 1 2 3
-// ห่อฟังก์ชั่นลูกศร
+// ห่อฟังก์ชันลูกศร
 let proxyFunc = new Proxy( ()=> console.log("myFunction") , {} );  // บรรทัด b
 proxyFunc();						          // "myFunction"
 // ห่อพร็อกซี่
@@ -140,23 +140,23 @@ console.log(proxyObj.b);	                         // error: Can't read property:
 delete proxyObj.c ; 	                         // error: Can't delete property: c
 ```
 
-* ตัวอย่างที่ 2 จะแสดงการตรวจสอบค่าอากิวเมนต์ที่ส่งไปให้พารามิเตอร์ของฟังก์ชั่น รวมทั้งค่ารีเทิร์นจากฟังก์ชั่นด้วย
+* ตัวอย่างที่ 2 จะแสดงการตรวจสอบค่าอากิวเมนต์ที่ส่งไปให้พารามิเตอร์ของฟังก์ชัน รวมทั้งค่ารีเทิร์นจากฟังก์ชันด้วย
 
 ```js
 let validation = { // handler
     apply(targetObj, thisObj, argumentList) {         // ดักจับตอนฟังก์ชันเป้าหมายถูกเรียกใช้งาน
-           if( argumentList.length == 0 ) { 	          // ไม่มีค่าอากิวเมนต์ส่งมาให้ฟังก์ชั่น
+           if( argumentList.length == 0 ) { 	          // ไม่มีค่าอากิวเมนต์ส่งมาให้ฟังก์ชัน
 	           throw new Error("Must send arguments to the function");
            }
            argumentList.forEach( function(value, index, thisObj) { 
 	           if(typeof value != "number") { 	
-				// ตรวจสอบค่าอากิวเมนต์ที่ส่งให้ฟังก์ชั่น มันเป็นตัวเลขหรือไม่ ?
+				// ตรวจสอบค่าอากิวเมนต์ที่ส่งให้ฟังก์ชัน มันเป็นตัวเลขหรือไม่ ?
 				throw new Error("All arguments must be numbers");
 	           } // สิ้นสุด if		 
            }); // สิ้นสุด argumentList.forEach()           
            // เรียกใช้งานฟังก์ชันเป้าหมาย
            let result = Reflect.apply(targetObj, thisObj, argumentList); 
-           // ตรวจสอบค่าที่รีเทิร์นจากฟังก์ชั่น มันอยู่ในช่วง safe integer หรือไม่ ?
+           // ตรวจสอบค่าที่รีเทิร์นจากฟังก์ชัน มันอยู่ในช่วง safe integer หรือไม่ ?
            if( Number.isSafeInteger(result) == false) { 
 	           throw new Error("The result is not safe integer");
           }; 
@@ -173,12 +173,12 @@ function multiply(param1, param2) {	 // หาผลคูณ
 
 let proxySum = new Proxy(sum, validation);	
 let proxyMultiply = new Proxy(multiply, validation);	
-// เรียกฟังก์ชั่น โดยส่งค่าอากิวเมนต์ไปให้ ที่เป็นตัวเลข 
+// เรียกฟังก์ชัน โดยส่งค่าอากิวเมนต์ไปให้ ที่เป็นตัวเลข 
 // แล้วรีเทิร์นค่าไม่เกิน "safe integer" ก็จะทำงานได้ตามปกติ
 console.log(proxySum(2, 3 ));		 // 5 = 2 + 3
 console.log(proxyMultiply(2, 3));	             // 6 = 2 * 3
 
-// ไม่มีค่าอากิวเมนต์ส่งไปให้ฟังก์ชั่น ก็จะเกิด error
+// ไม่มีค่าอากิวเมนต์ส่งไปให้ฟังก์ชัน ก็จะเกิด error
 proxySum();			             // Error: Must send arguments to the function
 proxyMultiply();		                         // Error: Must send arguments to the function
 
@@ -186,7 +186,7 @@ proxyMultiply();		                         // Error: Must send arguments to the 
 proxySum(2, "3");        		            // Error: All arguments must be numbers
 proxyMultiply(2, "3");		            // Error: All arguments must be numbers
 
-// ค่าที่รีเทิร์นออกจากฟังก์ชั่น ถ้าเกินช่วง safe integer ก็จะเกิด error
+// ค่าที่รีเทิร์นออกจากฟังก์ชัน ถ้าเกินช่วง safe integer ก็จะเกิด error
 let maxNum = Number.MAX_SAFE_INTEGER + 1;
 proxySum(maxNum, maxNum);	             // Error: The result is not safe integer
 proxyMultiply(maxNum, maxNum);	 // Error: The result is not safe integer
