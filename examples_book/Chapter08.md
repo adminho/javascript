@@ -563,7 +563,7 @@ console.log(result);             // false
 ```js
 let regex = /./s;
 let result = regex.test("\n");
-console.log(result);          // true
+console.log(result);                    // true
 ```
 
 ```js
