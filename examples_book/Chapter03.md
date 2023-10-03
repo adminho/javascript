@@ -601,7 +601,7 @@ console.log(array);		// [ 1, 2, 3, 4, 5, <4 empty slots>, 100 ]
 console.log(array.length);             // 10
 ```
 
-## การประกาศฟังก์ชั่น
+## การประกาศฟังก์ชัน
 
 ```js
 function calculate(param1, param2) {
@@ -645,7 +645,7 @@ console.log(result);		         // undefined
 ```js
 function myFunction() {
     console.log("myFunction");
-    // จะเสมือนมีประโยค return undefined; วางไว้ตำแหน่งสุดท้าย ก่อนฟังก์ชั่นจบการทำงาน
+    // จะเสมือนมีประโยค return undefined; วางไว้ตำแหน่งสุดท้าย ก่อนฟังก์ชันจบการทำงาน
 }
 var result = myFunction();	// "myFunction"
 console.log(result);	            // undefined
@@ -659,7 +659,7 @@ function calculate() {
 }
 ```
 
-### ฟังก์ชั่นไร้ชื่อ 
+### ฟังก์ชันไร้ชื่อ 
 
 ```js
 function (param1, param2) {   // ถ้ารันจะเกิด error
@@ -667,7 +667,7 @@ function (param1, param2) {   // ถ้ารันจะเกิด error
 }
 ```
 
-### นิพจน์ฟังก์ชั่น
+### นิพจน์ฟังก์ชัน
 
 ```js
 var calculate = function (param1, param2) {
@@ -702,7 +702,7 @@ myFunction(5,4);   //  20
 cal(5,4);               // 20
 ```
 
-### ฟังก์ชั่นคอลแบ็ค
+### ฟังก์ชันคอลแบ็ค
 
 ```js
 function sayHi() {
@@ -712,13 +712,13 @@ function sayBye() {
     console.log("Bye");
 }
 function say(func) {
-    func();	      // เรียกฟังก์ชั่นให้ทำงาน
+    func();	      // เรียกฟังก์ชันให้ทำงาน
 }
 say(sayHi);	     // "Hi" 
 say(sayBye);	     // "Bye"
 ```
 
-### รีเทิร์นออกมาเป็นฟังก์ชั่น 
+### รีเทิร์นออกมาเป็นฟังก์ชัน 
 
 ```js
 function say(func) {
@@ -726,8 +726,8 @@ function say(func) {
           function sayHi() {	
               console.log("Hi");
            } 
-          return sayHi;	// รีเทิร์นฟังก์ชั่น
-}  // สิ้นสุดการประกาศฟังก์ชั่น
+          return sayHi;	// รีเทิร์นฟังก์ชัน
+}  // สิ้นสุดการประกาศฟังก์ชัน
 var hi = say();	           // "Say..."
 hi();		           // "Hi"
 ```
@@ -735,10 +735,10 @@ hi();		           // "Hi"
 ```js
 function say(func) {
           console.log("Say...");
-          return  function() {		// รีเทิร์นฟังก์ชั่นไร้ชื่อ
+          return  function() {		// รีเทิร์นฟังก์ชันไร้ชื่อ
                 console.log("Hi");
           } 
-}  // สิ้นสุดการประกาศฟังก์ชั่น
+}  // สิ้นสุดการประกาศฟังก์ชัน
 var hi = say();	           // "Say..."
 hi();			// "Hi"
 ```
@@ -762,15 +762,15 @@ function myFunction (param1, param2) {
 myFunction(100,200,300,400);	// [Arguments] { '0': 100, '1': 200, '2': 300, '3': 400 }
 ```
 
-### ข้อควรระวังในการประกาศฟังก์ชั่น
+### ข้อควรระวังในการประกาศฟังก์ชัน
 
 * 1) 
 ```js
-function myFunction(param1, param2) {    // ฟังก์ชั่นนี้ไม่เคยถูกเรียกใช้งาน	
+function myFunction(param1, param2) {    // ฟังก์ชันนี้ไม่เคยถูกเรียกใช้งาน	
 	console.log("function1 value:", param1, param2); 
 }
-myFunction(100, 200);   		// เรียกใช้ฟังก์ชั่นที่ประกาศอยู่ด้านล่าง
-function myFunction(param) { 	// จะโอเวอร์ไรด์ทับฟังก์ชั่นที่ประกาศไว้ก่อนหน้านี้
+myFunction(100, 200);   		// เรียกใช้ฟังก์ชันที่ประกาศอยู่ด้านล่าง
+function myFunction(param) { 	// จะโอเวอร์ไรด์ทับฟังก์ชันที่ประกาศไว้ก่อนหน้านี้
 	console.log("function2 value:", param);
 }
 myFunction(100);     	
@@ -783,7 +783,7 @@ myFunction(100, 200);
 
 * 2) 
 ```js
-alert = function(data) {             // alert ถูกกำหนดให้เป็นฟังก์ชั่นตัวใหม่
+alert = function(data) {             // alert ถูกกำหนดให้เป็นฟังก์ชันตัวใหม่
     console.log(data);	         // แสดงข้อความออกทางหน้าคอนโซล
 }
 alert("Hello, World");               // แสดงข้อความ "Hello, World" ออกทางหน้าคอนโซล
@@ -817,7 +817,7 @@ console.log(a, b);		//  1 2
 <script>
 var a = "Hi";    	             // a มีขอบเขตการมองเห็นแบบโกลบอล
 function myFunction() {
-    var a = "Bye";            // a มีขอบเขตการมองเห็นแบบโลคอล เพราะประกาศภายใต้ฟังก์ชั่น 
+    var a = "Bye";            // a มีขอบเขตการมองเห็นแบบโลคอล เพราะประกาศภายใต้ฟังก์ชัน 
     console.log(a);	
 }
 myFunction();		// "Bye"
@@ -836,7 +836,7 @@ console.log(window.NaN, window.undefined, window.Infinity); // NaN undefined Inf
 // NaN undefined Infinity
 ```
 
-### ฟังก์ชั่นซ้อนฟังก์ชั่น
+### ฟังก์ชันซ้อนฟังก์ชัน
 
 ```js
 function outerFunc() {
@@ -920,7 +920,7 @@ function myFunction(num) {
 	// สามารถมองเห็นตัวแปร value		
 	console.log(value);		// undefined
 	if(num > 10) {
-		var value = num*10;	// ประกาศตัวแปร value ที่ตรงนี้ แต่มองเห็นได้ทั่วฟังก์ชั่น
+		var value = num*10;	// ประกาศตัวแปร value ที่ตรงนี้ แต่มองเห็นได้ทั่วฟังก์ชัน
 		/* ซอร์สโค้ด */
 	} else {
 		// ถ้าเงื่อนไขประโยค if เป็นเท็จ ก็จะเข้ามาทำงานที่ else 
@@ -965,7 +965,7 @@ console.log(value);	// 100
 ```
 
 ```js
-// มองเห็นฟังก์ชั่นก่อนการประกาศใช้งาน
+// มองเห็นฟังก์ชันก่อนการประกาศใช้งาน
 myFunction(); 	           // "Hoisted"
 function myFunction() {
     console.log("Hoisted");
@@ -975,7 +975,7 @@ myFunction();		// "Hoisted"
 
 ```js
 function outerFunc() {
-  innerFunc();	                        // มองเห็นฟังก์ชั่นก่อนการประกาศใช้งาน
+  innerFunc();	                        // มองเห็นฟังก์ชันก่อนการประกาศใช้งาน
   function innerFunc() {  
     console.log("inner function");
   }
@@ -993,7 +993,7 @@ var x = 1;
 
 ```js
 function myFunction() {
-   "use strict"; 	// เฉพาะฟังก์ชั่นนี้จะอยู่ในโหมดสตริคท์
+   "use strict"; 	// เฉพาะฟังก์ชันนี้จะอยู่ในโหมดสตริคท์
     var x = 1;   
 }
 ```
