@@ -56,7 +56,7 @@ let obj = {
     1: "foo",
     2: "bar"
 };
-let toUpper =  function (value,index) {     // ฟังก์ชั่นคอลแบ็ค
+let toUpper =  function (value,index) {     // ฟังก์ชันคอลแบ็ค
     if (typeof value == "string") {
         return value.toUpperCase();	           // รีเทิร์นสตริงตัวพิมพ์ใหญ่
     } else {
@@ -125,7 +125,7 @@ console.log(array);                   // [ null, 10, 10, 10, null ]
 
 ```js
 let a = ["red", "green", "blue", "yellow"];
-function search(value, index, array) {	 // ฟังก์ชั่นคอลแบ็ค
+function search(value, index, array) {	 // ฟังก์ชันคอลแบ็ค
     //console.log(array);	// [ 'red', 'green', 'blue', 'yellow' ]
     return value == "blue";
 }
@@ -147,7 +147,7 @@ console.log(result);	           // 'blue'
 
 ```js
 let a = ["red", "green", "blue", "yellow"];
-function search (value ,index, array) {  // ฟังก์ชั่นคอลแบ็ค
+function search (value ,index, array) {  // ฟังก์ชันคอลแบ็ค
     // console.log(array);	// [ 'red', 'green', 'blue', 'yellow' ]
     return value == "blue";
 };
@@ -431,7 +431,7 @@ set.forEach( log, set);		// ระบุค่าอากิวเมนต์�
 
 ```js
 let set = new Set( ["a", "b", "c"] );
-set.forEach( value => console.log(value) );  // ระบุค่าอากิวเมนต์เป็นฟังก์ชั่นลูกศร
+set.forEach( value => console.log(value) );  // ระบุค่าอากิวเมนต์เป็นฟังก์ชันลูกศร
 /*แสดงผลลัพธ์เป็น
 a
 b
@@ -592,7 +592,7 @@ map.forEach( log, map);		             //ระบุค่าอากิวเ�
 
 ```js
 let map = new Map( [ [1, "a"] , [2, "b"] ]);
-map.forEach( value => console.log(value) );     // ระบุค่าอากิวเมนต์เป็นฟังก์ชั่นลูกศร
+map.forEach( value => console.log(value) );     // ระบุค่าอากิวเมนต์เป็นฟังก์ชันลูกศร
 /*แสดงผลลัพธ์เป็น
 a
 b */
