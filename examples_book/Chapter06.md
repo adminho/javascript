@@ -2,7 +2,7 @@
 
 ## Regular Expression
 
-* 1. สร้างโดยใช้ฟังก์ชั่นคอนสตรัคเตอร์ RegExp ตามตัวอย่าง
+* 1. สร้างโดยใช้ฟังก์ชันคอนสตรัคเตอร์ RegExp ตามตัวอย่าง
 
 ```js
 var myRegex = new RegExp("Hello+");
