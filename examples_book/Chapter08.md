@@ -562,6 +562,11 @@ console.log(result);             // false
 
 ```js
 let regex = /./s;
+console.log(regex. dotAll);          // true
+```
+
+```js
+let regex = /./s;
 let result = regex.test("\n");
 console.log(result);          // true
 ```
