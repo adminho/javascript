@@ -234,7 +234,7 @@ console.log(\u0e01);		// 100
 
 ### เมธอด normalize()
 ```js
-function toCodePoint(str) {	// ฟังก์ชั่นแสดงค่า code point ของสตริงออกทางหน้าคอนโซล
+function toCodePoint(str) {	// ฟังก์ชันแสดงค่า code point ของสตริงออกทางหน้าคอนโซล
 	var concat = "";
 	for(var i = 0; i < str.length; i++ ) {
 		concat += "0x" + str.codePointAt(i).toString(16) + " ";
