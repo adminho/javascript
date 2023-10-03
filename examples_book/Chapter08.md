@@ -562,13 +562,13 @@ console.log(result);             // false
 
 ```js
 let regex = /./s;
-console.log(regex. dotAll);          // true
+let result = regex.test("\n");
+console.log(result);          // true
 ```
 
 ```js
 let regex = /./s;
-let result = regex.test("\n");
-console.log(result);          // true
+console.log(regex. dotAll);          // true
 ```
 
 ### Unicode character properties
