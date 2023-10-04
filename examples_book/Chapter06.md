@@ -185,6 +185,11 @@ console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefi
 ```
 
 ```js
+var re = /\S/;
+console.log(re.exec(" @"));    // [ '@', index: 1, input: ' @', groups: undefined ] 
+```
+
+```js
 var re = /\d/;
 console.log(re.exec("x86"));    // [ '8', index: 1, input: 'x86', groups: undefined ]
 ```
@@ -201,6 +206,14 @@ console.log(re.exec("100px"));    // [ 'p', index: 3, input: '100px', groups: un
 
 ```js
 var re = /\w/;
+console.log(re.exec("$a"));        // [ 'a', index: 1, input: '$a', groups: undefined ] 
+console.log(re.exec("$T"));        // [ 'T', index: 1, input: '$T', groups: undefined ] 
+console.log(re.exec("$7"));        // [ '7', index: 1, input: '$7', groups: undefined ] 
+console.log(re.exec("$_"));        // [ '_', index: 1, input: '$_', groups: undefined ] 
+```
+
+```js
+var re = /\W/;
 console.log(re.exec("$a"));        // [ 'a', index: 1, input: '$a', groups: undefined ] 
 console.log(re.exec("$T"));        // [ 'T', index: 1, input: '$T', groups: undefined ] 
 console.log(re.exec("$7"));        // [ '7', index: 1, input: '$7', groups: undefined ] 
