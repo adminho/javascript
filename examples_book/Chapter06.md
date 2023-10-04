@@ -194,17 +194,30 @@ var re = /..\d/;
 console.log(re.exec("item1"));    // [ 'em1', index: 2, input: 'item1', groups: undefined ]
 ```
 
+```js
+var re = /\D/;
+console.log(re.exec("100px"));    // [ 'p', index: 3, input: '100px', groups: undefined ]
+```
+
+```js
+var re = /\w/;
+console.log(re.exec("$a"));        // [ 'a', index: 1, input: '$a', groups: undefined ] 
+console.log(re.exec("$T"));        // [ 'T', index: 1, input: '$T', groups: undefined ] 
+console.log(re.exec("$7"));        // [ '7', index: 1, input: '$7', groups: undefined ] 
+console.log(re.exec("$_"));        // [ '_', index: 1, input: '$_', groups: undefined ] 
+```
+
 ### สตริงกับ regex
 
 ```js
 console.log("012Hellooooo".search(/Hello+/));	           // 3
 var result = "Hellooooo Hello".match(/Hello+/g);	
-console.log(result);					// [ 'Hellooooo’, 'Hello’ ]
+console.log(result);					// [ 'Hellooooo', 'Hello' ]
 console.log(result.length);				// 2
 var str = "Hellooooo".replace(/Hello+/,"Bye"); 
 console.log(str);					          // "Bye"
 var split = "1,2,3".split(/,/);
-console.log(split);				          // [ '1’, '2’, '3’ ]
+console.log(split);				          // [ '1', '2', '3' ]
 ```
 
 ### ค่าแฟล็ก
