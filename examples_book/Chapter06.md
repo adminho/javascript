@@ -170,6 +170,11 @@ console.log(re.exec("car"));    // [ 'r', index: 2, input: 'car', groups: undefi
 ### การระบุตัวอักษรพิเศษที่จับคู่
 
 ```js
+var re = /\t/;
+console.log(re.exec("<	>"));     // [ '        ', index: 1, input: '<        >', groups: undefined ] 
+```
+
+```js
 var re = /./;
 console.log(re.exec("dog"));    // [ 'd', index: 0, input: 'dog', groups: undefined ]
 ```
