@@ -171,7 +171,12 @@ console.log(re.exec("car"));    // [ 'r', index: 2, input: 'car', groups: undefi
 
 ```js
 var re = /\t/;
-console.log(re.exec("<	>"));     // [ '        ', index: 1, input: '<        >', groups: undefined ] 
+console.log(re.exec("<	>"));    // [ '        ', index: 1, input: '<        >', groups: undefined ]  
+```
+
+```js
+var re = /\x41/;
+console.log(re.exec("THAI"));     // [ 'A', index: 2, input: 'THAI', groups: undefined ] 
 ```
 
 ```js
