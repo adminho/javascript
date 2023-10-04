@@ -214,10 +214,10 @@ console.log(re.exec("$_"));        // [ '_', index: 1, input: '$_', groups: unde
 
 ```js
 var re = /\W/;
-console.log(re.exec("$a"));        // [ 'a', index: 1, input: '$a', groups: undefined ] 
-console.log(re.exec("$T"));        // [ 'T', index: 1, input: '$T', groups: undefined ] 
-console.log(re.exec("$7"));        // [ '7', index: 1, input: '$7', groups: undefined ] 
-console.log(re.exec("$_"));        // [ '_', index: 1, input: '$_', groups: undefined ] 
+console.log(re.exec("a$"));        // [ '$', index: 1, input: 'a$', groups: undefined ] 
+console.log(re.exec("T$"));        // [ '$', index: 1, input: 'T$', groups: undefined ] 
+console.log(re.exec("7$"));        // [ '$', index: 1, input: '7$', groups: undefined ] 
+console.log(re.exec("_$"));        // [ '$', index: 1, input: '_$', groups: undefined ] 
 ```
 
 ### สตริงกับ regex
