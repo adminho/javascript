@@ -65,11 +65,6 @@ console.log(re.exec("feb"));        // [ 'b', index: 2, input: 'feb', groups: un
 ```
 
 ```js
-var re = /[^cat]/;
-console.log(re.exec("cats"));      // [ 's', index: 3, input: 'cats', groups: undefined ]
-```
-
-```js
 var re = /[7-9]/;
 console.log(re.exec("2+8"));      // [ '8', index: 2, input: '2+8', groups: undefined ]
 ```
@@ -94,8 +89,12 @@ var re = /[a-zB-Mxyz157]/;
 console.log(re.exec("3-5"));     // [ '5', index: 2, input: '3-5', groups: undefined ]
 ```
 
-### การระบุความถี่ของลำดับตัวอักษรที่จับคู่
+```js
+var re = /[^cat]/;
+console.log(re.exec("cats"));      // [ 's', index: 3, input: 'cats', groups: undefined ]
+```
 
+### การระบุความถี่ของลำดับตัวอักษรที่จับคู่
 
 ```js
 var re = /3+/;    
@@ -195,16 +194,6 @@ console.log(re.exec("boxs"));    // [ 'box', index: 0, input: 'boxs', groups: un
 ```
 
 ```js
-var re = /\s/;
-console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefined ]
-```
-
-```js
-var re = /\S/;
-console.log(re.exec(" @"));    // [ '@', index: 1, input: ' @', groups: undefined ] 
-```
-
-```js
 var re = /\d/;
 console.log(re.exec("x86"));    // [ '8', index: 1, input: 'x86', groups: undefined ]
 ```
@@ -233,6 +222,16 @@ console.log(re.exec("a$"));        // [ '$', index: 1, input: 'a$', groups: unde
 console.log(re.exec("T$"));        // [ '$', index: 1, input: 'T$', groups: undefined ] 
 console.log(re.exec("7$"));        // [ '$', index: 1, input: '7$', groups: undefined ] 
 console.log(re.exec("_$"));        // [ '$', index: 1, input: '_$', groups: undefined ] 
+```
+
+```js
+var re = /\s/;
+console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefined ]
+```
+
+```js
+var re = /\S/;
+console.log(re.exec(" @"));    // [ '@', index: 1, input: ' @', groups: undefined ] 
 ```
 
 ### สตริงกับ regex
