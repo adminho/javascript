@@ -162,6 +162,8 @@ var re = /a{2,}/;
 console.log(re.exec("zaaa"));    // [ 'aaa', index: 1, input: 'zaaa', groups: undefined ]
 ```
 
+### การจับคู่แบบ assertions
+
 ```js
 var re = /^x/;
 console.log(re.exec("x-ray"));    // [ 'x', index: 0, input: 'x-ray', groups: undefined ]
