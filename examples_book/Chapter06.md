@@ -152,6 +152,12 @@ console.log(re.exec("deep"));   // [ 'ee', index: 1, input: 'deep', groups: unde
 ```
 
 ```js
+var re = /x{1,3}/;
+console.log(re.exec("xxxx"));   // [ 'xxx', index: 0, input: 'xxxx', groups: undefined ] 
+```
+
+
+```js
 var re = /a{2,}/;
 console.log(re.exec("zaaa"));    // [ 'aaa', index: 1, input: 'zaaa', groups: undefined ]
 ```
