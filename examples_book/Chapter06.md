@@ -181,7 +181,7 @@ console.log(re.exec("THAI"));     // [ 'A', index: 2, input: 'THAI', groups: und
 
 ```js
 var re = /\u0E14/;
-console.log(re.exec("แดง"));     // [ 'A', index: 2, input: 'THAI', groups: undefined ] 
+console.log(re.exec("แดง"));     // [ 'ด', index: 1, input: 'แดง', groups: undefined ] 
 ```
 
 ```js
