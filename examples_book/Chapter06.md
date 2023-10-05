@@ -180,6 +180,11 @@ console.log(re.exec("THAI"));     // [ 'A', index: 2, input: 'THAI', groups: und
 ```
 
 ```js
+var re = /\u0E14/;
+console.log(re.exec("แดง"));     // [ 'A', index: 2, input: 'THAI', groups: undefined ] 
+```
+
+```js
 var re = /./;
 console.log(re.exec("dog"));    // [ 'd', index: 0, input: 'dog', groups: undefined ]
 ```
