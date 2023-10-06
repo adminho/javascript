@@ -189,6 +189,13 @@ var re = /r$/;
 console.log(re.exec("car"));    // [ 'r', index: 2, input: 'car', groups: undefined ]
 ```
 
+```js
+var re = /\bwo/;
+console.log(re.exec("A woman !"));  // [ 'wo', index: 2, input: 'A woman !', groups: undefined ] 
+var re = /\bma/;
+console.log(re.exec("A woman !"));  // null
+```
+
 ### การระบุตัวอักษรพิเศษที่จับคู่
 
 ```js
