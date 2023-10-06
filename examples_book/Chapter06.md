@@ -94,6 +94,11 @@ var re = /[^cat]/;
 console.log(re.exec("cats"));      // [ 's', index: 3, input: 'cats', groups: undefined ]
 ```
 
+```js
+var re = /[^0-2]/;
+console.log(re.exec("20k"));      // [ 'k', index: 2, input: '20k', groups: undefined ] 
+```
+
 ### การระบุความถี่ของลำดับตัวอักษรที่จับคู่
 
 ```js
