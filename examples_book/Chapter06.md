@@ -104,6 +104,11 @@ var re = /[^w-z]/;
 console.log(re.exec("xy12"));      // [ '1', index: 2, input: 'xy12', groups: undefined ] 
 ```
 
+```js
+var re = /[^m-oM-O]/;
+console.log(re.exec("Moon!"));      // [ '!', index: 4, input: 'Moon!', groups: undefined ] 
+```
+
 ### การระบุความถี่ของลำดับตัวอักษรที่จับคู่
 
 ```js
