@@ -95,12 +95,12 @@ console.log(re.exec("cats"));      // [ 's', index: 3, input: 'cats', groups: un
 ```
 
 ```js
-var re = /[^0-2]/;
+var re = /[^0-3]/;
 console.log(re.exec("20k"));      // [ 'k', index: 2, input: '20k', groups: undefined ] 
 ```
 
 ```js
-var re = /[^xyz]/;
+var re = /[^x-z]/;
 console.log(re.exec("xy12"));      // [ '1', index: 2, input: 'xy12', groups: undefined ] 
 ```
 
