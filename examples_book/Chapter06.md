@@ -100,7 +100,7 @@ console.log(re.exec("20k"));      // [ 'k', index: 2, input: '20k', groups: unde
 ```
 
 ```js
-var re = /[^x-z]/;
+var re = /[^w-z]/;
 console.log(re.exec("xy12"));      // [ '1', index: 2, input: 'xy12', groups: undefined ] 
 ```
 
