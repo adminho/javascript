@@ -236,7 +236,7 @@ console.log(re.exec("A woman !"));  // [ 'om', index: 3, input: 'A woman !', gro
 
 ```js
 var re = /wo\B/;
-console.log(re.exec("A woman !"));  // [ 'om', index: 3, input: 'A woman !', groups: undefined ]
+console.log(re.exec("A woman !"));  // [ 'wo', index: 2, input: 'A woman !', groups: undefined ] ]
 ```
 
 ### การระบุตัวอักษรพิเศษที่จับคู่
