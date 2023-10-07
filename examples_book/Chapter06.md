@@ -85,11 +85,6 @@ console.log(re.exec("AND"));    // [ 'A', index: 0, input: 'AND', groups: undefi
 ```
 
 ```js
-var re = /[a-zB-Mxyz157]/;
-console.log(re.exec("3-5"));     // [ '5', index: 2, input: '3-5', groups: undefined ]
-```
-
-```js
 var re = /[^cat]/;
 console.log(re.exec("cats"));      // [ 's', index: 3, input: 'cats', groups: undefined ]
 ```
@@ -107,6 +102,11 @@ console.log(re.exec("xy12"));      // [ '1', index: 2, input: 'xy12', groups: un
 ```js
 var re = /[^m-oM-O]/;
 console.log(re.exec("Moon!"));      // [ '!', index: 4, input: 'Moon!', groups: undefined ] 
+```
+
+```js
+var re = /[a-zB-Mxyz157]/;
+console.log(re.exec("3-5"));     // [ '5', index: 2, input: '3-5', groups: undefined ]
 ```
 
 ### การระบุความถี่ของลำดับตัวอักษรที่จับคู่
