@@ -209,6 +209,36 @@ var re = /om\b/;
 console.log(re.exec("A woman !"));  // null
 ```
 
+```js
+var re = /\Bwo/;
+console.log(re.exec("A woman !"));  // null
+```
+
+```js
+var re = /\Bom/;
+console.log(re.exec("A woman !"));  // [ 'om', index: 3, input: 'A woman !', groups: undefined ] 
+```
+
+```js
+var re = /\Ban/;
+console.log(re.exec("A woman !"));  // [ 'an', index: 5, input: 'A woman !', groups: undefined ] 
+```
+
+```js
+var re = /an\B/;
+console.log(re.exec("A woman !"));  // null
+```
+
+```js
+var re = /om\B/;
+console.log(re.exec("A woman !"));  // [ 'om', index: 3, input: 'A woman !', groups: undefined ] 
+```
+
+```js
+var re = /wo\B/;
+console.log(re.exec("A woman !"));  // [ 'om', index: 3, input: 'A woman !', groups: undefined ]
+```
+
 ### การระบุตัวอักษรพิเศษที่จับคู่
 
 ```js
