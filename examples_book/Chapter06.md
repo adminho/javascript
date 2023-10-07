@@ -263,7 +263,7 @@ console.log(re.exec("dog"));    // [ 'd', index: 0, input: 'dog', groups: undefi
 
 ```js
 var re = /.ox/;
-console.log(re.exec("boxs"));    // [ 'box', index: 0, input: 'boxs', groups: undefined ]
+console.log(re.exec("boxes"));    //[ 'box', index: 0, input: 'boxes', groups: undefined ] 
 ```
 
 ```js
@@ -305,6 +305,12 @@ console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefi
 ```js
 var re = /\S/;
 console.log(re.exec(" @"));    // [ '@', index: 1, input: ' @', groups: undefined ] 
+```
+
+```js
+var re = /<p>.*<\/p>/;
+console.log(re.exec("<div><p>1245</p></div>"));
+// [ '<p>1245</p>', index: 5, input: '<div><p>1245</p></div>', groups: undefined ] 
 ```
 
 ### สตริงกับ regex
