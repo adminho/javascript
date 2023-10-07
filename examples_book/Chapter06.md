@@ -309,8 +309,13 @@ console.log(re.exec(" @"));    // [ '@', index: 1, input: ' @', groups: undefine
 
 ```js
 var re = /<p>.*<\/p>/;
-console.log(re.exec("<div><p>1245</p></div>"));
-// [ '<p>1245</p>', index: 5, input: '<div><p>1245</p></div>', groups: undefined ] 
+console.log(re.exec("<div><p>@test</p></div>"));
+// [ '<p>@test</p>', index: 5, input: '<div><p>@test</p></div>', groups: undefined ] 
+```
+
+```js
+var re = /^\d\w{1,}/;
+console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.html', groups: undefined ]
 ```
 
 ### สตริงกับ regex
