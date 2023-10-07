@@ -190,53 +190,53 @@ console.log(re.exec("car"));    // [ 'r', index: 2, input: 'car', groups: undefi
 ```
 
 ```js
-var re = /\bwo/;
-console.log(re.exec("A woman !"));  // [ 'wo', index: 2, input: 'A woman !', groups: undefined ] 
+var re = /\bfa/;
+console.log(re.exec("A father is"));  // [ 'fa', index: 2, input: 'A father is', groups: undefined ] 
 ```
 
 ```js
-var re = /\bma/;
-console.log(re.exec("A woman !"));  // null
+var re = /\bth/;
+console.log(re.exec("A father is"));  // null
 ```
 
 ```js
-var re = /man\b/;
-console.log(re.exec("A woman !"));  // [ 'man', index: 4, input: 'A woman !', groups: undefined ]
+var re = /er\b/;
+console.log(re.exec("A father is"));  // [ 'er', index: 6, input: 'A father is', groups: undefined ] 
 ```
 
 ```js
-var re = /om\b/;
-console.log(re.exec("A woman !"));  // null
+var re = /th\b/;
+console.log(re.exec("A father is"));  // null
 ```
 
 ```js
-var re = /\Bwo/;
-console.log(re.exec("A woman !"));  // null
+var re = /\Bfa/;
+console.log(re.exec("A father is"));  // null
 ```
 
 ```js
-var re = /\Bom/;
-console.log(re.exec("A woman !"));  // [ 'om', index: 3, input: 'A woman !', groups: undefined ] 
+var re = /\Bth/;
+console.log(re.exec("A father is"));  // [ 'th', index: 4, input: 'A father is', groups: undefined ]  
 ```
 
 ```js
-var re = /\Ban/;
-console.log(re.exec("A woman !"));  // [ 'an', index: 5, input: 'A woman !', groups: undefined ] 
+var re = /\Ber/;
+console.log(re.exec("A father is"));  // [ 'er', index: 6, input: 'A father is', groups: undefined ]  
 ```
 
 ```js
-var re = /an\B/;
-console.log(re.exec("A woman !"));  // null
+var re = /er\B/;
+console.log(re.exec("A father is"));  // null
 ```
 
 ```js
-var re = /om\B/;
-console.log(re.exec("A woman !"));  // [ 'om', index: 3, input: 'A woman !', groups: undefined ] 
+var re = /th\B/;
+console.log(re.exec("A father is"));  // [ 'th', index: 4, input: 'A father is', groups: undefined ]  
 ```
 
 ```js
-var re = /wo\B/;
-console.log(re.exec("A woman !"));  // [ 'wo', index: 2, input: 'A woman !', groups: undefined ] ]
+var re = /fa\B/;
+console.log(re.exec("A father is"));  // [ 'fa', index: 2, input: 'A father is', groups: undefined ] 
 ```
 
 ### การระบุตัวอักษรพิเศษที่จับคู่
