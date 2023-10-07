@@ -239,6 +239,18 @@ var re = /fa\B/;
 console.log(re.exec("A father is"));  // [ 'fa', index: 2, input: 'A father is', groups: undefined ] 
 ```
 
+```js
+let re = /Java(?=Script)/;
+console.log(re.exec("This is a JavaScript book"));           
+// [ 'Java’, index: 10, input: 'This is a JavaScript book’, groups: undefined ] 
+```
+
+```js
+let re = /[wW]atch(?=ed|ing)/;
+console.log(re.exec("I watched TV")); 
+// [ 'watch’, index: 2, input: 'I watched TV’, groups: undefined ]  
+```
+
 ### การระบุตัวอักษรพิเศษที่จับคู่
 
 ```js
