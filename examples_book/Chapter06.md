@@ -192,7 +192,20 @@ console.log(re.exec("car"));    // [ 'r', index: 2, input: 'car', groups: undefi
 ```js
 var re = /\bwo/;
 console.log(re.exec("A woman !"));  // [ 'wo', index: 2, input: 'A woman !', groups: undefined ] 
+```
+
+```js
 var re = /\bma/;
+console.log(re.exec("A woman !"));  // null
+```
+
+```js
+var re = /man\b/;
+console.log(re.exec("A woman !"));  // [ 'man', index: 4, input: 'A woman !', groups: undefined ]
+```
+
+```js
+var re = /om\b/;
 console.log(re.exec("A woman !"));  // null
 ```
 
