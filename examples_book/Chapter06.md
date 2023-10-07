@@ -315,7 +315,7 @@ console.log(re.exec("<div><p>@test</p></div>"));
 
 ```js
 var re = /^\d\w{1,}/;
-console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.html', groups: undefined ]
+console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.txt', groups: undefined ] 
 ```
 
 ### สตริงกับ regex
