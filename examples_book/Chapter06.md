@@ -349,6 +349,15 @@ var re = /(file){2}/;
 console.log(re.exec("filefile"));    // [ 'filefile', 'file', index: 0, input: 'filefile', groups: undefined ] 
 ```
 
+```js
+var re =  /(?:<p>)abc(?:<\/p>)/;
+let result = re.exec("<p>abc</p>");    
+console.log(result[0]);    // "<p>abc</p>"
+console.log(result[1]);    // undefined
+console.log(result[2]);    // undefined
+console.log(result);       // [ '<p>abc</p>', index: 0, input: '<p>abc</p>', groups: undefined ] 
+```
+
 ### สตริงกับ regex
 
 ```js
