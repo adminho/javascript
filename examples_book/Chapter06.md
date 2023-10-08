@@ -315,6 +315,11 @@ console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefi
 ```
 
 ```js
+var re = / /;
+console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefined ]
+```
+
+```js
 var re = /\S/;
 console.log(re.exec(" @"));    // [ '@', index: 1, input: ' @', groups: undefined ] 
 ```
