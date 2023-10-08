@@ -529,7 +529,7 @@ console.log(matchObj);
   'index',
   index: 5,
   input: 'test index.js',
-  groups: [Object: null prototype] { filename: 'index' }
+  groups: { filename: 'index' } 
 ] */
 console.log(matchObj .groups.filename);      // "index"
 ```
@@ -569,7 +569,7 @@ console.log(result);                    // true
 
 ```js
 let regex = /./s;
-console.log(regex. dotAll);          // true
+console.log(regex.dotAll);          // true
 ```
 
 ### Unicode character properties
@@ -599,4 +599,67 @@ console.log(result);      // true
 ```js
 var result = /\p{General_Category=Uppercase_Letter}/u.test( "THAI" );
 console.log(result);      // true
+```
+
+
+
+### แฟล็ก d
+
+```js
+let matchObj = /bar/d.exec("foo bar");
+console.log(matchObj)
+/* แสดงผลลัพธ์เป็น
+[
+  'bar',
+  index: 4,
+  input: 'foo bar',
+  groups: undefined,
+  indices: [ [ 4, 7 ], groups: undefined ]
+] */
+console.log(matchObj.indices[0])               // [ 4, 7 ] -- จะเป็นตำแหน่งของคำว่า "bar"
+```
+
+```js
+let matchObj = /(foo).(bar)/d.exec("0123foo_bar");
+console.log(matchObj);	       
+/* แสดงผลลัพธ์
+[
+  'foo_bar',
+  'foo',
+  'bar',
+  index: 4,
+  input: '0123foo_bar',
+  groups: undefined,
+  indices: [ [ 4, 11 ], [ 4, 7 ], [ 8, 11 ], groups: undefined ]
+] */     
+console.log(matchObj.indices[0])         // [ 4, 11 ]  -- จะเป็นตำแหน่งของคำว่า "foo_bar"
+console.log(matchObj.indices[1])         // [ 4, 7 ]  -- จะเป็นตำแหน่งของคำว่า "foo"
+console.log(matchObj.indices[2])         // [ 8, 11 ] -- จะเป็นตำแหน่งของคำว่า "bar"
+```
+
+```js
+let matchObj = /(?<first>foo).(?<last>bar)/d.exec("0123foo_bar");
+console.log(matchObj);	     
+/* แสดงผลลัพธ์
+[
+  'foo_bar',
+  'foo',
+  'bar',
+  index: 4,
+  input: '0123foo_bar',
+  groups: [Object: null prototype] { first: 'foo', last: 'bar' },
+  indices: [
+    [ 4, 11 ],
+    [ 4, 7 ],
+    [ 8, 11 ],
+    groups: { first: [ 4, 7 ], last: [ 8, 11 ] }
+  ]
+] */     
+console.log(matchObj.indices.groups.first)         // [ 4, 7 ]
+console.log(matchObj.indices.groups.last)         // [ 8, 11 ]
+```
+
+```js
+let regex = /bar/d;
+console.log(regex. hasIndices);          // true
 ```
