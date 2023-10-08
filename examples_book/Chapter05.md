@@ -734,13 +734,10 @@ console.log(new Date());   // "Fri Sep 08 2023 21:33:45 GMT+0700 (Indochina Time
 ```
 
 ```js
+console.log(new Date("05-31-2023"))  // "Wed May 31 2023 00:00:00 GMT+0700 (Indochina Time)"
+console.log(new Date("09/30/2023"))  // "Sat Sep 30 2023 00:00:00 GMT+0700 (Indochina Time)"
 console.log( new Date("October 20, 2023 11:13:00") );  
 // "Fri Oct 20 2023 11:13:00 GMT+0700 (Indochina Time)"
-```
-
-```js
-console.log(new Date("9-30-2023"))  // Sat Sep 30 2023 00:00:00 GMT+0700 (Indochina Time)
-console.log(new Date("9/30/2023"))  // Sat Sep 30 2023 00:00:00 GMT+0700 (Indochina Time)
 ```
 
 ## เมธอดของสตริง
