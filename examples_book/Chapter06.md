@@ -338,12 +338,12 @@ console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.txt', 
 ### Capture groups
 
 ```js
-var result = /(foo).(bar)/.exec("0123foo_bar");
-console.log(result.index);	                         // 4
-console.log(result[0]);	                         // "foo_bar"
-console.log(result[1]);	                         // "foo"
-console.log(result[2]);	                         // "bar"
-console.log(result.input);	                         // "0123foo_bar"
+var result = /(log)_(html)/.exec("save log_html.txt");
+console.log(result.index);	                         // 5
+console.log(result[0]);	                         // "log_html"
+console.log(result[1]);	                         // "log"
+console.log(result[2]);	                         // "html"
+console.log(result.input);	                         // "save log_html.txt"
 ```
 
 ```js
@@ -365,7 +365,7 @@ console.log(result);       // [ '<p>abc</p>', index: 0, input: '<p>abc</p>', gro
 
 ```js
 var re = /bk(@)th(->)com\2/;
-console.log(re.exec("bk@th->com->mail"));     
+console.log(re.exec('bk@th->com->mail'));     
 // [ 'bk@th->com->', '@', '->', index: 0, input: 'bk@th->com->mail', groups: undefined ] 
 ```
 
