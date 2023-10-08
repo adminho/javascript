@@ -251,6 +251,30 @@ console.log(re.exec("I watched TV"));
 // [ 'watch', index: 2, input: 'I watched TV', groups: undefined ]  
 ```
 
+```js
+let  re = /test_(?!js|txt)/;
+console.log(re.exec("test_js test_txt test_html")); 
+// [ 'test_’, index: 17, input: 'test_js test_txt test_html’, groups: undefined ] 
+```
+
+```js
+let regex = /(?<=Java)Script/g;
+let result = "This is a JavaScript book".match( regex );
+console.log(result);           // [ 'Script' ]
+```
+
+```js
+let  regex = /(?<=Java)[a-zA-Z\s]+/g;
+let result = "This is a JavaScript book".match( regex );
+console.log(result);           // [ 'Script book' ]
+```
+
+```js
+let  regex = /(?<!test).js/g;
+let result = "test.js build.js index.html run.js".match( regex );
+console.log(result);           // [ '.js', '.js' ]
+```
+
 ### การระบุตัวอักษรพิเศษที่จับคู่
 
 ```js
@@ -335,6 +359,35 @@ var re = /^\d\w{1,}/;
 console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.txt', groups: undefined ] 
 ```
 
+### Unicode character properties
+
+```js
+var str = "This is a book.";
+var result = /\p{White_Space}/u.test( str );
+console.log(result);         // true
+var result = /\p{Lowercase_Letter}/u.test (str );
+console.log(result);         // true
+var result = /\p{Uppercase_Letter}/u.test (str );
+console.log(result);         // true
+```
+
+```js
+var result = /\p{Script=Greek}+/u.test("μετά");
+console.log(result);      // true
+var result = /\p{Script=Thai}+/u.test("หนังสือไทย");
+console.log(result);     // true
+```
+
+```js
+var result = /\p{Uppercase_Letter}/u.test( "THAI" );
+console.log(result);      // true
+```
+
+```js
+var result = /\p{General_Category=Uppercase_Letter}/u.test( "THAI" );
+console.log(result);      // true
+```
+
 ### Capture groups
 
 ```js
@@ -364,6 +417,27 @@ console.log(result);       // [ '<p>abc</p>', index: 0, input: '<p>abc</p>', gro
 ```
 
 ```js
+let regEx = /[a-z]+.js/;
+let matchObj =   regEx.exec("test index.js");
+console.log(matchObj) // [ 'index.js', index: 5, input: 'test index.js', groups: undefined ]
+```
+
+```js
+let regEx = /(?<filename>[a-z]+).js/;
+let matchObj =    regEx.exec("test index.js");
+console.log(matchObj);  
+/* แสดงผลลัพธ์
+[
+  'index.js',
+  'index',
+  index: 5,
+  input: 'test index.js',
+  groups: { filename: 'index' } 
+] */
+console.log(matchObj .groups.filename);      // "index"
+```
+
+```js
 var re = /bk(@)th(.>)com\2/;
 console.log(re.exec("bk@th=>com=>mail"));     
 // [ 'bk@th=>com=>', '@', '=>', index: 0, input: 'bk@th=>com=>mail', groups: undefined ]  
@@ -390,10 +464,20 @@ console.log(split);				          // [ '1', '2', '3' ]
 
 ### ค่าแฟล็ก
 
+### พร็อพเพอร์ตี้ flags
+```js
+var myRegex = /foo/i;
+console.log(myRegex.source);     		// "foo"
+console.log(myRegex.flags);      		// "i"
+```
+
+### แฟล็ก i
 ```js
 var re = /thai/i;
 console.log("I' am THAI".search(re));          // 6
 ```
+
+### แฟล็ก  m
 
 ```js
 var str = "I' am Thai.\nI live in Bangkok."
@@ -410,6 +494,14 @@ var re2 = /^The/m;
 console.log(str.search(re1));          // -1   -- หาไม่เจอ
 console.log(str.search(re2));          // 17
 ```
+
+```js
+let regex = /foo/m;
+console.log(regex.multiline);          // true
+```
+
+
+### แฟล็ก g
 
 ```js
 var regex = /Hello+/gi;
@@ -463,4 +555,180 @@ var myRegex = /Hello+/g;
 var result = "01Hello Hellooo89".match(myRegex);
 console.log(result);			// [ 'Hello', 'Hellooo' ]
 console.log(myRegex.lastIndex)                // 0
+```
+
+### แฟล็ก u
+
+```js
+var str = "𠮷";
+console.log(str.length);           	// 2 
+console.log(/^.$/.test(str));      	// false
+```
+
+```js
+var str = "𠮷";
+console.log(/^.$/u.test(str));      	// true
+```
+
+```js
+var result1 =  "𠮷กขคง𤭢".match(/[\s\S]/gu);
+console.log(result1.length);	// 6
+// ถ้าไม่ใช้แฟล็ก u จะนับตัวอักษรผิด
+var result2 =  "𠮷กขคง𤭢".match(/[\s\S]/g);
+console.log(result2.length); 	// 8
+```
+
+```js
+let regex = /foo/u;
+console.log(regex.unicode);          // true
+```
+
+### แฟล็ก y
+```js
+var str = "foo1_foo2_foo3";		// สตริงที่จะค้นหา
+var  regex = /foo\d_?/;			// ไม่มีแฟล็ก
+var  regexG = /foo\d_?/g;			// แฟล็ก g
+var  regexY = /foo\d_?/y;			// แฟลก y
+var result = regex.exec(str);
+var resultG = regexG.exec(str);
+var resultY = regexY.exec(str);
+console.log(result[0]);			// "foo1_"
+console.log(resultG[0]);   		// "foo1_"
+console.log(resultY[0]);   		// "foo1_"
+console.log(regex.lastIndex);  	 	// 0
+console.log(regexG.lastIndex);  	 	// 5
+console.log(regexY.lastIndex);  	 	// 5
+
+result = regex.exec(str);
+resultG = regexG.exec(str),
+resultY = regexY.exec(str);
+console.log(result[0]);   		// "foo1_"
+console.log(resultG[0]);   	// "foo2_"
+console.log(resultY[0]);   	// "foo2_"
+console.log(regex.lastIndex);   	// 0
+console.log(regexG.lastIndex);   	// 10
+console.log(regexY.lastIndex);   	// 10
+```
+
+```js
+var str = "foo1_foo2_foo3";
+var  regex = /foo\d_?/;
+var  regexG = /foo\d_?/g;		             // แฟล็ก g
+var  regexY = /foo\d_?/y;		             // แฟลก y
+regex.lastIndex = 1;
+regexG.lastIndex = 1;
+regexY.lastIndex = 1;
+var result = regex.exec(str);
+var resultG = regexG.exec(str);
+var resultY = regexY.exec(str);
+console.log(result[0]);   			 // "foo1_" 
+console.log(resultG[0]);   		 // "foo2_"
+console.log(resultY);   			 // มีค่าเป็น null เพราะค้นหาไม่เจอข้อความ
+```
+
+```js
+var  myRegex = /foo+/y;
+console.log(myRegex.sticky);     // true
+myRegex.sticky = 1;  // ไม่สามารถแก้ไขค่าได้ มีไว้อ่านอย่างเดียว ถ้าอยู่ในโหมดสตริคท์จะเกิด TypeError
+console.log(myRegex.sticky);     // true
+```
+
+### แฟล็ก s (dotAll)
+
+```js
+let regex = /./;
+let result = regex.test("\n");
+console.log(result);             // false
+```
+
+```js
+let regex = /./s;
+let result = regex.test("\n");
+console.log(result);                    // true
+```
+
+```js
+let regex = /./s;
+console.log(regex.dotAll);          // true
+```
+
+### แฟล็ก d
+
+```js
+let matchObj = /bar/d.exec("foo bar");
+console.log(matchObj)
+/* แสดงผลลัพธ์เป็น
+[
+  'bar',
+  index: 4,
+  input: 'foo bar',
+  groups: undefined,
+  indices: [ [ 4, 7 ], groups: undefined ]
+] */
+console.log(matchObj.indices[0])               // [ 4, 7 ] -- จะเป็นตำแหน่งของคำว่า "bar"
+```
+
+```js
+let matchObj = /(foo).(bar)/d.exec("0123foo_bar");
+console.log(matchObj);	       
+/* แสดงผลลัพธ์
+[
+  'foo_bar',
+  'foo',
+  'bar',
+  index: 4,
+  input: '0123foo_bar',
+  groups: undefined,
+  indices: [ [ 4, 11 ], [ 4, 7 ], [ 8, 11 ], groups: undefined ]
+] */     
+console.log(matchObj.indices[0])         // [ 4, 11 ]  -- จะเป็นตำแหน่งของคำว่า "foo_bar"
+console.log(matchObj.indices[1])         // [ 4, 7 ]  -- จะเป็นตำแหน่งของคำว่า "foo"
+console.log(matchObj.indices[2])         // [ 8, 11 ] -- จะเป็นตำแหน่งของคำว่า "bar"
+```
+
+```js
+let matchObj = /(?<first>foo).(?<last>bar)/d.exec("0123foo_bar");
+console.log(matchObj);	     
+/* แสดงผลลัพธ์
+[
+  'foo_bar',
+  'foo',
+  'bar',
+  index: 4,
+  input: '0123foo_bar',
+  groups: { first: 'foo', last: 'bar' },
+  indices: [
+    [ 4, 11 ],
+    [ 4, 7 ],
+    [ 8, 11 ],
+    groups: { first: [ 4, 7 ], last: [ 8, 11 ] }
+  ]
+] */     
+console.log(matchObj.indices.groups.first)         // [ 4, 7 ]
+console.log(matchObj.indices.groups.last)         // [ 8, 11 ]
+```
+
+```js
+let regex = /bar/d;
+console.log(regex.hasIndices);          // true
+```
+
+### RegExp
+```js
+var myRegex = /foo/g;
+var regex2 = new RegExp(myRegex);
+console.log(regex2.test("foo"));		// true
+console.log(myRegex === regex2);		// false
+```
+
+```js
+var myRegex = /foo/i;
+var regex2 = new RegExp(myRegex, "g");	
+console.log(myRegex.test("FOO"));       // true (ไม่สนใจตัวพิมพ์ใหญ่พิมพ์เล็ก)
+console.log(regex2.test("FOO"));        // false
+```
+
+```js
+var myRegex = new RegExp("foo", "y"); // จะเสมือนเขียน var myRegex = /foo/y;	
+console.log(myRegex.exec("foo_abc"));  // [ 'foo', index: 0, input: 'foo_abc', groups: undefined ]
 ```
