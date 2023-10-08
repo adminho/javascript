@@ -410,77 +410,9 @@ let str = "สมชาย น้องสมปอง มีเพื่อน�
 let newStr = str.replaceAll("สมชาย", "ประยุทธ์");
 console.log(newStr)   // ประยุทธ์ น้องสมปอง มีเพื่อนชื่อ ประยุทธ์
 ```
-## Regex
-### แฟล็ก u
 
-```js
-var str = "𠮷";
-console.log(str.length);           	// 2 
-console.log(/^.$/.test(str));      	// false
-```
 
-```js
-var str = "𠮷";
-console.log(/^.$/u.test(str));      	// true
-```
 
-```js
-var result1 =  "𠮷กขคง𤭢".match(/[\s\S]/gu);
-console.log(result1.length);	// 6
-// ถ้าไม่ใช้แฟล็ก u จะนับตัวอักษรผิด
-var result2 =  "𠮷กขคง𤭢".match(/[\s\S]/g);
-console.log(result2.length); 	// 8
-```
-
-### แฟล็ก y
-```js
-var str = "foo1_foo2_foo3";		// สตริงที่จะค้นหา
-var  regex = /foo\d_?/;			// ไม่มีแฟล็ก
-var  regexG = /foo\d_?/g;			// แฟล็ก g
-var  regexY = /foo\d_?/y;			// แฟลก y
-var result = regex.exec(str);
-var resultG = regexG.exec(str);
-var resultY = regexY.exec(str);
-console.log(result[0]);			// "foo1_"
-console.log(resultG[0]);   		// "foo1_"
-console.log(resultY[0]);   		// "foo1_"
-console.log(regex.lastIndex);  	 	// 0
-console.log(regexG.lastIndex);  	 	// 5
-console.log(regexY.lastIndex);  	 	// 5
-
-result = regex.exec(str);
-resultG = regexG.exec(str),
-resultY = regexY.exec(str);
-console.log(result[0]);   		// "foo1_"
-console.log(resultG[0]);   	// "foo2_"
-console.log(resultY[0]);   	// "foo2_"
-console.log(regex.lastIndex);   	// 0
-console.log(regexG.lastIndex);   	// 10
-console.log(regexY.lastIndex);   	// 10
-```
-
-```js
-var str = "foo1_foo2_foo3";
-var  regex = /foo\d_?/;
-var  regexG = /foo\d_?/g;		             // แฟล็ก g
-var  regexY = /foo\d_?/y;		             // แฟลก y
-regex.lastIndex = 1;
-regexG.lastIndex = 1;
-regexY.lastIndex = 1;
-var result = regex.exec(str);
-var resultG = regexG.exec(str);
-var resultY = regexY.exec(str);
-console.log(result[0]);   			 // "foo1_" 
-console.log(resultG[0]);   		 // "foo2_"
-console.log(resultY);   			 // มีค่าเป็น null เพราะค้นหาไม่เจอข้อความ
-```
-
-```js
-var  myRegex = /foo+/y;
-console.log(myRegex.sticky);     // true
-myRegex.sticky = 1;  // ไม่สามารถแก้ไขค่าได้ มีไว้อ่านอย่างเดียว ถ้าอยู่ในโหมดสตริคท์จะเกิด TypeError
-console.log(myRegex.sticky);     // true
-```
 
 ### RegExp
 ```js
@@ -661,5 +593,5 @@ console.log(matchObj.indices.groups.last)         // [ 8, 11 ]
 
 ```js
 let regex = /bar/d;
-console.log(regex. hasIndices);          // true
+console.log(regex.hasIndices);          // true
 ```
