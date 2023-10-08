@@ -647,7 +647,7 @@ console.log(matchObj);
   'bar',
   index: 4,
   input: '0123foo_bar',
-  groups: [Object: null prototype] { first: 'foo', last: 'bar' },
+  groups: { first: 'foo', last: 'bar' },
   indices: [
     [ 4, 11 ],
     [ 4, 7 ],
