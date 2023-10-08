@@ -396,6 +396,22 @@ console.log("I' am THAI".search(re));          // 6
 ```
 
 ```js
+var str = "I' am Thai.\nI live in Bangkok."
+var re1 = /Thai.$/;
+var re2 = /Thai.$/m;
+console.log(str.search(re1));          // -1   -- หาไม่เจอ
+console.log(str.search(re2));          // 6
+```
+
+```js
+var str = "It's a good job.\nThe best show.";
+var re1 = /^The/;
+var re2 = /^The/m;
+console.log(str.search(re1));          // -1   -- หาไม่เจอ
+console.log(str.search(re2));          // 17
+```
+
+```js
 var regex = /Hello+/gi;
 console.log(regex.lastIndex);	// 0
 console.log(regex.source);	// "Hello+"
