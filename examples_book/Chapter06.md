@@ -330,6 +330,17 @@ var re = /^\d\w{1,}/;
 console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.txt', groups: undefined ] 
 ```
 
+### Capture groups
+
+```js
+var result = /(foo).(bar)/.exec("0123foo_bar");
+console.log(result.index);	                         // 4
+console.log(result[0]);	                         // "foo_bar"
+console.log(result[1]);	                         // "foo"
+console.log(result[2]);	                         // "bar"
+console.log(result.input);	                         // "0123foo_bar"
+```
+
 ### สตริงกับ regex
 
 ```js
