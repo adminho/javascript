@@ -242,13 +242,13 @@ console.log(re.exec("A father is"));  // [ 'fa', index: 2, input: 'A father is',
 ```js
 let re = /Java(?=Script)/;
 console.log(re.exec("This is a JavaScript book"));           
-// [ 'Java’, index: 10, input: 'This is a JavaScript book’, groups: undefined ] 
+// [ 'Java', index: 10, input: 'This is a JavaScript book', groups: undefined ] 
 ```
 
 ```js
 let re = /[wW]atch(?=ed|ing)/;
 console.log(re.exec("I watched TV")); 
-// [ 'watch’, index: 2, input: 'I watched TV’, groups: undefined ]  
+// [ 'watch', index: 2, input: 'I watched TV', groups: undefined ]  
 ```
 
 ### การระบุตัวอักษรพิเศษที่จับคู่
@@ -339,6 +339,14 @@ console.log(result[0]);	                         // "foo_bar"
 console.log(result[1]);	                         // "foo"
 console.log(result[2]);	                         // "bar"
 console.log(result.input);	                         // "0123foo_bar"
+```
+
+```js
+var re = /file{2}/;
+console.log(re.exec("filefile"));     // null
+console.log(re.exec("filee"));       // [ 'filee', index: 0, input: 'filee', groups: undefined ] 
+var re = /(file){2}/;
+console.log(re.exec("filefile"));    // [ 'filefile', 'file', index: 0, input: 'filefile', groups: undefined ] 
 ```
 
 ### สตริงกับ regex
