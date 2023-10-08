@@ -365,8 +365,8 @@ console.log(result);       // [ '<p>abc</p>', index: 0, input: '<p>abc</p>', gro
 
 ```js
 var re = /bk(@)th(->)com\2/;
-console.log(re.exec('bk@th->com->mail'));     
-// [ 'bk@th->com->', '@', '->', index: 0, input: 'bk@th->com->mail', groups: undefined ] 
+console.log(re.exec("bk@th->com->mail"));     
+// [ 'bk@th->com->' '@' '->' index: 0, input: 'bk@th->com->mail' groups: undefined ] 
 ```
 
 ### สตริงกับ regex
