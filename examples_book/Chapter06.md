@@ -504,13 +504,13 @@ console.log(regex.multiline);          // true
 ### แฟล็ก g
 
 ```js
-var regex = /Hello+/gi;
+var regex = /Hello+/ig;
 console.log(regex.lastIndex);	// 0
 console.log(regex.source);	// "Hello+"
 console.log(regex.flags);		// "gi"
-console.log(regex.global);	            // true
 console.log(regex.ignoreCase);	// true
 console.log(regex.multiline);	// false
+console.log(regex.global);	            // true
 console.log(regex.unicode);	// false
 console.log(regex.sticky);	            // false
 console.log(regex.dotAll);	            // false
