@@ -417,9 +417,9 @@ console.log(result);       // [ '<p>abc</p>', index: 0, input: '<p>abc</p>', gro
 ```
 
 ```js
-let regEx = /[a-z]+.js/;
-let matchObj =   regEx.exec("test index.js");
-console.log(matchObj) // [ 'index.js', index: 5, input: 'test index.js', groups: undefined ]
+let re = /([a-z]+).js/;
+console.log(re.exec("test index.js"));
+// [ 'index.js', 'index', index: 5, input: 'test index.js', groups: undefined ]  
 ```
 
 ```js
