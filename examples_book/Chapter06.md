@@ -254,25 +254,25 @@ console.log(re.exec("I watched TV"));
 ```js
 let  re = /test_(?!js|txt)/;
 console.log(re.exec("test_js test_txt test_html")); 
-// [ 'test_’, index: 17, input: 'test_js test_txt test_html’, groups: undefined ] 
+// [ 'test_', index: 17, input: 'test_js test_txt test_html', groups: undefined ] 
 ```
 
 ```js
-let regex = /(?<=Java)Script/g;
-let result = "This is a JavaScript book".match( regex );
-console.log(result);           // [ 'Script' ]
+let re = /(?<=Java)Script/;
+console.log(re.exec("This is a JavaScript book"));
+// [ 'Script', index: 14, input: 'This is a JavaScript book', groups: undefined ]
 ```
 
 ```js
-let  regex = /(?<=Java)[a-zA-Z\s]+/g;
-let result = "This is a JavaScript book".match( regex );
-console.log(result);           // [ 'Script book' ]
+let  re = /(?<=Java)[a-zA-Z\s]+/;
+console.log(re.exec("This is a JavaScript book"));
+// [ 'Script book', index: 14, input: 'This is a JavaScript book', groups: undefined ] 
 ```
 
 ```js
-let  regex = /(?<!test).js/g;
-let result = "test.js build.js index.html run.js".match( regex );
-console.log(result);           // [ '.js', '.js' ]
+let re = /(?<!test).js/;
+console.log(re.exec("index.html run.js"));
+// [ '.js', index: 14, input: 'index.html run.js', groups: undefined ] 
 ```
 
 ### การระบุตัวอักษรพิเศษที่จับคู่
