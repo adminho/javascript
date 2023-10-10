@@ -362,16 +362,6 @@ console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.txt', 
 ### Unicode character properties
 
 ```js
-var str = "This is a book.";
-var result = /\p{White_Space}/u.test( str );
-console.log(result);         // true
-var result = /\p{Lowercase_Letter}/u.test (str );
-console.log(result);         // true
-var result = /\p{Uppercase_Letter}/u.test (str );
-console.log(result);         // true
-```
-
-```js
 var result = /\p{Script=Greek}+/u.test("μετά");
 console.log(result);      // true
 var result = /\p{Script=Thai}+/u.test("หนังสือไทย");
@@ -386,6 +376,16 @@ console.log(result);      // true
 ```js
 var result = /\p{General_Category=Uppercase_Letter}/u.test( "THAI" );
 console.log(result);      // true
+```
+
+```js
+var str = "This is a book.";
+var result = /\p{White_Space}/u.test( str );
+console.log(result);         // true
+var result = /\p{Lowercase_Letter}/u.test (str );
+console.log(result);         // true
+var result = /\p{Uppercase_Letter}/u.test (str );
+console.log(result);         // true
 ```
 
 ### Capture groups
