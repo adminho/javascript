@@ -423,8 +423,8 @@ console.log(re.exec("test index.js"));
 ```
 
 ```js
-let regEx = /(?<filename>[a-z]+).js/;
-let matchObj =    regEx.exec("test index.js");
+let re = /(?<filename>[a-z]+).js/;
+let matchObj = re.exec("test index.js") 
 console.log(matchObj);  
 /* แสดงผลลัพธ์
 [
@@ -612,7 +612,7 @@ console.log(regexY.lastIndex);   	// 10
 
 ```js
 var str = "foo1_foo2_foo3";
-var  regex = /foo\d_?/;
+var  regex = /foo\d_?/;                             // ไม่มีแฟล็ก
 var  regexG = /foo\d_?/g;		             // แฟล็ก g
 var  regexY = /foo\d_?/y;		             // แฟลก y
 regex.lastIndex = 1;
