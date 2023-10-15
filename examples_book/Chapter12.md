@@ -20,6 +20,12 @@ console.log( typeof Symbol() );		         // "symbol"
 console.log( typeof Symbol("example") );         // "symbol"
 ```
 
+```js
+let uid = Symbol.for(“uid”);
+console.log( uid  && true );	             // true
+console.log( !true );		             // false
+```
+
 ## ข้อควรระวังการใช้ซิมโบล
 
 ```js
