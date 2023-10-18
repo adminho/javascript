@@ -1,7 +1,7 @@
 # ภาคผนวก ง  Well-Known symbols
 
 ```js
-console.log(typeof Symbol.asyncIterator);      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
+console.log(typeof Symbol.asyncIterator);        // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
 console.log(typeof Symbol.hasInstance);	      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
 console.log(typeof Symbol.isConcatSpreadable);  // symbol –-ส่วนข้อมูลเป็นบูลีน
 console.log(typeof Symbol.iterator);	      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
