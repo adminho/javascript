@@ -583,7 +583,7 @@ function * genIterator () {
     yield 1;
     yield 5;
     return 45;		       // จบการทำงานแค่บรรทัดนี้
-    yield 10;		       // การทำงานจะมาไม่ถึงบรรทัดนี้
+    yield 10;		       // เส้นทางการทำงานจะไม่มาถึงบรรทัดนี้
 }
 let iterator = genIterator ();
 console.log(iterator.next());     // { value: 1, done: false }

@@ -155,7 +155,7 @@ Symbol("foo") + "bar"; 	                         // TypeError
 let sym = Symbol("foo");
 console.log(sym.toString());   		 // Symbol(foo)
 console.log(String(sym));		             // Symbol(foo)		
-new String(sym);			             //  TypeError
+new String(sym);			             // TypeError
 ```
 
 ```js
