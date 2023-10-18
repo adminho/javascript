@@ -25,9 +25,7 @@ let obj1 = new MyConstructor();
 let obj2 = new MyClass();
 console.log(obj1 instanceof MyConstructor);		// true
 console.log(obj2 instanceof MyClass);			// true
-```
 
-```js
 console.log(MyConstructor[Symbol.hasInstance](obj1));	    // true
 // จะเหมือนเขียน console.log(obj1 instanceof MyConstructor);   // true
 console.log(MyClass[Symbol.hasInstance](obj2));		    // true
