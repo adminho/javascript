@@ -105,7 +105,7 @@ let likedArray = {
     [Symbol.isConcatSpreadable]: true		
 };
 let arr = [ "A", "B" ].concat(likedArray);		
-console.log(arr);	// [ ‘A’, ‘B’, ‘a’, ‘b’ ]
+console.log(arr);	     // [ 'A', 'B', 'a', 'b' ]
 ```
 
 ## การใช้งาน Symbol.match, Symbol.matchAll, Symbol.replace, Symbol.search, Symbol.split
@@ -135,13 +135,13 @@ let regexObj = {
 }
 let str = "Hello World !";
 // เรียกเมธอด [Symbol.match] 
-console.log(str.match(regexObj));               // [ ‘Hello’, index: 0, input: ‘Hello World !’ ]
+console.log(str.match(regexObj));               // [ 'Hello', index: 0, input: 'Hello World !' ]
 // เรียกเมธอด [Symbol.replace] 
 console.log(str.replace(regexObj, "?"));       // "Hello World ?"
 // เรียกเมธอด [Symbol.search] 
 console.log(str.search(regexObj));	             // 6
 // เรียกเมธอด [Symbol.split] 
-console.log(str.split(regexObj));	             // [ ‘Hello’, ‘World!’, ‘!’ ]
+console.log(str.split(regexObj));	             // [ 'Hello', 'World!', '!' ]
 ```
 
 ```js
@@ -156,8 +156,8 @@ for (const m of result) {
      console.log(m);
 }
 // แสดงผลลัพธ์
-// [ ‘o’, index: 4, input: ‘Hello World !’, groups: undefined ] 
-// [ ‘o’, index: 7, input: ‘Hello World !’, groups: undefined ]
+// [ 'o', index: 4, input: 'Hello World !', groups: undefined ] 
+// [ 'o', index: 7, input: 'Hello World !', groups: undefined ]
 ```
 
 ## การใช้งาน Symbol.species 
