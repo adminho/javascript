@@ -399,7 +399,7 @@ Array.prototype[Symbol.unscopables] = Object.assign(Object.create(null), { // เน
     copyWithin: true,
     entries: true,
     fill: true,
-    find, true,
+    find: true,
     findIndex: true,
     keys: true,
     values: true
