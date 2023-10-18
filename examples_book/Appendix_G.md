@@ -408,7 +408,7 @@ Array.prototype[Symbol.unscopables] = Object.assign(Object.create(null), { // �
 
 ```js
 let array = [4, 3, 2, 1];
-console.log(array);			  // [4, 3, 2, 1]
+console.log(array);			  // [ 4, 3, 2, 1 ] 
 with(array) {		
      sort();				 // เรียงลำดับอาร์เรย์ใหม่จากน้อยไปหามาก
      console.log(typeof copyWithin);	 // "undefined"
