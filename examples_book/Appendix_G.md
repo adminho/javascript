@@ -388,8 +388,8 @@ Array.prototype[Symbol.toStringTag] = "My Array";
 let myarray = [1, 2, 3];
 console.log(Object.prototype.toString.call(myarray));    // "[object My Array]"
 // ต่อไปจะทำการเรียก toString() ของอาร์เรย์
-console.log(myarray.toString())			    // "1, 2, 3"	
-console.log(Array.prototype.toString.call(myarray))	    // "1, 2, 3"
+console.log(myarray.toString())			    // "1,2,3"	
+console.log(Array.prototype.toString.call(myarray))	    // "1,2,3"
 ```
 
 ## การใช้งาน Symbol.unscopables
