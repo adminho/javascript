@@ -418,8 +418,8 @@ console.log(array);			 // [ 1, 2, 3, 4 ]
 
 ```js
 let obj = {
-     foo: "foo value"
-     ,bar: "bar value"
+     foo: "foo value",
+     bar: "bar value"
 }
 with(obj) {
     console.log(foo);	                         // "foo value"
