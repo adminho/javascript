@@ -723,13 +723,13 @@ for (let i of genIterator([1, 5, 10]) ) {
 ### ประกาศเจนเนอเรเตอร์ในอ็อบเจ็กต์
 
 ```js
-let obj = {};
+let obj = { };
 obj.genIterator =  function *(item) {	 // ประกาศเจนเนอเรเตอร์
         for (let i=0; i < item.length; i++) {
             yield item[i];
         }
 };
-for(let i of obj.genIterator( [1, 5, 10]) ) {
+for(let i of obj.genIterator( [1, 5, 10] ) ) {
         console.log(i);
 }
 /* แสดงผลลัพธ์
