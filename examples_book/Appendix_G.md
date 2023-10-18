@@ -67,6 +67,8 @@ console.log(a2[Symbol.isConcatSpreadable]);	// undefined
 console.log(a3[Symbol.isConcatSpreadable]);	// undefined
 ```
 
+หมายเหตุ ตัวอย่างต่อไปนี้ อย่าลืมก็อปปี้ a1 กับ a2 ของตัวอย่างอย่างก่อนหน้านี้มาใช้งานด้วย
+
 ```js
 a1[Symbol.isConcatSpreadable] = true;
 a2[Symbol.isConcatSpreadable] = true;
@@ -133,13 +135,13 @@ let regexObj = {
 }
 let str = "Hello World !";
 // เรียกเมธอด [Symbol.match] 
-console.log(str.match(regexObj));               // [ 'Hello', index: 0, input: 'Hello World !' ]
+console.log(str.match(regexObj)); // [ 'Hello', index: 0, input: 'Hello World !', groups: undefined ]
 // เรียกเมธอด [Symbol.replace] 
 console.log(str.replace(regexObj, "?"));       // "Hello World ?"
 // เรียกเมธอด [Symbol.search] 
 console.log(str.search(regexObj));	             // 6
 // เรียกเมธอด [Symbol.split] 
-console.log(str.split(regexObj));	             // [ 'Hello', 'World!', '!' ]
+console.log(str.split(regexObj));	             // [ 'Hello', 'World', '!' ]
 ```
 
 ```js
