@@ -429,8 +429,8 @@ with(obj) {
 
 ```js
 let obj = {
- 	foo: "foo value"
- 	,bar: "bar value"
+ 	foo: "foo value",
+ 	bar: "bar value"
 }
 obj[Symbol.unscopables] = Object.assign(Object.create(null), { 
     foo: true 	                                     // ห้ามใช้  foo ในบล็อกของประโยคคำสั่ง with
