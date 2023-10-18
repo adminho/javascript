@@ -6,14 +6,14 @@ console.log(typeof Symbol.hasInstance);	      // symbol --ส่วนข้อ�
 console.log(typeof Symbol.isConcatSpreadable);  // symbol –-ส่วนข้อมูลเป็นบูลีน
 console.log(typeof Symbol.iterator);	      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
 console.log(typeof Symbol.match);	      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
-console.log(typeof Symbol.matchAll);             // symbol
+console.log(typeof Symbol.matchAll);             // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
 console.log(typeof Symbol.replace);	      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
 console.log(typeof Symbol.search);	      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
 console.log(typeof Symbol.split);		      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
 console.log(typeof Symbol.species);	      // symbol --ส่วนข้อมูลเป็นคอนสตรัคเตอร์
 console.log(typeof Symbol.toPrimitive);	      // symbol --ส่วนข้อมูลเป็นฟังก์ชัน หรือเมธอด
 console.log(typeof Symbol.toStringTag);	      // symbol --ส่วนข้อมูลเป็นสตริง
-console.log(typeof Symbol.unscopeables);      // undefined --ส่วนข้อมูลเป็นอ็อบเจ็กต์
+console.log(typeof Symbol.unscopables);        // symbol --ส่วนข้อมูลเป็นอ็อบเจ็กต์
 ```
 
 ## การใช้งาน Symbol.hasInstance 
@@ -252,7 +252,7 @@ console.log("It is " + a)      // "It is [object Object]"
 let two = new Number(2);                         // ประกาศอ็อบเจ็กต์ Number
 console.log(two.toString());	             // "2" 
 console.log(two.valueOf());  	             // 2
-// เบื้องหลังจะเรียกใช้ two.valueOf() ให้กลายเป็น 2 ก่อน แล้วถึงคูณด้วย  5 จึงกลายเป็น 2 * 5
+// เบื้องหลังจะเรียกใช้ two.valueOf() ให้กลายเป็น 2 ก่อน แล้วถึงคูณด้วย 5 จึงกลายเป็น 2 * 5
 console.log(two * 5);		             // 10 
 ```
 
@@ -329,7 +329,7 @@ console.log(money == "100 THB");            // true                     -- case 
 ## การใช้งาน Symbol.toStringTag
 
 ```js
-obj = {}
+obj = { }
 obj[Symbol.toStringTag] = "My Object";
 console.log(obj.toString());                                  // "[object My Object]"
 console.log(Object.prototype.toString.call(obj));    // "[object My Object]"
