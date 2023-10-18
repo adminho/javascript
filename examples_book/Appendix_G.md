@@ -41,7 +41,7 @@ class PositiveNumber {
      }
 }
 Object.defineProperty( PositiveNumber, Symbol.hasInstance, {
-// ดัดแปลงพฤติกรรมของพร็อพเพอร์ตี้ Symbol.hasInstance อันเดิม ด้วยการประกาศเมธอดอันใหม่
+  // ดัดแปลงพฤติกรรมของพร็อพเพอร์ตี้ Symbol.hasInstance อันเดิม ด้วยการประกาศเมธอดอันใหม่
   value: function(objNumber) {
     // พารามิเตอร์ objNumber รับค่าอากิวเมนต์เป็นอ็อบเจ็กต์ที่ถูกสร้างขึ้นมา
      if(objNumber.value > 0) {
