@@ -99,9 +99,9 @@ console.log(a3);	                   // [ [ 1, 2, 3 ], 4, 5, 6 ]
 
 ```js
 let likedArray = {
-    0: "a"
-    , 1: "b"
-    , length: 2,
+    0: "a", 
+    1: "b",
+    length: 2,
     [Symbol.isConcatSpreadable]: true		
 };
 let arr = [ "A", "B" ].concat(likedArray);		
