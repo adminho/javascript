@@ -167,7 +167,7 @@ class MyArray extends Array {
 }
 let array = new MyArray(1, 2, 3, 4);
 let newarray = array.filter((item) => item > 2);
-console.log(newarray);	// [ 3, 4 ]
+console.log(newarray);	                                 // [ 3, 4 ]
 console.log(array instanceof MyArray);      	         // true
 console.log(newarray instanceof Array);              // true
 console.log(newarray instanceof MyArray);          // true
