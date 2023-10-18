@@ -103,7 +103,7 @@ Symbol.for("jquery.uid");
 ## ซิมโบลในประโยค for...in 
 
 ```js
-let obj = {};
+let obj = { };
 obj.car = "100";
 obj["zoo"] = "200";
 obj[Symbol("foo")] = "foo";
