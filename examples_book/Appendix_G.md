@@ -122,16 +122,16 @@ console.log(typeof RegExp.prototype[Symbol.split]);	// "function"
 let regexObj = {
     [Symbol.match](value) {	
          return value.match(/Hello/);	      // จับคู่คำว่า "Hello"
-    }
-    ,[Symbol.replace](value, replacement) {	         
+    },
+    [Symbol.replace](value, replacement) {	         
          return value.replace(/!/, replacement);   // แทนที่คำว่า "!" ด้วย replacement	 
-    }
-    ,[Symbol.search](value) {	
+    },
+    [Symbol.search](value) {	
          return value.search(/World/);	     // ค้นหาคำว่า "World"
-    }	
-    ,[Symbol.split](value) {	
+    },	
+    [Symbol.split](value) {	
          return value.split(/\s/);	                 // ใช้ช่องว่างเป็นตัวแบ่ง
-     }
+    }
 }
 let str = "Hello World !";
 // เรียกเมธอด [Symbol.match] 
