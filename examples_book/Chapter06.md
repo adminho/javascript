@@ -536,7 +536,7 @@ console.log(re.exec("talked & watched"));
 
 ### เมธอดของสตริงที่ใช้งานร่วมกับ regex
 
-ตัวอย่าง 6.74 ลองพิจารณาการใช้สตริงร่วมกับ regex ผ่านเมธอดของมัน
+ตัวอย่าง 6.74 ลองพิจารณาการใช้เมธอดของสตริงร่วมกับ regex
 ```js
 console.log("012Hellooooo".search(/Hello+/));	           // 3
 var result = "Hellooooo Hello".match(/Hello+/g);	
@@ -672,7 +672,7 @@ var str = "𠮷";
 console.log(/^.$/u.test(str));      	// true
 ```
 
-ตัวอย่าง 6.87 ประยุกต์ใช้แฟล็ก u เพื่อนับจำนวนตัวอักษรที่เป็นภาษาอะไรก็ได้ ดังตัวอย่าง
+ตัวอย่าง 6.87 ประยุกต์ใช้แฟล็ก u เพื่อนับจำนวนตัวอักษรที่เป็นภาษาชาติไหนก็ได้
 ```js
 var result1 =  "𠮷กขคง𤭢".match(/[\s\S]/gu);
 console.log(result1.length);	// 6
