@@ -350,7 +350,7 @@ console.log(re.exec("แดง"));     // [ 'ด', index: 1, input: 'แดง',
 console.log(/\+/.test("+"));            // true
 console.log(/\*/.test("*"));             // true
 console.log(/\?/.test("?"));             // true
-console.log(/\\/.test("\x5C"));        // true  -- x5c คือค่า ASCII ของ "\"
+console.log(/\\/.test("\x5C"));        // true  -- x5C คือค่า ASCII ของ "\"
 console.log(/\./.test("."));              // true 
 ```
 
