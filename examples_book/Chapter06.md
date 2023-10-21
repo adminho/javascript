@@ -435,7 +435,7 @@ console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.txt', 
 
 ### Unicode character properties
 
-ตัวอย่าง 6.64 unicode property escapes ใช้พร็อพเพอร์ตี้ของยูนิโคดป็น Script
+ตัวอย่าง 6.64 ระบุพร็อพเพอร์ตี้ของยูนิโคดป็น Script
 ```js
 var result = /\p{Script=Greek}+/u.test("μετά");
 console.log(result);      // true
@@ -443,7 +443,7 @@ var result = /\p{Script=Thai}+/u.test("หนังสือไทย");
 console.log(result);     // true
 ```
 
-ตัวอย่าง 6.65 เขียนพร็อพเพอร์ตี้ Uppercase_Letter
+ตัวอย่าง 6.65 ระบุพร็อพเพอร์ตี้ของยูนิโคดป็น Uppercase_Letter
 ```js
 var result = /\p{Uppercase_Letter}/u.test( "THAI" );
 console.log(result);      // true
