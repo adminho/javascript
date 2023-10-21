@@ -318,7 +318,7 @@ console.log(re.exec("This is a JavaScript book"));
 ```
 
 2) วิธี negative lookbehind assertion จะมีรูปแบบ (?&lt;!y)x ดังตัวอย่าง
-ตัวอย่าง 6.47 ใช้ regex เป็น /(?&lt;!test).js/ หมายถึงจะจับคู่ด้วยคำว่า ".js" ด้วยรูปแบบ .js แต่ต้องไม่ขึ้นต้นด้วยคำว่า "test" ด้วยรูปแบบ (?<!test) จึงเจอคำว่า ".js" ที่อินเด็กซ์
+ตัวอย่าง 6.47 ใช้ regex เป็น /(?&lt;!test).js/ หมายถึงจะจับคู่ด้วยคำว่า ".js" ด้วยรูปแบบ .js แต่ต้องไม่ขึ้นต้นด้วยคำว่า "test" ด้วยรูปแบบ (?&lt;!test) จึงเจอคำว่า ".js" ที่อินเด็กซ์ 14
 ```js
 let re = /(?<!test).js/;
 console.log(re.exec("index.html run.js"));
