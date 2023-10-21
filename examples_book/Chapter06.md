@@ -468,7 +468,7 @@ console.log(result);         // true
 
 ### Capture groups
 
-ตัวอย่าง 6.67 ใช้ regex เป็น  /(log)_(html)/ เพื่อทำการ capture groups โดยจะมี 2 กลุ่มย่อยในการ catpure ได้แก่ (log) กับ (html)
+ตัวอย่าง 6.67 ใช้ regex เป็น /(log)_(html)/ เพื่อทำการ capture groups โดยจะมี 2 กลุ่มย่อยที่ถูก catpure ได้แก่ (log) กับ (html)
 ```js
 var result = /(log)_(html)/.exec("save log_html.txt");
 console.log(result.index);	                         // 5
@@ -520,7 +520,7 @@ console.log(matchObj);
 console.log(matchObj .groups.filename);      // "index"
 ```
 
-ตัวอย่าง 6.72 ใช้ regex เป็น /bk(@)th(->)com\2/ โดยมีการ capture สอง group ได้แก่ (@) กับ (.>) แต่ให้สังเกตมีการใช้ \2 หมายถึงชุดตัวอักษรที่จับคู่ จะใช้ผลการ capture ก่อนหน้านี้ ด้วยวงเล็บอันที่สองก็คือ (.>) 
+ตัวอย่าง 6.72 ใช้ regex เป็น /bk(@)th(->)com\2/ โดยมีการ capture สองกลุ่มย่อย ได้แก่ (@) กับ (.>) แต่ให้สังเกตมีการใช้ \2 หมายถึงชุดตัวอักษรที่ถูกจับคู่ จะใช้ผลการ capture ก่อนหน้านี้ ด้วยวงเล็บอันที่สองก็คือ (.>)
 ```js
 var re = /bk(@)th(.>)com\2/;
 console.log(re.exec("bk@th=>com=>mail"));     
