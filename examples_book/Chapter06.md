@@ -487,7 +487,7 @@ var re = /(file){2}/;
 console.log(re.exec("filefile"));    // [ 'filefile', 'file', index: 0, input: 'filefile', groups: undefined ] 
 ```
 
-ตัวอย่าง 6.69 ใช้ regex เป็น /(?:<p>)abc(?:</p>)/ เพื่อทำการ capture group โดยจะไม่จำผลการ capture
+ตัวอย่าง 6.69 ใช้ regex เป็น /(?:&lt;p&gt;)abc(?:&lt;/p&gt;)/ เพื่อทำการ capture group โดยจะไม่จำผลการ capture
 ```js
 var re =  /(?:<p>)abc(?:<\/p>)/;
 let result = re.exec("<p>abc</p>");    
