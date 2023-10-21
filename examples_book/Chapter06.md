@@ -408,7 +408,7 @@ var re = /\s/;
 console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefined ]
 ```
 
-ตัวอย่าง 6.60 เราสามารถพิมพ์ช่องเว้นวรรคก็ได้ โดยไม่ต้องใช้ \s ใน regex ดังตัวอย่าง
+ตัวอย่าง 6.60 เราสามารถพิมพ์ช่องว่างเว้นวรรคก็ได้ โดยไม่ต้องใช้ \s ใน regex ดังตัวอย่าง
 ```js
 var re = / /;
 console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefined ]
