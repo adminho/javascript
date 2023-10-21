@@ -5,18 +5,18 @@
 <!DOCTYPE html>
 <html>
             <head>
-                        <title>"My title"<title>
+                        <title>“My title”</title>
             </head>
 	<body>
-		<h1>"My head 1"</h1>
-		<h2>"My head 2"</h2>
+		<h1>“My head 1”</h1>
+		<h2>“My head 2”</h2>
 	</body>
 </html>
 ```
 
 ## การเข้าถึง element
 
-```notrun
+```html
 <!DOCTYPE html>
 <html>
 <head></head>
