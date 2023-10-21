@@ -354,31 +354,37 @@ console.log(/\\/.test("\x5C"));        // true  -- x5c คือค่า ASCII 
 console.log(/\./.test("."));              // true 
 ```
 
+ตัวอย่าง 6.52 ใช้ regex เป็น /./ หมายถึงจะจับคู่ตัวอักษรใดๆ จำนวน 1 ตัว โดยจะค้นหาตัวแรกที่พบเจอ ซึ่งจะเจออักษร “d” ในตริง “dog” ที่อินเด็กซ์ 0
 ```js
 var re = /./;
 console.log(re.exec("dog"));    // [ 'd', index: 0, input: 'dog', groups: undefined ]
 ```
 
+ตัวอย่าง 6.53 ใช้ regex เป็น /.ox/ หมายถึงจะจับคู่ตัวอักษรที่ขึ้นต้นด้วยอะไรก็ได้ แต่ขอให้ตามด้วย ox โดยจะค้นหาคำแรกที่พบเจอ ซึ่งจะเจออักษร “box” ในตริง “boxes” ที่อินเด็กซ์ 0
 ```js
 var re = /.ox/;
 console.log(re.exec("boxes"));    //[ 'box', index: 0, input: 'boxes', groups: undefined ] 
 ```
 
+ตัวอย่าง 6.54 ใช้ regex เป็น /\d/ หมายถึงจะจับคู่ตัวเลขใดๆ จำนวน 1 ตัว โดยจะค้นหาคำแรกที่พบเจอ ซึ่งจะเจออักษรเลข “8” ในตริง “x86” ที่อินเด็กซ์ 1 (ไม่เจอเลข 6)
 ```js
 var re = /\d/;
 console.log(re.exec("x86"));    // [ '8', index: 1, input: 'x86', groups: undefined ]
 ```
 
+ตัวอย่าง 6.55 ใช้ regex เป็น /..\d/ หมายถึงจะจับคู่ลำดับตัวอักษรทั้งหมด 3 ตัว โดยสองตัวแรกเป็นตัวอักษรใดๆ ก็ได้ (ใช้จุดสองอันติดกัน) ส่วนตัวอักษรที่สาม จะเป็นตัวเลข (ใช้ \d) โดยจะค้นหาคำแรกที่พบเจอ ซึ่งจะเจอคำว่า “em1” ในตริง “item1” ที่อินเด็กซ์ 2
 ```js
 var re = /..\d/;
 console.log(re.exec("item1"));    // [ 'em1', index: 2, input: 'item1', groups: undefined ]
 ```
 
+ตัวอย่าง 6.56 ใช้ regex เป็น /\D/ หมายถึงจะจับคู่ตัวอักษรใดๆ จำนวน 1 ตัว ที่ไม่ใช่ตัวเลข โดยจะค้นหาคำแรกที่พบเจอ ซึ่งจะเจออักษรเลข “p” ในตริง “100px” ที่อินเด็กซ์ 3 (ไม่เจออักษร “x”)
 ```js
 var re = /\D/;
 console.log(re.exec("100px"));    // [ 'p', index: 3, input: '100px', groups: undefined ]
 ```
 
+ตัวอย่าง 6.57 ใช้regex เป็น /\w/ หมายถึงจะจับคู่ตัวอักษรใดๆ จำนวน 1 ตัว ได้แก่ ตัวอักษร a ถึง z หรือ A ถึง z หรือ 0 ถึง 9 รวมทั้ง _ โดยจะค้นหาคำแรกที่พบเจอ ซึ่งในตัวอย่างนี้จะเจอหลายตัวอักษรที่อินเด็กซ์ 1 (ไม่จับคู่ “$”)
 ```js
 var re = /\w/;
 console.log(re.exec("$a"));        // [ 'a', index: 1, input: '$a', groups: undefined ] 
@@ -387,6 +393,7 @@ console.log(re.exec("$7"));        // [ '7', index: 1, input: '$7', groups: unde
 console.log(re.exec("$_"));        // [ '_', index: 1, input: '$_', groups: undefined ] 
 ```
 
+ตัวอย่าง 6.58 ใช้ regex เป็น /\W/ หมายถึงจะจับคู่ตัวอักษรใดๆ จำนวน 1 ตัว ที่ไม่ใช่ตัวอักษร a ถึง z หรือ A ถึง z หรือ 0 ถึง 9 รวมทั้ง _ โดยจะค้นหาคำแรกที่พบเจอ ซึ่งในตัวอย่างนี้ก็จะเจออักษร “$” ที่อินเด็กซ์ 1
 ```js
 var re = /\W/;
 console.log(re.exec("a$"));        // [ '$', index: 1, input: 'a$', groups: undefined ] 
@@ -395,27 +402,32 @@ console.log(re.exec("7$"));        // [ '$', index: 1, input: '7$', groups: unde
 console.log(re.exec("_$"));        // [ '$', index: 1, input: '_$', groups: undefined ] 
 ```
 
+ตัวอย่าง 6.59 ใช้ regex เป็น /\s/ หมายถึงจะจับคู่ตัวอักษรช่องว่าง โดยจะค้นหาคำแรกที่พบเจอ ซึ่งจะเจอช่องว่าง “ ” ในตริง “^ ^” ที่อินเด็กซ์ 1
 ```js
 var re = /\s/;
 console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefined ]
 ```
 
+ตัวอย่าง 6.60 เราสามารถพิมพ์ช่องเว้นวรรคก็ได้ โดยไม่ต้องใช้ \s ใน regex ดังตัวอย่าง
 ```js
 var re = / /;
 console.log(re.exec("^ ^"));    // [ ' ', index: 1, input: '^ ^', groups: undefined ]
 ```
 
+ตัวอย่าง 6.61 ใช้ regex เป็น /\S/ หมายถึงจะจับคู่ตัวอักษรใดๆ ที่ไม่ใช่อักษรว่าง จำนวน 1 ตัว โดยจะค้นหาคำแรกที่พบเจอ ซึ่งจะเจออักษร “@”  ในสตริง “ @” ที่อินเด็กซ์ 1 (มีช่องว่างนำหน้า @)
 ```js
 var re = /\S/;
 console.log(re.exec(" @"));    // [ '@', index: 1, input: ' @', groups: undefined ] 
 ```
 
+ตัวอย่าง 6.62 ประยุกต์ใช้ . ร่วมกับ * เพื่อจับคู่ตัวอักษรตั้งแต่ศูนย์ตัวขึ้นไป โดยต้องมี <p> ครอบเปิด และปิดท้ายด้วย</p> โดยในตัวอย่างนี้จะเจอข้อความ “<p>@test</p>” ที่อินเด็กซ์ 5
 ```js
 var re = /<p>.*<\/p>/;
 console.log(re.exec("<div><p>@test</p></div>"));
 // [ '<p>@test</p>', index: 5, input: '<div><p>@test</p></div>', groups: undefined ] 
 ```
 
+ตัวอย่าง 6.63 ประยุกต์ใช้ \d ร่วมกับ ^ และ \w ร่วมกับ {1,} เพื่อจับคู่สตริงที่ต้องขึ้นต้นด้วยตัวเลข แล้วตามด้วยอักษรที่อยู่ในช่วง a ถึง z หรือ A ถึง z หรือ 0 ถึง 9 รวมทั้งตัวอักษร _ ที่มีตั้งแต่ 1 ตัวขึ้นไป โดยในตัวอย่างนี้จะเจอข้อความ “1_log” ที่อินเด็กซ์ 0
 ```js
 var re = /^\d\w{1,}/;
 console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.txt', groups: undefined ] 
@@ -423,6 +435,7 @@ console.log(re.exec("1_log.txt"));  // [ '1_log', index: 0, input: '1_log.txt', 
 
 ### Unicode character properties
 
+ตัวอย่าง 6.64 unicode property escapes ใช้พร็อพเพอร์ตี้ของยูนิโคดป็น Script
 ```js
 var result = /\p{Script=Greek}+/u.test("μετά");
 console.log(result);      // true
@@ -430,16 +443,19 @@ var result = /\p{Script=Thai}+/u.test("หนังสือไทย");
 console.log(result);     // true
 ```
 
+ตัวอย่าง 6.65 เขียนพร็อพเพอร์ตี้ Uppercase_Letter
 ```js
 var result = /\p{Uppercase_Letter}/u.test( "THAI" );
 console.log(result);      // true
 ```
 
+ตัวอย่างข้างต้นจะเสมือนเขียนซอร์สโค้ดดังนี้
 ```js
 var result = /\p{General_Category=Uppercase_Letter}/u.test( "THAI" );
 console.log(result);      // true
 ```
 
+ตัวอย่าง 6.66 การจับคู่โดยใช้ unicode property escapes แบบต่างๆ
 ```js
 var str = "This is a book.";
 var result = /\p{White_Space}/u.test( str );
@@ -452,6 +468,7 @@ console.log(result);         // true
 
 ### Capture groups
 
+ตัวอย่าง 6.67 ใช้ regex เป็น  /(log)_(html)/ เพื่อทำการ capture groups โดยจะมี 2 กลุ่มในการ catpure ได้แก่ (log) กับ (html)
 ```js
 var result = /(log)_(html)/.exec("save log_html.txt");
 console.log(result.index);	                         // 5
@@ -461,6 +478,7 @@ console.log(result[2]);	                         // "html"
 console.log(result.input);	                         // "save log_html.txt"
 ```
 
+ตัวอย่าง 6.68 ใช้ regex เป็น /file{2}/ เปรียบเทียบกับ /(file){2}/ เพื่อค้นหาข้อความในสตริง
 ```js
 var re = /file{2}/;
 console.log(re.exec("filefile"));     // null
@@ -469,6 +487,7 @@ var re = /(file){2}/;
 console.log(re.exec("filefile"));    // [ 'filefile', 'file', index: 0, input: 'filefile', groups: undefined ] 
 ```
 
+ตัวอย่าง 6.69 ใช้ regex เป็น /(?:<p>)abc(?:</p>)/ เพื่อทำการ capture group โดยจะไม่จำผลการ capture
 ```js
 var re =  /(?:<p>)abc(?:<\/p>)/;
 let result = re.exec("<p>abc</p>");    
@@ -478,12 +497,14 @@ console.log(result[2]);    // undefined
 console.log(result);       // [ '<p>abc</p>', index: 0, input: '<p>abc</p>', groups: undefined ] 
 ```
 
+ตัวอย่าง 6.70 ใช้ regex เป็น /([a-z]+).js/ โดยไม่ได้ตั้งชื่อ group
 ```js
 let re = /([a-z]+).js/;
 console.log(re.exec("test index.js"));
 // [ 'index.js', 'index', index: 5, input: 'test index.js', groups: undefined ]  
 ```
 
+ตัวอย่าง 6.71 ใช้ regex เป็น  /(?<filename>[a-z]+).js/
 ```js
 let re = /(?<filename>[a-z]+).js/;
 let matchObj = re.exec("test index.js") 
@@ -499,19 +520,21 @@ console.log(matchObj);
 console.log(matchObj .groups.filename);      // "index"
 ```
 
+ตัวอย่าง 6.72 ใช้ regex เป็น /bk(@)th(->)com\2/ โดยมีการ capture สอง group ได้แก่ (@) กับ (.>) แต่ให้สังเกตมีการใช้ \2 หมายถึงชุดตัวอักษรที่จับคู่ จะใช้ผลการ capture ก่อนหน้านี้ ด้วยวงเล็บอันที่สองก็คือ (.>) 
 ```js
 var re = /bk(@)th(.>)com\2/;
 console.log(re.exec("bk@th=>com=>mail"));     
 // [ 'bk@th=>com=>', '@', '=>', index: 0, input: 'bk@th=>com=>mail', groups: undefined ]  
 ```
 
+ตัวอย่าง 6.73  ใช้ regex เป็น /talk(?<tense>ed|ing) & watch\k<tense>/ โดยมีการตั้งชื่อกลุ่มที่ได้จากการ capture เป็น “tense” และมีการอ้างถึงผลลัพธ์จากการ capture ก่อนหน้านี้ด้วยกาiระบุชื่อกลุ่มเป็น “tense” ด้วยรูปแบบ \k<tense>
 ```js
 var re = /talk(?<tense>ed|ing) & watch\k<tense>/;
 console.log(re.exec("talked & watched"));     
 // [ 'talked & watched', 'ed', index: 0, input: 'talked & watched', groups: { tense: 'ed' } ] 
 ```
 
-### สตริงกับ regex
+### เมธอดของสตริงที่ใช้งานร่วมกับ regex
 
 ```js
 console.log("012Hellooooo".search(/Hello+/));	           // 3
