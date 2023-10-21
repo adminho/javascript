@@ -98,6 +98,7 @@ console.log(all_pTag)
 
 ### สิ่งที่ควรรู้ HTMLCollection
 
+หมายเหตุ ถ้าจะรันโค้ดชุดนี้ ต้องแก้ไขให้ let all_pTag มีการประกาศแค่ครั้งเดียวพอ 
 ```html
 <!DOCTYPE html>
 <html>
@@ -145,6 +146,8 @@ for(let p of all_pTag) {
 
 ### ตัวอย่างการเข้าถึง <from>...</form>
 
+หมายเหตุ ถ้าจะรันโค้ดชุดนี้ ต้องแก้ไขให้ let elem1, let elem2 มีการประกาศแค่ครั้งเดียวพอ 
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -175,6 +178,25 @@ let elem1 = document.forms[0];
 let elem2 = document.forms.item(0);
 console.log(elem1 === elem2);            // ได้ผลลัพธ์เป็น "true"
 </script>
+
+</body>
+</html>
+```
+
+หมายเหตุ ถ้าจะรันโค้ดชุดนี้ ต้องแก้ไขให้ let loginForm มีการประกาศแค่ครั้งเดียวพอ 
+
+```html
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<form name="myForm">
+  <label for="email">email:</label><br>
+  <input name="email" type="email"><br/>
+  <label for="password">password:</label><br>
+  <input name="password" type="password"><br/><br/>
+  <button type="submit">Log in</button>
+</form>
 
 <script>
   let loginForm = document.forms.myForm; 
