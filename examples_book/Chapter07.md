@@ -652,26 +652,6 @@ btn.addEventListener("click", () => {                   // บรรทัด b
 </html>
 ```
 
-```html
-<!DOCTYPE html>
-<html>
-<body>
-<p id="target"></p>
-<button id="btn">Click me</button>
-<script>
-let btn = document.getElementById("btn");
-btn.addEventListener("click",  () => {                  // บรรทัด a
-    this.textContent = "Ooops!";
-});  
-btn.addEventListener("click", () => {                   // บรรทัด b
-    let h1 = document.getElementById("target");
-    h1.innerHTML = "Hello World";
-});    
-</script>
-</body>
-</html>
-```
-
 ## Event bubbling หรือ Event capturing
 
 ```html
