@@ -57,7 +57,7 @@ var re = /like/;
 console.log(re.exec("I like u"));   // [ 'like', index: 2, input: 'I like u', groups: undefined ]
 ```
 
-ตัวอย่าง 6.6 ใช้ /html|div|br/ เป็น regex เพื่อจับคู่ลำดับตัวอักษร "html" หรือ "div" หรือ "br" อย่างใดอย่างหนึ่ง ในสตริง "<div>" ซึ่งเจอชุดอักษร "div" ที่อินเด็กซ์ 1
+ตัวอย่าง 6.6 ใช้ /html|div|br/ เป็น regex เพื่อจับคู่ลำดับตัวอักษร "html" หรือ "div" หรือ "br" อย่างใดอย่างหนึ่ง ในสตริง "&lt;div&gt;" ซึ่งเจอชุดอักษร "div" ที่อินเด็กซ์ 1
 ```js
 var re = /html|div|br/;
 console.log(re.exec("<div>"));    // [ 'div', index: 1, input: '<div>', groups: undefined ]
