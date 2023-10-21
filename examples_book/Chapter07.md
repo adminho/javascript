@@ -143,7 +143,7 @@ for(let p of all_pTag) {
 </html>
 ```
 
-### ตัวอย่างการเข้าถึง '<from>...</form>'
+### ตัวอย่างการเข้าถึง <from>...</form>
 
 ```html
 <!DOCTYPE html>
@@ -305,7 +305,7 @@ function showValue() {
 ```
 
 ### การเพิ่มและลบ element
-### ตัวอย่างเพิ่มและลบ '<p>...</p>'
+### ตัวอย่างเพิ่มและลบ <p>...</p>
 
 ```html
 <!DOCTYPE html>
@@ -335,7 +335,7 @@ function deleteElement() {
 </html>
 ```
 
-### ตัวอย่างเพิ่มและลบ '<option>...</option>' ใน select ของ HTML
+### ตัวอย่างเพิ่มและลบ <option>...</option> ใน select ของ HTML
 ```html
 <!DOCTYPE html>
 <html>
