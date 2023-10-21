@@ -144,7 +144,7 @@ for(let p of all_pTag) {
 </html>
 ```
 
-### ตัวอย่างการเข้าถึง <from>...</form>
+### ตัวอย่างการเข้าถึง &lt;from&gt;...&lt;/form&gt;
 
 หมายเหตุ ถ้าจะรันโค้ดชุดนี้ ต้องแก้ไขให้ let elem1, let elem2 มีการประกาศแค่ครั้งเดียวพอ 
 
@@ -327,7 +327,7 @@ function showValue() {
 ```
 
 ### การเพิ่มและลบ element
-### ตัวอย่างเพิ่มและลบ <p>...</p>
+### ตัวอย่างเพิ่มและลบ &lt;p&gt;...&lt;/p&gt;
 
 ```html
 <!DOCTYPE html>
@@ -357,7 +357,7 @@ function deleteElement() {
 </html>
 ```
 
-### ตัวอย่างเพิ่มและลบ <option>...</option> ใน select ของ HTML
+### ตัวอย่างเพิ่มและลบ &lt;option&gt;...&lt;/option&gt; ใน select ของ HTML
 ```html
 <!DOCTYPE html>
 <html>
