@@ -95,7 +95,7 @@ var re = /[a-cA-C]/;
 console.log(re.exec("AND"));    // [ 'A', index: 0, input: 'AND', groups: undefined ]
 ```
 
-ตัวอย่าง 6.12 ใช้ regex เป็น /[^cat]/ หมายถึงจะจับคู่ตัวอักษร ที่ไม่ใช่ c หรือ a หรือ t โดยจะค้นหาตัวแรกที่พบเจอ ซึ่งจะเจออักษร "s" ในตริง "cats" ที่อินเด็กซ์ 3
+ตัวอย่าง 6.12 ใช้ regex เป็น /[^cat]/ หมายถึงจะจับคู่ตัวอักษร ที่ไม่ใช่ c หรือ ไม่ใช่ a หรือ ไม่ใช่ t โดยจะค้นหาตัวแรกที่พบเจอ ซึ่งจะเจออักษร "s" ในสตริง "cats" ที่อินเด็กซ์ 3
 ```js
 var re = /[^cat]/;
 console.log(re.exec("cats"));      // [ 's', index: 3, input: 'cats', groups: undefined ]
@@ -744,14 +744,14 @@ console.log(myRegex.sticky);     // true
 
 ### แฟล็ก s (dotAll)
 
-ตัวอย่าง 6.93 ปัญหาเมื่อ regex ไม่สามารถจับคู่ตัวอักษร “\n” ได้
+ตัวอย่าง 6.93 ปัญหาเมื่อ regex ไม่สามารถจับคู่ตัวอักษร "\n" ได้
 ```js
 let regex = /./;
 let result = regex.test("\n");
 console.log(result);             // false
 ```
 
-ตัวอย่าง 6.94 เป็นการใช้แฟล็ก s เพื่อจับคู่ตัวอักษร “\n”
+ตัวอย่าง 6.94 เป็นการใช้แฟล็ก s เพื่อจับคู่ตัวอักษร "\n"
 ```js
 let regex = /./s;
 let result = regex.test("\n");
