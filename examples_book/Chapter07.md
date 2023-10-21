@@ -427,7 +427,7 @@ function insertOption() {
 ```
 
 
-```html
+```tab.html
 <!DOCTYPE html>
 <html>
 <head>
