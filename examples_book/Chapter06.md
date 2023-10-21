@@ -280,7 +280,7 @@ console.log(re.exec("A father is"));  // [ 'fa', index: 2, input: 'A father is',
 ```
 
 1) วิธี lookahead assertion จะมีรูปแบบ x(?=y) ดังตัวอย่าง
-ตัวอย่าง 6.42 ใช้ regex เป็น /Java(?=Script)/ หมายถึงจะจับคู่คำว่า "Java" แต่ต้องตาม ด้วยคำว่า "Script" ด้วยรูปแบบ Java แล้วมีรูปแบบ (?=Script) แปะท้าย จึงเจอ "Java" ที่อินเด็กซ์ 10
+ตัวอย่าง 6.42 ใช้ regex เป็น /Java(?=Script)/ หมายถึงจะจับคู่คำว่า "Java" แต่ต้องตามด้วยคำว่า "Script" ด้วยรูปแบบ Java แล้วมีรูปแบบ (?=Script) แปะท้าย จึงเจอ "Java" ที่อินเด็กซ์ 10
 ```js
 let re = /Java(?=Script)/;
 console.log(re.exec("This is a JavaScript book"));           
