@@ -527,7 +527,7 @@ console.log(re.exec("bk@th=>com=>mail"));
 // [ 'bk@th=>com=>', '@', '=>', index: 0, input: 'bk@th=>com=>mail', groups: undefined ]  
 ```
 
-ตัวอย่าง 6.73  ใช้ regex เป็น /talk(?<tense>ed|ing) & watch\k<tense>/ โดยมีการตั้งชื่อกลุ่มที่ได้จากการ capture เป็น "tense" และมีการอ้างถึงผลลัพธ์จากการ capture ก่อนหน้านี้ด้วยกาiระบุชื่อกลุ่มเป็น "tense" ด้วยรูปแบบ \k<tense>
+ตัวอย่าง 6.73  ใช้ regex เป็น /talk(?<tense>ed|ing) & watch\k<tense>/ โดยมีการตั้งชื่อกลุ่มที่ได้จากการ capture เป็น "tense" และมีการอ้างถึงผลการ capture ก่อนหน้านี้ ด้วยการอ้างชื่อกลุ่ม ได้แก่ "tense" ด้วยรูปแบบ \k&lt;tense&gt;
 ```js
 var re = /talk(?<tense>ed|ing) & watch\k<tense>/;
 console.log(re.exec("talked & watched"));     
