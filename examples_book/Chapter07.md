@@ -471,7 +471,7 @@ function insertOption() {
 
 ## Event คืออะไร
 
-```notrun
+```html
 <!DOCTYPE html>
 <html>
 <body>
@@ -576,7 +576,7 @@ function showMsg() {
 <!DOCTYPE html>
 <html>
 <body>
-<button id="btn">Click me</button>
+<button id="myBtn">Click me</button>
 <script>
 let element = document.getElementById("myBtn");
 element.addEventListener("click", 
