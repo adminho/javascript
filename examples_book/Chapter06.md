@@ -363,7 +363,7 @@ console.log(re.exec("dog"));    // [ 'd', index: 0, input: 'dog', groups: undefi
 ตัวอย่าง 6.53 ใช้ regex เป็น /.ox/ หมายถึงจะจับคู่ตัวอักษรที่ขึ้นต้นด้วยอะไรก็ได้ แต่ขอให้ตามด้วย ox โดยจะค้นหาคำแรกที่พบเจอ ซึ่งจะเจออักษร "box" ในตริง "boxes" ที่อินเด็กซ์ 0
 ```js
 var re = /.ox/;
-console.log(re.exec("boxes"));    //[ 'box', index: 0, input: 'boxes', groups: undefined ] 
+console.log(re.exec("boxes"));    // [ 'box', index: 0, input: 'boxes', groups: undefined ] 
 ```
 
 ตัวอย่าง 6.54 ใช้ regex เป็น /\d/ หมายถึงจะจับคู่ตัวเลขใดๆ จำนวน 1 ตัว โดยจะค้นหาคำแรกที่พบเจอ ซึ่งจะเจออักษรเลข "8" ในตริง "x86" ที่อินเด็กซ์ 1 (ไม่เจอเลข 6)
