@@ -590,7 +590,6 @@ btn.addEventListener("click", function() {           // บรรทัด b
     let h1 = document.getElementById("target");
     h1.innerHTML = "Hello World";
 });    
-
 </script>
 </body>
 </html>
@@ -635,6 +634,8 @@ btn.addEventListener("click", () => {                   // บรรทัด b
 </body>
 </html>
 ```
+
+## Event bubbling หรือ Event capturing
 
 ```html
 <html>
