@@ -441,6 +441,21 @@ function insertOption() {
 </html>
 ```
 
+หมายเหตุ ถ้าใช้ window.open() เมื่อนั้น document.write() จะไม่เขียนทับ
+```html
+<!DOCTYPE html>
+<html>
+<head>
+       <meta charset="UTF-8">
+</head>
+<body>
+       <h1>My First Web Page</h1>
+       <p>My first paragraph</p>
+       <button type="button" onclick="document.write(5 + 6)">Try it</button> 
+</body>
+</html>
+```
+
 ### แสดงเอาท์พุตด้วยวิธีที่สาม
 
 ```html
