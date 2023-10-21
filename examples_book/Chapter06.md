@@ -301,7 +301,7 @@ console.log(re.exec("test_js test_txt test_html"));
 // [ 'test_', index: 17, input: 'test_js test_txt test_html', groups: undefined ] 
 ```
 
-1) วิธี lookbehind assertion จะมีรูปแบบ (?<=y)x 
+1) วิธี lookbehind assertion จะมีรูปแบบ (?<=y)x ดังตัวอย่าง
 ตัวอย่าง 6.45 ใช้ regex เป็น /(?<=Java)Script/ หมายถึงจะจับคู่คำว่า "Script" แต่ต้องขึ้นต้นตัวหน้าเป็น "Java" ด้วยรูปแบบ (?<=Java) และมีรูปแบบ Script แปะท้าย จึงเจอ "Script" ที่อินเด็กซ์ 14
 ```js
 let re = /(?<=Java)Script/;
@@ -317,8 +317,8 @@ console.log(re.exec("This is a JavaScript book"));
 // [ 'Script book', index: 14, input: 'This is a JavaScript book', groups: undefined ] 
 ```
 
-2) วิธี negative lookbehind assertion จะมีรูปแบบ (?<!y)x ดังตัวอย่าง
-ตัวอย่าง 6.47 ใช้ regex เป็น /(?&lt;!test).js/ หมายถึงจะจับคู่ด้วยคำว่า ".js" ด้วยรูปแบบ .js แต่ต้องไม่ขึ้นต้นด้วยคำว่า "test" ด้วยรูปแบบ (?<!test) จึงเจอคำว่า ".js" ที่อินเด็กซ์
+2) วิธี negative lookbehind assertion จะมีรูปแบบ (?&lt;!y)x ดังตัวอย่าง
+ตัวอย่าง 6.47 ใช้ regex เป็น /(?<!test).js/ หมายถึงจะจับคู่ด้วยคำว่า ".js" ด้วยรูปแบบ .js แต่ต้องไม่ขึ้นต้นด้วยคำว่า "test" ด้วยรูปแบบ (?<!test) จึงเจอคำว่า ".js" ที่อินเด็กซ์
 ```js
 let re = /(?<!test).js/;
 console.log(re.exec("index.html run.js"));
