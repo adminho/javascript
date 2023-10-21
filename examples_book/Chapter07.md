@@ -312,12 +312,12 @@ function removeAttr() {
 <html>
 <head></head>
 <body>
-<input id="target" type="text" id="myText" value="Some text..." >
+<input id="myText" type="text" value="Some text..." >
 <button  onclick="showValue()">Show value</button>
 
 <script>
 function showValue() {
-     let val = document.getElementById("Show value").value;  
+     let val = document.getElementById("myText").value;  
      alert(val);
 }
 </script>
