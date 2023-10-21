@@ -360,7 +360,7 @@ function insertOption() {
     let mySelect = document.getElementById("mySelect");
     let option = document.createElement("option");
     let myInput = document.getElementById("myInput"); 
-    if (myInput.value !== '') {      // เช็คว่า จะต้องไม่กรอกข้อความว่างเข้ามา
+    if (myInput.value !== '’) {      // เช็คว่า จะต้องไม่กรอกข้อความว่างเข้ามา
          option.text = myInput.value;  
          mySelect.add(option);
     }
@@ -449,7 +449,7 @@ function insertOption() {
 <!DOCTYPE html>
 <html>
 <body>
-        <button onclick="this.textContent = 'Ooops!'">Click me</button>
+        <button onclick="this.textContent = 'Ooops!’">Click me</button>
 </body>
 </html>
 ```
@@ -462,7 +462,7 @@ function insertOption() {
 	<button onclick="changeText(this)">Click me</button>
 	<script>
 		function changeText(btn) { 
-		    btn.textContent = 'Ooops!';
+		    btn.textContent = 'Ooops!’;
 		}
 	</script>
 </body>
@@ -505,7 +505,7 @@ function insertOption() {
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="this.textContent = 'Ooops!'" 
+<button onclick="this.textContent = 'Ooops!’" 
 onmouseleave="alert('mouse leave');">Click me</button>
 </body>
 </html>
@@ -517,7 +517,7 @@ onmouseleave="alert('mouse leave');">Click me</button>
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="this.textContent = 'Ooops!'" 
+<button onclick="this.textContent = 'Ooops!’" 
 onmouseleave="alert('mouse leave');">Click me</button>
 </body>
 </html>
