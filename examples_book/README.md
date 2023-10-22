@@ -26,13 +26,7 @@
 * [บทที่ 20  มอดูล](Chapter20.md)
 * [ภาคผนวก ข](Appendix_B)
 
-* [ปูพื้นฐาน Node.js ฉบับย่อ เข้าใจ MongoDB](
-https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjI0OTQwOCI7fQ)
-
-* [พื้นฐาน React](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjI0ODU5NiI7fQ)
-
 ### หมายเหตุ [สามารถทดลองรันโค้ดตัวอย่างในหนังสือได้ (ควรเปิดบนคอม ไม่แนะนำให้เปิดบนมือถือ หรือแท็บเล็ต)](https://patanasongsivilai.com/myblog/main.php?id=756)
-
 
 #### ปล. เล่มนี้ตามรูปข้างล่างเนื้อหาเก่าแล้ว (ปัจจุบันไม่มีตีพิมพ์เพิ่ม)
 ![cover_big.jpg](https://github.com/adminho/javascript/blob/master/images/cover_big.jpg)
