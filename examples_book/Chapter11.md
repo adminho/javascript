@@ -146,8 +146,7 @@ function divTag(strings, ...values) {
  	//console.log(strings[1]); 	// ") Hello world world : "
     	//console.log(strings[2]); 	// " items"
   	//console.log(values[0]);  	// 1  (เป็นค่าของนิพจน์ ${n} )
-  	//console.log(values[1]);  	// 18 (เป็นค่าของนิพจน์ ${a * b} )
-	
+  	//console.log(values[1]);  	// 18 (เป็นค่าของนิพจน์ ${a * b} )	
 	let result = "";
  	for (let i = 0; i < values.length; i++) {
         	      result += strings [i];
