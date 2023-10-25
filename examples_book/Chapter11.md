@@ -139,6 +139,10 @@ console.log(`My name is ${name}`);
 ```
 
 ## การติดแท็ก
+```notrun
+let n = 1, a = 3, b = 6;
+console.log(divTag`${n}) Hello world : ${a * b} items`);	// บรรทัด 2
+```
 
 ```js
 function divTag(strings, ...values) {
