@@ -324,7 +324,7 @@ ThaiCurrency.prototype[Symbol.toPrimitive] = function(hint)  {
 let money = new ThaiCurrency (100);
 console.log(money / 2);              	             // 50		     -- case "number": 
 console.log(String(money));          	             // "100 Baht"	     -- case "string"
-console.log("Price " + money);                 // "Price 100 THB"    -- case "default"
+console.log("Price " + money);                  // "Price 100 THB"    -- case "default"
 console.log(money == "100 THB");            // true                     -- case "default"
 ```
 
