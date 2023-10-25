@@ -226,8 +226,8 @@ class MyClass2 extends MyClass {
 }
 let obj = new MyClass2();
 let obj2 = obj.create();		             // "Symbol.species is called"
-console.log(obj2 instanceof MyClass);         // true
-console.log(obj2 instanceof MyClass2);       // true
+console.log(obj2 instanceof MyClass);        // true
+console.log(obj2 instanceof MyClass2);      // true
 ```
 
 ```js
