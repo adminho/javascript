@@ -251,7 +251,7 @@ console.log("It is " + a)      // "It is [object Object]"
 ```
 
 ```js
-let two = new Number(2);                         // ประกาศอ็อบเจ็กต์ Number
+let two = new Number(2);                        // ประกาศอ็อบเจ็กต์ Number
 console.log(two.toString());	             // "2" 
 console.log(two.valueOf());  	             // 2
 // เบื้องหลังจะเรียกใช้ two.valueOf() ให้กลายเป็น 2 ก่อน แล้วถึงคูณด้วย 5 จึงกลายเป็น 2 * 5
