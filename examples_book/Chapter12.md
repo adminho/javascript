@@ -21,7 +21,7 @@ console.log( typeof Symbol("example") );         // "symbol"
 ```
 
 ```js
-let uid = Symbol.for(“uid”);
+let uid = Symbol.for("uid");
 console.log( uid  && true );	             // true
 console.log( !true );		             // false
 ```
@@ -114,8 +114,8 @@ for (let i in obj) {
 // ประโยค for จะแสดงผลลัพธ์	
 // "car" 
 // "zoo" 
-let keys = Object.getOwnPropertyNames(obj);
-console.log(keys);	// [ 'car', 'zoo' ]
+console.log(Object.getOwnPropertyNames(obj));	// [ 'car', 'zoo' ]
+console.log(Object.keys(obj));	                        // [ 'car', 'zoo' ]
 ```
 
 ```js

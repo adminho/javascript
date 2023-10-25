@@ -89,8 +89,8 @@ Last line`;
 console.log(msg);
 ```
 
-* โค้ดข้างบนจะแสดงผลดังนี้ (ไม่ต้องกดรัน)
-```js
+* โค้ดข้างบนจะแสดงผลดังนี้ 
+```notrun
 First line   // This is not a comment
 /*
 This is not a comment
@@ -109,6 +109,9 @@ console.log(msg.trim().length); 	            // 19
 ```
 
 ## นิพจน์ในเทมเพลตสตริง
+```notrun
+${นิพจน์} 
+```
 
 ```js
 let name = "Somchai";
@@ -167,6 +170,10 @@ let n = 1, a = 3, b = 6;
 console.log(divTag`${n}) Hello world : ${a * b} items`);	
 // แสดงผลลัพธ์เป็น
 // "<div>1) Hello world : 18 items</div>"
+```
+
+```notrun
+divTag`${n}) Hello world : ${a * b} items`
 ```
 
 ### String.raw
