@@ -195,7 +195,7 @@ proxyMultiply(maxNum, maxNum);	 // Error: The result is not safe integer
 * ตัวอย่างที่ 3 จะแสดงกลไกการป้องกันเวลากำหนดโปรโตไทป์ให้กับอ็อบเจ็กต์
 
 ```js
-let people = {};	
+let people = { };	
 
 let preventObj = { 	// handler
 	// ดักจับตอนกำหนดโปรโตไทป์ให้กับอ็อบเจ็กต์เป้าหมาย
@@ -280,7 +280,7 @@ let createImage = { 	// handler
              map.set(imageName, newObj);	// เก็บไว้ในแม็พ
 	 return newObj	       
        }	// สิ้นสุด  construct	
-}// สิ้นสุดประกาศอ็อบเจ็กต์
+} // สิ้นสุดประกาศอ็อบเจ็กต์
 
 let proxyImage = new Proxy(Image, createImage);
 
