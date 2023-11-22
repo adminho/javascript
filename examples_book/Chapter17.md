@@ -10,7 +10,7 @@ var function2 = "function myFunction (a, b) { console.log(a/b); }";
 var randomNumber = Math.random() >= 0.5;	// true หรือ false
 var code = randomNumber ? function1 : function2;
 eval(code);
-myFunction(10,5);	// 50 หรือ  2  -- บรรทัด a
+myFunction(10, 5);	// 50 หรือ  2  -- บรรทัด a
 /* จะเสมือนเขียน
 function myFunction(a, b) { 
 	console.log(a*b);
