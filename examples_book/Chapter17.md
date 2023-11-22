@@ -50,8 +50,8 @@ console.log(obj.a);	// 100
 
 ```js
 let obj = { };
-Reflect.set(obj,"a", 100);			 // เหมือนเขียนประโยค obj.a = 100;	
-console.log( Reflect.get(obj,"a") );		 // 100 -- เหมือนเขียนประโยค console.log(obj.a);  
+Reflect.set(obj, "a", 100);			 // เหมือนเขียนประโยค obj.a = 100;	
+console.log( Reflect.get(obj, "a") );	 // 100 -- เหมือนเขียนประโยค console.log(obj.a);  
 ```
 
 ## พร็อกซี่
