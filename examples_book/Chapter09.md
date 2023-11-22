@@ -219,11 +219,11 @@ for (const value of [1, 2]) {
 
 ```js
 let f = {
-	color: "red"
-          ,size: "200"
-          ,icon: "small" 
-          ,style: "normal"
-          ,lang: "thai"
+        color: "red",
+        size: "200",
+        icon: "small",
+        style: "normal",
+        lang: "thai"
 } ;
 // การแกะข้อมูลภายในอ็อบเจ็กต์ เพื่อไปกำหนดค่าให้กับตัวแปรทีละตัว จะดูยุ่งยากมาก
 let color = f.color, size = f.size, icon = f.icon, style=f.style, lang= f.lang;
