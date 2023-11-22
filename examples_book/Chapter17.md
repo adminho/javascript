@@ -29,13 +29,13 @@ var body2 = "console.log(a/b)";
 var randomNumber = Math.random() >= 0.5;      // true หรือ false
 var myBody = randomNumber ? body1 : body2;
 var myFunction = Function("a","b", myBody);
-myFunction(10,5);	// 50 หรือ  2
+myFunction(10, 5);	// 50 หรือ  2
 /* จะเสมือนเขียน
-function myFunction(a, b){ 
+function myFunction(a, b) { 
 	console.log(a*b);
 }*/
 /* หรืออาจะเขียนเป็น
-function myFunction(a, b){
+function myFunction(a, b) {
 	console.log(a/b);
 }*/
 ```
