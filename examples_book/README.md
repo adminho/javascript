@@ -2,7 +2,9 @@
 
 ![cover_new.PNG](https://github.com/adminho/javascript/blob/master/images/cover_new.png)
 
-[สามารถสั่งซ์้อได้ที่เว็บ MEB (ขายเป็นอีบุ๊กเท่านั้น)](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ)
+[สามารถสั่งซื้อได้ที่เว็บ MEB (ขายเป็นอีบุ๊ก)](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ)
+
+[ หรือสามารถสั่งซื้อได้ที่ shopee](https://shopee.co.th/product/159315996/18595064435/)
 
 * บทที่ 1 แนะนำจาวาสคริปต์
 * [บทที่ 2 รันจาวาสคริปต์อย่างง่าย](Chapter02.md)
