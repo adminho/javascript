@@ -5,6 +5,6 @@ https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVz
 <img src="https://cdn-local.mebmarket.com/meb/server1/249408/Thumbnail/book_detail_large.gif" width="200"/>
 
 
-* [พื้นฐาน React - ขออนุญาตแก้ไขลิงค์ รวมทั้งเนื้อหาในหนังสือ  เดี่ยวเปิดให้อ่านสักประมาณต้นเดือน มกรามคม 2567 ]()
+* [พื้นฐาน React - ขออนุญาตแก้ไขลิงค์ รวมทั้งเนื้อหาในหนังสือ  เดี่ยวเปิดให้อ่านสักประมาณต้นเดือน มกราคม 2567 ]()
 
 <img src="https://cdn-local.mebmarket.com/meb/server1/248596/Thumbnail/book_detail_large.gif" width="200"/>
