@@ -14,7 +14,7 @@
 <script>
 async function readData(){
      // Cite: https://docs.google.com/spreadsheets/d/1-Knlcor3YyfgYSmf8iUQn44VxAgTkKGoO-1fPIikVDg/edit#gid=338017165
-	const response = await fetch("[67] Thailand's Budget - ขาวคาดแดง RELEASE_2023-12-26.tsv");
+	const response = await fetch("https://www.patanasongsivilai.com/example/fiscal_year_2024/[67]%20Thailand's%20Budget%20-%20%E0%B8%82%E0%B8%B2%E0%B8%A7%E0%B8%84%E0%B8%B2%E0%B8%94%E0%B9%81%E0%B8%94%E0%B8%87%20RELEASE_2023-12-26.tsv");
 	const text = await response.text();
 	const allData = text.split("\n");	
 	return allData;
