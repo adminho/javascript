@@ -33,7 +33,6 @@
 			const response = await fetch("https://www.patanasongsivilai.com/example/fiscal_year_2024/fical_year_2024.php");
 			const text = await response.text();
 			const allData = text.split("\n");
-
 			return allData;
 		}
 		async function showTable(numRow) {
