@@ -1,106 +1,111 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>The Budget of Thailand 2024</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<style>
-.blink_me {
-  animation: blinker 1s linear infinite;
-}
 
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-</style>
+<head>
+	<title>The Budget of Thailand 2024</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	<style>
+		.blink_me {
+			animation: blinker 1s linear infinite;
+		}
+
+		@keyframes blinker {
+			50% {
+				opacity: 0;
+			}
+		}
+	</style>
 </head>
+
 <body>
-<h3>ผ่างบประมาณ 2567</h3>
-<br>
-<div id="target"><h2 class="blink_me" style="color:red">กำลังโหลดข้อมูล รอสักครู่</h2></div>
-<canvas id="myChart1" style="width:100%;"></canvas>
-<canvas id="myChart2" style="width:100%;"></canvas>
-<script>
-async function readData(){
-     // Cite: https://docs.google.com/spreadsheets/d/1-Knlcor3YyfgYSmf8iUQn44VxAgTkKGoO-1fPIikVDg/edit#gid=338017165
-	const response = await fetch("https://www.patanasongsivilai.com/example/fiscal_year_2024/fical_year_2024.php");
-	const text = await response.text();
-	const allData = text.split("\n");	
-	
-	return allData;
-}
-async function showTable(numRow){
-	let allData = await readData();	  
-	const headLine = allData[0].split("\t");	
-	let headTh = "";
-	headLine.forEach( column => headTh+=`<th scope="col">${column}</th>`);	
-	
-	let allRow = "";
-	for(i=1; i<numRow;i++){		
-		let allTh ="";
-		let row = allData[i].split('\t');		
-		row.forEach( column => allTh+=`<th>${column}</th>`);		
-		allRow += `<tr>${allTh}</tr>`;
-	}
-	
-	document.getElementById("target").innerHTML = `<table class="table table-bordered">
+	<h3>ผ่างบประมาณ 2567</h3>
+	<br>
+	<div id="target">
+		<h2 class="blink_me" style="color:red">กำลังโหลดข้อมูล รอสักครู่</h2>
+	</div>
+	<canvas id="myChart1" style="width:100%;"></canvas>
+	<canvas id="myChart2" style="width:100%;"></canvas>
+	<script>
+		async function readData() {
+			// Cite: https://docs.google.com/spreadsheets/d/1-Knlcor3YyfgYSmf8iUQn44VxAgTkKGoO-1fPIikVDg/edit#gid=338017165
+			const response = await fetch("https://www.patanasongsivilai.com/example/fiscal_year_2024/fical_year_2024.php");
+			const text = await response.text();
+			const allData = text.split("\n");
+
+			return allData;
+		}
+		async function showTable(numRow) {
+			let allData = await readData();
+			const headLine = allData[0].split("\t");
+			let headTh = "";
+			headLine.forEach(column => headTh += `<th scope="col">${column}</th>`);
+
+			let allRow = "";
+			for (i = 1; i < numRow; i++) {
+				let allTh = "";
+				let row = allData[i].split('\t');
+				row.forEach(column => allTh += `<th>${column}</th>`);
+				allRow += `<tr>${allTh}</tr>`;
+			}
+
+			document.getElementById("target").innerHTML = `<table class="table table-bordered">
 													<thead><tr>${headTh}</tr></thead>
 													<tbody>${allRow}</tbody>
 												   </table>`;
-}
-
-const FISCAL_YEAR = "2024";
-const MINISTRY_INDEX = 2;
-const AMOUNT_INDEX = 15;
-const FISCAL_YEAR_INDEX = 16;
-
-async function getAllSumData() {
-	const allData = await readData();
-	let allSumData = {};		
-	for(i=1; i<allData.length; i++){		
-		const row = allData[i];
-		const allColumn = row.split("\t");				
-		if( allColumn[FISCAL_YEAR_INDEX] !== FISCAL_YEAR) continue;		
-		const amount = allColumn[AMOUNT_INDEX].replaceAll(",", "");
-		const ministry = allColumn[MINISTRY_INDEX] ;				
-		if(allSumData[ ministry ] === undefined ) {
-			allSumData[ ministry ] =  parseInt(amount);
-		} else {
-			allSumData[ ministry ] += parseInt(amount) ;
 		}
-	}	
-	return allSumData;
-}
 
-function getRandomColor(n) {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    var colors = [];
-    for(var j = 0; j < n; j++){
-        for (var i = 0; i < 6; i++ ) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        colors.push(color);
-        color = '#';
-    }
-    return colors;
-}
+		const FISCAL_YEAR = "2024";
+		const MINISTRY_INDEX = 2;
+		const AMOUNT_INDEX = 15;
+		const FISCAL_YEAR_INDEX = 16;
 
-async function showSummaryReport(){
-    const allSumData = await getAllSumData();		
-	let allRow = "";
-	let no = 1;
-	for (const [key, value] of Object.entries(allSumData)) {		
-		allRow += `<tr>
+		async function getAllSumData() {
+			const allData = await readData();
+			let allSumData = {};
+			for (i = 1; i < allData.length; i++) {
+				const row = allData[i];
+				const allColumn = row.split("\t");
+				if (allColumn[FISCAL_YEAR_INDEX] !== FISCAL_YEAR) continue;
+				const amount = allColumn[AMOUNT_INDEX].replaceAll(",", "");
+				const ministry = allColumn[MINISTRY_INDEX];
+				if (allSumData[ministry] === undefined) {
+					allSumData[ministry] = parseInt(amount);
+				} else {
+					allSumData[ministry] += parseInt(amount);
+				}
+			}
+			return allSumData;
+		}
+
+		function getRandomColor(n) {
+			var letters = '0123456789ABCDEF'.split('');
+			var color = '#';
+			var colors = [];
+			for (var j = 0; j < n; j++) {
+				for (var i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				colors.push(color);
+				color = '#';
+			}
+			return colors;
+		}
+
+		async function showSummaryReport() {
+			const allSumData = await getAllSumData();
+			let allRow = "";
+			let no = 1;
+			for (const [key, value] of Object.entries(allSumData)) {
+				allRow += `<tr>
 		           <th scope="row">${no++}</th>
 		           <td>${key}</td>
 		           <td>${value.toLocaleString()}</td>
 				   </tr> `;
-    }
+			}
 
- 	document.getElementById("target").innerHTML = `<table class="table table-bordered">
+			document.getElementById("target").innerHTML = `<table class="table table-bordered">
 													<thead>
 														<tr>
 														<th scope="col">No</th>
@@ -112,46 +117,47 @@ async function showSummaryReport(){
 														${allRow}													
 													</tbody>
 												   </table>`;
-												   
-	new Chart("myChart1", {
-		type: "bar",
-		data: {
-			labels: Object.keys(allSumData),	
-			datasets: [{
-				backgroundColor: getRandomColor(Object.keys(allSumData).length),
-				data: Object.values(allSumData)
-				}]
-		},
-		options: {
-			legend: {display: false},
-			title: {
-				display: true,
-				text: "Bar Chart"
-			}
-		}
-	});											   
-	
-	new Chart("myChart2", {
-		type: "pie",
-		data: {
-			labels: Object.keys(allSumData),
-			datasets: [{
-				backgroundColor: getRandomColor(Object.keys(allSumData).length),
-				data: Object.values(allSumData)
-			}]
-		},
-		options: {
-			title: {
-				display: true,
-				text: "Pie Chart"
-			}
-		}
-	});	
-}
 
-showSummaryReport();
-</script>
-<hr/>
-<p>โปรดติดตามแฟนเพจ <a href="https://www.facebook.com/programmerthai">https://www.facebook.com/programmerthai</a></p>
+			new Chart("myChart1", {
+				type: "bar",
+				data: {
+					labels: Object.keys(allSumData),
+					datasets: [{
+						backgroundColor: getRandomColor(Object.keys(allSumData).length),
+						data: Object.values(allSumData)
+					}]
+				},
+				options: {
+					legend: { display: false },
+					title: {
+						display: true,
+						text: "Bar Chart"
+					}
+				}
+			});
+
+			new Chart("myChart2", {
+				type: "pie",
+				data: {
+					labels: Object.keys(allSumData),
+					datasets: [{
+						backgroundColor: getRandomColor(Object.keys(allSumData).length),
+						data: Object.values(allSumData)
+					}]
+				},
+				options: {
+					title: {
+						display: true,
+						text: "Pie Chart"
+					}
+				}
+			});
+		}
+
+		showSummaryReport();
+	</script>
+	<hr />
+	<p>โปรดติดตามแฟนเพจ <a href="https://www.facebook.com/programmerthai">https://www.facebook.com/programmerthai</a>
+	</p>
 </body>
-</html> 
+</html>
