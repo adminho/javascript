@@ -789,7 +789,7 @@ var result = array.some( function (value, index, arrayObj) {
     // arrayObj คือ ["a", "b", "c", "d"]
     return value == "c";
 } );                                
-console.log(result) // true
+console.log(result)                         // true
 ```
 
 ```js
