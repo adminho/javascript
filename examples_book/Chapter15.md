@@ -129,7 +129,7 @@ function search(value, index, array) {	 // ฟังก์ชันคอลแ�
     //console.log(array);	// [ 'red', 'green', 'blue', 'yellow' ]
     return value == "blue";
 }
-let result = a.find(search);                          
+let result = a.find( search );                          
 console.log(result);			 // 'blue'
 ```
 
