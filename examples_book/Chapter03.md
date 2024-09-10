@@ -189,7 +189,7 @@ console.log(x); 	// undefined
 * หมายเหตุ แสดงผลลัพธ์เหมือนรันใน Node.js
 ```js
 var undefined = 55555; 	    
-console.log(undefined);   // บนเว็บเบราเซอร์จะแสดงเป็น undefined แต่บน Node.js จะแสดงเป็น 55555
+console.log(undefined);   // บนเว็บบราวเซอร์จะแสดงเป็น undefined แต่บน Node.js จะแสดงเป็น 55555
 var x;
 console.log(x);		// undefined		
 ```
