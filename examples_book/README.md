@@ -4,7 +4,7 @@
 
 [สามารถสั่งซื้อได้ที่เว็บ MEB (ขายเป็นอีบุ๊ก)](https://www.mebmarket.com/web/index.php?action=BookDetails&data=YToyOntzOjc6InVzZXJfaWQiO3M6NzoiMTcyNTQ4MyI7czo3OiJib29rX2lkIjtzOjY6IjE1Njg1NCI7fQ)
 
-[ หรือสามารถสั่งซื้อได้ที่ shopee (หมดแล้ว)](https://shopee.co.th/product/159315996/18595064435/)
+[ ส่วนเล่มที่วางขายใน shopee ตอนนี้เลิกทำแล้ว เพราะต้นทุนแพงเกินไปทำไม่ไหว](https://shopee.co.th/product/159315996/18595064435/)
 
 * บทที่ 1 แนะนำจาวาสคริปต์
 * [บทที่ 2 รันจาวาสคริปต์อย่างง่าย](Chapter02.md)
